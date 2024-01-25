@@ -1,0 +1,1858 @@
+/* HELPERS
+------------------------------------------------------------------------------*/
+/* TAILWIND
+------------------------------------------------------------------------------*/
+/* ! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com*/
+/*
+1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+*/
+*,
+::before,
+::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; /* 1 */
+  border-width: 0; /* 2 */
+  border-style: solid; /* 2 */
+  border-color: #e5e7eb; /* 2 */
+}
+::before,
+::after {
+  --tw-content: '';
+}
+/*
+1. Use a consistent sensible line-height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size.
+4. Use the user's configured `sans` font-family by default.
+5. Use the user's configured `sans` font-feature-settings by default.
+6. Use the user's configured `sans` font-variation-settings by default.
+7. Disable tap highlights on iOS
+*/
+html,
+:host {
+  line-height: 1.5; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  -moz-tab-size: 4; /* 3 */
+  -o-tab-size: 4;
+  tab-size: 4; /* 3 */
+  font-family: Montserrat, sans-serif; /* 4 */
+  -webkit-font-feature-settings: normal;
+  -moz-font-feature-settings: normal;
+  font-feature-settings: normal; /* 5 */
+  font-variation-settings: normal; /* 6 */
+  -webkit-tap-highlight-color: transparent; /* 7 */
+}
+/*
+1. Remove the margin in all browsers.
+2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+*/
+body {
+  margin: 0; /* 1 */
+  line-height: inherit; /* 2 */
+}
+/*
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+3. Ensure horizontal rules are visible by default.
+*/
+hr {
+  height: 0; /* 1 */
+  color: inherit; /* 2 */
+  border-top-width: 1px; /* 3 */
+}
+/*
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+abbr:where([title]) {
+  -webkit-text-decoration: underline dotted;
+  -moz-text-decoration: underline dotted;
+  text-decoration: underline dotted;
+}
+/*
+Remove the default font size and weight for headings.
+*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+/*
+Reset links to optimize for opt-in styling instead of opt-out.
+*/
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+/*
+Add the correct font weight in Edge and Safari.
+*/
+b,
+strong {
+  font-weight: bolder;
+}
+/*
+1. Use the user's configured `mono` font-family by default.
+2. Use the user's configured `mono` font-feature-settings by default.
+3. Use the user's configured `mono` font-variation-settings by default.
+4. Correct the odd `em` font sizing in all browsers.
+*/
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; /* 1 */
+  -webkit-font-feature-settings: normal;
+  -moz-font-feature-settings: normal;
+  font-feature-settings: normal; /* 2 */
+  font-variation-settings: normal; /* 3 */
+  font-size: 1em; /* 4 */
+}
+/*
+Add the correct font size in all browsers.
+*/
+small {
+  font-size: 80%;
+}
+/*
+Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+*/
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
+/*
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+3. Remove gaps between table borders by default.
+*/
+table {
+  text-indent: 0; /* 1 */
+  border-color: inherit; /* 2 */
+  border-collapse: collapse; /* 3 */
+}
+/*
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+3. Remove default padding in all browsers.
+*/
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  -webkit-font-feature-settings: inherit;
+  -moz-font-feature-settings: inherit;
+  font-feature-settings: inherit; /* 1 */
+  font-variation-settings: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  font-weight: inherit; /* 1 */
+  line-height: inherit; /* 1 */
+  color: inherit; /* 1 */
+  margin: 0; /* 2 */
+  padding: 0; /* 3 */
+}
+/*
+Remove the inheritance of text transform in Edge and Firefox.
+*/
+button,
+select {
+  text-transform: none;
+}
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Remove default button styles.
+*/
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button; /* 1 */
+  background-color: transparent; /* 2 */
+  background-image: none; /* 2 */
+}
+/*
+Use the modern Firefox focus style for all focusable elements.
+*/
+:-moz-focusring {
+  outline: auto;
+}
+/*
+Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
+*/
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+/*
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+progress {
+  vertical-align: baseline;
+}
+/*
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+/*
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+[type='search'] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+/*
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to `inherit` in Safari.
+*/
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+/*
+Add the correct display in Chrome and Safari.
+*/
+summary {
+  display: list-item;
+}
+/*
+Removes the default spacing and border for appropriate elements.
+*/
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+legend {
+  padding: 0;
+}
+ol,
+ul,
+menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/*
+Reset default styling for dialogs.
+*/
+dialog {
+  padding: 0;
+}
+/*
+Prevent resizing textareas horizontally by default.
+*/
+textarea {
+  resize: vertical;
+}
+/*
+1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
+2. Set the default placeholder color to the user's configured gray 400 color.
+*/
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  opacity: 1; /* 1 */
+  color: #9ca3af; /* 2 */
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  opacity: 1; /* 1 */
+  color: #9ca3af; /* 2 */
+}
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+  opacity: 1; /* 1 */
+  color: #9ca3af; /* 2 */
+}
+input::placeholder,
+textarea::placeholder {
+  opacity: 1; /* 1 */
+  color: #9ca3af; /* 2 */
+}
+/*
+Set the default cursor for buttons.
+*/
+button,
+[role="button"] {
+  cursor: pointer;
+}
+/*
+Make sure disabled buttons don't get the pointer cursor.
+*/
+:disabled {
+  cursor: default;
+}
+/*
+1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
+2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+   This can trigger a poorly considered lint error in some tools but is included by design.
+*/
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block; /* 1 */
+  vertical-align: middle; /* 2 */
+}
+/*
+Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
+*/
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+/* Make elements with the HTML hidden attribute stay hidden by default */
+[hidden] {
+  display: none;
+}
+*, ::before, ::after {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+}
+::-webkit-backdrop {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+}
+::backdrop {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+}
+.aspect-\[3\/2\] {
+  aspect-ratio: 3/2;
+}
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+.grid-cols-10 {
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+}
+.grid-cols-11 {
+  grid-template-columns: repeat(11, minmax(0, 1fr));
+}
+.grid-cols-12 {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.grid-cols-5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+.grid-cols-6 {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+.grid-cols-7 {
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+.grid-cols-8 {
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+}
+.grid-cols-9 {
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+}
+.grid-cols-none {
+  grid-template-columns: none;
+}
+.grid-cols-subgrid {
+  grid-template-columns: subgrid;
+}
+.grid-rows-1 {
+  grid-template-rows: repeat(1, minmax(0, 1fr));
+}
+.grid-rows-10 {
+  grid-template-rows: repeat(10, minmax(0, 1fr));
+}
+.grid-rows-11 {
+  grid-template-rows: repeat(11, minmax(0, 1fr));
+}
+.grid-rows-12 {
+  grid-template-rows: repeat(12, minmax(0, 1fr));
+}
+.grid-rows-2 {
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+.grid-rows-3 {
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+}
+.grid-rows-4 {
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+}
+.grid-rows-5 {
+  grid-template-rows: repeat(5, minmax(0, 1fr));
+}
+.grid-rows-6 {
+  grid-template-rows: repeat(6, minmax(0, 1fr));
+}
+.grid-rows-7 {
+  grid-template-rows: repeat(7, minmax(0, 1fr));
+}
+.grid-rows-8 {
+  grid-template-rows: repeat(8, minmax(0, 1fr));
+}
+.grid-rows-9 {
+  grid-template-rows: repeat(9, minmax(0, 1fr));
+}
+.grid-rows-none {
+  grid-template-rows: none;
+}
+.grid-rows-subgrid {
+  grid-template-rows: subgrid;
+}
+.divide-opacity-0 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 0;
+}
+.divide-opacity-10 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 0.1;
+}
+.divide-opacity-100 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 1;
+}
+.divide-opacity-15 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 0.15;
+}
+.divide-opacity-20 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 0.2;
+}
+.divide-opacity-25 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 0.25;
+}
+.divide-opacity-30 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 0.3;
+}
+.divide-opacity-35 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 0.35;
+}
+.divide-opacity-40 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 0.4;
+}
+.divide-opacity-45 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 0.45;
+}
+.divide-opacity-5 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 0.05;
+}
+.divide-opacity-50 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 0.5;
+}
+.divide-opacity-55 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 0.55;
+}
+.divide-opacity-60 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 0.6;
+}
+.divide-opacity-65 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 0.65;
+}
+.divide-opacity-70 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 0.7;
+}
+.divide-opacity-75 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 0.75;
+}
+.divide-opacity-80 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 0.8;
+}
+.divide-opacity-85 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 0.85;
+}
+.divide-opacity-90 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 0.9;
+}
+.divide-opacity-95 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 0.95;
+}
+.border-opacity-0 {
+  --tw-border-opacity: 0;
+}
+.border-opacity-10 {
+  --tw-border-opacity: 0.1;
+}
+.border-opacity-100 {
+  --tw-border-opacity: 1;
+}
+.border-opacity-15 {
+  --tw-border-opacity: 0.15;
+}
+.border-opacity-20 {
+  --tw-border-opacity: 0.2;
+}
+.border-opacity-25 {
+  --tw-border-opacity: 0.25;
+}
+.border-opacity-30 {
+  --tw-border-opacity: 0.3;
+}
+.border-opacity-35 {
+  --tw-border-opacity: 0.35;
+}
+.border-opacity-40 {
+  --tw-border-opacity: 0.4;
+}
+.border-opacity-45 {
+  --tw-border-opacity: 0.45;
+}
+.border-opacity-5 {
+  --tw-border-opacity: 0.05;
+}
+.border-opacity-50 {
+  --tw-border-opacity: 0.5;
+}
+.border-opacity-55 {
+  --tw-border-opacity: 0.55;
+}
+.border-opacity-60 {
+  --tw-border-opacity: 0.6;
+}
+.border-opacity-65 {
+  --tw-border-opacity: 0.65;
+}
+.border-opacity-70 {
+  --tw-border-opacity: 0.7;
+}
+.border-opacity-75 {
+  --tw-border-opacity: 0.75;
+}
+.border-opacity-80 {
+  --tw-border-opacity: 0.8;
+}
+.border-opacity-85 {
+  --tw-border-opacity: 0.85;
+}
+.border-opacity-90 {
+  --tw-border-opacity: 0.9;
+}
+.border-opacity-95 {
+  --tw-border-opacity: 0.95;
+}
+.bg-opacity-0 {
+  --tw-bg-opacity: 0;
+}
+.bg-opacity-10 {
+  --tw-bg-opacity: 0.1;
+}
+.bg-opacity-100 {
+  --tw-bg-opacity: 1;
+}
+.bg-opacity-15 {
+  --tw-bg-opacity: 0.15;
+}
+.bg-opacity-20 {
+  --tw-bg-opacity: 0.2;
+}
+.bg-opacity-25 {
+  --tw-bg-opacity: 0.25;
+}
+.bg-opacity-30 {
+  --tw-bg-opacity: 0.3;
+}
+.bg-opacity-35 {
+  --tw-bg-opacity: 0.35;
+}
+.bg-opacity-40 {
+  --tw-bg-opacity: 0.4;
+}
+.bg-opacity-45 {
+  --tw-bg-opacity: 0.45;
+}
+.bg-opacity-5 {
+  --tw-bg-opacity: 0.05;
+}
+.bg-opacity-50 {
+  --tw-bg-opacity: 0.5;
+}
+.bg-opacity-55 {
+  --tw-bg-opacity: 0.55;
+}
+.bg-opacity-60 {
+  --tw-bg-opacity: 0.6;
+}
+.bg-opacity-65 {
+  --tw-bg-opacity: 0.65;
+}
+.bg-opacity-70 {
+  --tw-bg-opacity: 0.7;
+}
+.bg-opacity-75 {
+  --tw-bg-opacity: 0.75;
+}
+.bg-opacity-80 {
+  --tw-bg-opacity: 0.8;
+}
+.bg-opacity-85 {
+  --tw-bg-opacity: 0.85;
+}
+.bg-opacity-90 {
+  --tw-bg-opacity: 0.9;
+}
+.bg-opacity-95 {
+  --tw-bg-opacity: 0.95;
+}
+.text-opacity-0 {
+  --tw-text-opacity: 0;
+}
+.text-opacity-10 {
+  --tw-text-opacity: 0.1;
+}
+.text-opacity-100 {
+  --tw-text-opacity: 1;
+}
+.text-opacity-15 {
+  --tw-text-opacity: 0.15;
+}
+.text-opacity-20 {
+  --tw-text-opacity: 0.2;
+}
+.text-opacity-25 {
+  --tw-text-opacity: 0.25;
+}
+.text-opacity-30 {
+  --tw-text-opacity: 0.3;
+}
+.text-opacity-35 {
+  --tw-text-opacity: 0.35;
+}
+.text-opacity-40 {
+  --tw-text-opacity: 0.4;
+}
+.text-opacity-45 {
+  --tw-text-opacity: 0.45;
+}
+.text-opacity-5 {
+  --tw-text-opacity: 0.05;
+}
+.text-opacity-50 {
+  --tw-text-opacity: 0.5;
+}
+.text-opacity-55 {
+  --tw-text-opacity: 0.55;
+}
+.text-opacity-60 {
+  --tw-text-opacity: 0.6;
+}
+.text-opacity-65 {
+  --tw-text-opacity: 0.65;
+}
+.text-opacity-70 {
+  --tw-text-opacity: 0.7;
+}
+.text-opacity-75 {
+  --tw-text-opacity: 0.75;
+}
+.text-opacity-80 {
+  --tw-text-opacity: 0.8;
+}
+.text-opacity-85 {
+  --tw-text-opacity: 0.85;
+}
+.text-opacity-90 {
+  --tw-text-opacity: 0.9;
+}
+.text-opacity-95 {
+  --tw-text-opacity: 0.95;
+}
+.placeholder-opacity-0::-webkit-input-placeholder {
+  --tw-placeholder-opacity: 0;
+}
+.placeholder-opacity-0::-moz-placeholder {
+  --tw-placeholder-opacity: 0;
+}
+.placeholder-opacity-0::-ms-input-placeholder {
+  --tw-placeholder-opacity: 0;
+}
+.placeholder-opacity-0::placeholder {
+  --tw-placeholder-opacity: 0;
+}
+.placeholder-opacity-10::-webkit-input-placeholder {
+  --tw-placeholder-opacity: 0.1;
+}
+.placeholder-opacity-10::-moz-placeholder {
+  --tw-placeholder-opacity: 0.1;
+}
+.placeholder-opacity-10::-ms-input-placeholder {
+  --tw-placeholder-opacity: 0.1;
+}
+.placeholder-opacity-10::placeholder {
+  --tw-placeholder-opacity: 0.1;
+}
+.placeholder-opacity-100::-webkit-input-placeholder {
+  --tw-placeholder-opacity: 1;
+}
+.placeholder-opacity-100::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+}
+.placeholder-opacity-100::-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+}
+.placeholder-opacity-100::placeholder {
+  --tw-placeholder-opacity: 1;
+}
+.placeholder-opacity-15::-webkit-input-placeholder {
+  --tw-placeholder-opacity: 0.15;
+}
+.placeholder-opacity-15::-moz-placeholder {
+  --tw-placeholder-opacity: 0.15;
+}
+.placeholder-opacity-15::-ms-input-placeholder {
+  --tw-placeholder-opacity: 0.15;
+}
+.placeholder-opacity-15::placeholder {
+  --tw-placeholder-opacity: 0.15;
+}
+.placeholder-opacity-20::-webkit-input-placeholder {
+  --tw-placeholder-opacity: 0.2;
+}
+.placeholder-opacity-20::-moz-placeholder {
+  --tw-placeholder-opacity: 0.2;
+}
+.placeholder-opacity-20::-ms-input-placeholder {
+  --tw-placeholder-opacity: 0.2;
+}
+.placeholder-opacity-20::placeholder {
+  --tw-placeholder-opacity: 0.2;
+}
+.placeholder-opacity-25::-webkit-input-placeholder {
+  --tw-placeholder-opacity: 0.25;
+}
+.placeholder-opacity-25::-moz-placeholder {
+  --tw-placeholder-opacity: 0.25;
+}
+.placeholder-opacity-25::-ms-input-placeholder {
+  --tw-placeholder-opacity: 0.25;
+}
+.placeholder-opacity-25::placeholder {
+  --tw-placeholder-opacity: 0.25;
+}
+.placeholder-opacity-30::-webkit-input-placeholder {
+  --tw-placeholder-opacity: 0.3;
+}
+.placeholder-opacity-30::-moz-placeholder {
+  --tw-placeholder-opacity: 0.3;
+}
+.placeholder-opacity-30::-ms-input-placeholder {
+  --tw-placeholder-opacity: 0.3;
+}
+.placeholder-opacity-30::placeholder {
+  --tw-placeholder-opacity: 0.3;
+}
+.placeholder-opacity-35::-webkit-input-placeholder {
+  --tw-placeholder-opacity: 0.35;
+}
+.placeholder-opacity-35::-moz-placeholder {
+  --tw-placeholder-opacity: 0.35;
+}
+.placeholder-opacity-35::-ms-input-placeholder {
+  --tw-placeholder-opacity: 0.35;
+}
+.placeholder-opacity-35::placeholder {
+  --tw-placeholder-opacity: 0.35;
+}
+.placeholder-opacity-40::-webkit-input-placeholder {
+  --tw-placeholder-opacity: 0.4;
+}
+.placeholder-opacity-40::-moz-placeholder {
+  --tw-placeholder-opacity: 0.4;
+}
+.placeholder-opacity-40::-ms-input-placeholder {
+  --tw-placeholder-opacity: 0.4;
+}
+.placeholder-opacity-40::placeholder {
+  --tw-placeholder-opacity: 0.4;
+}
+.placeholder-opacity-45::-webkit-input-placeholder {
+  --tw-placeholder-opacity: 0.45;
+}
+.placeholder-opacity-45::-moz-placeholder {
+  --tw-placeholder-opacity: 0.45;
+}
+.placeholder-opacity-45::-ms-input-placeholder {
+  --tw-placeholder-opacity: 0.45;
+}
+.placeholder-opacity-45::placeholder {
+  --tw-placeholder-opacity: 0.45;
+}
+.placeholder-opacity-5::-webkit-input-placeholder {
+  --tw-placeholder-opacity: 0.05;
+}
+.placeholder-opacity-5::-moz-placeholder {
+  --tw-placeholder-opacity: 0.05;
+}
+.placeholder-opacity-5::-ms-input-placeholder {
+  --tw-placeholder-opacity: 0.05;
+}
+.placeholder-opacity-5::placeholder {
+  --tw-placeholder-opacity: 0.05;
+}
+.placeholder-opacity-50::-webkit-input-placeholder {
+  --tw-placeholder-opacity: 0.5;
+}
+.placeholder-opacity-50::-moz-placeholder {
+  --tw-placeholder-opacity: 0.5;
+}
+.placeholder-opacity-50::-ms-input-placeholder {
+  --tw-placeholder-opacity: 0.5;
+}
+.placeholder-opacity-50::placeholder {
+  --tw-placeholder-opacity: 0.5;
+}
+.placeholder-opacity-55::-webkit-input-placeholder {
+  --tw-placeholder-opacity: 0.55;
+}
+.placeholder-opacity-55::-moz-placeholder {
+  --tw-placeholder-opacity: 0.55;
+}
+.placeholder-opacity-55::-ms-input-placeholder {
+  --tw-placeholder-opacity: 0.55;
+}
+.placeholder-opacity-55::placeholder {
+  --tw-placeholder-opacity: 0.55;
+}
+.placeholder-opacity-60::-webkit-input-placeholder {
+  --tw-placeholder-opacity: 0.6;
+}
+.placeholder-opacity-60::-moz-placeholder {
+  --tw-placeholder-opacity: 0.6;
+}
+.placeholder-opacity-60::-ms-input-placeholder {
+  --tw-placeholder-opacity: 0.6;
+}
+.placeholder-opacity-60::placeholder {
+  --tw-placeholder-opacity: 0.6;
+}
+.placeholder-opacity-65::-webkit-input-placeholder {
+  --tw-placeholder-opacity: 0.65;
+}
+.placeholder-opacity-65::-moz-placeholder {
+  --tw-placeholder-opacity: 0.65;
+}
+.placeholder-opacity-65::-ms-input-placeholder {
+  --tw-placeholder-opacity: 0.65;
+}
+.placeholder-opacity-65::placeholder {
+  --tw-placeholder-opacity: 0.65;
+}
+.placeholder-opacity-70::-webkit-input-placeholder {
+  --tw-placeholder-opacity: 0.7;
+}
+.placeholder-opacity-70::-moz-placeholder {
+  --tw-placeholder-opacity: 0.7;
+}
+.placeholder-opacity-70::-ms-input-placeholder {
+  --tw-placeholder-opacity: 0.7;
+}
+.placeholder-opacity-70::placeholder {
+  --tw-placeholder-opacity: 0.7;
+}
+.placeholder-opacity-75::-webkit-input-placeholder {
+  --tw-placeholder-opacity: 0.75;
+}
+.placeholder-opacity-75::-moz-placeholder {
+  --tw-placeholder-opacity: 0.75;
+}
+.placeholder-opacity-75::-ms-input-placeholder {
+  --tw-placeholder-opacity: 0.75;
+}
+.placeholder-opacity-75::placeholder {
+  --tw-placeholder-opacity: 0.75;
+}
+.placeholder-opacity-80::-webkit-input-placeholder {
+  --tw-placeholder-opacity: 0.8;
+}
+.placeholder-opacity-80::-moz-placeholder {
+  --tw-placeholder-opacity: 0.8;
+}
+.placeholder-opacity-80::-ms-input-placeholder {
+  --tw-placeholder-opacity: 0.8;
+}
+.placeholder-opacity-80::placeholder {
+  --tw-placeholder-opacity: 0.8;
+}
+.placeholder-opacity-85::-webkit-input-placeholder {
+  --tw-placeholder-opacity: 0.85;
+}
+.placeholder-opacity-85::-moz-placeholder {
+  --tw-placeholder-opacity: 0.85;
+}
+.placeholder-opacity-85::-ms-input-placeholder {
+  --tw-placeholder-opacity: 0.85;
+}
+.placeholder-opacity-85::placeholder {
+  --tw-placeholder-opacity: 0.85;
+}
+.placeholder-opacity-90::-webkit-input-placeholder {
+  --tw-placeholder-opacity: 0.9;
+}
+.placeholder-opacity-90::-moz-placeholder {
+  --tw-placeholder-opacity: 0.9;
+}
+.placeholder-opacity-90::-ms-input-placeholder {
+  --tw-placeholder-opacity: 0.9;
+}
+.placeholder-opacity-90::placeholder {
+  --tw-placeholder-opacity: 0.9;
+}
+.placeholder-opacity-95::-webkit-input-placeholder {
+  --tw-placeholder-opacity: 0.95;
+}
+.placeholder-opacity-95::-moz-placeholder {
+  --tw-placeholder-opacity: 0.95;
+}
+.placeholder-opacity-95::-ms-input-placeholder {
+  --tw-placeholder-opacity: 0.95;
+}
+.placeholder-opacity-95::placeholder {
+  --tw-placeholder-opacity: 0.95;
+}
+.opacity-0 {
+  opacity: 0;
+}
+.opacity-10 {
+  opacity: 0.1;
+}
+.opacity-100 {
+  opacity: 1;
+}
+.opacity-15 {
+  opacity: 0.15;
+}
+.opacity-20 {
+  opacity: 0.2;
+}
+.opacity-25 {
+  opacity: 0.25;
+}
+.opacity-30 {
+  opacity: 0.3;
+}
+.opacity-35 {
+  opacity: 0.35;
+}
+.opacity-40 {
+  opacity: 0.4;
+}
+.opacity-45 {
+  opacity: 0.45;
+}
+.opacity-5 {
+  opacity: 0.05;
+}
+.opacity-50 {
+  opacity: 0.5;
+}
+.opacity-55 {
+  opacity: 0.55;
+}
+.opacity-60 {
+  opacity: 0.6;
+}
+.opacity-65 {
+  opacity: 0.65;
+}
+.opacity-70 {
+  opacity: 0.7;
+}
+.opacity-75 {
+  opacity: 0.75;
+}
+.opacity-80 {
+  opacity: 0.8;
+}
+.opacity-85 {
+  opacity: 0.85;
+}
+.opacity-90 {
+  opacity: 0.9;
+}
+.opacity-95 {
+  opacity: 0.95;
+}
+.ring-opacity-0 {
+  --tw-ring-opacity: 0;
+}
+.ring-opacity-10 {
+  --tw-ring-opacity: 0.1;
+}
+.ring-opacity-100 {
+  --tw-ring-opacity: 1;
+}
+.ring-opacity-15 {
+  --tw-ring-opacity: 0.15;
+}
+.ring-opacity-20 {
+  --tw-ring-opacity: 0.2;
+}
+.ring-opacity-25 {
+  --tw-ring-opacity: 0.25;
+}
+.ring-opacity-30 {
+  --tw-ring-opacity: 0.3;
+}
+.ring-opacity-35 {
+  --tw-ring-opacity: 0.35;
+}
+.ring-opacity-40 {
+  --tw-ring-opacity: 0.4;
+}
+.ring-opacity-45 {
+  --tw-ring-opacity: 0.45;
+}
+.ring-opacity-5 {
+  --tw-ring-opacity: 0.05;
+}
+.ring-opacity-50 {
+  --tw-ring-opacity: 0.5;
+}
+.ring-opacity-55 {
+  --tw-ring-opacity: 0.55;
+}
+.ring-opacity-60 {
+  --tw-ring-opacity: 0.6;
+}
+.ring-opacity-65 {
+  --tw-ring-opacity: 0.65;
+}
+.ring-opacity-70 {
+  --tw-ring-opacity: 0.7;
+}
+.ring-opacity-75 {
+  --tw-ring-opacity: 0.75;
+}
+.ring-opacity-80 {
+  --tw-ring-opacity: 0.8;
+}
+.ring-opacity-85 {
+  --tw-ring-opacity: 0.85;
+}
+.ring-opacity-90 {
+  --tw-ring-opacity: 0.9;
+}
+.ring-opacity-95 {
+  --tw-ring-opacity: 0.95;
+}
+.backdrop-opacity-0 {
+  --tw-backdrop-opacity: opacity(0);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+.backdrop-opacity-10 {
+  --tw-backdrop-opacity: opacity(0.1);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+.backdrop-opacity-100 {
+  --tw-backdrop-opacity: opacity(1);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+.backdrop-opacity-15 {
+  --tw-backdrop-opacity: opacity(0.15);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+.backdrop-opacity-20 {
+  --tw-backdrop-opacity: opacity(0.2);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+.backdrop-opacity-25 {
+  --tw-backdrop-opacity: opacity(0.25);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+.backdrop-opacity-30 {
+  --tw-backdrop-opacity: opacity(0.3);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+.backdrop-opacity-35 {
+  --tw-backdrop-opacity: opacity(0.35);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+.backdrop-opacity-40 {
+  --tw-backdrop-opacity: opacity(0.4);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+.backdrop-opacity-45 {
+  --tw-backdrop-opacity: opacity(0.45);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+.backdrop-opacity-5 {
+  --tw-backdrop-opacity: opacity(0.05);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+.backdrop-opacity-50 {
+  --tw-backdrop-opacity: opacity(0.5);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+.backdrop-opacity-55 {
+  --tw-backdrop-opacity: opacity(0.55);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+.backdrop-opacity-60 {
+  --tw-backdrop-opacity: opacity(0.6);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+.backdrop-opacity-65 {
+  --tw-backdrop-opacity: opacity(0.65);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+.backdrop-opacity-70 {
+  --tw-backdrop-opacity: opacity(0.7);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+.backdrop-opacity-75 {
+  --tw-backdrop-opacity: opacity(0.75);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+.backdrop-opacity-80 {
+  --tw-backdrop-opacity: opacity(0.8);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+.backdrop-opacity-85 {
+  --tw-backdrop-opacity: opacity(0.85);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+.backdrop-opacity-90 {
+  --tw-backdrop-opacity: opacity(0.9);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+.backdrop-opacity-95 {
+  --tw-backdrop-opacity: opacity(0.95);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+/* THEME BASELINE STYLES
+------------------------------------------------------------------------------*/
+body {
+  font-size: var(--wp--preset--font-size--body-md, 16px);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--wp--preset--font-family--system-sans-serif);
+}
+
+/* THEME COMPONENTS
+------------------------------------------------------------------------------*/
+/* Base Button */
+.button, .wp-block-button.is-style-ghost .wp-block-button__link.wp-element-button, .wp-block-button.is-style-secondary .wp-block-button__link.wp-element-button, .wp-block-button.is-style-default .wp-block-button__link.wp-element-button {
+  background-color: transparent;
+  border: 2px solid var(--wp--preset--color--dark);
+  padding: 14px 16px;
+  font-size: var(--wp--preset--font-size--body-md, 16px);
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-border-radius: var(--wp--custom--border-radius--050);
+  border-radius: var(--wp--custom--border-radius--050);
+  gap: 6px;
+  font-weight: bold;
+  line-height: 100%;
+  /* Rounded Button */
+  /* Disabled */
+}
+.button.border-0, .wp-block-button.is-style-ghost .border-0.wp-block-button__link.wp-element-button, .wp-block-button.is-style-secondary .border-0.wp-block-button__link.wp-element-button, .wp-block-button.is-style-default .border-0.wp-block-button__link.wp-element-button {
+  border: 0;
+}
+.button.button--rounded, .wp-block-button.is-style-ghost .button--rounded.wp-block-button__link.wp-element-button, .wp-block-button.is-style-secondary .button--rounded.wp-block-button__link.wp-element-button, .wp-block-button.is-style-default .button--rounded.wp-block-button__link.wp-element-button {
+  -webkit-border-radius: 100px;
+  border-radius: 100px;
+  width: 48px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.button:disabled, .wp-block-button.is-style-ghost .wp-block-button__link.wp-element-button:disabled, .wp-block-button.is-style-secondary .wp-block-button__link.wp-element-button:disabled, .wp-block-button.is-style-default .wp-block-button__link.wp-element-button:disabled {
+  pointer-events: none;
+}
+
+/* -------------------------------------------------------------------------
+ * BUTTON SIZES
+ * ------------------------------------------------------------------------- */
+/* Small Button */
+.button--sm {
+  padding: 11px 12px;
+  font-size: var(--wp--preset--font-size--body-sm, 14px);
+  /* Rounded Button */
+}
+.button--sm.button--rounded {
+  width: 40px;
+}
+
+/* Large Button */
+.button--lg {
+  padding: 20px;
+  font-size: var(--wp--preset--font-size--body-lg, 20px); /* Rounded Button */
+}
+.button--lg.button--rounded {
+  width: 64px;
+}
+
+/* -------------------------------------------------------------------------
+ * BUTTON VARIANTS
+ * ------------------------------------------------------------------------- */
+/* Primary Button */
+.button--primary, .wp-block-button.is-style-default .wp-block-button__link.wp-element-button {
+  background-color: var(--wp--preset--color--dark);
+  color: var(--wp--preset--color--white);
+  /* Primary Button Reversed */
+}
+.button--primary:hover, .wp-block-button.is-style-default .wp-block-button__link.wp-element-button:hover {
+  background-color: transparent;
+  color: var(--wp--preset--color--dark);
+  text-decoration: underline;
+}
+.button--primary:focus, .wp-block-button.is-style-default .wp-block-button__link.wp-element-button:focus {
+  -webkit-box-shadow: 0px 0px 1px 2px #0997ff;
+  box-shadow: 0px 0px 1px 2px #0997ff;
+  text-decoration: underline;
+}
+.button--primary:active, .wp-block-button.is-style-default .wp-block-button__link.wp-element-button:active {
+  background-color: var(--wp--preset--color--light-030);
+  color: var(--wp--preset--color--dark);
+  border-color: var(--wp--preset--color--light-030);
+}
+.button--primary:disabled, .wp-block-button.is-style-default .wp-block-button__link.wp-element-button:disabled {
+  background-color: var(--wp--preset--color--light-020);
+  color: var(--wp--preset--color--dark-060);
+  border-color: var(--wp--preset--color--light-020);
+}
+.button--primary.button--reversed, .wp-block-button.is-style-default .button--reversed.wp-block-button__link.wp-element-button {
+  background-color: var(--wp--preset--color--white);
+  color: var(--wp--preset--color--dark);
+  border-color: var(--wp--preset--color--white);
+}
+.button--primary.button--reversed:hover, .wp-block-button.is-style-default .button--reversed.wp-block-button__link.wp-element-button:hover {
+  background-color: var(--wp--preset--color--dark);
+  color: var(--wp--preset--color--white);
+  text-decoration: underline;
+}
+.button--primary.button--reversed:active, .wp-block-button.is-style-default .button--reversed.wp-block-button__link.wp-element-button:active {
+  background-color: var(--wp--preset--color--dark-080);
+  color: var(--wp--preset--color--white);
+}
+.button--primary.button--reversed:disabled, .wp-block-button.is-style-default .button--reversed.wp-block-button__link.wp-element-button:disabled {
+  background-color: var(--wp--preset--color--dark-090);
+  color: var(--wp--preset--color--dark-060);
+  border-color: var(--wp--preset--color--dark-090);
+}
+
+/* Secondary Button */
+.button--secondary, .wp-block-button.is-style-ghost .wp-block-button__link.wp-element-button, .wp-block-button.is-style-secondary .wp-block-button__link.wp-element-button {
+  background-color: transparent;
+  color: var(--wp--preset--color--dark);
+  border-color: var(--wp--preset--color--dark);
+  /* Secondary Button Reversed */
+}
+.button--secondary:hover, .wp-block-button.is-style-ghost .wp-block-button__link.wp-element-button:hover, .wp-block-button.is-style-secondary .wp-block-button__link.wp-element-button:hover {
+  background-color: var(--wp--preset--color--dark);
+  color: var(--wp--preset--color--white);
+  text-decoration: underline;
+}
+.button--secondary:focus, .wp-block-button.is-style-ghost .wp-block-button__link.wp-element-button:focus, .wp-block-button.is-style-secondary .wp-block-button__link.wp-element-button:focus {
+  -webkit-box-shadow: 0px 0px 1px 2px #0997ff;
+  box-shadow: 0px 0px 1px 2px #0997ff;
+  text-decoration: underline;
+}
+.button--secondary:active, .wp-block-button.is-style-ghost .wp-block-button__link.wp-element-button:active, .wp-block-button.is-style-secondary .wp-block-button__link.wp-element-button:active {
+  background-color: var(--wp--preset--color--dark-090);
+  color: var(--wp--preset--color--white);
+}
+.button--secondary:disabled, .wp-block-button.is-style-ghost .wp-block-button__link.wp-element-button:disabled, .wp-block-button.is-style-secondary .wp-block-button__link.wp-element-button:disabled {
+  background-color: transparent;
+  color: var(--wp--preset--color--dark-060);
+  border-color: var(--wp--preset--color--light-030);
+}
+.button--secondary.button--reversed, .wp-block-button.is-style-ghost .button--reversed.wp-block-button__link.wp-element-button, .wp-block-button.is-style-secondary .button--reversed.wp-block-button__link.wp-element-button {
+  background-color: transparent;
+  color: var(--wp--preset--color--white);
+  border-color: var(--wp--preset--color--white);
+}
+.button--secondary.button--reversed:hover, .wp-block-button.is-style-ghost .button--reversed.wp-block-button__link.wp-element-button:hover, .wp-block-button.is-style-secondary .button--reversed.wp-block-button__link.wp-element-button:hover {
+  background-color: var(--wp--preset--color--white);
+  color: var(--wp--preset--color--dark);
+  text-decoration: underline;
+}
+.button--secondary.button--reversed:active, .wp-block-button.is-style-ghost .button--reversed.wp-block-button__link.wp-element-button:active, .wp-block-button.is-style-secondary .button--reversed.wp-block-button__link.wp-element-button:active {
+  background-color: var(--wp--preset--color--light-020);
+  border-color: var(--wp--preset--color--light-020);
+  color: var(--wp--preset--color--dark);
+}
+.button--secondary.button--reversed:disabled, .wp-block-button.is-style-ghost .button--reversed.wp-block-button__link.wp-element-button:disabled, .wp-block-button.is-style-secondary .button--reversed.wp-block-button__link.wp-element-button:disabled {
+  background-color: transparent;
+  color: var(--wp--preset--color--dark-060);
+  border-color: var(--wp--preset--color--dark-060);
+}
+
+/* Ghost Button */
+.button--ghost {
+  background-color: transparent;
+  color: var(--wp--preset--color--dark);
+  border-color: transparent;
+  /* Ghost Button Reversed */
+}
+.button--ghost:hover {
+  background-color: var(--wp--preset--color--light-020);
+  color: var(--wp--preset--color--dark);
+  text-decoration: underline;
+}
+.button--ghost:focus {
+  -webkit-box-shadow: 0px 0px 1px 2px #0997ff;
+  box-shadow: 0px 0px 1px 2px #0997ff;
+  text-decoration: underline;
+}
+.button--ghost:active {
+  background-color: var(--wp--preset--color--light-030);
+  color: var(--wp--preset--color--dark);
+}
+.button--ghost:disabled {
+  background-color: transparent;
+  color: var(--wp--preset--color--dark-060);
+  border-color: transparent;
+}
+.button--ghost.button--reversed {
+  background-color: transparent;
+  color: var(--wp--preset--color--white);
+  border-color: transparent;
+}
+.button--ghost.button--reversed:hover {
+  background-color: var(--wp--preset--color--dark-090);
+  color: var(--wp--preset--color--white);
+}
+.button--ghost.button--reversed:active {
+  background-color: var(--wp--preset--color--dark-090);
+  color: var(--wp--preset--color--white);
+}
+.button--ghost.button--reversed:disabled {
+  background-color: transparent;
+  color: var(--wp--preset--color--dark-060);
+  border-color: transparent;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+a:focus {
+  -webkit-box-shadow: var(--wp--custom--box-shadow--focus);
+  box-shadow: var(--wp--custom--box-shadow--focus);
+  text-decoration: underline;
+}
+
+p > a[target=_blank]:after {
+  display: inline-block;
+  content: "\f35d";
+  font-family: var(--fa-style-family, "Font Awesome 6 Pro");
+  font-weight: inherit;
+  margin-left: 4px;
+  font-size: 90%;
+}
+
+.wicket-breadcrumb .icon {
+  display: block;
+  margin: 0 10px;
+}
+.wicket-breadcrumb span.bold {
+  font-weight: bold;
+}
+.wicket-breadcrumb.reversed {
+  color: #fff;
+}
+.wicket-breadcrumb.reversed .icon {
+  color: #fff;
+}
+
+.social-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.social-links ul li {
+  margin: 0 10px;
+}
+.social-links ul li:first-child {
+  margin-left: 0;
+}
+.social-links ul li a {
+  color: var(--wp--preset--color--black);
+  background-color: transparent;
+  border: 2px solid transparent;
+  white-space: nowrap;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  padding: 4px 3px;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.social-links ul li a:hover {
+  background-color: #d3d4d6;
+  border: 2px solid #d3d4d6;
+}
+.social-links ul li a:focus {
+  border-color: var(--wp--preset--color--dark);
+}
+.social-links--reversed ul li a {
+  color: var(--wp--preset--color--white);
+}
+.social-links--reversed ul li a:hover {
+  background-color: #393f46;
+  border: 2px solid #393f46;
+}
+.social-links--reversed ul li a:focus {
+  border-color: var(--wp--preset--color--dark);
+}
+
+footer .menu-item > a[target=_blank]:after {
+  display: inline-block;
+  content: "\f35d";
+  font-family: var(--fa-style-family, "Font Awesome 6 Pro");
+  font-weight: inherit;
+  margin-left: 4px;
+  font-size: 90%;
+}
+
+/* BLOCKS
+------------------------------------------------------------------------------*/
+/* -------------------------------------------------------------------------
+ * CORE BUTTON BLOCK
+ * ------------------------------------------------------------------------- */
+.wp-block-buttons.wp-block-buttons-is-layout-flex {
+  gap: var(--wp--preset--spacing--150);
+}
+
+.wp-block-button {
+  /* Default (Primary) button */
+  /* Secondary button */
+  /* Ghost button */
+}
+.wp-block-button .wp-block-button__link.wp-element-button {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: var(--wp--preset--spacing--100);
+}
+.wp-block-button.is-style-default .wp-block-button__link.wp-element-button:hover img {
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
+.wp-block-button.is-style-secondary .wp-block-button__link.wp-element-button:hover img {
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
+.wp-block-button.is-style-ghost .wp-block-button__link.wp-element-button:hover img {
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
+
+p {
+  max-width: var(--wp--style--global--content-size);
+  margin-inline: auto;
+}
+p.alignfull {
+  max-width: 100%;
+}
+p a {
+  text-decoration: underline;
+}
+p a:hover {
+  text-decoration: none;
+}
+p a:focus {
+  -webkit-box-shadow: 0px 0px 1px 2px #0997ff;
+  box-shadow: 0px 0px 1px 2px #0997ff;
+  text-decoration: none;
+}
+p a:active {
+  text-decoration: underline;
+}
+
+ul {
+  max-width: var(--wp--style--global--content-size);
+  margin-inline: auto;
+}
+
+/* Setting the max-width of the content area for all blocks */
+*[class*=wp-block] {
+  max-width: var(--wp--style--global--content-size);
+  margin-inline: auto;
+}
+*[class*=wp-block].alignfull {
+  max-width: 100%;
+}
+
+/* INTEGRATIONS
+------------------------------------------------------------------------------*/
+:root {
+  --tec-color-link-accent: $primary;
+}
+
+/* THEME STRUCTURE
+------------------------------------------------------------------------------*/
+form input, form select, form textarea {
+  font-weight: 400;
+  font-family: inherit;
+  border: 1px solid var(--dark-060, #7B7F83);
+  background: var(--light-000, #FFF);
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  padding: 16px;
+}
+form input::-webkit-input-placeholder, form select::-webkit-input-placeholder, form textarea::-webkit-input-placeholder {
+  font-style: italic;
+  color: var(--light-040, #A7AAAD);
+}
+form input::-moz-placeholder, form select::-moz-placeholder, form textarea::-moz-placeholder {
+  font-style: italic;
+  color: var(--light-040, #A7AAAD);
+}
+form input::-ms-input-placeholder, form select::-ms-input-placeholder, form textarea::-ms-input-placeholder {
+  font-style: italic;
+  color: var(--light-040, #A7AAAD);
+}
+form input::placeholder, form select::placeholder, form textarea::placeholder {
+  font-style: italic;
+  color: var(--light-040, #A7AAAD);
+}
+form input:focus-visible, form select:focus-visible, form textarea:focus-visible {
+  outline: none;
+}
+form input:disabled, form select:disabled, form textarea:disabled {
+  border: 1px solid var(--light-020, #D3D4D6);
+  color: var(--light-020, #D3D4D6);
+}
+form input.error, form select.error, form textarea.error {
+  border: 1px solid var(--danger-100, #DC3545);
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><g stroke-linecap="round" stroke-width="4" stroke="%23DC3545" fill="%23DC3545"><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c-13.3 0-24 10.7-24 24V264c0 13.3 10.7 24 24 24s24-10.7 24-24V152c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/></g></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  -webkit-background-size: 15px 15px;
+  -o-background-size: 15px;
+  background-size: 15px;
+}
+form input.success, form select.success, form textarea.success {
+  border: 1px solid var(--success-100, #198754);
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><g stroke-linecap="round" stroke-width="4" stroke="%23198754" fill="%23198754"><path d="M256 32a224 224 0 1 1 0 448 224 224 0 1 1 0-448zm0 480A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM363.3 203.3L374.6 192 352 169.4l-11.3 11.3L224 297.4l-52.7-52.7L160 233.4 137.4 256l11.3 11.3 64 64L224 342.6l11.3-11.3 128-128z"/></g></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  -webkit-background-size: 15px 15px;
+  -o-background-size: 15px;
+  background-size: 15px;
+}
+form input[type=radio], form input[type=checkbox] {
+  margin: 3px;
+  accent-color: #000;
+}
+form input[type=radio]:focus, form input[type=checkbox]:focus {
+  -webkit-filter: drop-shadow(0px 0px 1px #0997FF);
+  filter: drop-shadow(0px 0px 1px #0997FF);
+}
+form input[type=radio]:disabled, form input[type=checkbox]:disabled {
+  accent-color: var(--light-020, #D3D4D6);
+}
+form input[type=radio]:disabled + label, form input[type=checkbox]:disabled + label {
+  color: var(--light-020, #D3D4D6);
+}
+form select:not([multiple]) {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M241 337c-9.4 9.4-24.6 9.4-33.9 0L47 177c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l143 143L367 143c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9L241 337z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  -webkit-background-size: 15px 15px;
+  -o-background-size: 15px;
+  background-size: 15px;
+}
+form select.error {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><g stroke-linecap="round" stroke-width="4" stroke="%23DC3545" fill="%23DC3545"><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c-13.3 0-24 10.7-24 24V264c0 13.3 10.7 24 24 24s24-10.7 24-24V152c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/></g></svg>'), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M241 337c-9.4 9.4-24.6 9.4-33.9 0L47 177c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l143 143L367 143c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9L241 337z"/></svg>');
+  background-position: right 30px center, right 10px center;
+  background-repeat: no-repeat, no-repeat;
+  -webkit-background-size: 15px, 15px;
+  -o-background-size: 15px, 15px;
+  background-size: 15px, 15px;
+}
+form select.success {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><g stroke-linecap="round" stroke-width="4" stroke="%23198754" fill="%23198754"><path d="M256 32a224 224 0 1 1 0 448 224 224 0 1 1 0-448zm0 480A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM363.3 203.3L374.6 192 352 169.4l-11.3 11.3L224 297.4l-52.7-52.7L160 233.4 137.4 256l11.3 11.3 64 64L224 342.6l11.3-11.3 128-128z"/></g></svg>'), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M241 337c-9.4 9.4-24.6 9.4-33.9 0L47 177c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l143 143L367 143c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9L241 337z"/></svg>');
+  background-position: right 30px center, right 10px center;
+  background-repeat: no-repeat, no-repeat;
+  -webkit-background-size: 15px, 15px;
+  -o-background-size: 15px, 15px;
+  background-size: 15px, 15px;
+}
+form label {
+  font-size: 16px;
+  font-weight: 700;
+  font-family: inherit;
+  margin-bottom: 2px;
+}
+form label.required:after {
+  content: "*";
+  color: var(--danger-100, #DC3545);
+}
+form label.forCheckOrRadio {
+  font-weight: 400;
+}
+form .wicket-form-help-text, form p.wicket-form-help-text {
+  margin: 5px 0px 0px;
+  font-size: 14px;
+  color: var(--dark-070, #656A6F);
+}
+form .wicket-form-help-text.forCheckOrRadio, form p.wicket-form-help-text.forCheckOrRadio {
+  margin: 0px 20px 0px;
+}
+form .wicket-form-help-text.error, form p.wicket-form-help-text.error {
+  color: var(--danger-100, #DC3545);
+}
+form .wicket-form-help-text.hidden, form p.wicket-form-help-text.hidden {
+  display: none;
+}
+form.wicket-form {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+form.wicket-form .wicket-form-field-wrapper {
+  margin-bottom: 30px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+@media (min-width: 1024px) {
+  .lg\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .lg\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .lg\:grid-cols-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+  .lg\:grid-cols-6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+/*# sourceMappingURL=../../maps/wicket.css.map */

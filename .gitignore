@@ -1,0 +1,8 @@
+.vagrant
+node_modules
+.DS_Store
+*Zone.Identifier
+.idea
+.env
+*.log
+debug.log
