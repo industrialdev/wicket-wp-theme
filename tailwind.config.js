@@ -158,7 +158,7 @@ const lineHeight = customThemeJsonSettings['line-height']
  */
 
 module.exports = {
-  content: ['./src/web/app/themes/wicket/**/*.{php,js}'],
+  content: ['./src/web/app/themes/wicket-wp-theme/**/*.{php,js}'],
   theme: {
     extend: {
       colors: colors,
