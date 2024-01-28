@@ -873,6 +873,9 @@ video {
 .h-full {
   height: 100%;
 }
+.max-h-8 {
+  max-height: 2rem;
+}
 .w-1\/4 {
   width: 25%;
 }
@@ -3321,6 +3324,9 @@ video {
 .text-\[24px\] {
   font-size: 24px;
 }
+.text-\[32px\] {
+  font-size: 32px;
+}
 .text-body-lg {
   font-size: 20px;
 }
@@ -3335,6 +3341,9 @@ video {
 }
 .text-heading-md {
   font-size: clamp(1.5rem, 2vw + 1rem, 1.75rem);
+}
+.text-heading-sm {
+  font-size: clamp(1.25rem, 1vw + 1rem, 1.5rem);
 }
 .text-heading-xs {
   font-size: clamp(1.125rem, 1vw + 1rem, 1.25rem);
@@ -5092,6 +5101,9 @@ form.wicket-form .wicket-form-field-wrapper {
     -webkit-flex-basis: 300px;
     -ms-flex-preferred-size: 300px;
     flex-basis: 300px;
+  }
+  .lg\:grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
   .lg\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
