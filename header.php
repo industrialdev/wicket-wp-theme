@@ -171,7 +171,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
             </button>
         
             <!-- Logo -->
-            <a href="/"><img src="<?php echo $logo_url; ?>" class="w-60" /></a>
+            <a href="/" class="w-60"><img src="<?php echo $logo_url; ?>" /></a>
 
             <!-- Right panel -->
             <div 
