@@ -734,6 +734,9 @@ video {
 .ml-4 {
   margin-left: 1rem;
 }
+.ml-auto {
+  margin-left: auto;
+}
 .mr-16 {
   margin-right: 4rem;
 }
@@ -876,6 +879,9 @@ video {
 .h-full {
   height: 100%;
 }
+.max-h-6 {
+  max-height: 1.5rem;
+}
 .max-h-8 {
   max-height: 2rem;
 }
@@ -887,6 +893,9 @@ video {
 }
 .w-40 {
   width: 10rem;
+}
+.w-6 {
+  width: 1.5rem;
 }
 .w-60 {
   width: 15rem;
@@ -902,6 +911,9 @@ video {
 }
 .w-full {
   width: 100%;
+}
+.min-w-36 {
+  min-width: 9rem;
 }
 .flex-1 {
   -webkit-box-flex: 1;

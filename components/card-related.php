@@ -16,7 +16,7 @@ $document       = $args['document'];
 $display_text   = $args['display_text'];
 $icon           = $args['icon'];
 $layout_style   = $args['layout_style'];
-$classes[]      = 'p-4 bg-white border border-light-020 flex gap-4 items-start';
+$classes[]      = 'p-4 bg-white border border-light-020 flex gap-4';
 $button_link    = '';
 $button_label   = '';
 $button_icon    = '';
@@ -26,12 +26,12 @@ $icon_id        = $icon['id'] ?? '';
 
 // Case: Layout style is list
 if ( $layout_style === 'list' ) {
-	$classes[] = 'flex-row';
+	$classes[] = 'flex-row items-center';
 }
 
 // Case: Layout style is card
 if ( $layout_style === 'card' ) {
-	$classes[] = 'flex-col';
+	$classes[] = 'flex-col items-start';
 }
 
 // Case: Content type is document
@@ -40,7 +40,7 @@ if ( $content_type === 'document' && $document ) {
 	$button_link      = $document['url'];
 	$button_label     = __( 'Download', 'wicket' );
 	$button_icon      = 'fa-solid fa-arrow-down-to-bracket';
-	$button_classes[] = 'w-full justify-center';
+	$button_classes[] = $layout_style === 'card' ? 'w-full justify-center' : 'ml-auto min-w-36';
 }
 
 // Case: Content type is link
@@ -50,7 +50,7 @@ if ( $content_type === 'link' && $link ) {
 	$button_link      = $link['url'];
 	$button_label     = $link['title'];
 	$button_icon      = $link_target === '_blank' ? 'fa-regular fa-external-link' : 'fa-solid fa-arrow-right';
-	$button_classes[] = 'w-full justify-center';
+	$button_classes[] = $layout_style === 'card' ? 'w-full justify-center' : 'ml-auto min-w-36';
 }
 ?>
 
@@ -58,12 +58,17 @@ if ( $content_type === 'link' && $link ) {
 	<?php if ( $icon_id ) {
 		get_component( 'image', [ 
 			'id'      => $icon_id,
-			'classes' => [ 'max-h-8' ],
+			'classes' => [ $layout_style === 'card' ? 'max-h-8' : 'max-h-6' ],
 		] );
 	} else {
 		get_component( 'icon', [ 
 			'icon'    => $icon,
-			'classes' => [ 'text-[32px]', 'leading-none', 'inline-flex' ],
+			'classes' => [ 
+				$layout_style === 'card' ? 'text-[32px]' : 'text-[24px]',
+				$layout_style === 'list' ? 'w-6' : '',
+				'leading-none',
+				'inline-flex',
+			],
 		] );
 	} ?>
 
