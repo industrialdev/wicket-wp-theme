@@ -26,7 +26,7 @@ $classes[] = '@container';
 	<?php if( !empty( $icons ) ): ?>
 		<div class="flex flex-wrap">
 		<?php foreach( $icons as $icon ): ?>
-			<div class="w-1/3 mb-2 p-2">
+			<div class="w-full md:w-1/2 lg:w-1/3 mb-2 p-2">
 				<a class="rounded-100 bg-white flex items-center p-2 <?php if( $use_drop_shadows ) {echo 'shadow-lg';} ?>" href="<?php echo $icon['icon_link_url']; ?>">	
 					<?php if( !$use_fa_codes ): ?>	
 						<img class="mr-3" src="<?php echo $icon['icon_grid_image']['url']; ?>" />
