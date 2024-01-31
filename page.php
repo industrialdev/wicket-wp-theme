@@ -11,7 +11,7 @@
 			echo '</div>';
 		}
 		?>
-		<main>
+		<main class="container">
 			<?php the_content(); ?>
 		</main>
 

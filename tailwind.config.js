@@ -178,6 +178,9 @@ module.exports = {
     letterSpacing: letterSpacing,
   },
   plugins: [require('@tailwindcss/container-queries')],
+  corePlugins: {
+    preflight: false,
+  },
   safelist: [
     'lg:grid-cols-6',
     'lg:grid-cols-5',
