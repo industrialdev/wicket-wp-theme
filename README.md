@@ -1,6 +1,6 @@
 # Wicket WordPress Theme
 
-## Dev Environment Setup Notess
+## Dev Environment Setup Notes
 * Clone repo
 * Run `yarn` to install node dependencies
 * Run `yarn gulp` (or just `gulp` if you have it installed globally on your system) to freshly build the scripts and styles, and kickoff the 'watch' command while you make frontend file changes
