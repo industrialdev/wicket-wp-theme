@@ -46,9 +46,14 @@ function wicket_touchpoint_write_attendee_rsvp($attendee_id, $event_id, $action)
   $client = wicket_api_client();
   $attendee = tribe_tickets_get_attendees($attendee_id)[0];
 
+  // NOTE! The attendee meta fields must be setup in order for this to work with multiple rsvp's at once.
+  // It only provides the 'holder email' and 'holder name' for the first one. The other guests only are shown the meta fields, therefore first name, last name, and email must be configured
+  // see here https://www.loom.com/share/1a080095f9f047668b05e39af04d8ae3
+
   // check if they exist in Wicket, if they do use that as $person_id, if they do not exist in Wicket, create account and use that as $person_id
-  $search_emails_result = $client->get('/people?filter[emails_address_eq]=' . urlencode($attendee['holder_email']) . '&filter[emails_primary_eq]=true');
+  $search_emails_result = $client->get('/people?filter[emails_address_eq]=' . urlencode($attendee['attendee_meta']['email']['value']) . '&filter[emails_primary_eq]=true');
   file_put_contents('php://stdout', '------------------FOUND PERSON--------------------------'.print_r($search_emails_result, true));
+  file_put_contents('php://stdout', '------------------ATTENDEE--------------------------'.print_r($attendee, true));
 
   if ($search_emails_result['meta']['page']['total_items'] != 0) {
     // we have someone, there will only be one result since primary emails are unique in wicket
@@ -56,11 +61,11 @@ function wicket_touchpoint_write_attendee_rsvp($attendee_id, $event_id, $action)
   } else {
     // person does not exists, so create a new person
     $new_person = wicket_create_person(
-      $attendee['holder_name'],
+      $attendee['attendee_meta']['first-name']['value'],
       $attendee['attendee_meta']['last-name']['value'],
-      $attendee['holder_email']
+      $attendee['attendee_meta']['email']['value']
     );
-  
+
     if ($new_person) {
       file_put_contents('php://stdout', '------------------CREATED NEW PERSON--------------------------'.print_r($new_person, true));
       $person_uuid  = $new_person['data']['attributes']['uuid'];
@@ -100,15 +105,17 @@ function wicket_touchpoint_write_attendee_rsvp($attendee_id, $event_id, $action)
 
   file_put_contents('php://stdout', '------------------TOUCHPOINT SERVICE ID--------------------------'.print_r(get_create_touchpoint_service_id('Events Calendar', 'WP Plugin TEC'), true));
   file_put_contents('php://stdout', '------------------TOUCHPOINT DATA--------------------------'.print_r($params, true));
-
+  
   write_touchpoint($params, get_create_touchpoint_service_id('Events Calendar', 'WP Plugin TEC'));
 }
 
 // https://docs.theeventscalendar.com/reference/files/src/tribe/repositories/attendee/rsvp.php
-add_action('event_tickets_rsvp_attendee_created', 'wicket_tec_rsvp_attendee_touchpoint', 10, 4);
+// "event_tickets_rsvp_attendee_created" doesn't contain the attendee meta in time, hence we use "event_tickets_rsvp_ticket_created" instead
+add_action('event_tickets_rsvp_ticket_created', 'wicket_tec_rsvp_attendee_touchpoint', 100, 4);
 
 function wicket_tec_rsvp_attendee_touchpoint($attendee_id, $event_id, $order_id, $product_id) {
   wicket_touchpoint_write_attendee_rsvp($attendee_id, $event_id, 'RSVP to event');
 }
+
 
 
