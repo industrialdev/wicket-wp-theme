@@ -25,7 +25,7 @@ $classes[] = '@container w-full';
 
 <div 
   class="<?php echo implode( ' ', $classes ); ?>"
-  <?php //x-data='{ openAccordion: 999 }' ?>
+  <?php if(!is_admin()) { echo "x-data='{ openAccordion: 999 }'"; } ?>
   >
 
   <?php 
