@@ -76,10 +76,8 @@ h3,
 h4,
 h5,
 h6 {
-  &:not(.wp-block-heading) {
-    font-size: inherit;
-    font-weight: inherit;
-  }
+  font-size: inherit;
+  font-weight: inherit;
 }
 /*
 Reset links to optimize for opt-in styling instead of opt-out.
@@ -266,11 +264,9 @@ legend {
 ol,
 ul,
 menu {
-  &:not(.wp-block-list) {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 /*
 Reset default styling for dialogs.
