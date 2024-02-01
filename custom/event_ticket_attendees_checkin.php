@@ -2,6 +2,11 @@
 
 function wicket_touchpoint_get_event_data_from_ticket($ticket_id) {
   $event_id = get_post_meta($ticket_id, '_tribe_wooticket_for_event')[0];
+  // set this incase the above isn't set in certain circumstances (should be the same though)
+  $alternate_event_id = get_post_meta($ticket_id, '_tribe_rsvp_for_event')[0];
+
+  $event_id = $event_id ??  $alternate_event_id;
+  
   $start_date = tribe_get_start_date($event_id, false, 'Y-m-d g:i A T');
   $end_date = tribe_get_end_date($event_id, false, 'Y-m-d g:i A T');
   $is_virtual = get_post_meta($event_id, '_tribe_events_is_virtual');
@@ -85,12 +90,12 @@ function wicket_touchpoint_write_attendee($attendee_id, $action) {
   $attendee_details .= 'Event Format: ' . $event_data['format'] . '<br />';
   $attendee_details .= 'Event Type: ' . $event_data['event_type'] . '<br />';
   // $attendee_details .= 'Woo Order ID: ' . $order_id . '<br />';
-  $line_item =  reset(array_filter($order->get_items(), function($item) use ($ticket_id) {
-    return $item->get_product_id() == $ticket_id;
-  }));
-  $total_line_cost = $line_item->get_total() + $line_item->get_total_tax();
-  $quantity = $line_item->get_quantity();
-  $item_cost = round($total_line_cost / $quantity, 2);
+  // $line_item =  reset(array_filter($order->get_items(), function($item) use ($ticket_id) {
+  //   return $item->get_product_id() == $ticket_id;
+  // }));
+  // $total_line_cost = $line_item->get_total() + $line_item->get_total_tax();
+  // $quantity = $line_item->get_quantity();
+  // $item_cost = round($total_line_cost / $quantity, 2);
   // $attendee_details .= 'Ticket Price: ' . $item_cost . '<br />'; 
 
   $params = [
@@ -103,7 +108,7 @@ function wicket_touchpoint_write_attendee($attendee_id, $action) {
       'timezone' => $event_data['timezone'],
       'start_date' => $event_data['start'],
       'event_title' => $event_data['event_name'],
-      'order_date' => $order->get_date_created(),
+      // 'order_date' => $order->get_date_created(),
       'event_id' => $event_data['event_id'],
       //'location' => $event_data['location'],
       //'description' => $event_data['description'],
@@ -117,6 +122,7 @@ function wicket_touchpoint_write_attendee($attendee_id, $action) {
 }
 
 
+add_action('rsvp_checkin', 'wicket_tec_checkin_touchpoint', 10, 2);
 add_action('event_tickets_checkin', 'wicket_tec_checkin_touchpoint', 10, 2);
 add_action('eddtickets_checkin', 'wicket_tec_checkin_touchpoint', 10, 2);
 add_action('wootickets_checkin', 'wicket_tec_checkin_touchpoint', 10, 2);
