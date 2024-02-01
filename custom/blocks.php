@@ -73,3 +73,24 @@ function get_blocks() {
 	$blocks = array_values( array_diff( $blocks, array( '..', '.', '.DS_Store', '_base-block' ) ) );
 	return $blocks;
 }
+
+/**
+ * Adjusting Core Blocks
+ */
+
+function wicket_core_block_wrappers( $block_content, $block ) {
+	if ( $block['blockName'] === 'core/paragraph' ) {
+		$content = '<div class="wp-block-paragraph">';
+		$content .= $block_content;
+		$content .= '</div>';
+		return $content;
+	} elseif ( $block['blockName'] === 'core/list' ) {
+		$content = '<div class="wp-block-list">';
+		$content .= $block_content;
+		$content .= '</div>';
+		return $content;
+	}
+	return $block_content;
+}
+
+add_filter( 'render_block', 'wicket_core_block_wrappers', 10, 2 );
