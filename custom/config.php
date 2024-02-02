@@ -143,9 +143,9 @@ function wicket_gutenberg_scripts() {
 	}
 
 	wp_enqueue_script( 'theme-editor',
-		get_theme_file_uri( '/assets/scripts/editor.js' ),
+		get_theme_file_uri( '/assets/scripts/wp-admin/editor.js' ),
 		$array_dependencies,
-		filemtime( get_theme_file_path( '/assets/scripts/editor.js' ) ),
+		filemtime( get_theme_file_path( '/assets/scripts/wp-admin/editor.js' ) ),
 		TRUE
 	);
 }

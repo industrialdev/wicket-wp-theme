@@ -77,8 +77,8 @@ const generateColorVarieties = (color, name) => {
 
   // Handle separately if this is the "white" colour
   if (name === 'white') {
-    returnObject['DEFAULT'] = color;
-    return returnObject;
+    returnObject['DEFAULT'] = color
+    return returnObject
   }
 
   // Generate the -000 through -100 varieties (lighter varients)
@@ -110,7 +110,7 @@ const generateColorVarieties = (color, name) => {
 const colors = theme.settings.color.palette.reduce((accumulator, item) => {
   accumulator[item.slug] = generateColorVarieties(item.color, item.slug)
 
-  console.log(accumulator);
+  console.log(accumulator)
   return accumulator
 }, {})
 
