@@ -15,14 +15,14 @@ function init( $block = [] ) {
 
 	$items                 = get_field( 'accordion_items' );
 	$icon_type             = get_field( 'icon_type' );
-	$spacing_between_items = get_field('spacing_between_items');
+	$accordion_type = get_field('accordion_type');
 	$separate_title_body   = get_field('separate_title_body');
 
 	echo '<div ' . $attrs . '>';
 	get_component( 'accordion', [ 
 		'items'                 => $items,
 		'icon-type'             => $icon_type,
-		'spacing-between-items' => $spacing_between_items,
+		'accordion-type'        => $accordion_type,
 		'separate-title-body'   => $separate_title_body
 	] );
 	echo '</div>';
