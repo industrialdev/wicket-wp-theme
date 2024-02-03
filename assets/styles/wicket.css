@@ -811,6 +811,9 @@ video {
 .mt-3 {
   margin-top: 0.75rem;
 }
+.mt-4 {
+  margin-top: 1rem;
+}
 .mt-8 {
   margin-top: 2rem;
 }
@@ -2051,6 +2054,9 @@ video {
 .border-b {
   border-bottom-width: 1px;
 }
+.border-b-4 {
+  border-bottom-width: 4px;
+}
 .border-e {
   border-inline-end-width: 1px;
 }
@@ -2115,9 +2121,13 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(140 140 140 / var(--tw-border-opacity));
 }
-.border-tertiary-100 {
+.border-light-100 {
   --tw-border-opacity: 1;
-  border-color: rgb(52 127 248 / var(--tw-border-opacity));
+  border-color: rgb(128 128 128 / var(--tw-border-opacity));
+}
+.border-light-120 {
+  --tw-border-opacity: 1;
+  border-color: rgb(102 102 102 / var(--tw-border-opacity));
 }
 .border-white {
   --tw-border-opacity: 1;
@@ -3311,6 +3321,10 @@ video {
 .p-8 {
   padding: 2rem;
 }
+.px-12 {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -3338,6 +3352,10 @@ video {
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+}
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 .py-5 {
   padding-top: 1.25rem;
@@ -3421,9 +3439,6 @@ video {
 }
 .text-body-sm {
   font-size: 14px;
-}
-.text-heading-2xl {
-  font-size: clamp(2.25rem, 3vw + 1rem, 2.75rem);
 }
 .text-heading-3xl {
   font-size: clamp(2.5rem, 3vw + 1rem, 3.25rem);
@@ -3541,10 +3556,6 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 .text-primary-100 {
-  --tw-text-opacity: 1;
-  color: rgb(52 127 248 / var(--tw-text-opacity));
-}
-.text-tertiary-100 {
   --tw-text-opacity: 1;
   color: rgb(52 127 248 / var(--tw-text-opacity));
 }
@@ -4432,6 +4443,10 @@ h6 {
 
 /* THEME COMPONENTS
 ------------------------------------------------------------------------------*/
+.accordion-item.border-b-4 {
+  border-bottom-width: 4px !important;
+}
+
 /* Base Button */
 .button, .wp-block-button.is-style-ghost .wp-block-button__link.wp-element-button, .wp-block-button.is-style-secondary .wp-block-button__link.wp-element-button, .wp-block-button.is-style-default .wp-block-button__link.wp-element-button {
   background-color: transparent;
@@ -4841,6 +4856,7 @@ p a:active {
 *[class*=wp-block] {
   max-width: var(--wp--style--global--content-size);
   margin-inline: auto;
+  margin-bottom: 10px;
 }
 *[class*=wp-block].alignfull {
   max-width: 100%;
