@@ -41,6 +41,7 @@ if ( $content_type === 'document' && $document ) {
 	$button_label     = __( 'Download', 'wicket' );
 	$button_icon      = 'fa-solid fa-arrow-down-to-bracket';
 	$button_classes[] = $layout_style === 'card' ? 'w-full justify-center' : 'ml-auto min-w-36';
+	$button_target    = '_blank';
 }
 
 // Case: Content type is link
@@ -51,6 +52,7 @@ if ( $content_type === 'link' && $link ) {
 	$button_label     = $link['title'];
 	$button_icon      = $link_target === '_blank' ? 'fa-regular fa-external-link' : 'fa-solid fa-arrow-right';
 	$button_classes[] = $layout_style === 'card' ? 'w-full justify-center' : 'ml-auto min-w-36';
+	$button_target    = $link_target;
 }
 ?>
 
@@ -87,6 +89,7 @@ if ( $content_type === 'link' && $link ) {
 			'link'        => $button_link,
 			'link_target' => $button_target,
 			'classes'     => $button_classes,
+			'atts'        => [ $content_type === 'document' ? 'download' : '' ],
 		] );
 	} ?>
 </div>
