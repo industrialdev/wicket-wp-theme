@@ -16,6 +16,14 @@ function get_component( $slug, array $args = array(), $output = true ) {
 	}
 }
 
+function component_exists( $slug ) {
+	$template_file = locate_template( "components/{$slug}.php", false, false );
+	if ( file_exists( $template_file ) ) {
+		return true;
+	}
+	return false;
+}
+
 // Debug log helper function that accepts strings, objects, and arrays.
 // Has an option to print to screen with the value wrapped in <pre> tags.
 // Usage example: write_log( 'The variable value is: ' . $myVariable );

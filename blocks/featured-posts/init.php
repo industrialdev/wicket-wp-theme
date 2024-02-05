@@ -19,12 +19,25 @@ function init( $block = [] ) {
 	$hide_content_type   = get_field( 'featured_posts_hide_content_type' );
 	$style               = get_field( 'featured_posts_style' );
 	$column_count        = get_field( 'featured_posts_column_count' );
+	$placeholder_styles = '';
+	if( is_admin() ){ 
+		$placeholder_styles = 'style="min-height: 40px;border: 1px solid var(--wp--preset--color--light);"';
+	}
 
 	if ( ! $posts ) {
+		$output = '<div ' . $placeholder_styles . '>';
+		if( is_admin() ) {
+			$output .= "<p>" . __('Use the Block controls on the right to add featured posts.', 'wicket') . "</p>";
+		}
+		$output .= '</div>';
+		echo $output;
 		return;
 	}
 
-	echo '<div ' . $attrs . '>';
+	echo '<div ' . $attrs . ' ' . $placeholder_styles . '>';
+	if( is_admin() && empty($posts) ) {
+		echo "<p>" . __('Use the Block controls on the right to add featured posts.', 'wicket') . "</p>";
+	}
 	get_component( 'featured-posts', [ 
 		'title'               => $title,
 		'posts'               => $posts,
