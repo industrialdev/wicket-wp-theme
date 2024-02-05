@@ -12,7 +12,6 @@ require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/curl_timeout.php';
 require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/private_content_redirect.php';
 require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/woocommerce.php';
 require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/switch_to_user_wicket_sync.php';
-require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/mailtrap.php';
 require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/helpers.php';
 require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/woocommerce_max_webhook_delivery_failures.php';
 require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/wpml_translator_override.php';
