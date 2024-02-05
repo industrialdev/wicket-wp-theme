@@ -26,8 +26,18 @@ function init( $block = [] ) {
 		'grid-cols-1',
 		'items-start',
 	];
+	$placeholder_styles = '';
+	if( is_admin() ){ 
+		$placeholder_styles = 'style="min-height: 40px;border: 1px solid var(--wp--preset--color--light);"';
+	}
 
 	if ( ! $posts ) {
+		$output = '<div ' . $placeholder_styles . '>';
+		if( is_admin() ) {
+			$output .= "<p>" . __('Use the Block controls on the right to add manually related content.', 'wicket') . "</p>";
+		}
+		$output .= '</div>';
+		echo $output;
 		return;
 	}
 
@@ -39,7 +49,14 @@ function init( $block = [] ) {
 		$posts_wrapper_classes[] = 'lg:grid-cols-1';
 	}
 
-	echo '<div ' . $attrs . '>';
+	
+
+
+	echo '<div ' . $attrs . ' ' . $placeholder_styles . '>';
+
+	if( is_admin() && empty($posts) && empty($title) ) {
+		echo "<p>" . __('Use the Block controls on the right to add manually related content.', 'wicket') . "</p>";
+	}
 
 	if ( $title ) {
 		echo '<div class="text-heading-sm font-bold mb-3">' . $title . '</div>';
