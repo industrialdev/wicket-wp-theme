@@ -70,3 +70,63 @@ function wicket_generate_structured_menu( $wp_nav_items ) {
 
 	return $nav_items_structured;
 }
+
+// Takes in a post_id and finds all ancestor/parent pages (up to 5 levels up), and
+// then finds all child pages. Returns them all in an array and notes what level 
+// the current post_id is located in
+function wicket_get_all_parent_and_child_pages( $post_id ) {
+	$ancestry_array = [ 
+		'levels_top_to_bottom' => []
+	];
+
+	// =====================
+	// Get the parents
+	// =====================
+	$post_ancestors = get_post_ancestors($post_id);
+	$post_ancestors = array_reverse( $post_ancestors );
+	$ancestry_array['levels_top_to_bottom'] = $post_ancestors;
+	$ancestry_array['levels_top_to_bottom'][] = $post_id;
+
+	// =====================
+	// Get the children
+	// =====================
+	$levels_down_to_traverse = 5;
+	$current_parent_id = $post_id;
+	for( $i = 0; $i < $levels_down_to_traverse; $i++ ) {
+		$post_children = get_children( [
+			'post_status' => 'published',
+			'post_parent' => $current_parent_id
+		], 'ARRAY_N' );
+		if( !empty( $post_children ) ) {
+			$children_ids_to_add = [];
+			foreach( $post_children as $child_id => $child_data ) {
+				$children_ids_to_add[] = $child_id;
+				// Make the $current_parent_id the last child found in this loop
+				// TODO: Add loop that will try each sibling to see which one has children
+				$current_parent_id = $child_id;
+			}
+			// if( count( $children_ids_to_add ) == 1 ) {
+			// 	$ancestry_array['levels_top_to_bottom'][] = $children_ids_to_add[0];
+			// } else {
+			// 	$ancestry_array['levels_top_to_bottom'][] = $children_ids_to_add;
+			// }
+			// Only add the first child found as we'll go back over to grab siblings
+			$ancestry_array['levels_top_to_bottom'][] = $children_ids_to_add[0];
+		}
+	}
+
+	// ================================================
+	// Note the current page's pos. in the hierarchy
+	// ================================================
+	$ancestry_array['curr_page_level_from_zero'] = array_search( $post_id, $ancestry_array['levels_top_to_bottom'] );
+	$ancestry_array['num_levels'] = count( $ancestry_array['levels_top_to_bottom'] );
+
+	// ================================================
+	// Get the siblings (except for the topmost parent)
+	// ================================================
+	$ancestry_array['levels_top_to_bottom_with_siblings'] = '...';
+
+	
+
+	wicket_write_log($ancestry_array, true);
+}
