@@ -1,0 +1,105 @@
+{
+    "key": "group_65c22435eed0e",
+    "title": "Block - Filterable Posts",
+    "fields": [
+        {
+            "key": "field_65c2245631b3e",
+            "label": "Post Type",
+            "name": "listing_post_type",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Select the post types you would like to appear in this listing.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "choices": {
+                "0": "-- Select Post Type --",
+                "post": "Posts",
+                "page": "Pages",
+                "attachment": "Media",
+                "listing": "Listings",
+                "product": "Products",
+                "wppcp_group": "Groups",
+                "wppcp_fproduct_tabs": "Woo Product Tabs"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_65c22735c5864",
+            "label": "Posts Per Page",
+            "name": "listing_posts_per_page",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "How many posts you would like to display per page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_65c22779c5865",
+            "label": "Taxonomy Filters",
+            "name": "listing_taxonomy_filters",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "Select the taxonomies you would like to use as filters on the page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "wicket\/listing"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "acfml_field_group_mode": "translation",
+    "modified": 1707222963
+}
