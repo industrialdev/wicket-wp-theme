@@ -667,11 +667,17 @@ video {
 .left-1\/2 {
   left: 50%;
 }
+.left-4 {
+  left: 1rem;
+}
 .right-0 {
   right: 0px;
 }
 .top-0 {
   top: 0px;
+}
+.top-1\/2 {
+  top: 50%;
 }
 .top-\[-16px\] {
   top: -16px;
@@ -3371,6 +3377,9 @@ video {
 .pb-3 {
   padding-bottom: 0.75rem;
 }
+.pl-10 {
+  padding-left: 2.5rem;
+}
 .pl-2 {
   padding-left: 0.5rem;
 }
@@ -4870,40 +4879,56 @@ p a:active {
 
 /* THEME STRUCTURE
 ------------------------------------------------------------------------------*/
-form input, form select, form textarea {
+form input,
+form select,
+form textarea {
   font-weight: 400;
   font-family: inherit;
-  border: 1px solid var(--dark-060, #7B7F83);
-  background: var(--light-000, #FFF);
+  border: 1px solid var(--dark-060, #7b7f83);
+  background: var(--light-000, #fff);
   -webkit-border-radius: 4px;
   border-radius: 4px;
-  padding: 16px;
+  padding: 11px 16px;
 }
-form input::-webkit-input-placeholder, form select::-webkit-input-placeholder, form textarea::-webkit-input-placeholder {
+form input::-webkit-input-placeholder,
+form select::-webkit-input-placeholder,
+form textarea::-webkit-input-placeholder {
   font-style: italic;
-  color: var(--light-040, #A7AAAD);
+  color: var(--light-040, #a7aaad);
 }
-form input::-moz-placeholder, form select::-moz-placeholder, form textarea::-moz-placeholder {
+form input::-moz-placeholder,
+form select::-moz-placeholder,
+form textarea::-moz-placeholder {
   font-style: italic;
-  color: var(--light-040, #A7AAAD);
+  color: var(--light-040, #a7aaad);
 }
-form input::-ms-input-placeholder, form select::-ms-input-placeholder, form textarea::-ms-input-placeholder {
+form input::-ms-input-placeholder,
+form select::-ms-input-placeholder,
+form textarea::-ms-input-placeholder {
   font-style: italic;
-  color: var(--light-040, #A7AAAD);
+  color: var(--light-040, #a7aaad);
 }
-form input::placeholder, form select::placeholder, form textarea::placeholder {
+form input::placeholder,
+form select::placeholder,
+form textarea::placeholder {
   font-style: italic;
-  color: var(--light-040, #A7AAAD);
+  color: var(--light-040, #a7aaad);
 }
-form input:focus-visible, form select:focus-visible, form textarea:focus-visible {
+form input:focus-visible,
+form select:focus-visible,
+form textarea:focus-visible {
   outline: none;
 }
-form input:disabled, form select:disabled, form textarea:disabled {
-  border: 1px solid var(--light-020, #D3D4D6);
-  color: var(--light-020, #D3D4D6);
+form input:disabled,
+form select:disabled,
+form textarea:disabled {
+  border: 1px solid var(--light-020, #d3d4d6);
+  color: var(--light-020, #d3d4d6);
 }
-form input.error, form select.error, form textarea.error {
-  border: 1px solid var(--danger-100, #DC3545);
+form input.error,
+form select.error,
+form textarea.error {
+  border: 1px solid var(--danger-100, #dc3545);
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><g stroke-linecap="round" stroke-width="4" stroke="%23DC3545" fill="%23DC3545"><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c-13.3 0-24 10.7-24 24V264c0 13.3 10.7 24 24 24s24-10.7 24-24V152c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/></g></svg>');
   background-repeat: no-repeat;
   background-position: right 10px center;
@@ -4911,7 +4936,9 @@ form input.error, form select.error, form textarea.error {
   -o-background-size: 15px;
   background-size: 15px;
 }
-form input.success, form select.success, form textarea.success {
+form input.success,
+form select.success,
+form textarea.success {
   border: 1px solid var(--success-100, #198754);
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><g stroke-linecap="round" stroke-width="4" stroke="%23198754" fill="%23198754"><path d="M256 32a224 224 0 1 1 0 448 224 224 0 1 1 0-448zm0 480A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM363.3 203.3L374.6 192 352 169.4l-11.3 11.3L224 297.4l-52.7-52.7L160 233.4 137.4 256l11.3 11.3 64 64L224 342.6l11.3-11.3 128-128z"/></g></svg>');
   background-repeat: no-repeat;
@@ -4925,14 +4952,14 @@ form input[type=radio], form input[type=checkbox] {
   accent-color: #000;
 }
 form input[type=radio]:focus, form input[type=checkbox]:focus {
-  -webkit-filter: drop-shadow(0px 0px 1px #0997FF);
-  filter: drop-shadow(0px 0px 1px #0997FF);
+  -webkit-filter: drop-shadow(0px 0px 1px #0997ff);
+  filter: drop-shadow(0px 0px 1px #0997ff);
 }
 form input[type=radio]:disabled, form input[type=checkbox]:disabled {
-  accent-color: var(--light-020, #D3D4D6);
+  accent-color: var(--light-020, #d3d4d6);
 }
 form input[type=radio]:disabled + label, form input[type=checkbox]:disabled + label {
-  color: var(--light-020, #D3D4D6);
+  color: var(--light-020, #d3d4d6);
 }
 form select:not([multiple]) {
   -webkit-appearance: none;
@@ -4969,23 +4996,27 @@ form label {
 }
 form label.required:after {
   content: "*";
-  color: var(--danger-100, #DC3545);
+  color: var(--danger-100, #dc3545);
 }
 form label.forCheckOrRadio {
   font-weight: 400;
 }
-form .wicket-form-help-text, form p.wicket-form-help-text {
+form .wicket-form-help-text,
+form p.wicket-form-help-text {
   margin: 5px 0px 0px;
   font-size: 14px;
-  color: var(--dark-070, #656A6F);
+  color: var(--dark-070, #656a6f);
 }
-form .wicket-form-help-text.forCheckOrRadio, form p.wicket-form-help-text.forCheckOrRadio {
+form .wicket-form-help-text.forCheckOrRadio,
+form p.wicket-form-help-text.forCheckOrRadio {
   margin: 0px 20px 0px;
 }
-form .wicket-form-help-text.error, form p.wicket-form-help-text.error {
-  color: var(--danger-100, #DC3545);
+form .wicket-form-help-text.error,
+form p.wicket-form-help-text.error {
+  color: var(--danger-100, #dc3545);
 }
-form .wicket-form-help-text.hidden, form p.wicket-form-help-text.hidden {
+form .wicket-form-help-text.hidden,
+form p.wicket-form-help-text.hidden {
   display: none;
 }
 form.wicket-form {
@@ -5356,6 +5387,10 @@ form.wicket-form .wicket-form-field-wrapper {
   }
   .lg\:gap-4 {
     gap: 1rem;
+  }
+  .lg\:px-0 {
+    padding-left: 0px;
+    padding-right: 0px;
   }
   .lg\:text-body-lg {
     font-size: 20px;

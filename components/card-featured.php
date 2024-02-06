@@ -47,7 +47,7 @@ if ( $image_position === 'right' ) {
 			<div class="absolute left-1/2 top-[-16px] -translate-x-1/2 -translate-y-1/2">
 				<?php get_component( 'tag', [ 
 					'label'   => __( 'Members Only', 'wicket' ),
-					'icon'    => 'fa fa-lock-alt',
+					'icon'    => 'fa-regular fa-lock',
 					'link'    => '',
 					'classes' => [ 'rounded-b-[0px]' ],
 				] ); ?>
@@ -75,6 +75,15 @@ if ( $image_position === 'right' ) {
 			<?php if ( $title ) { ?>
 				<a href="<?php echo $link ?>" class="<?php echo implode( ' ', $title_classes ) ?>">
 					<?php echo $title; ?>
+
+					<?php if ( $member_only && ( $image_position === 'left' || $image_position === 'right' ) ) { ?>
+						<?php get_component( 'tag', [ 
+							'label'   => '',
+							'icon'    => 'fa-regular fa-lock',
+							'link'    => '',
+							'classes' => [ 'text-body-sm' ],
+						] ); ?>
+					<?php } ?>
 				</a>
 			<?php } ?>
 

@@ -1,6 +1,6 @@
 {
     "key": "group_65bcc91687327",
-    "title": "Block - Post List (copy)",
+    "title": "Block - Featured Posts",
     "fields": [
         {
             "key": "field_65bcd11a9ebb3",
@@ -213,5 +213,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "translation",
-    "modified": 1706876860
+    "modified": 1707217189
 }

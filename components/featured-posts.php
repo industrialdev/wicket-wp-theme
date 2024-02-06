@@ -1,6 +1,6 @@
 <?php
 $defaults            = array(
-	'classes'             => [ 'px-4' ],
+	'classes'             => [ 'px-4', 'lg:px-0' ],
 	'title'               => __( 'Featured', 'wicket' ),
 	'hide_block_title'    => false,
 	'posts'               => [],

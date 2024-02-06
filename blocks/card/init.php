@@ -1,6 +1,6 @@
 <?php
 /**
- * Wicket Call Card block
+ * Wicket Card block
  *
  **/
 
