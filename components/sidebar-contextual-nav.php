@@ -127,7 +127,7 @@ $placeholder_styles = 'style="min-height: 40px;border: 1px solid var(--wp--prese
 
 <div 
   class="<?php echo implode( ' ', $classes ); ?>"
-  <?php if( is_admin() && empty($items) ){ echo $placeholder_styles; } ?>
+  <?php if( is_admin() && empty($accordion_items) ){ echo $placeholder_styles; } ?>
   >
 
   <h4 class="font-bold text-body-lg mb-2">
