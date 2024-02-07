@@ -1,8 +1,10 @@
 <?php
 $defaults  = array(
 	'classes'               => [],
+  'icon-type'             => 'chevrons',
 );
 $args                              = wp_parse_args( $args, $defaults );
+$icon_type                         = $args['icon-type'];
 global $post;
 $current_post_id                   = $post->ID;
 $ancestry_array                    = wicket_get_all_parent_and_child_pages($current_post_id);
@@ -135,7 +137,7 @@ $placeholder_styles = 'style="min-height: 40px;border: 1px solid var(--wp--prese
   </h4>
   <?php get_component( 'accordion', [
     'items'                => $accordion_items,
-    'icon-type'            => 'chevrons',
+    'icon-type'            => $icon_type,
     'accordion-type'       => 'list',
     'initial-open-item-id' => $accordion_id_containing_curr_page,
    ] ); ?>

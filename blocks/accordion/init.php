@@ -15,7 +15,7 @@ function init( $block = [] ) {
 
 	$items                 = get_field( 'accordion_items' );
 	$icon_type             = get_field( 'icon_type' );
-	$accordion_type = get_field('accordion_type');
+	$accordion_type 			 = get_field('accordion_type');
 	$separate_title_body   = get_field('separate_title_body');
 
 	echo '<div ' . $attrs . '>';
