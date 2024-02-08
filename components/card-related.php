@@ -1,12 +1,15 @@
 <?php
 $defaults       = array(
-	'classes'      => [],
-	'content_type' => '',
-	'link'         => [],
-	'document'     => [],
-	'display_text' => '',
-	'icon'         => '',
-	'layout_style' => '',
+	'classes'            => [],
+	'content_type'       => '',
+	'link'               => [],
+	'document'           => [],
+	'display_text'       => '',
+	'body_text'          => '', //
+	'icon_type'          => 'default', //
+	'icon'               => '',
+	'layout_style'       => '',
+	'cta_label_override' => '', //
 );
 $args           = wp_parse_args( $args, $defaults );
 $classes        = $args['classes'];
@@ -14,9 +17,12 @@ $content_type   = $args['content_type'];
 $link           = $args['link'];
 $document       = $args['document'];
 $display_text   = $args['display_text'];
+$body_text      = $args['body_text'];
+$icon_type      = $args['icon_type'];
 $icon           = $args['icon'];
 $layout_style   = $args['layout_style'];
-$classes[]      = 'p-4 bg-white border border-light-020 flex gap-4';
+$button_label_override = $args['cta_label_override'];
+$classes[]      = 'p-4 h-full bg-white border border-light-020 flex gap-4 justify-between';
 $button_link    = '';
 $button_label   = '';
 $button_icon    = '';
@@ -42,6 +48,10 @@ if ( $content_type === 'document' && $document ) {
 	$button_icon      = 'fa-solid fa-arrow-down-to-bracket';
 	$button_classes[] = $layout_style === 'card' ? 'w-full justify-center' : 'ml-auto min-w-36';
 	$button_target    = '_blank';
+	if( empty( $display_text ) ) {
+		$display_text = ucfirst( $document['title'] );
+		// note: could use $document['filename'] if preferred
+	}
 }
 
 // Case: Content type is link
@@ -74,16 +84,23 @@ if ( $content_type === 'link' && $link ) {
 		] );
 	} ?>
 
+	<div>
 	<?php if ( $display_text ) { ?>
 		<div class="text-heading-xs text-dark-100 font-bold leading-7">
 			<?php echo $display_text; ?>
 		</div>
 	<?php } ?>
+	<?php if ( $body_text ) { ?>
+		<p class="text-dark-100">
+			<?php echo $body_text; ?>
+	</p>
+	<?php } ?>
+	</div>
 
 	<?php if ( $button_link ) {
 		get_component( 'button', [ 
 			'variant'     => 'primary',
-			'label'       => $button_label,
+			'label'       => !empty($button_label_override) ? $button_label_override : $button_label,
 			'suffix_icon' => $button_icon,
 			'a_tag'       => true,
 			'link'        => $button_link,

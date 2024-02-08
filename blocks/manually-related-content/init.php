@@ -20,11 +20,14 @@ function init( $block = [] ) {
 	$posts                 = get_field( 'manually_related_content_posts' );
 	$layout_style          = get_field( 'manually_related_content_layout_style' );
 	$column_count          = get_field( 'manually_related_content_column_count' );
+	$buttons_equal_width   = get_field( 'manually_related_content_make_buttons_same_width' );
 	$posts_wrapper_classes = [ 
 		'grid',
 		'gap-3',
 		'grid-cols-1',
 		'items-start',
+		'px-4',
+		'xl:px-0'
 	];
 	$placeholder_styles = '';
 	if( is_admin() ){ 
@@ -34,7 +37,7 @@ function init( $block = [] ) {
 	if ( ! $posts ) {
 		$output = '<div ' . $placeholder_styles . '>';
 		if( is_admin() ) {
-			$output .= "<p>" . __('Use the Block controls in edit mode or on the right to add manually related content.', 'wicket') . "</p>";
+			$output .= "<p>" . __('Use the Block controls on the right to add manually related content.', 'wicket') . "</p>";
 		}
 		$output .= '</div>';
 		echo $output;
@@ -55,28 +58,37 @@ function init( $block = [] ) {
 	echo '<div ' . $attrs . ' ' . $placeholder_styles . '>';
 
 	if( is_admin() && empty($posts) && empty($title) ) {
-		echo "<p>" . __('Use the Block controls in edit mode or on the right to add manually related content.', 'wicket') . "</p>";
+		echo "<p>" . __('Use the Block controls on the right to add manually related content.', 'wicket') . "</p>";
 	}
 
 	if ( $title ) {
 		echo '<div class="text-heading-sm font-bold mb-3">' . $title . '</div>';
 	}
 
+	// TODO: If $buttons_equal_width is true, get width of widest button with JS and echo a rule
+	// that forces that style for all buttons
+
 	echo '<div class="' . implode( ' ', $posts_wrapper_classes ) . '">';
 	foreach ( $posts as $post ) {
-		$content_type = $post['content_type'];
-		$link         = $post['link'];
-		$document     = $post['document'];
-		$display_text = $post['display_text'];
-		$icon         = $post['icon'];
+		$content_type       = $post['content_type'];
+		$link               = $post['link'];
+		$document           = $post['document'];
+		$title_text         = $post['display_text'];
+		$body_text          = $post['body_text']; //
+		$cta_label_override = $post['cta_label_override']; //
+		$icon_type				  = $post['icon_type']; //
+		$icon_img           = $post['icon'];
 
 		get_component( 'card-related', [ 
-			'content_type' => $content_type,
-			'link'         => $link,
-			'document'     => $document,
-			'display_text' => $display_text,
-			'icon'         => $icon,
-			'layout_style' => $layout_style,
+			'content_type'       => $content_type,
+			'link'               => $link,
+			'document'           => $document,
+			'display_text'       => $title_text,
+			'icon_type'		       => $icon_type,
+			'icon'               => $icon_img,
+			'layout_style'       => $layout_style,
+			'body_text'          => $body_text,
+			'cta_label_override' => $cta_label_override,
 		] );
 	}
 	echo '</div>';
