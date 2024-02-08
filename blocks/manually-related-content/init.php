@@ -34,7 +34,7 @@ function init( $block = [] ) {
 	if ( ! $posts ) {
 		$output = '<div ' . $placeholder_styles . '>';
 		if( is_admin() ) {
-			$output .= "<p>" . __('Use the Block controls on the right to add manually related content.', 'wicket') . "</p>";
+			$output .= "<p>" . __('Use the Block controls in edit mode or on the right to add manually related content.', 'wicket') . "</p>";
 		}
 		$output .= '</div>';
 		echo $output;
@@ -55,7 +55,7 @@ function init( $block = [] ) {
 	echo '<div ' . $attrs . ' ' . $placeholder_styles . '>';
 
 	if( is_admin() && empty($posts) && empty($title) ) {
-		echo "<p>" . __('Use the Block controls on the right to add manually related content.', 'wicket') . "</p>";
+		echo "<p>" . __('Use the Block controls in edit mode or on the right to add manually related content.', 'wicket') . "</p>";
 	}
 
 	if ( $title ) {

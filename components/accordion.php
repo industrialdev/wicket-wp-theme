@@ -45,7 +45,7 @@ $placeholder_styles = 'style="min-height: 40px;border: 1px solid var(--wp--prese
   >
 
   <?php if( is_admin() && empty($items) ): ?>
-  <p><?php _e('Use the Block controls on the right to add accordion items.', 'wicket'); ?></p>
+  <p><?php _e('Use the Block controls in edit mode or on the right to add accordion items.', 'wicket'); ?></p>
   <?php endif; ?>
 
   <?php 
