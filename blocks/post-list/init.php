@@ -57,6 +57,7 @@ function init( $block = [] ) {
 			'link'           => [ 
 				'url'    => $permalink,
 				'text'   => 'Read more',
+				'title'  => 'Read more',
 				'target' => '_self',
 			],
 			'member_only'    => $member_only,
