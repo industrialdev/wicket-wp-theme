@@ -67,29 +67,32 @@ if ( $content_type === 'link' && $link ) {
 ?>
 
 <div class="<?php echo implode( ' ', $classes ) ?>">
-	<?php if ( $icon_id ) {
-		get_component( 'image', [ 
-			'id'      => $icon_id,
-			'classes' => [ $layout_style === 'card' ? 'max-h-8' : 'max-h-6' ],
-		] );
-	} else {
-		get_component( 'icon', [ 
-			'icon'    => $icon,
-			'classes' => [ 
-				$layout_style === 'card' ? 'text-[32px]' : 'text-[24px]',
-				$layout_style === 'list' ? 'w-6' : '',
-				'leading-none',
-				'inline-flex',
-			],
-		] );
-	} ?>
+	<div class="top-aligned-content">
+		<?php if ( $icon_id ) {
+			get_component( 'image', [ 
+				'id'      => $icon_id,
+				'classes' => [ $layout_style === 'card' ? 'max-h-8' : 'max-h-6' ],
+			] );
+		} else {
+			get_component( 'icon', [ 
+				'icon'    => $icon,
+				'classes' => [ 
+					$layout_style === 'card' ? 'text-[32px]' : 'text-[24px]',
+					$layout_style === 'list' ? 'w-6' : '',
+					'leading-none',
+					'inline-flex',
+				],
+			] );
+		} ?>
 
-	<div>
-	<?php if ( $display_text ) { ?>
-		<div class="text-heading-xs text-dark-100 font-bold leading-7">
-			<?php echo $display_text; ?>
-		</div>
-	<?php } ?>
+		<div>
+		<?php if ( $display_text ) { ?>
+			<div class="text-heading-xs text-dark-100 font-bold leading-7">
+				<?php echo $display_text; ?>
+			</div>
+		<?php } ?>
+	</div> <?php // end top-aligned-content ?>
+	
 	<?php if ( $body_text ) { ?>
 		<p class="text-dark-100">
 			<?php echo $body_text; ?>

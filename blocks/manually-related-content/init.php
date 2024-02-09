@@ -63,7 +63,7 @@ function init( $block = [] ) {
 	}
 
 	if ( $title ) {
-		echo '<div class="text-heading-sm font-bold mb-3">' . $title . '</div>';
+		echo '<div class="text-heading-sm font-bold mb-3 px-4 xl:px-0">' . $title . '</div>';
 	}
 
 	if( $buttons_equal_width ) {
