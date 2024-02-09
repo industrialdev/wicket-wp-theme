@@ -59,7 +59,7 @@ if ( $content_type === 'link' && $link ) {
 	$link_target      = $link['target'] ?? '_self';
 	$icon             = $link_target === '_blank' ? 'fa-regular fa-external-link' : 'fa-regular fa-link';
 	$button_link      = $link['url'];
-	$button_label     = $link['title'];
+	$button_label     = __('Visit Page', 'wicket');
 	$button_icon      = $link_target === '_blank' ? 'fa-regular fa-external-link' : 'fa-solid fa-arrow-right';
 	$button_classes[] = $layout_style === 'card' ? 'w-full justify-center' : 'ml-auto min-w-36';
 	$button_target    = $link_target;

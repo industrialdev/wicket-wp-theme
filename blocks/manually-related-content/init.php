@@ -90,7 +90,10 @@ function init( $block = [] ) {
 		$content_type       = $post['content_type'];
 		$link               = $post['link'];
 		$document           = $post['document'];
-		$title_text         = $post['display_text'];
+		$title_text         = !empty($post['display_text']) ? $post['display_text'] : '';
+		if( empty( $title_text ) && isset($post['link']['title']) ) {
+			$title_text = $post['link']['title'];
+		}
 		$body_text          = $post['body_text']; //
 		$cta_label_override = $post['cta_label_override']; //
 		$icon_type				  = $post['icon_type']; //
