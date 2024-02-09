@@ -70,7 +70,7 @@ function init( $block = [] ) {
 		$button_same_width_params = '
 			x-data="{ widestButtonWidth: 100, maybeWiderButton(newWidth) { if( this.widestButtonWidth < newWidth ) { this.widestButtonWidth = newWidth; } } }"
 			x-init=" 
-				let allCards = document.querySelectorAll(\'.man-related-content-card\');
+				let allCards = $el.querySelectorAll(\'.man-related-content-card\');
 				for (const card of allCards) {
 					let button = card.querySelector(\'a.button\');
 					if( button != null ) {
