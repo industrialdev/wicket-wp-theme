@@ -163,7 +163,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                 >
                 <?php 
                 get_component( 'icon', [ 
-                    'classes' => [ 'text-x-large', 'lg:text-large', 'bg-dark-040', 'rounded-base', 'px-2', 'py-0' ],
+                    'classes' => [ 'text-x-large', 'lg:text-large', 'bg-white', 'rounded-base', 'px-2', 'py-0' ],
                     'icon'    => 'fa-solid fa-x',
                     'text'    => '',
                 ] );
@@ -248,7 +248,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                     ?>
                 <?php endif; ?>
                 <!-- Start search field -->
-                <div x-show="searchOpen" class="hidden lg:block flex-grow px-2 py-3 ml-20 bg-light-050">
+                <div x-show="searchOpen" class="hidden lg:block flex-grow px-2 py-3 ml-20 bg-white">
                     <form class="flex" action="/" method="get">
                         <label for="search" class="hidden"><?php _e('Search the website', 'wicket'); ?></label>
                         <input class="w-full p-1" type="text" name="s" id="search" value="<?php the_search_query(); ?>" placeholder="<?php _e('Search by Keyword', 'wicket'); ?>" />
@@ -280,7 +280,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                     <span x-show="searchOpen">
                     <?php 
                     get_component( 'icon', [ 
-                        'classes' => [ 'text-x-large', 'lg:text-large', 'bg-dark-040', 'rounded-base', 'px-2', 'py-0' ],
+                        'classes' => [ 'text-x-large', 'lg:text-large', 'bg-white', 'rounded-base', 'px-2', 'py-0' ],
                         'icon'    => 'fa-solid fa-x',
                         'text'    => '',
                     ] );
@@ -714,6 +714,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                   endforeach; // End main nav looping ?>
             </div>
 
+            <?php if( !empty( $utility_nav_items ) ): ?>
             <div class="bg-dark-100 text-light-000 px-3 py-2 pb-3">
                 <?php
                 // Utility Nav Items
@@ -728,6 +729,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                 }
                 ?>   
             </div>
+            <?php endif; ?>
 
         </div>
 
@@ -736,7 +738,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
             x-show="searchOpen"
             x-transition
             x-anchor.bottom-start="$refs.secondary-nav"
-            class="lg:hidden w-full p-3 bg-light-050 shadow-lg z-30"
+            class="lg:hidden w-full p-3 bg-white shadow-lg z-30"
             >
             <form class="flex" action="/" method="get">
                 <label for="search" class="hidden"><?php _e('Search the website', 'wicket'); ?></label>

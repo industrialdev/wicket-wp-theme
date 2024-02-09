@@ -25,7 +25,7 @@ function init( $block = [] ) {
 	if ( ! $posts ) {
 		$output = '<div ' . $placeholder_styles . '>';
 		if ( is_admin() ) {
-			$output .= "<p>" . __( 'Use the Block controls on the right to add posts.', 'wicket' ) . "</p>";
+			$output .= "<p>" . __( 'Use the Block controls in edit mode or on the right to add posts.', 'wicket' ) . "</p>";
 		}
 		$output .= '</div>';
 		echo $output;
@@ -34,7 +34,7 @@ function init( $block = [] ) {
 
 	echo '<div ' . $attrs . ' ' . $placeholder_styles . '>';
 	if ( is_admin() && empty( $posts ) ) {
-		echo "<p>" . __( 'Use the Block controls on the right to add posts.', 'wicket' ) . "</p>";
+		echo "<p>" . __( 'Use the Block controls in edit mode or on the right to add posts.', 'wicket' ) . "</p>";
 	}
 	foreach ( $posts as $post ) {
 		$post_id        = $post->ID;
@@ -57,6 +57,7 @@ function init( $block = [] ) {
 			'link'           => [ 
 				'url'    => $permalink,
 				'text'   => 'Read more',
+				'title'  => 'Read more',
 				'target' => '_self',
 			],
 			'member_only'    => $member_only,

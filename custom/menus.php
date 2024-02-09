@@ -71,62 +71,171 @@ function wicket_generate_structured_menu( $wp_nav_items ) {
 	return $nav_items_structured;
 }
 
-// Takes in a post_id and finds all ancestor/parent pages (up to 5 levels up), and
-// then finds all child pages. Returns them all in an array and notes what level 
-// the current post_id is located in
-function wicket_get_all_parent_and_child_pages( $post_id ) {
+// Takes in a post_id and finds all ancestor/parent pages, and
+// then finds all child pages. Returns the family tree in an array and notes what level 
+// the current post_id is located in.
+function wicket_get_all_parent_and_child_pages( $post_id, $post_type = 'page' ) {
 	$ancestry_array = [ 
-		'levels_top_to_bottom' => []
+		'ancestors_top_to_curr' => []
 	];
 
 	// =====================
-	// Get the parents
+	// Get the ancestors
 	// =====================
 	$post_ancestors = get_post_ancestors($post_id);
 	$post_ancestors = array_reverse( $post_ancestors );
-	$ancestry_array['levels_top_to_bottom'] = $post_ancestors;
-	$ancestry_array['levels_top_to_bottom'][] = $post_id;
+	$ancestry_array['ancestors_top_to_curr'] = $post_ancestors;
+	$ancestry_array['ancestors_top_to_curr'][] = $post_id;
 
-	// =====================
-	// Get the children
-	// =====================
-	$levels_down_to_traverse = 5;
-	$current_parent_id = $post_id;
-	for( $i = 0; $i < $levels_down_to_traverse; $i++ ) {
-		$post_children = get_children( [
-			'post_status' => 'published',
-			'post_parent' => $current_parent_id
-		], 'ARRAY_N' );
-		if( !empty( $post_children ) ) {
-			$children_ids_to_add = [];
-			foreach( $post_children as $child_id => $child_data ) {
-				$children_ids_to_add[] = $child_id;
-				// Make the $current_parent_id the last child found in this loop
-				// TODO: Add loop that will try each sibling to see which one has children
-				$current_parent_id = $child_id;
-			}
-			// if( count( $children_ids_to_add ) == 1 ) {
-			// 	$ancestry_array['levels_top_to_bottom'][] = $children_ids_to_add[0];
-			// } else {
-			// 	$ancestry_array['levels_top_to_bottom'][] = $children_ids_to_add;
-			// }
-			// Only add the first child found as we'll go back over to grab siblings
-			$ancestry_array['levels_top_to_bottom'][] = $children_ids_to_add[0];
+	// ================================================
+	// Build the family tree
+	// ================================================
+	$topmost_parent_id = 0;
+	$tree_depth = 0;
+	$curr_page_location_from_top = [];
+
+
+	if( isset( $ancestry_array['ancestors_top_to_curr'][0] ) ) {
+		$topmost_parent_id = $ancestry_array['ancestors_top_to_curr'][0];
+		$tree_depth = 1;
+		if( $post_id == $topmost_parent_id ) {
+			$curr_page_location_from_top = [$topmost_parent_id];
 		}
 	}
+
+	// Get second-teir list of children
+	$children_ids_to_add = [];
+
+	$post_children = get_children( [
+		'post_status' => 'published',
+		'post_type'   => $post_type,
+		'post_parent' => $topmost_parent_id
+	], 'ARRAY_N' );
+	foreach( $post_children as $child_id => $child_data ) {
+		$children_ids_to_add[$child_id] = [];
+
+		if( $post_id == $child_id ) {
+			$curr_page_location_from_top = [ $topmost_parent_id, $child_id ];
+		}
+	}
+
+	// Check each sibling down 5 levels
+
+	// 1 Down
+	foreach( $children_ids_to_add as $sibling_id => $sibling_data ) {
+		if( $tree_depth < 2 ) {
+			$tree_depth = 2;
+		}
+		$sibling_children = get_children( [
+			'post_status' => 'published',
+			'post_type'   => $post_type,
+			'post_parent' => $sibling_id
+		], 'ARRAY_N' );
+		$sibling_children_to_add = [];
+		foreach( $sibling_children as $sibling_child_id => $sibling_child_data ) {
+			$sibling_children_to_add[$sibling_child_id] = [];
+
+			if( $post_id == $sibling_child_id ) {
+				$curr_page_location_from_top = [ $topmost_parent_id, $sibling_id, $sibling_child_id ];
+			}
+		}
+		$children_ids_to_add[$sibling_id] = $sibling_children_to_add;
+
+		// 2 Down
+		foreach( $children_ids_to_add[$sibling_id] as $sibling_2_id => $sibling_2_data ) {
+			if( $tree_depth < 3 ) {
+				$tree_depth = 3;
+			}
+			$sibling_2_children = get_children( [
+				'post_status' => 'published',
+				'post_type'   => $post_type,
+				'post_parent' => $sibling_2_id
+			], 'ARRAY_N' );
+			$sibling_children_to_add = [];
+			foreach( $sibling_2_children as $sibling_child_id => $sibling_child_data ) {
+				$sibling_children_to_add[$sibling_child_id] = [];
+
+				if( $post_id == $sibling_child_id ) {
+					$curr_page_location_from_top = [ $topmost_parent_id, $sibling_id, $sibling_2_id, $sibling_child_id ];
+				}
+			}
+			$children_ids_to_add[$sibling_id][$sibling_2_id] = $sibling_children_to_add;
+
+			// 3 Down
+			foreach( $children_ids_to_add[$sibling_id][$sibling_2_id] as $sibling_3_id => $sibling_3_data ) {
+				if( $tree_depth < 4 ) {
+					$tree_depth = 4;
+				}
+				$sibling_3_children = get_children( [
+					'post_status' => 'published',
+					'post_type'   => $post_type,
+					'post_parent' => $sibling_3_id
+				], 'ARRAY_N' );
+				$sibling_children_to_add = [];
+				foreach( $sibling_3_children as $sibling_child_id => $sibling_child_data ) {
+					$sibling_children_to_add[$sibling_child_id] = [];
+
+					if( $post_id == $sibling_child_id ) {
+						$curr_page_location_from_top = [ $topmost_parent_id, $sibling_id, $sibling_2_id, $sibling_3_id, $sibling_child_id ];
+					}
+				}
+				$children_ids_to_add[$sibling_id][$sibling_2_id][$sibling_3_id] = $sibling_children_to_add;
+
+				// 4 Down
+				foreach( $children_ids_to_add[$sibling_id][$sibling_2_id][$sibling_3_id] as $sibling_4_id => $sibling_4_data ) {
+					if( $tree_depth < 5 ) {
+						$tree_depth = 5;
+					}
+					$sibling_4_children = get_children( [
+						'post_status' => 'published',
+						'post_type'   => $post_type,
+						'post_parent' => $sibling_4_id
+					], 'ARRAY_N' );
+					$sibling_children_to_add = [];
+					foreach( $sibling_4_children as $sibling_child_id => $sibling_child_data ) {
+						$sibling_children_to_add[$sibling_child_id] = [];
+
+						if( $post_id == $sibling_child_id ) {
+							$curr_page_location_from_top = [ $topmost_parent_id, $sibling_id, $sibling_2_id, $sibling_3_id, $sibling_4_id, $sibling_child_id ];
+						}
+					}
+					$children_ids_to_add[$sibling_id][$sibling_2_id][$sibling_3_id][$sibling_4_id] = $sibling_children_to_add;
+
+					// 5 Down
+					foreach( $children_ids_to_add[$sibling_id][$sibling_2_id][$sibling_3_id][$sibling_4_id] as $sibling_5_id => $sibling_5_data ) {
+						if( $tree_depth < 6 ) {
+							$tree_depth = 6;
+						}
+						$sibling_5_children = get_children( [
+							'post_status' => 'published',
+							'post_type'   => $post_type,
+							'post_parent' => $sibling_5_id
+						], 'ARRAY_N' );
+						$sibling_children_to_add = [];
+						foreach( $sibling_5_children as $sibling_child_id => $sibling_child_data ) {
+							$sibling_children_to_add[$sibling_child_id] = [];
+
+							if( $post_id == $sibling_child_id ) {
+								$curr_page_location_from_top = [ $topmost_parent_id, $sibling_id, $sibling_2_id, $sibling_3_id, $sibling_4_id, $sibling_5_id, $sibling_child_id ];
+							}
+						}
+						$children_ids_to_add[$sibling_id][$sibling_2_id][$sibling_3_id][$sibling_4_id][$sibling_5_id] = $sibling_children_to_add;
+					} // End 5 down
+				} // End 4 down
+			} // End 3 down
+		} // End 2 down
+	} // End 1 down
+
+	$ancestry_array['family_tree'][$topmost_parent_id] = $children_ids_to_add;
 
 	// ================================================
 	// Note the current page's pos. in the hierarchy
 	// ================================================
-	$ancestry_array['curr_page_level_from_zero'] = array_search( $post_id, $ancestry_array['levels_top_to_bottom'] );
-	$ancestry_array['num_levels'] = count( $ancestry_array['levels_top_to_bottom'] );
-
-	// ================================================
-	// Get the siblings (except for the topmost parent)
-	// ================================================
-	$ancestry_array['levels_top_to_bottom_with_siblings'] = '...';
+	$ancestry_array['curr_page_level_from_zero'] = count( $curr_page_location_from_top ) - 1;
+	$ancestry_array['curr_page_location_from_top'] = $curr_page_location_from_top;
+	$ancestry_array['num_levels'] = $tree_depth;
 
 	
 
-	wicket_write_log($ancestry_array, true);
+	return $ancestry_array;
 }

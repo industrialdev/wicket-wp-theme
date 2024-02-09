@@ -10,7 +10,7 @@ $defaults           = array(
 	'rounded'            => false,
 	'a_tag'              => false,
 	'link'               => '',
-	'link_target'        => '',
+	'link_target'        => '_self',
 	'type'               => 'button',
 	'disabled'           => false,
 	'screen_reader_text' => '',
@@ -66,7 +66,7 @@ if ( $disabled ) {
 	class="
 	<?php echo implode( ' ', $classes ) ?>"
 	<?php echo $href_markup; ?>
-	type="<?php echo $type; ?>"
+	<?php if(!$a_tag) { echo "type='".$type."'"; } ?>
 	>
 	<?php
 	if ( $prefix ) {

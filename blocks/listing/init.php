@@ -44,7 +44,7 @@ function init( $block = [] ) {
 
 	echo '<div class="bg-light-010">';
 	if ( is_admin() && ! $post_type ) {
-		echo "<p>" . __( 'Use the Block controls on the right to configure listing.', 'wicket' ) . "</p>";
+		echo "<p>" . __( 'Use the Block controls in edit mode or on the right to configure listing.', 'wicket' ) . "</p>";
 	} ?>
 
 	<div class="container">
