@@ -6,9 +6,11 @@ $defaults    = array(
 $args        = wp_parse_args( $args, $defaults );
 $classes     = $args['classes'];
 $placeholder = $args['placeholder'];
+
+$classes[] = 'form';
 ?>
 
-<form role="search" method="get" class="<?php echo implode( ' ', $classes ); ?>">
+<div class="<?php echo implode( ' ', $classes ); ?>">
 	<div class="relative w-full">
 		<?php get_component( 'icon', [ 
 			'icon'    => 'fa fa-search',
@@ -22,12 +24,18 @@ $placeholder = $args['placeholder'];
 				'text-lg',
 			],
 		] ); ?>
-		<input type="search" id="s" name="s" value="<?php echo get_search_query(); ?>"
-			placeholder="<?php echo $placeholder; ?>" class="pl-10 w-full" />
+		<input type="search" id="keyword" name="keyword"
+			value="<?php echo isset( $_GET['keyword'] ) ? $_GET['keyword'] : ''; ?>" placeholder="<?php echo $placeholder; ?>"
+			class="!pl-10 w-full" />
 	</div>
 
-	<?php get_component( 'button', [ 
-		'variant' => 'primary',
-		'label'   => __( 'Search', 'wicket' ),
-	] ) ?>
-</form>
+	<button class="button inline-flex button--primary" @click="
+		const pageUrl = window.location.href;
+		const searchQuery = document.getElementById('keyword').value;
+		const urlWithQuery = new URL(pageUrl);
+		urlWithQuery.searchParams.set('keyword', searchQuery);
+		window.location.href = urlWithQuery.href;
+	">
+		<?php echo __( 'Search', 'wicket' ); ?>
+	</button>
+</div>

@@ -197,7 +197,7 @@ function translate_date_format( $format ) {
 add_filter( 'option_date_format', 'translate_date_format' );
 
 function post_remove() {
-	remove_menu_page( 'edit.php' );
+	//remove_menu_page( 'edit.php' );
 	remove_menu_page( 'edit-comments.php' );
 }
 add_action( 'admin_menu', 'post_remove' );

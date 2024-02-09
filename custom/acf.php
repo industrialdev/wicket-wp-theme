@@ -80,3 +80,18 @@ function wicket_acf_load_post_types_field_choices( $field ) {
 	return $field;
 }
 add_filter( 'acf/load_field/key=field_65c2245631b3e', 'wicket_acf_load_post_types_field_choices' );
+
+// Add ACF field for selecting taxonomies
+function wicket_acf_load_taxonomies_field_choices( $field ) {
+	$field['choices'] = array();
+	$taxonomies       = get_taxonomies( array( 'public' => true ), 'objects' );
+
+	if ( is_array( $taxonomies ) ) {
+		$field['choices'][0] = __( '-- Select Taxonomy --', 'wicket' );
+		foreach ( $taxonomies as $taxonomy ) {
+			$field['choices'][ $taxonomy->name ] = $taxonomy->label;
+		}
+	}
+	return $field;
+}
+add_filter( 'acf/load_field/key=field_65c6206a6e856', 'wicket_acf_load_taxonomies_field_choices' );

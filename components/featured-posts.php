@@ -7,7 +7,7 @@ $defaults            = array(
 	'hide_date'           => false,
 	'hide_featured_image' => false,
 	'hide_content_type'   => false,
-	'style'               => 'one-level',
+	'style'               => 'primary-secondary-level',
 	'column_count'        => 3,
 );
 $args                = wp_parse_args( $args, $defaults );
@@ -29,7 +29,7 @@ $column_count        = $args['column_count'];
 		</div>
 	<?php endif; ?>
 
-	<?php if ( $style === 'one-level' ) : ?>
+	<?php if ( $style === 'primary-secondary-level' ) : ?>
 		<div class="flex flex-col gap-10 lg:flex-row lg:gap-4">
 			<div class="flex-1 lg:basis-5/12">
 				<?php

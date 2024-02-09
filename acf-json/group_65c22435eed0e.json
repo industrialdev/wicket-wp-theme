@@ -1,6 +1,6 @@
 {
     "key": "group_65c22435eed0e",
-    "title": "Block - Filterable Posts",
+    "title": "Block - Listing",
     "fields": [
         {
             "key": "field_65c2245631b3e",
@@ -49,7 +49,7 @@
                 "class": "",
                 "id": ""
             },
-            "wpml_cf_preferences": 0,
+            "wpml_cf_preferences": 1,
             "default_value": "",
             "min": "",
             "max": "",
@@ -59,11 +59,11 @@
             "append": ""
         },
         {
-            "key": "field_65c22779c5865",
+            "key": "field_65c6205a6e855",
             "label": "Taxonomy Filters",
             "name": "listing_taxonomy_filters",
             "aria-label": "",
-            "type": "number",
+            "type": "repeater",
             "instructions": "Select the taxonomies you would like to use as filters on the page.",
             "required": 0,
             "conditional_logic": 0,
@@ -72,14 +72,71 @@
                 "class": "",
                 "id": ""
             },
-            "wpml_cf_preferences": 0,
-            "default_value": "",
-            "min": "",
-            "max": "",
-            "placeholder": "",
-            "step": "",
-            "prepend": "",
-            "append": ""
+            "wpml_cf_preferences": 1,
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Row",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_65c6206a6e856",
+                    "label": "Taxonomy",
+                    "name": "slug",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 1,
+                    "choices": {
+                        "0": "-- Select Taxonomy --",
+                        "category": "Categories",
+                        "post_tag": "Tags",
+                        "post_format": "Formats",
+                        "product_cat": "Product categories",
+                        "product_tag": "Product tags",
+                        "product_shipping_class": "Product shipping classes"
+                    },
+                    "default_value": false,
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "parent_repeater": "field_65c6205a6e855"
+                },
+                {
+                    "key": "field_65c6207a6e857",
+                    "label": "Tooltip",
+                    "name": "tooltip",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 2,
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_65c6205a6e855"
+                }
+            ]
         }
     ],
     "location": [
@@ -101,5 +158,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "translation",
-    "modified": 1707222963
+    "modified": 1707483751
 }

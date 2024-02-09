@@ -17,7 +17,7 @@ function init( $block = [] ) {
 	$paged            = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 	$orderby          = 'date';
 	$order            = 'DESC';
-
+	$keyword          = '';
 
 	if ( isset( $_GET['sort-by'] ) ) {
 		if ( $_GET['sort-by'] == 'date-desc' ) {
@@ -38,6 +38,10 @@ function init( $block = [] ) {
 		}
 	}
 
+	if ( isset( $_GET['keyword'] ) ) {
+		$keyword = $_GET['keyword'];
+	}
+
 	echo '<div class="bg-light-010">';
 	if ( is_admin() && ! $post_type ) {
 		echo "<p>" . __( 'Use the Block controls on the right to configure listing.', 'wicket' ) . "</p>";
@@ -45,9 +49,14 @@ function init( $block = [] ) {
 
 	<div class="container">
 		<form action="">
-			<div class="flex flex-row">
-				<div class="basis-1/4">
-					Filters
+			<div class="flex flex-row gap-4">
+				<div
+					class="basis-1/4 bg-white relative after:content-[''] after:absolute after:top-0 after:bottom-0 after:right-full after:bg-white after:w-[30vw]">
+					<?php
+					get_component( 'filter-form', [ 
+						'taxonomies' => $taxonomy_filters,
+					] )
+						?>
 				</div>
 				<div class="basis-3/4 pt-10">
 					<?php
@@ -58,18 +67,8 @@ function init( $block = [] ) {
 						'paged'          => $paged,
 						'orderby'        => $orderby,
 						'order'          => $order,
+						's'              => $keyword,
 					];
-
-					if ( $taxonomy_filters ) {
-						$args['tax_query'] = [];
-						foreach ( $taxonomy_filters as $filter ) {
-							$args['tax_query'][] = [ 
-								'taxonomy' => $filter['taxonomy'],
-								'field'    => 'slug',
-								'terms'    => $filter['terms'],
-							];
-						}
-					}
 
 					$query       = new \WP_Query( $args );
 					$posts       = $query->posts;
@@ -155,11 +154,7 @@ function init( $block = [] ) {
 									'topics'         => $topics,
 								];
 
-								if ( component_exists( 'card-' . $post_type ) ) {
-									get_component( 'card-' . $post_type, $card_params );
-								} else {
-									get_component( 'card', $card_params );
-								}
+								get_component( 'card-listing', $card_params );
 
 							endwhile;
 							the_wicket_pagination( [ 
