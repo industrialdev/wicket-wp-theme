@@ -106,7 +106,13 @@ if ( $content_type === 'link' && $link ) {
 			'link'        => $button_link,
 			'link_target' => $button_target,
 			'classes'     => $button_classes,
-			'atts'        => [ $content_type === 'document' ? 'download' : '' ],
+			'atts'        => [ 
+				$content_type === 'document' ? 'download' : '',
+				'x-init="if( typeof widestButtonWidth !== \'undefined\' ){ 
+					$el.style[\'width\'] = ( widestButtonWidth + 20 ) + \'px\'; 
+					$el.style[\'justify-content\'] = \'space-between\';
+				}"'
+			],
 		] );
 	} ?>
 </div>
