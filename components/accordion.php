@@ -78,12 +78,12 @@ $placeholder_styles = 'style="min-height: 40px;border: 1px solid var(--wp--prese
           if( $show_toggle_icon ) {
             get_component( 'icon', [ 
               'icon' => $font_awesome_icon_open,
-              'classes' => ['text-heading-lg', 'text-dark-100', 'ml-4'],
+              'classes' => ['text-heading-md', 'text-dark-100', 'ml-4'],
               'atts' => ["x-show='openAccordion == " . $i . "'"]
             ] );
             get_component( 'icon', [ 
               'icon' => $font_awesome_icon_closed,
-              'classes' => ['text-heading-lg', 'text-dark-100', 'ml-4'],
+              'classes' => ['text-heading-md', 'text-dark-100', 'ml-4'],
               'atts' => ["x-show='openAccordion != " . $i . "'"]
             ] );
           }
