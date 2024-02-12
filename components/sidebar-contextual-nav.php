@@ -117,6 +117,7 @@ foreach( $ancestry_array['family_tree'] as $post_id => $children_branch ) {
         'target' => '',
       ],
       'body_content' => $body_content,
+      'show_toggle_icon' => !empty( $child_2_branch ),
     ];
   
     $accordion_item_index++;
