@@ -69,7 +69,7 @@ $placeholder_styles = 'style="min-height: 40px;border: 1px solid var(--wp--prese
       <div class="flex w-full justify-between items-center">
         <h4 class="font-bold text-body-lg">
           <?php if( $item['title_is_a_link'] ): ?>
-            <a href="<?php echo $item['title_link']['url']; ?>" target="<?php echo $item['title_link']['target']; ?>"><?php echo $item['title']; ?></a>
+            <a x-on:click.stop href="<?php echo $item['title_link']['url']; ?>" target="<?php echo $item['title_link']['target']; ?>"><?php echo $item['title']; ?></a>
           <?php else : ?>
             <?php echo $item['title']; ?>
           <?php endif; ?>
