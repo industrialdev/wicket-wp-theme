@@ -158,7 +158,13 @@ const lineHeight = customThemeJsonSettings['line-height']
  */
 
 module.exports = {
-  content: ['./**/*.{php,js}'],
+  content: [
+    './blocks/**/*.{php,js}',
+    './components/**/*.{php,js}',
+    './page-templates/**/*.{php,js}',
+    './assets/scripts/**/*.js',
+    './*.php',
+  ],
   theme: {
     extend: {
       colors: colors,
