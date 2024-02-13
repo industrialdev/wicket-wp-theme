@@ -33,10 +33,10 @@ $reversed             = ( $background_style === 'reversed' || $background_style 
 $cta_classes          = [ 'flex-1 p-6 rounded-050 basis-full lg:basis-3/12' ];
 
 if ( $reversed ) {
-	$wrapper_classes[] = 'bg-dark-100 text-white';
+	$wrapper_classes[] = 'bg-dark-100 text-white mode-reversed';
 	$cta_classes[]     = 'bg-[#393F46]';
 } else {
-	$cta_classes[] = 'bg-light-010';
+	$cta_classes[] = 'bg-light-010 mode-light';
 }
 
 if ( $image === 'featured-image' && has_post_thumbnail() ) {
