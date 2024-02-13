@@ -29,8 +29,8 @@ $taxonomies = $args['taxonomies'];
 		$taxonomy_obj = get_taxonomy( $taxonomy['slug'] );
 		$terms        = get_terms( $taxonomy['slug'] );
 		?>
-		<div>
-			<button id="<?php echo $taxonomy['slug']; ?>-dropdown-toggle" type="button"
+		<div x-data="{open: true}">
+			<button @click="open = ! open" id="<?php echo $taxonomy['slug']; ?>-dropdown-toggle" type="button"
 				class="flex w-full gap-3 mb-3 items-center">
 				<span class="font-bold">
 					<?php echo $taxonomy_obj->labels->singular_name; ?>
@@ -42,16 +42,21 @@ $taxonomies = $args['taxonomies'];
 					] );
 				} ?>
 				<span class="ml-auto"></span>
-				<i class="fas fa-caret-down"></i>
+				<template x-if="open">
+					<i class="fas fa-caret-up"></i>
+				</template>
+				<template x-if="!open">
+					<i class="fas fa-caret-down"></i>
+				</template>
 			</button>
-			<div id="<?php echo $taxonomy['slug']; ?>-dropdown">
+			<div id="<?php echo $taxonomy['slug']; ?>-dropdown" x-show="open">
 				<?php
 				$term_query = isset( $_GET[ $taxonomy['slug'] ] ) ? $_GET[ $taxonomy['slug'] ] : '';
 				?>
 				<ul>
 					<?php
 					foreach ( $terms as $term ) : ?>
-						<li>
+						<li class="mb-3">
 							<?php
 							$checkedState = FALSE;
 							if ( is_array( $term_query ) ) {
@@ -62,10 +67,10 @@ $taxonomies = $args['taxonomies'];
 								$checkedState = TRUE;
 							}
 							?>
-							<div class="form__checkbox">
-								<input id="<?php echo $taxonomy['slug'] . '_' . $term->slug; ?>" class="filters__option" type="checkbox"
+							<div class="flex gap-2 items-center">
+								<input id="<?php echo $taxonomy['slug'] . '_' . $term->slug; ?>" class="!m-0 w-4 h-4" type="checkbox"
 									name="<?php echo $taxonomy['slug']; ?>[]" value="<?php echo $term->slug; ?>" <?php if ( $checkedState ) : ?>checked<?php endif; ?>>
-								<label for="<?php echo $taxonomy['slug'] . '_' . $term->slug; ?>">
+								<label for="<?php echo $taxonomy['slug'] . '_' . $term->slug; ?>" class="font-normal mb-0 leading-none">
 									<?php echo $term->name; ?>
 								</label>
 							</div>
@@ -77,4 +82,13 @@ $taxonomies = $args['taxonomies'];
 		</div>
 		<?php
 	endforeach; ?>
+
+	<?php
+	get_component( 'button', [ 
+		'variant'  => 'primary',
+		'label'    => __( 'Apply Filters', 'wicket' ),
+		'reversed' => $reversed,
+		'type'     => 'submit',
+	] );
+	?>
 </div>
