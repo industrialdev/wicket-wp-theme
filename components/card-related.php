@@ -59,7 +59,7 @@ if ( $content_type === 'link' && $link ) {
 	$link_target      = $link['target'] ?? '_self';
 	$icon             = $link_target === '_blank' ? 'fa-regular fa-external-link' : 'fa-regular fa-link';
 	$button_link      = $link['url'];
-	$button_label     = $link['title'];
+	$button_label     = __('Visit Page', 'wicket');
 	$button_icon      = $link_target === '_blank' ? 'fa-regular fa-external-link' : 'fa-solid fa-arrow-right';
 	$button_classes[] = $layout_style === 'card' ? 'w-full justify-center' : 'ml-auto min-w-36';
 	$button_target    = $link_target;
@@ -67,29 +67,32 @@ if ( $content_type === 'link' && $link ) {
 ?>
 
 <div class="<?php echo implode( ' ', $classes ) ?>">
-	<?php if ( $icon_id ) {
-		get_component( 'image', [ 
-			'id'      => $icon_id,
-			'classes' => [ $layout_style === 'card' ? 'max-h-8' : 'max-h-6' ],
-		] );
-	} else {
-		get_component( 'icon', [ 
-			'icon'    => $icon,
-			'classes' => [ 
-				$layout_style === 'card' ? 'text-[32px]' : 'text-[24px]',
-				$layout_style === 'list' ? 'w-6' : '',
-				'leading-none',
-				'inline-flex',
-			],
-		] );
-	} ?>
+	<div class="top-aligned-content">
+		<?php if ( $icon_id ) {
+			get_component( 'image', [ 
+				'id'      => $icon_id,
+				'classes' => [ $layout_style === 'card' ? 'max-h-8' : 'max-h-6' ],
+			] );
+		} else {
+			get_component( 'icon', [ 
+				'icon'    => $icon,
+				'classes' => [ 
+					$layout_style === 'card' ? 'text-[32px]' : 'text-[24px]',
+					$layout_style === 'list' ? 'w-6' : '',
+					'leading-none',
+					'inline-flex',
+				],
+			] );
+		} ?>
 
-	<div>
-	<?php if ( $display_text ) { ?>
-		<div class="text-heading-xs text-dark-100 font-bold leading-7">
-			<?php echo $display_text; ?>
-		</div>
-	<?php } ?>
+		<div>
+		<?php if ( $display_text ) { ?>
+			<div class="text-heading-xs text-dark-100 font-bold leading-7">
+				<?php echo $display_text; ?>
+			</div>
+		<?php } ?>
+	</div> <?php // end top-aligned-content ?>
+	
 	<?php if ( $body_text ) { ?>
 		<p class="text-dark-100">
 			<?php echo $body_text; ?>
@@ -106,7 +109,13 @@ if ( $content_type === 'link' && $link ) {
 			'link'        => $button_link,
 			'link_target' => $button_target,
 			'classes'     => $button_classes,
-			'atts'        => [ $content_type === 'document' ? 'download' : '' ],
+			'atts'        => [ 
+				$content_type === 'document' ? 'download' : '',
+				'x-init="if( typeof widestButtonWidth !== \'undefined\' ){ 
+					$el.style[\'width\'] = ( widestButtonWidth + 20 ) + \'px\'; 
+					$el.style[\'justify-content\'] = \'space-between\';
+				}"'
+			],
 		] );
 	} ?>
 </div>

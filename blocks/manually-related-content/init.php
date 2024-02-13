@@ -29,7 +29,8 @@ function init( $block = [] ) {
 		'px-4',
 		'xl:px-0'
 	];
-	$placeholder_styles = '';
+	$placeholder_styles       = '';
+	$button_same_width_params = '';
 	if( is_admin() ){ 
 		$placeholder_styles = 'style="min-height: 40px;border: 1px solid var(--wp--preset--color--light);"';
 	}
@@ -62,24 +63,44 @@ function init( $block = [] ) {
 	}
 
 	if ( $title ) {
-		echo '<div class="text-heading-sm font-bold mb-3">' . $title . '</div>';
+		echo '<div class="text-heading-sm font-bold mb-3 px-4 xl:px-0">' . $title . '</div>';
 	}
 
-	// TODO: If $buttons_equal_width is true, get width of widest button with JS and echo a rule
-	// that forces that style for all buttons
+	if( $buttons_equal_width ) {
+		$button_same_width_params = '
+			x-data="{ widestButtonWidth: 100, maybeWiderButton(newWidth) { if( this.widestButtonWidth < newWidth ) { this.widestButtonWidth = newWidth; } } }"
+			x-init=" 
+				let allCards = $el.querySelectorAll(\'.man-related-content-card\');
+				for (const card of allCards) {
+					let button = card.querySelector(\'a.button\');
+					if( button != null ) {
+						maybeWiderButton(button.offsetWidth);
+					}
+				}
+			"
+		';
+	}
 
-	echo '<div class="' . implode( ' ', $posts_wrapper_classes ) . '">';
+	echo '
+	<div 
+		class="' . implode( ' ', $posts_wrapper_classes ) . '"
+		'.$button_same_width_params.'
+	>';
 	foreach ( $posts as $post ) {
 		$content_type       = $post['content_type'];
 		$link               = $post['link'];
 		$document           = $post['document'];
-		$title_text         = $post['display_text'];
+		$title_text         = !empty($post['display_text']) ? $post['display_text'] : '';
+		if( empty( $title_text ) && isset($post['link']['title']) ) {
+			$title_text = $post['link']['title'];
+		}
 		$body_text          = $post['body_text']; //
 		$cta_label_override = $post['cta_label_override']; //
 		$icon_type				  = $post['icon_type']; //
 		$icon_img           = $post['icon'];
 
 		get_component( 'card-related', [ 
+			'classes'				     => [ 'man-related-content-card' ],
 			'content_type'       => $content_type,
 			'link'               => $link,
 			'document'           => $document,
