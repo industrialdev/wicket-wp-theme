@@ -11,6 +11,8 @@ namespace Wicket\Blocks\Wicket_Banner;
  */
 function init( $block = [] ) {
 
+	$attrs = get_block_wrapper_attributes();
+
 	$title            = get_field( 'banner_title' ) ?: get_the_title();
 	$show_breadcrumbs = get_field( 'banner_show_breadcrumbs' );
 	$intro            = get_field( 'banner_intro' );
@@ -23,6 +25,7 @@ function init( $block = [] ) {
 	$background_style = get_field( 'banner_background_style' );
 	$background_image = get_field( 'banner_background_image' );
 
+	echo '<div ' . $attrs . '>';
 	get_component( 'banner', [ 
 		'title'            => $title,
 		'show_breadcrumbs' => $show_breadcrumbs,
@@ -36,4 +39,5 @@ function init( $block = [] ) {
 		'background_style' => $background_style,
 		'background_image' => $background_image,
 	] );
+	echo '</div>';
 }
