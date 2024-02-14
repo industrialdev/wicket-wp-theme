@@ -39,11 +39,11 @@ if ( $reversed ) {
 	$cta_classes[] = 'bg-light-010';
 }
 if( $background_style === 'reversed' ) {
-	$cta_classes[] = 'bg-mode-reversed';
+	$wrapper_classes[] = 'bg-mode-reversed';
 } else if( $background_style === 'image' ) {
-	$cta_classes[] = 'bg-mode-image';
+	$wrapper_classes[] = 'bg-mode-image';
 } else {
-	$cta_classes[] = 'bg-mode-light';
+	$wrapper_classes[] = 'bg-mode-light';
 }
 
 if ( $image === 'featured-image' && has_post_thumbnail() ) {
