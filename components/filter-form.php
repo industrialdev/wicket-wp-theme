@@ -6,10 +6,10 @@ $defaults   = array(
 $args       = wp_parse_args( $args, $defaults );
 $classes    = $args['classes'];
 $taxonomies = $args['taxonomies'];
-
+$classes[]  = 'component-filter-form';
 ?>
 
-<div class="py-8 pr-3">
+<div class="py-8 pr-3 <?php echo implode( ' ', $classes ) ?>">
 	<div class="flex items-center gap-3 mb-8">
 
 		<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

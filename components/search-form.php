@@ -7,7 +7,7 @@ $args        = wp_parse_args( $args, $defaults );
 $classes     = $args['classes'];
 $placeholder = $args['placeholder'];
 
-$classes[] = 'form';
+$classes[] = 'component-search-form form';
 ?>
 
 <div class="<?php echo implode( ' ', $classes ); ?>">

@@ -15,7 +15,7 @@ $email       = $args['email'];
 $phone       = $args['phone'];
 $style       = $args['style'];
 
-$wrapper_classes = [ 'p-5 rounded-100' ];
+$wrapper_classes = [ 'component-card-contact p-5 rounded-100' ];
 
 if ( $style === 'primary' ) {
 	$wrapper_classes[] = 'bg-info-a-010';

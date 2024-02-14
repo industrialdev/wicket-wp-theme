@@ -34,7 +34,7 @@ foreach( $items as $item ) {
   $initial_open_item_check_index++;
 }
 
-$classes[] = '@container w-full';
+$classes[] = 'component-accordion @container w-full';
 $placeholder_styles = 'style="min-height: 40px;border: 1px solid var(--wp--preset--color--light);"';
 ?>
 

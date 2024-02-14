@@ -13,7 +13,7 @@ $description = $args['description'];
 $links       = $args['links'];
 $style       = $args['style'];
 
-$wrapper_classes = [ '@container p-5 rounded-100' ];
+$wrapper_classes = [ 'component-card-call-out @container p-5 rounded-100' ];
 
 if ( $style === 'primary' ) {
 	$wrapper_classes[] = 'bg-info-a-010';

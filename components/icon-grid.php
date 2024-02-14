@@ -13,7 +13,7 @@ $use_fa_codes     = $args['use-fa-codes'];
 $use_drop_shadows = $args['use-drop-shadows'];
 $icons            = $args['icons'];
 
-$classes[] = '@container';
+$classes[] = 'component-icon-grid @container';
 $placeholder_styles = 'style="min-height: 40px;border: 1px solid var(--wp--preset--color--light);"';
 
 ?>

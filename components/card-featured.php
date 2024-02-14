@@ -19,7 +19,7 @@ $image          = $args['image'];
 $image_position = $args['image_position'];
 $member_only    = $args['member_only'];
 
-$classes[]             = 'bg-white shadow-4 flex flex-col gap-4 relative';
+$classes[]             = 'component-card-featured bg-white shadow-4 flex flex-col gap-4 relative';
 $image_wrapper_classes = [];
 $title_classes         = [ 'block text-dark-100 font-bold leading-7 text-heading-xs' ];
 

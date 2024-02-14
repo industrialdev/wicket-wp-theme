@@ -1,12 +1,14 @@
 <?php
 $defaults = array(
-	'classes'  => [ 'flex', 'gap-2', 'list-none', 'p-0', 'm-0', 'items-center' ],
+	'classes'  => [],
 	'reversed' => false,
 );
 
 $args     = wp_parse_args( $args, $defaults );
 $classes  = $args['classes'];
 $reversed = $args['reversed'];
+
+$classes[] = 'component-social-sharing flex gap-2 list-none p-0 m-0 items-center';
 ?>
 
 <ul class="<?php echo implode( ' ', $args['classes'] ) ?>">

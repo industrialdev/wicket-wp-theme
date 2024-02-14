@@ -1,15 +1,16 @@
 <?php
 $defaults = array(
-	'classes'  => [ 'flex', 'gap-2', 'list-none', 'p-0', 'm-0', 'items-center' ],
+	'classes'  => [],
 	'reversed' => false,
 );
 
 $args     = wp_parse_args( $args, $defaults );
 $classes  = $args['classes'];
 $reversed = $args['reversed'];
+$classes[] = 'flex gap-2 list-none p-0 m-0 items-center';
 
 if ( have_rows( 'social_media_links', 'option' ) ) : ?>
-	<ul class="<?php echo implode( ' ', $args['classes'] ) ?>">
+	<ul class="<?php echo implode( ' ', $classes ) ?>">
 		<?php while ( have_rows( 'social_media_links', 'option' ) ) :
 			the_row(); ?>
 			<li>

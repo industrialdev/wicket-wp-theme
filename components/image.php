@@ -18,6 +18,8 @@ $aspect_ratio = $args['aspect_ratio'];
 $src          = wp_get_attachment_image_src( $id, $size );
 $srcset       = wp_get_attachment_image_srcset( $id, $size );
 
+$classes[] = 'component-image';
+
 if ( $aspect_ratio ) {
 	$classes[] = 'aspect-[' . $aspect_ratio . '] object-cover';
 }

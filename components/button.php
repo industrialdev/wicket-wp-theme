@@ -31,6 +31,7 @@ $link_target        = $args['link_target'];
 $type               = $args['type'];
 $disabled           = $args['disabled'];
 $screen_reader_text = $args['screen_reader_text'];
+$classes[]          = 'component-button';
 $classes[]          = 'button';
 $classes[]          = 'inline-flex';
 $classes[]          = 'button--' . $variant;

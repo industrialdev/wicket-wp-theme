@@ -19,6 +19,7 @@ $hide_featured_image = $args['hide_featured_image'];
 $hide_content_type   = $args['hide_content_type'];
 $style               = $args['style'];
 $column_count        = $args['column_count'];
+$classes[]           = 'component-featured-posts';
 ?>
 
 <div class="<?php echo implode( ' ', $classes ) ?>">

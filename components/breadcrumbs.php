@@ -7,6 +7,6 @@ $args      = wp_parse_args( $args, $defaults );
 $classes   = $args['classes'];
 ?>
 
-<div class="wicket-breadcrumb hidden md:flex items-center <?php echo implode( ' ', $classes ) ?> <?php echo $args['style']; ?>">
+<div class="wicket-breadcrumb component-breadcrumbs hidden md:flex items-center <?php echo implode( ' ', $classes ) ?> <?php echo $args['style']; ?>">
 	<?php wicket_breadcrumb(); ?>
 </div>

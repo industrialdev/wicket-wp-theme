@@ -10,6 +10,7 @@ $content         = $args['content'];
 $position        = $args['position'];
 $content_classes = [ 'bg-dark-100', 'text-body-sm', 'text-white', 'p-2', 'rounded-100', 'absolute', 'z-10', 'hidden' ];
 $caret_classes   = [ 'absolute' ];
+$classes[]       = 'component-tooltip';
 
 if ( $position === 'right' ) {
 	$content_classes[] = 'left-full top-1/2 transform -translate-y-1/2 translate-x-3';
@@ -32,7 +33,7 @@ if ( $position === 'bottom' ) {
 }
 ?>
 
-<div class="group relative inline-flex">
+<div class="group relative inline-flex <?php echo implode( ' ', $classes ) ?>">
 	<span class="w-4 h-4 inline-flex items-center justify-center border border-3 border-dark-100 rounded-[50%]">
 		<?php get_component( 'icon', [ 
 			'icon'    => 'fas fa-info',

@@ -124,7 +124,7 @@ foreach( $ancestry_array['family_tree'] as $post_id => $children_branch ) {
   }
 }
 
-$classes[] = '@container w-full';
+$classes[] = 'component-sidebar-contextual-nav @container w-full';
 $placeholder_styles = 'style="min-height: 40px;border: 1px solid var(--wp--preset--color--light);"';
 ?>
 

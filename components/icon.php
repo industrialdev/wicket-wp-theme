@@ -9,7 +9,7 @@ $args      = wp_parse_args( $args, $defaults );
 $classes   = $args['classes'];
 $icon      = $args['icon'];
 $text      = $args['text'];
-$classes[] = 'icon';
+$classes[] = 'component-icon icon';
 $atts      = $args['atts'];
 ?>
 
