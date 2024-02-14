@@ -11,7 +11,7 @@ $reversed = $args['reversed'];
 $classes[] = 'component-social-sharing flex gap-2 list-none p-0 m-0 items-center';
 ?>
 
-<ul class="<?php echo implode( ' ', $args['classes'] ) ?>">
+<ul class="<?php echo implode( ' ', $classes ) ?>">
 	<li class="font-bold <?php echo $reversed ? 'text-white' : '' ?>">
 		<?php _e( 'Share', 'wicket' ) ?>
 	</li>
