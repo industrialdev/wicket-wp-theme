@@ -33,13 +33,17 @@ $reversed             = ( $background_style === 'reversed' || $background_style 
 $cta_classes          = [ 'flex-1 p-6 rounded-050 basis-full lg:basis-3/12' ];
 
 if ( $reversed ) {
-	$wrapper_classes[] = 'bg-dark-100 text-white bg-mode-reversed';
+	$wrapper_classes[] = 'bg-dark-100 text-white';
 	$cta_classes[]     = 'bg-[#393F46]';
 } else {
-	$cta_classes[] = 'bg-light-010 bg-mode-light';
+	$cta_classes[] = 'bg-light-010';
 }
-if ( ! empty( $background_image ) ) {
+if( $background_style === 'reversed' ) {
+	$cta_classes[] = 'bg-mode-reversed';
+} else if( $background_style === 'image' ) {
 	$cta_classes[] = 'bg-mode-image';
+} else {
+	$cta_classes[] = 'bg-mode-light';
 }
 
 if ( $image === 'featured-image' && has_post_thumbnail() ) {
