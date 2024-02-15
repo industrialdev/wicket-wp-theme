@@ -3452,6 +3452,12 @@ footer .menu-item > a[target=_blank]:after {
 .wp-block-heading {
   font-family: var(--wp--preset--font-family--system-sans-serif);
 }
+h1.wp-block-heading {
+  font-size: var(--wp--preset--font-size--heading-3-xl);
+  line-height: clamp(2.5rem, 3vw + 1rem, 3.25rem);
+  font-weight: 900;
+}
+
 h2.wp-block-heading {
   font-size: var(--wp--preset--font-size--heading-2-xl);
   line-height: clamp(2.5rem, 3vw + 1rem, 3.25rem);
