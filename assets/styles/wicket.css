@@ -702,9 +702,6 @@ video {
 .mb-7 {
   margin-bottom: 1.75rem;
 }
-.mb-8 {
-  margin-bottom: 2rem;
-}
 .ml-2 {
   margin-left: 0.5rem;
 }
@@ -809,6 +806,9 @@ video {
 }
 .min-w-36 {
   min-width: 9rem;
+}
+.min-w-40 {
+  min-width: 10rem;
 }
 .min-w-\[260px\] {
   min-width: 260px;
@@ -1174,6 +1174,9 @@ video {
 }
 .divide-opacity-95 > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-opacity: 0.95;
+}
+.overflow-x-hidden {
+  overflow-x: hidden;
 }
 .rounded-050 {
   -webkit-border-radius: 0.25rem;
@@ -2323,6 +2326,9 @@ video {
   -o-object-position: center;
   object-position: center;
 }
+.\!p-1 {
+  padding: 0.25rem !important;
+}
 .p-0 {
   padding: 0px;
 }
@@ -2412,14 +2418,14 @@ video {
 .pr-12 {
   padding-right: 3rem;
 }
-.pr-3 {
-  padding-right: 0.75rem;
-}
-.pt-10 {
-  padding-top: 2.5rem;
-}
 .pt-3 {
   padding-top: 0.75rem;
+}
+.pt-4 {
+  padding-top: 1rem;
+}
+.text-left {
+  text-align: left;
 }
 .text-center {
   text-align: center;
@@ -2429,6 +2435,9 @@ video {
 }
 .text-\[18px\] {
   font-size: 18px;
+}
+.text-\[20px\] {
+  font-size: 20px;
 }
 .text-\[24px\] {
   font-size: 24px;
@@ -3805,6 +3814,39 @@ form.wicket-form .wicket-form-field-wrapper,
     }
   }
 }
+.before\:absolute::before {
+  content: var(--tw-content);
+  position: absolute;
+}
+.before\:bottom-0::before {
+  content: var(--tw-content);
+  bottom: 0px;
+}
+.before\:left-full::before {
+  content: var(--tw-content);
+  left: 100%;
+}
+.before\:top-0::before {
+  content: var(--tw-content);
+  top: 0px;
+}
+.before\:block::before {
+  content: var(--tw-content);
+  display: block;
+}
+.before\:w-\[30vw\]::before {
+  content: var(--tw-content);
+  width: 30vw;
+}
+.before\:bg-white::before {
+  content: var(--tw-content);
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+.before\:content-\[\'\'\]::before {
+  --tw-content: '';
+  content: var(--tw-content);
+}
 .after\:absolute::after {
   content: var(--tw-content);
   position: absolute;
@@ -4101,8 +4143,22 @@ form.wicket-form .wicket-form-field-wrapper,
     padding-left: 0px;
     padding-right: 0px;
   }
+  .lg\:py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .lg\:pr-3 {
+    padding-right: 0.75rem;
+  }
+  .lg\:pt-10 {
+    padding-top: 2.5rem;
+  }
   .lg\:text-body-lg {
     font-size: 20px;
+  }
+  .lg\:before\:hidden::before {
+    content: var(--tw-content);
+    display: none;
   }
 }
 @media (min-width: 1280px) {

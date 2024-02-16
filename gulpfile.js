@@ -10,11 +10,12 @@ const // Package Variables
   plumber = require('gulp-plumber'),
   notify = require('gulp-notify'),
   imagemin = require('gulp-imagemin'),
-  wrap = require('gulp-wrap'),
   insert = require('gulp-insert'),
   gulpIgnore = require('gulp-ignore'),
   postcss = require('gulp-postcss'),
   tailwindcss = require('tailwindcss'),
+  livereload = require('gulp-livereload'),
+  browserSync = require('browser-sync'),
   webpack = require('webpack-stream'),
   // Former Environment Variables
   srcPath = '.',
@@ -22,6 +23,14 @@ const // Package Variables
   themePath = '.',
   baseStyleName = 'wicket',
   scriptName = 'wicket'
+server = livereload()
+
+// BrowserSync configuration"
+// see: https://browsersync.io/docs/options
+browserSync({
+  proxy: 'https://localhost',
+  reloadDebounce: 2000,
+})
 
 // Compiles both unminified and minified CSS files
 function sassTask() {
@@ -185,11 +194,19 @@ function watchTask() {
     srcPath + '/**/*.js',
   ]
 
-  gulp.watch(
-    srcPath + assetPath + '/scripts/' + '*.js',
-    gulp.series(scriptsTask, minScripts, scriptsTaskAdmin, minScriptsAdmin)
-  )
-  gulp.watch(scssTailwindLocations, gulp.series(sassTask, minSass))
+  gulp
+    .watch(
+      srcPath + assetPath + '/scripts/' + '*.js',
+      gulp.series(scriptsTask, minScripts, scriptsTaskAdmin, minScriptsAdmin)
+    )
+    .on('change', () => {
+      browserSync.reload()
+    })
+  gulp
+    .watch(scssTailwindLocations, gulp.series(sassTask, minSass))
+    .on('change', () => {
+      browserSync.reload()
+    })
 }
 
 // error notifications

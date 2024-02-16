@@ -8,7 +8,7 @@ $args            = wp_parse_args( $args, $defaults );
 $classes         = $args['classes'];
 $content         = $args['content'];
 $position        = $args['position'];
-$content_classes = [ 'bg-dark-100', 'text-body-sm', 'text-white', 'p-2', 'rounded-100', 'absolute', 'z-10', 'hidden' ];
+$content_classes = [ 'bg-dark-100', 'text-body-sm', 'text-white', 'p-2', 'pl-4', 'rounded-100', 'absolute', 'z-10', 'hidden', 'min-w-40', 'text-left' ];
 $caret_classes   = [ 'absolute' ];
 $classes[]       = 'component-tooltip';
 

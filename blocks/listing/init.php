@@ -42,23 +42,23 @@ function init( $block = [] ) {
 		$keyword = $_GET['keyword'];
 	}
 
-	echo '<div class="bg-light-010">';
+	echo '<div class="bg-light-010 overflow-x-hidden">';
 	if ( is_admin() && ! $post_type ) {
 		echo "<p>" . __( 'Use the Block controls in edit mode or on the right to configure listing.', 'wicket' ) . "</p>";
 	} ?>
 
 	<div class="container">
 		<form action="">
-			<div class="flex flex-row gap-4">
+			<div class="flex flex-col lg:flex-row gap-4">
 				<div
-					class="basis-1/4 bg-white relative after:content-[''] after:absolute after:top-0 after:bottom-0 after:right-full after:bg-white after:w-[30vw]">
+					class="basis-1/4 bg-white relative after:content-[''] after:absolute after:top-0 after:bottom-0 after:right-full after:bg-white after:w-[30vw] before:block lg:before:hidden before:content-[''] before:absolute before:top-0 before:bottom-0 before:left-full before:bg-white before:w-[30vw]">
 					<?php
 					get_component( 'filter-form', [ 
 						'taxonomies' => $taxonomy_filters,
 					] )
 						?>
 				</div>
-				<div class="basis-3/4 pt-10">
+				<div class="basis-3/4 pt-4 lg:pt-10">
 					<?php
 
 					$args = [ 
@@ -75,7 +75,7 @@ function init( $block = [] ) {
 					$total_posts = $query->found_posts;
 					?>
 
-					<div class="flex justify-between items-center gap-4 mb-7">
+					<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-7 px-4 lg:px-0">
 						<div class="font-bold">
 							<?php echo $paged . '-' . count( $posts ); ?> of
 							<?php echo $total_posts; ?> posts
@@ -123,7 +123,7 @@ function init( $block = [] ) {
 
 					<?php
 					if ( $query->have_posts() ) : ?>
-						<div class="pb-24">
+						<div class="pb-24 px-4 lg:px-0">
 							<?php
 							while ( $query->have_posts() ) :
 								$query->the_post();
