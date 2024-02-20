@@ -77,7 +77,7 @@
 								<?php echo $section_title ?>
 							</div>
 
-							<div class="footer-section w-full" id="<?php echo $section_id ?>" x-show="windowWidth < 1024 ? isOpen : true">
+							<div class="footer-section w-full" id="<?php echo $section_id ?>" <?php if ( $is_menu_column ) : ?>x-show="windowWidth < 1024 ? isOpen : true" <?php endif; ?>>
 							<?php } ?>
 
 							<?php if ( have_rows( 'content' ) ) :
@@ -168,9 +168,7 @@
 							</div>
 						<?php } ?>
 					</div>
-					<?php if ( $is_menu_column ) : ?>
-						<hr class="border-b-1 border-[#7B7F83] lg:hidden">
-					<?php endif; ?>
+					<hr class="border-b-1 border-[#7B7F83] lg:hidden">
 				<?php endwhile; ?>
 			</div>
 		<?php endif; ?>

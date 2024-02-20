@@ -3565,6 +3565,13 @@ p a:active {
   max-width: 100%;
 }
 
+:where(.wp-block-column) .wp-block-wicket-card {
+  height: 100%;
+}
+:where(.wp-block-column) .wp-block-wicket-card .component-card, :where(.wp-block-column) .wp-block-wicket-card > div {
+  height: 100%;
+}
+
 /* INTEGRATIONS
 ------------------------------------------------------------------------------*/
 :root {

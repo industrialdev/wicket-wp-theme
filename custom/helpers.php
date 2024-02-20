@@ -48,3 +48,11 @@ function is_member_only( $post_id ) {
 	$visibility = get_post_meta( $post_id, '_wppcp_post_page_visibility', true );
 	return $visibility === 'member';
 }
+
+function get_social_link_label( $links, $name ) {
+	foreach ( $links as $link ) {
+		if ( $link['name'] === $name ) {
+			return $link['label'];
+		}
+	}
+}
