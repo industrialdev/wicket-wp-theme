@@ -49,7 +49,7 @@ $classes[]  = 'component-filter-form';
 			$taxonomy_obj = get_taxonomy( $taxonomy['slug'] );
 			$terms        = get_terms( $taxonomy['slug'] );
 			?>
-			<div x-data="{open: true, selectedItemsCount: 0}" class="pb-3 mb-3 border-b border-light-020">
+			<div x-data="{open: true, selectedItemsCount: 0, showAll: false}" class="pb-3 mb-3 border-b border-light-020">
 				<button @click="open = ! open" id="<?php echo $taxonomy['slug']; ?>-dropdown-toggle" type="button"
 					class="flex w-full gap-3 items-center">
 					<span class="font-bold">
@@ -80,8 +80,10 @@ $classes[]  = 'component-filter-form';
 					?>
 					<ul class="mt-3">
 						<?php
-						foreach ( $terms as $term ) : ?>
-							<li class="mb-3">
+						$index = 0;
+						foreach ( $terms as $term ) :
+							$index++; ?>
+							<li class="mb-3" <?php if ( $index > 5 ) : ?>:class="showAll || 'hidden'" <?php endif; ?>>
 								<?php
 								$checkedState = false;
 								if ( is_array( $term_query ) ) {
@@ -105,6 +107,18 @@ $classes[]  = 'component-filter-form';
 							<?php
 						endforeach; ?>
 					</ul>
+					<button class="underline" type="button" @click="showAll = !showAll">
+						<template x-if="showAll">
+							<span>
+								<?php echo __( 'See More', 'wicket' ) ?>
+							</span>
+						</template>
+						<template x-if="!showAll">
+							<span>
+								<?php echo __( 'See Less', 'wicket' ) ?>
+							</span>
+						</template>
+					</button>
 				</div>
 			</div>
 			<?php

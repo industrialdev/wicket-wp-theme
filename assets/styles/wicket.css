@@ -3556,6 +3556,11 @@ p a:active {
   margin-inline: auto;
   margin-bottom: 10px;
 }
+@media (min-width: 1536px) {
+  *[class*=wp-block] {
+    max-width: 1536px;
+  }
+}
 *[class*=wp-block].alignfull {
   max-width: 100%;
 }
