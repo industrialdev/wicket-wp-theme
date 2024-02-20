@@ -110,12 +110,12 @@ $classes[]  = 'component-filter-form';
 					<button class="underline" type="button" @click="showAll = !showAll">
 						<template x-if="showAll">
 							<span>
-								<?php echo __( 'See More', 'wicket' ) ?>
+								<?php echo __( 'See Less', 'wicket' ) ?>
 							</span>
 						</template>
 						<template x-if="!showAll">
 							<span>
-								<?php echo __( 'See Less', 'wicket' ) ?>
+								<?php echo __( 'See More', 'wicket' ) ?>
 							</span>
 						</template>
 					</button>
