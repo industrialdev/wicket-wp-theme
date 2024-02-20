@@ -1,7 +1,7 @@
 <footer class="bg-dark-100">
 	<?php
 	$newsletter = get_field( 'newsletter', 'option' );
-	if ( ! empty( $newsletter ) ) { ?>
+	if ( ! empty( $newsletter['title'] ) ) { ?>
 		<div class="bg-dark-060 py-5 px-4 md:px-0">
 			<div class="container">
 				<div class="flex flex-col gap-5 items-start lg:flex-row lg:justify-between ">
