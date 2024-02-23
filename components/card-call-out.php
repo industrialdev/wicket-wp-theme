@@ -48,13 +48,14 @@ if ( $style === 'secondary' ) {
 			$link_type = $link['link_style'];
 
 			get_component( 'button', [ 
-				'variant'     => $link_type ?? 'primary',
-				'label'       => $link['link']['title'],
-				'suffix_icon' => $link['link']['target'] === '_blank' ? 'fa fa-external-link-alt' : '',
-				'a_tag'       => true,
-				'link'        => $link['link']['url'],
-				'link_target' => $link['link']['target'],
-				'classes'     => [ 'justify-center' ],
+				'variant'            => $link_type ?? 'primary',
+				'label'              => $link['link']['title'],
+				'suffix_icon'        => $link['link']['target'] === '_blank' ? 'fa fa-external-link-alt' : '',
+				'a_tag'              => true,
+				'link'               => $link['link']['url'],
+				'link_target'        => $link['link']['target'],
+				'classes'            => [ 'justify-center' ],
+				'screen_reader_text' => __( '(opens in new tab)', 'wicket' ),
 			] );
 		}
 		echo '</div>';
