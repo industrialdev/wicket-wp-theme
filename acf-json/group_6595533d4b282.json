@@ -115,6 +115,40 @@
             "placeholder": ""
         },
         {
+            "key": "field_659e9f7ef673d",
+            "label": "Background Image",
+            "name": "banner_background_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_659e9f52f673c",
+                        "operator": "==",
+                        "value": "image"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
+        },
+        {
             "key": "field_6595748b1c0dc",
             "label": "Text Alignment",
             "name": "banner_text_alignment",
@@ -160,7 +194,7 @@
             ],
             "wrapper": {
                 "width": "",
-                "class": "",
+                "class": "banner__image-field",
                 "id": ""
             },
             "wpml_cf_preferences": 1,
@@ -225,6 +259,11 @@
                         "field": "field_6595748b1c0dc",
                         "operator": "==",
                         "value": "left"
+                    },
+                    {
+                        "field": "field_65aa70754a630",
+                        "operator": "==",
+                        "value": "no-image"
                     }
                 ]
             ],
@@ -351,40 +390,6 @@
                     ]
                 }
             ]
-        },
-        {
-            "key": "field_659e9f7ef673d",
-            "label": "Background Image",
-            "name": "banner_background_image",
-            "aria-label": "",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_659e9f52f673c",
-                        "operator": "==",
-                        "value": "image"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "wpml_cf_preferences": 1,
-            "return_format": "array",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "preview_size": "medium"
         }
     ],
     "location": [
@@ -406,5 +411,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "translation",
-    "modified": 1705930118
+    "modified": 1708760089
 }

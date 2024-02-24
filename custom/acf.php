@@ -95,3 +95,33 @@ function wicket_acf_load_taxonomies_field_choices( $field ) {
 	return $field;
 }
 add_filter( 'acf/load_field/key=field_65c6206a6e856', 'wicket_acf_load_taxonomies_field_choices' );
+
+// Add image preview to ACF featured image field
+function wicket_acf_prepare_featured_image_field( $field ) {
+	$post_id           = get_the_ID();
+	$featured_image_id = get_post_thumbnail_id( $post_id );
+	if ( $featured_image_id ) {
+		$featured_image_url = wp_get_attachment_image_url( $featured_image_id, 'thumbnail' );
+
+		$image_classes = [ 'banner__image-preview', 'mt-4', 'w-10' ];
+		if ( $field['value'] === 'featured-image' ) {
+			$image_classes[] = 'block';
+		} else {
+			$image_classes[] = 'hidden';
+		}
+
+		echo '<img class="' . implode( ' ', $image_classes ) . '" src="' . $featured_image_url . '" alt="Featured Image">';
+	}
+	// Add script to remove the "Add Image" button
+	?>
+	<script>
+		const imageFieldWrapper = document.getElementsByClassName('banner__image-field');
+		const imageField = imageFieldWrapper[0].querySelector('select');
+		const imagePreview = document.querySelector('.banner__image-preview');
+		imageField.addEventListener('change', function () {
+			imagePreview.style.display = this.value === 'featured-image' ? 'block' : 'none';
+		});
+	</script>
+	<?php
+}
+add_filter( 'acf/render_field/key=field_65aa70754a630', 'wicket_acf_prepare_featured_image_field' );

@@ -45,6 +45,9 @@ if ( $style === 'secondary' ) {
 				<a href="mailto:<?php echo esc_attr( $email ); ?>"
 					class="font-bold inline-flex items-center gap-2 hover:no-underline group">
 					<i class="fa-regular fa-envelope group-hover:no-underline"></i>
+					<span class="sr-only">
+						<?php echo __( 'Send email to: ', 'wicket' ) ?>
+					</span>
 					<span class="group-hover:underline">
 						<?php echo esc_html( $email ); ?>
 					</span>
@@ -55,6 +58,9 @@ if ( $style === 'secondary' ) {
 				<a href="tel:<?php echo esc_attr( $phone ); ?>"
 					class="font-bold inline-flex items-center gap-2 hover:no-underline group">
 					<i class="fa-regular fa-phone group-hover:no-underline"></i>
+					<span class="sr-only">
+						<?php echo __( 'Call: ', 'wicket' ) ?>
+					</span>
 					<span class="group-hover:underline">
 						<?php echo esc_html( $phone ); ?>
 					</span>

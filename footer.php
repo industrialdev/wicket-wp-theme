@@ -104,11 +104,11 @@
 											$email   = get_sub_field( 'email' );
 
 											if ( $email ) {
-												echo '<a class="text-white mb-4 font-bold flex items-center gap-1.5 hover:no-underline group" href="mailto:' . $email . '"><i class="fa-regular fa-envelope group-hover:no-underline"></i><span class="group-hover:underline">' . $email . '</span></a>';
+												echo '<a class="text-white mb-4 font-bold flex items-center gap-1.5 hover:no-underline group" href="mailto:' . $email . '"><i class="fa-regular fa-envelope group-hover:no-underline"></i><span class="sr-only">'.__( 'Send email to: ', 'wicket' ).'</span><span class="group-hover:underline">' . $email . '</span></a>';
 											}
 
 											if ( $phone ) {
-												echo '<a class="text-white font-bold flex items-center gap-1.5 hover:no-underline group" href="tel:' . $phone . '"><i class="fa-regular fa-phone group-hover:no-underline"></i><span class="group-hover:underline">' . $phone . '</span></a>';
+												echo '<a class="text-white font-bold flex items-center gap-1.5 hover:no-underline group" href="tel:' . $phone . '"><i class="fa-regular fa-phone group-hover:no-underline"></i><span class="sr-only">'.__( 'Call: ', 'wicket' ).'</span><span class="group-hover:underline">' . $phone . '</span></a>';
 											}
 										}
 
