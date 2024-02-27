@@ -97,4 +97,35 @@ $classes[]           = 'component-featured-posts';
 		</div>
 	<?php endif; ?>
 
+	<?php if ( $style === 'one-level' ) : ?>
+		<div class="grid gap-4 grid-cols-1 lg:grid-cols-<?php echo $column_count ?>">
+			<?php
+			foreach ( $posts as $post ) {
+				$post_id   = $post->ID;
+				$post_date = get_the_date( 'F j, Y', $post_id );
+				$image     = [];
+				if ( ! $hide_featured_image ) {
+					$featured_image_id  = get_post_thumbnail_id( $post_id );
+					$featured_image_alt = get_post_meta( $featured_image_id, '_wp_attachment_image_alt', true );
+					$image              = [ 
+						'id'  => $featured_image_id,
+						'alt' => $featured_image_alt,
+					];
+				}
+				get_component( 'card-listing', [ 
+					'title'          => get_the_title( $post_id ),
+					'featured_image' => $image,
+					'content_type'   => ! $hide_content_type ? get_post_type( $post_id ) : '',
+					'date'           => ! $hide_date ? $post_date : '',
+					'member_only'    => is_member_only( $post_id ),
+					'link'           => [ 
+						'url'    => get_permalink( $post_id ),
+						'target' => '',
+					],
+				] );
+			}
+			?>
+		</div>
+	<?php endif; ?>
+
 </div>
