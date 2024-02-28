@@ -113,7 +113,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
         <!-- Utility Nav -->
         <div 
             x-show="showUtilityNav"
-            class="hidden lg:block w-full bg-dark-100 text-light-000 font-bold"
+            class="hidden lg:block w-full bg-dark-100 text-white font-bold"
             >
             <div class="xl:container flex justify-end">
                 <?php
@@ -139,7 +139,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
         </div> <!-- End Utility Nav -->
 
         <!-- Secondary Nav (Logo, login button, language switcher, etc.) -->
-        <div x-ref="secondary-nav" class="w-full xl:container px-2 xl:px-0 flex items-center justify-between relative py-3">
+        <div x-ref="secondary-nav" class="w-full xl:container text-primary-100 px-2 xl:px-0 flex items-center justify-between relative py-3">
             <!-- Left-aligned hamburger menu button that only shows on Base/SM breakpoints -->
             <button 
                 x-show="! mobileMenuOpen"
