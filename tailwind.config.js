@@ -81,6 +81,12 @@ const generateColorVarieties = (color, name) => {
     return returnObject
   }
 
+  // Handle separately if this is the "black" colour
+  if (name === 'black') {
+    returnObject['DEFAULT'] = color
+    return returnObject
+  }
+
   // Generate the -000 through -100 varieties (lighter varients)
   for (var varietyCode in lowerLevels) {
     let percentageChange = lowerLevels[varietyCode]
