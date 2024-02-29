@@ -11,7 +11,7 @@
 <footer class="<?php if($is_coloured_style){echo 'bg-primary-100';} if($is_light_style){echo 'bg-white';}?>">
 	<?php
 	$newsletter = get_field( 'newsletter', 'option' );
-	if ( ! empty( $newsletter ) ) { ?>
+	if ( ! empty( $newsletter['title'] ) ) { ?>
 		<div class="<?php if($is_coloured_style){echo 'bg-primary-060 text-white';} if($is_light_style){echo 'bg-tertiary-100 text-white';}?> py-5 px-4 md:px-0">
 			<div class="container">
 				<div class="flex flex-col gap-5 items-start lg:flex-row lg:justify-between ">
@@ -87,7 +87,7 @@
 								<?php echo $section_title ?>
 							</div>
 
-							<div class="footer-section w-full" id="<?php echo $section_id ?>" x-show="windowWidth < 1024 ? isOpen : true">
+							<div class="footer-section w-full" id="<?php echo $section_id ?>" <?php if ( $is_menu_column ) : ?>x-show="windowWidth < 1024 ? isOpen : true" <?php endif; ?>>
 							<?php } ?>
 
 							<?php if ( have_rows( 'content' ) ) :
@@ -114,11 +114,11 @@
 											$email   = get_sub_field( 'email' );
 
 											if ( $email ) {
-												echo '<a class="'. $default_text_colour_class .' mb-4 font-bold flex items-center gap-1.5 hover:no-underline group" href="mailto:' . $email . '"><i class="fa-regular fa-envelope group-hover:no-underline"></i><span class="group-hover:underline">' . $email . '</span></a>';
+												echo '<a class="text-white mb-4 font-bold flex items-center gap-1.5 hover:no-underline group" href="mailto:' . $email . '"><i class="fa-regular fa-envelope group-hover:no-underline"></i><span class="sr-only">'.__( 'Send email to: ', 'wicket' ).'</span><span class="group-hover:underline">' . $email . '</span></a>';
 											}
 
 											if ( $phone ) {
-												echo '<a class="'. $default_text_colour_class .' font-bold flex items-center gap-1.5 hover:no-underline group" href="tel:' . $phone . '"><i class="fa-regular fa-phone group-hover:no-underline"></i><span class="group-hover:underline">' . $phone . '</span></a>';
+												echo '<a class="text-white font-bold flex items-center gap-1.5 hover:no-underline group" href="tel:' . $phone . '"><i class="fa-regular fa-phone group-hover:no-underline"></i><span class="sr-only">'.__( 'Call: ', 'wicket' ).'</span><span class="group-hover:underline">' . $phone . '</span></a>';
 											}
 										}
 
@@ -178,9 +178,7 @@
 							</div>
 						<?php } ?>
 					</div>
-					<?php if ( $is_menu_column ) : ?>
-						<hr class="border-b-1 border-[#7B7F83] lg:hidden">
-					<?php endif; ?>
+					<hr class="border-b-1 border-[#7B7F83] lg:hidden">
 				<?php endwhile; ?>
 			</div>
 		<?php endif; ?>
