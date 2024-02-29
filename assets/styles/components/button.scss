@@ -112,12 +112,13 @@
 
 /* Secondary Button */
 .button--secondary {
-  background-color: transparent;
-  color: var(--wp--preset--color--primary);
-  border-color: var(--wp--preset--color--primary);
+  background-color: var(--wp--preset--color--secondary);
+  color: var(--wp--preset--color--black);
+  border-color: var(--wp--preset--color--secondary);
 
   &:hover {
     background-color: var(--wp--preset--color--primary);
+    border-color: var(--wp--preset--color--primary);
     color: var(--wp--preset--color--white);
     text-decoration: underline;
   }
@@ -141,12 +142,12 @@
   /* Secondary Button Reversed */
   &.button--reversed {
     background-color: transparent;
-    color: var(--wp--preset--color--white);
-    border-color: var(--wp--preset--color--white);
+    color: var(--wp--preset--color--secondary);
+    border-color: var(--wp--preset--color--secondary);
 
     &:hover {
-      background-color: var(--wp--preset--color--white);
-      color: var(--wp--preset--color--dark);
+      background-color: var(--wp--preset--color--secondary);
+      color: var(--wp--preset--color--black);
       text-decoration: underline;
     }
 

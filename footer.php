@@ -4,26 +4,26 @@
 	$is_coloured_style = $footer_style == 'coloured' ? true : false;
 	$is_light_style = $footer_style == 'light' ? true : false;
 
-	$text_colour_class = $is_coloured_style ? 'text-white' : 'text-dark-100';
-	$text_colour_class = $is_light_style ? 'text-dark-100' : $text_colour_class;
+	$default_text_colour_class = $is_coloured_style ? 'text-white' : 'text-dark-100';
+	$default_text_colour_class = $is_light_style ? 'text-dark-100' : $default_text_colour_class;
 
 ?>
 <footer class="<?php if($is_coloured_style){echo 'bg-primary-100';} if($is_light_style){echo 'bg-white';}?>">
 	<?php
 	$newsletter = get_field( 'newsletter', 'option' );
 	if ( ! empty( $newsletter ) ) { ?>
-		<div class="<?php if($is_coloured_style){echo 'bg-primary-060';} if($is_light_style){echo 'bg-white';}?> py-5 px-4 md:px-0">
+		<div class="<?php if($is_coloured_style){echo 'bg-primary-060 text-white';} if($is_light_style){echo 'bg-tertiary-100 text-white';}?> py-5 px-4 md:px-0">
 			<div class="container">
 				<div class="flex flex-col gap-5 items-start lg:flex-row lg:justify-between ">
 					<div class="flex-1">
 						<?php if ( $newsletter['title'] ) : ?>
-							<div class="text-body-lg <?php echo $text_colour_class; ?> mb-2 font-bold">
+							<div class="text-body-lg mb-2 font-bold">
 								<?php echo $newsletter['title']; ?>
 							</div>
 						<?php endif; ?>
 
 						<?php if ( $newsletter['description'] ) : ?>
-							<div class="<?php echo $text_colour_class; ?>">
+							<div class="">
 								<?php echo $newsletter['description']; ?>
 							</div>
 						<?php endif; ?>
@@ -31,7 +31,7 @@
 
 					<?php if ( ! empty( $newsletter['link'] ) ) {
 						get_component( 'button', [ 
-							'variant'     => 'primary',
+							'variant'     => 'secondary',
 							'link'        => $newsletter['link']['url'],
 							'link_target' => $newsletter['link']['target'],
 							'a_tag'       => true,
@@ -72,18 +72,18 @@
 					}" x-on:resize.window="windowWidth= window.innerWidth">
 						<?php if ( $section_title ) { ?>
 							<?php if ( $is_menu_column ) : ?>
-								<button type="button" class="font-bold <?php echo $text_colour_class; ?> w-full flex items-center justify-between lg:hidden"
+								<button type="button" class="font-bold <?php echo $default_text_colour_class; ?> w-full flex items-center justify-between lg:hidden"
 									x-on:click="isOpen = !isOpen">
 									<?php echo $section_title ?>
 									<i class="fa-solid fa-caret-down" :class="!isOpen || 'rotate-180'"></i>
 								</button>
 							<?php else : ?>
-								<div class="font-bold <?php echo $text_colour_class; ?> lg:hidden">
+								<div class="font-bold <?php echo $default_text_colour_class; ?> lg:hidden">
 									<?php echo $section_title ?>
 								</div>
 							<?php endif; ?>
 
-							<div class="font-bold <?php echo $text_colour_class; ?> hidden lg:block">
+							<div class="font-bold <?php echo $default_text_colour_class; ?> hidden lg:block">
 								<?php echo $section_title ?>
 							</div>
 
@@ -104,7 +104,7 @@
 										// Text layout.
 										elseif ( get_row_layout() == 'text' ) {
 											$text = get_sub_field( 'text' );
-											echo '<div class="'. $text_colour_class .'">' . $text . '</div>';
+											echo '<div class="'. $default_text_colour_class .'">' . $text . '</div>';
 										}
 
 										// Contact info layout.
@@ -114,11 +114,11 @@
 											$email   = get_sub_field( 'email' );
 
 											if ( $email ) {
-												echo '<a class="'. $text_colour_class .' mb-4 font-bold flex items-center gap-1.5 hover:no-underline group" href="mailto:' . $email . '"><i class="fa-regular fa-envelope group-hover:no-underline"></i><span class="group-hover:underline">' . $email . '</span></a>';
+												echo '<a class="'. $default_text_colour_class .' mb-4 font-bold flex items-center gap-1.5 hover:no-underline group" href="mailto:' . $email . '"><i class="fa-regular fa-envelope group-hover:no-underline"></i><span class="group-hover:underline">' . $email . '</span></a>';
 											}
 
 											if ( $phone ) {
-												echo '<a class="'. $text_colour_class .' font-bold flex items-center gap-1.5 hover:no-underline group" href="tel:' . $phone . '"><i class="fa-regular fa-phone group-hover:no-underline"></i><span class="group-hover:underline">' . $phone . '</span></a>';
+												echo '<a class="'. $default_text_colour_class .' font-bold flex items-center gap-1.5 hover:no-underline group" href="tel:' . $phone . '"><i class="fa-regular fa-phone group-hover:no-underline"></i><span class="group-hover:underline">' . $phone . '</span></a>';
 											}
 										}
 
@@ -126,7 +126,7 @@
 										elseif ( get_row_layout() == 'menu' ) {
 											$menu = get_sub_field( 'menu' );
 
-											echo '<div class="'. $text_colour_class .' [&>ul>li>a]:mb-3 [&>ul>li>a]:inline-flex">';
+											echo '<div class="'. $default_text_colour_class .' [&>ul>li>a]:mb-3 [&>ul>li>a]:inline-flex">';
 											wp_nav_menu( array(
 												'menu'        => $menu,
 												'container'   => '',
@@ -152,12 +152,12 @@
 											$newsletter_page = get_sub_field( 'newsletter_page' );
 
 											if ( $description ) {
-												echo '<div class="'. $text_colour_class .' mb-4">' . $description . '</div>';
+												echo '<div class="'. $default_text_colour_class .' mb-4">' . $description . '</div>';
 											}
 
 											if ( $newsletter_page ) {
 												get_component( 'button', [ 
-													'variant'     => 'primary',
+													'variant'     => 'secondary',
 													'link'        => $newsletter_page['url'],
 													'link_target' => $newsletter_page['target'],
 													'a_tag'       => true,
@@ -189,7 +189,10 @@
 		$hide_social_links = get_field( 'footer_hide_social_links', 'option' );
 		if ( have_rows( 'social_media_links', 'option' ) && $hide_social_links === false ) : ?>
 			<div class="py-8 flex justify-center">
-				<?php get_component( 'social-links', array( 'reversed' => $is_coloured_style ) ); ?>
+				<?php get_component( 'social-links', [
+								'reversed'       => $is_coloured_style ,
+								'button-variant' => 'secondary',
+							] ); ?>
 			</div>
 		<?php endif; ?>
 
@@ -199,12 +202,12 @@
 					'theme_location' => 'footer',
 					'container'      => '',
 					'fallback_cb'    => false,
-					'menu_class'     => 'flex flex-col md:flex-row gap-8 font-bold '. $text_colour_class .' md:justify-center',
+					'menu_class'     => 'flex flex-col md:flex-row gap-8 font-bold '. $default_text_colour_class .' md:justify-center',
 				) ); ?>
 			</div>
 		<?php endif; ?>
 
-		<div class="flex justify-center '. $text_colour_class .' text-body-sm">
+		<div class="flex justify-center <?php echo $default_text_colour_class; ?> text-body-sm">
 			<?php echo sprintf( '© %s %s', date( 'Y' ), get_field( 'footer_copyright', 'option' ) ); ?>
 			<?php if ( has_nav_menu( 'footer-utility' ) ) {
 				wp_nav_menu( array(

@@ -108,7 +108,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
             mobileMenuOpen: false,
             mobileMenuMegaSubDropdowns: <?php echo $sub_menu_dropdowns; ?>,
         }"
-        class="w-full flex flex-col bg-white"
+        class="w-full flex flex-col bg-white text-primary-100"
     >
         <!-- Utility Nav -->
         <div 
@@ -139,7 +139,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
         </div> <!-- End Utility Nav -->
 
         <!-- Secondary Nav (Logo, login button, language switcher, etc.) -->
-        <div x-ref="secondary-nav" class="w-full xl:container text-primary-100 px-2 xl:px-0 flex items-center justify-between relative py-3">
+        <div x-ref="secondary-nav" class="w-full xl:container px-2 xl:px-0 flex items-center justify-between relative py-3">
             <!-- Left-aligned hamburger menu button that only shows on Base/SM breakpoints -->
             <button 
                 x-show="! mobileMenuOpen"
@@ -330,7 +330,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
 
         <!-- Main Nav -->
         <nav x-ref="main-nav" class="w-full hidden lg:flex border-t-base border-b-base border-dark-040">
-            <ul class="w-full justify-center gap-4 flex">
+            <ul class="w-full justify-evenly gap-4 flex">
             <?php 
             foreach( $primary_nav_items_structured as $primary_nav_item ): 
                 // If this is a single menu item link
