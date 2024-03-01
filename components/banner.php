@@ -34,7 +34,7 @@ $background_image = $args['background_image'];
 $back_link        = $args['back_link'];
 
 $text_alignment_class = 'text-' . $text_alignment;
-$wrapper_classes      = [ 'component-banner py-8 px-4 mb-16 border-b border-light-020 relative' ];
+$wrapper_classes      = [ 'component-banner py-8 px-4 mb-16 relative' ]; // border-b border-light-020
 $reversed             = ( $background_style === 'reversed' || $background_style === 'image' );
 $cta_classes          = [ 'cta-card flex-1 p-6 rounded-050 basis-full w-full lg:basis-3/12' ];
 
@@ -49,7 +49,7 @@ if ( $background_style === 'reversed' ) {
 } else if ( $background_style === 'image' ) {
 	$wrapper_classes[] = 'bg-mode-image';
 } else {
-	$wrapper_classes[] = 'bg-mode-light';
+	$wrapper_classes[] = 'bg-accent-a-100 bg-mode-light';
 }
 
 if ( $image === 'featured-image' && has_post_thumbnail() ) {

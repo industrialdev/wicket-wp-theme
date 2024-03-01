@@ -1344,89 +1344,9 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(57 63 70 / var(--tw-bg-opacity));
 }
-.bg-accent-000 {
+.bg-accent-a-100 {
   --tw-bg-opacity: 1;
-  background-color: rgb(197 218 253 / var(--tw-bg-opacity));
-}
-.bg-accent-010 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(183 209 252 / var(--tw-bg-opacity));
-}
-.bg-accent-020 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(168 200 252 / var(--tw-bg-opacity));
-}
-.bg-accent-030 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(154 191 252 / var(--tw-bg-opacity));
-}
-.bg-accent-040 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(139 182 251 / var(--tw-bg-opacity));
-}
-.bg-accent-050 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(125 173 250 / var(--tw-bg-opacity));
-}
-.bg-accent-060 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(110 164 250 / var(--tw-bg-opacity));
-}
-.bg-accent-070 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(96 154 250 / var(--tw-bg-opacity));
-}
-.bg-accent-080 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(81 145 249 / var(--tw-bg-opacity));
-}
-.bg-accent-090 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(67 136 248 / var(--tw-bg-opacity));
-}
-.bg-accent-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(52 127 248 / var(--tw-bg-opacity));
-}
-.bg-accent-110 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(38 118 248 / var(--tw-bg-opacity));
-}
-.bg-accent-120 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(23 109 247 / var(--tw-bg-opacity));
-}
-.bg-accent-130 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(9 100 246 / var(--tw-bg-opacity));
-}
-.bg-accent-140 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(8 94 232 / var(--tw-bg-opacity));
-}
-.bg-accent-150 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(8 88 218 / var(--tw-bg-opacity));
-}
-.bg-accent-160 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(7 82 203 / var(--tw-bg-opacity));
-}
-.bg-accent-170 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(7 76 188 / var(--tw-bg-opacity));
-}
-.bg-accent-180 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(6 70 174 / var(--tw-bg-opacity));
-}
-.bg-accent-190 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(6 64 160 / var(--tw-bg-opacity));
-}
-.bg-accent-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 59 145 / var(--tw-bg-opacity));
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 .bg-danger-000 {
   --tw-bg-opacity: 1;
@@ -3241,7 +3161,7 @@ h6 {
 }
 .button--primary.button--reversed, .wp-block-button.is-style-default .button--reversed.wp-block-button__link.wp-element-button {
   background-color: var(--wp--preset--color--white);
-  color: var(--wp--preset--color--dark);
+  color: var(--wp--preset--color--primary);
   border-color: var(--wp--preset--color--white);
 }
 .button--primary.button--reversed:hover, .wp-block-button.is-style-default .button--reversed.wp-block-button__link.wp-element-button:hover {
@@ -3310,13 +3230,13 @@ h6 {
 /* Ghost Button */
 .button--ghost {
   background-color: transparent;
-  color: var(--wp--preset--color--dark);
+  color: var(--wp--preset--color--primary);
   border-color: transparent;
   /* Ghost Button Reversed */
 }
 .button--ghost:hover {
   background-color: var(--wp--preset--color--light-020);
-  color: var(--wp--preset--color--dark);
+  color: var(--wp--preset--color--primary);
   text-decoration: underline;
 }
 .button--ghost:focus {
@@ -3326,11 +3246,11 @@ h6 {
 }
 .button--ghost:active {
   background-color: var(--wp--preset--color--light-030);
-  color: var(--wp--preset--color--dark);
+  color: var(--wp--preset--color--primary);
 }
 .button--ghost:disabled {
   background-color: transparent;
-  color: var(--wp--preset--color--dark-060);
+  color: var(--wp--preset--color--primary-060);
   border-color: transparent;
 }
 .button--ghost.button--reversed {
@@ -3348,7 +3268,7 @@ h6 {
 }
 .button--ghost.button--reversed:disabled {
   background-color: transparent;
-  color: var(--wp--preset--color--dark-060);
+  color: var(--wp--preset--color--primary-060);
   border-color: transparent;
 }
 
@@ -3573,7 +3493,7 @@ h6.wp-block-heading {
 }
 
 .wp-block-quote {
-  border-left: 4px solid var(--wp--preset--color--secondary);
+  border-left: 4px solid var(--wp--preset--color--tertiary);
   padding-left: 1rem;
 }
 .wp-block-quote cite {
