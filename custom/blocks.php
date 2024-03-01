@@ -128,3 +128,40 @@ function wicket_core_block_wrappers( $block_content, $block ) {
 }
 
 add_filter( 'render_block', 'wicket_core_block_wrappers', 10, 2 );
+
+/**
+ * Adding default blocks to posts
+ */
+function register_post_template() {
+	$template                   = array(
+		array( 'wicket/banner', [ 
+			'data' => [ 
+				'banner_show_breadcrumbs' => false,
+				'banner_show_post_type'   => true,
+				'banner_back_link'        => home_url( '/blog' ),
+				'banner_show_date'        => true,
+			],
+			'lock' => array(
+				'move'   => true,
+				'remove' => true,
+			),
+		] ),
+		array( 'core/paragraph', [ 
+			'content' => '<b>Topics:</b>',
+			'style'   => [ 
+				'spacing' => [ 
+					'padding' => [ 
+						'top'    => '1.5rem',
+						'bottom' => '0',
+					],
+				] ],
+		] ),
+		array( 'core/post-terms', [ 
+			'term' => 'post_tag',
+		] ),
+		array( 'wicket/manually-related-content' ),
+	);
+	$post_type_object           = get_post_type_object( 'post' );
+	$post_type_object->template = $template;
+}
+add_action( 'init', 'register_post_template' );

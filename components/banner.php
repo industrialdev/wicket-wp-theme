@@ -2,9 +2,11 @@
 $defaults         = array(
 	'classes'          => [],
 	'title '           => '',
-	'show_breadcrumbs' => false,
 	'intro'            => '',
+	'show_breadcrumbs' => false,
+	'show_post_type'   => false,
 	'show_share'       => false,
+	'show_date'        => false,
 	'member_only'      => false,
 	'text_alignment'   => 'left',
 	'image'            => '',
@@ -12,13 +14,16 @@ $defaults         = array(
 	'call_to_action'   => '',
 	'background_style' => 'light',
 	'background_image' => '',
+	'back_link'        => '',
 );
 $args             = wp_parse_args( $args, $defaults );
 $classes          = $args['classes'];
 $title            = $args['title'];
-$show_breadcrumbs = $args['show_breadcrumbs'];
 $intro            = $args['intro'];
+$show_breadcrumbs = $args['show_breadcrumbs'];
+$show_post_type   = $args['show_post_type'];
 $show_share       = $args['show_share'];
+$show_date        = $args['show_date'];
 $member_only      = $args['member_only'];
 $text_alignment   = $args['text_alignment'];
 $image            = $args['image'];
@@ -26,6 +31,7 @@ $custom_image     = $args['custom_image'];
 $call_to_action   = $args['call_to_action'];
 $background_style = $args['background_style'];
 $background_image = $args['background_image'];
+$back_link        = $args['back_link'];
 
 $text_alignment_class = 'text-' . $text_alignment;
 $wrapper_classes      = [ 'component-banner py-8 px-4 mb-16 border-b border-light-020 relative' ];
@@ -38,9 +44,9 @@ if ( $reversed ) {
 } else {
 	$cta_classes[] = 'bg-light-010';
 }
-if( $background_style === 'reversed' ) {
+if ( $background_style === 'reversed' ) {
 	$wrapper_classes[] = 'bg-mode-reversed';
-} else if( $background_style === 'image' ) {
+} else if ( $background_style === 'image' ) {
 	$wrapper_classes[] = 'bg-mode-image';
 } else {
 	$wrapper_classes[] = 'bg-mode-light';
@@ -69,10 +75,28 @@ if ( $image === 'featured-image' && has_post_thumbnail() ) {
 					get_component( 'breadcrumbs' );
 				} ?>
 
+				<?php if ( is_single() && $back_link ) {
+					get_component( 'link', [ 
+						'url'        => $back_link,
+						'text'       => 'Back',
+						'icon_start' => [ 
+							'icon' => 'fa-solid fa-arrow-left',
+							'text' => 'Icon text',
+						],
+					] );
+				} ?>
+
 				<?php if ( $title ) : ?>
-					<h1 class="text-heading-3xl font-bold <?php echo esc_attr( $text_alignment_class ); ?>">
-						<?php echo esc_html( $title ); ?>
-					</h1>
+					<div>
+						<?php if ( $show_post_type ) : ?>
+							<div class="text-dark-070 uppercase font-bold <?php echo esc_attr( $text_alignment_class ); ?>">
+								<?php echo get_post_type(); ?>
+							</div>
+						<?php endif; ?>
+						<h1 class="text-heading-3xl font-bold <?php echo esc_attr( $text_alignment_class ); ?>">
+							<?php echo esc_html( $title ); ?>
+						</h1>
+					</div>
 				<?php endif; ?>
 
 				<?php if ( $text_alignment === 'center' ) : ?>
@@ -82,6 +106,15 @@ if ( $image === 'featured-image' && has_post_thumbnail() ) {
 				<?php if ( $intro ) : ?>
 					<div class="text-body-lg <?php echo esc_attr( $text_alignment_class ); ?>">
 						<?php echo wp_kses_post( $intro ); ?>
+					</div>
+				<?php endif; ?>
+
+				<?php if ( $show_date ) : ?>
+					<?php
+					$date = get_the_date( 'F j, Y' );
+					?>
+					<div class="text-body-sm text-dark-070 italic mb-3">
+						<?php echo $date; ?>
 					</div>
 				<?php endif; ?>
 
