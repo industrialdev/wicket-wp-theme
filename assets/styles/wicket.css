@@ -1088,6 +1088,12 @@ video {
   -ms-flex-pack: justify;
   justify-content: space-between;
 }
+.justify-evenly {
+  -webkit-box-pack: space-evenly;
+  -webkit-justify-content: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+}
 .gap-1 {
   gap: 0.25rem;
 }
@@ -3244,13 +3250,14 @@ h6 {
 
 /* Secondary Button */
 .button--secondary, .wp-block-button.is-style-ghost .wp-block-button__link.wp-element-button, .wp-block-button.is-style-secondary .wp-block-button__link.wp-element-button {
-  background-color: transparent;
-  color: var(--wp--preset--color--primary);
-  border-color: var(--wp--preset--color--primary);
+  background-color: var(--wp--preset--color--secondary);
+  color: var(--wp--preset--color--black);
+  border-color: var(--wp--preset--color--secondary);
   /* Secondary Button Reversed */
 }
 .button--secondary:hover, .wp-block-button.is-style-ghost .wp-block-button__link.wp-element-button:hover, .wp-block-button.is-style-secondary .wp-block-button__link.wp-element-button:hover {
   background-color: var(--wp--preset--color--primary);
+  border-color: var(--wp--preset--color--primary);
   color: var(--wp--preset--color--white);
   text-decoration: underline;
 }
@@ -3270,12 +3277,12 @@ h6 {
 }
 .button--secondary.button--reversed, .wp-block-button.is-style-ghost .button--reversed.wp-block-button__link.wp-element-button, .wp-block-button.is-style-secondary .button--reversed.wp-block-button__link.wp-element-button {
   background-color: transparent;
-  color: var(--wp--preset--color--white);
-  border-color: var(--wp--preset--color--white);
+  color: var(--wp--preset--color--secondary);
+  border-color: var(--wp--preset--color--secondary);
 }
 .button--secondary.button--reversed:hover, .wp-block-button.is-style-ghost .button--reversed.wp-block-button__link.wp-element-button:hover, .wp-block-button.is-style-secondary .button--reversed.wp-block-button__link.wp-element-button:hover {
-  background-color: var(--wp--preset--color--white);
-  color: var(--wp--preset--color--dark);
+  background-color: var(--wp--preset--color--secondary);
+  color: var(--wp--preset--color--black);
   text-decoration: underline;
 }
 .button--secondary.button--reversed:active, .wp-block-button.is-style-ghost .button--reversed.wp-block-button__link.wp-element-button:active, .wp-block-button.is-style-secondary .button--reversed.wp-block-button__link.wp-element-button:active {
