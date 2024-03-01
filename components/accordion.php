@@ -57,8 +57,8 @@ $placeholder_styles = 'style="min-height: 40px;border: 1px solid var(--wp--prese
     }
     ?>
     <div 
-      class="accordion-item p-2 hover:cursor-pointer <?php if($accordion_type == 'card'){ echo 'rounded-100 border border-light-100 mb-3'; } else { echo 'border-b border-light-100 border-solid '; } if( $i == 0 && $accordion_type == 'list' ) { echo ' border-t'; } ?>"
-      x-bind:class="openAccordion == <?php echo $i; ?> ? 'border-b-4 bg-light-020 bg-opacity-20 open <?php if($accordion_type == 'card') { echo 'border-light-120'; } ?>' : ''"
+      class="accordion-item p-2 hover:cursor-pointer <?php if($accordion_type == 'card'){ echo 'rounded-100 border border-primary-060 mb-3'; } else { echo 'border-b border-primary-060 border-solid '; } if( $i == 0 && $accordion_type == 'list' ) { echo ' border-t'; } ?>"
+      x-bind:class="openAccordion == <?php echo $i; ?> ? 'border-b-4 bg-tertiary-010 bg-opacity-20 open <?php if($accordion_type == 'card') { echo 'border-light-120'; } ?>' : ''"
       x-bind:aria-expanded="openAccordion == <?php echo $i; ?> ? 'true' : 'false'"
       x-bind:aria-pressed="openAccordion == <?php echo $i; ?> ? 'true' : 'false'"
       x-on:click="if(openAccordion == <?php echo $i; ?>){ openAccordion = 999; }else{ openAccordion = <?php echo $i; ?> }"
@@ -125,7 +125,7 @@ $placeholder_styles = 'style="min-height: 40px;border: 1px solid var(--wp--prese
 
     <?php if( $separate_title_body ): ?>
     <div 
-      class="py-4 px-12 <?php if($accordion_type == 'list') { echo 'border-b border-light-100'; } ?>"
+      class="py-4 px-12 <?php if($accordion_type == 'list') { echo 'border-b border-primary-060'; } ?>"
       x-show="openAccordion == <?php echo $i; ?>"
       x-transition
     >

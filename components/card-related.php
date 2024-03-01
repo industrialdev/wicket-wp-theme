@@ -5,11 +5,12 @@ $defaults              = array(
 	'link'               => [],
 	'document'           => [],
 	'display_text'       => '',
-	'body_text'          => '', //
-	'icon_type'          => 'default', //
+	'body_text'          => '',
+	'icon_type'          => 'default',
 	'icon'               => '',
 	'layout_style'       => '',
-	'cta_label_override' => '', //
+	'cta_label_override' => '',
+	'rounded_corners'    => '',
 );
 $args                  = wp_parse_args( $args, $defaults );
 $classes               = $args['classes'];
@@ -29,6 +30,7 @@ $button_icon           = '';
 $button_target         = '_self';
 $button_classes        = [];
 $icon_id               = $icon['id'] ?? '';
+$rounded_corners       = $args['rounded_corners'];
 
 // Case: Layout style is list
 if ( $layout_style === 'list' ) {
@@ -63,6 +65,11 @@ if ( $content_type === 'link' && $link ) {
 	$button_icon      = $link_target === '_blank' ? 'fa-regular fa-external-link' : 'fa-solid fa-arrow-right';
 	$button_classes[] = $layout_style === 'card' ? 'w-full justify-center' : 'ml-auto min-w-36';
 	$button_target    = $link_target;
+}
+
+// Case: Rounded corners checkbox
+if ( $rounded_corners ) {
+	$classes[] = 'rounded-150';
 }
 ?>
 

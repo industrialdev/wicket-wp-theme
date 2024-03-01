@@ -21,6 +21,7 @@ function init( $block = [] ) {
 	$layout_style             = get_field( 'manually_related_content_layout_style' );
 	$column_count             = get_field( 'manually_related_content_column_count' );
 	$buttons_equal_width      = get_field( 'manually_related_content_make_buttons_same_width' );
+	$rounded_corners          = get_field( 'manually_related_content_rounded_corners' );
 	$posts_wrapper_classes    = [ 
 		'grid',
 		'gap-3',
@@ -107,6 +108,7 @@ function init( $block = [] ) {
 			'layout_style'       => $layout_style,
 			'body_text'          => $body_text,
 			'cta_label_override' => $cta_label_override,
+			'rounded_corners'    => $rounded_corners,
 		] );
 	}
 	echo '</div>';
