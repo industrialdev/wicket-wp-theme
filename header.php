@@ -108,12 +108,12 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
             mobileMenuOpen: false,
             mobileMenuMegaSubDropdowns: <?php echo $sub_menu_dropdowns; ?>,
         }"
-        class="w-full flex flex-col bg-white"
+        class="w-full flex flex-col bg-white text-primary-100"
     >
         <!-- Utility Nav -->
         <div 
             x-show="showUtilityNav"
-            class="hidden lg:block w-full bg-dark-100 text-light-000 font-bold"
+            class="hidden lg:block w-full bg-dark-100 text-white font-bold"
             >
             <div class="xl:container flex justify-end">
                 <?php
@@ -330,7 +330,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
 
         <!-- Main Nav -->
         <nav x-ref="main-nav" class="w-full hidden lg:flex border-t-base border-b-base border-dark-040">
-            <ul class="w-full justify-center gap-4 flex">
+            <ul class="w-full justify-evenly gap-4 flex">
             <?php 
             foreach( $primary_nav_items_structured as $primary_nav_item ): 
                 // If this is a single menu item link

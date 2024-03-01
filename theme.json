@@ -48,6 +48,11 @@
           "name": "Dark 090"
         },
         {
+          "slug": "black",
+          "color": "#000000",
+          "name": "Black"
+        },
+        {
           "slug": "white",
           "color": "#ffffff",
           "name": "White"
