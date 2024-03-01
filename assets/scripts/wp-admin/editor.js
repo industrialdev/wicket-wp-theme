@@ -43,7 +43,6 @@ wp.domReady(() => {
   //wp.blocks.unregisterBlockType( 'core/post-featured-image' );
   wp.blocks.unregisterBlockType('core/post-navigation-link')
   wp.blocks.unregisterBlockType('core/post-template')
-  wp.blocks.unregisterBlockType('core/post-terms')
   //wp.blocks.unregisterBlockType( 'core/post-title' );
   wp.blocks.unregisterBlockType('core/query')
   wp.blocks.unregisterBlockType('core/query-no-results')

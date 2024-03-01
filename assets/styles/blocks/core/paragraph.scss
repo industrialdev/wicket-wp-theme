@@ -1,7 +1,4 @@
-p {
-  // max-width: var(--wp--style--global--content-size);
-  // margin-inline: auto;
-
+.wp-block-paragraph > p {
   &.alignfull {
     max-width: 100%;
   }
@@ -20,6 +17,15 @@ p {
 
     &:active {
       text-decoration: underline;
+    }
+  }
+
+  /* Case: Paragraphs in the single post */
+  .single-post & {
+    padding-inline: 1rem;
+    @include media-breakpoint-down('1024px') {
+      max-width: 75%;
+      padding-inline: 0;
     }
   }
 }
