@@ -73,9 +73,9 @@
           "name": "Light 030"
         },
         {
-          "slug": "accent",
-          "color": "#347ff8",
-          "name": "Accent"
+          "slug": "accent-a",
+          "color": "#F9FAFB",
+          "name": "Accent A"
         },
         {
           "slug": "info-a",
