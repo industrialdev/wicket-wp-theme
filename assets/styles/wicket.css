@@ -3063,6 +3063,7 @@ video {
 ------------------------------------------------------------------------------*/
 body {
   font-size: var(--wp--preset--font-size--body-md, 16px);
+  color: var(--wp--preset--color--dark);
 }
 
 h1,
@@ -3072,6 +3073,7 @@ h4,
 h5,
 h6 {
   font-family: var(--wp--preset--font-family--system-sans-serif);
+  color: var(--wp--preset--color--dark);
 }
 
 /* THEME COMPONENTS
