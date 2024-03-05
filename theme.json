@@ -14,7 +14,7 @@
       "palette": [
         {
           "slug": "primary",
-          "color": "#347ff8",
+          "color": "#232A31",
           "name": "Primary"
         },
         {
@@ -24,7 +24,7 @@
         },
         {
           "slug": "tertiary",
-          "color": "#347ff8",
+          "color": "#232A31",
           "name": "Tertiary"
         },
         {
@@ -79,12 +79,12 @@
         },
         {
           "slug": "info-a",
-          "color": "#4AB2DE",
+          "color": "#232A31",
           "name": "Informational A"
         },
         {
           "slug": "info-a-20",
-          "color": "#C9E8F5",
+          "color": "#BDBFC1",
           "name": "Informational A-020"
         },
         {
