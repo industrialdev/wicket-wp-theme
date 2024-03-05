@@ -63,7 +63,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
         $logo_url = $logo['url'] ?? get_template_directory_uri() . "/assets/images/logo-" . $lang . ".svg" ?? '';
         $bam_path = $lang == 'fr' ? '/fr/create-account' : '/create-account';
         $account_center_landing = $lang == 'fr' ? '/fr/mon-compte' : '/account-center';
-        $referrer = isset($_GET['referrer']) ? WP_HOME.$_GET['referrer'].$locale : WP_HOME.$account_center_landing.$locale;
+        $referrer = isset($_GET['referrer']) ? wicket_get_site_root_url().$_GET['referrer'].$locale : wicket_get_site_root_url().$account_center_landing.$locale;
         $cart_path = $lang == 'fr' ? '/fr/cart' : '/cart';
         $nav_state = 'logged_out'; // Will be one of logged_out, logged_in_user, logged_in_member
         if( is_user_logged_in() ) {

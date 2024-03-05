@@ -56,3 +56,23 @@ function get_social_link_label( $links, $name ) {
 		}
 	}
 }
+
+function wicket_get_site_root_url() {
+	if (defined('WP_HOME')) {
+		return WP_HOME;
+	}
+
+  $site_url = get_site_url();
+
+  // Remove /wp/ if present in the site_url (present for Bedrock)
+  if( str_contains( $site_url, '/wp//' ) ) {
+    $site_url = str_replace( '/wp//', '', $site_url );
+  }
+
+  // Remove /wp if present in the site_url (present for Bedrock)
+  if( str_contains( $site_url, '/wp' ) ) {
+    $site_url = str_replace( '/wp', '', $site_url );
+  }
+
+  return $site_url;
+}
