@@ -113,7 +113,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
         <!-- Utility Nav -->
         <div 
             x-show="showUtilityNav"
-            class="hidden lg:block w-full bg-dark-100 text-white font-bold"
+            class="utility-nav hidden lg:block w-full bg-dark-100 text-white font-bold"
             >
             <div class="xl:container flex justify-end">
                 <?php
@@ -139,13 +139,13 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
         </div> <!-- End Utility Nav -->
 
         <!-- Secondary Nav (Logo, login button, language switcher, etc.) -->
-        <div x-ref="secondary-nav" class="w-full xl:container px-2 xl:px-0 flex items-center justify-between relative py-3">
+        <div x-ref="secondary-nav" class="secondary-nav w-full xl:container px-2 xl:px-0 flex items-center justify-between relative py-3">
             <!-- Left-aligned hamburger menu button that only shows on Base/SM breakpoints -->
             <button 
                 x-show="! mobileMenuOpen"
                 x-on:click="mobileMenuOpen = ! mobileMenuOpen; if(mobileMenuOpen){$dispatch('close-mobile-search')};"
                 x-on:close-mobile-menu.window="mobileMenuOpen = false"
-                class="inline-flex md:hidden mr-20 items-center"
+                class="left-hamburger-button inline-flex md:hidden mr-20 items-center"
                 >
                 <?php 
                 get_component( 'icon', [ 
@@ -159,7 +159,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
             <button 
                 x-show="mobileMenuOpen"
                 x-on:click="mobileMenuOpen = ! mobileMenuOpen"
-                class="inline-flex md:hidden mr-16 items-center"
+                class="right-hamburger-close-button inline-flex md:hidden mr-16 items-center"
                 >
                 <?php 
                 get_component( 'icon', [ 
@@ -171,11 +171,11 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
             </button>
         
             <!-- Logo -->
-            <a href="/" class="w-60"><img src="<?php echo $logo_url; ?>" /></a>
+            <a href="/" class="logo w-60"><img src="<?php echo $logo_url; ?>" /></a>
 
             <!-- Right panel -->
             <div 
-                class="flex justify-between align-center font-bold"
+                class="right-panel flex justify-between align-center font-bold"
                 x-bind:class=" searchOpen ? 'lg:flex-grow' : '' "
                 >
                 <?php
@@ -183,7 +183,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         $target = $secondary_nav_item->target ?? '';
                         get_component( 'link', [ 
                             'text'     => $secondary_nav_item->title,
-                            'classes'  => ['mr-4', 'items-center', 'hidden', 'lg:inline-flex'],
+                            'classes'  => ['secondary-nav-item', 'mr-4', 'items-center', 'hidden', 'lg:inline-flex'],
                             'target'   => $target,
                             'url'      => $secondary_nav_item->url,
                             'atts'     => ['x-show="! searchOpen"'],
@@ -196,7 +196,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         'variant'   => 'primary',
                         'a_tag'     => true,
                         'link'      => $bam_path,
-                        'classes'   => ['hidden', 'md:inline-flex'],
+                        'classes'   => ['create-account-button', 'hidden', 'md:inline-flex'],
                         'label'     => __( 'Create Account', 'wicket' ),
                         'atts'      => ['x-show="! searchOpen"'],
                     ] );
@@ -205,7 +205,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         'variant'     => 'primary',
                         'a_tag'     => true,
                         'link'      => $bam_path,
-                        'classes'     => ['mr-4'],
+                        'classes'     => ['become-a-member-button', 'mr-4'],
                         'label'     => __( 'Become a member', 'wicket' ),
                         'atts'      => [' x-bind:class=" searchOpen ? \'hidden md:inline-flex lg:hidden\' : \'hidden md:inline-flex\' " '],
                     ] );
@@ -213,7 +213,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         'variant'     => 'secondary',
                         'a_tag'     => true,
                         'link'      => $account_center_landing,
-                        'classes'     => ['hidden', 'lg:inline-flex'],
+                        'classes'     => ['my-account-button', 'hidden', 'lg:inline-flex'],
                         'label'     => __( 'My Account', 'wicket' ),
                         'atts'      => ['x-show="! searchOpen"'],
                     ] );
@@ -222,7 +222,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         'variant'     => 'secondary',
                         'a_tag'     => true,
                         'link'      => $account_center_landing,
-                        'classes'     => ['hidden', 'md:inline-flex'],
+                        'classes'     => ['member-portal-button', 'hidden', 'md:inline-flex'],
                         'label'     => __( 'Member Portal', 'wicket' ),
                         'atts'      => ['x-show="! searchOpen"'],
                     ] );
@@ -232,7 +232,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                     <?php
                         get_component( 'link', [ 
                             'text'     => __( 'Login', 'wicket' ),
-                            'classes'  => ['mx-4', 'items-center', 'hidden', 'lg:inline-flex'],
+                            'classes'  => ['login-button', 'mx-4', 'items-center', 'hidden', 'lg:inline-flex'],
                             'url'      => get_option('wp_cassify_base_url').'login?service='.$referrer,
                             'atts'     => ['x-show="! searchOpen"'],
                         ] );
@@ -241,7 +241,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                     <?php
                         get_component( 'link', [ 
                             'text'     => __( 'Logout', 'wicket' ),
-                            'classes'  => ['mx-4', 'items-center', 'hidden', 'lg:inline-flex'],
+                            'classes'  => ['logout-button', 'mx-4', 'items-center', 'hidden', 'lg:inline-flex'],
                             'url'      => wp_logout_url(),
                             'atts'     => ['x-show="! searchOpen"'],
                         ] );
@@ -256,7 +256,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                             'variant'     => 'primary',
                             'type'      => 'submit',
                             'label'     => __( 'Search', 'wicket' ),
-                            'classes'     => ['ml-2', 'border-0']
+                            'classes'     => ['search-submit-button', 'ml-2', 'border-0']
                         ] ) ?>
                     </form>
                 </div>
@@ -266,7 +266,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                     x-on:click="searchOpen = ! searchOpen; if(searchOpen){$dispatch('close-mobile-menu')};"
                     x-on:close-mobile-search.window="searchOpen = false"
                     x-show="showSearch"
-                    class="mx-4 inline-flex items-center"
+                    class="search-toggle-button mx-4 inline-flex items-center"
                 >
                     <span x-show="! searchOpen">
                     <?php 
@@ -289,7 +289,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                 </button>
                 <!-- End search button states -->
 
-                <a x-show="showCart" href="<?php echo $cart_path; ?>" class="ml-4 md:mx-4 inline-flex items-center">
+                <a x-show="showCart" href="<?php echo $cart_path; ?>" class="cart-button ml-4 md:mx-4 inline-flex items-center">
                     <?php 
                     get_component( 'icon', [ 
                         'classes' => [ 'text-x-large', 'lg:text-large' ],
@@ -298,13 +298,13 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                     ] );
                     ?>
                 </a>
-                <a x-show="showLangToggle" href="#" class="ml-4 hidden lg:inline-flex items-center">Fr</a>
+                <a x-show="showLangToggle" href="#" class="lang-button ml-4 hidden lg:inline-flex items-center">Fr</a>
 
                 <!-- Right-aligned hamburger menu button that only shows on MD breakpoint -->
                 <button
                     x-on:click="mobileMenuOpen = ! mobileMenuOpen; if(mobileMenuOpen){$dispatch('close-mobile-search')};"
                     x-on:close-mobile-menu.window="mobileMenuOpen = false"
-                    class="hidden md:inline-flex lg:hidden ml-4 items-center"
+                    class="right-hamburger-button hidden md:inline-flex lg:hidden ml-4 items-center"
                 >
                     <span x-show="! mobileMenuOpen">
                     <?php 
@@ -329,7 +329,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
         </div> <!-- End secondary nav -->
 
         <!-- Main Nav -->
-        <nav x-ref="main-nav" class="w-full hidden lg:flex border-t-base border-b-base border-dark-040">
+        <nav x-ref="main-nav" class="main-nav w-full hidden lg:flex border-t-base border-b-base border-dark-040">
             <ul class="w-full justify-evenly gap-4 flex">
             <?php 
             foreach( $primary_nav_items_structured as $primary_nav_item ): 
