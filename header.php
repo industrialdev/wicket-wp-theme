@@ -368,7 +368,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         <ul 
                             x-show="navDropdownOpen"
                             x-transition
-                            class="absolute z-20 left-0 mt-3 w-40 bg-white p-3 shadow-lg"
+                            class="nav-dropdown absolute z-20 left-0 mt-3 w-40 bg-white p-3 shadow-lg"
                         >
                             <?php 
                             $child_loop_index = 0;
@@ -413,7 +413,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         <div
                             x-show="navDropdownOpen"
                             x-transition
-                            class="absolute z-20 flex left-0 mt-3 w-full bg-white p-3 shadow-lg flex-wrap"
+                            class="nav-mega-dropdown absolute z-20 flex left-0 mt-3 w-full bg-white p-3 shadow-lg flex-wrap"
                         >
                             <?php 
                             foreach ( $primary_nav_item['children'] as $child ): 
@@ -486,7 +486,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         'variant'     => 'primary',
                         'a_tag'     => true,
                         'link'      => $bam_path,
-                        'classes'     => ['w-full', 'mb-2', 'justify-center', 'md:hidden'],
+                        'classes'     => ['create-account-button-mobile', 'w-full', 'mb-2', 'justify-center', 'md:hidden'],
                         'label'     => __( 'Create Account', 'wicket' ),
                     ] );
                 } else if ( $nav_state == 'logged_in_user' ) {
@@ -494,14 +494,14 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         'variant'     => 'primary',
                         'a_tag'     => true,
                         'link'      => $bam_path,
-                        'classes'     => ['w-full', 'mb-2', 'justify-center', 'md:hidden'],
+                        'classes'     => ['become-a-member-button-mobile', 'w-full', 'mb-2', 'justify-center', 'md:hidden'],
                         'label'     => __( 'Become a member', 'wicket' ),
                     ] );
                     get_component( 'button', [ 
                         'variant'     => 'secondary',
                         'a_tag'     => true,
                         'link'      => $account_center_landing,
-                        'classes'     => ['w-full', 'mb-2', 'justify-center'],
+                        'classes'     => ['my-account-button-mobile', 'w-full', 'mb-2', 'justify-center'],
                         'label'     => __( 'My Account', 'wicket' ),
                     ] );
                 } else if ( $nav_state == 'logged_in_member' ) {
@@ -509,7 +509,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         'variant'     => 'secondary',
                         'a_tag'     => true,
                         'link'      => $account_center_landing,
-                        'classes'     => ['w-full', 'mb-2', 'justify-center'],
+                        'classes'     => ['member-portal-button-mobile', 'w-full', 'mb-2', 'justify-center'],
                         'label'     => __( 'Member Portal', 'wicket' ),
                     ] );
                 }
@@ -519,13 +519,13 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                 if( $nav_state == 'logged_out' ) {
                     get_component( 'link', [ 
                         'text'     => __( 'Login', 'wicket' ),
-                        'classes'  => ['block', 'text-center', 'mb-2'],
+                        'classes'  => ['login-button-mobile', 'block', 'text-center', 'mb-2'],
                         'url'    => get_option('wp_cassify_base_url').'login?service='.$referrer,
                     ] );
                 } else {
                     get_component( 'link', [ 
                         'text'     => __( 'Logout', 'wicket' ),
-                        'classes'  => ['block', 'text-center', 'mb-2'],
+                        'classes'  => ['logout-button-mobile', 'block', 'text-center', 'mb-2'],
                         'url'    => wp_logout_url(),
                     ] );
                 }
@@ -536,13 +536,13 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                     $target = $secondary_nav_item->target ?? '';
                     get_component( 'link', [ 
                         'text'     => $secondary_nav_item->title,
-                        'classes'  => ['block', 'mb-2'],
+                        'classes'  => ['secondary-nav-item-mobile', 'block', 'mb-2'],
                         'target'   => $target,
                         'url'    => $secondary_nav_item->url,
                     ] );
                 }
                 ?>
-                <a x-show="showLangToggle" href="#" class="block mb-2">Fr</a>
+                <a x-show="showLangToggle" href="#" class="lang-toggle-button-mobile block mb-2">Fr</a>
             </div> <!-- End items above main nav items and utility nav -->
 
             <div class="font-normal">
@@ -556,7 +556,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         $target = $primary_nav_item['target'] ?? '';
                         get_component( 'link', [ 
                               'text'     => $primary_nav_item['title'],
-                              'classes'  => ['block', 'p-3', 'border-t-base', 'border-dark-060'],
+                              'classes'  => ['single-nav-item-mobile', 'block', 'p-3', 'border-t-base', 'border-dark-060'],
                               'target'   => $target,
                               'url'    => $primary_nav_item['url'],
                         ] );
@@ -568,7 +568,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                   ?>
                         <!-- Start Nav Item -->
                         <div
-                              class="flex flex-col w-full border-t-base border-dark-060 relative hover:cursor-pointer"
+                              class="nav-parent-item-mobile flex flex-col w-full border-t-base border-dark-060 relative hover:cursor-pointer"
                               x-data="{ navDropdownOpen: false }"
                               x-on:click="navDropdownOpen = ! navDropdownOpen; $dispatch('close-nav-dropdowns')"
                               <?php // If the sending element isn't this element, close dropdown ?>
@@ -587,7 +587,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                               <ul 
                               x-show="navDropdownOpen"
                               x-transition
-                              class="block w-full bg-white p-3"
+                              class="nav-dropdown-mobile block w-full bg-white p-3"
                               >
                               <?php 
                               $child_loop_index = 0;
@@ -620,7 +620,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
 
                         <!-- Start Nav Item -->
                         <div
-                              class="flex flex-col w-full border-t-base border-dark-060 relative hover:cursor-pointer"
+                              class="nav-mega-parent-item-mobile flex flex-col w-full border-t-base border-dark-060 relative hover:cursor-pointer"
                               x-data="{ navDropdownOpen: false }"
                               x-on:click="navDropdownOpen = ! navDropdownOpen; $dispatch('close-nav-dropdowns')"
                               <?php // If the sending element isn't this element, close dropdown ?>
@@ -639,7 +639,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                               <ul 
                               x-show="navDropdownOpen"
                               x-transition
-                              class="block w-full bg-white"
+                              class="nav-dropdown-mobile block w-full bg-white"
                               >
                               <?php 
                               foreach( $primary_nav_item['children'] as $child ): 
@@ -715,7 +715,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
             </div>
 
             <?php if( !empty( $utility_nav_items ) ): ?>
-            <div class="bg-dark-100 text-light-000 px-3 py-2 pb-3">
+            <div class="utility-nav-mobile bg-dark-100 text-light-000 px-3 py-2 pb-3">
                 <?php
                 // Utility Nav Items
                 foreach( $utility_nav_items as $utility_nav_item ) {
@@ -738,7 +738,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
             x-show="searchOpen"
             x-transition
             x-anchor.bottom-start="$refs.secondary-nav"
-            class="lg:hidden w-full p-3 bg-white shadow-lg z-30"
+            class="search-bar-mobile lg:hidden w-full p-3 bg-white shadow-lg z-30"
             >
             <form class="flex" action="/" method="get">
                 <label for="search" class="hidden"><?php _e('Search the website', 'wicket'); ?></label>
