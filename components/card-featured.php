@@ -3,6 +3,7 @@ $defaults       = array(
 	'classes'        => [],
 	'content_type'   => '',
 	'title'          => '',
+	'excerpt'        => '',
 	'date'           => '',
 	'link'           => '',
 	'image'          => '',
@@ -13,6 +14,7 @@ $args           = wp_parse_args( $args, $defaults );
 $classes        = $args['classes'];
 $content_type   = $args['content_type'];
 $title          = $args['title'];
+$excerpt        = $args['excerpt'];
 $date           = $args['date'];
 $link           = $args['link'];
 $image          = $args['image'];
@@ -85,6 +87,12 @@ if ( $image_position === 'right' ) {
 						] ); ?>
 					<?php } ?>
 				</a>
+			<?php } ?>
+
+			<?php if ( $excerpt ) { ?>
+				<div class="leading-6">
+					<?php echo $excerpt; ?>
+				</div>
 			<?php } ?>
 
 			<?php if ( $date ) { ?>

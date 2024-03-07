@@ -4,6 +4,7 @@ $defaults            = array(
 	'title'               => __( 'Featured', 'wicket' ),
 	'hide_block_title'    => false,
 	'posts'               => [],
+	'hide_excerpt'        => false,
 	'hide_date'           => false,
 	'hide_featured_image' => false,
 	'hide_content_type'   => false,
@@ -14,6 +15,7 @@ $args                = wp_parse_args( $args, $defaults );
 $classes             = $args['classes'];
 $title               = $args['title'];
 $posts               = $args['posts'];
+$hide_excerpt        = $args['hide_excerpt'];
 $hide_date           = $args['hide_date'];
 $hide_featured_image = $args['hide_featured_image'];
 $hide_content_type   = $args['hide_content_type'];
@@ -34,10 +36,11 @@ $classes[]           = 'component-featured-posts';
 		<div class="flex flex-col gap-10 lg:flex-row lg:gap-4">
 			<div class="flex-1 lg:basis-5/12">
 				<?php
-				$post      = $posts[0];
-				$post_id   = $post->ID;
-				$image     = [];
-				$post_date = get_the_date( 'F j, Y', $post_id );
+				$post         = $posts[0];
+				$post_id      = $post->ID;
+				$image        = [];
+				$content_type = get_the_terms( $post_id, 'content_type' );
+				$post_date    = get_the_date( 'F j, Y', $post_id );
 
 				if ( ! $hide_featured_image ) {
 					$featured_image_id  = get_post_thumbnail_id( $post_id );
@@ -54,7 +57,7 @@ $classes[]           = 'component-featured-posts';
 					'title'          => get_the_title( $post_id ),
 					'image'          => $image,
 					'image_position' => 'top',
-					'content_type'   => ! $hide_content_type ? get_post_type( $post_id ) : '',
+					'content_type'   => ! $hide_content_type ? $content_type[0]->name : '',
 					'date'           => ! $hide_date ? $post_date : '',
 					'member_only'    => is_member_only( $post_id ),
 					'link'           => get_permalink( $post_id ),
@@ -66,9 +69,10 @@ $classes[]           = 'component-featured-posts';
 				$index = 0;
 				foreach ( $posts as $post ) {
 					$index++;
-					$post_id   = $post->ID;
-					$post_date = get_the_date( 'F j, Y', $post_id );
-					$image     = [];
+					$post_id      = $post->ID;
+					$post_date    = get_the_date( 'F j, Y', $post_id );
+					$image        = [];
+					$content_type = get_the_terms( $post_id, 'content_type' );
 					if ( ! $hide_featured_image ) {
 						$featured_image_id  = get_post_thumbnail_id( $post_id );
 						$featured_image_alt = get_post_meta( $featured_image_id, '_wp_attachment_image_alt', true );
@@ -82,7 +86,7 @@ $classes[]           = 'component-featured-posts';
 						'title'          => get_the_title( $post_id ),
 						'image'          => $image,
 						'image_position' => 'right',
-						'content_type'   => ! $hide_content_type ? get_post_type( $post_id ) : '',
+						'content_type'   => ! $hide_content_type ? $content_type[0]->name : '',
 						'date'           => ! $hide_date ? $post_date : '',
 						'member_only'    => is_member_only( $post_id ),
 						'link'           => get_permalink( $post_id ),
@@ -101,9 +105,10 @@ $classes[]           = 'component-featured-posts';
 		<div class="grid gap-4 grid-cols-1 lg:grid-cols-<?php echo $column_count ?>">
 			<?php
 			foreach ( $posts as $post ) {
-				$post_id   = $post->ID;
-				$post_date = get_the_date( 'F j, Y', $post_id );
-				$image     = [];
+				$post_id      = $post->ID;
+				$post_date    = get_the_date( 'F j, Y', $post_id );
+				$content_type = get_the_terms( $post_id, 'content_type' );
+				$image        = [];
 				if ( ! $hide_featured_image ) {
 					$featured_image_id  = get_post_thumbnail_id( $post_id );
 					$featured_image_alt = get_post_meta( $featured_image_id, '_wp_attachment_image_alt', true );
@@ -112,16 +117,16 @@ $classes[]           = 'component-featured-posts';
 						'alt' => $featured_image_alt,
 					];
 				}
-				get_component( 'card-listing', [ 
-					'title'          => get_the_title( $post_id ),
-					'featured_image' => $image,
-					'content_type'   => ! $hide_content_type ? get_post_type( $post_id ) : '',
-					'date'           => ! $hide_date ? $post_date : '',
-					'member_only'    => is_member_only( $post_id ),
-					'link'           => [ 
-						'url'    => get_permalink( $post_id ),
-						'target' => '',
-					],
+
+				get_component( 'card-featured', [ 
+					'classes'      => [ 'p-4' ],
+					'title'        => get_the_title( $post_id ),
+					'excerpt'      => ! $hide_excerpt ? get_the_excerpt( $post_id ) : '',
+					'image'        => $image,
+					'content_type' => ! $hide_content_type ? $content_type[0]->name : '',
+					'date'         => ! $hide_date ? $post_date : '',
+					'member_only'  => is_member_only( $post_id ),
+					'link'         => get_permalink( $post_id ),
 				] );
 			}
 			?>
