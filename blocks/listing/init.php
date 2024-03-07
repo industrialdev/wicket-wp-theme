@@ -136,7 +136,7 @@ function init( $block = [] ) {
 								$featured_image = get_post_thumbnail_id( $post_id );
 								$permalink      = get_the_permalink( $post_id );
 								$member_only    = is_member_only( $post_id );
-								$topics         = get_the_terms( $post_id, 'listing-type' );
+								$topics         = get_the_terms( $post_id, 'post_tag' );
 
 								$card_params = [ 
 									'classes'        => [ 'mb-6' ],
