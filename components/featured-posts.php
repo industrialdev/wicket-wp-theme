@@ -27,7 +27,7 @@ $classes[]           = 'component-featured-posts';
 <div class="<?php echo implode( ' ', $classes ) ?>">
 
 	<?php if ( $title ) : ?>
-		<div class="text-heading-sm font-bold mb-3">
+		<div class="text-heading-sm font-bold <?php echo $style === 'primary-secondary-level' ? 'mb-4' : 'mb-10' ?>">
 			<?php echo $title; ?>
 		</div>
 	<?php endif; ?>
