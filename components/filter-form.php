@@ -107,18 +107,20 @@ $classes[]  = 'component-filter-form';
 							<?php
 						endforeach; ?>
 					</ul>
-					<button class="underline" type="button" @click="showAll = !showAll">
-						<template x-if="showAll">
-							<span>
-								<?php echo __( 'See Less', 'wicket' ) ?>
-							</span>
-						</template>
-						<template x-if="!showAll">
-							<span>
-								<?php echo __( 'See More', 'wicket' ) ?>
-							</span>
-						</template>
-					</button>
+					<?php if ( count( $terms ) > 5 ) : ?>
+						<button class="underline" type="button" @click="showAll = !showAll">
+							<template x-if="showAll">
+								<span>
+									<?php echo __( 'See Less', 'wicket' ) ?>
+								</span>
+							</template>
+							<template x-if="!showAll">
+								<span>
+									<?php echo __( 'See More', 'wicket' ) ?>
+								</span>
+							</template>
+						</button>
+					<?php endif; ?>
 				</div>
 			</div>
 			<?php

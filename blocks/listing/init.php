@@ -42,6 +42,24 @@ function init( $block = [] ) {
 		$keyword = $_GET['keyword'];
 	}
 
+	$tax_query = [ 
+		'relation' => 'AND',
+	];
+
+	if ( is_array( $taxonomy_filters ) ) {
+		foreach ( $taxonomy_filters as $taxonomy ) {
+			if ( isset( $_GET[ $taxonomy['slug'] ] ) ) {
+				$taxonomy_args = [ 
+					'taxonomy' => $taxonomy['slug'],
+					'field'    => 'slug',
+					'operator' => 'IN',
+					'terms'    => $_GET[ $taxonomy['slug'] ],
+				];
+				array_push( $tax_query, $taxonomy_args );
+			}
+		}
+	}
+
 	echo '<div class="bg-light-010 overflow-x-hidden">';
 	if ( is_admin() && ! $post_type ) {
 		echo "<p>" . __( 'Use the Block controls in edit mode or on the right to configure listing.', 'wicket' ) . "</p>";
@@ -68,6 +86,7 @@ function init( $block = [] ) {
 						'orderby'        => $orderby,
 						'order'          => $order,
 						's'              => $keyword,
+						'tax_query'      => $tax_query,
 					];
 
 					$query       = new \WP_Query( $args );
@@ -129,7 +148,7 @@ function init( $block = [] ) {
 								$query->the_post();
 
 								$post_id        = get_the_ID();
-								$post_type      = get_post_type( $post_id );
+								$content_type   = get_the_terms( $post_id, 'content_type' );
 								$title          = get_the_title( $post_id );
 								$excerpt        = get_the_excerpt( $post_id );
 								$date           = get_the_date( 'F j, Y', $post_id );
@@ -140,7 +159,7 @@ function init( $block = [] ) {
 
 								$card_params = [ 
 									'classes'        => [ 'mb-6' ],
-									'content_type'   => $post_type,
+									'content_type'   => $content_type[0]->name,
 									'title'          => $title,
 									'excerpt'        => $excerpt,
 									'date'           => $date,
