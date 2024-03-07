@@ -135,13 +135,15 @@ add_filter( 'render_block', 'wicket_core_block_wrappers', 10, 2 );
 function register_post_template() {
 	$template                   = array(
 		array( 'wicket/banner', [ 
-			'data' => [ 
+			'data'  => [ 
 				'banner_show_breadcrumbs' => false,
 				'banner_show_post_type'   => true,
 				'banner_back_link'        => home_url( '/blog' ),
 				'banner_show_date'        => true,
 			],
-			'lock' => array(
+			// Set full width
+			'align' => 'full',
+			'lock'  => array(
 				'move'   => true,
 				'remove' => true,
 			),

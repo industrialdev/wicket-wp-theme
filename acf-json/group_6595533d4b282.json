@@ -453,6 +453,51 @@
             "placeholder": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_65e98afe3e757",
+            "label": "Downloadable File",
+            "name": "banner_download_file",
+            "aria-label": "",
+            "type": "file",
+            "instructions": "Only available in single post pages.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6595533eeaf64",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "return_format": "array",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_65e98b933e758",
+            "label": "Helper Link",
+            "name": "banner_helper_link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "Only available in single post pages.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "return_format": "array"
         }
     ],
     "location": [
@@ -474,5 +519,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "translation",
-    "modified": 1709300485
+    "modified": 1709804679
 }

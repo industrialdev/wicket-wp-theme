@@ -15,6 +15,8 @@ $defaults         = array(
 	'background_style' => 'light',
 	'background_image' => '',
 	'back_link'        => '',
+	'download_file'    => '',
+	'helper_link'      => '',
 );
 $args             = wp_parse_args( $args, $defaults );
 $classes          = $args['classes'];
@@ -32,6 +34,8 @@ $call_to_action   = $args['call_to_action'];
 $background_style = $args['background_style'];
 $background_image = $args['background_image'];
 $back_link        = $args['back_link'];
+$download_file    = $args['download_file'];
+$helper_link      = $args['helper_link'];
 
 $text_alignment_class = 'text-' . $text_alignment;
 $wrapper_classes      = [ 'component-banner py-8 px-4 mb-16 relative' ]; // border-b border-light-020
@@ -115,6 +119,36 @@ if ( $image === 'featured-image' && has_post_thumbnail() ) {
 					?>
 					<div class="text-body-sm text-dark-070 italic mb-3">
 						<?php echo $date; ?>
+					</div>
+				<?php endif; ?>
+
+				<?php if ( is_single() && ( $download_file || $helper_link ) ) : ?>
+					<div class="flex items-start gap-4">
+						<?php
+						if ( ! empty( $download_file ) ) {
+							get_component( 'button', [ 
+								'variant'     => 'primary',
+								'label'       => 'Download',
+								'suffix_icon' => 'fa-solid fa-arrow-down-to-bracket',
+								'a_tag'       => true,
+								'link'        => $download_file['url'],
+								'atts'        => [ 'download' ],
+							] );
+						}
+
+						if ( ! empty( $helper_link ) ) {
+							get_component( 'button', [ 
+								'variant'     => 'secondary',
+								'label'       => $helper_link['title'],
+								'suffix_icon' => $helper_link['target'] === '_blank' ? 'fa fa-external-link-alt' : '',
+								'a_tag'       => true,
+								'link'        => $helper_link['url'],
+								'link_target' => $helper_link['target'],
+								'reversed'    => $reversed,
+							] );
+						}
+
+						?>
 					</div>
 				<?php endif; ?>
 

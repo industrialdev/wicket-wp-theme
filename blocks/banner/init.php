@@ -26,6 +26,8 @@ function init( $block = [] ) {
 	$background_style = get_field( 'banner_background_style' );
 	$background_image = get_field( 'banner_background_image' );
 	$back_link        = get_field( 'banner_back_link' );
+	$download_file    = get_field( 'banner_download_file' );
+	$helper_link      = get_field( 'banner_helper_link' );
 
 	echo '<div ' . $attrs . '>';
 	get_component( 'banner', [ 
@@ -43,6 +45,8 @@ function init( $block = [] ) {
 		'background_style' => $background_style,
 		'background_image' => $background_image,
 		'back_link'        => $back_link,
+		'download_file'    => $download_file,
+		'helper_link'      => $helper_link,
 	] );
 	echo '</div>';
 }
