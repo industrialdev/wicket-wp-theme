@@ -14,8 +14,11 @@ add_filter( 'wc_add_to_cart_message_html', '__return_false' );
  */
 function wp_remove_scripts() {
   global $wp_scripts;
-  wp_deregister_script( 'react' );
-  wp_deregister_script( 'react-dom' );
+
+  if( !is_woocommerce_page() ) {
+    wp_deregister_script( 'react' );
+    wp_deregister_script( 'react-dom' );
+  }
 }
 add_action( 'wp_enqueue_scripts', 'wp_remove_scripts', 99 );
 
@@ -93,3 +96,36 @@ add_filter( 'use_block_editor_for_post_type', 'activate_gutenberg_product', 10, 
 
 // add_filter( 'woocommerce_taxonomy_args_product_cat', 'enable_taxonomy_rest' );
 // add_filter( 'woocommerce_taxonomy_args_product_tag', 'enable_taxonomy_rest' );
+
+// Credit: https://gist.github.com/amiut/b12bbe256bf0914eca976f03a7352d1c
+if( ! function_exists('is_woocommerce_page') ){
+  function is_woocommerce_page( $page = '', $endpoint = '' ){
+      if( ! $page ){
+          return ( is_cart() || is_checkout() || is_account_page() || is_wc_endpoint_url() );
+      }
+
+      switch ( $page ) {
+          case 'cart':
+              return is_cart();
+              break;
+
+          case 'checkout':
+              return is_checkout();
+              break;
+
+          case 'account':
+              return is_account_page();
+              break;
+
+          case 'endpoint':
+              if( $endpoint ) {
+                  return is_wc_endpoint_url( $endpoint );
+              }
+
+              return is_wc_endpoint_url();
+              break;
+      }
+
+      return false;
+  }
+}
