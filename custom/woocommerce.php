@@ -99,9 +99,9 @@ add_filter( 'use_block_editor_for_post_type', 'activate_gutenberg_product', 10, 
 
 // Credit: https://gist.github.com/amiut/b12bbe256bf0914eca976f03a7352d1c
 if( ! function_exists('is_woocommerce_page') ){
-  function is_woocommerce_page( $page = '', $endpoint = '' ){
+  function is_woocommerce_page( $page = '', $endpoint = '', $check_ac_pages = false ){
       if( ! $page ){
-          return ( is_cart() || is_checkout() || is_account_page() || is_wc_endpoint_url() );
+          return ( is_cart() || is_checkout() || ( is_account_page() && $check_ac_pages ) || is_wc_endpoint_url() );
       }
 
       switch ( $page ) {
