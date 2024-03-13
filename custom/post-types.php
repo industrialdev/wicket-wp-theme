@@ -33,9 +33,9 @@ function register_cpt( $singular, $plural = false, $args = [] ) {
 		'query_var'           => true,
 		'show_in_menu'        => true,
 		'show_ui'             => true,
-		'supports'            => array( 'title' ),
 		'show_in_rest'        => true,
 		'taxonomies'          => [],
+		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields' ),
 	];
 
 	$args = wp_parse_args( $args, $defaults );
@@ -49,7 +49,6 @@ add_action( 'init', function () {
 	register_cpt( 'News', 'News',
 		[ 
 			'menu_icon' => 'dashicons-nametag',
-			'supports'  => array ( 'title', 'editor', 'excerpt', 'custom-fields', 'revisions' ),
 			'template'  => array (
 				array ( 'wicket/banner', [ 
 					'data'  => [ 
@@ -85,7 +84,6 @@ add_action( 'init', function () {
 	register_cpt( 'Resources', 'Resources',
 		[ 
 			'menu_icon' => 'dashicons-book-alt',
-			'supports'  => array ( 'title', 'editor', 'excerpt', 'custom-fields', 'revisions' ),
 			'template'  => array (
 				array ( 'wicket/banner', [ 
 					'data'  => [ 

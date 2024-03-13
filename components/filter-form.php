@@ -47,7 +47,7 @@ $classes[]  = 'component-filter-form';
 		foreach ( $taxonomies as $taxonomy ) : ?>
 			<?php
 			$taxonomy_obj = get_taxonomy( $taxonomy['slug'] );
-			$terms        = get_terms( $taxonomy['slug'] );
+			$terms        = ! is_wp_error( get_terms( $taxonomy['slug'] ) ) ? get_terms( $taxonomy['slug'] ) : [];
 			?>
 			<div x-data="{open: true, selectedItemsCount: 0, showAll: false}" class="pb-3 mb-3 border-b border-light-020">
 				<button @click="open = ! open" id="<?php echo $taxonomy['slug']; ?>-dropdown-toggle" type="button"

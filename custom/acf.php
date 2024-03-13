@@ -94,7 +94,7 @@ function wicket_acf_load_taxonomies_field_choices( $field ) {
 	}
 	return $field;
 }
-add_filter( 'acf/load_field/key=field_65c6206a6e856', 'wicket_acf_load_taxonomies_field_choices' );
+
 
 // Add image preview to ACF featured image field
 function wicket_acf_prepare_featured_image_field( $field ) {

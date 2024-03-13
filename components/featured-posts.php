@@ -105,10 +105,11 @@ $classes[]           = 'component-featured-posts';
 		<div class="grid gap-4 grid-cols-1 lg:grid-cols-<?php echo $column_count ?>">
 			<?php
 			foreach ( $posts as $post ) {
-				$post_id      = $post->ID;
-				$post_date    = get_the_date( 'F j, Y', $post_id );
-				$content_type = get_the_terms( $post_id, 'content_type' );
-				$image        = [];
+				$post_id              = $post->ID;
+				$post_date            = get_the_date( 'F j, Y', $post_id );
+				$related_content_type = get_related_content_type( $post->post_type );
+				$content_type         = ! is_wp_error( get_the_terms( $post_id, $related_content_type ) ) ? get_the_terms( $post_id, $related_content_type ) : [];
+				$image                = [];
 				if ( ! $hide_featured_image ) {
 					$featured_image_id  = get_post_thumbnail_id( $post_id );
 					$featured_image_alt = get_post_meta( $featured_image_id, '_wp_attachment_image_alt', true );
@@ -123,7 +124,7 @@ $classes[]           = 'component-featured-posts';
 					'title'        => get_the_title( $post_id ),
 					'excerpt'      => ! $hide_excerpt ? get_the_excerpt( $post_id ) : '',
 					'image'        => $image,
-					'content_type' => ! $hide_content_type ? $content_type[0]->name : '',
+					'content_type' => ( ! $content_type['errors'] && ! $hide_content_type ) ? $content_type[0]->name : '',
 					'date'         => ! $hide_date ? $post_date : '',
 					'member_only'  => is_member_only( $post_id ),
 					'link'         => get_permalink( $post_id ),

@@ -157,16 +157,17 @@ function init( $block = [] ) {
 							<?php
 							while ( $query->have_posts() ) :
 								$query->the_post();
-
-								$post_id        = get_the_ID();
-								$content_type   = get_the_terms( $post_id, 'content_type' );
-								$title          = get_the_title( $post_id );
-								$excerpt        = get_the_excerpt( $post_id );
-								$date           = get_the_date( 'F j, Y', $post_id );
-								$featured_image = get_post_thumbnail_id( $post_id );
-								$permalink      = get_the_permalink( $post_id );
-								$member_only    = is_member_only( $post_id );
-								$topics         = get_the_terms( $post_id, 'post_tag' );
+								$post_id              = get_the_ID();
+								$related_content_type = get_related_content_type( get_post_type( $post_id ) );
+								$content_type         = ! is_wp_error( get_the_terms( $post_id, $related_content_type ) ) ? get_the_terms( $post_id, $related_content_type ) : [];
+								$title                = get_the_title( $post_id );
+								$excerpt              = get_the_excerpt( $post_id );
+								$date                 = get_the_date( 'F j, Y', $post_id );
+								$featured_image       = get_post_thumbnail_id( $post_id );
+								$permalink            = get_the_permalink( $post_id );
+								$member_only          = is_member_only( $post_id );
+								$related_topic_type   = get_related_topic_type( get_post_type( $post_id ) );
+								$topics               = get_the_terms( $post_id, $related_topic_type );
 
 								$card_params = [ 
 									'classes'        => [ 'mb-6' ],
