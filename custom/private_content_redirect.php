@@ -9,7 +9,11 @@
  ------------------------------------------------*/
 function private_content_single_redirect( &$url ) {
   $url .= '?referrer='.$_SERVER['REQUEST_URI'];
-  if (ICL_LANGUAGE_CODE == 'fr') {
+  $lang = 'en';
+  if( defined( 'ICL_LANGUAGE_CODE' ) ) {
+      $lang = ICL_LANGUAGE_CODE;
+  }
+  if ($lang == 'fr') {
     return '/fr'.$url;
   }else {
     return $url;
@@ -19,7 +23,11 @@ add_filter( 'wppcp_single_post_restriction_redirect', 'private_content_single_re
 
 function private_content_redirect( &$url ) {
   $url .= '?referrer='.$_SERVER['REQUEST_URI'];
-  if (ICL_LANGUAGE_CODE == 'fr') {
+  $lang = 'en';
+  if( defined( 'ICL_LANGUAGE_CODE' ) ) {
+      $lang = ICL_LANGUAGE_CODE;
+  }
+  if ($lang == 'fr') {
     return '/fr'.$url;
   }else {
     return $url;
