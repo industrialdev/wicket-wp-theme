@@ -22,10 +22,11 @@
                 "post": "Posts",
                 "page": "Pages",
                 "attachment": "Media",
-                "listing": "Listings",
                 "product": "Products",
                 "wppcp_group": "Groups",
-                "wppcp_fproduct_tabs": "Woo Product Tabs"
+                "wppcp_fproduct_tabs": "Woo Product Tabs",
+                "news": "News",
+                "resources": "Resources"
             },
             "default_value": false,
             "return_format": "value",
@@ -103,7 +104,10 @@
                         "post_format": "Formats",
                         "product_cat": "Product categories",
                         "product_tag": "Product tags",
-                        "product_shipping_class": "Product shipping classes"
+                        "product_shipping_class": "Product shipping classes",
+                        "content_type": "News Type",
+                        "resource_type": "Resource Type",
+                        "topics": "Topics"
                     },
                     "default_value": false,
                     "return_format": "value",
@@ -137,6 +141,27 @@
                     "parent_repeater": "field_65c6205a6e855"
                 }
             ]
+        },
+        {
+            "key": "field_65f184f1e967c",
+            "label": "Hide Search",
+            "name": "listing_hide_search",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
         }
     ],
     "location": [
@@ -158,5 +183,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "translation",
-    "modified": 1707483751
+    "modified": 1710327063
 }

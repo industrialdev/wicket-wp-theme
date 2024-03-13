@@ -14,10 +14,12 @@ function init( $block = [] ) {
 	$post_type        = get_field( 'listing_post_type' );
 	$posts_per_page   = get_field( 'listing_posts_per_page' );
 	$taxonomy_filters = get_field( 'listing_taxonomy_filters' );
-	$paged            = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-	$orderby          = 'date';
-	$order            = 'DESC';
-	$keyword          = '';
+	$hide_search      = get_field( 'listing_hide_search' );
+
+	$paged   = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+	$orderby = 'date';
+	$order   = 'DESC';
+	$keyword = '';
 
 	if ( isset( $_GET['sort-by'] ) ) {
 		if ( $_GET['sort-by'] == 'date-desc' ) {
@@ -58,8 +60,17 @@ function init( $block = [] ) {
 				array_push( $tax_query, $taxonomy_args );
 			}
 		}
-	}
+	} ?>
 
+	<?php if ( ! $hide_search ) : ?>
+		<div class="bg-dark-010 px-4 py-5 lg:px-0">
+			<div class="container">
+				<?php get_component( 'search-form' ); ?>
+			</div>
+		</div>
+	<?php endif; ?>
+
+	<?php
 	echo '<div class="bg-light-010 overflow-x-hidden">';
 	if ( is_admin() && ! $post_type ) {
 		echo "<p>" . __( 'Use the Block controls in edit mode or on the right to configure listing.', 'wicket' ) . "</p>";
@@ -188,11 +199,6 @@ function init( $block = [] ) {
 						</div>
 						<?php
 					endif; ?>
-
-					<?php
-
-
-					?>
 				</div>
 			</div>
 		</form>
