@@ -3,26 +3,42 @@
 function wicket_touchpoint_get_event_data_from_ticket($ticket_id) {
   $event_id = get_post_meta($ticket_id, '_tribe_wooticket_for_event')[0];
   // set this incase the above isn't set in certain circumstances (should be the same though)
-  $alternate_event_id = get_post_meta($ticket_id, '_tribe_rsvp_for_event')[0];
+  $alternate_event = get_post_meta($ticket_id, '_tribe_rsvp_for_event');
+  $alternate_event_id = 0;
+  if( isset( $alternate_event[0] ) ) {
+    $alternate_event_id = $alternate_event[0];
+  }
 
-  $event_id = $event_id ??  $alternate_event_id;
+  $event_id = $event_id ?? $alternate_event_id;
   
   $start_date = tribe_get_start_date($event_id, false, 'Y-m-d g:i A T');
   $end_date = tribe_get_end_date($event_id, false, 'Y-m-d g:i A T');
   $is_virtual = get_post_meta($event_id, '_tribe_events_is_virtual');
-  $is_virtual_hybrid = get_post_meta($event_id, '_tribe_virtual_events_type')[0] == 'hybrid';
+  $is_virtual_hybrid = false;
+  $virtual_event_type = get_post_meta($event_id, '_tribe_virtual_events_type');
+  if( isset( $virtual_event_type[0] ) ) {
+    $is_virtual_hybrid = $virtual_event_type[0] == 'hybrid';
+  }
   // build location string
   $event_location = '';
   $args = [
     'event' => $event_id,
   ];
   $venue_object = tribe_get_venues(false, -1, true, $args);
-  $venue_id = $venue_object[0]->ID;
-  $event_location .= tribe_get_address($venue_id) . ', ';
-  $event_location .= tribe_get_city($venue_id) . ', ';
-  $event_location .= tribe_get_region($venue_id) . ', ';
-  $event_location .= tribe_get_country($venue_id) . ' ';
-  $event_location .= tribe_get_zip($venue_id);
+  $venue_id = 0;
+  if( isset( $venue_object[0] ) ) {
+    if( isset( $venue_object[0]->ID ) ) {
+      $venue_id = $venue_object[0]->ID;
+    }
+  }
+  if( $venue_id != 0 ) {
+    $event_location .= tribe_get_address($venue_id) . ', ';
+    $event_location .= tribe_get_city($venue_id) . ', ';
+    $event_location .= tribe_get_region($venue_id) . ', ';
+    $event_location .= tribe_get_country($venue_id) . ' ';
+    $event_location .= tribe_get_zip($venue_id);
+  }
+
   //$event_location = tribe_get_full_address($event_id, false);
   // if event is purely virtual, not a hybrid the location = Virtual, else calculate physical location
   $event_location = $is_virtual && !$is_virtual_hybrid ? 'VIRTUAL' : $event_location;
@@ -105,7 +121,7 @@ function wicket_touchpoint_write_attendee($attendee_id, $action) {
     'data' => [
       'url' => $event_data['url'],
       'end_date' => $event_data['end'],
-      'timezone' => $event_data['timezone'],
+      'timezone' => $event_data['timezone'] ?? '+00:00',
       'start_date' => $event_data['start'],
       'event_title' => $event_data['event_name'],
       // 'order_date' => $order->get_date_created(),
@@ -115,10 +131,12 @@ function wicket_touchpoint_write_attendee($attendee_id, $action) {
     ]
   ];
 
-  file_put_contents('php://stdout', '------------------TOUCHPOINT SERVICE ID--------------------------'.print_r(get_create_touchpoint_service_id('Events Calendar', 'WP Plugin TEC'), true));
+  $service_id = get_create_touchpoint_service_id('Events Calendar', 'Events from the website');
+
+  file_put_contents('php://stdout', '------------------TOUCHPOINT SERVICE ID--------------------------'.print_r($service_id, true));
   file_put_contents('php://stdout', '------------------TOUCHPOINT DATA--------------------------'.print_r($params, true));
 
-  write_touchpoint($params, get_create_touchpoint_service_id('Events Calendar', 'WP Plugin TEC'));
+  write_touchpoint($params, $service_id);
 }
 
 
