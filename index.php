@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main class="my-5">
+<main class="my-5" id="main-content">
 	<div class="container">
 		<?php if ( have_posts() ) : ?>
 			<?php if ( is_singular() ) : ?>

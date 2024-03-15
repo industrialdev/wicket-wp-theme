@@ -1,13 +1,13 @@
 <?php get_header(); ?>
 
-<?php 
-	$wrapper_classes 		    = [];
-	$dev_wrapper_classes    = get_field( 'page_wrapper_class' );
-	if( !empty( $dev_wrapper_classes ) ) {
-		$wrapper_classes[] = $dev_wrapper_classes;
-	}
-	$display_breadcrumb     = get_field( 'display_breadcrumb' );
-	$display_publish_date   = get_field( 'display_publish_date' );
+<?php
+$wrapper_classes     = [];
+$dev_wrapper_classes = get_field( 'page_wrapper_class' );
+if ( ! empty ( $dev_wrapper_classes ) ) {
+	$wrapper_classes[] = $dev_wrapper_classes;
+}
+$display_breadcrumb   = get_field( 'display_breadcrumb' );
+$display_publish_date = get_field( 'display_publish_date' );
 ?>
 
 <?php if ( have_posts() ) :
@@ -22,11 +22,11 @@
 		}
 		if ( $display_publish_date ) {
 			echo '<div class="wp-block-published-date">';
-			echo "<p class='mt-3 mb-4'><strong>" . __('Published:', 'wicket') . ' ' . get_the_date( 'd-m-Y' ) . "</strong></p>";
+			echo "<p class='mt-3 mb-4'><strong>" . __( 'Published:', 'wicket' ) . ' ' . get_the_date( 'd-m-Y' ) . "</strong></p>";
 			echo '</div>';
 		}
 		?>
-		<main class="<?php echo implode( ' ', $wrapper_classes ) ?>">
+		<main class="<?php echo implode( ' ', $wrapper_classes ) ?>" id="main-content">
 			<?php the_content(); ?>
 		</main>
 

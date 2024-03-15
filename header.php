@@ -55,7 +55,9 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
 
 <body <?php body_class(); ?>>
     <?php echo get_field('tracking_codes_right_after_body', 'options'); ?>
-    <?php /* <a class="invisible" href="#main-content"><?php echo __( 'Skip to main content', 'wicket' ); ?></a> */ ?>
+    <a class="transition left-0 bg-primary text-primary-content absolute p-3 m-3 -translate-y-16 focus:translate-y-0" href="#main-content">
+        <?php echo __( 'Skip to main content', 'wicket' ); ?>
+    </a>
 
     <?php
         // Set PHP variables needed for secondary nav

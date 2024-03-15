@@ -4,7 +4,7 @@
 	while ( have_posts() ) :
 		the_post(); ?>
 
-		<main>
+		<main id="main-content">
 			<?php the_content(); ?>
 		</main>
 
