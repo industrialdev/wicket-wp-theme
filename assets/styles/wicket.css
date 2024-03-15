@@ -3078,6 +3078,11 @@ h6 {
   font-family: var(--wp--preset--font-family--system-sans-serif);
 }
 
+/* AlpineJS Helpers */
+[x-cloak] {
+  display: none !important;
+}
+
 /* THEME COMPONENTS
 ------------------------------------------------------------------------------*/
 .accordion-item.border-b-4 {

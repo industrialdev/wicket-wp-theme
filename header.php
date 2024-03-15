@@ -113,6 +113,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
         <!-- Utility Nav -->
         <div 
             x-show="showUtilityNav"
+            x-cloak
             class="utility-nav hidden lg:block w-full bg-dark-100 text-white font-bold"
             >
             <div class="xl:container flex justify-end">
@@ -143,6 +144,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
             <!-- Left-aligned hamburger menu button that only shows on Base/SM breakpoints -->
             <button 
                 x-show="! mobileMenuOpen"
+                x-cloak
                 x-on:click="mobileMenuOpen = ! mobileMenuOpen; if(mobileMenuOpen){$dispatch('close-mobile-search')};"
                 x-on:close-mobile-menu.window="mobileMenuOpen = false"
                 class="left-hamburger-button inline-flex md:hidden mr-20 items-center"
@@ -158,6 +160,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
             <!-- Left-aligned hamburger menu CLOSE button that only shows on Base/SM breakpoints -->
             <button 
                 x-show="mobileMenuOpen"
+                x-cloak
                 x-on:click="mobileMenuOpen = ! mobileMenuOpen"
                 class="right-hamburger-close-button inline-flex md:hidden mr-16 items-center"
                 >
@@ -186,7 +189,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                             'classes'  => ['secondary-nav-item', 'mr-4', 'items-center', 'hidden', 'lg:inline-flex'],
                             'target'   => $target,
                             'url'      => $secondary_nav_item->url,
-                            'atts'     => ['x-show="! searchOpen"'],
+                            'atts'     => ['x-show="! searchOpen"', 'x-cloak'],
                         ] );
                     }
                 ?>
@@ -198,7 +201,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         'link'      => $bam_path,
                         'classes'   => ['create-account-button', 'hidden', 'md:inline-flex'],
                         'label'     => __( 'Create Account', 'wicket' ),
-                        'atts'      => ['x-show="! searchOpen"'],
+                        'atts'      => ['x-show="! searchOpen"', 'x-cloak'],
                     ] );
                 } else if ( $nav_state == 'logged_in_user' ) {
                     get_component( 'button', [ 
@@ -215,7 +218,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         'link'      => $account_center_landing,
                         'classes'     => ['my-account-button', 'hidden', 'lg:inline-flex'],
                         'label'     => __( 'My Account', 'wicket' ),
-                        'atts'      => ['x-show="! searchOpen"'],
+                        'atts'      => ['x-show="! searchOpen"', 'x-cloak'],
                     ] );
                 } else if ( $nav_state == 'logged_in_member' ) {
                     get_component( 'button', [ 
@@ -224,7 +227,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         'link'      => $account_center_landing,
                         'classes'     => ['member-portal-button', 'hidden', 'md:inline-flex'],
                         'label'     => __( 'Member Portal', 'wicket' ),
-                        'atts'      => ['x-show="! searchOpen"'],
+                        'atts'      => ['x-show="! searchOpen"', 'x-cloak'],
                     ] );
                 }
                 ?>
@@ -234,7 +237,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                             'text'     => __( 'Login', 'wicket' ),
                             'classes'  => ['login-button', 'mx-4', 'items-center', 'hidden', 'lg:inline-flex'],
                             'url'      => get_option('wp_cassify_base_url').'login?service='.$referrer,
-                            'atts'     => ['x-show="! searchOpen"'],
+                            'atts'     => ['x-show="! searchOpen"', 'x-cloak'],
                         ] );
                     ?>
                 <?php else: ?>
@@ -243,12 +246,12 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                             'text'     => __( 'Logout', 'wicket' ),
                             'classes'  => ['logout-button', 'mx-4', 'items-center', 'hidden', 'lg:inline-flex'],
                             'url'      => wp_logout_url(),
-                            'atts'     => ['x-show="! searchOpen"'],
+                            'atts'     => ['x-show="! searchOpen"', 'x-cloak'],
                         ] );
                     ?>
                 <?php endif; ?>
                 <!-- Start search field -->
-                <div x-show="searchOpen" class="hidden lg:block flex-grow px-2 py-3 ml-20 bg-white">
+                <div x-show="searchOpen" x-cloak class="hidden lg:block flex-grow px-2 py-3 ml-20 bg-white">
                     <form class="flex" action="/" method="get">
                         <label for="search" class="hidden"><?php _e('Search the website', 'wicket'); ?></label>
                         <input class="w-full p-1" type="text" name="s" id="search" value="<?php the_search_query(); ?>" placeholder="<?php _e('Search by Keyword', 'wicket'); ?>" />
@@ -266,9 +269,10 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                     x-on:click="searchOpen = ! searchOpen; if(searchOpen){$dispatch('close-mobile-menu')};"
                     x-on:close-mobile-search.window="searchOpen = false"
                     x-show="showSearch"
+                    x-cloak
                     class="search-toggle-button mx-4 inline-flex items-center"
                 >
-                    <span x-show="! searchOpen">
+                    <span x-show="! searchOpen" x-cloak>
                     <?php 
                     get_component( 'icon', [ 
                         'classes' => [ 'text-x-large', 'lg:text-large' ],
@@ -277,7 +281,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                     ] );
                     ?>
                     </span>
-                    <span x-show="searchOpen">
+                    <span x-show="searchOpen" x-cloak>
                     <?php 
                     get_component( 'icon', [ 
                         'classes' => [ 'text-x-large', 'lg:text-large', 'bg-white', 'rounded-base', 'px-2', 'py-0' ],
@@ -289,7 +293,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                 </button>
                 <!-- End search button states -->
 
-                <a x-show="showCart" href="<?php echo $cart_path; ?>" class="cart-button ml-4 md:mx-4 inline-flex items-center">
+                <a x-show="showCart" x-cloak href="<?php echo $cart_path; ?>" class="cart-button ml-4 md:mx-4 inline-flex items-center">
                     <?php 
                     get_component( 'icon', [ 
                         'classes' => [ 'text-x-large', 'lg:text-large' ],
@@ -298,7 +302,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                     ] );
                     ?>
                 </a>
-                <a x-show="showLangToggle" href="#" class="lang-button ml-4 hidden lg:inline-flex items-center">Fr</a>
+                <a x-show="showLangToggle" x-cloak href="#" class="lang-button ml-4 hidden lg:inline-flex items-center">Fr</a>
 
                 <!-- Right-aligned hamburger menu button that only shows on MD breakpoint -->
                 <button
@@ -306,7 +310,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                     x-on:close-mobile-menu.window="mobileMenuOpen = false"
                     class="right-hamburger-button hidden md:inline-flex lg:hidden ml-4 items-center"
                 >
-                    <span x-show="! mobileMenuOpen">
+                    <span x-show="! mobileMenuOpen" x-cloak>
                     <?php 
                     get_component( 'icon', [ 
                         'classes' => [ 'text-x-large', 'lg:text-large', 'px-2' ],
@@ -315,7 +319,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                     ] );
                     ?>
                     </span>
-                    <span x-show="mobileMenuOpen">
+                    <span x-show="mobileMenuOpen" x-cloak>
                     <?php 
                     get_component( 'icon', [ 
                         'classes' => [ 'text-x-large', 'lg:text-large', 'bg-dark-040', 'rounded-base', 'px-2', 'py-0' ],
@@ -367,6 +371,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         
                         <ul 
                             x-show="navDropdownOpen"
+                            x-cloak
                             x-transition
                             class="nav-dropdown absolute z-20 left-0 mt-3 w-40 bg-white p-3 shadow-lg"
                         >
@@ -412,6 +417,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
 
                         <div
                             x-show="navDropdownOpen"
+                            x-cloak
                             x-transition
                             class="nav-mega-dropdown absolute z-20 flex left-0 mt-3 w-full bg-white p-3 shadow-lg flex-wrap"
                         >
@@ -474,6 +480,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
         <!-- Mobile Menu -->
         <div
             x-show="mobileMenuOpen" 
+            x-cloak
             x-transition 
             x-anchor.bottom-start="$refs.secondary-nav"
             class="w-full bg-white border-t-base border-b-base font-bold"
@@ -542,7 +549,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                     ] );
                 }
                 ?>
-                <a x-show="showLangToggle" href="#" class="lang-toggle-button-mobile block mb-2">Fr</a>
+                <a x-show="showLangToggle" x-cloak href="#" class="lang-toggle-button-mobile block mb-2">Fr</a>
             </div> <!-- End items above main nav items and utility nav -->
 
             <div class="font-normal">
@@ -580,12 +587,13 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                                     x-bind:class=" navDropdownOpen ? 'bg-dark-040' : '' "
                               >
                                     <span><?php echo $primary_nav_item['title']; ?></span>
-                                    <i x-show="! navDropdownOpen" class="fa-solid fa-caret-down"></i>
-                                    <i x-show="navDropdownOpen" class="fa-solid fa-caret-up"></i>
+                                    <i x-show="! navDropdownOpen" x-cloak class="fa-solid fa-caret-down"></i>
+                                    <i x-show="navDropdownOpen" x-cloak class="fa-solid fa-caret-up"></i>
                               </div>
                               
                               <ul 
                               x-show="navDropdownOpen"
+                              x-cloak
                               x-transition
                               class="nav-dropdown-mobile block w-full bg-white p-3"
                               >
@@ -632,12 +640,13 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                                     x-bind:class=" navDropdownOpen ? 'bg-dark-040' : '' "
                               >
                                     <span><?php echo $primary_nav_item['title']; ?></span>
-                                    <i x-show="! navDropdownOpen" class="fa-solid fa-caret-down"></i>
-                                    <i x-show="navDropdownOpen" class="fa-solid fa-caret-up"></i>
+                                    <i x-show="! navDropdownOpen" x-cloak class="fa-solid fa-caret-down"></i>
+                                    <i x-show="navDropdownOpen" x-cloak class="fa-solid fa-caret-up"></i>
                               </div>
                               
                               <ul 
                               x-show="navDropdownOpen"
+                              x-cloak
                               x-transition
                               class="nav-dropdown-mobile block w-full bg-white"
                               >
@@ -674,12 +683,13 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                                                       x-bind:class=" subNavDropdownOpen ? 'bg-dark-040' : '' "
                                                 >
                                                       <span><?php echo $child['title']; ?></span>
-                                                      <i x-show="! subNavDropdownOpen && mobileMenuMegaSubDropdowns" class="fa-solid fa-caret-down"></i>
-                                                      <i x-show="subNavDropdownOpen && mobileMenuMegaSubDropdowns" class="fa-solid fa-caret-up"></i>
+                                                      <i x-show="! subNavDropdownOpen && mobileMenuMegaSubDropdowns" x-cloak class="fa-solid fa-caret-down"></i>
+                                                      <i x-show="subNavDropdownOpen && mobileMenuMegaSubDropdowns" x-cloak class="fa-solid fa-caret-up"></i>
                                                 </div>
 
                                           <ul
                                                 x-show="subNavDropdownOpen || !mobileMenuMegaSubDropdowns"
+                                                x-cloak
                                                 x-transition
                                                 class="block w-full bg-white p-3"
                                           >
@@ -736,6 +746,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
         <!-- Mobile Search --> 
         <div 
             x-show="searchOpen"
+            x-cloak
             x-transition
             x-anchor.bottom-start="$refs.secondary-nav"
             class="search-bar-mobile lg:hidden w-full p-3 bg-white shadow-lg z-30"
