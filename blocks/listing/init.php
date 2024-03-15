@@ -11,17 +11,23 @@ namespace Wicket\Blocks\Wicket_Listing;
  */
 function init( $block = [] ) {
 
-	$post_type        = get_field( 'listing_post_type' );
-	$posts_per_page   = get_field( 'listing_posts_per_page' );
-	$taxonomy_filters = get_field( 'listing_taxonomy_filters' );
-	$hide_search      = get_field( 'listing_hide_search' );
+	$post_type           = get_field( 'listing_post_type' );
+	$news_types          = get_field( 'listing_news_type' );
+	$resource_types      = get_field( 'listing_resource_type' );
+	$topics_types        = get_field( 'listing_topic' );
+	$posts_per_page      = get_field( 'listing_posts_per_page' );
+	$taxonomy_filters    = get_field( 'listing_taxonomy_filters' );
+	$hide_search         = get_field( 'listing_hide_search' );
+	$hide_type_taxonomy  = get_field( 'listing_hide_type_taxonomy' );
+	$hide_featured_image = get_field( 'listing_hide_featured_image' );
+	$hide_excerpt        = get_field( 'listing_hide_excerpt' );
 
 	$paged   = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 	$orderby = 'date';
 	$order   = 'DESC';
 	$keyword = '';
 
-	if ( isset( $_GET['sort-by'] ) ) {
+	if ( isset ( $_GET['sort-by'] ) ) {
 		if ( $_GET['sort-by'] == 'date-desc' ) {
 			$orderby = 'date';
 			$order   = 'DESC';
@@ -40,7 +46,7 @@ function init( $block = [] ) {
 		}
 	}
 
-	if ( isset( $_GET['keyword'] ) ) {
+	if ( isset ( $_GET['keyword'] ) ) {
 		$keyword = $_GET['keyword'];
 	}
 
@@ -48,9 +54,57 @@ function init( $block = [] ) {
 		'relation' => 'AND',
 	];
 
+	/* Add news type taxonomy to tax query if it is set */
+	if ( ! empty ( $news_types ) && ! isset ( $_GET['news_type'] ) ) {
+		$terms = [];
+		foreach ( $news_types as $term ) {
+			array_push( $terms, $term->slug );
+		}
+
+		$taxonomy_args = [ 
+			'taxonomy' => 'news_type',
+			'field'    => 'slug',
+			'operator' => 'IN',
+			'terms'    => $terms,
+		];
+		array_push( $tax_query, $taxonomy_args );
+	}
+
+	/* Add resource type taxonomy to tax query if it is set */
+	if ( ! empty ( $resource_types ) && ! isset ( $_GET['resource_type'] ) ) {
+		$terms = [];
+		foreach ( $resource_types as $term ) {
+			array_push( $terms, $term->slug );
+		}
+
+		$taxonomy_args = [ 
+			'taxonomy' => 'resource_type',
+			'field'    => 'slug',
+			'operator' => 'IN',
+			'terms'    => $terms,
+		];
+		array_push( $tax_query, $taxonomy_args );
+	}
+
+	/* Add topic taxonomy to tax query if it is set */
+	if ( ! empty ( $topics_types ) && ! isset ( $_GET['topics'] ) ) {
+		$terms = [];
+		foreach ( $topics_types as $term ) {
+			array_push( $terms, $term->slug );
+		}
+
+		$taxonomy_args = [ 
+			'taxonomy' => 'topics',
+			'field'    => 'slug',
+			'operator' => 'IN',
+			'terms'    => $terms,
+		];
+		array_push( $tax_query, $taxonomy_args );
+	}
+
 	if ( is_array( $taxonomy_filters ) ) {
 		foreach ( $taxonomy_filters as $taxonomy ) {
-			if ( isset( $_GET[ $taxonomy['slug'] ] ) ) {
+			if ( isset ( $_GET[ $taxonomy['slug'] ] ) ) {
 				$taxonomy_args = [ 
 					'taxonomy' => $taxonomy['slug'],
 					'field'    => 'slug',
@@ -118,7 +172,7 @@ function init( $block = [] ) {
 								<?php
 								$date_desc_label = __( 'Date (newest-oldest)', 'industrial' );
 								$date_asc_label  = __( 'Date (oldest-newest)', 'industrial' );
-								if ( isset( $_GET['sort-by'] ) ) : ?>
+								if ( isset ( $_GET['sort-by'] ) ) : ?>
 									<option value="date-desc" <?php if ( $_GET['sort-by'] == 'date-desc' ) : ?>selected<?php endif; ?>>
 										<?php echo $date_desc_label; ?>
 									</option>
@@ -171,11 +225,11 @@ function init( $block = [] ) {
 
 								$card_params = [ 
 									'classes'        => [ 'mb-6' ],
-									'content_type'   => $content_type[0]->name,
+									'content_type'   => ! $hide_type_taxonomy ? $content_type[0]->name : '',
 									'title'          => $title,
-									'excerpt'        => $excerpt,
+									'excerpt'        => ! $hide_excerpt ? $excerpt : '',
 									'date'           => $date,
-									'featured_image' => $featured_image,
+									'featured_image' => ! $hide_featured_image ? $featured_image : '',
 									'link'           => [ 
 										'url'    => $permalink,
 										'text'   => 'Read more',
