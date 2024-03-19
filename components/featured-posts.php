@@ -113,7 +113,7 @@ $classes[]           = 'component-featured-posts';
 				if ( ! $hide_featured_image ) {
 					$featured_image_id  = get_post_thumbnail_id( $post_id );
 					$featured_image_alt = get_post_meta( $featured_image_id, '_wp_attachment_image_alt', true );
-					$image              = [ 
+					$image              = $featured_image_id === 0 ? [] : [ 
 						'id'  => $featured_image_id,
 						'alt' => $featured_image_alt,
 					];
