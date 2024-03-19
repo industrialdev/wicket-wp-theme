@@ -125,7 +125,7 @@ if ( $image === 'featured-image' && has_post_thumbnail() ) {
 				<?php if ( is_single() && ( $download_file || $helper_link ) ) : ?>
 					<div class="flex items-start gap-4">
 						<?php
-						if ( ! empty( $download_file ) ) {
+						if ( ! empty ( $download_file ) ) {
 							get_component( 'button', [ 
 								'variant'     => 'primary',
 								'label'       => 'Download',
@@ -136,7 +136,7 @@ if ( $image === 'featured-image' && has_post_thumbnail() ) {
 							] );
 						}
 
-						if ( ! empty( $helper_link ) ) {
+						if ( ! empty ( $helper_link ) ) {
 							get_component( 'button', [ 
 								'variant'     => 'secondary',
 								'label'       => $helper_link['title'],
@@ -177,12 +177,11 @@ if ( $image === 'featured-image' && has_post_thumbnail() ) {
 			<?php if ( $featured_image ) : ?>
 				<div class="flex-grow-0 flex-shrink-0 basis-full lg:basis-5/12">
 					<?php get_component( 'image', [ 
-						'id'           => $featured_image['id'],
-						'alt'          => $featured_image['alt'],
-						'aspect_ratio' => '3/2',
+						'id'  => $featured_image['id'],
+						'alt' => $featured_image['alt'],
 					] ); ?>
 				</div>
-			<?php elseif ( ! empty( $call_to_action ) && $call_to_action['title'] ) : ?>
+			<?php elseif ( ! empty ( $call_to_action ) && $call_to_action['title'] ) : ?>
 				<div class="<?php echo implode( ' ', $cta_classes ) ?>">
 					<div class="text-[24px] font-bold mb-3">
 						<?php echo esc_html( $call_to_action['title'] ); ?>
@@ -193,7 +192,7 @@ if ( $image === 'featured-image' && has_post_thumbnail() ) {
 						</div>
 					<?php endif; ?>
 
-					<?php if ( ! empty( $call_to_action['links'] ) ) {
+					<?php if ( ! empty ( $call_to_action['links'] ) ) {
 						echo '<div class="flex flex-col gap-3">';
 						foreach ( $call_to_action['links'] as $cta ) {
 							if ( $cta['link'] ) {
@@ -217,7 +216,7 @@ if ( $image === 'featured-image' && has_post_thumbnail() ) {
 		</div>
 	</div>
 
-	<?php if ( ! empty( $background_image ) ) {
+	<?php if ( ! empty ( $background_image ) ) {
 		get_component( 'image', [ 
 			'id'           => $background_image['id'],
 			'alt'          => $background_image['alt'],
