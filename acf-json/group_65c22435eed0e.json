@@ -42,7 +42,7 @@
             "name": "listing_news_type",
             "aria-label": "",
             "type": "taxonomy",
-            "instructions": "Select the post types you would like to appear in this listing.",
+            "instructions": "Select the news types you would like to appear in this listing.",
             "required": 0,
             "conditional_logic": [
                 [
@@ -76,7 +76,7 @@
             "name": "listing_resource_type",
             "aria-label": "",
             "type": "taxonomy",
-            "instructions": "Select the post types you would like to appear in this listing.",
+            "instructions": "Select the resource types you would like to appear in this listing.",
             "required": 0,
             "conditional_logic": [
                 [
@@ -110,7 +110,7 @@
             "name": "listing_topic",
             "aria-label": "",
             "type": "taxonomy",
-            "instructions": "Select the post types you would like to appear in this listing.",
+            "instructions": "Select the topics you would like to appear in this listing.",
             "required": 0,
             "conditional_logic": [
                 [
@@ -430,5 +430,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "translation",
-    "modified": 1710510006
+    "modified": 1710852972
 }
