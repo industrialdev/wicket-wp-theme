@@ -1,5 +1,5 @@
 .wp-block-paragraph > p {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem; // In addition to the 1rem for all Blocks in baseline.scss
   
   &.alignfull {
     max-width: 100%;

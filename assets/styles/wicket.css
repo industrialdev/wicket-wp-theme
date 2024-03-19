@@ -3387,7 +3387,9 @@ footer .menu-item > a[target=_blank]:after {
 *[class*=wp-block] {
   max-width: var(--wp--style--global--content-size);
   margin-inline: auto;
-  margin-bottom: 0.5rem;
+}
+*[class*=wp-block]:not(.wp-block-heading) {
+  margin-bottom: 1rem;
 }
 @media (min-width: 1536px) {
   *[class*=wp-block] {
@@ -3448,6 +3450,7 @@ footer .menu-item > a[target=_blank]:after {
 
 .wp-block-heading {
   font-family: var(--wp--preset--font-family--system-sans-serif);
+  margin-bottom: 0.5rem;
 }
 h1.wp-block-heading {
   font-size: var(--wp--preset--font-size--heading-3-xl);
@@ -3513,7 +3516,7 @@ h6.wp-block-heading {
 }
 
 .wp-block-paragraph > p {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   /* Case: Paragraphs in the single post */
 }
 .wp-block-paragraph > p.alignfull {

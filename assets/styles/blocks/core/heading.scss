@@ -1,5 +1,6 @@
 .wp-block-heading {
   font-family: var(--wp--preset--font-family--system-sans-serif);
+  margin-bottom: 0.5rem;
 
   @at-root {
     h1#{&} {
