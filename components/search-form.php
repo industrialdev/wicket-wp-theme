@@ -25,17 +25,11 @@ $classes[] = 'component-search-form form';
 			],
 		] ); ?>
 		<input type="search" id="keyword" name="keyword"
-			value="<?php echo isset( $_GET['keyword'] ) ? $_GET['keyword'] : ''; ?>" placeholder="<?php echo $placeholder; ?>"
-			class="!pl-10 w-full" />
+			value="<?php echo isset ( $_GET['keyword'] ) ? $_GET['keyword'] : ''; ?>"
+			placeholder="<?php echo $placeholder; ?>" class="!pl-10 w-full" />
 	</div>
 
-	<button class="button inline-flex button--primary" @click="
-		const pageUrl = window.location.href;
-		const searchQuery = document.getElementById('keyword').value;
-		const urlWithQuery = new URL(pageUrl);
-		urlWithQuery.searchParams.set('keyword', searchQuery);
-		window.location.href = urlWithQuery.href;
-	">
+	<button class="button inline-flex button--primary">
 		<?php echo __( 'Search', 'wicket' ); ?>
 	</button>
 </div>

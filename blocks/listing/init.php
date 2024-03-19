@@ -116,22 +116,23 @@ function init( $block = [] ) {
 		}
 	} ?>
 
-	<?php if ( ! $hide_search ) : ?>
-		<div class="bg-dark-010 px-4 py-5 lg:px-0">
-			<div class="container">
-				<?php get_component( 'search-form' ); ?>
+	<form action="">
+
+		<?php if ( ! $hide_search ) : ?>
+			<div class="bg-dark-010 px-4 py-5 lg:px-0">
+				<div class="container">
+					<?php get_component( 'search-form' ); ?>
+				</div>
 			</div>
-		</div>
-	<?php endif; ?>
+		<?php endif; ?>
 
-	<?php
-	echo '<div class="bg-light-010 overflow-x-hidden">';
-	if ( is_admin() && ! $post_type ) {
-		echo "<p>" . __( 'Use the Block controls in edit mode or on the right to configure listing.', 'wicket' ) . "</p>";
-	} ?>
+		<?php
+		echo '<div class="bg-light-010 overflow-x-hidden">';
+		if ( is_admin() && ! $post_type ) {
+			echo "<p>" . __( 'Use the Block controls in edit mode or on the right to configure listing.', 'wicket' ) . "</p>";
+		} ?>
 
-	<div class="container">
-		<form action="">
+		<div class="container">
 			<div class="flex flex-col lg:flex-row gap-4">
 				<div
 					class="basis-1/4 bg-white relative after:content-[''] after:absolute after:top-0 after:bottom-0 after:right-full after:bg-white after:w-[30vw] before:block lg:before:hidden before:content-[''] before:absolute before:top-0 before:bottom-0 before:left-full before:bg-white before:w-[30vw]">
@@ -161,8 +162,13 @@ function init( $block = [] ) {
 
 					<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-7 px-4 lg:px-0">
 						<div class="font-bold">
-							<?php echo $paged . '-' . count( $posts ); ?> of
-							<?php echo $total_posts; ?> posts
+							<?php
+							if ( $total_posts === 0 ) {
+								echo '0' . __( ' Results', 'wicket' );
+							} else {
+								echo $paged . '-' . count( $posts ) . ' of ' . $total_posts . ' Results';
+							}
+							?>
 						</div>
 						<div class="flex items-center gap-3">
 							<label for="sort-by">
@@ -249,15 +255,22 @@ function init( $block = [] ) {
 						</div>
 						<?php
 					else : ?>
-						<div class="listing-results">
-							<p>Sorry, no results were found</p>
+						<div class="p-10">
+							<h2 class="text-center font-bold text-heading-md mb-6">
+								<?php echo __( 'No results found.', 'wicket' ) ?>
+							</h2>
+							<div class="text-center">
+								<?php echo __( 'Try adjusting your search or filter to find what you are looking for.', 'wicket' ) ?>
+							</div>
 						</div>
 						<?php
 					endif; ?>
 				</div>
 			</div>
-		</form>
-	</div>
+		</div>
 
-	<?php echo '</div>';
+		<?php echo '</div>';
+		echo '</form>';
+
+
 }
