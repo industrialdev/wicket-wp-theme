@@ -3387,6 +3387,7 @@ footer .menu-item > a[target=_blank]:after {
 *[class*=wp-block] {
   max-width: var(--wp--style--global--content-size);
   margin-inline: auto;
+  margin-bottom: 0.5rem;
 }
 @media (min-width: 1536px) {
   *[class*=wp-block] {
@@ -3512,6 +3513,7 @@ h6.wp-block-heading {
 }
 
 .wp-block-paragraph > p {
+  margin-bottom: 1rem;
   /* Case: Paragraphs in the single post */
 }
 .wp-block-paragraph > p.alignfull {
