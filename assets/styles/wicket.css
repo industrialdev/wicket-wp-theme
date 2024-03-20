@@ -3518,6 +3518,10 @@ h6.wp-block-heading {
   display: inline-block;
 }
 
+li img {
+  display: inline-block;
+}
+
 .wp-block-paragraph > p {
   margin-bottom: 0.5rem;
   /* Case: Paragraphs in the single post */
