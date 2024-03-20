@@ -3514,6 +3514,9 @@ h6.wp-block-heading {
   display: list-item;
   text-align: -webkit-match-parent;
 }
+.wp-block-list li img {
+  display: inline-block;
+}
 
 .wp-block-paragraph > p {
   margin-bottom: 0.5rem;

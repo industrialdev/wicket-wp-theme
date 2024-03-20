@@ -23,5 +23,9 @@ ul {
   li {
     display: list-item;
     text-align: -webkit-match-parent;
+
+    img {
+      display: inline-block;
+    }
   }
 }
