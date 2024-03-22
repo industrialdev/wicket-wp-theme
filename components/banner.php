@@ -177,8 +177,9 @@ if ( $image === 'featured-image' && has_post_thumbnail() ) {
 			<?php if ( $featured_image ) : ?>
 				<div class="flex-grow-0 flex-shrink-0 basis-full lg:basis-5/12">
 					<?php get_component( 'image', [ 
-						'id'  => $featured_image['id'],
-						'alt' => $featured_image['alt'],
+						'id'      => $featured_image['id'],
+						'alt'     => $featured_image['alt'],
+						'classes' => [ 'max-h-[425px] ml-auto' ],
 					] ); ?>
 				</div>
 			<?php elseif ( ! empty ( $call_to_action ) && $call_to_action['title'] ) : ?>

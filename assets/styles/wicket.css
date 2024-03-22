@@ -789,6 +789,9 @@ video {
 .max-h-8 {
   max-height: 2rem;
 }
+.max-h-\[425px\] {
+  max-height: 425px;
+}
 .w-1\/4 {
   width: 25%;
 }

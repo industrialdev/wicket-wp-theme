@@ -11,16 +11,17 @@ namespace Wicket\Blocks\Wicket_Listing;
  */
 function init( $block = [] ) {
 
-	$post_type           = get_field( 'listing_post_type' );
-	$news_types          = get_field( 'listing_news_type' );
-	$resource_types      = get_field( 'listing_resource_type' );
-	$topics_types        = get_field( 'listing_topic' );
-	$posts_per_page      = get_field( 'listing_posts_per_page' );
-	$taxonomy_filters    = get_field( 'listing_taxonomy_filters' );
-	$hide_search         = get_field( 'listing_hide_search' );
-	$hide_type_taxonomy  = get_field( 'listing_hide_type_taxonomy' );
-	$hide_featured_image = get_field( 'listing_hide_featured_image' );
-	$hide_excerpt        = get_field( 'listing_hide_excerpt' );
+	$post_type           = $block['post_type'] ?? get_field( 'listing_post_type' );
+	$news_types          = $block['news_types'] ?? get_field( 'listing_news_type' );
+	$resource_types      = $block['resource_types'] ?? get_field( 'listing_resource_type' );
+	$topics_types        = $block['topics_types'] ?? get_field( 'listing_topic' );
+	$posts_per_page      = $block['posts_per_page'] ?? get_field( 'listing_posts_per_page' );
+	$taxonomy_filters    = $block['taxonomy_filters'] ?? get_field( 'listing_taxonomy_filters' );
+	$hide_search         = $block['hide_search'] ?? get_field( 'listing_hide_search' );
+	$hide_type_taxonomy  = $block['hide_type_taxonomy'] ?? get_field( 'listing_hide_type_taxonomy' );
+	$hide_featured_image = $block['hide_featured_image'] ?? get_field( 'listing_hide_featured_image' );
+	$hide_excerpt        = $block['hide_excerpt'] ?? get_field( 'listing_hide_excerpt' );
+
 
 	$paged   = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 	$orderby = 'date';
@@ -134,17 +135,19 @@ function init( $block = [] ) {
 
 		<div class="container">
 			<div class="flex flex-col lg:flex-row gap-4">
-				<div
-					class="basis-1/4 bg-white relative after:content-[''] after:absolute after:top-0 after:bottom-0 after:right-full after:bg-white after:w-[30vw] before:block lg:before:hidden before:content-[''] before:absolute before:top-0 before:bottom-0 before:left-full before:bg-white before:w-[30vw]">
-					<?php
-					get_component( 'filter-form', [ 
-						'taxonomies' => $taxonomy_filters,
-					] )
-						?>
-				</div>
-				<div class="basis-3/4 pt-4 lg:pt-10">
-					<?php
+				<?php if ( ! empty ( $taxonomy_filters ) ) : ?>
+					<div
+						class="basis-1/4 bg-white relative after:content-[''] after:absolute after:top-0 after:bottom-0 after:right-full after:bg-white after:w-[30vw] before:block lg:before:hidden before:content-[''] before:absolute before:top-0 before:bottom-0 before:left-full before:bg-white before:w-[30vw]">
+						<?php
+						get_component( 'filter-form', [ 
+							'taxonomies' => $taxonomy_filters,
+						] )
+							?>
+					</div>
+				<?php endif; ?>
 
+				<div class="<?php echo ! empty ( $taxonomy_filters ) ? 'basis-3/4' : 'basis-full' ?> pt-4 lg:pt-10">
+					<?php
 					$args = [ 
 						'post_type'      => $post_type,
 						'posts_per_page' => $posts_per_page,
