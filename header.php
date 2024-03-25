@@ -375,7 +375,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                             x-show="navDropdownOpen"
                             x-cloak
                             x-transition
-                            class="nav-dropdown absolute z-20 left-0 mt-3 w-40 bg-white p-3 shadow-lg"
+                            class="nav-dropdown absolute z-20 left-0 mt-3 w-56 bg-white p-3 shadow-lg"
                         >
                             <?php 
                             $child_loop_index = 0;
