@@ -210,7 +210,9 @@
 		<?php endif; ?>
 
 		<div class="footer-bottom-text flex justify-center <?php echo $default_text_colour_class; ?> text-body-sm">
-			<?php echo sprintf( '© %s %s', date( 'Y' ), get_field( 'footer_copyright', 'option' ) ); ?>
+			<span>
+				<?php echo sprintf( '© %s %s', date( 'Y' ), get_field( 'footer_copyright', 'option' ) ); ?>
+			</span>
 			<?php if ( has_nav_menu( 'footer-utility' ) ) {
 				wp_nav_menu( array(
 					'theme_location' => 'footer-utility',
