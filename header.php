@@ -343,7 +343,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                 if( $primary_nav_item['child_count'] == 0 ):
                 ?>
                   <li
-                        class="block py-3 px-2 relative hover:cursor-pointer border-b-large border-light-000 hover:border-primary-100 transition"
+                        class="single-menu-item block py-3 px-2 relative hover:cursor-pointer border-b-large border-light-000 hover:border-primary-100 transition"
                   >
                         <?php
                         $target = $primary_nav_item['target'] ?? '';
@@ -362,7 +362,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                 ?>
                     <!-- Start Nav Item -->
                     <li
-                        class="block py-3 px-2 relative hover:cursor-pointer border-b-large border-light-000 hover:border-primary-100 transition"
+                        class="dropdown-menu-item block py-3 px-2 relative hover:cursor-pointer border-b-large border-light-000 hover:border-primary-100 transition"
                         x-data="{ navDropdownOpen: false }"
                         x-on:click="navDropdownOpen = ! navDropdownOpen; $dispatch('close-nav-dropdowns')"
                         <?php // If the sending element isn't this element, close dropdown ?>
@@ -407,14 +407,14 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                 ?>
                     <!-- Start Nav Item -->
                     <li
-                        class="block py-3 px-2 hover:cursor-pointer border-b-large border-light-000 hover:border-primary-100 transition"
+                        class="mega-menu-item block py-3 px-2 hover:cursor-pointer border-b-large border-light-000 hover:border-primary-100 transition"
                         x-data="{ navDropdownOpen: false }"
                         x-on:click="navDropdownOpen = ! navDropdownOpen; $dispatch('close-nav-dropdowns')"
                         <?php // If the sending element isn't this element, close dropdown ?>
                         x-on:close-nav-dropdowns.window="
                             if( $event.target !== $el ) {navDropdownOpen = false}"
                         >
-                        <?php _e( 'Label', 'wicket' ); ?><i class="fa-solid fa-caret-down ml-2"></i>
+                        <?php echo $primary_nav_item['title']; ?><i class="fa-solid fa-caret-down ml-2"></i>
 
 
                         <div
