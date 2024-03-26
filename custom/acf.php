@@ -80,6 +80,7 @@ function wicket_acf_load_post_types_field_choices( $field ) {
 	return $field;
 }
 add_filter( 'acf/load_field/key=field_65c2245631b3e', 'wicket_acf_load_post_types_field_choices' );
+add_filter( 'acf/load_field/key=field_6602a59e4176f', 'wicket_acf_load_post_types_field_choices' );
 
 // Add ACF field for selecting taxonomies
 function wicket_acf_load_taxonomies_field_choices( $field ) {
@@ -94,6 +95,7 @@ function wicket_acf_load_taxonomies_field_choices( $field ) {
 	}
 	return $field;
 }
+add_filter( 'acf/load_field/key=field_6602a771ef4a9', 'wicket_acf_load_taxonomies_field_choices' );
 
 
 // Add image preview to ACF featured image field
@@ -114,14 +116,7 @@ function wicket_acf_prepare_featured_image_field( $field ) {
 	}
 	// Add script to remove the "Add Image" button
 	?>
-	<script>
-		const imageFieldWrapper = document.getElementsByClassName('banner__image-field');
-		const imageField = imageFieldWrapper[0].querySelector('select');
-		const imagePreview = document.querySelector('.banner__image-preview');
-		imageField.addEventListener('change', function () {
-			imagePreview.style.display = this.value === 'featured-image' ? 'block' : 'none';
-		});
-	</script>
+	<script>		const imageFieldWrapper = document.getElementsByClassName('banner__image-field');		const imageField = imageFieldWrapper[0].querySelector('select');		const imagePreview = document.querySelector('.banner__image-preview');		imageField.addEventListener('change', function () {			imagePreview.style.display = this.value === 'featured-image' ? 'block' : 'none';		});</script>
 	<?php
 }
 add_filter( 'acf/render_field/key=field_65aa70754a630', 'wicket_acf_prepare_featured_image_field' );
