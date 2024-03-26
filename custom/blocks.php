@@ -167,3 +167,14 @@ function register_post_template() {
 	$post_type_object->template = $template;
 }
 add_action( 'init', 'register_post_template' );
+
+// Activate the Block editor on specific post types
+function wicket_activate_block_editor_post_types( $can_edit, $post_type ) {
+  if ( $post_type == 'product' || $post_type == 'tribe_events' ) {
+    $can_edit = true;
+  }
+ 
+  return $can_edit;
+}
+ 
+add_filter( 'use_block_editor_for_post_type', 'wicket_activate_block_editor_post_types', 10, 2 );

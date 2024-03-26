@@ -767,7 +767,28 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
 
     </header>
 
-    <?php if( isset( $_GET['breakpoints'] ) ): ?>
+    <?php 
+    /* Conditionally-rendered helpers: */
+
+    $wicket_helpers_current_user = wp_get_current_user();
+    $wicket_is_administrator = false;
+    if ( in_array( 'administrator', (array) $wicket_helpers_current_user->roles ) ) {
+        $wicket_is_administrator = true;
+    }
+    ?>
+
+    <?php if( isset( $_GET['wp-info'] ) && $wicket_is_administrator ): ?>
+        <div class="fixed block bottom-0 left-0 bg-white border text-dark-100 p-2">
+            <div><strong>Post type:</strong> <?php echo get_post_type(); ?></div>
+            <?php
+                $wicket_helper_current_template = get_page_template_slug();
+                if(empty($wicket_helper_current_template)) { $wicket_helper_current_template = 'Default'; }
+            ?>
+            <div><strong>Current template:</strong> <?php echo $wicket_helper_current_template; ?></div>
+        </div>
+    <?php endif; ?>
+
+    <?php if( isset( $_GET['breakpoints'] ) && $wicket_is_administrator ): ?>
         <div class="fixed block sm:hidden bottom-0 right-0 bg-dark-080 text-light-000 p-2">Base</div>
         <div class="fixed hidden sm:block md:hidden bottom-0 right-0 bg-dark-080 text-light-000 p-2">SM</div>
         <div class="fixed hidden md:block lg:hidden bottom-0 right-0 bg-dark-080 text-light-000 p-2">MD</div>
@@ -778,7 +799,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
 
     <?php 
     // Tailwind Colour Variance View
-    if( isset( $_GET['colours'] ) ):
+    if( isset( $_GET['colours'] ) && $wicket_is_administrator ):
         // NOTE: If you need to update the below array, use ?generate_colours_array, which will generate a fresh associative array that you can paste in as the value of $all_possible_colours
         $all_possible_colours = ['primary' => ['bg-primary-000', 'bg-primary-010', 'bg-primary-020', 'bg-primary-030', 'bg-primary-040', 'bg-primary-050', 'bg-primary-060', 'bg-primary-070', 'bg-primary-080', 'bg-primary-090', 'bg-primary-100', 'bg-primary-110', 'bg-primary-120', 'bg-primary-130', 'bg-primary-140', 'bg-primary-150', 'bg-primary-160', 'bg-primary-170', 'bg-primary-180', 'bg-primary-190', 'bg-primary-200', ], 'secondary' => ['bg-secondary-000', 'bg-secondary-010', 'bg-secondary-020', 'bg-secondary-030', 'bg-secondary-040', 'bg-secondary-050', 'bg-secondary-060', 'bg-secondary-070', 'bg-secondary-080', 'bg-secondary-090', 'bg-secondary-100', 'bg-secondary-110', 'bg-secondary-120', 'bg-secondary-130', 'bg-secondary-140', 'bg-secondary-150', 'bg-secondary-160', 'bg-secondary-170', 'bg-secondary-180', 'bg-secondary-190', 'bg-secondary-200', ], 'tertiary' => ['bg-tertiary-000', 'bg-tertiary-010', 'bg-tertiary-020', 'bg-tertiary-030', 'bg-tertiary-040', 'bg-tertiary-050', 'bg-tertiary-060', 'bg-tertiary-070', 'bg-tertiary-080', 'bg-tertiary-090', 'bg-tertiary-100', 'bg-tertiary-110', 'bg-tertiary-120', 'bg-tertiary-130', 'bg-tertiary-140', 'bg-tertiary-150', 'bg-tertiary-160', 'bg-tertiary-170', 'bg-tertiary-180', 'bg-tertiary-190', 'bg-tertiary-200', ], 'dark' => ['bg-dark-000', 'bg-dark-010', 'bg-light-050', 'bg-dark-030', 'bg-dark-040', 'bg-dark-050', 'bg-dark-060', 'bg-dark-070', 'bg-dark-080', 'bg-dark-090', 'bg-dark-100', 'bg-dark-110', 'bg-dark-120', 'bg-dark-130', 'bg-dark-140', 'bg-dark-150', 'bg-dark-160', 'bg-dark-170', 'bg-dark-180', 'bg-dark-190', 'bg-dark-200', ], 'light' => ['bg-light-000', 'bg-light-010', 'bg-light-020', 'bg-light-030', 'bg-light-040', 'bg-light-050', 'bg-light-060', 'bg-light-070', 'bg-light-080', 'bg-light-090', 'bg-light-100', 'bg-light-110', 'bg-light-120', 'bg-light-130', 'bg-light-140', 'bg-light-150', 'bg-light-160', 'bg-light-170', 'bg-light-180', 'bg-light-190', 'bg-light-200', ], 'accent' => ['bg-accent-000', 'bg-accent-010', 'bg-accent-020', 'bg-accent-030', 'bg-accent-040', 'bg-accent-050', 'bg-accent-060', 'bg-accent-070', 'bg-accent-080', 'bg-accent-090', 'bg-accent-100', 'bg-accent-110', 'bg-accent-120', 'bg-accent-130', 'bg-accent-140', 'bg-accent-150', 'bg-accent-160', 'bg-accent-170', 'bg-accent-180', 'bg-accent-190', 'bg-accent-200', ], 'info-a' => ['bg-info-a-000', 'bg-info-a-010', 'bg-info-a-020', 'bg-info-a-030', 'bg-info-a-040', 'bg-info-a-050', 'bg-info-a-060', 'bg-info-a-070', 'bg-info-a-080', 'bg-info-a-090', 'bg-info-a-100', 'bg-info-a-110', 'bg-info-a-120', 'bg-info-a-130', 'bg-info-a-140', 'bg-info-a-150', 'bg-info-a-160', 'bg-info-a-170', 'bg-info-a-180', 'bg-info-a-190', 'bg-info-a-200', ], 'info-b' => ['bg-info-b-000', 'bg-info-b-010', 'bg-info-b-020', 'bg-info-b-030', 'bg-info-b-040', 'bg-info-b-050', 'bg-info-b-060', 'bg-info-b-070', 'bg-info-b-080', 'bg-info-b-090', 'bg-info-b-100', 'bg-info-b-110', 'bg-info-b-120', 'bg-info-b-130', 'bg-info-b-140', 'bg-info-b-150', 'bg-info-b-160', 'bg-info-b-170', 'bg-info-b-180', 'bg-info-b-190', 'bg-info-b-200', ], 'danger' => ['bg-danger-000', 'bg-danger-010', 'bg-danger-020', 'bg-danger-030', 'bg-danger-040', 'bg-danger-050', 'bg-danger-060', 'bg-danger-070', 'bg-danger-080', 'bg-danger-090', 'bg-danger-100', 'bg-danger-110', 'bg-danger-120', 'bg-danger-130', 'bg-danger-140', 'bg-danger-150', 'bg-danger-160', 'bg-danger-170', 'bg-danger-180', 'bg-danger-190', 'bg-danger-200', ], 'warning' => ['bg-warning-000', 'bg-warning-010', 'bg-warning-020', 'bg-warning-030', 'bg-warning-040', 'bg-warning-050', 'bg-warning-060', 'bg-warning-070', 'bg-warning-080', 'bg-warning-090', 'bg-warning-100', 'bg-warning-110', 'bg-warning-120', 'bg-warning-130', 'bg-warning-140', 'bg-warning-150', 'bg-warning-160', 'bg-warning-170', 'bg-warning-180', 'bg-warning-190', 'bg-warning-200', ], 'success' => ['bg-success-000', 'bg-success-010', 'bg-success-020', 'bg-success-030', 'bg-success-040', 'bg-success-050', 'bg-success-060', 'bg-success-070', 'bg-success-080', 'bg-success-090', 'bg-success-100', 'bg-success-110', 'bg-success-120', 'bg-success-130', 'bg-success-140', 'bg-success-150', 'bg-success-160', 'bg-success-170', 'bg-success-180', 'bg-success-190', 'bg-success-200', ], 'white' => ['bg-white'], ];
         ?>
@@ -803,7 +824,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
 
 <?php 
     // For generating colours array used for ?colours view
-    if( isset( $_GET['generate_colours_array'] ) ):
+    if( isset( $_GET['generate_colours_array'] ) && $wicket_is_administrator ):
         $colour_names = [
             'primary',
             'secondary',
