@@ -41,9 +41,13 @@
             "post_type": [
                 "post",
                 "page",
-                "listing"
+                "news",
+                "resources",
+                "product"
             ],
-            "post_status": "",
+            "post_status": [
+                "publish"
+            ],
             "taxonomy": "",
             "return_format": "object",
             "multiple": 1,
@@ -213,5 +217,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "translation",
-    "modified": 1707217189
+    "modified": 1711446330
 }
