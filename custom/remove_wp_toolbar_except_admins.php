@@ -1,9 +1,13 @@
 <?php
 // Disable Admin Bar for All Users Except for Administrators
-// https://www.wpbeginner.com/wp-tutorials/how-to-disable-wordpress-admin-bar-for-all-users-except-administrators/
-function remove_admin_bar() {
-  if (!current_user_can('administrator') && !is_admin()) {
-    show_admin_bar(false);
+function should_show_admin_bar() {
+  $curr_user = wp_get_current_user();
+  $is_admin = false;
+  if ( in_array( 'administrator', (array) $curr_user->roles ) ) {
+    $is_admin = true;
   }
+  
+  return $is_admin || is_admin();
 }
-add_action('after_setup_theme', 'remove_admin_bar');
+
+add_filter( 'show_admin_bar', 'should_show_admin_bar', PHP_INT_MAX ); // Using PHP_INT_MAX to make this the final filter in chain in case of competing plugin
