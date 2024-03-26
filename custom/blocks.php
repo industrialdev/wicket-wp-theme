@@ -112,7 +112,7 @@ function get_child_blocks() {
  * Adjusting Core Blocks
  */
 
-function wicket_core_block_wrappers( $block_content, $block ) {
+ function wicket_core_block_wrappers( $block_content, $block ) {
 	if ( $block['blockName'] === 'core/paragraph' ) {
 		$content = '<div class="wp-block-paragraph">';
 		$content .= $block_content;
@@ -120,6 +120,11 @@ function wicket_core_block_wrappers( $block_content, $block ) {
 		return $content;
 	} elseif ( $block['blockName'] === 'core/list' ) {
 		$content = '<div class="wp-block-list">';
+		$content .= $block_content;
+		$content .= '</div>';
+		return $content;
+	} elseif( $block['blockName'] === 'core/legacy-widget' ) {
+		$content = '<div class="wp-block-legacy-widget">';
 		$content .= $block_content;
 		$content .= '</div>';
 		return $content;
