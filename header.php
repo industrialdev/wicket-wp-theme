@@ -70,7 +70,15 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
         $nav_state = 'logged_out'; // Will be one of logged_out, logged_in_user, logged_in_member
         if( is_user_logged_in() ) {
             $nav_state = 'logged_in_user';
-            // TODO: Add additinal check to see if they're a logged in member
+            
+            $user = wp_get_current_user();
+            if (in_array('member', (array) $user->roles)) {
+                $nav_state = 'logged_in_member';
+            }
+
+            if (in_array('administrator', (array) $user->roles)) {
+                $nav_state = 'logged_in_member';
+            }
         }
 
         // Grab Menus
