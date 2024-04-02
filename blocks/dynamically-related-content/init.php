@@ -11,8 +11,11 @@ namespace Wicket\Blocks\Wicket_Dynamically_Related_Content;
  */
 function init( $block = [] ) {
 
-	$attrs               = get_block_wrapper_attributes();
+	$attrs               = get_block_wrapper_attributes( [ 
+		'class' => 'alignfull',
+	] );
 	$title               = get_field( 'related_content_title' );
+	$hide_block_title    = get_field( 'related_content_hide_title' );
 	$column_count        = get_field( 'related_content_column_count' );
 	$max_posts           = get_field( 'related_content_max_posts' );
 	$post_type           = get_field( 'related_content_post_type' );
@@ -30,8 +33,9 @@ function init( $block = [] ) {
 
 	echo '<div ' . $attrs . ' ' . $placeholder_styles . '>';
 
-	get_component( 'featured-posts', [ 
+	get_component( 'related-posts', [ 
 		'title'               => $title,
+		'hide_block_title'    => $hide_block_title,
 		'column_count'        => $column_count,
 		'max_posts'           => $max_posts,
 		'post_type'           => $post_type,

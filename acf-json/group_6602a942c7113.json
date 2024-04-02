@@ -1,11 +1,11 @@
 {
     "key": "group_6602a942c7113",
-    "title": "Shared - Button Styles",
+    "title": "Shared - Button Style",
     "fields": [
         {
             "key": "field_6602a942caab8",
-            "label": "Button Styles",
-            "name": "button_styles",
+            "label": "Button Style",
+            "name": "button_style",
             "aria-label": "",
             "type": "select",
             "instructions": "",
@@ -50,5 +50,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "translation",
-    "modified": 1711450504
+    "modified": 1712052933
 }

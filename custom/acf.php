@@ -97,6 +97,26 @@ function wicket_acf_load_taxonomies_field_choices( $field ) {
 }
 add_filter( 'acf/load_field/key=field_6602a771ef4a9', 'wicket_acf_load_taxonomies_field_choices' );
 
+// Add ACF field for selecting taxonomy terms
+function wicket_acf_load_taxonomy_terms_field_choices( $field ) {
+	$field['choices'] = array();
+	$taxonomies       = get_taxonomies( array( 'public' => true ), 'objects' );
+
+	if ( is_array( $taxonomies ) ) {
+		$field['choices']['0'] = __( '-- Select Taxonomy Term --', 'wicket' );
+		foreach ( $taxonomies as $taxonomy ) {
+			$terms = get_terms( $taxonomy->name, array( 'hide_empty' => true ) );
+			if ( is_array( $terms ) ) {
+				foreach ( $terms as $term ) {
+					$field['choices'][ $term->term_id ] = $taxonomy->label . ' -> ' . $term->name;
+				}
+			}
+		}
+	}
+	return $field;
+}
+add_filter( 'acf/load_field/key=field_660be4668327f', 'wicket_acf_load_taxonomy_terms_field_choices' );
+
 
 // Add image preview to ACF featured image field
 function wicket_acf_prepare_featured_image_field( $field ) {
@@ -116,7 +136,7 @@ function wicket_acf_prepare_featured_image_field( $field ) {
 	}
 	// Add script to remove the "Add Image" button
 	?>
-	<script>		const imageFieldWrapper = document.getElementsByClassName('banner__image-field');		const imageField = imageFieldWrapper[0].querySelector('select');		const imagePreview = document.querySelector('.banner__image-preview');		imageField.addEventListener('change', function () {			imagePreview.style.display = this.value === 'featured-image' ? 'block' : 'none';		});</script>
+	<script>		const imageFieldWrapper = document.getElementsByClassName('banner__image-field'); const imageField = imageFieldWrapper[0].querySelector('select'); const imagePreview = document.querySelector('.banner__image-preview'); imageField.addEventListener('change', function () { imagePreview.style.display = this.value === 'featured-image' ? 'block' : 'none'; });</script>
 	<?php
 }
 add_filter( 'acf/render_field/key=field_65aa70754a630', 'wicket_acf_prepare_featured_image_field' );

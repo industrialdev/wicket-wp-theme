@@ -27,5 +27,8 @@
       "margin": true,
       "padding": true
     }
+  },
+  "attributes": {
+    "align": "full"
   }
 }

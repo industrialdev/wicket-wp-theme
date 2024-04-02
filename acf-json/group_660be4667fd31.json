@@ -1,11 +1,11 @@
 {
-    "key": "group_6602a771ea991",
-    "title": "Shared - Taxonomy",
+    "key": "group_660be4667fd31",
+    "title": "Shared - Taxonomy Term",
     "fields": [
         {
-            "key": "field_6602a771ef4a9",
-            "label": "Taxonomy",
-            "name": "taxonomy",
+            "key": "field_660be4668327f",
+            "label": "Taxonomy Term",
+            "name": "taxonomy_term",
             "aria-label": "",
             "type": "select",
             "instructions": "",
@@ -17,18 +17,7 @@
                 "id": ""
             },
             "wpml_cf_preferences": 1,
-            "choices": {
-                "0": "-- Select Taxonomy --",
-                "category": "Categories",
-                "post_tag": "Tags",
-                "post_format": "Formats",
-                "product_cat": "Product categories",
-                "product_tag": "Product tags",
-                "product_shipping_class": "Product shipping classes",
-                "news_type": "News Type",
-                "resource_type": "Resource Type",
-                "topics": "Topics"
-            },
+            "choices": [],
             "default_value": false,
             "return_format": "value",
             "multiple": 0,
@@ -57,5 +46,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "translation",
-    "modified": 1712052894
+    "modified": 1712055877
 }

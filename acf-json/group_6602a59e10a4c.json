@@ -1,11 +1,11 @@
 {
     "key": "group_6602a59e10a4c",
-    "title": "Shared - Post Types",
+    "title": "Shared - Post Type",
     "fields": [
         {
             "key": "field_6602a59e4176f",
-            "label": "Post Types",
-            "name": "post_types",
+            "label": "Post Type",
+            "name": "post_type",
             "aria-label": "",
             "type": "select",
             "instructions": "",
@@ -56,5 +56,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "translation",
-    "modified": 1711450748
+    "modified": 1712052908
 }

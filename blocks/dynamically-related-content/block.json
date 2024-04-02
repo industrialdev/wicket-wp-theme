@@ -13,7 +13,7 @@
   },
   "styles": [],
   "supports": {
-    "align": ["full"],
+    "align": false,
     "anchor": false,
     "alignContent": false,
     "color": {

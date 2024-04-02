@@ -8,7 +8,7 @@
             "name": "related_content_title",
             "aria-label": "",
             "type": "text",
-            "instructions": "",
+            "instructions": "If title is not provided, default title will be \"Related [Post_Type]\"",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -17,11 +17,53 @@
                 "id": ""
             },
             "wpml_cf_preferences": 2,
-            "default_value": "Featured",
+            "default_value": "",
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_660bdb7043ae5",
+            "label": "Hide Block Title",
+            "name": "related_content_hide_title",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_6602aa8f872b0",
+            "label": "Show View All Link",
+            "name": "related_content_show_view_all",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
         },
         {
             "key": "field_66029ca625286",
@@ -38,7 +80,7 @@
                 "id": ""
             },
             "wpml_cf_preferences": 1,
-            "default_value": "",
+            "default_value": 3,
             "min": 1,
             "max": 4,
             "step": "",
@@ -75,7 +117,7 @@
             "aria-label": "",
             "type": "clone",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -109,35 +151,11 @@
             "layout": "table",
             "pagination": 0,
             "min": 0,
-            "max": 0,
+            "max": 1,
             "collapsed": "",
             "button_label": "Add Row",
             "rows_per_page": 20,
             "sub_fields": [
-                {
-                    "key": "field_6602a84f2dbdd",
-                    "label": "Taxonomy",
-                    "name": "taxonomy",
-                    "aria-label": "",
-                    "type": "clone",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "wpml_cf_preferences": 1,
-                    "clone": [
-                        "field_6602a771ef4a9"
-                    ],
-                    "display": "seamless",
-                    "layout": "block",
-                    "prefix_label": 0,
-                    "prefix_name": 0,
-                    "parent_repeater": "field_6602a529fee42"
-                },
                 {
                     "key": "field_6602a89e2dbde",
                     "label": "Relation",
@@ -165,6 +183,56 @@
                     "ajax": 0,
                     "placeholder": "",
                     "parent_repeater": "field_6602a529fee42"
+                },
+                {
+                    "key": "field_660bf899f693b",
+                    "label": "Taxonomy Terms",
+                    "name": "taxonomy_terms",
+                    "aria-label": "",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 1,
+                    "layout": "table",
+                    "pagination": 0,
+                    "min": 0,
+                    "max": 0,
+                    "collapsed": "",
+                    "button_label": "Add Row",
+                    "rows_per_page": 20,
+                    "parent_repeater": "field_6602a529fee42",
+                    "sub_fields": [
+                        {
+                            "key": "field_660bf8a6f693c",
+                            "label": "Taxonomy Term",
+                            "name": "taxonomy_term",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "wpml_cf_preferences": 1,
+                            "clone": [
+                                "group_660be4667fd31"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0,
+                            "parent_repeater": "field_660bf899f693b"
+                        }
+                    ]
                 }
             ]
         },
@@ -274,27 +342,6 @@
             "ui": 1
         },
         {
-            "key": "field_6602aa8f872b0",
-            "label": "Show View All Link",
-            "name": "related_content_show_view_all",
-            "aria-label": "",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "wpml_cf_preferences": 1,
-            "message": "",
-            "default_value": 0,
-            "ui_on_text": "",
-            "ui_off_text": "",
-            "ui": 1
-        },
-        {
             "key": "field_6602a9ed85fac",
             "label": "CTA Style",
             "name": "related_content_cta_style",
@@ -337,5 +384,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "translation",
-    "modified": 1711450782
+    "modified": 1712062198
 }
