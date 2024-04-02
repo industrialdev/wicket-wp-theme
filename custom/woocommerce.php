@@ -76,17 +76,6 @@ function alter_teams_data($team_post_data)
   }
 }
 add_action('wc_memberships_for_teams_team_created', 'alter_teams_data');
-
-// Activate the Block editor on Woo product pages
-function activate_gutenberg_product( $can_edit, $post_type ) {
-  if ( $post_type == 'product' ) {
-    $can_edit = true;
-  }
- 
-  return $can_edit;
-}
- 
-add_filter( 'use_block_editor_for_post_type', 'activate_gutenberg_product', 10, 2 );
  
 // // enable taxonomy fields for woocommerce with gutenberg on
 // function enable_taxonomy_rest( $args ) {
