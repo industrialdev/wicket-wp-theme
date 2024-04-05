@@ -19,3 +19,4 @@ require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/breadcrumbs.php';
 require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/woocommerce_payment_complete_event_ticket_attendees.php';
 require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/event_ticket_attendees_checkin.php';
 require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/event_ticket_attendees_rsvp.php';
+require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/event_ticket_attendees_field_hooks.php';
