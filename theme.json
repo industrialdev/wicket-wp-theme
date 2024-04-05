@@ -14,7 +14,7 @@
       "palette": [
         {
           "slug": "primary",
-          "color": "#347ff8",
+          "color": "#232A31",
           "name": "Primary"
         },
         {
@@ -24,7 +24,7 @@
         },
         {
           "slug": "tertiary",
-          "color": "#347ff8",
+          "color": "#232A31",
           "name": "Tertiary"
         },
         {
@@ -48,6 +48,11 @@
           "name": "Dark 090"
         },
         {
+          "slug": "black",
+          "color": "#000000",
+          "name": "Black"
+        },
+        {
           "slug": "white",
           "color": "#ffffff",
           "name": "White"
@@ -68,18 +73,18 @@
           "name": "Light 030"
         },
         {
-          "slug": "accent",
-          "color": "#347ff8",
-          "name": "Accent"
+          "slug": "accent-a",
+          "color": "#F9FAFB",
+          "name": "Accent A"
         },
         {
           "slug": "info-a",
-          "color": "#4AB2DE",
+          "color": "#BDBFC1",
           "name": "Informational A"
         },
         {
           "slug": "info-a-20",
-          "color": "#C9E8F5",
+          "color": "#E8E8E8",
           "name": "Informational A-020"
         },
         {

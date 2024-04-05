@@ -26,7 +26,7 @@ wp.domReady(() => {
   wp.blocks.unregisterBlockType('core/home-link')
   wp.blocks.unregisterBlockType('core/latest-comments')
   wp.blocks.unregisterBlockType('core/latest-posts')
-  wp.blocks.unregisterBlockType('core/legacy-widget')
+  //wp.blocks.unregisterBlockType('core/legacy-widget')
   wp.blocks.unregisterBlockType('core/loginout')
   wp.blocks.unregisterBlockType('core/media-text')
   wp.blocks.unregisterBlockType('core/navigation')
@@ -43,7 +43,6 @@ wp.domReady(() => {
   //wp.blocks.unregisterBlockType( 'core/post-featured-image' );
   wp.blocks.unregisterBlockType('core/post-navigation-link')
   wp.blocks.unregisterBlockType('core/post-template')
-  wp.blocks.unregisterBlockType('core/post-terms')
   //wp.blocks.unregisterBlockType( 'core/post-title' );
   wp.blocks.unregisterBlockType('core/query')
   wp.blocks.unregisterBlockType('core/query-no-results')

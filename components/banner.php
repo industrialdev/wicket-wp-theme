@@ -2,9 +2,11 @@
 $defaults         = array(
 	'classes'          => [],
 	'title '           => '',
-	'show_breadcrumbs' => false,
 	'intro'            => '',
+	'show_breadcrumbs' => false,
+	'show_post_type'   => false,
 	'show_share'       => false,
+	'show_date'        => false,
 	'member_only'      => false,
 	'text_alignment'   => 'left',
 	'image'            => '',
@@ -12,13 +14,18 @@ $defaults         = array(
 	'call_to_action'   => '',
 	'background_style' => 'light',
 	'background_image' => '',
+	'back_link'        => '',
+	'download_file'    => '',
+	'helper_link'      => '',
 );
 $args             = wp_parse_args( $args, $defaults );
 $classes          = $args['classes'];
 $title            = $args['title'];
-$show_breadcrumbs = $args['show_breadcrumbs'];
 $intro            = $args['intro'];
+$show_breadcrumbs = $args['show_breadcrumbs'];
+$show_post_type   = $args['show_post_type'];
 $show_share       = $args['show_share'];
+$show_date        = $args['show_date'];
 $member_only      = $args['member_only'];
 $text_alignment   = $args['text_alignment'];
 $image            = $args['image'];
@@ -26,17 +33,27 @@ $custom_image     = $args['custom_image'];
 $call_to_action   = $args['call_to_action'];
 $background_style = $args['background_style'];
 $background_image = $args['background_image'];
+$back_link        = $args['back_link'];
+$download_file    = $args['download_file'];
+$helper_link      = $args['helper_link'];
 
 $text_alignment_class = 'text-' . $text_alignment;
-$wrapper_classes      = [ 'py-8 px-4 mb-16 border-b border-light-020 relative' ];
+$wrapper_classes      = [ 'component-banner py-8 px-4 mb-16 relative' ]; // border-b border-light-020
 $reversed             = ( $background_style === 'reversed' || $background_style === 'image' );
-$cta_classes          = [ 'flex-1 p-6 rounded-050 basis-full lg:basis-3/12' ];
+$cta_classes          = [ 'cta-card flex-1 p-6 rounded-050 basis-full w-full lg:basis-3/12' ];
 
 if ( $reversed ) {
 	$wrapper_classes[] = 'bg-dark-100 text-white';
 	$cta_classes[]     = 'bg-[#393F46]';
 } else {
 	$cta_classes[] = 'bg-light-010';
+}
+if ( $background_style === 'reversed' ) {
+	$wrapper_classes[] = 'bg-mode-reversed';
+} else if ( $background_style === 'image' ) {
+	$wrapper_classes[] = 'bg-mode-image';
+} else {
+	$wrapper_classes[] = 'bg-accent-a-100 bg-mode-light';
 }
 
 if ( $image === 'featured-image' && has_post_thumbnail() ) {
@@ -62,10 +79,28 @@ if ( $image === 'featured-image' && has_post_thumbnail() ) {
 					get_component( 'breadcrumbs' );
 				} ?>
 
+				<?php if ( is_single() && $back_link ) {
+					get_component( 'link', [ 
+						'url'        => $back_link,
+						'text'       => 'Back',
+						'icon_start' => [ 
+							'icon' => 'fa-solid fa-arrow-left',
+							'text' => 'Icon text',
+						],
+					] );
+				} ?>
+
 				<?php if ( $title ) : ?>
-					<h1 class="text-heading-3xl font-bold <?php echo esc_attr( $text_alignment_class ); ?>">
-						<?php echo esc_html( $title ); ?>
-					</h1>
+					<div>
+						<?php if ( $show_post_type ) : ?>
+							<div class="text-dark-070 uppercase font-bold <?php echo esc_attr( $text_alignment_class ); ?>">
+								<?php echo get_post_type(); ?>
+							</div>
+						<?php endif; ?>
+						<h1 class="text-heading-3xl font-bold <?php echo esc_attr( $text_alignment_class ); ?>">
+							<?php echo esc_html( $title ); ?>
+						</h1>
+					</div>
 				<?php endif; ?>
 
 				<?php if ( $text_alignment === 'center' ) : ?>
@@ -75,6 +110,45 @@ if ( $image === 'featured-image' && has_post_thumbnail() ) {
 				<?php if ( $intro ) : ?>
 					<div class="text-body-lg <?php echo esc_attr( $text_alignment_class ); ?>">
 						<?php echo wp_kses_post( $intro ); ?>
+					</div>
+				<?php endif; ?>
+
+				<?php if ( $show_date ) : ?>
+					<?php
+					$date = get_the_date( 'F j, Y' );
+					?>
+					<div class="text-body-sm text-dark-070 italic mb-3">
+						<?php echo $date; ?>
+					</div>
+				<?php endif; ?>
+
+				<?php if ( is_single() && ( $download_file || $helper_link ) ) : ?>
+					<div class="flex items-start gap-4">
+						<?php
+						if ( ! empty ( $download_file ) ) {
+							get_component( 'button', [ 
+								'variant'     => 'primary',
+								'label'       => 'Download',
+								'suffix_icon' => 'fa-solid fa-arrow-down-to-bracket',
+								'a_tag'       => true,
+								'link'        => $download_file['url'],
+								'atts'        => [ 'download' ],
+							] );
+						}
+
+						if ( ! empty ( $helper_link ) ) {
+							get_component( 'button', [ 
+								'variant'     => 'secondary',
+								'label'       => $helper_link['title'],
+								'suffix_icon' => $helper_link['target'] === '_blank' ? 'fa fa-external-link-alt' : '',
+								'a_tag'       => true,
+								'link'        => $helper_link['url'],
+								'link_target' => $helper_link['target'],
+								'reversed'    => $reversed,
+							] );
+						}
+
+						?>
 					</div>
 				<?php endif; ?>
 
@@ -103,12 +177,12 @@ if ( $image === 'featured-image' && has_post_thumbnail() ) {
 			<?php if ( $featured_image ) : ?>
 				<div class="flex-grow-0 flex-shrink-0 basis-full lg:basis-5/12">
 					<?php get_component( 'image', [ 
-						'id'           => $featured_image['id'],
-						'alt'          => $featured_image['alt'],
-						'aspect_ratio' => '3/2',
+						'id'      => $featured_image['id'],
+						'alt'     => $featured_image['alt'],
+						'classes' => [ 'max-h-[425px] ml-auto' ],
 					] ); ?>
 				</div>
-			<?php elseif ( ! empty( $call_to_action ) && $call_to_action['title'] ) : ?>
+			<?php elseif ( ! empty ( $call_to_action ) && $call_to_action['title'] ) : ?>
 				<div class="<?php echo implode( ' ', $cta_classes ) ?>">
 					<div class="text-[24px] font-bold mb-3">
 						<?php echo esc_html( $call_to_action['title'] ); ?>
@@ -119,7 +193,7 @@ if ( $image === 'featured-image' && has_post_thumbnail() ) {
 						</div>
 					<?php endif; ?>
 
-					<?php if ( ! empty( $call_to_action['links'] ) ) {
+					<?php if ( ! empty ( $call_to_action['links'] ) ) {
 						echo '<div class="flex flex-col gap-3">';
 						foreach ( $call_to_action['links'] as $cta ) {
 							if ( $cta['link'] ) {
@@ -143,7 +217,7 @@ if ( $image === 'featured-image' && has_post_thumbnail() ) {
 		</div>
 	</div>
 
-	<?php if ( ! empty( $background_image ) ) {
+	<?php if ( ! empty ( $background_image ) ) {
 		get_component( 'image', [ 
 			'id'           => $background_image['id'],
 			'alt'          => $background_image['alt'],

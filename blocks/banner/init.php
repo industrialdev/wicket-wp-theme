@@ -10,11 +10,14 @@ namespace Wicket\Blocks\Wicket_Banner;
  * Banner block registration function
  */
 function init( $block = [] ) {
+	$attrs = get_block_wrapper_attributes();
 
 	$title            = get_field( 'banner_title' ) ?: get_the_title();
-	$show_breadcrumbs = get_field( 'banner_show_breadcrumbs' );
 	$intro            = get_field( 'banner_intro' );
+	$show_breadcrumbs = get_field( 'banner_show_breadcrumbs' );
+	$show_post_type   = get_field( 'banner_show_post_type' );
 	$show_share       = get_field( 'banner_show_share' );
+	$show_date        = get_field( 'banner_show_date' );
 	$member_only      = is_member_only( get_the_ID() );
 	$text_alignment   = get_field( 'banner_text_alignment' );
 	$image            = get_field( 'banner_image' );
@@ -22,12 +25,18 @@ function init( $block = [] ) {
 	$call_to_action   = get_field( 'banner_call_to_action' );
 	$background_style = get_field( 'banner_background_style' );
 	$background_image = get_field( 'banner_background_image' );
+	$back_link        = get_field( 'banner_back_link' );
+	$download_file    = get_field( 'banner_download_file' );
+	$helper_link      = get_field( 'banner_helper_link' );
 
+	echo '<div ' . $attrs . '>';
 	get_component( 'banner', [ 
 		'title'            => $title,
-		'show_breadcrumbs' => $show_breadcrumbs,
 		'intro'            => $intro,
+		'show_breadcrumbs' => $show_breadcrumbs,
+		'show_post_type'   => $show_post_type,
 		'show_share'       => $show_share,
+		'show_date'        => $show_date,
 		'member_only'      => $member_only,
 		'text_alignment'   => $text_alignment,
 		'image'            => $image,
@@ -35,5 +44,9 @@ function init( $block = [] ) {
 		'call_to_action'   => $call_to_action,
 		'background_style' => $background_style,
 		'background_image' => $background_image,
+		'back_link'        => $back_link,
+		'download_file'    => $download_file,
+		'helper_link'      => $helper_link,
 	] );
+	echo '</div>';
 }

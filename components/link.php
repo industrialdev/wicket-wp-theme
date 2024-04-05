@@ -25,6 +25,7 @@ $target     = $args['target'];
 $icon_start = ( $args['icon_start']['icon'] ? get_component( 'icon', $args['icon_start'], false ) : '' );
 $icon_end   = ( $args['icon_end']['icon'] ? get_component( 'icon', $args['icon_end'], false ) : '' );
 $atts       = $args['atts'];
+$classes[]  = 'component-link';
 
 if ( ! $icon_start && ! $icon_end ) {
 	$classes[] = 'underline hover:no-underline focus:shadow-focus';

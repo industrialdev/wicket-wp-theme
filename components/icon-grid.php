@@ -13,10 +13,20 @@ $use_fa_codes     = $args['use-fa-codes'];
 $use_drop_shadows = $args['use-drop-shadows'];
 $icons            = $args['icons'];
 
-$classes[] = '@container';
+$classes[] = 'component-icon-grid @container';
+$placeholder_styles = 'style="min-height: 40px;border: 1px solid var(--wp--preset--color--light);"';
+
 ?>
 
-<div class="<?php echo implode( ' ', $classes ) ?>">
+<div 
+	class="<?php echo implode( ' ', $classes ) ?>"
+	<?php if( is_admin() && empty($icons) ){ echo $placeholder_styles; } ?>
+>
+
+	<?php if( is_admin() && empty( $icons ) && empty( $title ) ): ?>
+  <p><?php _e('Use the Block controls in edit mode or on the right to add icons.', 'wicket'); ?></p>
+  <?php endif; ?>
+
 	<?php if ( !empty( $title ) ) : ?>
 		<h2 class="text-heading-xl font-bold text-center mb-2">
 			<?php echo esc_html( $title ); ?>

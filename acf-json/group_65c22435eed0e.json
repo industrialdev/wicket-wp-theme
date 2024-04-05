@@ -1,0 +1,434 @@
+{
+    "key": "group_65c22435eed0e",
+    "title": "Block - Listing",
+    "fields": [
+        {
+            "key": "field_65c2245631b3e",
+            "label": "Post Type",
+            "name": "listing_post_type",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Select the post types you would like to appear in this listing.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "listing__select-post-type",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "choices": {
+                "0": "-- Select Post Type --",
+                "post": "Posts",
+                "page": "Pages",
+                "attachment": "Media",
+                "product": "Products",
+                "wppcp_group": "Groups",
+                "wppcp_fproduct_tabs": "Woo Product Tabs",
+                "news": "News",
+                "resources": "Resources"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_65f44ddd16151",
+            "label": "News Type",
+            "name": "listing_news_type",
+            "aria-label": "",
+            "type": "taxonomy",
+            "instructions": "Select the news types you would like to appear in this listing.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_65c2245631b3e",
+                        "operator": "==",
+                        "value": "news"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "listing__select-post-type",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "taxonomy": "news_type",
+            "add_term": 1,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "object",
+            "field_type": "checkbox",
+            "bidirectional": 0,
+            "multiple": 0,
+            "allow_null": 0,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_65f44e7a16154",
+            "label": "Resource Type",
+            "name": "listing_resource_type",
+            "aria-label": "",
+            "type": "taxonomy",
+            "instructions": "Select the resource types you would like to appear in this listing.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_65c2245631b3e",
+                        "operator": "==",
+                        "value": "resources"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "listing__select-post-type",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "taxonomy": "resource_type",
+            "add_term": 1,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "object",
+            "field_type": "checkbox",
+            "bidirectional": 0,
+            "multiple": 0,
+            "allow_null": 0,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_65f44e1216152",
+            "label": "Topic",
+            "name": "listing_topic",
+            "aria-label": "",
+            "type": "taxonomy",
+            "instructions": "Select the topics you would like to appear in this listing.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_65c2245631b3e",
+                        "operator": "==",
+                        "value": "news"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_65c2245631b3e",
+                        "operator": "==",
+                        "value": "resources"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "listing__select-post-type",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "taxonomy": "topics",
+            "add_term": 1,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "object",
+            "field_type": "checkbox",
+            "bidirectional": 0,
+            "multiple": 0,
+            "allow_null": 0,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_65c22735c5864",
+            "label": "Posts Per Page",
+            "name": "listing_posts_per_page",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "How many posts you would like to display per page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_65c6205a6e855",
+            "label": "Taxonomy Filters",
+            "name": "listing_taxonomy_filters",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Select the taxonomies you would like to use as filters on the page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Row",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_65c6206a6e856",
+                    "label": "Post Taxonomy",
+                    "name": "slug",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_65c2245631b3e",
+                                "operator": "==",
+                                "value": "post"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 1,
+                    "choices": {
+                        "0": "-- Select Taxonomy --",
+                        "category": "Categories",
+                        "post_tag": "Tags"
+                    },
+                    "default_value": false,
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "parent_repeater": "field_65c6205a6e855"
+                },
+                {
+                    "key": "field_65f1a2ed778c5",
+                    "label": "News Taxonomy",
+                    "name": "slug",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_65c2245631b3e",
+                                "operator": "==",
+                                "value": "news"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 1,
+                    "choices": {
+                        "0": "-- Select Taxonomy --",
+                        "news_type": "News Type",
+                        "topics": "Topics"
+                    },
+                    "default_value": false,
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "parent_repeater": "field_65c6205a6e855"
+                },
+                {
+                    "key": "field_65f1a30e778c6",
+                    "label": "Resource Taxonomy",
+                    "name": "slug",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_65c2245631b3e",
+                                "operator": "==",
+                                "value": "resources"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 1,
+                    "choices": {
+                        "0": "-- Select Taxonomy --",
+                        "resource_type": "Resource Type",
+                        "topics": "Topics"
+                    },
+                    "default_value": false,
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "parent_repeater": "field_65c6205a6e855"
+                },
+                {
+                    "key": "field_65c6207a6e857",
+                    "label": "Tooltip",
+                    "name": "tooltip",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 2,
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_65c6205a6e855"
+                }
+            ]
+        },
+        {
+            "key": "field_65f184f1e967c",
+            "label": "Hide Search",
+            "name": "listing_hide_search",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_65f44b85a347c",
+            "label": "Hide Type Taxonomy",
+            "name": "listing_hide_type_taxonomy",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_65f44b9ca347d",
+            "label": "Hide Featured Image",
+            "name": "listing_hide_featured_image",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_65f44bada347e",
+            "label": "Hide Excerpt",
+            "name": "listing_hide_excerpt",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "wicket\/listing"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "acfml_field_group_mode": "translation",
+    "modified": 1710852972
+}

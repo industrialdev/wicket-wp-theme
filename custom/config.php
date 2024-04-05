@@ -94,15 +94,27 @@ function wicket_enqueue_style( $name, $path, $external = FALSE ) {
 	}
 }
 
-function wicket_enqueue_script( $handle, $path, $external = FALSE, $dependencies = [], $in_footer = TRUE ) {
+function wicket_enqueue_script( $handle, $path, $external = FALSE, $dependencies = [], $in_footer = TRUE, $defer = FALSE, $async = FALSE ) {
+	$strategy = '';
+	if( $defer ) {
+		$strategy = 'defer';
+	}
+	if( $async ) {
+		$strategy = 'async';
+	}
+	$args = [
+		'in_footer' => $in_footer ? true : false,
+		'strategy'  => $strategy,
+	];
+	
 	if ( $external ) {
-		wp_enqueue_script( $handle, $path, $dependencies, FALSE, $in_footer );
+		wp_enqueue_script( $handle, $path, $dependencies, FALSE, $args );
 	} else {
 		wp_enqueue_script( $handle,
 			get_template_directory_uri() . $path,
 			$dependencies,
 			filemtime( get_template_directory() . $path ),
-			$in_footer );
+			$args );
 	}
 }
 
@@ -115,7 +127,7 @@ function wicket_add_theme_assets() {
 	wicket_enqueue_style( 'theme', '/assets/styles/min/wicket.min.css' );
 
 	wicket_enqueue_script( 'jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js', True );
-	wicket_enqueue_script( 'wicket', '/assets/scripts/min/wicket.min.js', False, [ 'jquery' ], False );
+	wicket_enqueue_script( 'wicket', '/assets/scripts/min/wicket.min.js', False, [ 'jquery' ], False, True );
 
 	// Conditional Bootstrap enqueue:
 	if ( isset( $_GET['bootstrap'] ) ) {
@@ -197,7 +209,7 @@ function translate_date_format( $format ) {
 add_filter( 'option_date_format', 'translate_date_format' );
 
 function post_remove() {
-	remove_menu_page( 'edit.php' );
+	//remove_menu_page( 'edit.php' );
 	remove_menu_page( 'edit-comments.php' );
 }
 add_action( 'admin_menu', 'post_remove' );

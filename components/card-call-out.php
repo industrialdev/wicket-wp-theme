@@ -13,7 +13,7 @@ $description = $args['description'];
 $links       = $args['links'];
 $style       = $args['style'];
 
-$wrapper_classes = [ '@container p-5 rounded-100' ];
+$wrapper_classes = [ 'component-card-call-out @container p-5 rounded-100' ];
 
 if ( $style === 'primary' ) {
 	$wrapper_classes[] = 'bg-info-a-010';
@@ -48,13 +48,14 @@ if ( $style === 'secondary' ) {
 			$link_type = $link['link_style'];
 
 			get_component( 'button', [ 
-				'variant'     => $link_type ?? 'primary',
-				'label'       => $link['link']['title'],
-				'suffix_icon' => $link['link']['target'] === '_blank' ? 'fa fa-external-link-alt' : '',
-				'a_tag'       => true,
-				'link'        => $link['link']['url'],
-				'link_target' => $link['link']['target'],
-				'classes'     => [ 'justify-center' ],
+				'variant'            => $link_type ?? 'primary',
+				'label'              => $link['link']['title'],
+				'suffix_icon'        => $link['link']['target'] === '_blank' ? 'fa fa-external-link-alt' : '',
+				'a_tag'              => true,
+				'link'               => $link['link']['url'],
+				'link_target'        => $link['link']['target'],
+				'classes'            => [ 'justify-center' ],
+				'screen_reader_text' => __( '(opens in new tab)', 'wicket' ),
 			] );
 		}
 		echo '</div>';

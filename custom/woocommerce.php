@@ -14,8 +14,11 @@ add_filter( 'wc_add_to_cart_message_html', '__return_false' );
  */
 function wp_remove_scripts() {
   global $wp_scripts;
-  wp_deregister_script( 'react' );
-  wp_deregister_script( 'react-dom' );
+
+  if( !( is_cart() || is_checkout() ) ) {
+    wp_deregister_script( 'react' );
+    wp_deregister_script( 'react-dom' );
+  }
 }
 add_action( 'wp_enqueue_scripts', 'wp_remove_scripts', 99 );
 
@@ -73,3 +76,12 @@ function alter_teams_data($team_post_data)
   }
 }
 add_action('wc_memberships_for_teams_team_created', 'alter_teams_data');
+ 
+// // enable taxonomy fields for woocommerce with gutenberg on
+// function enable_taxonomy_rest( $args ) {
+//   $args['show_in_rest'] = true;
+//   return $args;
+// }
+
+// add_filter( 'woocommerce_taxonomy_args_product_cat', 'enable_taxonomy_rest' );
+// add_filter( 'woocommerce_taxonomy_args_product_tag', 'enable_taxonomy_rest' );

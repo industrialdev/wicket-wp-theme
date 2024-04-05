@@ -51,7 +51,7 @@ if ( ! function_exists( 'wicket_pagination' ) ) {
 
 	function wicket_pagination( $args = array() ) {
 
-		return '<nav class="flex justify-center gap-2" aria-label="' . __( 'Pagination', 'wicket' ) . '">' . wicket_paginate_links() . '</nav>';
+		return '<nav class="flex justify-center gap-2" aria-label="' . __( 'Pagination', 'wicket' ) . '">' . wicket_paginate_links( $args ) . '</nav>';
 
 	}
 }

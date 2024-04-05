@@ -21,7 +21,7 @@ $link      = $args['link'];
 $cta_style = $args['cta_style'];
 $image     = $args['image'];
 
-$classes[] = 'p-4 bg-white shadow-4 flex flex-col gap-4 relative @2xl:flex-row @2xl:items-center';
+$classes[] = 'component-card p-4 bg-white shadow-4 flex flex-col gap-4 relative @2xl:flex-row @2xl:items-center';
 ?>
 
 <div class="@container">

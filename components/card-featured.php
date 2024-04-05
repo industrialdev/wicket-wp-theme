@@ -3,6 +3,7 @@ $defaults       = array(
 	'classes'        => [],
 	'content_type'   => '',
 	'title'          => '',
+	'excerpt'        => '',
 	'date'           => '',
 	'link'           => '',
 	'image'          => '',
@@ -13,13 +14,14 @@ $args           = wp_parse_args( $args, $defaults );
 $classes        = $args['classes'];
 $content_type   = $args['content_type'];
 $title          = $args['title'];
+$excerpt        = $args['excerpt'];
 $date           = $args['date'];
 $link           = $args['link'];
 $image          = $args['image'];
 $image_position = $args['image_position'];
 $member_only    = $args['member_only'];
 
-$classes[]             = 'bg-white shadow-4 flex flex-col gap-4 relative';
+$classes[]             = 'component-card-featured bg-white shadow-4 flex flex-col gap-4 relative';
 $image_wrapper_classes = [];
 $title_classes         = [ 'block text-dark-100 font-bold leading-7 text-heading-xs' ];
 
@@ -47,7 +49,7 @@ if ( $image_position === 'right' ) {
 			<div class="absolute left-1/2 top-[-16px] -translate-x-1/2 -translate-y-1/2">
 				<?php get_component( 'tag', [ 
 					'label'   => __( 'Members Only', 'wicket' ),
-					'icon'    => 'fa fa-lock-alt',
+					'icon'    => 'fa-regular fa-lock',
 					'link'    => '',
 					'classes' => [ 'rounded-b-[0px]' ],
 				] ); ?>
@@ -75,7 +77,22 @@ if ( $image_position === 'right' ) {
 			<?php if ( $title ) { ?>
 				<a href="<?php echo $link ?>" class="<?php echo implode( ' ', $title_classes ) ?>">
 					<?php echo $title; ?>
+
+					<?php if ( $member_only && ( $image_position === 'left' || $image_position === 'right' ) ) { ?>
+						<?php get_component( 'tag', [ 
+							'label'   => '',
+							'icon'    => 'fa-regular fa-lock',
+							'link'    => '',
+							'classes' => [ 'text-body-sm' ],
+						] ); ?>
+					<?php } ?>
 				</a>
+			<?php } ?>
+
+			<?php if ( $excerpt ) { ?>
+				<div class="leading-6">
+					<?php echo $excerpt; ?>
+				</div>
 			<?php } ?>
 
 			<?php if ( $date ) { ?>

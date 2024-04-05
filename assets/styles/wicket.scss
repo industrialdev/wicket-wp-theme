@@ -24,12 +24,16 @@
 
 /* BLOCKS
 ------------------------------------------------------------------------------*/
-@import 'blocks/core/button';
-@import 'blocks/core/heading';
-@import 'blocks/core/paragraph';
-@import 'blocks/core/list';
-@import 'blocks/core/quote';
 @import 'blocks/wicket/baseline';
+@import 'blocks/core/button';
+@import 'blocks/wicket/card';
+@import 'blocks/core/heading';
+@import 'blocks/core/list';
+@import 'blocks/core/paragraph';
+@import 'blocks/core/post-terms';
+@import 'blocks/core/pullquote';
+@import 'blocks/core/quote';
+@import 'blocks/core/table';
 
 /* INTEGRATIONS
 ------------------------------------------------------------------------------*/

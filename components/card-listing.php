@@ -26,7 +26,7 @@ $member_only    = $args['member_only'];
 $featured_image = $args['featured_image'];
 $image          = '';
 
-$classes[] = 'p-4 bg-white shadow-4 flex flex-col md:flex-row gap-4 relative';
+$classes[] = 'component-card-listing p-4 bg-white shadow-4 flex flex-col md:flex-row gap-4 relative';
 
 if ( $featured_image ) {
 	$image = wp_get_attachment_image( $featured_image, 'large' );
