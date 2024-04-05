@@ -121,7 +121,7 @@ function woocommerce_payment_complete_event_ticket_attendees($order_id) {
             'order_date' => $order->get_date_created(),
             'event_id' => $event_data['event_id'],
             'location' => $event_data['location'],
-            //'ce_credits' => $event_data['ce'],
+            'event_additional_fields' => $event_data['event_additional_fields'],
             //'description' => $event_data['description'],
           ]
         ];
@@ -167,7 +167,7 @@ function woocommerce_payment_complete_event_ticket_attendees($order_id) {
               'order_date' => $order->get_date_created(),
               'event_id' => $event_data['event_id'],
               'location' => $event_data['location'],
-              //'ce_credits' => $event_data['ce'],
+              'event_additional_fields' => $event_data['event_additional_fields'],
               //'description' => $event_data['description'],
             ]
           ];
@@ -202,6 +202,7 @@ function wicket_touchpoint_get_event_data_from_event($event_id) {
   $event_location .= tribe_get_region($venue_id) . ', ';
   $event_location .= tribe_get_country($venue_id) . ' ';
   $event_location .= tribe_get_zip($venue_id);
+  $event_additional_fields = tribe_get_custom_fields($event_id);
   // if event is purely virtual, not a hybrid the location = Virtual, else calculate physical location
   $event_location = $is_virtual && !$is_virtual_hybrid ? 'VIRTUAL' : $event_location;
   // build event types string
@@ -222,6 +223,12 @@ function wicket_touchpoint_get_event_data_from_event($event_id) {
   } else {
     $data['format'] = 'In person';
   }
+  if ($event_additional_fields){
+    foreach ($event_additional_fields as $label => $value){
+      $temp[$label] = $value;
+      $data['event_additional_fields'][] = $temp;
+    }
+  }
   
   return $data;
 }
@@ -230,183 +237,3 @@ function wicket_touchpoint_get_event_data_from_event($event_id) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-//****** FOR TESTING ONLY - BECAUSE TESTING VIA CHECKOUT IS AWKWARD AND SLOW ************
-//****** DATA WILL SHOW UP TWICE IN WICKET, BUT ONLY FOR THIS TESTING CODE CUZ IT'S A HOOK THAT RUNS TWICE ************
-
-// add_action( 'init', 'process_post' );
-
-function process_post() {
-  $log_file = '/srv/wicket-woocommerce.log';
-  // see these files in order to understand where this all came from (mostly in the admin backend for viewing woo order item):
-  // web\app\plugins\woocommerce\includes\admin\meta-boxes\views\html-order-items.php
-  // web\app\plugins\woocommerce\includes\admin\meta-boxes\views\html-order-item.php
-  // web\app\plugins\event-tickets-plus\src\Tribe\Commerce\WooCommerce\Enhanced_Templates\Service_Provider.php
-  // web\app\plugins\event-tickets-plus\src\Tribe\Commerce\WooCommerce\Enhanced_Templates\Hooks.php
-
-  $order = wc_get_order(6511);
-
-  // ----------------------------------------------------------------------------------------
-  // Get the attendees right off the order. The ticket meta is keyed by the woo product id
-  // This is important to know since the user might checkout with multiple events
-  // We'll use this product_id lower down to make sure we show the right event info for each attendee
-  // ----------------------------------------------------------------------------------------
-  $attendees_per_event = $order->get_meta('_tribe_tickets_meta');
-
-  $attendees_arr = [];
-  if (!empty($attendees_per_event)) {
-    foreach ($attendees_per_event as $product_id => $event) {
-      // look at each event's attendees
-      foreach ($event as $attendee) {
-        $temp = [];
-        $temp['name'] = $attendee['tribe-tickets-plus-iac-name'] ?? '';
-        $temp['email'] = $attendee['tribe-tickets-plus-iac-email'] ?? '';
-        $temp['last-name'] = $attendee['last-name'] ?? '';
-        $attendees_arr[$product_id][] = $temp;
-      }
-    }
-  }
-  file_put_contents('php://stdout', "----------Attendees array--------------".print_r($attendees_arr, true));
-
-  // ----------------------------------------------------------------------------------------
-  // Load the items from the order and look for ticket products to get the event info
-  // ----------------------------------------------------------------------------------------
-  $event_info = [];
-  foreach ($order->get_items() as $item) {
-    // if this is a ticket product, we'll get back the event post id
-    $event_id = $item->get_product()->get_meta('_tribe_wooticket_for_event');
-    $product_id = $item->get_product_id();
-    if ($event_id) {
-      $event_post = !empty($event_id) ? get_post($event_id) : '' ;
-      $event_info[$product_id] = $event_post;
-    }
-  }
-
-  // ----------------------------------------------------------------------------------------
-  // Also add the person buying the ticket (not an attendee technically) to the attendees array
-  // so we can write a touchpoint for them as well
-  // ----------------------------------------------------------------------------------------
-  $order_has_event = $order->get_meta('_tribe_has_tickets');
-  if ($order_has_event) {
-    $order_user = get_user_by('id', $order->get_customer_id());
-    $temp = [];
-    $temp['name'] = $order_user->first_name ?? '';
-    $temp['email'] = $order_user->user_email ?? '';
-    $temp['last-name'] = $order_user->last_name ?? '';
-    $attendees_arr[$product_id][] = $temp;
-  }
-
-  file_put_contents('php://stdout', "----------Event INFO--------------".print_r($event_info, true));
-
-  // ----------------------------------------------------------------------------------------
-  // Write touchpoints to existing users, create if not exist
-  // ----------------------------------------------------------------------------------------
-  $client = wicket_api_client();
-  
-  foreach ($attendees_arr as $product_id => $attendees) {
-    foreach ($attendees as $attendee) {
-      // check to see if a record for this person already exists in wicket
-      file_put_contents('php://stdout', $attendee['email']);
-      $search_emails_result = $client->get('/people?filter[emails_address_eq]=' . urlencode($attendee['email']) . '&filter[emails_primary_eq]=true');
-
-      if ($search_emails_result['meta']['page']['total_items'] != 0) {
-        // we have someone, there will only be one result since primary emails are unique in wicket
-        $person_uuid = $search_emails_result['data'][0]['attributes']['uuid'];
-        file_put_contents('php://stdout', "-------------PERSON UUID----------------".$person_uuid);
-
-        $event_title = $event_info[$product_id]->post_title;
-        
-        $ticket_id = $attendee['product_id'];
-        $event_data = wicket_touchpoint_get_event_data_from_event($event_info[$product_id]->ID);
-      
-        $attendee_details = 'Event ID: ' . $event_data['event_id'] . '<br />';
-        $attendee_details .= 'Event Name: ' . $event_data['event_name'] . '<br />';
-        $attendee_details .= 'Start Date: ' . $event_data['start'] . '<br />';
-        $attendee_details .= 'End Date: ' . $event_data['end'] . '<br />';
-        $attendee_details .= 'Event Format: ' . $event_data['format'] . '<br />';
-        $attendee_details .= 'Event Type: ' . $event_data['event_type'] . '<br />';
-
-        $action = 'Registered for an event';
-      
-        $params = [
-          'action' => $action,
-          'details' => $attendee_details,
-          'person_id' => $person_uuid,
-          'data' => [
-            'url' => $event_data['url'],
-            'end_date' => $event_data['end'],
-            'start_date' => $event_data['start'],
-            'event_title' => $event_data['event_name'],
-            'event_type' => $event_data['event_type'],
-            'order_date' => $order->get_date_created(),
-            'event_id' => $event_data['event_id'],
-            'location' => $event_data['location'],
-            //'ce_credits' => $event_data['ce'],
-            //'description' => $event_data['description'],
-          ]
-        ];
-        file_put_contents('php://stdout', "------------- touchpoint params ----------------".print_r($params, true));
-        $service_id = get_create_touchpoint_service_id('Events Calendar', 'Events from the website');
-        write_touchpoint($params, $service_id);
-
-      }else {
-        file_put_contents('php://stdout', "NEW PERSON!!!!!");
-        // person does not exists, so create a new person
-        $new_person = wicket_create_person(
-          $attendee['name'],
-          $attendee['last-name'],
-          $attendee['email']
-        );
-
-        if ($new_person) {
-          $new_uuid = $new_person['data']['attributes']['uuid'];
-          $event_title = $event_info[$product_id]->post_title;
-    
-          $ticket_id = $attendee['product_id'];
-          $event_data = wicket_touchpoint_get_event_data_from_event($event_info[$product_id]->ID);
-      
-          $attendee_details = 'Event ID: ' . $event_data['event_id'] . '<br />';
-          $attendee_details .= 'Event Name: ' . $event_data['event_name'] . '<br />';
-          $attendee_details .= 'Start Date: ' . $event_data['start'] . '<br />';
-          $attendee_details .= 'End Date: ' . $event_data['end'] . '<br />';
-          $attendee_details .= 'Event Format: ' . $event_data['format'] . '<br />';
-          $attendee_details .= 'Event Type: ' . $event_data['event_type'] . '<br />';
-
-          $action = 'Registered for an event';
-        
-          $params = [
-            'action' => $action,
-            'details' => $attendee_details,
-            'person_id' => $person_uuid,
-            'data' => [
-              'url' => $event_data['url'],
-              'end_date' => $event_data['end'],
-              'start_date' => $event_data['start'],
-              'event_title' => $event_data['event_name'],
-              'event_type' => $event_data['event_type'],
-              'order_date' => $order->get_date_created(),
-              'event_id' => $event_data['event_id'],
-              'location' => $event_data['location'],
-              //'ce_credits' => $event_data['ce'],
-              //'description' => $event_data['description'],
-            ]
-          ];
-          $service_id = get_create_touchpoint_service_id('Events Calendar', 'Events from the website');
-          write_touchpoint($params, $service_id);
-        }else {
-          // problem creating new record, log it
-          // industrial_logger("%file% %level% %message%", ["level" => "ERROR", "message" => "An error occured creating a new person record in Wicket based on event ticket attendee data. Please see WooCommerce order ID $order_id", "file" => __FILE__.':'.__LINE__], $log_file);
-        }
-      }
-    }
-  }
-}
