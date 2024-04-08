@@ -26,12 +26,13 @@ function init( $block = [] ) {
 	$hide_content_type   = get_field( 'related_content_hide_content_type' );
 	$show_cta            = get_field( 'related_content_show_cta' );
 	$show_view_all       = get_field( 'related_content_show_view_all' );
-	$cta_style           = get_field( 'related_content_cta_style' );
-	$current_post_id     = get_the_ID();
+	$cta_options         = get_field( 'related_content_cta_options' );
+	$cta_style           = isset( $cta_options, $cta_options['button_style'] ) ? $cta_options['button_style'] : null;
+	$cta_label           = isset( $cta_options, $cta_options['label'] ) ? $cta_options['label'] : null;
 
-	$placeholder_styles = '';
+	$current_post_id = get_the_ID();
 
-	echo '<div ' . $attrs . ' ' . $placeholder_styles . '>';
+	echo '<div ' . $attrs . '>';
 
 	get_component( 'related-posts', [ 
 		'title'               => $title,
@@ -47,6 +48,7 @@ function init( $block = [] ) {
 		'show_cta'            => $show_cta,
 		'show_view_all'       => $show_view_all,
 		'cta_style'           => $cta_style,
+		'cta_label'           => $cta_label,
 		'current_post_id'     => $current_post_id,
 	] );
 	echo '</div>';

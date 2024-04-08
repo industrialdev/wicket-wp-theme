@@ -5,7 +5,7 @@ $defaults            = array(
 	'hide_block_title'    => false,
 	'column_count'        => 3,
 	'max_posts'           => 3,
-	'post_type'           => get_post_type(),
+	'post_type'           => [],
 	'taxonomies'          => [],
 	'hide_excerpt'        => false,
 	'hide_date'           => false,
@@ -14,6 +14,7 @@ $defaults            = array(
 	'show_cta'            => false,
 	'show_view_all'       => false,
 	'cta_style'           => 'primary',
+	'cta_label'           => '',
 	'current_post_id'     => '',
 );
 $args                = wp_parse_args( $args, $defaults );
@@ -31,6 +32,7 @@ $hide_content_type   = $args['hide_content_type'];
 $show_cta            = $args['show_cta'];
 $show_view_all       = $args['show_view_all'];
 $cta_style           = $args['cta_style'];
+$cta_label           = $args['cta_label'];
 $current_post_id     = $args['current_post_id'];
 
 if ( $title == '' ) {
@@ -129,6 +131,8 @@ $classes[] = 'component-related-posts';
 						'image_position' => 'top',
 						'member_only'    => is_member_only( $post_id ),
 						'link'           => get_permalink( $post_id ),
+						'cta'            => $show_cta ? $cta_style : null,
+						'cta_label'      => $cta_label,
 					] );
 				}
 			} else {

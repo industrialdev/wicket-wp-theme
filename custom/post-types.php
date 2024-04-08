@@ -77,6 +77,14 @@ add_action( 'init', function () {
 					'term' => 'post_tag',
 				] ),
 				array ( 'wicket/manually-related-content' ),
+				array ( 'wicket/manually-related-content' ),
+				array ( 'wicket/dynamically-related-content', [ 
+					'data' => [ 
+						'related_content_max_posts'    => 3,
+						'related_content_column_count' => 3,
+						'post_type'                    => 'news',
+					],
+				] ),
 			),
 		] );
 
@@ -112,6 +120,13 @@ add_action( 'init', function () {
 					'term' => 'post_tag',
 				] ),
 				array ( 'wicket/manually-related-content' ),
+				array ( 'wicket/dynamically-related-content', [ 
+					'data' => [ 
+						'related_content_max_posts'    => 3,
+						'related_content_column_count' => 3,
+						'post_type'                    => 'resources',
+					],
+				] ),
 			),
 		] );
 

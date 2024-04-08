@@ -9,6 +9,8 @@ $defaults       = array(
 	'image'          => '',
 	'image_position' => 'top',
 	'member_only'    => false,
+	'cta'            => null,
+	'cta_label'      => '',
 );
 $args           = wp_parse_args( $args, $defaults );
 $classes        = $args['classes'];
@@ -20,6 +22,8 @@ $link           = $args['link'];
 $image          = $args['image'];
 $image_position = $args['image_position'];
 $member_only    = $args['member_only'];
+$cta            = $args['cta'];
+$cta_label      = $args['cta_label'];
 
 $classes[]             = 'component-card-featured bg-white shadow-4 flex flex-col gap-4 relative';
 $image_wrapper_classes = [];
@@ -66,7 +70,7 @@ if ( $image_position === 'right' ) {
 			</div>
 		<?php } ?>
 
-		<div class="flex flex-col gap-3">
+		<div class="flex flex-col items-start gap-3">
 
 			<?php if ( $content_type ) { ?>
 				<div class="text-dark-070 uppercase font-bold leading-none">
@@ -100,6 +104,15 @@ if ( $image_position === 'right' ) {
 					<?php echo $date; ?>
 				</div>
 			<?php } ?>
+
+			<?php if ( $cta ) {
+				get_component( 'button', [ 
+					'variant' => $cta,
+					'label'   => $cta_label ?: __( 'Read More', 'wicket' ),
+					'a_tag'   => true,
+					'link'    => 'Test',
+				] );
+			} ?>
 
 		</div>
 	</div>

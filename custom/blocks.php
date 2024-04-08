@@ -112,7 +112,7 @@ function get_child_blocks() {
  * Adjusting Core Blocks
  */
 
- function wicket_core_block_wrappers( $block_content, $block ) {
+function wicket_core_block_wrappers( $block_content, $block ) {
 	if ( $block['blockName'] === 'core/paragraph' ) {
 		$content = '<div class="wp-block-paragraph">';
 		$content .= $block_content;
@@ -123,7 +123,7 @@ function get_child_blocks() {
 		$content .= $block_content;
 		$content .= '</div>';
 		return $content;
-	} elseif( $block['blockName'] === 'core/legacy-widget' ) {
+	} elseif ( $block['blockName'] === 'core/legacy-widget' ) {
 		$content = '<div class="wp-block-legacy-widget">';
 		$content .= $block_content;
 		$content .= '</div>';
@@ -146,7 +146,6 @@ function register_post_template() {
 				'banner_back_link'        => home_url( '/blog' ),
 				'banner_show_date'        => true,
 			],
-			// Set full width
 			'align' => 'full',
 			'lock'  => array(
 				'move'   => true,
@@ -167,6 +166,13 @@ function register_post_template() {
 			'term' => 'post_tag',
 		] ),
 		array( 'wicket/manually-related-content' ),
+		array( 'wicket/dynamically-related-content', [ 
+			'data' => [ 
+				'related_content_max_posts'    => 3,
+				'related_content_column_count' => 3,
+				'post_type'                    => 'post',
+			],
+		] ),
 	);
 	$post_type_object           = get_post_type_object( 'post' );
 	$post_type_object->template = $template;
@@ -175,11 +181,11 @@ add_action( 'init', 'register_post_template' );
 
 // Activate the Block editor on specific post types
 function wicket_activate_block_editor_post_types( $can_edit, $post_type ) {
-  if ( $post_type == 'product' || $post_type == 'tribe_events' ) {
-    $can_edit = true;
-  }
- 
-  return $can_edit;
+	if ( $post_type == 'product' || $post_type == 'tribe_events' ) {
+		$can_edit = true;
+	}
+
+	return $can_edit;
 }
- 
+
 add_filter( 'use_block_editor_for_post_type', 'wicket_activate_block_editor_post_types', 10, 2 );
