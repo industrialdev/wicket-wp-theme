@@ -28,7 +28,7 @@ function init( $block = [] ) {
 	$order   = 'DESC';
 	$keyword = '';
 
-	if ( isset ( $_GET['sort-by'] ) ) {
+	if ( isset( $_GET['sort-by'] ) ) {
 		if ( $_GET['sort-by'] == 'date-desc' ) {
 			$orderby = 'date';
 			$order   = 'DESC';
@@ -47,7 +47,7 @@ function init( $block = [] ) {
 		}
 	}
 
-	if ( isset ( $_GET['keyword'] ) ) {
+	if ( isset( $_GET['keyword'] ) ) {
 		$keyword = $_GET['keyword'];
 	}
 
@@ -56,7 +56,7 @@ function init( $block = [] ) {
 	];
 
 	/* Add news type taxonomy to tax query if it is set */
-	if ( ! empty ( $news_types ) && ! isset ( $_GET['news_type'] ) ) {
+	if ( ! empty( $news_types ) && ! isset( $_GET['news_type'] ) ) {
 		$terms = [];
 		foreach ( $news_types as $term ) {
 			array_push( $terms, $term->slug );
@@ -72,7 +72,7 @@ function init( $block = [] ) {
 	}
 
 	/* Add resource type taxonomy to tax query if it is set */
-	if ( ! empty ( $resource_types ) && ! isset ( $_GET['resource_type'] ) ) {
+	if ( ! empty( $resource_types ) && ! isset( $_GET['resource_type'] ) ) {
 		$terms = [];
 		foreach ( $resource_types as $term ) {
 			array_push( $terms, $term->slug );
@@ -88,7 +88,7 @@ function init( $block = [] ) {
 	}
 
 	/* Add topic taxonomy to tax query if it is set */
-	if ( ! empty ( $topics_types ) && ! isset ( $_GET['topics'] ) ) {
+	if ( ! empty( $topics_types ) && ! isset( $_GET['topics'] ) ) {
 		$terms = [];
 		foreach ( $topics_types as $term ) {
 			array_push( $terms, $term->slug );
@@ -105,7 +105,7 @@ function init( $block = [] ) {
 
 	if ( is_array( $taxonomy_filters ) ) {
 		foreach ( $taxonomy_filters as $taxonomy ) {
-			if ( isset ( $_GET[ $taxonomy['slug'] ] ) ) {
+			if ( isset( $_GET[ $taxonomy['slug'] ] ) ) {
 				$taxonomy_args = [ 
 					'taxonomy' => $taxonomy['slug'],
 					'field'    => 'slug',
@@ -135,7 +135,7 @@ function init( $block = [] ) {
 
 		<div class="container">
 			<div class="flex flex-col lg:flex-row gap-4">
-				<?php if ( ! empty ( $taxonomy_filters ) ) : ?>
+				<?php if ( ! empty( $taxonomy_filters ) ) : ?>
 					<div
 						class="basis-1/4 bg-white relative after:content-[''] after:absolute after:top-0 after:bottom-0 after:right-full after:bg-white after:w-[30vw] before:block lg:before:hidden before:content-[''] before:absolute before:top-0 before:bottom-0 before:left-full before:bg-white before:w-[30vw]">
 						<?php
@@ -146,7 +146,7 @@ function init( $block = [] ) {
 					</div>
 				<?php endif; ?>
 
-				<div class="<?php echo ! empty ( $taxonomy_filters ) ? 'basis-3/4' : 'basis-full' ?> pt-4 lg:pt-10">
+				<div class="<?php echo ! empty( $taxonomy_filters ) ? 'basis-3/4' : 'basis-full' ?> pt-4 lg:pt-10">
 					<?php
 					$args = [ 
 						'post_type'      => $post_type,
@@ -181,7 +181,7 @@ function init( $block = [] ) {
 								<?php
 								$date_desc_label = __( 'Date (newest-oldest)', 'industrial' );
 								$date_asc_label  = __( 'Date (oldest-newest)', 'industrial' );
-								if ( isset ( $_GET['sort-by'] ) ) : ?>
+								if ( isset( $_GET['sort-by'] ) ) : ?>
 									<option value="date-desc" <?php if ( $_GET['sort-by'] == 'date-desc' ) : ?>selected<?php endif; ?>>
 										<?php echo $date_desc_label; ?>
 									</option>
@@ -220,21 +220,19 @@ function init( $block = [] ) {
 							<?php
 							while ( $query->have_posts() ) :
 								$query->the_post();
-								$post_id              = get_the_ID();
-								$related_content_type = get_related_content_type( get_post_type( $post_id ) );
-								$content_type         = ! is_wp_error( get_the_terms( $post_id, $related_content_type ) ) ? get_the_terms( $post_id, $related_content_type ) : [];
-								$title                = get_the_title( $post_id );
-								$excerpt              = get_the_excerpt( $post_id );
-								$date                 = get_the_date( 'F j, Y', $post_id );
-								$featured_image       = get_post_thumbnail_id( $post_id );
-								$permalink            = get_the_permalink( $post_id );
-								$member_only          = is_member_only( $post_id );
-								$related_topic_type   = get_related_topic_type( get_post_type( $post_id ) );
-								$topics               = get_the_terms( $post_id, $related_topic_type );
+								$post_id            = get_the_ID();
+								$title              = get_the_title( $post_id );
+								$excerpt            = get_the_excerpt( $post_id );
+								$date               = get_the_date( 'F j, Y', $post_id );
+								$featured_image     = get_post_thumbnail_id( $post_id );
+								$permalink          = get_the_permalink( $post_id );
+								$member_only        = is_member_only( $post_id );
+								$related_topic_type = get_related_topic_type( get_post_type( $post_id ) );
+								$topics             = get_the_terms( $post_id, $related_topic_type );
 
 								$card_params = [ 
 									'classes'        => [ 'mb-6' ],
-									'content_type'   => ! $hide_type_taxonomy ? $content_type[0]->name : '',
+									'content_type'   => ! $hide_type_taxonomy ? get_related_content_type_term( $post_id ) : '',
 									'title'          => $title,
 									'excerpt'        => ! $hide_excerpt ? $excerpt : '',
 									'date'           => $date,

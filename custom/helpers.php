@@ -7,7 +7,7 @@ function get_component( $slug, array $args = array(), $output = true ) {
 	}
 	$template_file = locate_template( "components/{$slug}.php", false, false );
 	if ( file_exists( $template_file ) ) :
-		require( $template_file );
+		require ( $template_file );
 	else :
 		throw new \RuntimeException( "Could not find component $slug" );
 	endif;
@@ -89,6 +89,12 @@ function get_related_content_type( $post_type ) {
 		default:
 			return '';
 	}
+}
+
+function get_related_content_type_term( $post_id ) {
+	$related_content_type = get_related_content_type( get_post_type( $post_id ) );
+	$content_type         = ! is_wp_error( get_the_terms( $post_id, $related_content_type ) ) ? get_the_terms( $post_id, $related_content_type ) : [];
+	return $content_type[0]->name;
 }
 
 function get_related_topic_type( $post_type ) {

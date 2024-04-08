@@ -82,34 +82,31 @@ $post_type_archive_link = get_post_type_archive_link( $post_type );
 $classes[] = 'component-related-posts';
 ?>
 
-<div class="<?php echo implode( ' ', $classes ) ?>">
-	<div class="container">
-		<?php if ( $title && ! $hide_block_title ) : ?>
-			<div class=" mb-12">
-				<span class="text-heading-sm font-bold">
-					<?php echo $title; ?>
-				</span>
+<?php if ( $related_posts->have_posts() ) : ?>
+	<div class="<?php echo implode( ' ', $classes ) ?>">
+		<div class="container">
+			<?php if ( $title && ! $hide_block_title ) : ?>
+				<div class=" mb-12">
+					<span class="text-heading-sm font-bold">
+						<?php echo $title; ?>
+					</span>
 
-				<?php if ( $show_view_all ) : ?>
-					<a href="<?php echo $post_type_archive_link ?>" class="underline ml-4 pl-4 border-l border-dark-070">
-						<?php echo __( 'View All', 'wicket' ) ?>
-					</a>
-				<?php endif; ?>
+					<?php if ( $show_view_all ) : ?>
+						<a href="<?php echo $post_type_archive_link ?>" class="underline ml-4 pl-4 border-l border-dark-070">
+							<?php echo __( 'View All', 'wicket' ) ?>
+						</a>
+					<?php endif; ?>
 
-			</div>
-		<?php endif; ?>
+				</div>
+			<?php endif; ?>
 
-		<div class="grid gap-4 grid-cols-1 lg:grid-cols-<?php echo $column_count ?>">
-			<?php
+			<div class="grid gap-4 grid-cols-1 lg:grid-cols-<?php echo $column_count ?>">
+				<?php
 
-			if ( $related_posts->have_posts() ) {
 				while ( $related_posts->have_posts() ) {
 					$related_posts->the_post();
-					$post_id              = get_the_ID();
-					$image                = [];
-					$related_content_type = get_related_content_type( get_post_type( $post_id ) );
-					$content_type         = ! is_wp_error( get_the_terms( $post_id, $related_content_type ) ) ? get_the_terms( $post_id, $related_content_type ) : [];
-
+					$post_id            = get_the_ID();
+					$image              = [];
 					$featured_image_id  = get_post_thumbnail_id( $post_id );
 					$featured_image_alt = get_post_meta( $featured_image_id,
 						'_wp_attachment_image_alt', true );
@@ -123,7 +120,7 @@ $classes[] = 'component-related-posts';
 
 					get_component( 'card-featured', [ 
 						'classes'        => [ 'p-4' ],
-						'content_type'   => ! $hide_content_type ? $content_type[0]->name : '',
+						'content_type'   => ! $hide_content_type ? get_related_content_type_term( $post_id ) : '',
 						'title'          => get_the_title( $post_id ),
 						'excerpt'        => ! $hide_excerpt ? get_the_excerpt( $post_id ) : '',
 						'date'           => ! $hide_date ? get_the_date( 'F j, Y', $post_id ) : '',
@@ -135,10 +132,17 @@ $classes[] = 'component-related-posts';
 						'cta_label'      => $cta_label,
 					] );
 				}
-			} else {
-				// no posts found
-			}
-			?>
+				?>
+			</div>
 		</div>
 	</div>
-</div>
+
+<?php elseif ( is_admin() ) : ?>
+	<div class="container">
+		<?php
+		get_component( 'alert', [ 
+			'content' => __( 'No related posts found.', 'wicket' ),
+		] );
+		?>
+	</div>
+<?php endif; ?>
