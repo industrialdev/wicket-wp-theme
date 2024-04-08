@@ -15,6 +15,7 @@ function init( $block = [] ) {
 	$news_types          = $block['news_types'] ?? get_field( 'listing_news_type' );
 	$resource_types      = $block['resource_types'] ?? get_field( 'listing_resource_type' );
 	$topics_types        = $block['topics_types'] ?? get_field( 'listing_topic' );
+	$event_categories    = $block['event_categories'] ?? get_field( 'listing_event_categories' );
 	$posts_per_page      = $block['posts_per_page'] ?? get_field( 'listing_posts_per_page' );
 	$taxonomy_filters    = $block['taxonomy_filters'] ?? get_field( 'listing_taxonomy_filters' );
 	$hide_search         = $block['hide_search'] ?? get_field( 'listing_hide_search' );
@@ -100,6 +101,23 @@ function init( $block = [] ) {
 			'operator' => 'IN',
 			'terms'    => $terms,
 		];
+		array_push( $tax_query, $taxonomy_args );
+	}
+
+	/* Add tribe_events_cat taxonomy to tax query if it is set */
+	if ( ! empty( $event_categories ) && ! isset( $_GET['tribe_events_cat'] ) ) {
+		$terms = [];
+		foreach ( $event_categories as $term ) {
+			array_push( $terms, $term->slug );
+		}
+
+		$taxonomy_args = [ 
+			'taxonomy' => 'tribe_events_cat',
+			'field'    => 'slug',
+			'operator' => 'IN',
+			'terms'    => $terms,
+		];
+
 		array_push( $tax_query, $taxonomy_args );
 	}
 

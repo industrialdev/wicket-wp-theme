@@ -86,6 +86,8 @@ function get_related_content_type( $post_type ) {
 			return 'resource_type';
 		case 'post':
 			return 'category';
+		case 'tribe_events';
+			return 'tribe_events_cat';
 		default:
 			return '';
 	}
@@ -109,6 +111,8 @@ function get_related_topic_type( $post_type ) {
 		case 'resources':
 			return 'topics';
 		case 'post':
+			return 'post_tag';
+		case 'tribe_events';
 			return 'post_tag';
 		default:
 			return '';

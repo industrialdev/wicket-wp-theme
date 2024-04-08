@@ -22,7 +22,11 @@
                 "post": "Posts",
                 "page": "Pages",
                 "attachment": "Media",
+                "tribe_event_series": "Series",
                 "product": "Products",
+                "tribe_venue": "Venues",
+                "tribe_organizer": "Organizers",
+                "tribe_events": "Events",
                 "wppcp_group": "Groups",
                 "wppcp_fproduct_tabs": "Woo Product Tabs",
                 "news": "News",
@@ -60,6 +64,40 @@
             },
             "wpml_cf_preferences": 1,
             "taxonomy": "news_type",
+            "add_term": 1,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "object",
+            "field_type": "checkbox",
+            "bidirectional": 0,
+            "multiple": 0,
+            "allow_null": 0,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_6613e121ecc78",
+            "label": "Event Categories",
+            "name": "listing_event_categories",
+            "aria-label": "",
+            "type": "taxonomy",
+            "instructions": "Select the news types you would like to appear in this listing.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_65c2245631b3e",
+                        "operator": "==",
+                        "value": "tribe_events"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "listing__select-post-type",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "taxonomy": "tribe_events_cat",
             "add_term": 1,
             "save_terms": 0,
             "load_terms": 0,
@@ -303,6 +341,42 @@
                     "parent_repeater": "field_65c6205a6e855"
                 },
                 {
+                    "key": "field_6613ea3e34a16",
+                    "label": "Events Taxonomy",
+                    "name": "slug",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_65c2245631b3e",
+                                "operator": "==",
+                                "value": "tribe_events"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 1,
+                    "choices": {
+                        "0": "-- Select Taxonomy --",
+                        "tribe_events_cat": "Event Categories"
+                    },
+                    "default_value": false,
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "parent_repeater": "field_65c6205a6e855"
+                },
+                {
                     "key": "field_65c6207a6e857",
                     "label": "Tooltip",
                     "name": "tooltip",
@@ -430,5 +504,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "translation",
-    "modified": 1710852972
+    "modified": 1712581309
 }
