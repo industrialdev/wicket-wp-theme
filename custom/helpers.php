@@ -94,7 +94,12 @@ function get_related_content_type( $post_type ) {
 function get_related_content_type_term( $post_id ) {
 	$related_content_type = get_related_content_type( get_post_type( $post_id ) );
 	$content_type         = ! is_wp_error( get_the_terms( $post_id, $related_content_type ) ) ? get_the_terms( $post_id, $related_content_type ) : [];
-	return $content_type[0]->name;
+
+	if ( $content_type ) {
+		return $content_type[0]->name;
+	} else {
+		return get_post_type_object( get_post_type( $post_id ) )->labels->singular_name;
+	}
 }
 
 function get_related_topic_type( $post_type ) {
