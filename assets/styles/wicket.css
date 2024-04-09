@@ -816,6 +816,9 @@ video {
 .min-w-40 {
   min-width: 10rem;
 }
+.min-w-\[120px\] {
+  min-width: 120px;
+}
 .min-w-\[260px\] {
   min-width: 260px;
 }
@@ -824,6 +827,12 @@ video {
   -webkit-flex: 1 1 0%;
   -ms-flex: 1 1 0%;
   flex: 1 1 0%;
+}
+.flex-\[0_1_120px\] {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 120px;
+  -ms-flex: 0 1 120px;
+  flex: 0 1 120px;
 }
 .flex-auto {
   -webkit-box-flex: 1;
@@ -1127,6 +1136,9 @@ video {
 }
 .gap-5 {
   gap: 1.25rem;
+}
+.gap-6 {
+  gap: 1.5rem;
 }
 .gap-8 {
   gap: 2rem;
