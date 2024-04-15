@@ -312,7 +312,11 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                     ] );
                     ?>
                 </a>
-                <a x-show="showLangToggle" x-cloak href="#" class="lang-button ml-4 hidden lg:inline-flex items-center">Fr</a>
+                <?php if( $lang == 'en' ): ?>
+                    <a x-show="showLangToggle" x-cloak href="<?php echo wicket_get_lang_url( 'fr' ); ?>" class="lang-button ml-4 hidden lg:inline-flex items-center">Fr</a>
+                <?php else: ?>
+                    <a x-show="showLangToggle" x-cloak href="<?php echo wicket_get_lang_url( 'en' ); ?>" class="lang-button ml-4 hidden lg:inline-flex items-center">En</a>
+                <?php endif; ?>
 
                 <!-- Right-aligned hamburger menu button that only shows on MD breakpoint -->
                 <button
@@ -559,7 +563,11 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                     ] );
                 }
                 ?>
-                <a x-show="showLangToggle" x-cloak href="#" class="lang-toggle-button-mobile block mb-2">Fr</a>
+                <?php if( $lang == 'en' ): ?>
+                    <a x-show="showLangToggle" x-cloak href="<?php echo wicket_get_lang_url( 'fr' ); ?>" class="lang-button ml-4 hidden lg:inline-flex items-center">Fr</a>
+                <?php else: ?>
+                    <a x-show="showLangToggle" x-cloak href="<?php echo wicket_get_lang_url( 'en' ); ?>" class="lang-button ml-4 hidden lg:inline-flex items-center">En</a>
+                <?php endif; ?>
             </div> <!-- End items above main nav items and utility nav -->
 
             <div class="font-normal">
