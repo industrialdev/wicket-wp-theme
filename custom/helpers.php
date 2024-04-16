@@ -117,12 +117,20 @@ function wicket_get_lang_url( $lang, $url = '' ) {
 	
 	// We want to convert to the default language
 	if( $lang == $default_lang ) {
-		// TODO: This is not the most robust - refine
+		$split_url = explode( '/', $url );
 		if( $default_lang == 'en' ) {
-			$new_url = str_replace( '/fr', '', $url );
+			if (($key = array_search('fr', $split_url)) !== false) {
+				unset($split_url[$key]);
+			}
+			$new_url = implode( '/', $split_url );
+			// Todo: add support for more languages
 		} else {
-			$new_url = str_replace( '/en', '', $url );
+			if (($key = array_search('en', $split_url)) !== false) {
+				unset($split_url[$key]);
+			}
+			$new_url = implode( '/', $split_url );
 		}
+		
 		return $new_url;
 	}
 
