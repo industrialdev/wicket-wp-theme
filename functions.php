@@ -1,6 +1,7 @@
 <?php
 
 require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/config.php';
+require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/constants.php';
 require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/acf.php';
 require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/blocks.php';
 require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/menus.php';
@@ -22,3 +23,4 @@ require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/event_ticket_atten
 require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/post-types.php';
 require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/taxonomies.php';
 require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/event_ticket_attendees_field_hooks.php';
+require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/redirections.php';

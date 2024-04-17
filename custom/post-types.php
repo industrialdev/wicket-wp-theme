@@ -48,8 +48,9 @@ add_action( 'init', function () {
 	/* News Post Type */
 	register_cpt( 'News', 'News',
 		[ 
-			'menu_icon' => 'dashicons-nametag',
-			'template'  => array (
+			'menu_icon'   => 'dashicons-nametag',
+			'has_archive' => 'news-archive',
+			'template'    => array (
 				array ( 'wicket/banner', [ 
 					'data'  => [ 
 						'banner_show_breadcrumbs' => false,
@@ -77,7 +78,6 @@ add_action( 'init', function () {
 					'term' => 'post_tag',
 				] ),
 				array ( 'wicket/manually-related-content' ),
-				array ( 'wicket/manually-related-content' ),
 				array ( 'wicket/dynamically-related-content', [ 
 					'data' => [ 
 						'related_content_max_posts'    => 3,
@@ -91,8 +91,9 @@ add_action( 'init', function () {
 	/* Resource Post Type */
 	register_cpt( 'Resources', 'Resources',
 		[ 
-			'menu_icon' => 'dashicons-book-alt',
-			'template'  => array (
+			'menu_icon'   => 'dashicons-book-alt',
+			'has_archive' => 'resources-archive',
+			'template'    => array (
 				array ( 'wicket/banner', [ 
 					'data'  => [ 
 						'banner_show_breadcrumbs' => false,
