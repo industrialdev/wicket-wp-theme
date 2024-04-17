@@ -105,7 +105,7 @@ function wicket_acf_load_taxonomy_terms_field_choices( $field ) {
 	if ( is_array( $taxonomies ) ) {
 		$field['choices']['0'] = __( '-- Select Taxonomy Term --', 'wicket' );
 		foreach ( $taxonomies as $taxonomy ) {
-			$terms = get_terms( $taxonomy->name, array( 'hide_empty' => true ) );
+			$terms = get_terms( $taxonomy->name, array( 'hide_empty' => false ) );
 			if ( is_array( $terms ) ) {
 				foreach ( $terms as $term ) {
 					$field['choices'][ $term->term_id ] = $taxonomy->label . ' -> ' . $term->name;
