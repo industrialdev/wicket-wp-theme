@@ -387,7 +387,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                             x-show="navDropdownOpen"
                             x-cloak
                             x-transition
-                            class="nav-dropdown absolute z-20 left-0 mt-3 w-56 bg-white p-3 shadow-lg"
+                            class="nav-dropdown absolute z-20 left-0 mt-3 w-56 bg-white p-3 lg:p-7 shadow-lg"
                         >
                             <?php 
                             $child_loop_index = 0;
@@ -433,8 +433,8 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                             x-show="navDropdownOpen"
                             x-cloak
                             x-transition
-                            class="nav-mega-dropdown container absolute z-20 flex left-0 mt-3 w-full bg-white p-3 shadow-lg flex-wrap"
-                        >
+                            class="nav-mega-dropdown container absolute z-20 flex gap-2 left-0 mt-3 w-full bg-white p-3 lg:p-7 shadow-lg flex-wrap"
+                            >
                             <?php 
                             foreach ( $primary_nav_item['children'] as $child ): 
                                 // Just print these as a header if there are no children
