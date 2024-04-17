@@ -12,5 +12,15 @@ h6 {
   font-family: var(--wp--preset--font-family--system-sans-serif);
 }
 
+// Override tailwind container
+.container {
+  @media (min-width: 1536px) {
+    max-width: var(--wp--style--global--content-size) !important;
+  }
+  @media (min-width: var(--wp--style--global--content-size)) {
+    max-width: var(--wp--style--global--content-size) !important;
+  }
+}
+
 /* AlpineJS Helpers */
 [x-cloak] { display: none !important; }
