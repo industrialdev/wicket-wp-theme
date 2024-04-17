@@ -348,7 +348,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
 
         <!-- Main Nav -->
         <nav x-ref="main-nav" class="main-nav w-full hidden lg:flex border-t-base border-b-base border-dark-040">
-            <ul class="w-full justify-evenly gap-4 flex relative">
+            <ul class="w-full gap-4 flex relative <?php if( count($primary_nav_items_structured) > 4 ) { echo 'justify-between'; } else { echo 'justify-evenly'; } ?>">
             <?php 
             foreach( $primary_nav_items_structured as $primary_nav_item ): 
                 // If this is a single menu item link
