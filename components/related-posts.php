@@ -13,6 +13,7 @@ $defaults            = array(
 	'hide_content_type'   => false,
 	'show_cta'            => false,
 	'show_view_all'       => false,
+	'open_in_new_tab'     => false,
 	'cta_style'           => 'primary',
 	'cta_label'           => '',
 	'current_post_id'     => '',
@@ -31,6 +32,7 @@ $hide_featured_image = $args['hide_featured_image'];
 $hide_content_type   = $args['hide_content_type'];
 $show_cta            = $args['show_cta'];
 $show_view_all       = $args['show_view_all'];
+$open_in_new_tab     = $args['open_in_new_tab'];
 $cta_style           = $args['cta_style'];
 $cta_label           = $args['cta_label'];
 $current_post_id     = $args['current_post_id'];
@@ -77,7 +79,7 @@ if ( ! empty( $taxonomies ) ) {
 $related_posts = new WP_Query( $query_args );
 
 // Get post type archive link
-$post_type_archive_link = get_post_type_archive_link( $post_type );
+$post_type_archive_link = get_post_type_archive_link( $post_type['post_type'] );
 
 $classes[] = 'component-related-posts';
 ?>
@@ -92,7 +94,8 @@ $classes[] = 'component-related-posts';
 					</span>
 
 					<?php if ( $show_view_all ) : ?>
-						<a href="<?php echo $post_type_archive_link ?>" class="underline ml-4 pl-4 border-l border-dark-070">
+						<a href="<?php echo $post_type_archive_link ?>" <?php if ( $open_in_new_tab ) : ?>target="_blank" <?php endif; ?>
+							class="underline ml-4 pl-4 border-l border-dark-070">
 							<?php echo __( 'View All', 'wicket' ) ?>
 						</a>
 					<?php endif; ?>
