@@ -118,7 +118,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
             mobileMenuOpen: false,
             mobileMenuMegaSubDropdowns: <?php echo $sub_menu_dropdowns; ?>,
         }"
-        class="w-full flex flex-col bg-white text-primary-100"
+        class="w-full container flex flex-col bg-white text-primary-100"
     >
         <!-- Utility Nav -->
         <div 
@@ -348,7 +348,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
 
         <!-- Main Nav -->
         <nav x-ref="main-nav" class="main-nav w-full hidden lg:flex border-t-base border-b-base border-dark-040">
-            <ul class="w-full justify-evenly gap-4 flex">
+            <ul class="w-full gap-4 flex relative <?php if( count($primary_nav_items_structured) > 4 ) { echo 'justify-between'; } else { echo 'justify-evenly'; } ?>">
             <?php 
             foreach( $primary_nav_items_structured as $primary_nav_item ): 
                 // If this is a single menu item link
@@ -433,7 +433,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                             x-show="navDropdownOpen"
                             x-cloak
                             x-transition
-                            class="nav-mega-dropdown absolute z-20 flex left-0 mt-3 w-full bg-white p-3 shadow-lg flex-wrap"
+                            class="nav-mega-dropdown container absolute z-20 flex left-0 mt-3 w-full bg-white p-3 shadow-lg flex-wrap"
                         >
                             <?php 
                             foreach ( $primary_nav_item['children'] as $child ): 

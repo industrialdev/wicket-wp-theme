@@ -3107,6 +3107,17 @@ h6 {
   font-family: var(--wp--preset--font-family--system-sans-serif);
 }
 
+@media (min-width: 1536px) {
+  .container {
+    max-width: var(--wp--style--global--content-size) !important;
+  }
+}
+@media (min-width: var(--wp--style--global--content-size)) {
+  .container {
+    max-width: var(--wp--style--global--content-size) !important;
+  }
+}
+
 /* AlpineJS Helpers */
 [x-cloak] {
   display: none !important;
