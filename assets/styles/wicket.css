@@ -3423,7 +3423,12 @@ footer .menu-item > a[target=_blank]:after {
 }
 @media (min-width: 1536px) {
   *[class*=wp-block] {
-    max-width: 1536px;
+    max-width: var(--wp--style--global--content-size);
+  }
+}
+@media (min-width: var(--wp--style--global--content-size)) {
+  *[class*=wp-block] {
+    max-width: var(--wp--style--global--content-size);
   }
 }
 *[class*=wp-block].alignfull {

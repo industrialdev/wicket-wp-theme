@@ -8,7 +8,10 @@
   }
 
   @media (min-width: 1536px) {
-    max-width: 1536px;
+    max-width: var(--wp--style--global--content-size);
+  }
+  @media (min-width: var(--wp--style--global--content-size)) {
+    max-width: var(--wp--style--global--content-size);
   }
 
   &.alignfull {
