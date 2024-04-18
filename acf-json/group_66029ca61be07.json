@@ -108,9 +108,7 @@
                         "field": "field_6602aa8f872b0",
                         "operator": "==",
                         "value": "1"
-                    }
-                ],
-                [
+                    },
                     {
                         "field": "field_661fe2cd2e9e1",
                         "operator": "==",
@@ -493,5 +491,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "translation",
-    "modified": 1713465264
+    "modified": 1713467638
 }
