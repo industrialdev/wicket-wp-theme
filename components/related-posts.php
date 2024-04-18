@@ -1,6 +1,6 @@
 <?php
 $defaults            = array(
-	'classes'             => [ 'px-4', 'py-10', 'lg:px-0', 'bg-light-010' ],
+	'classes'             => [ 'px-4', 'lg:px-0' ],
 	'title'               => '',
 	'hide_block_title'    => false,
 	'column_count'        => 3,
@@ -13,7 +13,8 @@ $defaults            = array(
 	'hide_content_type'   => false,
 	'show_cta'            => false,
 	'show_view_all'       => false,
-	'open_in_new_tab'     => false,
+	'set_custom_view_all' => false,
+	'view_all_link'       => [],
 	'cta_style'           => 'primary',
 	'cta_label'           => '',
 	'current_post_id'     => '',
@@ -32,7 +33,8 @@ $hide_featured_image = $args['hide_featured_image'];
 $hide_content_type   = $args['hide_content_type'];
 $show_cta            = $args['show_cta'];
 $show_view_all       = $args['show_view_all'];
-$open_in_new_tab     = $args['open_in_new_tab'];
+$set_custom_view_all = $args['set_custom_view_all'];
+$view_all_link       = $args['view_all_link'];
 $cta_style           = $args['cta_style'];
 $cta_label           = $args['cta_label'];
 $current_post_id     = $args['current_post_id'];
@@ -94,10 +96,16 @@ $classes[] = 'component-related-posts';
 					</span>
 
 					<?php if ( $show_view_all ) : ?>
-						<a href="<?php echo $post_type_archive_link ?>" <?php if ( $open_in_new_tab ) : ?>target="_blank" <?php endif; ?>
-							class="underline ml-4 pl-4 border-l border-dark-070">
-							<?php echo __( 'View All', 'wicket' ) ?>
-						</a>
+						<?php if ( $set_custom_view_all && isset( $view_all_link['url'] ) ) : ?>
+							<a href="<?php echo $view_all_link['url'] ?>" target="<?php echo $view_all_link['target'] ?>"
+								class="underline ml-4 pl-4 border-l border-dark-070">
+								<?php echo $view_all_link['title'] ?>
+							</a>
+						<?php else : ?>
+							<a href="<?php echo $post_type_archive_link ?>" class="underline ml-4 pl-4 border-l border-dark-070">
+								<?php echo __( 'View All', 'wicket' ) ?>
+							</a>
+						<?php endif; ?>
 					<?php endif; ?>
 
 				</div>
@@ -128,7 +136,7 @@ $classes[] = 'component-related-posts';
 						'excerpt'        => ! $hide_excerpt ? get_the_excerpt( $post_id ) : '',
 						'date'           => ! $hide_date ? get_the_date( 'F j, Y', $post_id ) : '',
 						'image'          => $image,
-						'image_position' => 'top',
+						'image_position' => $column_count == '1' ? 'right' : 'top',
 						'member_only'    => is_member_only( $post_id ),
 						'link'           => get_permalink( $post_id ),
 						'cta'            => $show_cta ? $cta_style : null,

@@ -67,8 +67,8 @@
         },
         {
             "key": "field_661fe2cd2e9e1",
-            "label": "Open in New Tab?",
-            "name": "related_content_view_all_open_new_tab",
+            "label": "Set Custom View All Link?",
+            "name": "related_content_set_custom_view_all",
             "aria-label": "",
             "type": "true_false",
             "instructions": "",
@@ -93,6 +93,38 @@
             "ui_on_text": "",
             "ui_off_text": "",
             "ui": 1
+        },
+        {
+            "key": "field_6621672427b69",
+            "label": "View All Link",
+            "name": "related_content_view_all_link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6602aa8f872b0",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_661fe2cd2e9e1",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "return_format": "array"
         },
         {
             "key": "field_66029ca625286",
@@ -461,5 +493,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "translation",
-    "modified": 1713366809
+    "modified": 1713465264
 }

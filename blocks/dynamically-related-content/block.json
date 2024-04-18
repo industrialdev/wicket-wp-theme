@@ -13,12 +13,12 @@
   },
   "styles": [],
   "supports": {
-    "align": false,
+    "align": ["full"],
     "anchor": false,
     "alignContent": false,
     "color": {
       "text": false,
-      "background": false,
+      "background": true,
       "link": false
     },
     "alignText": true,

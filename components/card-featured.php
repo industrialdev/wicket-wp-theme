@@ -70,7 +70,7 @@ if ( $image_position === 'right' ) {
 			</div>
 		<?php } ?>
 
-		<div class="flex flex-col items-start gap-3">
+		<div class="flex flex-col grow items-start gap-3">
 
 			<?php if ( $content_type ) { ?>
 				<div class="text-dark-070 uppercase font-bold leading-none">
