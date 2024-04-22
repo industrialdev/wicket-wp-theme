@@ -12,7 +12,7 @@ if ( have_posts() ) :
 		<main class="py-5">
 			<div class="container">
 				<!--Find all files inside of the components folder and loop through them-->
-				<?php foreach ( glob( get_template_directory() . '/components/*.php' ) as $filename ) { ?>
+				<?php foreach ( glob( get_components_dir() . '*.php' ) as $filename ) { ?>
 					<div class="mb-3">
 						<?php get_component( basename( $filename, '.php' ) ); ?>
 					</div>
