@@ -2346,10 +2346,6 @@ video {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
 }
-.py-10 {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
-}
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -3420,6 +3416,9 @@ footer .menu-item > a[target=_blank]:after {
 }
 *[class*=wp-block]:not(.wp-block-heading) {
   margin-bottom: 1rem;
+}
+*[class*=wp-block] *[class*=wp-block] {
+  margin-bottom: 0;
 }
 @media (min-width: 1536px) {
   *[class*=wp-block] {

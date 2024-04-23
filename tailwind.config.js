@@ -115,8 +115,6 @@ const generateColorVarieties = (color, name) => {
 // Credit: https://gist.github.com/alexstandiford/c4fbd990676a7511418f2e669c5be592
 const colors = theme.settings.color.palette.reduce((accumulator, item) => {
   accumulator[item.slug] = generateColorVarieties(item.color, item.slug)
-
-  console.log(accumulator)
   return accumulator
 }, {})
 
@@ -167,6 +165,7 @@ module.exports = {
   content: [
     './blocks/**/*.php',
     './components/**/*.php',
+    '../../plugins/wicket-wp-base-plugin/includes/components/**/*.php',
     './page-templates/**/*.php',
     './assets/scripts/**/*.js',
     './*.php',
