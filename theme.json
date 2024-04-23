@@ -424,6 +424,14 @@
           "lineHeight": "var(--wp--custom--line-height--medium)",
           "fontStyle": "italic"
         }
+      },
+      "wicket/dynamically-related-content": {
+        "spacing": {
+          "padding": {
+            "top": "var(--wp--preset--spacing--500)",
+            "bottom": "var(--wp--preset--spacing--500)"
+          }
+        }
       }
     }
   }

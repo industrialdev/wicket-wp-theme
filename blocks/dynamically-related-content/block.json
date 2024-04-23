@@ -11,7 +11,6 @@
     "mode": "edit",
     "renderTemplate": "render.php"
   },
-  "styles": [],
   "supports": {
     "align": ["full"],
     "anchor": false,
@@ -24,8 +23,21 @@
     "alignText": true,
     "fullHeight": false,
     "spacing": {
-      "margin": true,
-      "padding": true
+      "padding": true,
+      "margin": true
+    }
+  },
+  "attributes": {
+    "style": {
+      "type": "object",
+      "default": {
+        "spacing": {
+          "padding": {
+            "top": "var(--wp--preset--spacing--500)",
+            "bottom": "var(--wp--preset--spacing--500)"
+          }
+        }
+      }
     }
   }
 }
