@@ -1,7 +1,0 @@
-footer {
-  .menu-item {
-    & > a[target='_blank'] {
-      @include add-external-icon;
-    }
-  }
-}
