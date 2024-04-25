@@ -2,7 +2,7 @@
  * CORE BUTTON BLOCK
  * ------------------------------------------------------------------------- */
 
- .wp-block-buttons {
+.wp-block-buttons {
   &.wp-block-buttons-is-layout-flex {
     gap: var(--wp--preset--spacing--150);
   }
@@ -15,8 +15,8 @@
     gap: var(--wp--preset--spacing--100);
 
     /* Default (Primary) button */
-    @extend .button;
-    @extend .button--primary;
+    @extend .button !optional;
+    @extend .button--primary !optional;
 
     &:hover {
       img {
@@ -28,8 +28,8 @@
   /* Default (Primary) button */
   &.is-style-default {
     .wp-block-button__link.wp-element-button {
-      @extend .button;
-      @extend .button--primary;
+      @extend .button !optional;
+      @extend .button--primary !optional;
 
       &:hover {
         img {
@@ -42,8 +42,8 @@
   /* Secondary button */
   &.is-style-secondary {
     .wp-block-button__link.wp-element-button {
-      @extend .button;
-      @extend .button--secondary;
+      @extend .button !optional;
+      @extend .button--secondary !optional;
 
       &:hover {
         img {
@@ -56,8 +56,8 @@
   /* Ghost button */
   &.is-style-ghost {
     .wp-block-button__link.wp-element-button {
-      @extend .button;
-      @extend .button--secondary;
+      @extend .button !optional;
+      @extend .button--secondary !optional;
 
       &:hover {
         img {

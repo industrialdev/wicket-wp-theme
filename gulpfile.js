@@ -21,6 +21,7 @@ const // Package Variables
   srcPath = '.',
   assetPath = '/assets',
   themePath = '.',
+  basePluginPath = '../../plugins/wicket-wp-base-plugin',
   baseStyleName = 'wicket',
   scriptName = 'wicket'
 server = livereload()
@@ -191,6 +192,7 @@ function watchTask() {
   let scssTailwindLocations = [
     srcPath + assetPath + '/styles/' + '**/*.scss',
     srcPath + '/**/*.php',
+    basePluginPath + '/**/*.php',
     srcPath + '/**/*.js',
   ]
 
