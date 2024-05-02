@@ -69,8 +69,9 @@ function load_child_acf_blocks() {
 		}
 	}
 }
-add_action( 'init', 'load_acf_blocks', 5 );
 add_action( 'init', 'load_child_acf_blocks', 5 );
+add_action( 'init', 'load_acf_blocks', 5 );
+
 
 /**
  * Load ACF field groups for blocks
