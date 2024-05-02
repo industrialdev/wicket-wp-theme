@@ -19,6 +19,7 @@ function init( $block = [] ) {
 	$posts_per_page      = $block['posts_per_page'] ?? get_field( 'listing_posts_per_page' );
 	$taxonomy_filters    = $block['taxonomy_filters'] ?? get_field( 'listing_taxonomy_filters' );
 	$hide_search         = $block['hide_search'] ?? get_field( 'listing_hide_search' );
+	$hide_date_filter    = $block['hide_search'] ?? get_field( 'listing_hide_date_filter' );
 	$hide_type_taxonomy  = $block['hide_type_taxonomy'] ?? get_field( 'listing_hide_type_taxonomy' );
 	$hide_featured_image = $block['hide_featured_image'] ?? get_field( 'listing_hide_featured_image' );
 	$hide_excerpt        = $block['hide_excerpt'] ?? get_field( 'listing_hide_excerpt' );
@@ -29,6 +30,7 @@ function init( $block = [] ) {
 	$order   = 'DESC';
 	$keyword = '';
 
+	/* Get sort by from query string */
 	if ( isset( $_GET['sort-by'] ) ) {
 		if ( $_GET['sort-by'] == 'date-desc' ) {
 			$orderby = 'date';
@@ -48,6 +50,7 @@ function init( $block = [] ) {
 		}
 	}
 
+	/* Get keyword from search form */
 	if ( isset( $_GET['keyword'] ) ) {
 		$keyword = $_GET['keyword'];
 	}
@@ -121,6 +124,7 @@ function init( $block = [] ) {
 		array_push( $tax_query, $taxonomy_args );
 	}
 
+	/* Add custom taxonomy filters to tax query if they are set */
 	if ( is_array( $taxonomy_filters ) ) {
 		foreach ( $taxonomy_filters as $taxonomy ) {
 			if ( isset( $_GET[ $taxonomy['slug'] ] ) ) {
@@ -133,7 +137,9 @@ function init( $block = [] ) {
 				array_push( $tax_query, $taxonomy_args );
 			}
 		}
-	} ?>
+	}
+
+	?>
 
 	<form action="">
 
@@ -158,7 +164,8 @@ function init( $block = [] ) {
 						class="basis-1/4 bg-white relative after:content-[''] after:absolute after:top-0 after:bottom-0 after:right-full after:bg-white after:w-[30vw] before:block lg:before:hidden before:content-[''] before:absolute before:top-0 before:bottom-0 before:left-full before:bg-white before:w-[30vw]">
 						<?php
 						get_component( 'filter-form', [ 
-							'taxonomies' => $taxonomy_filters,
+							'taxonomies'       => $taxonomy_filters,
+							'hide_date_filter' => $hide_date_filter,
 						] )
 							?>
 					</div>
@@ -175,6 +182,18 @@ function init( $block = [] ) {
 						's'              => $keyword,
 						'tax_query'      => $tax_query,
 					];
+
+					/* Add start date and end date to tax query if they are set */
+					if ( isset( $_GET['start_date'] ) && isset( $_GET['end_date'] ) ) {
+						$start_date = $_GET['start_date'];
+						$end_date   = $_GET['end_date'];
+
+						$args['date_query'] = [ 
+							'after'     => $start_date,
+							'before'    => $end_date,
+							'inclusive' => true,
+						];
+					}
 
 					$query       = new \WP_Query( $args );
 					$posts       = $query->posts;

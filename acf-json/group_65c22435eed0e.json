@@ -422,6 +422,27 @@
             "ui": 1
         },
         {
+            "key": "field_663378004f6ee",
+            "label": "Hide Date Filter",
+            "name": "listing_hide_date_filter",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
             "key": "field_65f44b85a347c",
             "label": "Hide Type Taxonomy",
             "name": "listing_hide_type_taxonomy",
@@ -504,5 +525,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "translation",
-    "modified": 1712581309
+    "modified": 1714649106
 }
