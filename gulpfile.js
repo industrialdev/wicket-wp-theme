@@ -189,16 +189,21 @@ function fontsTask() {
 
 // Watches files for changes and compiles on the fly
 function watchTask() {
-  let scssTailwindLocations = [
+  const scssTailwindLocations = [
     srcPath + assetPath + '/styles/' + '**/*.scss',
     srcPath + '/**/*.php',
     basePluginPath + '/**/*.php',
     srcPath + '/**/*.js',
   ]
 
+  const jsLocations = [
+    srcPath + assetPath + '/scripts/' + '*.js',
+    srcPath + assetPath + '/scripts/components/' + '*.js',
+  ]
+
   gulp
     .watch(
-      srcPath + assetPath + '/scripts/' + '*.js',
+      jsLocations,
       gulp.series(scriptsTask, minScripts, scriptsTaskAdmin, minScriptsAdmin)
     )
     .on('change', () => {

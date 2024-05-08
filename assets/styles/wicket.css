@@ -2503,9 +2503,9 @@ video {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
-.text-light-090 {
+.text-light-040 {
   --tw-text-opacity: 1;
-  color: rgb(140 140 140 / var(--tw-text-opacity));
+  color: rgb(204 204 204 / var(--tw-text-opacity));
 }
 .text-primary-100 {
   --tw-text-opacity: 1;
@@ -3749,6 +3749,10 @@ form.wicket-form .wicket-form-field-wrapper,
   --tw-shadow-colored: 0px 0px 1px 2px var(--tw-shadow-color);
   -webkit-box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.group.has-value .group-\[\.has-value\]\:text-dark-100 {
+  --tw-text-opacity: 1;
+  color: rgb(35 42 49 / var(--tw-text-opacity));
 }
 @container (min-width: 28rem) {
   .\@md\:flex-row {
