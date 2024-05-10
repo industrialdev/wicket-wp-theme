@@ -118,7 +118,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
             mobileMenuOpen: false,
             mobileMenuMegaSubDropdowns: <?php echo $sub_menu_dropdowns; ?>,
         }"
-        class="w-full container flex flex-col bg-white text-primary-100"
+        class="w-full flex flex-col bg-white text-primary-100"
     >
         <!-- Utility Nav -->
         <div 
@@ -126,7 +126,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
             x-cloak
             class="utility-nav hidden lg:block w-full bg-dark-100 text-white font-bold"
             >
-            <div class="xl:container flex justify-end">
+            <div class="container flex justify-end">
                 <?php
                     $utility_loop_index = 0;
                     foreach( $utility_nav_items as $utility_nav_item ) {
@@ -150,148 +150,31 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
         </div> <!-- End Utility Nav -->
 
         <!-- Secondary Nav (Logo, login button, language switcher, etc.) -->
-        <div x-ref="secondary-nav" class="secondary-nav w-full xl:container px-2 xl:px-0 flex items-center justify-between relative py-3">
-            <!-- Left-aligned hamburger menu button that only shows on Base/SM breakpoints -->
-            <button 
-                x-show="! mobileMenuOpen"
-                x-cloak
-                x-on:click="mobileMenuOpen = ! mobileMenuOpen; if(mobileMenuOpen){$dispatch('close-mobile-search')};"
-                x-on:close-mobile-menu.window="mobileMenuOpen = false"
-                class="left-hamburger-button inline-flex md:hidden mr-20 items-center"
-                >
-                <?php 
-                get_component( 'icon', [ 
-                    'classes' => [ 'text-x-large', 'lg:text-large' ],
-                    'icon'    => 'fa-solid fa-bars',
-                    'text'    => '',
-                ] );
-                ?>
-            </button>
-            <!-- Left-aligned hamburger menu CLOSE button that only shows on Base/SM breakpoints -->
-            <button 
-                x-show="mobileMenuOpen"
-                x-cloak
-                x-on:click="mobileMenuOpen = ! mobileMenuOpen"
-                class="right-hamburger-close-button inline-flex md:hidden mr-16 items-center"
-                >
-                <?php 
-                get_component( 'icon', [ 
-                    'classes' => [ 'text-x-large', 'lg:text-large', 'bg-white', 'rounded-base', 'px-2', 'py-0' ],
-                    'icon'    => 'fa-solid fa-x',
-                    'text'    => '',
-                ] );
-                ?>
-            </button>
-        
-            <!-- Logo -->
-            <a href="/" class="logo w-60"><img src="<?php echo $logo_url; ?>" /></a>
-
-            <!-- Right panel -->
-            <div 
-                class="right-panel flex justify-between align-center font-bold"
-                x-bind:class=" searchOpen ? 'lg:flex-grow' : '' "
-                >
-                <?php
-                    foreach( $secondary_nav_items as $secondary_nav_item ) {
-                        $target = $secondary_nav_item->target ?? '';
-                        get_component( 'link', [ 
-                            'text'     => $secondary_nav_item->title,
-                            'classes'  => ['secondary-nav-item', 'mr-4', 'items-center', 'hidden', 'lg:inline-flex'],
-                            'target'   => $target,
-                            'url'      => $secondary_nav_item->url,
-                            'atts'     => ['x-show="! searchOpen"', 'x-cloak'],
-                        ] );
-                    }
-                ?>
-                <?php 
-                if( $nav_state == 'logged_out' ) {
-                    get_component( 'button', [ 
-                        'variant'   => 'primary',
-                        'a_tag'     => true,
-                        'link'      => $bam_path,
-                        'classes'   => ['create-account-button', 'hidden', 'md:inline-flex'],
-                        'label'     => __( 'Create Account', 'wicket' ),
-                        'atts'      => ['x-show="! searchOpen"', 'x-cloak'],
-                    ] );
-                } else if ( $nav_state == 'logged_in_user' ) {
-                    get_component( 'button', [ 
-                        'variant'     => 'primary',
-                        'a_tag'     => true,
-                        'link'      => $bam_path,
-                        'classes'     => ['become-a-member-button', 'mr-4'],
-                        'label'     => __( 'Become a member', 'wicket' ),
-                        'atts'      => [' x-bind:class=" searchOpen ? \'hidden md:inline-flex lg:hidden\' : \'hidden md:inline-flex\' " '],
-                    ] );
-                    get_component( 'button', [ 
-                        'variant'     => 'secondary',
-                        'a_tag'     => true,
-                        'link'      => $account_center_landing,
-                        'classes'     => ['my-account-button', 'hidden', 'lg:inline-flex'],
-                        'label'     => __( 'My Account', 'wicket' ),
-                        'atts'      => ['x-show="! searchOpen"', 'x-cloak'],
-                    ] );
-                } else if ( $nav_state == 'logged_in_member' ) {
-                    get_component( 'button', [ 
-                        'variant'     => 'secondary',
-                        'a_tag'     => true,
-                        'link'      => $account_center_landing,
-                        'classes'     => ['member-portal-button', 'hidden', 'md:inline-flex'],
-                        'label'     => __( 'Member Portal', 'wicket' ),
-                        'atts'      => ['x-show="! searchOpen"', 'x-cloak'],
-                    ] );
-                }
-                ?>
-                <?php if( $nav_state == 'logged_out' ): ?>
-                    <?php
-                        get_component( 'link', [ 
-                            'text'     => __( 'Login', 'wicket' ),
-                            'classes'  => ['login-button', 'mx-4', 'items-center', 'hidden', 'lg:inline-flex'],
-                            'url'      => get_option('wp_cassify_base_url').'login?service='.$referrer,
-                            'atts'     => ['x-show="! searchOpen"', 'x-cloak'],
-                        ] );
-                    ?>
-                <?php else: ?>
-                    <?php
-                        get_component( 'link', [ 
-                            'text'     => __( 'Logout', 'wicket' ),
-                            'classes'  => ['logout-button', 'mx-4', 'items-center', 'hidden', 'lg:inline-flex'],
-                            'url'      => wp_logout_url(),
-                            'atts'     => ['x-show="! searchOpen"', 'x-cloak'],
-                        ] );
-                    ?>
-                <?php endif; ?>
-                <!-- Start search field -->
-                <div x-show="searchOpen" x-cloak class="hidden lg:block flex-grow px-2 py-3 ml-20 bg-white">
-                    <form class="flex" action="/" method="get">
-                        <label for="search" class="hidden"><?php _e('Search the website', 'wicket'); ?></label>
-                        <input class="w-full p-1" type="text" name="s" id="search" value="<?php the_search_query(); ?>" placeholder="<?php _e('Search by Keyword', 'wicket'); ?>" />
-                        <?php get_component( 'button', [ 
-                            'variant'     => 'primary',
-                            'type'      => 'submit',
-                            'label'     => __( 'Search', 'wicket' ),
-                            'classes'     => ['search-submit-button', 'ml-2', 'border-0']
-                        ] ) ?>
-                    </form>
-                </div>
-                <!-- End search field -->
-                <!-- Start search button states -->
+        <div x-ref="secondary-nav" class="secondary-nav w-full px-2 xl:px-0 py-3">
+            <div class="container flex items-center justify-between relative ">
+                <!-- Left-aligned hamburger menu button that only shows on Base/SM breakpoints -->
                 <button 
-                    x-on:click="searchOpen = ! searchOpen; if(searchOpen){$dispatch('close-mobile-menu')};"
-                    x-on:close-mobile-search.window="searchOpen = false"
-                    x-show="showSearch"
+                    x-show="! mobileMenuOpen"
                     x-cloak
-                    class="search-toggle-button mx-4 inline-flex items-center"
-                >
-                    <span x-show="! searchOpen" x-cloak>
+                    x-on:click="mobileMenuOpen = ! mobileMenuOpen; if(mobileMenuOpen){$dispatch('close-mobile-search')};"
+                    x-on:close-mobile-menu.window="mobileMenuOpen = false"
+                    class="left-hamburger-button inline-flex md:hidden mr-20 items-center"
+                    >
                     <?php 
                     get_component( 'icon', [ 
                         'classes' => [ 'text-x-large', 'lg:text-large' ],
-                        'icon'    => 'fa-solid fa-magnifying-glass',
+                        'icon'    => 'fa-solid fa-bars',
                         'text'    => '',
                     ] );
                     ?>
-                    </span>
-                    <span x-show="searchOpen" x-cloak>
+                </button>
+                <!-- Left-aligned hamburger menu CLOSE button that only shows on Base/SM breakpoints -->
+                <button 
+                    x-show="mobileMenuOpen"
+                    x-cloak
+                    x-on:click="mobileMenuOpen = ! mobileMenuOpen"
+                    class="right-hamburger-close-button inline-flex md:hidden mr-16 items-center"
+                    >
                     <?php 
                     get_component( 'icon', [ 
                         'classes' => [ 'text-x-large', 'lg:text-large', 'bg-white', 'rounded-base', 'px-2', 'py-0' ],
@@ -299,56 +182,175 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         'text'    => '',
                     ] );
                     ?>
-                    </span>
                 </button>
-                <!-- End search button states -->
+            
+                <!-- Logo -->
+                <a href="/" class="logo w-60"><img src="<?php echo $logo_url; ?>" /></a>
 
-                <a x-show="showCart" x-cloak href="<?php echo $cart_path; ?>" class="cart-button ml-4 md:mx-4 inline-flex items-center">
-                    <?php 
-                    get_component( 'icon', [ 
-                        'classes' => [ 'text-x-large', 'lg:text-large' ],
-                        'icon'    => 'fa-regular fa-cart-shopping',
-                        'text'    => '',
-                    ] );
+                <!-- Right panel -->
+                <div 
+                    class="right-panel flex justify-between align-center font-bold"
+                    x-bind:class=" searchOpen ? 'lg:flex-grow' : '' "
+                    >
+                    <?php
+                        foreach( $secondary_nav_items as $secondary_nav_item ) {
+                            $target = $secondary_nav_item->target ?? '';
+                            get_component( 'link', [ 
+                                'text'     => $secondary_nav_item->title,
+                                'classes'  => ['secondary-nav-item', 'mr-4', 'items-center', 'hidden', 'lg:inline-flex'],
+                                'target'   => $target,
+                                'url'      => $secondary_nav_item->url,
+                                'atts'     => ['x-show="! searchOpen"', 'x-cloak'],
+                            ] );
+                        }
                     ?>
-                </a>
-                <?php if( $lang == 'en' ): ?>
-                    <a x-show="showLangToggle" x-cloak href="<?php echo wicket_get_lang_url( 'fr' ); ?>" class="lang-button ml-4 hidden lg:inline-flex items-center">Fr</a>
-                <?php else: ?>
-                    <a x-show="showLangToggle" x-cloak href="<?php echo wicket_get_lang_url( 'en' ); ?>" class="lang-button ml-4 hidden lg:inline-flex items-center">En</a>
-                <?php endif; ?>
+                    <?php 
+                    if( $nav_state == 'logged_out' ) {
+                        get_component( 'button', [ 
+                            'variant'   => 'primary',
+                            'a_tag'     => true,
+                            'link'      => $bam_path,
+                            'classes'   => ['create-account-button', 'hidden', 'md:inline-flex'],
+                            'label'     => __( 'Create Account', 'wicket' ),
+                            'atts'      => ['x-show="! searchOpen"', 'x-cloak'],
+                        ] );
+                    } else if ( $nav_state == 'logged_in_user' ) {
+                        get_component( 'button', [ 
+                            'variant'     => 'primary',
+                            'a_tag'     => true,
+                            'link'      => $bam_path,
+                            'classes'     => ['become-a-member-button', 'mr-4'],
+                            'label'     => __( 'Become a member', 'wicket' ),
+                            'atts'      => [' x-bind:class=" searchOpen ? \'hidden md:inline-flex lg:hidden\' : \'hidden md:inline-flex\' " '],
+                        ] );
+                        get_component( 'button', [ 
+                            'variant'     => 'secondary',
+                            'a_tag'     => true,
+                            'link'      => $account_center_landing,
+                            'classes'     => ['my-account-button', 'hidden', 'lg:inline-flex'],
+                            'label'     => __( 'My Account', 'wicket' ),
+                            'atts'      => ['x-show="! searchOpen"', 'x-cloak'],
+                        ] );
+                    } else if ( $nav_state == 'logged_in_member' ) {
+                        get_component( 'button', [ 
+                            'variant'     => 'secondary',
+                            'a_tag'     => true,
+                            'link'      => $account_center_landing,
+                            'classes'     => ['member-portal-button', 'hidden', 'md:inline-flex'],
+                            'label'     => __( 'Member Portal', 'wicket' ),
+                            'atts'      => ['x-show="! searchOpen"', 'x-cloak'],
+                        ] );
+                    }
+                    ?>
+                    <?php if( $nav_state == 'logged_out' ): ?>
+                        <?php
+                            get_component( 'link', [ 
+                                'text'     => __( 'Login', 'wicket' ),
+                                'classes'  => ['login-button', 'mx-4', 'items-center', 'hidden', 'lg:inline-flex'],
+                                'url'      => get_option('wp_cassify_base_url').'login?service='.$referrer,
+                                'atts'     => ['x-show="! searchOpen"', 'x-cloak'],
+                            ] );
+                        ?>
+                    <?php else: ?>
+                        <?php
+                            get_component( 'link', [ 
+                                'text'     => __( 'Logout', 'wicket' ),
+                                'classes'  => ['logout-button', 'mx-4', 'items-center', 'hidden', 'lg:inline-flex'],
+                                'url'      => wp_logout_url(),
+                                'atts'     => ['x-show="! searchOpen"', 'x-cloak'],
+                            ] );
+                        ?>
+                    <?php endif; ?>
+                    <!-- Start search field -->
+                    <div x-show="searchOpen" x-cloak class="hidden lg:block flex-grow px-2 py-3 ml-20 bg-white">
+                        <form class="flex" action="/" method="get">
+                            <label for="search" class="hidden"><?php _e('Search the website', 'wicket'); ?></label>
+                            <input class="w-full p-1" type="text" name="s" id="search" value="<?php the_search_query(); ?>" placeholder="<?php _e('Search by Keyword', 'wicket'); ?>" />
+                            <?php get_component( 'button', [ 
+                                'variant'     => 'primary',
+                                'type'      => 'submit',
+                                'label'     => __( 'Search', 'wicket' ),
+                                'classes'     => ['search-submit-button', 'ml-2', 'border-0']
+                            ] ) ?>
+                        </form>
+                    </div>
+                    <!-- End search field -->
+                    <!-- Start search button states -->
+                    <button 
+                        x-on:click="searchOpen = ! searchOpen; if(searchOpen){$dispatch('close-mobile-menu')};"
+                        x-on:close-mobile-search.window="searchOpen = false"
+                        x-show="showSearch"
+                        x-cloak
+                        class="search-toggle-button mx-4 inline-flex items-center"
+                    >
+                        <span x-show="! searchOpen" x-cloak>
+                        <?php 
+                        get_component( 'icon', [ 
+                            'classes' => [ 'text-x-large', 'lg:text-large' ],
+                            'icon'    => 'fa-solid fa-magnifying-glass',
+                            'text'    => '',
+                        ] );
+                        ?>
+                        </span>
+                        <span x-show="searchOpen" x-cloak>
+                        <?php 
+                        get_component( 'icon', [ 
+                            'classes' => [ 'text-x-large', 'lg:text-large', 'bg-white', 'rounded-base', 'px-2', 'py-0' ],
+                            'icon'    => 'fa-solid fa-x',
+                            'text'    => '',
+                        ] );
+                        ?>
+                        </span>
+                    </button>
+                    <!-- End search button states -->
 
-                <!-- Right-aligned hamburger menu button that only shows on MD breakpoint -->
-                <button
-                    x-on:click="mobileMenuOpen = ! mobileMenuOpen; if(mobileMenuOpen){$dispatch('close-mobile-search')};"
-                    x-on:close-mobile-menu.window="mobileMenuOpen = false"
-                    class="right-hamburger-button hidden md:inline-flex lg:hidden ml-4 items-center"
-                >
-                    <span x-show="! mobileMenuOpen" x-cloak>
-                    <?php 
-                    get_component( 'icon', [ 
-                        'classes' => [ 'text-x-large', 'lg:text-large', 'px-2' ],
-                        'icon'    => 'fa-solid fa-bars',
-                        'text'    => '',
-                    ] );
-                    ?>
-                    </span>
-                    <span x-show="mobileMenuOpen" x-cloak>
-                    <?php 
-                    get_component( 'icon', [ 
-                        'classes' => [ 'text-x-large', 'lg:text-large', 'bg-dark-040', 'rounded-base', 'px-2', 'py-0' ],
-                        'icon'    => 'fa-solid fa-x',
-                        'text'    => '',
-                    ] );
-                    ?>
-                    </span>
-                </button> <!-- End hamburger button -->
+                    <a x-show="showCart" x-cloak href="<?php echo $cart_path; ?>" class="cart-button ml-4 md:mx-4 inline-flex items-center">
+                        <?php 
+                        get_component( 'icon', [ 
+                            'classes' => [ 'text-x-large', 'lg:text-large' ],
+                            'icon'    => 'fa-regular fa-cart-shopping',
+                            'text'    => '',
+                        ] );
+                        ?>
+                    </a>
+                    <?php if( $lang == 'en' ): ?>
+                        <a x-show="showLangToggle" x-cloak href="<?php echo wicket_get_lang_url( 'fr' ); ?>" class="lang-button ml-4 hidden lg:inline-flex items-center">Fr</a>
+                    <?php else: ?>
+                        <a x-show="showLangToggle" x-cloak href="<?php echo wicket_get_lang_url( 'en' ); ?>" class="lang-button ml-4 hidden lg:inline-flex items-center">En</a>
+                    <?php endif; ?>
+
+                    <!-- Right-aligned hamburger menu button that only shows on MD breakpoint -->
+                    <button
+                        x-on:click="mobileMenuOpen = ! mobileMenuOpen; if(mobileMenuOpen){$dispatch('close-mobile-search')};"
+                        x-on:close-mobile-menu.window="mobileMenuOpen = false"
+                        class="right-hamburger-button hidden md:inline-flex lg:hidden ml-4 items-center"
+                    >
+                        <span x-show="! mobileMenuOpen" x-cloak>
+                        <?php 
+                        get_component( 'icon', [ 
+                            'classes' => [ 'text-x-large', 'lg:text-large', 'px-2' ],
+                            'icon'    => 'fa-solid fa-bars',
+                            'text'    => '',
+                        ] );
+                        ?>
+                        </span>
+                        <span x-show="mobileMenuOpen" x-cloak>
+                        <?php 
+                        get_component( 'icon', [ 
+                            'classes' => [ 'text-x-large', 'lg:text-large', 'bg-dark-040', 'rounded-base', 'px-2', 'py-0' ],
+                            'icon'    => 'fa-solid fa-x',
+                            'text'    => '',
+                        ] );
+                        ?>
+                        </span>
+                    </button> <!-- End hamburger button -->
+                </div>
             </div>
         </div> <!-- End secondary nav -->
 
         <!-- Main Nav -->
         <nav x-ref="main-nav" class="main-nav w-full hidden lg:flex border-t-base border-b-base border-dark-040">
-            <ul class="w-full gap-4 flex relative <?php if( count($primary_nav_items_structured) > 4 ) { echo 'justify-between'; } else { echo 'justify-evenly'; } ?>">
+            <ul class="container w-full gap-4 flex relative <?php if( count($primary_nav_items_structured) > 4 ) { echo 'justify-between'; } else { echo 'justify-evenly'; } ?>">
             <?php 
             foreach( $primary_nav_items_structured as $primary_nav_item ): 
                 // If this is a single menu item link
