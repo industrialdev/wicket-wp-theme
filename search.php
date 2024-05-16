@@ -78,6 +78,18 @@
     'tax_query'      => $tax_query,
   ];
 
+  /* Add start date and end date to tax query if they are set */
+  if ( isset( $_GET['start_date'] ) && isset( $_GET['end_date'] ) ) {
+    $start_date = $_GET['start_date'];
+    $end_date   = $_GET['end_date'];
+
+    $args['date_query'] = [ 
+      'after'     => $start_date,
+      'before'    => $end_date,
+      'inclusive' => true,
+    ];
+  }
+
   $query       = new WP_Query( $args );
   $posts       = $query->posts;
   $total_posts = $query->found_posts;
@@ -182,7 +194,7 @@
 
               $card_params = [ 
                 'classes'           => [ 'mb-6' ],
-                'content_type'      => 'test',
+                //'content_type'      => $content_type,
                 'date'              => $show_pub_date ? $pub_date : '',
                 'topics'            => $show_content_type_tags && !empty($content_type) ? $content_type[0]->name : '',
                 'title'             => $title,
