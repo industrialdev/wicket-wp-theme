@@ -188,6 +188,280 @@
             "min": "",
             "max": "",
             "button_label": "Add Social Media"
+        },
+        {
+            "key": "field_6646690901e34",
+            "label": "Search Listing Page",
+            "name": "search_listing_page",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_664671e9df728",
+                    "label": "Page Options",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "tab",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placement": "top",
+                    "endpoint": 1
+                },
+                {
+                    "key": "field_6646702efdb0d",
+                    "label": "Show Search Bar",
+                    "name": "show_search_bar",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 1,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
+                    "key": "field_664670eafdb12",
+                    "label": "Show Filter Bar",
+                    "name": "show_filter_bar",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 1,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
+                    "key": "field_66467110fdb13",
+                    "label": "Show Filter By Published Date",
+                    "name": "show_filter_by_published_date",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 1,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
+                    "key": "field_664670d3fdb11",
+                    "label": "Posts Per Page",
+                    "name": "posts_per_page",
+                    "aria-label": "",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 10,
+                    "min": "",
+                    "max": "",
+                    "placeholder": "",
+                    "step": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_66467064fdb0f",
+                    "label": "Excluded Post Types",
+                    "name": "excluded_post_types",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "Enter a comma separated list of the post types you want to exclude from the filters area of the search page. For example: \"post,page\".",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": 3,
+                    "placeholder": "E.g. post,page",
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_66467099fdb10",
+                    "label": "Excluded Post IDs",
+                    "name": "excluded_post_ids",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "Enter a comma separated list of the post IDs you want to exclude from the filters area of the search page. For example: \"12,58,4\".",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": 3,
+                    "placeholder": "E.g. 12,58,4",
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_6646695401e35",
+                    "label": "Taxonomy Filters",
+                    "name": "taxonomy_filters",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "Enter a comma separated list of the taxonomies you want displayed in the filters area of the search page. For example: \"category,product_type,nav_menu\".",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": 3,
+                    "placeholder": "E.g. category,product_type,nav_menu",
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_6646718fdf726",
+                    "label": "Card Options",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "tab",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placement": "top",
+                    "endpoint": 0
+                },
+                {
+                    "key": "field_66467128fdb14",
+                    "label": "Card: Show Featured Image",
+                    "name": "card_show_featured_image",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 1,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
+                    "key": "field_6646713afdb15",
+                    "label": "Card: Show Content Type Tags",
+                    "name": "card_show_content_type_tags",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 1,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
+                    "key": "field_66467153fdb16",
+                    "label": "Card: Show Published Date",
+                    "name": "card_show_published_date",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 1,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
+                    "key": "field_66467170fdb17",
+                    "label": "Card: Show Excerpt",
+                    "name": "card_show_excerpt",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 1,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                }
+            ]
         }
     ],
     "location": [
@@ -208,7 +482,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1700164772,
-    "local_file": "\/var\/www\/html\/web\/app\/themes\/wicket\/acf-json\/group_652c007c20674.json",
-    "acfml_field_group_mode": "advanced"
+    "modified": 1715892840
 }
