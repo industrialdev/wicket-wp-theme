@@ -23,6 +23,8 @@
 
   // TODO: Add support for advanced/elastic search
 
+  $search_term = $_GET['s'] ?? '';
+
 
   // Set the page sorting based on parameter
   $order = 'DESC';
@@ -73,7 +75,7 @@
     'paged'          => $paged,
     'orderby'        => 'date',
     'order'          => $order,
-    's'              => $_GET['s'],
+    's'              => $search_term,
     'post__not_in'   => $excluded_post_ids,
     'tax_query'      => $tax_query,
   ];
@@ -112,6 +114,8 @@
       return the_url.toString();
     }
   }">
+  <?php // Add the value of s as a hidden form field so the filter-form bar will pass along its value and keep us on the search page ?>
+  <?php /* <input type="hidden" name="s" value="<?php echo $search_term; ?>" /> */ ?>
 
   <div class="px-4 py-5 lg:px-0">
       <div class="container max-w-screen-md mx-auto">
@@ -235,7 +239,7 @@
     </div>
   </div>
 
-  <?php echo '</div>';
-  echo '</form>'; ?>
+  </div>
+</form>
 
 <?php get_footer();
