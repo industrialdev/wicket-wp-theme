@@ -114,8 +114,15 @@
       return the_url.toString();
     }
   }">
-  <?php // Add the value of s as a hidden form field so the filter-form bar will pass along its value and keep us on the search page ?>
-  <?php /* <input type="hidden" name="s" value="<?php echo $search_term; ?>" /> */ ?>
+  <?php /** 
+          * Add the value of s as a hidden form field so the filter-form bar will pass along its 
+          * value and keep us on the search page.
+          * 
+          * Might add a duplicate 's' param to URL in some cases, but that won't cause error and will
+          * Ensure we're staying on the search page when filters are applied.
+          */
+  ?>
+  <input type="hidden" name="s" value="<?php echo $search_term; ?>" />
 
   <div class="px-4 py-5 lg:px-0">
       <div class="container max-w-screen-md mx-auto">
