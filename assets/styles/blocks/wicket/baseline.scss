@@ -23,3 +23,17 @@
     max-width: 100%;
   }
 }
+
+#main-content {
+  // Case: First level blocks are core blocks add mobile inline padding
+  &
+    > *:is(.wp-block-heading, .wp-block-paragraph, .wp-block-columns):not(
+      .alignfull
+    ) {
+    padding-inline: 1rem;
+
+    @include media-breakpoint-down('1024px') {
+      padding-inline: 0;
+    }
+  }
+}

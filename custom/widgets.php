@@ -1,17 +1,11 @@
 <?php
 
-// Register Sidebars
+// Register widget areas
 function wicket_widgets_init() {
-  register_sidebar( array(
-    'id'          => 'header-widgets',
-    'name'        => 'Header Widgets',
-    'description' => __( 'Header widget area.', 'text_domain' ),
-  ));
-  
-  register_sidebar( array(
-    'id'          => 'footer-widgets',
-    'name'        => 'Footer Widgets',
-    'description' => __( 'Footer widget area.', 'text_domain' ),
-  ));
+	register_sidebar( array(
+		'id'          => 'sidebar-widgets',
+		'name'        => 'Sidebar Widgets',
+		'description' => __( 'Sidebar widget area.', 'wicket' ),
+	) );
 }
 add_action( 'widgets_init', 'wicket_widgets_init' );
