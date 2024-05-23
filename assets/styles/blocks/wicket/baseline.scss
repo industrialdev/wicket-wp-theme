@@ -1,6 +1,7 @@
 /* Setting the max-width of the content area for all blocks */
 *[class*='wp-block'] {
-  @apply container;
+  //@apply container;
+  @include the-container;
 
   &:not(.wp-block-heading) {
     margin-bottom: 1rem;

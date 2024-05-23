@@ -2788,6 +2788,16 @@ h6 {
     max-width: var(--wp--style--global--content-size);
   }
 }
+@media (min-width: 1536px) {
+  *[class*=wp-block] {
+    max-width: var(--wp--style--global--content-size) !important;
+  }
+}
+@media (min-width: var(--wp--style--global--content-size)) {
+  *[class*=wp-block] {
+    max-width: var(--wp--style--global--content-size) !important;
+  }
+}
 *[class*=wp-block]:not(.wp-block-heading) {
   margin-bottom: 1rem;
 }
