@@ -2815,7 +2815,7 @@ h6 {
   }
 }
 *[class*=wp-block].alignfull {
-  max-width: 100%;
+  max-width: 100% !important;
 }
 
 #main-content > *:is(.wp-block-heading, .wp-block-paragraph, .wp-block-columns):not(.alignfull) {
