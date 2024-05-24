@@ -201,6 +201,7 @@ module.exports = {
     'aspect-[3/2]',
     {pattern: /(grid-cols|grid-rows)-./},
     {pattern: /(opacity)-./},
+    {pattern: /(rounded)-./},
   ],
 }
 
