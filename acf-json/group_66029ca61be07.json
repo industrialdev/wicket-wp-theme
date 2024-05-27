@@ -296,6 +296,50 @@
             ]
         },
         {
+            "key": "field_664dfa9755797",
+            "label": "Highlight featured post(s)",
+            "name": "related_content_highlight_featured_posts",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_664dfad355798",
+            "label": "Number of featured post(s)",
+            "name": "related_content_featured_posts_number",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_66029ca62513d",
             "label": "Hide Excerpt",
             "name": "related_content_hide_excerpt",
@@ -491,5 +535,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "translation",
-    "modified": 1713467638
+    "modified": 1716386647
 }
