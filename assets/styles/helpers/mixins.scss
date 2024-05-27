@@ -14,3 +14,18 @@
     @content;
   }
 }
+
+// Create container adjustment mixin rules
+@mixin container-adjustments {
+  @media (min-width: 1536px) {
+    max-width: var(--wp--style--global--content-size) !important;
+  }
+  @media (min-width: var(--wp--style--global--content-size)) {
+    max-width: var(--wp--style--global--content-size) !important;
+  }
+}
+// Make the combined Tailwind and adjusted container rules available via mixin, if needed
+@mixin the-container {
+  @apply container;
+  @include container-adjustments;
+}

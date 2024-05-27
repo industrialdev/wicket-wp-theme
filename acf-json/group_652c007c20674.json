@@ -42,7 +42,6 @@
                 "class": "",
                 "id": ""
             },
-            "wpml_cf_preferences": 3,
             "layouts": {
                 "layout_652c00b2d4173": {
                     "key": "layout_652c00b2d4173",
@@ -183,6 +182,53 @@
                     ],
                     "min": "",
                     "max": "1"
+                },
+                "layout_6650b64c572fb": {
+                    "key": "layout_6650b64c572fb",
+                    "name": "custom_other",
+                    "label": "Custom\/Other",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_6650b64c572fc",
+                            "label": "Custom\/Other Link",
+                            "name": "link",
+                            "aria-label": "",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_6650b66a572fd",
+                            "label": "FontAwesome Icon Class(es)",
+                            "name": "fontawesome_icon_classes",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "Grab the desired FontAwesome icon classes from https:\/\/fontawesome.com\/icons",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "E.g. fa-brands fa-youtube",
+                            "prepend": "",
+                            "append": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
@@ -482,5 +528,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1715892840
+    "modified": 1716565691
 }

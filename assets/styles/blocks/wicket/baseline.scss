@@ -1,7 +1,7 @@
 /* Setting the max-width of the content area for all blocks */
 *[class*='wp-block'] {
-  max-width: var(--wp--style--global--content-size);
-  margin-inline: auto;
+  //@apply container;
+  @include the-container;
 
   &:not(.wp-block-heading) {
     margin-bottom: 1rem;
@@ -20,7 +20,7 @@
   }
 
   &.alignfull {
-    max-width: 100%;
+    max-width: 100% !important;
   }
 }
 
