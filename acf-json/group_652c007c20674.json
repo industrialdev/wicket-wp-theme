@@ -356,7 +356,7 @@
                     "name": "excluded_post_types",
                     "aria-label": "",
                     "type": "textarea",
-                    "instructions": "Enter a comma separated list of the post types you want to exclude from the filters area of the search page. For example: \"post,page\".",
+                    "instructions": "Enter a comma separated list of the post types you want to exclude from the filters area of the search page. For example: \"post,page\". See the <a target=\"_blank\" href=\"\/app\/themes\/wicket-wp-theme\/custom\/wp_terms_cheat_sheet.php\">cheat sheet<\/a> for available post types on this site (must be an admin).",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -376,7 +376,7 @@
                     "name": "excluded_post_ids",
                     "aria-label": "",
                     "type": "textarea",
-                    "instructions": "Enter a comma separated list of the post IDs you want to exclude from the filters area of the search page. For example: \"12,58,4\".",
+                    "instructions": "Enter a comma separated list of the post IDs you want to exclude from the filters area of the search page. For example: \"12,58,4\". See the <a target=\"_blank\" href=\"\/app\/themes\/wicket-wp-theme\/custom\/wp_terms_cheat_sheet.php\">cheat sheet<\/a> for available post IDs on this site (must be an admin).",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -396,7 +396,7 @@
                     "name": "taxonomy_filters",
                     "aria-label": "",
                     "type": "textarea",
-                    "instructions": "Enter a comma separated list of the taxonomies you want displayed in the filters area of the search page. For example: \"category,product_type,nav_menu\".",
+                    "instructions": "Enter a comma separated list of the taxonomies you want displayed in the filters area of the search page. For example: \"category,product_type,nav_menu\". See the <a target=\"_blank\" href=\"\/app\/themes\/wicket-wp-theme\/custom\/wp_terms_cheat_sheet.php\">cheat sheet<\/a> for available taxonomy slugs on this site (must be an admin).",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -528,5 +528,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1716565691
+    "modified": 1716930699
 }

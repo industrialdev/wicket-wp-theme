@@ -35,6 +35,7 @@
   }
 
   // Set excluded post types
+  $excluded_post_types .= ',acf-field'; // Add the post_types we never want to see
   $excluded_post_types = explode( ',', $excluded_post_types );
   $all_post_types = get_post_types();
   $post_types = array_keys( array_diff( $all_post_types, $excluded_post_types ) );
@@ -217,7 +218,7 @@
                   'text'      => 'Read more',
                   'target'    => '_self',
                 ],
-                'link_type'         => 'button',
+                'link_type'         => 'title',
                 'member_only'       => $member_only,
               ];
 
