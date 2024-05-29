@@ -126,14 +126,14 @@
   <input type="hidden" name="s" value="<?php echo $search_term; ?>" />
 
   <div class="px-4 py-5 lg:px-0">
-      <div class="container max-w-screen-md mx-auto">
-        <h1 class="text-heading-md font-semibold text-center"><?php _e( 'Search Results', 'wicket' ); ?></h1>
+      <div class="container max-w-screen-lg mx-auto">
+        <h1 class="text-heading-xl font-bold text-center"><?php _e( 'Search Results', 'wicket' ); ?></h1>
       </div>
     </div>
 
   <?php if ( $show_search_bar ) : ?>
     <div class="px-4 pb-12 lg:px-0">
-      <div class="max-w-screen-md mx-auto">
+      <div class="max-w-screen-lg mx-auto">
         <p class="text-heading-xs mb-8 text-center"><?php echo $total_posts; ?> <?php _e( 'Results for:', 'wicket' ); ?></p>
         <?php 
         if( $_GET['s'] == 'clearresults' ) {
@@ -167,7 +167,7 @@
         </div>
       <?php endif; // End if $show_filter_bar ?>
 
-      <div class="basis-3/4 pt-4 lg:pt-10 <?php if( !$show_filter_bar ) { echo 'max-w-screen-md lg:mx-auto'; } ?>">
+      <div class="pt-4 lg:pt-10 <?php if( !$show_filter_bar ) { echo 'max-w-screen-lg lg:mx-auto'; } else { echo 'basis-3/4' ;} ?>">
         <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-7 px-4 lg:px-0">
           <div>Displaying:
             <?php
