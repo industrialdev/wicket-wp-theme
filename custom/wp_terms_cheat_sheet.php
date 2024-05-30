@@ -8,10 +8,35 @@ $user_roles = $current_user->roles;
 if( !in_array( 'administrator', $user_roles ) || empty( $user_roles ) ) {
   die();
 }
+?>
 
-?><h1>Taxonomies:</h1><?php
+<style>
+  .toggleable:hover {
+    cursor: pointer;
+  }
+</style>
+<script src="//unpkg.com/alpinejs" defer></script>
 
-wicket_write_log( get_taxonomies(), true );
+<h1>Taxonomies:</h1><?php
+
+$taxonomies = get_taxonomies();
+wicket_write_log( $taxonomies, true );
+
+?><h1>Taxonomy Terms (click to expand):</h1><?php
+
+foreach( $taxonomies as $taxonomy_slug => $taxonomy_slug2 ) {?>
+  <div x-data="{ open: false }" @click="open = ! open" class="toggleable">
+    <strong>▼ Terms for taxonomy '<?php echo $taxonomy_slug; ?>':</strong>
+    <div x-show="open">
+      <?php
+      wicket_write_log( get_terms( [
+        'taxonomy' => $taxonomy_slug,
+        'hide_empty' => false,
+      ] ), true );
+      ?>
+    </div>
+  </div>
+<?php }
 
 ?><h1>Post Types:</h1><?php
 
