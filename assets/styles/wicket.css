@@ -731,8 +731,8 @@ video {
 .min-w-\[260px\] {
   min-width: 260px;
 }
-.max-w-screen-md {
-  max-width: 768px;
+.max-w-screen-lg {
+  max-width: 1024px;
 }
 .flex-1 {
   -webkit-box-flex: 1;
@@ -2821,6 +2821,9 @@ video {
 .text-heading-sm {
   font-size: clamp(1.25rem, 1vw + 1rem, 1.5rem);
 }
+.text-heading-xl {
+  font-size: clamp(2rem, 2vw + 1rem, 2.25rem);
+}
 .text-heading-xs {
   font-size: clamp(1.125rem, 1vw + 1rem, 1.25rem);
 }
@@ -2829,9 +2832,6 @@ video {
 }
 .font-normal {
   font-weight: 400;
-}
-.font-semibold {
-  font-weight: 600;
 }
 .text-dark-100 {
   --tw-text-opacity: 1;
@@ -3536,6 +3536,15 @@ h6 {
  * ------------------------------------------------------------------------- */
 .wp-block-buttons.wp-block-buttons-is-layout-flex {
   gap: var(--wp--preset--spacing--150);
+}
+.wp-block-buttons .wp-block-button {
+  width: unset;
+}
+.wp-block-buttons .wp-block-button.alignfull {
+  width: 100%;
+}
+.wp-block-buttons.alignfull .wp-block-button {
+  width: 100%;
 }
 
 .wp-block-button {

@@ -2,9 +2,23 @@
  * CORE BUTTON BLOCK
  * ------------------------------------------------------------------------- */
 
-.wp-block-buttons {
+ .wp-block-buttons {
   &.wp-block-buttons-is-layout-flex {
     gap: var(--wp--preset--spacing--150);
+  }
+
+  // Don't let general block widths mess with button widths
+  .wp-block-button {
+    width: unset;
+
+    &.alignfull {
+      width: 100%;
+    }
+  }
+  &.alignfull {
+    .wp-block-button {
+      width: 100%;
+    }
   }
 }
 
