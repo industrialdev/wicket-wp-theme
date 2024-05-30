@@ -201,7 +201,15 @@ module.exports = {
     'aspect-[3/2]',
     {pattern: /(grid-cols|grid-rows)-./},
     {pattern: /(opacity)-./},
+    // Adding styles to safelist for usage on Blocks in Editor:
     {pattern: /(rounded)-./},
+    {pattern: /(shadow)-./},
+    {pattern: /(drop-shadow)-./},
+    {pattern: /(gradient)-./},
+    {pattern: /(from)-./},
+    {pattern: /(via)-./},
+    {pattern: /(to)-./},
+    {pattern: /(blend)-./},
   ],
 }
 
