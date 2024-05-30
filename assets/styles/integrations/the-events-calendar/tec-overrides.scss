@@ -1,0 +1,16 @@
+#tribe-events-pg-template, .tribe-events-pg-template {
+  max-width: unset;
+  padding: 0;
+
+  .tribe-events-back, .tribe-events-single-event-title, 
+  #tribe-events-footer, .tribe-block, .tribe-events-schedule, 
+  *[class*='tribe-block__'], .tribe-related-events {
+    //@apply container;
+    @include the-container;
+   }
+
+   // Hiding event title and breadcrumbs since we add it with our Banner block
+   .tribe-events-single-event-title, .tribe-events-back {
+    display: none;
+   }
+}
