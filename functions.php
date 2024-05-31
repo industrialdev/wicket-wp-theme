@@ -24,3 +24,4 @@ require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/post-types.php';
 require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/taxonomies.php';
 require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/event_ticket_attendees_field_hooks.php';
 require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/redirections.php';
+require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/search.php';

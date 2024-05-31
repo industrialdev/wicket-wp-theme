@@ -8,9 +8,6 @@
   $show_search_bar         = $options_group['show_search_bar'] ?? true;
 
   // Filter configs
-  $excluded_post_types     = $options_group['excluded_post_types'] ?? '';
-  $excluded_post_ids       = $options_group['excluded_post_ids'] ?? '';
-  $posts_per_page          = $options_group['posts_per_page'] ?? 10;
   $show_filter_bar         = $options_group['show_filter_bar'] ?? true;
   $taxonomy_filters_field  = $options_group['taxonomy_filters'] ?? '';
   $show_filter_by_pub_date = $options_group['show_filter_by_published_date'] ?? true;
@@ -23,26 +20,6 @@
 
   // TODO: Add support for advanced/elastic search
 
-  $search_term = $_GET['s'] ?? '';
-
-
-  // Set the page sorting based on parameter
-  $order = 'DESC';
-  if( isset( $_GET['sortby'] ) ) {
-    if( $_GET['sortby'] == 'old-to-new' ) {
-      $order = 'ASC';
-    }
-  }
-
-  // Set excluded post types
-  $excluded_post_types .= ',acf-field'; // Add the post_types we never want to see
-  $excluded_post_types = explode( ',', $excluded_post_types );
-  $all_post_types = get_post_types();
-  $post_types = array_keys( array_diff( $all_post_types, $excluded_post_types ) );
-
-  // Set excluded post IDs
-  $excluded_post_ids = explode( ',', $excluded_post_ids );
-
   // Create taxonomy filters array
   $taxonomy_filters_field = explode( ',', $taxonomy_filters_field );
   $taxonomy_filters = [];
@@ -53,53 +30,23 @@
     ];
   }
 
-  // Loop through each taxonomy, check if it is a URL param, and build the tax_query based on those
-  $tax_query = [ 
-		'relation' => 'AND',
-	];
 
-  foreach( $taxonomy_filters_field as $taxonomy_slug ) {
-    if( isset( $_GET[$taxonomy_slug] ) ) {
-      $taxonomy_args = [ 
-        'taxonomy' => $taxonomy_slug,
-        'field'    => 'slug',
-        'operator' => 'IN',
-        'terms'    => $_GET[$taxonomy_slug],
-      ];
-      array_push( $tax_query, $taxonomy_args );
-    }
-  }
-
-  $args = [ 
-    'post_type'      => $post_types,
-    'posts_per_page' => $posts_per_page,
-    'paged'          => $paged,
-    'orderby'        => 'date',
-    'order'          => $order,
-    's'              => $search_term,
-    'post__not_in'   => $excluded_post_ids,
-    'tax_query'      => $tax_query,
-  ];
-
-  /* Add start date and end date to tax query if they are set */
-  if ( isset( $_GET['start_date'] ) && isset( $_GET['end_date'] ) ) {
-    $start_date = $_GET['start_date'];
-    $end_date   = $_GET['end_date'];
-
-    $args['date_query'] = [ 
-      'after'     => $start_date,
-      'before'    => $end_date,
-      'inclusive' => true,
-    ];
-  }
-
-  $query       = new WP_Query( $args );
+  //$query       = new WP_Query( $args );
+  $query       = $wp_query; // Using the WordPress-provided query object that gets modified in custom/search.php
   $posts       = $query->posts;
   $total_posts = $query->found_posts;
   $page_num    = ( $paged == 0 ) ? 1 : $paged;
   $start_page  = ($page_num * $posts_per_page) - ($posts_per_page - 1);
   $end_page    = ($page_num * $posts_per_page);
   $end_page    = ($total_posts < $end_page) ? $total_posts : $end_page;
+  $page_count  = $total_posts / $posts_per_page;
+
+  // wicket_write_log( 'Total posts: ' . $total_posts, true );
+  // wicket_write_log( 'Page num: ' . $page_num, true );
+  // wicket_write_log( 'Start page: ' . $start_page, true );
+  // wicket_write_log( 'End page: ' . $end_page, true );
+  //wicket_write_log( $posts, true );
+
 
 ?>
 
@@ -226,7 +173,7 @@
 
             endwhile;
             the_wicket_pagination( [ 
-              'total' => $query->max_num_pages,
+              'total' => $page_count,
               'format' => '?paged=%#%',
             ] );
             ?>
