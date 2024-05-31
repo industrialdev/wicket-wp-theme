@@ -39,7 +39,7 @@
   $start_page  = ($page_num * $posts_per_page) - ($posts_per_page - 1);
   $end_page    = ($page_num * $posts_per_page);
   $end_page    = ($total_posts < $end_page) ? $total_posts : $end_page;
-  $page_count  = $total_posts / $posts_per_page;
+  $page_count  = ceil( $total_posts / $posts_per_page );
 
   // wicket_write_log( 'Total posts: ' . $total_posts, true );
   // wicket_write_log( 'Page num: ' . $page_num, true );
