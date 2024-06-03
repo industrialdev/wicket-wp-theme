@@ -16,9 +16,11 @@
                 "class": "",
                 "id": ""
             },
+            "wpml_cf_preferences": 0,
             "choices": {
                 "plus-minus": "Plus\/Minus",
-                "chevrons": "Chevrons"
+                "chevrons": "Chevrons",
+                "carets": "Carets"
             },
             "default_value": "chevrons",
             "return_format": "value",
@@ -47,5 +49,6 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1707342222
+    "acfml_field_group_mode": "advanced",
+    "modified": 1717415239
 }
