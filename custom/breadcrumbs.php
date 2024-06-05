@@ -9,11 +9,13 @@ function wicket_breadcrumb() {
 	$items = wp_get_nav_menu_items( $theme_locations['header'] );
 	_wp_menu_item_classes_by_context( $items );
 
+	$separator_icon = apply_filters('wicket_breadcrumb_separator_icon', 'fa-solid fa-chevron-right');
+
 	$separator = get_component(
 		'icon',
-		[ 
+		[
 			'classes' => [ '' ],
-			'icon'    => 'fa-solid fa-chevron-right',
+			'icon'    => $separator_icon,
 			'text'    => '',
 		],
 		false
@@ -21,11 +23,11 @@ function wicket_breadcrumb() {
 	$crumbs    = [];
 	$crumbs[]  = get_component(
 		'link',
-		[ 
+		[
 			'classes'  => [ 'flex' ],
 			'url'      => get_home_url(),
 			'text'     => __( 'Home', 'wicket' ),
-			'icon'     => [ 
+			'icon'     => [
 				'icon' => 'fa-regular fa-house',
 			],
 			'icon_pos' => 'start', // 'start' or 'end'
@@ -52,7 +54,7 @@ function wicket_breadcrumb() {
 			foreach ( $anc as $ancestor ) {
 				$crumbs[] = get_component(
 					'link',
-					[ 
+					[
 						'classes' => [ '' ],
 						'url'     => get_permalink( $ancestor ),
 						'text'    => get_the_title( $ancestor ),
