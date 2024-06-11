@@ -139,12 +139,14 @@ function init( $block = [] ) {
 		}
 	}
 
+	$search_form_bg_color = apply_filters( 'wicket_listing_search_form_bg_color', 'bg-dark-010' );
+
 	?>
 
 	<form action="">
 
 		<?php if ( ! $hide_search ) : ?>
-			<div class="bg-dark-010 px-4 py-5 lg:px-0">
+			<div class="<?php echo $search_form_bg_color ?> px-4 py-5 lg:px-0">
 				<div class="container">
 					<?php get_component( 'search-form' ); ?>
 				</div>
