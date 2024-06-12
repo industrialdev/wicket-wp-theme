@@ -131,7 +131,7 @@ function get_related_content_type( $post_type ) {
 
 	$content_types = apply_filters( 'wicket_related_content_types', $default_content_types );
 
-	return isset( $cases[ $post_type ] ) ? $content_types[ $post_type ] : '';
+	return isset( $content_types[ $post_type ] ) ? $content_types[ $post_type ] : '';
 }
 
 function get_related_content_type_term( $post_id ) {
