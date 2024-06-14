@@ -269,6 +269,10 @@ function init( $block = [] ) {
 								$related_topic_type = get_related_topic_type( get_post_type( $post_id ) );
 								$topics             = get_the_terms( $post_id, $related_topic_type );
 
+								if ( $post_type == 'tribe_events' ) {
+									$date = tribe_get_start_date( $post_id, false, 'F j, Y' );
+								}
+
 								$card_params = [ 
 									'classes'        => [ 'mb-6' ],
 									'content_type'   => ! $hide_type_taxonomy ? get_related_content_type_term( $post_id ) : '',
