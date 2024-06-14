@@ -1,0 +1,163 @@
+{
+    "key": "group_666c67fee28e7",
+    "title": "Block - Org Search\/Select",
+    "fields": [
+        {
+            "key": "field_666c67ffc9ac5",
+            "label": "Search Mode",
+            "name": "orgss_search_mode",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "org": "Organizations",
+                "groups": "Groups (Beta, In Development)"
+            },
+            "default_value": "org",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_666c6876c9ac6",
+            "label": "Organization Type",
+            "name": "orgss_search_org_type",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "If left blank, all organization types will be searchable. If you wish to filter, you'll need to provide the \"slug\" of the organization type, e.g. \"it_company\".",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_666c67ffc9ac5",
+                        "operator": "==",
+                        "value": "org"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_666c693540f4b",
+            "label": "Relationship Type Upon Org Creation",
+            "name": "orgss_relationship_type_upon_org_creation",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_666c67ffc9ac5",
+                        "operator": "==",
+                        "value": "org"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "employee",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_666c697d40f4c",
+            "label": "Relationship Mode",
+            "name": "orgss_relationship_mode",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_666c67ffc9ac5",
+                        "operator": "==",
+                        "value": "org"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "person_to_organization",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_666c69ad40f4d",
+            "label": "Org Type When User Creates New Org",
+            "name": "orgss_new_org_type_override",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "If left blank, the user will be allowed to select the organization type themselves from the frontend.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_666c67ffc9ac5",
+                        "operator": "==",
+                        "value": "org"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "wicket\/org-search-select"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1718382261
+}
