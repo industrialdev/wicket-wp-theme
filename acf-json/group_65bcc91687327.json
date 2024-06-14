@@ -38,13 +38,7 @@
                 "id": ""
             },
             "wpml_cf_preferences": 1,
-            "post_type": [
-                "post",
-                "page",
-                "news",
-                "resources",
-                "product"
-            ],
+            "post_type": "",
             "post_status": [
                 "publish"
             ],
@@ -217,5 +211,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "translation",
-    "modified": 1711446330
+    "modified": 1718357017
 }
