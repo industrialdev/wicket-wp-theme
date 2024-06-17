@@ -29,6 +29,8 @@ function init( $block = [] ) {
   //   'new_org_type_override'               => '',
 	// ];
   // require_once( __DIR__ . '../../../../../plugins/wicket-wp-base-plugin/includes/components/org-search-select.php' );
+  
+  // TODO: Make these options dynamic
 	get_component( 'org-search-select', [ 
     'classes'                             => [],
     'search_mode'                         => 'org', // Options: org, groups, ...
