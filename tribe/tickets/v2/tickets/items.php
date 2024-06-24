@@ -61,8 +61,9 @@ foreach ( $tickets_on_sale as $key => $ticket ) {
 	$visibility = get_post_meta($ticket->ID, '_wppcp_post_page_visibility', true);
 	$visibility_roles = get_post_meta($ticket->ID, '_wppcp_post_page_roles', true);
   $can_see_this = false;
+  $message = '';
 
-  if ($visibility == 'none' || $visibility == 'all' || $visibility == 'guest') {
+  if ($visibility == '' || $visibility == 'none' || $visibility == 'all' || $visibility == 'guest') {
     $can_see_this = true;
   }
 
