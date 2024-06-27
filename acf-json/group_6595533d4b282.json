@@ -513,6 +513,34 @@
             "prefix_name": 1
         },
         {
+            "key": "field_667d6b8b5bcf7",
+            "label": "Download Button Label",
+            "name": "banner_download_button_label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Only available in single post pages.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_65e98afe3e757",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 2,
+            "default_value": "Download",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_65e98b933e758",
             "label": "Helper Link",
             "name": "banner_helper_link",
@@ -579,5 +607,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "translation",
-    "modified": 1719494043
+    "modified": 1719496292
 }

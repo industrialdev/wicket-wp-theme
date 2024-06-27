@@ -28,6 +28,7 @@ function init( $block = [] ) {
 	$back_link                = get_field( 'banner_back_link' );
 	$download_file            = get_field( 'banner_download_file' );
 	$download_button_style    = get_field( 'banner_download_button_button_style' );
+	$download_button_label    = get_field( 'banner_download_button_label' );
 	$helper_link              = get_field( 'banner_helper_link' );
 	$helper_link_button_style = get_field( 'banner_helper_link_button_button_style' );
 
@@ -49,6 +50,7 @@ function init( $block = [] ) {
 		'back_link'                => $back_link,
 		'download_file'            => $download_file,
 		'download_button_style'    => $download_button_style,
+		'download_button_label'    => $download_button_label,
 		'helper_link'              => $helper_link,
 		'helper_link_button_style' => $helper_link_button_style,
 	] );
