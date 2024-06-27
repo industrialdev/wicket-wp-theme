@@ -402,7 +402,7 @@
                         },
                         {
                             "key": "field_6598247474c27",
-                            "label": "Variant",
+                            "label": "Button Style",
                             "name": "variant",
                             "aria-label": "",
                             "type": "select",
@@ -475,12 +475,42 @@
                 "class": "",
                 "id": ""
             },
-            "wpml_cf_preferences": 0,
+            "wpml_cf_preferences": 1,
             "return_format": "array",
             "library": "all",
             "min_size": "",
             "max_size": "",
             "mime_types": ""
+        },
+        {
+            "key": "field_667d60393e63b",
+            "label": "Download Button Style",
+            "name": "banner_download_button",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "Only available in single post pages.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_65e98afe3e757",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "clone": [
+                "group_6602a942c7113"
+            ],
+            "display": "group",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 1
         },
         {
             "key": "field_65e98b933e758",
@@ -496,8 +526,38 @@
                 "class": "",
                 "id": ""
             },
-            "wpml_cf_preferences": 0,
+            "wpml_cf_preferences": 1,
             "return_format": "array"
+        },
+        {
+            "key": "field_667d63cf8e049",
+            "label": "Helper Link Button Style",
+            "name": "banner_helper_link_button",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "Only available in single post pages.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_65e98b933e758",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "clone": [
+                "group_6602a942c7113"
+            ],
+            "display": "group",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 1
         }
     ],
     "location": [
@@ -519,5 +579,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "translation",
-    "modified": 1709804679
+    "modified": 1719494043
 }
