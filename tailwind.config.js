@@ -169,6 +169,7 @@ module.exports = {
     './page-templates/**/*.php',
     './assets/scripts/**/*.js',
     './*.php',
+    './woocommerce/**/*.php',
   ],
   theme: {
     extend: {
@@ -217,7 +218,6 @@ module.exports = {
 console.log(
   'Tailwind is using these settings combined from theme.json and manual overrides:'
 )
-console.log(module.exports)
 
 /**
  * Example of the final generated theme config:

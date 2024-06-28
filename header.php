@@ -1,8 +1,8 @@
-<?php 
+<?php
 $lang = 'en';
 $locale = '&locale=en';
 if( defined( 'ICL_LANGUAGE_CODE' ) ) {
-    $locale = ICL_LANGUAGE_CODE == 'fr' ? '&locale=fr' : '&locale=en'; 
+    $locale = ICL_LANGUAGE_CODE == 'fr' ? '&locale=fr' : '&locale=en';
     $lang = ICL_LANGUAGE_CODE;
 }
 ?>
@@ -47,15 +47,15 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
     <?php
-        wp_head(); 
-        
+        wp_head();
+
         echo get_field('tracking_codes_in_head', 'options');
     ?>
 </head>
 
 <body <?php body_class(); ?>>
     <?php echo get_field('tracking_codes_right_after_body', 'options'); ?>
-    <a class="transition left-0 bg-primary text-primary-content absolute p-3 m-3 -translate-y-16 z-10 bg-white focus:translate-y-0" href="#main-content">
+    <a class="transition left-0 bg-primary text-primary-content absolute p-3 m-3 -translate-y-32 z-10 bg-white focus:translate-y-0" href="#main-content">
         <?php echo __( 'Skip to main content', 'wicket' ); ?>
     </a>
 
@@ -70,7 +70,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
         $nav_state = 'logged_out'; // Will be one of logged_out, logged_in_user, logged_in_member
         if( is_user_logged_in() ) {
             $nav_state = 'logged_in_user';
-            
+
             $user = wp_get_current_user();
             if (in_array('member', (array) $user->roles)) {
                 $nav_state = 'logged_in_member';
@@ -99,7 +99,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
             $primary_nav_items = [];
         }
         // Create better primary nav array
-        $primary_nav_items_structured = wicket_generate_structured_menu( $primary_nav_items );          
+        $primary_nav_items_structured = wicket_generate_structured_menu( $primary_nav_items );
 
         // Data formatted for Alpine
         $show_search        = get_field( 'secondary_nav_search_enabled', 'options' ) ? 'true' : 'false';
@@ -121,7 +121,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
         class="w-full flex flex-col bg-white text-primary-100"
     >
         <!-- Utility Nav -->
-        <div 
+        <div
             x-show="showUtilityNav"
             x-cloak
             class="utility-nav hidden lg:block w-full bg-dark-100 text-white font-bold"
@@ -137,7 +137,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         }
 
                         $target = $utility_nav_item->target ?? '';
-                        get_component( 'link', [ 
+                        get_component( 'link', [
                             'text'     => $utility_nav_item->title,
                             'classes'  => ['ml-4', $margin_r, 'items-center', 'hidden', 'lg:inline-flex', 'px-2', 'py-1', 'hover:bg-light-040'],
                             'target'   => $target,
@@ -145,7 +145,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         ] );
                         $utility_loop_index++;
                     }
-                ?>                    
+                ?>
             </div>
         </div> <!-- End Utility Nav -->
 
@@ -153,15 +153,15 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
         <div x-ref="secondary-nav" class="secondary-nav w-full px-2 xl:px-0 py-3">
             <div class="container flex items-center justify-between relative ">
                 <!-- Left-aligned hamburger menu button that only shows on Base/SM breakpoints -->
-                <button 
+                <button
                     x-show="! mobileMenuOpen"
                     x-cloak
                     x-on:click="mobileMenuOpen = ! mobileMenuOpen; if(mobileMenuOpen){$dispatch('close-mobile-search')};"
                     x-on:close-mobile-menu.window="mobileMenuOpen = false"
                     class="left-hamburger-button inline-flex md:hidden mr-20 items-center"
                     >
-                    <?php 
-                    get_component( 'icon', [ 
+                    <?php
+                    get_component( 'icon', [
                         'classes' => [ 'text-x-large', 'lg:text-large' ],
                         'icon'    => 'fa-solid fa-bars',
                         'text'    => '',
@@ -169,33 +169,33 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                     ?>
                 </button>
                 <!-- Left-aligned hamburger menu CLOSE button that only shows on Base/SM breakpoints -->
-                <button 
+                <button
                     x-show="mobileMenuOpen"
                     x-cloak
                     x-on:click="mobileMenuOpen = ! mobileMenuOpen"
                     class="right-hamburger-close-button inline-flex md:hidden mr-16 items-center"
                     >
-                    <?php 
-                    get_component( 'icon', [ 
+                    <?php
+                    get_component( 'icon', [
                         'classes' => [ 'text-x-large', 'lg:text-large', 'bg-white', 'rounded-base', 'px-2', 'py-0' ],
                         'icon'    => 'fa-solid fa-x',
                         'text'    => '',
                     ] );
                     ?>
                 </button>
-            
+
                 <!-- Logo -->
                 <a href="/" class="logo w-60"><img src="<?php echo $logo_url; ?>" /></a>
 
                 <!-- Right panel -->
-                <div 
+                <div
                     class="right-panel flex justify-between align-center font-bold"
                     x-bind:class=" searchOpen ? 'lg:flex-grow' : '' "
                     >
                     <?php
                         foreach( $secondary_nav_items as $secondary_nav_item ) {
                             $target = $secondary_nav_item->target ?? '';
-                            get_component( 'link', [ 
+                            get_component( 'link', [
                                 'text'     => $secondary_nav_item->title,
                                 'classes'  => ['secondary-nav-item', 'mr-4', 'items-center', 'hidden', 'lg:inline-flex'],
                                 'target'   => $target,
@@ -204,9 +204,9 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                             ] );
                         }
                     ?>
-                    <?php 
+                    <?php
                     if( $nav_state == 'logged_out' ) {
-                        get_component( 'button', [ 
+                        get_component( 'button', [
                             'variant'   => 'primary',
                             'a_tag'     => true,
                             'link'      => $bam_path,
@@ -215,7 +215,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                             'atts'      => ['x-show="! searchOpen"', 'x-cloak'],
                         ] );
                     } else if ( $nav_state == 'logged_in_user' ) {
-                        get_component( 'button', [ 
+                        get_component( 'button', [
                             'variant'     => 'primary',
                             'a_tag'     => true,
                             'link'      => $bam_path,
@@ -223,7 +223,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                             'label'     => __( 'Become a member', 'wicket' ),
                             'atts'      => [' x-bind:class=" searchOpen ? \'hidden md:inline-flex lg:hidden\' : \'hidden md:inline-flex\' " '],
                         ] );
-                        get_component( 'button', [ 
+                        get_component( 'button', [
                             'variant'     => 'secondary',
                             'a_tag'     => true,
                             'link'      => $account_center_landing,
@@ -232,7 +232,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                             'atts'      => ['x-show="! searchOpen"', 'x-cloak'],
                         ] );
                     } else if ( $nav_state == 'logged_in_member' ) {
-                        get_component( 'button', [ 
+                        get_component( 'button', [
                             'variant'     => 'secondary',
                             'a_tag'     => true,
                             'link'      => $account_center_landing,
@@ -244,7 +244,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                     ?>
                     <?php if( $nav_state == 'logged_out' ): ?>
                         <?php
-                            get_component( 'link', [ 
+                            get_component( 'link', [
                                 'text'     => __( 'Login', 'wicket' ),
                                 'classes'  => ['login-button', 'mx-4', 'items-center', 'hidden', 'lg:inline-flex'],
                                 'url'      => get_option('wp_cassify_base_url').'login?service='.$referrer,
@@ -253,7 +253,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         ?>
                     <?php else: ?>
                         <?php
-                            get_component( 'link', [ 
+                            get_component( 'link', [
                                 'text'     => __( 'Logout', 'wicket' ),
                                 'classes'  => ['logout-button', 'mx-4', 'items-center', 'hidden', 'lg:inline-flex'],
                                 'url'      => wp_logout_url(),
@@ -266,7 +266,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         <form class="flex" action="/" method="get">
                             <label for="search" class="hidden"><?php _e('Search the website', 'wicket'); ?></label>
                             <input class="w-full p-1" type="text" name="s" id="search" value="<?php the_search_query(); ?>" placeholder="<?php _e('Search by Keyword', 'wicket'); ?>" />
-                            <?php get_component( 'button', [ 
+                            <?php get_component( 'button', [
                                 'variant'     => 'primary',
                                 'type'      => 'submit',
                                 'label'     => __( 'Search', 'wicket' ),
@@ -276,7 +276,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                     </div>
                     <!-- End search field -->
                     <!-- Start search button states -->
-                    <button 
+                    <button
                         x-on:click="searchOpen = ! searchOpen; if(searchOpen){$dispatch('close-mobile-menu')};"
                         x-on:close-mobile-search.window="searchOpen = false"
                         x-show="showSearch"
@@ -284,8 +284,8 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         class="search-toggle-button mx-4 inline-flex items-center"
                     >
                         <span x-show="! searchOpen" x-cloak>
-                        <?php 
-                        get_component( 'icon', [ 
+                        <?php
+                        get_component( 'icon', [
                             'classes' => [ 'text-x-large', 'lg:text-large' ],
                             'icon'    => 'fa-solid fa-magnifying-glass',
                             'text'    => '',
@@ -293,8 +293,8 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         ?>
                         </span>
                         <span x-show="searchOpen" x-cloak>
-                        <?php 
-                        get_component( 'icon', [ 
+                        <?php
+                        get_component( 'icon', [
                             'classes' => [ 'text-x-large', 'lg:text-large', 'bg-white', 'rounded-base', 'px-2', 'py-0' ],
                             'icon'    => 'fa-solid fa-x',
                             'text'    => '',
@@ -305,8 +305,8 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                     <!-- End search button states -->
 
                     <a x-show="showCart" x-cloak href="<?php echo $cart_path; ?>" class="cart-button ml-4 md:mx-4 inline-flex items-center">
-                        <?php 
-                        get_component( 'icon', [ 
+                        <?php
+                        get_component( 'icon', [
                             'classes' => [ 'text-x-large', 'lg:text-large' ],
                             'icon'    => 'fa-regular fa-cart-shopping',
                             'text'    => '',
@@ -326,8 +326,8 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         class="right-hamburger-button hidden md:inline-flex lg:hidden ml-4 items-center"
                     >
                         <span x-show="! mobileMenuOpen" x-cloak>
-                        <?php 
-                        get_component( 'icon', [ 
+                        <?php
+                        get_component( 'icon', [
                             'classes' => [ 'text-x-large', 'lg:text-large', 'px-2' ],
                             'icon'    => 'fa-solid fa-bars',
                             'text'    => '',
@@ -335,8 +335,8 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         ?>
                         </span>
                         <span x-show="mobileMenuOpen" x-cloak>
-                        <?php 
-                        get_component( 'icon', [ 
+                        <?php
+                        get_component( 'icon', [
                             'classes' => [ 'text-x-large', 'lg:text-large', 'bg-dark-040', 'rounded-base', 'px-2', 'py-0' ],
                             'icon'    => 'fa-solid fa-x',
                             'text'    => '',
@@ -351,8 +351,8 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
         <!-- Main Nav -->
         <nav x-ref="main-nav" class="main-nav w-full hidden lg:flex border-t-base border-b-base border-dark-040">
             <ul class="container w-full gap-4 flex relative <?php if( count($primary_nav_items_structured) > 4 ) { echo 'justify-between'; } else { echo 'justify-evenly'; } ?>">
-            <?php 
-            foreach( $primary_nav_items_structured as $primary_nav_item ): 
+            <?php
+            foreach( $primary_nav_items_structured as $primary_nav_item ):
                 // If this is a single menu item link
                 if( $primary_nav_item['child_count'] == 0 ):
                 ?>
@@ -361,7 +361,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                   >
                         <?php
                         $target = $primary_nav_item['target'] ?? '';
-                        get_component( 'link', [ 
+                        get_component( 'link', [
                               'text'     => $primary_nav_item['title'],
                               'classes'  => [],
                               'target'   => $target,
@@ -370,7 +370,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         ?>
                   </li>
 
-                <?php 
+                <?php
                 // If this menu item only has immediate children AND has item count <= 8
                 elseif ( $primary_nav_item['child_count'] > 0 && $primary_nav_item['child_count'] <= 8 && $primary_nav_item['grand_child_count'] == 0 ):
                 ?>
@@ -384,23 +384,23 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                             if( $event.target !== $el ) {navDropdownOpen = false}"
                         >
                         <?php echo $primary_nav_item['title']; ?><i class="fa-solid fa-caret-down ml-2"></i>
-                        
-                        <ul 
+
+                        <ul
                             x-show="navDropdownOpen"
                             x-cloak
                             x-transition
                             class="nav-dropdown absolute z-20 left-0 mt-3 w-56 bg-white p-3 lg:p-7 shadow-lg"
                         >
-                            <?php 
+                            <?php
                             $child_loop_index = 0;
-                            foreach( $primary_nav_item['children'] as $child ): 
+                            foreach( $primary_nav_item['children'] as $child ):
                                 // If this is the last element in the list
                                 $is_last_element = $child_loop_index == ( count( $primary_nav_item['children'] ) - 1 );
                                 ?>
                                 <li class="<?php if(!$is_last_element){echo 'mb-4';}?>">
                                     <?php
                                     $target = $child['target'] ?? '';
-                                    get_component( 'link', [ 
+                                    get_component( 'link', [
                                           'text'     => $child['title'],
                                           'classes'  => [],
                                           'target'   => $target,
@@ -408,7 +408,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                                     ] );
                                     ?>
                                 </li>
-                                <?php 
+                                <?php
                                 $child_loop_index++;
                             endforeach; ?>
                         </ul>
@@ -437,15 +437,15 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                             x-transition
                             class="nav-mega-dropdown container absolute z-20 flex gap-2 left-0 mt-3 w-full bg-white p-3 lg:p-7 shadow-lg flex-wrap"
                             >
-                            <?php 
-                            foreach ( $primary_nav_item['children'] as $child ): 
+                            <?php
+                            foreach ( $primary_nav_item['children'] as $child ):
                                 // Just print these as a header if there are no children
                                 if( $child['child_count'] == 0 ):
                                 ?>
                                     <div class="w-1/4">
                                         <?php
                                         $target = $child['target'] ?? '';
-                                        get_component( 'link', [ 
+                                        get_component( 'link', [
                                             'text'     => $child['title'],
                                             'classes'  => ['block', 'pb-2', 'mb-2', 'mr-2', 'text-primary-100', 'font-bold', 'border-b-medium', 'border-dark-100'],
                                             'target'   => $target,
@@ -454,12 +454,12 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                                         ?>
                                     </div>
                                 <?php
-                                else: 
+                                else:
                                 ?>
                                     <div class="w-1/4">
                                         <?php
                                         $target = $child['target'] ?? '';
-                                        get_component( 'link', [ 
+                                        get_component( 'link', [
                                             'text'     => $child['title'],
                                             'classes'  => ['block', 'pb-2', 'mb-2', 'mr-2', 'text-primary-100', 'font-bold', 'border-b-medium', 'border-dark-100'],
                                             'target'   => $target,
@@ -471,7 +471,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                                                 <li class="mb-4">
                                                       <?php
                                                       $target = $grand_child['target'] ?? '';
-                                                      get_component( 'link', [ 
+                                                      get_component( 'link', [
                                                             'text'     => $grand_child['title'],
                                                             'classes'  => [],
                                                             'target'   => $target,
@@ -486,7 +486,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                             <?php endforeach; ?>
                         </div> <!-- End Mega Menu -->
                     </li> <!-- End Nav Item -->
-                <?php 
+                <?php
                 endif;
             endforeach; // End main nav looping?>
 
@@ -495,17 +495,17 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
 
         <!-- Mobile Menu -->
         <div
-            x-show="mobileMenuOpen" 
+            x-show="mobileMenuOpen"
             x-cloak
-            x-transition 
+            x-transition
             x-anchor.bottom-start="$refs.secondary-nav"
             class="w-full bg-white border-t-base border-b-base font-bold"
             >
             <div class="pt-3 pb-2 px-3">
-                <?php 
+                <?php
                 // Conditional Account Buttons
                 if( $nav_state == 'logged_out' ) {
-                    get_component( 'button', [ 
+                    get_component( 'button', [
                         'variant'     => 'primary',
                         'a_tag'     => true,
                         'link'      => $bam_path,
@@ -513,14 +513,14 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         'label'     => __( 'Create Account', 'wicket' ),
                     ] );
                 } else if ( $nav_state == 'logged_in_user' ) {
-                    get_component( 'button', [ 
+                    get_component( 'button', [
                         'variant'     => 'primary',
                         'a_tag'     => true,
                         'link'      => $bam_path,
                         'classes'     => ['become-a-member-button-mobile', 'w-full', 'mb-2', 'justify-center', 'md:hidden'],
                         'label'     => __( 'Become a member', 'wicket' ),
                     ] );
-                    get_component( 'button', [ 
+                    get_component( 'button', [
                         'variant'     => 'secondary',
                         'a_tag'     => true,
                         'link'      => $account_center_landing,
@@ -528,7 +528,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         'label'     => __( 'My Account', 'wicket' ),
                     ] );
                 } else if ( $nav_state == 'logged_in_member' ) {
-                    get_component( 'button', [ 
+                    get_component( 'button', [
                         'variant'     => 'secondary',
                         'a_tag'     => true,
                         'link'      => $account_center_landing,
@@ -537,16 +537,16 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                     ] );
                 }
                 ?>
-                <?php 
+                <?php
                 // Conditional login/logout buttons
                 if( $nav_state == 'logged_out' ) {
-                    get_component( 'link', [ 
+                    get_component( 'link', [
                         'text'     => __( 'Login', 'wicket' ),
                         'classes'  => ['login-button-mobile', 'block', 'text-center', 'mb-2'],
                         'url'    => get_option('wp_cassify_base_url').'login?service='.$referrer,
                     ] );
                 } else {
-                    get_component( 'link', [ 
+                    get_component( 'link', [
                         'text'     => __( 'Logout', 'wicket' ),
                         'classes'  => ['logout-button-mobile', 'block', 'text-center', 'mb-2'],
                         'url'    => wp_logout_url(),
@@ -557,7 +557,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                 // Secondary Nav Items
                 foreach( $secondary_nav_items as $secondary_nav_item ) {
                     $target = $secondary_nav_item->target ?? '';
-                    get_component( 'link', [ 
+                    get_component( 'link', [
                         'text'     => $secondary_nav_item->title,
                         'classes'  => ['secondary-nav-item-mobile', 'block', 'mb-2'],
                         'target'   => $target,
@@ -573,15 +573,15 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
             </div> <!-- End items above main nav items and utility nav -->
 
             <div class="font-normal">
-            <?php 
+            <?php
             // Loop main nav items
-                  foreach( $primary_nav_items_structured as $primary_nav_item ): 
+                  foreach( $primary_nav_items_structured as $primary_nav_item ):
                   // If this is a single menu item link
                   if( $primary_nav_item['child_count'] == 0 ):
                   ?>
-                        <?php 
+                        <?php
                         $target = $primary_nav_item['target'] ?? '';
-                        get_component( 'link', [ 
+                        get_component( 'link', [
                               'text'     => $primary_nav_item['title'],
                               'classes'  => ['single-nav-item-mobile', 'block', 'p-3', 'border-t-base', 'border-dark-060'],
                               'target'   => $target,
@@ -589,7 +589,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         ] );
                         ?>
 
-                  <?php 
+                  <?php
                   // If this menu item only has immediate children AND has item count <= 8
                   elseif ( $primary_nav_item['child_count'] > 0 && $primary_nav_item['child_count'] <= 8 && $primary_nav_item['grand_child_count'] == 0 ):
                   ?>
@@ -602,7 +602,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                               x-on:close-nav-dropdowns.window="
                               if( $event.target !== $el ) {navDropdownOpen = false}"
                               >
-                              <div 
+                              <div
                                     class="inline-flex justify-between items-center w-full p-3"
                                     x-bind:class=" navDropdownOpen ? 'bg-dark-040' : '' "
                               >
@@ -610,23 +610,23 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                                     <i x-show="! navDropdownOpen" x-cloak class="fa-solid fa-caret-down"></i>
                                     <i x-show="navDropdownOpen" x-cloak class="fa-solid fa-caret-up"></i>
                               </div>
-                              
-                              <ul 
+
+                              <ul
                               x-show="navDropdownOpen"
                               x-cloak
                               x-transition
                               class="nav-dropdown-mobile block w-full bg-white p-3"
                               >
-                              <?php 
+                              <?php
                               $child_loop_index = 0;
-                              foreach( $primary_nav_item['children'] as $child ): 
+                              foreach( $primary_nav_item['children'] as $child ):
                                     // If this is the last element in the list
                                     $is_last_element = $child_loop_index == ( count( $primary_nav_item['children'] ) - 1 );
                                     ?>
                                     <li class="<?php if(!$is_last_element){echo 'mb-4';}?>">
                                           <?php
                                           $target = $child['target'] ?? '';
-                                          get_component( 'link', [ 
+                                          get_component( 'link', [
                                                 'text'     => $child['title'],
                                                 'classes'  => [],
                                                 'target'   => $target,
@@ -634,7 +634,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                                           ] );
                                           ?>
                                     </li>
-                                    <?php 
+                                    <?php
                                     $child_loop_index++;
                               endforeach; ?>
                               </ul>
@@ -655,7 +655,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                               x-on:close-nav-dropdowns.window="
                               if( $event.target !== $el ) {navDropdownOpen = false}"
                               >
-                              <div 
+                              <div
                                     class="inline-flex justify-between items-center w-full p-3"
                                     x-bind:class=" navDropdownOpen ? 'bg-dark-040' : '' "
                               >
@@ -663,22 +663,22 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                                     <i x-show="! navDropdownOpen" x-cloak class="fa-solid fa-caret-down"></i>
                                     <i x-show="navDropdownOpen" x-cloak class="fa-solid fa-caret-up"></i>
                               </div>
-                              
-                              <ul 
+
+                              <ul
                               x-show="navDropdownOpen"
                               x-cloak
                               x-transition
                               class="nav-dropdown-mobile block w-full bg-white"
                               >
-                              <?php 
-                              foreach( $primary_nav_item['children'] as $child ): 
-                  
+                              <?php
+                              foreach( $primary_nav_item['children'] as $child ):
+
 
                                     // Just print these as a header if there are no children
                                     if( $child['child_count'] == 0 ):
 
                                     $target = $child['target'] ?? '';
-                                    get_component( 'link', [ 
+                                    get_component( 'link', [
                                           'text'     => $child['title'],
                                           'classes'  => ['block', 'p-3', 'border-dark-060', 'font-bold', 'border-b-medium', 'border-dark-100'],
                                           'target'   => $target,
@@ -687,7 +687,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                                     ?>
 
                                     <?php
-                                    else: 
+                                    else:
                                     ?>
                                           <div
                                                 class="flex flex-col w-full border-dark-060 relative hover:cursor-pointer"
@@ -698,7 +698,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                                                 x-on:close-sub-nav-dropdowns.window="
                                                 if( $event.target !== $el ) {subNavDropdownOpen = false}"
                                                 >
-                                                <div 
+                                                <div
                                                       class="inline-flex justify-between items-center w-full p-3 font-bold border-b-medium border-dark-100"
                                                       x-bind:class=" subNavDropdownOpen ? 'bg-dark-040' : '' "
                                                 >
@@ -713,16 +713,16 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                                                 x-transition
                                                 class="block w-full bg-white p-3"
                                           >
-                                                <?php 
+                                                <?php
                                                 $child_loop_index = 0;
-                                                foreach( $child['children'] as $grand_child ): 
+                                                foreach( $child['children'] as $grand_child ):
                                                       // If this is the last element in the list
                                                       $is_last_element = $child_loop_index == ( count( $child['children'] ) - 1 );
                                                       ?>
                                                       <li class="<?php if(!$is_last_element){echo 'mb-4';}?>">
                                                             <?php
                                                             $target = $grand_child['target'] ?? '';
-                                                            get_component( 'link', [ 
+                                                            get_component( 'link', [
                                                                   'text'     => $grand_child['title'],
                                                                   'classes'  => [],
                                                                   'target'   => $target,
@@ -730,16 +730,16 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                                                             ] );
                                                             ?>
                                                       </li>
-                                                      <?php 
+                                                      <?php
                                                       $child_loop_index++;
                                                 endforeach; ?>
                                           </ul>
                                           </div>
-                                    <?php endif; 
+                                    <?php endif;
                               endforeach; ?>
                               </ul>
                         </div> <!-- End Nav Item -->
-                  <?php 
+                  <?php
                   endif;
                   endforeach; // End main nav looping ?>
             </div>
@@ -750,21 +750,21 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                 // Utility Nav Items
                 foreach( $utility_nav_items as $utility_nav_item ) {
                     $target = $utility_nav_item->target ?? '';
-                    get_component( 'link', [ 
+                    get_component( 'link', [
                         'text'     => $utility_nav_item->title,
                         'classes'  => ['block', 'px-2', 'py-2', 'hover:bg-light-040'],
                         'target'   => $target,
                         'url'    => $utility_nav_item->url,
                     ] );
                 }
-                ?>   
+                ?>
             </div>
             <?php endif; ?>
 
         </div>
 
-        <!-- Mobile Search --> 
-        <div 
+        <!-- Mobile Search -->
+        <div
             x-show="searchOpen"
             x-cloak
             x-transition
@@ -774,7 +774,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
             <form class="flex" action="/" method="get">
                 <label for="search" class="hidden"><?php _e('Search the website', 'wicket'); ?></label>
                 <input class="w-full p-1" type="text" name="s" id="search" value="<?php the_search_query(); ?>" placeholder="<?php _e('Search by Keyword', 'wicket'); ?>" />
-                <?php get_component( 'button', [ 
+                <?php get_component( 'button', [
                     'variant'     => 'primary',
                     'type'      => 'submit',
                     'label'     => __( 'Search', 'wicket' ),
@@ -785,7 +785,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
 
     </header>
 
-    <?php 
+    <?php
     /* Conditionally-rendered helpers: */
 
     $wicket_helpers_current_user = wp_get_current_user();
@@ -815,13 +815,13 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
         <div class="fixed hidden 2xl:block bottom-0 right-0 bg-dark-080 text-light-000 p-2">2XL</div>
     <?php endif; ?>
 
-    <?php 
+    <?php
     // Tailwind Colour Variance View
     if( isset( $_GET['colours'] ) && $wicket_is_administrator ):
         // NOTE: If you need to update the below array, use ?generate_colours_array, which will generate a fresh associative array that you can paste in as the value of $all_possible_colours
         $all_possible_colours = ['primary' => ['bg-primary-000', 'bg-primary-010', 'bg-primary-020', 'bg-primary-030', 'bg-primary-040', 'bg-primary-050', 'bg-primary-060', 'bg-primary-070', 'bg-primary-080', 'bg-primary-090', 'bg-primary-100', 'bg-primary-110', 'bg-primary-120', 'bg-primary-130', 'bg-primary-140', 'bg-primary-150', 'bg-primary-160', 'bg-primary-170', 'bg-primary-180', 'bg-primary-190', 'bg-primary-200', ], 'secondary' => ['bg-secondary-000', 'bg-secondary-010', 'bg-secondary-020', 'bg-secondary-030', 'bg-secondary-040', 'bg-secondary-050', 'bg-secondary-060', 'bg-secondary-070', 'bg-secondary-080', 'bg-secondary-090', 'bg-secondary-100', 'bg-secondary-110', 'bg-secondary-120', 'bg-secondary-130', 'bg-secondary-140', 'bg-secondary-150', 'bg-secondary-160', 'bg-secondary-170', 'bg-secondary-180', 'bg-secondary-190', 'bg-secondary-200', ], 'tertiary' => ['bg-tertiary-000', 'bg-tertiary-010', 'bg-tertiary-020', 'bg-tertiary-030', 'bg-tertiary-040', 'bg-tertiary-050', 'bg-tertiary-060', 'bg-tertiary-070', 'bg-tertiary-080', 'bg-tertiary-090', 'bg-tertiary-100', 'bg-tertiary-110', 'bg-tertiary-120', 'bg-tertiary-130', 'bg-tertiary-140', 'bg-tertiary-150', 'bg-tertiary-160', 'bg-tertiary-170', 'bg-tertiary-180', 'bg-tertiary-190', 'bg-tertiary-200', ], 'dark' => ['bg-dark-000', 'bg-dark-010', 'bg-light-050', 'bg-dark-030', 'bg-dark-040', 'bg-dark-050', 'bg-dark-060', 'bg-dark-070', 'bg-dark-080', 'bg-dark-090', 'bg-dark-100', 'bg-dark-110', 'bg-dark-120', 'bg-dark-130', 'bg-dark-140', 'bg-dark-150', 'bg-dark-160', 'bg-dark-170', 'bg-dark-180', 'bg-dark-190', 'bg-dark-200', ], 'light' => ['bg-light-000', 'bg-light-010', 'bg-light-020', 'bg-light-030', 'bg-light-040', 'bg-light-050', 'bg-light-060', 'bg-light-070', 'bg-light-080', 'bg-light-090', 'bg-light-100', 'bg-light-110', 'bg-light-120', 'bg-light-130', 'bg-light-140', 'bg-light-150', 'bg-light-160', 'bg-light-170', 'bg-light-180', 'bg-light-190', 'bg-light-200', ], 'accent' => ['bg-accent-000', 'bg-accent-010', 'bg-accent-020', 'bg-accent-030', 'bg-accent-040', 'bg-accent-050', 'bg-accent-060', 'bg-accent-070', 'bg-accent-080', 'bg-accent-090', 'bg-accent-100', 'bg-accent-110', 'bg-accent-120', 'bg-accent-130', 'bg-accent-140', 'bg-accent-150', 'bg-accent-160', 'bg-accent-170', 'bg-accent-180', 'bg-accent-190', 'bg-accent-200', ], 'info-a' => ['bg-info-a-000', 'bg-info-a-010', 'bg-info-a-020', 'bg-info-a-030', 'bg-info-a-040', 'bg-info-a-050', 'bg-info-a-060', 'bg-info-a-070', 'bg-info-a-080', 'bg-info-a-090', 'bg-info-a-100', 'bg-info-a-110', 'bg-info-a-120', 'bg-info-a-130', 'bg-info-a-140', 'bg-info-a-150', 'bg-info-a-160', 'bg-info-a-170', 'bg-info-a-180', 'bg-info-a-190', 'bg-info-a-200', ], 'info-b' => ['bg-info-b-000', 'bg-info-b-010', 'bg-info-b-020', 'bg-info-b-030', 'bg-info-b-040', 'bg-info-b-050', 'bg-info-b-060', 'bg-info-b-070', 'bg-info-b-080', 'bg-info-b-090', 'bg-info-b-100', 'bg-info-b-110', 'bg-info-b-120', 'bg-info-b-130', 'bg-info-b-140', 'bg-info-b-150', 'bg-info-b-160', 'bg-info-b-170', 'bg-info-b-180', 'bg-info-b-190', 'bg-info-b-200', ], 'danger' => ['bg-danger-000', 'bg-danger-010', 'bg-danger-020', 'bg-danger-030', 'bg-danger-040', 'bg-danger-050', 'bg-danger-060', 'bg-danger-070', 'bg-danger-080', 'bg-danger-090', 'bg-danger-100', 'bg-danger-110', 'bg-danger-120', 'bg-danger-130', 'bg-danger-140', 'bg-danger-150', 'bg-danger-160', 'bg-danger-170', 'bg-danger-180', 'bg-danger-190', 'bg-danger-200', ], 'warning' => ['bg-warning-000', 'bg-warning-010', 'bg-warning-020', 'bg-warning-030', 'bg-warning-040', 'bg-warning-050', 'bg-warning-060', 'bg-warning-070', 'bg-warning-080', 'bg-warning-090', 'bg-warning-100', 'bg-warning-110', 'bg-warning-120', 'bg-warning-130', 'bg-warning-140', 'bg-warning-150', 'bg-warning-160', 'bg-warning-170', 'bg-warning-180', 'bg-warning-190', 'bg-warning-200', ], 'success' => ['bg-success-000', 'bg-success-010', 'bg-success-020', 'bg-success-030', 'bg-success-040', 'bg-success-050', 'bg-success-060', 'bg-success-070', 'bg-success-080', 'bg-success-090', 'bg-success-100', 'bg-success-110', 'bg-success-120', 'bg-success-130', 'bg-success-140', 'bg-success-150', 'bg-success-160', 'bg-success-170', 'bg-success-180', 'bg-success-190', 'bg-success-200', ], 'white' => ['bg-white'], ];
         ?>
-        <?php foreach( $all_possible_colours as $colour => $colours ):?>  
+        <?php foreach( $all_possible_colours as $colour => $colours ):?>
         <h2 class="font-bold text-x-large my-2 font-sans"><?php echo $colour; ?>:</h2>
         <div class="flex flex-wrap w-full">
             <?php foreach( $colours as $colour ): ?>
@@ -840,7 +840,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
         <?php endforeach;
     } ?>
 
-<?php 
+<?php
     // For generating colours array used for ?colours view
     if( isset( $_GET['generate_colours_array'] ) && $wicket_is_administrator ):
         $colour_names = [
