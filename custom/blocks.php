@@ -113,7 +113,7 @@ function get_child_blocks() {
  * Adjusting Core Blocks
  */
 
- function wicket_core_block_wrappers( $block_content, $block ) {
+function wicket_core_block_wrappers( $block_content, $block ) {
 	if ( $block['blockName'] === 'core/paragraph' ) {
 		$content = '<div class="wp-block-paragraph">';
 		$content .= $block_content;
@@ -149,7 +149,7 @@ function register_post_template() {
 			'data'  => [ 
 				'banner_show_breadcrumbs' => false,
 				'banner_show_post_type'   => true,
-				'banner_back_link'        => home_url( '/blog' ),
+				'banner_back_link'        => '',
 				'banner_show_date'        => true,
 			],
 			'align' => 'full',

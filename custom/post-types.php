@@ -50,21 +50,21 @@ add_action( 'init', function () {
 		[ 
 			'menu_icon'   => 'dashicons-nametag',
 			'has_archive' => 'news-archive',
-			'template'    => array (
-				array ( 'wicket/banner', [ 
+			'template'    => array(
+				array( 'wicket/banner', [ 
 					'data'  => [ 
 						'banner_show_breadcrumbs' => false,
 						'banner_show_post_type'   => true,
-						'banner_back_link'        => home_url( '/blog' ),
+						'banner_back_link'        => '',
 						'banner_show_date'        => true,
 					],
 					'align' => 'full',
-					'lock'  => array (
+					'lock'  => array(
 						'move'   => true,
 						'remove' => true,
 					),
 				] ),
-				array ( 'core/paragraph', [ 
+				array( 'core/paragraph', [ 
 					'content' => '<b>Topics:</b>',
 					'style'   => [ 
 						'spacing' => [ 
@@ -74,11 +74,11 @@ add_action( 'init', function () {
 							],
 						] ],
 				] ),
-				array ( 'core/post-terms', [ 
+				array( 'core/post-terms', [ 
 					'term' => 'post_tag',
 				] ),
-				array ( 'wicket/manually-related-content' ),
-				array ( 'wicket/dynamically-related-content', [ 
+				array( 'wicket/manually-related-content' ),
+				array( 'wicket/dynamically-related-content', [ 
 					'data' => [ 
 						'related_content_max_posts'    => 3,
 						'related_content_column_count' => 3,
@@ -93,21 +93,21 @@ add_action( 'init', function () {
 		[ 
 			'menu_icon'   => 'dashicons-book-alt',
 			'has_archive' => 'resources-archive',
-			'template'    => array (
-				array ( 'wicket/banner', [ 
+			'template'    => array(
+				array( 'wicket/banner', [ 
 					'data'  => [ 
 						'banner_show_breadcrumbs' => false,
 						'banner_show_post_type'   => true,
-						'banner_back_link'        => home_url( '/blog' ),
+						'banner_back_link'        => '',
 						'banner_show_date'        => true,
 					],
 					'align' => 'full',
-					'lock'  => array (
+					'lock'  => array(
 						'move'   => true,
 						'remove' => true,
 					),
 				] ),
-				array ( 'core/paragraph', [ 
+				array( 'core/paragraph', [ 
 					'content' => '<b>Topics:</b>',
 					'style'   => [ 
 						'spacing' => [ 
@@ -117,11 +117,11 @@ add_action( 'init', function () {
 							],
 						] ],
 				] ),
-				array ( 'core/post-terms', [ 
+				array( 'core/post-terms', [ 
 					'term' => 'post_tag',
 				] ),
-				array ( 'wicket/manually-related-content' ),
-				array ( 'wicket/dynamically-related-content', [ 
+				array( 'wicket/manually-related-content' ),
+				array( 'wicket/dynamically-related-content', [ 
 					'data' => [ 
 						'related_content_max_posts'    => 3,
 						'related_content_column_count' => 3,
