@@ -71,10 +71,11 @@ if ( post_password_required() ) {
 				 * @hooked WC_Structured_Data::generate_product_data() - 60
 				 */
 				do_action( 'woocommerce_single_product_summary' );
+				get_component( 'social-sharing' );
 				?>
 			</div>
 		</div>
-		<div class="flex">
+		<div class="flex flex-col">
 			<?php
 			/**
 			 * Hook: woocommerce_after_single_product_summary.
