@@ -127,6 +127,32 @@
             "ui": 0,
             "ui_on_text": "",
             "ui_off_text": ""
+        },
+        {
+            "key": "field_66858df5a3430",
+            "label": "AC Localization",
+            "name": "ac_localization",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "choices": {
+                "account-center": "Account Center",
+                "account-centre": "Account Centre"
+            },
+            "default_value": "account-center",
+            "return_format": "array",
+            "allow_null": 0,
+            "other_choice": 0,
+            "layout": "vertical",
+            "save_other_choice": 1
         }
     ],
     "location": [
