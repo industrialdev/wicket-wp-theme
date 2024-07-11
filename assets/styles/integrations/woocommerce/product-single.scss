@@ -1,4 +1,8 @@
 .woocommerce {
+  & > .single-product {
+    padding-top: 1rem;
+  }
+
   div.product {
     /* Price */
     p.price {
@@ -13,6 +17,13 @@
 
       ins {
         text-decoration: none;
+      }
+    }
+
+    /* Quantity */
+    .quantity {
+      .qty {
+        min-width: 70px;
       }
     }
 
@@ -79,5 +90,13 @@
   /* Woocommerce Membership notifications */
   .woocommerce {
     padding: 0;
+  }
+
+  /* Case: If product type is external */
+  .product-type-external {
+    /* Add to cart button */
+    .single_add_to_cart_button {
+      @include add-external-icon;
+    }
   }
 }

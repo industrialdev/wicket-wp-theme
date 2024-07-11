@@ -1,5 +1,6 @@
 .woocommerce {
-  .upsells {
+  .upsells,
+  .related.products {
     & > h2 {
       font-weight: bold;
       font-size: var(--wp--preset--font-size--heading-md);
@@ -37,7 +38,7 @@
           }
         }
 
-        .add_to_cart_button {
+        .button {
           background-color: var(--wp--preset--color--primary);
           color: var(--wp--preset--color--white);
           padding: 1rem;
