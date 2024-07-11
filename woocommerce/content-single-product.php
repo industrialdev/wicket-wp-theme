@@ -39,7 +39,7 @@ if ( post_password_required() ) {
 			<?php get_component( 'breadcrumbs' ); ?>
 		</div>
 
-		<div class="grid grid-cols-1 lg:grid-cols-[42%_minmax(58%,_1fr)] gap-5">
+		<div class="single-product__container">
 			<div class="woocommerce-product-gallery__wrapper">
 				<?php
 				/**

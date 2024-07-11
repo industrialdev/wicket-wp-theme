@@ -3,6 +3,10 @@
     padding-top: 1rem;
   }
 
+  .single-product__container {
+    @apply grid grid-cols-1 lg:grid-cols-[42%_minmax(58%,_1fr)] gap-5;
+  }
+
   div.product {
     /* Price */
     p.price {
