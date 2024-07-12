@@ -53,7 +53,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
     ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class('woocommerce-block-theme-has-button-styles'); ?>>
     <?php echo get_field('tracking_codes_right_after_body', 'options'); ?>
     <a class="transition left-0 bg-primary text-primary-content absolute p-3 m-3 -translate-y-32 z-10 bg-white focus:translate-y-0" href="#main-content">
         <?php echo __( 'Skip to main content', 'wicket' ); ?>
