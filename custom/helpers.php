@@ -127,6 +127,7 @@ function get_related_content_type( $post_type ) {
 		'resources'    => 'resource_type',
 		'post'         => 'category',
 		'tribe_events' => 'tribe_events_cat',
+		'product'      => 'product_cat',
 	);
 
 	$content_types = apply_filters( 'wicket_related_content_types', $default_content_types );

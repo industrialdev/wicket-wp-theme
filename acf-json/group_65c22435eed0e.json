@@ -24,6 +24,9 @@
                 "attachment": "Media",
                 "tribe_event_series": "Series",
                 "product": "Products",
+                "wicket_membership": "Memberships",
+                "wicket_mship_config": "Membership Configs",
+                "wicket_mship_tier": "Membership Tiers",
                 "tribe_venue": "Venues",
                 "tribe_organizer": "Organizers",
                 "tribe_events": "Events",
@@ -193,7 +196,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -205,6 +208,33 @@
             "step": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_669264bb382c6",
+            "label": "Layout",
+            "name": "listing_layout",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "choices": {
+                "list": "List view",
+                "grid": "Grid view"
+            },
+            "default_value": "list",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
         },
         {
             "key": "field_65c6205a6e855",
@@ -377,6 +407,43 @@
                     "parent_repeater": "field_65c6205a6e855"
                 },
                 {
+                    "key": "field_66926319275aa",
+                    "label": "Products Taxonomy",
+                    "name": "slug",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_65c2245631b3e",
+                                "operator": "==",
+                                "value": "product"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 1,
+                    "choices": {
+                        "0": "-- Select Taxonomy --",
+                        "product_cat": "Product Categories",
+                        "product_tag": "Product Tags"
+                    },
+                    "default_value": false,
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "parent_repeater": "field_65c6205a6e855"
+                },
+                {
                     "key": "field_65c6207a6e857",
                     "label": "Tooltip",
                     "name": "tooltip",
@@ -525,5 +592,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "translation",
-    "modified": 1714649106
+    "modified": 1720870422
 }
