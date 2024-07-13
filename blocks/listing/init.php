@@ -56,7 +56,7 @@ function init( $block = [] ) {
 		$keyword = $_GET['keyword'];
 	}
 
-	$tax_query = [
+	$tax_query = [ 
 		'relation' => 'AND',
 	];
 
@@ -67,7 +67,7 @@ function init( $block = [] ) {
 			array_push( $terms, $term->slug );
 		}
 
-		$taxonomy_args = [
+		$taxonomy_args = [ 
 			'taxonomy' => 'news_type',
 			'field'    => 'slug',
 			'operator' => 'IN',
@@ -83,7 +83,7 @@ function init( $block = [] ) {
 			array_push( $terms, $term->slug );
 		}
 
-		$taxonomy_args = [
+		$taxonomy_args = [ 
 			'taxonomy' => 'resource_type',
 			'field'    => 'slug',
 			'operator' => 'IN',
@@ -99,7 +99,7 @@ function init( $block = [] ) {
 			array_push( $terms, $term->slug );
 		}
 
-		$taxonomy_args = [
+		$taxonomy_args = [ 
 			'taxonomy' => 'topics',
 			'field'    => 'slug',
 			'operator' => 'IN',
@@ -115,7 +115,7 @@ function init( $block = [] ) {
 			array_push( $terms, $term->slug );
 		}
 
-		$taxonomy_args = [
+		$taxonomy_args = [ 
 			'taxonomy' => 'tribe_events_cat',
 			'field'    => 'slug',
 			'operator' => 'IN',
@@ -129,7 +129,7 @@ function init( $block = [] ) {
 	if ( is_array( $taxonomy_filters ) ) {
 		foreach ( $taxonomy_filters as $taxonomy ) {
 			if ( isset( $_GET[ $taxonomy['slug'] ] ) ) {
-				$taxonomy_args = [
+				$taxonomy_args = [ 
 					'taxonomy' => $taxonomy['slug'],
 					'field'    => 'slug',
 					'operator' => 'IN',
@@ -171,7 +171,7 @@ function init( $block = [] ) {
 					<div
 						class="basis-1/4 bg-white relative after:content-[''] after:absolute after:top-0 after:bottom-0 after:right-full after:bg-white after:w-[30vw] before:block lg:before:hidden before:content-[''] before:absolute before:top-0 before:bottom-0 before:left-full before:bg-white before:w-[30vw]">
 						<?php
-						get_component( 'filter-form', [
+						get_component( 'filter-form', [ 
 							'taxonomies'       => $taxonomy_filters,
 							'hide_date_filter' => $hide_date_filter,
 						] )
@@ -181,7 +181,7 @@ function init( $block = [] ) {
 
 				<div class="<?php echo ! empty( $taxonomy_filters ) ? 'basis-3/4' : 'basis-full' ?> pt-4 lg:pt-10">
 					<?php
-					$args = [
+					$args = [ 
 						'post_type'      => $post_type,
 						'posts_per_page' => $posts_per_page,
 						'paged'          => $paged,
@@ -196,7 +196,7 @@ function init( $block = [] ) {
 						$start_date = $_GET['start_date'];
 						$end_date   = $_GET['end_date'];
 
-						$args['date_query'] = [
+						$args['date_query'] = [ 
 							'after'     => $start_date,
 							'before'    => $end_date,
 							'inclusive' => true,
@@ -265,7 +265,7 @@ function init( $block = [] ) {
 							<?php
 
 							if ( $listing_layout === 'grid' ) {
-								echo '<div class="grid gap-10 grid-cols-1 lg:gap-4 lg:grid-cols-3">';
+								echo '<div class="grid gap-10 grid-cols-1 lg:gap-4 lg:grid-cols-3 mb-6">';
 							}
 
 							while ( $query->have_posts() ) :
@@ -285,14 +285,14 @@ function init( $block = [] ) {
 								}
 
 								if ( $listing_layout === 'grid' ) {
-									$grid_card_params = [
+									$grid_card_params = [ 
 										'classes'      => [ 'p-4' ],
 										'post_id'      => $post_id,
 										'content_type' => ! $hide_type_taxonomy ? get_related_content_type_term( $post_id ) : '',
 										'title'        => $title,
 										'excerpt'      => ! $hide_excerpt ? $excerpt : '',
 										'date'         => $date,
-										'image'        => ( ! $hide_featured_image && $featured_image ) ? [
+										'image'        => ( ! $hide_featured_image && $featured_image ) ? [ 
 											'id' => $featured_image,
 										] : '',
 										'link'         => $permalink,
@@ -303,14 +303,14 @@ function init( $block = [] ) {
 									get_component( $post_type == 'product' ? 'card-product' : 'card-featured', $grid_card_params );
 
 								} else {
-									$listing_card_params = [
+									$listing_card_params = [ 
 										'classes'        => [ 'mb-6' ],
 										'content_type'   => ! $hide_type_taxonomy ? get_related_content_type_term( $post_id ) : '',
 										'title'          => $title,
 										'excerpt'        => ! $hide_excerpt ? $excerpt : '',
 										'date'           => $date,
 										'featured_image' => ! $hide_featured_image ? $featured_image : '',
-										'link'           => [
+										'link'           => [ 
 											'url'    => $permalink,
 											'text'   => 'Read more',
 											'target' => '_self',
@@ -330,7 +330,7 @@ function init( $block = [] ) {
 								echo '</div>';
 							}
 
-							the_wicket_pagination( [
+							the_wicket_pagination( [ 
 								'total' => $query->max_num_pages,
 							] );
 							?>
