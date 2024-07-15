@@ -29,3 +29,17 @@
   @apply container;
   @include container-adjustments;
 }
+
+@mixin wc-alert {
+  border-top: none;
+  border-left: 4px solid transparent;
+  color: var(--wp--preset--color--dark);
+  padding: 1.5rem 2rem 1.5rem 4rem;
+
+  &:before {
+    font-size: 135%;
+    top: 50%;
+    left: 15px;
+    transform: translatey(-50%);
+  }
+}
