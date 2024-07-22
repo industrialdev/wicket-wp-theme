@@ -59,12 +59,6 @@
         color: var(--wp--preset--color--white);
         padding: 1rem;
       }
-
-      // Hide wicket membership input fields
-      div:has(input[name='org_uuid']),
-      div:has(input[name='membership_post_id_renew']) {
-        display: none;
-      }
     }
 
     /* Product meta */
