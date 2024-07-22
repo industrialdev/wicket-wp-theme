@@ -36,9 +36,6 @@ function wicket_acf_init() {
 }
 add_action( 'acf/init', 'wicket_acf_init' );
 
-// Disable CPT and taxonomy UI functionality
-add_filter( 'acf/settings/enable_post_types', '__return_false' );
-
 // Disable Options Page UI functionality
 add_filter( 'acf/settings/enable_options_pages_ui', '__return_false' );
 

@@ -17,7 +17,7 @@ if( !in_array( 'administrator', $user_roles ) || empty( $user_roles ) ) {
 </style>
 <script src="//unpkg.com/alpinejs" defer></script>
 
-<h1>Taxonomies:</h1><?php
+<h1 id="taxonomies" >Taxonomies:</h1><?php
 
 $taxonomies = get_taxonomies();
 wicket_write_log( $taxonomies, true );
@@ -38,7 +38,7 @@ foreach( $taxonomies as $taxonomy_slug => $taxonomy_slug2 ) {?>
   </div>
 <?php }
 
-?><h1>Post Types:</h1><?php
+?><h1 id="post_types" >Post Types:</h1><?php
 
 $post_types = get_post_types();
 wicket_write_log( $post_types, true );

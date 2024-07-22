@@ -13,6 +13,7 @@ add_action( 'pre_get_posts', function( $query ) {
     $excluded_post_ids       = $options_group['excluded_post_ids'] ?? '';
     $posts_per_page          = $options_group['posts_per_page'] ?? 10;
     $taxonomy_filters_field  = $options_group['taxonomy_filters'] ?? '';
+    $post_type_filters_field  = $options_group['post_type_filters'] ?? '';
 
     // URL parameters
     $paged       = $_GET['paged'] ?? 1;
@@ -30,6 +31,15 @@ add_action( 'pre_get_posts', function( $query ) {
     $excluded_post_types = explode( ',', $excluded_post_types );
     $all_post_types = get_post_types();
     $post_types = array_keys( array_diff( $all_post_types, $excluded_post_types ) );
+
+    // Set filtered post types
+    $filtered_post_types = $post_type_filters_field === '' ? [] : explode(',', $post_type_filters_field);
+    if ( ! empty( $filtered_post_types ) ) {
+      if( isset( $_GET['post_type'] ) && is_array( $_GET['post_type'] ) ) {
+        // Only keep the post types that are specified in the filter settings
+        $post_types = array_intersect( $filtered_post_types, $_GET['post_type'] );
+      }
+    }
 
     // Set excluded post IDs
     $excluded_post_ids = explode( ',', $excluded_post_ids );

@@ -10,6 +10,7 @@
   // Filter configs
   $show_filter_bar         = $options_group['show_filter_bar'] ?? true;
   $taxonomy_filters_field  = $options_group['taxonomy_filters'] ?? '';
+  $post_type_filters_field  = $options_group['post_type_filters'] ?? '';
   $show_filter_by_pub_date = $options_group['show_filter_by_published_date'] ?? true;
 
   // Card listing view configs
@@ -27,6 +28,15 @@
     $taxonomy_filters[] = [
       'slug'    => $taxonomy,
       'tooltip' => '',
+    ];
+  }
+
+  // Create post type filters array
+  $post_type_filters_field = $post_type_filters_field === '' ? [] : explode(',', $post_type_filters_field);
+  $post_type_filters = [];
+  foreach( $post_type_filters_field as $post_type ) {
+    $post_type_filters[] = [
+      'key'    => $post_type
     ];
   }
 
@@ -108,6 +118,7 @@
           <?php
           get_component( 'filter-form', [ 
             'taxonomies'       => $taxonomy_filters,
+            'post_types'       => $post_type_filters,
             'hide_date_filter' => ! $show_filter_by_pub_date,
           ] );
           ?>
