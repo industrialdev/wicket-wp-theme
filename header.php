@@ -317,11 +317,8 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         ] );
                         ?>
                     </a>
-                    <?php if( $lang == 'en' ): ?>
-                        <a x-show="showLangToggle" x-cloak href="<?php echo wicket_get_lang_url( 'fr' ); ?>" class="lang-button ml-4 hidden lg:inline-flex items-center">Fr</a>
-                    <?php else: ?>
-                        <a x-show="showLangToggle" x-cloak href="<?php echo wicket_get_lang_url( 'en' ); ?>" class="lang-button ml-4 hidden lg:inline-flex items-center">En</a>
-                    <?php endif; ?>
+                    
+                    <?php do_action( 'wpml_language_switcher' ); ?>
 
                     <!-- Right-aligned hamburger menu button that only shows on MD breakpoint -->
                     <button
