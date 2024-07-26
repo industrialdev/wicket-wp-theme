@@ -14,6 +14,12 @@
     @apply mb-4;
   }
 
+  *[class*=wp-block] {
+    .tribe-common {
+      @apply mx-0;
+    }
+  }
+
   // Hiding event title and breadcrumbs since we add it with our Banner block
   .tribe-events-single-event-title, .tribe-events-back {
     display: none;
