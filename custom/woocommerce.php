@@ -17,9 +17,9 @@ function wicket_remove_scripts() {
 
 	if ( ! ( is_cart() || is_checkout() ) ) {
 		wp_dequeue_script( 'react' );
-			wp_deregister_script( 'react' );
+		wp_deregister_script( 'react' );
 		wp_dequeue_script( 'react-dom' );
-			wp_deregister_script( 'react-dom' );
+		wp_deregister_script( 'react-dom' );
 		// wp_dequeue_script( 'wc-add-to-cart' );
 		// 	wp_deregister_script( 'wc-add-to-cart' );
 	}
@@ -182,3 +182,22 @@ function woo_hack_invoke_private_method( $class_name, $methodName ) {
 	return call_user_func_array( array( $method, 'invoke' ), $args );
 }
 // End: Add multiple products to cart via ?add-to-cart link
+
+add_filter( 'woocommerce_loop_add_to_cart_args', 'filter_woocommerce_loop_add_to_cart_args', 10, 2 );
+function filter_woocommerce_loop_add_to_cart_args( $args, $product ) {
+	if ( wc_memberships_is_product_purchasing_restricted() && ! is_user_logged_in() ) {
+		$args['class'] .= ' button--disabled';
+	}
+	return $args;
+}
+
+add_filter( 'woocommerce_product_add_to_cart_text', 'filter_woocommerce_product_add_to_cart_text' );
+function filter_woocommerce_product_add_to_cart_text( $text ) {
+
+	global $product;
+
+	if ( wc_memberships_is_product_purchasing_restricted( $product->get_id() ) && ! is_user_logged_in() ) {
+		$text = __( 'Add to cart', 'woocommerce' );
+	}
+	return $text;
+}

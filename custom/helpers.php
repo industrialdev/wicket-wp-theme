@@ -158,3 +158,9 @@ function get_related_topic_type( $post_type ) {
 
 	return isset( $topic_types[ $post_type ] ) ? $topic_types[ $post_type ] : '';
 }
+
+function get_login_url() {
+	$login_url = get_option( 'wp_cassify_base_url' ) . 'login?service=' . urlencode( wicket_get_current_url() );
+
+	return $login_url;
+}

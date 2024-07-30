@@ -20,16 +20,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 global $product;
+$login_link = '';
+
+if ( wc_memberships_is_product_purchasing_restricted( $product->get_id() ) && ! is_user_logged_in() ) {
+	$login_link = '<a href="' . get_login_url() . '"><span class="font-bold underline">' . __( 'Login to Purchase', 'woocommerce' ) . '</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a>';
+}
 
 echo apply_filters(
 	'woocommerce_loop_add_to_cart_link', // WPCS: XSS ok.
 	sprintf(
-		'<a href="%s" data-quantity="%s" class="%s" %s>%s</a>',
+		'<a href="%s" data-quantity="%s" class="%s" %s>%s</a>%s',
 		esc_url( $product->add_to_cart_url() ),
 		esc_attr( isset( $args['quantity'] ) ? $args['quantity'] : 1 ),
 		esc_attr( isset( $args['class'] ) ? $args['class'] : 'button' ),
 		isset( $args['attributes'] ) ? wc_implode_html_attributes( $args['attributes'] ) : '',
-		'<span class="add_to_cart_button__text">' . esc_html( $product->add_to_cart_text() ) . '</span>' . '<span class="add_to_cart_button__text-added">' . __( 'Added to cart' ) . ' <i class="fa-solid fa-check"></i></span>'
+		'<span class="add_to_cart_button__text">' . esc_html( $product->add_to_cart_text() ) . '</span>' . '<span class="add_to_cart_button__text-added">' . __( 'Added to cart' ) . ' <i class="fa-solid fa-check"></i></span>',
+		$login_link
 	),
 	$product,
 	$args
