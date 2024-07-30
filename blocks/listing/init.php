@@ -203,6 +203,21 @@ function init( $block = [] ) {
 						];
 					}
 
+					$args['meta_query'] = array(
+						array(
+							'relation' => 'OR',
+							array(
+								'key'     => 'hide_on_listings',
+								'value'   => '0',
+								'compare' => '=',
+							),
+							array(
+								'key'     => 'hide_on_listings',
+								'compare' => 'NOT EXISTS',
+							),
+						),
+					);
+
 					$query       = new \WP_Query( $args );
 					$posts       = $query->posts;
 					$total_posts = $query->found_posts;
