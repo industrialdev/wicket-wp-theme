@@ -61,11 +61,10 @@ function wptarl_client_ip() {
  */
 function wptarl_rest_api_init(WP_REST_Server $wp_rest_server) {
   $request_uri = $_SERVER['REQUEST_URI'];
-  $wicket_api_endpoints = defined('WICKET_ENDPOINTS') ? WICKET_ENDPOINTS : array();
   $is_client_rate_limited = false;
   $transient_key = null;
 
-  if( in_array( $request_uri, $wicket_api_endpoints ) ) {
+  if( str_contains( $request_uri, 'wicket' ) ) {
     // We don't want to rate-limit our own custom endpoints, so we'll do
     // nothing here.
   } elseif (empty($client_ip = wptarl_client_ip())) {
