@@ -60,11 +60,18 @@ function wptarl_client_ip() {
  * should be blocked, or allowed to execute normally.
  */
 function wptarl_rest_api_init(WP_REST_Server $wp_rest_server) {
+  $request_uri = $_SERVER['REQUEST_URI'];
+  $wicket_api_endpoints = defined('WICKET_ENDPOINTS') ? WICKET_ENDPOINTS : array();
   $is_client_rate_limited = false;
   $transient_key = null;
-  // Determine if the client that's making the API requests is
-  // subject to rate-limiting.
-  if (empty($client_ip = wptarl_client_ip())) {
+
+  if( in_array( $request_uri, $wicket_api_endpoints ) ) {
+    // We don't want to rate-limit our own custom endpoints, so we'll do
+    // nothing here.
+  } elseif (empty($client_ip = wptarl_client_ip())) {
+    // Determine if the client that's making the API requests is
+    // subject to rate-limiting.
+
     // We don't know the client's IP address so we probably don't want to do
     // anything here.
   } elseif (!empty(WPTARL_NEVER_RATE_LIMITED_IPS) && in_array($client_ip, WPTARL_NEVER_RATE_LIMITED_IPS)) {
