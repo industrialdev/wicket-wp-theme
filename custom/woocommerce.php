@@ -185,6 +185,10 @@ function woo_hack_invoke_private_method( $class_name, $methodName ) {
 
 add_filter( 'woocommerce_loop_add_to_cart_args', 'filter_woocommerce_loop_add_to_cart_args', 10, 2 );
 function filter_woocommerce_loop_add_to_cart_args( $args, $product ) {
+	if ( ! function_exists( 'wc_memberships_is_product_purchasing_restricted' ) ) {
+		return $args;
+	}
+
 	if ( wc_memberships_is_product_purchasing_restricted() && ! is_user_logged_in() ) {
 		$args['class'] .= ' button--disabled';
 	}
@@ -193,6 +197,9 @@ function filter_woocommerce_loop_add_to_cart_args( $args, $product ) {
 
 add_filter( 'woocommerce_product_add_to_cart_text', 'filter_woocommerce_product_add_to_cart_text' );
 function filter_woocommerce_product_add_to_cart_text( $text ) {
+	if ( ! function_exists( 'wc_memberships_is_product_purchasing_restricted' ) ) {
+		return $text;
+	}
 
 	global $product;
 
