@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 global $product;
 $login_link = '';
 
-if ( wc_memberships_is_product_purchasing_restricted( $product->get_id() ) && ! is_user_logged_in() ) {
+if ( function_exists( 'wc_memberships_is_product_purchasing_restricted' ) && wc_memberships_is_product_purchasing_restricted( $product->get_id() ) && ! is_user_logged_in() ) {
 	$login_link = '<a href="' . get_login_url() . '"><span class="font-bold underline">' . __( 'Login to Purchase', 'woocommerce' ) . '</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a>';
 }
 
