@@ -28,10 +28,9 @@ if ( ! function_exists('wicket_breadcrumb') ) {
 				'classes'  => [ 'flex' ],
 				'url'      => get_home_url(),
 				'text'     => __( 'Home', 'wicket' ),
-				'icon'     => [
+				'icon_start'     => [
 					'icon' => 'fa-regular fa-house',
-				],
-				'icon_pos' => 'start', // 'start' or 'end'
+				]
 			],
 			false
 		);
