@@ -229,6 +229,7 @@
       "lineHeight": false,
       "customFontSize": false,
       "letterSpacing": false,
+      "fluid": true,
       "fontFamilies": [
         {
           "fontFamily": "Montserrat,sans-serif",

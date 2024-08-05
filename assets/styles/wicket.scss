@@ -9,6 +9,11 @@
 @import 'node_modules/tailwindcss/components';
 @import 'node_modules/tailwindcss/utilities';
 
+/* VARIABLES
+------------------------------------------------------------------------------*/
+@import 'variables/theme-json'; // Automatically generated from theme.json
+@import 'variables/variables';
+
 /* THEME BASELINE STYLES
 ------------------------------------------------------------------------------*/
 @import 'baseline';

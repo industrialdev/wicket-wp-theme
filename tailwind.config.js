@@ -111,6 +111,21 @@ const generateColorVarieties = (color, name) => {
   return returnObject
 }
 
+// Function to extract safelist classes from PHP file
+const getSafelistFromPhp = () => {
+  const phpFilePath = themePath + 'custom/tailwind-safelist.php';
+  const phpContent = fs.readFileSync(phpFilePath, 'utf-8');
+
+  // Assuming the PHP file returns an array like:
+  // <?php return ['class1', 'class2', ...]; ?>
+  const matches = phpContent.match(/return\s*\[\s*([^\]]*)\s*\]/);
+  if (!matches) return [];
+
+  return matches[1]
+    .split(',')
+    .map(str => str.trim().replace(/['"]/g, '')); // Clean up and remove quotes
+};
+
 // Reformat colors from theme.json to fit Tailwind config format
 // Credit: https://gist.github.com/alexstandiford/c4fbd990676a7511418f2e669c5be592
 const colors = theme.settings.color.palette.reduce((accumulator, item) => {
@@ -163,13 +178,20 @@ const lineHeight = customThemeJsonSettings['line-height']
 
 module.exports = {
   content: [
-    './blocks/**/*.php',
-    './components/**/*.php',
+    '../wicket-wp-theme/blocks/**/*.{php,js}',
+    '../wicket-wp-theme/components/**/*.{php,js}',
+    '../wicket-wp-theme/*.php',
+    './custom/**/*.php',
+    './blocks/**/*.{php,js}',
+    './components/**/*.{php,js}',
+    './job_manager/**/*.php',
     '../../plugins/wicket-wp-base-plugin/includes/components/**/*.php',
     './page-templates/**/*.php',
+    './partials/**/*.php',
     './assets/scripts/**/*.js',
     './*.php',
     './woocommerce/**/*.php',
+    ../../plugins/wicket-wp-base-plugin/includes/components/**/*.{php,js}',
   ],
   theme: {
     extend: {
@@ -211,6 +233,7 @@ module.exports = {
     {pattern: /(via)-./},
     {pattern: /(to)-./},
     {pattern: /(blend)-./},
+    ...getSafelistFromPhp(), // Adding safelist classes from PHP file
   ],
 }
 

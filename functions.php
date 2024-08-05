@@ -1,24 +1,60 @@
 <?php
+// No direct access
+if (!defined('ABSPATH')) {
+	exit;
+}
 
-require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/config.php';
-require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/constants.php';
-require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/acf.php';
-require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/blocks.php';
-require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/menus.php';
-require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/pagination.php';
-require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/widgets.php';
-require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/dates.php';
-require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/remove_wp_toolbar_except_admins.php';
-require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/curl_timeout.php';
-require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/private_content_redirect.php';
-require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/woocommerce.php';
-require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/switch_to_user_wicket_sync.php';
-require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/helpers.php';
-require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/woocommerce_max_webhook_delivery_failures.php';
-require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/wpml_translator_override.php';
-require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/breadcrumbs.php';
-require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/post-types.php';
-require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/taxonomies.php';
-require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/redirections.php';
-require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/search.php';
-require_once WP_CONTENT_DIR . '/themes/wicket-wp-theme/custom/api-rate-limiting.php';
+/**
+ * Wicket Includes
+ * Child Theme
+ */
+$wicket_includes = [
+	'config.php',
+	'constants.php',
+	'acf.php',
+	'blocks.php',
+	'menus.php',
+	'pagination.php',
+	'widgets.php',
+	'dates.php',
+	'remove_wp_toolbar_except_admins.php',
+	'curl_timeout.php',
+	'private_content_redirect.php',
+	'woocommerce.php',
+	'switch_to_user_wicket_sync.php',
+	'helpers.php',
+	'woocommerce_max_webhook_delivery_failures.php',
+	'wpml_translator_override.php',
+	'breadcrumbs.php',
+	'post-types.php',
+	'taxonomies.php',
+	'redirections.php',
+	'search.php',
+	'api-rate-limiting.php',
+];
+
+if (is_array($wicket_includes)) {
+	foreach ($wicket_includes as $wicket_inc) {
+		$file_inc = WP_CONTENT_DIR . '/themes/wicket-child/custom/' . $wicket_inc;
+
+		if (!file_exists($file_inc)) {
+			continue;
+		}
+
+		require_once $file_inc;
+	}
+}
+
+/**
+ * DO NOT ADD ANYTHING BELOW THIS COMMENT
+ * DO NOT ADD ANYTHING BELOW THIS COMMENT
+ * DO NOT ADD ANYTHING BELOW THIS COMMENT
+ *
+ * Be thoughtful and considerate of your fellow developers, please.
+ * This will make it easier for everyone, including you, to maintain this work in the future.
+ *
+ * Feel free to create new files or subfolders on /custom/, to add functionality to the theme.
+ * Don't forget to add your new files, into the $wicket_includes array above.
+ *
+ * Thanks!
+ */
