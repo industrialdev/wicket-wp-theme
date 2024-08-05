@@ -39,7 +39,11 @@ if (is_array($wicket_includes)) {
 
 
 	foreach ($wicket_includes as $wicket_inc) {
-		$file_inc = get_stylesheet_directory() . '/custom/' . $wicket_inc;
+		if (is_child_theme()) {
+			$file_inc = get_stylesheet_directory() . '/custom/' . $wicket_inc;
+		} else {
+			$file_inc = get_template_directory() . '/custom/' . $wicket_inc;
+		}
 
 		if (!file_exists($file_inc)) {
 			continue;
