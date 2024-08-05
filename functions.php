@@ -34,8 +34,12 @@ $wicket_includes = [
 ];
 
 if (is_array($wicket_includes)) {
+	// Get theme path
+	$theme_path = get_stylesheet_directory();
+
+
 	foreach ($wicket_includes as $wicket_inc) {
-		$file_inc = WP_CONTENT_DIR . '/themes/wicket-child/custom/' . $wicket_inc;
+		$file_inc = get_stylesheet_directory() . '/custom/' . $wicket_inc;
 
 		if (!file_exists($file_inc)) {
 			continue;
