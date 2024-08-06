@@ -61,7 +61,7 @@ if (is_array($wicket_includes)) {
  * Be thoughtful and considerate of your fellow developers, please.
  * This will make it easier for everyone, including you, to maintain this work in the future.
  *
- * Feel free to create new files or subfolders on /custom/, to add functionality to the theme.
+ * Feel free to use existing files or create new files or subfolders on /custom/, to add functionality to the theme.
  * Don't forget to add your new files, into the $wicket_includes array above.
  *
  * Thanks!
