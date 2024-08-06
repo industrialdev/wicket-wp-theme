@@ -19,12 +19,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } ?>
 
-<div class="border-b border-t mb-8  ">
-	<div class="container">
-		<h1 class="text-heading-3xl font-bold py-4"><?php echo __( 'Checkout', 'wicket' ) ?></h1>
-	</div>
-</div>
-
 <div class="container">
 	<?php do_action( 'woocommerce_before_checkout_form', $checkout );
 
