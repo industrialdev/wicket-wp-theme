@@ -24,6 +24,7 @@ function init( $block = [] ) {
 	$hide_type_taxonomy  = $block['hide_type_taxonomy'] ?? get_field( 'listing_hide_type_taxonomy' );
 	$hide_featured_image = $block['hide_featured_image'] ?? get_field( 'listing_hide_featured_image' );
 	$hide_excerpt        = $block['hide_excerpt'] ?? get_field( 'listing_hide_excerpt' );
+	$hide_attachment     = $block['hide_attachment'] ?? get_field( 'listing_hide_attachment' );
 
 
 	$paged   = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
@@ -285,15 +286,16 @@ function init( $block = [] ) {
 
 							while ( $query->have_posts() ) :
 								$query->the_post();
-								$post_id            = get_the_ID();
-								$title              = get_the_title( $post_id );
-								$excerpt            = get_the_excerpt( $post_id );
-								$date               = get_the_date( 'F j, Y', $post_id );
-								$featured_image     = get_post_thumbnail_id( $post_id );
-								$permalink          = get_the_permalink( $post_id );
-								$member_only        = is_member_only( $post_id );
-								$related_topic_type = get_related_topic_type( get_post_type( $post_id ) );
-								$topics             = get_the_terms( $post_id, $related_topic_type );
+								$post_id             = get_the_ID();
+								$title               = get_the_title( $post_id );
+								$excerpt             = get_the_excerpt( $post_id );
+								$date                = get_the_date( 'F j, Y', $post_id );
+								$featured_image      = get_post_thumbnail_id( $post_id );
+								$permalink           = get_the_permalink( $post_id );
+								$member_only         = is_member_only( $post_id );
+								$related_topic_type  = get_related_topic_type( get_post_type( $post_id ) );
+								$topics              = get_the_terms( $post_id, $related_topic_type );
+								$document_attachment = get_attached_document( $post_id );
 
 								if ( $post_type == 'tribe_events' ) {
 									$date = tribe_get_start_date( $post_id, false, 'F j, Y' );
@@ -332,6 +334,7 @@ function init( $block = [] ) {
 										],
 										'member_only'    => $member_only,
 										'topics'         => $topics,
+										'document'       => ! $hide_attachment ? $document_attachment : '',
 									];
 
 									get_component( 'card-listing', $listing_card_params );

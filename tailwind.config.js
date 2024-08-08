@@ -111,21 +111,6 @@ const generateColorVarieties = (color, name) => {
   return returnObject
 }
 
-// Function to extract safelist classes from PHP file
-const getSafelistFromPhp = () => {
-  const phpFilePath = themePath + 'custom/tailwind-safelist.php';
-  const phpContent = fs.readFileSync(phpFilePath, 'utf-8');
-
-  // Assuming the PHP file returns an array like:
-  // <?php return ['class1', 'class2', ...]; ?>
-  const matches = phpContent.match(/return\s*\[\s*([^\]]*)\s*\]/);
-  if (!matches) return [];
-
-  return matches[1]
-    .split(',')
-    .map(str => str.trim().replace(/['"]/g, '')); // Clean up and remove quotes
-};
-
 // Reformat colors from theme.json to fit Tailwind config format
 // Credit: https://gist.github.com/alexstandiford/c4fbd990676a7511418f2e669c5be592
 const colors = theme.settings.color.palette.reduce((accumulator, item) => {
@@ -191,7 +176,6 @@ module.exports = {
     './assets/scripts/**/*.js',
     './*.php',
     './woocommerce/**/*.php',
-    ../../plugins/wicket-wp-base-plugin/includes/components/**/*.{php,js}',
   ],
   theme: {
     extend: {
@@ -222,6 +206,8 @@ module.exports = {
     'lg:grid-cols-3',
     'lg:grid-cols-2',
     'aspect-[3/2]',
+    'border',
+    'rounded',
     {pattern: /(grid-cols|grid-rows)-./},
     {pattern: /(opacity)-./},
     // Adding styles to safelist for usage on Blocks in Editor:
@@ -233,7 +219,6 @@ module.exports = {
     {pattern: /(via)-./},
     {pattern: /(to)-./},
     {pattern: /(blend)-./},
-    ...getSafelistFromPhp(), // Adding safelist classes from PHP file
   ],
 }
 

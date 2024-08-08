@@ -1,14 +1,13 @@
 <?php
 // No direct access
-if (!defined('ABSPATH')) {
+if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
 /**
  * Wicket Includes
- * Child Theme
  */
-$wicket_includes = [
+$wicket_includes = [ 
 	'config.php',
 	'constants.php',
 	'acf.php',
@@ -33,22 +32,14 @@ $wicket_includes = [
 	'api-rate-limiting.php',
 ];
 
-if (is_array($wicket_includes)) {
-	// Get theme path
-	$theme_path = get_stylesheet_directory();
+if ( is_array( $wicket_includes ) ) {
 
+	foreach ( $wicket_includes as $wicket_inc ) {
+		$file_inc = get_template_directory() . '/custom/' . $wicket_inc;
 
-	foreach ($wicket_includes as $wicket_inc) {
-		if (is_child_theme()) {
-			$file_inc = get_stylesheet_directory() . '/custom/' . $wicket_inc;
-		} else {
-			$file_inc = get_template_directory() . '/custom/' . $wicket_inc;
-		}
-
-		if (!file_exists($file_inc)) {
+		if ( ! file_exists( $file_inc ) ) {
 			continue;
 		}
-
 		require_once $file_inc;
 	}
 }
