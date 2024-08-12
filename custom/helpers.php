@@ -165,15 +165,13 @@ function get_login_url() {
 	return $login_url;
 }
 
-function get_attached_document( $post_id ) {
-	// Get post content and look for wicket/banner block
+function get_field_from_block( $post_id, $block_name, $field_name ) {
 	$content = get_post_field( 'post_content', $post_id );
 	$blocks  = parse_blocks( $content );
 	foreach ( $blocks as $block ) {
-		if ( $block['blockName'] === 'wicket/banner' ) {
-			$download_file_field = $block['attrs']['data']['banner_download_file'];
-			$download_file       = wp_get_attachment_url( $download_file_field );
-			return $download_file;
+		if ( $block['blockName'] === $block_name ) {
+			$field = $block['attrs']['data'][ $field_name ];
+			return $field;
 		}
 	}
 }

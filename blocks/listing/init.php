@@ -11,20 +11,22 @@ namespace Wicket\Blocks\Wicket_Listing;
  */
 function init( $block = [] ) {
 
-	$post_type           = $block['post_type'] ?? get_field( 'listing_post_type' );
-	$news_types          = $block['news_types'] ?? get_field( 'listing_news_type' );
-	$resource_types      = $block['resource_types'] ?? get_field( 'listing_resource_type' );
-	$topics_types        = $block['topics_types'] ?? get_field( 'listing_topic' );
-	$event_categories    = $block['event_categories'] ?? get_field( 'listing_event_categories' );
-	$posts_per_page      = $block['posts_per_page'] ?? get_field( 'listing_posts_per_page' );
-	$listing_layout      = get_field( 'listing_layout' ) ?? 'list';
-	$taxonomy_filters    = $block['taxonomy_filters'] ?? get_field( 'listing_taxonomy_filters' );
-	$hide_search         = $block['hide_search'] ?? get_field( 'listing_hide_search' );
-	$hide_date_filter    = $block['hide_search'] ?? get_field( 'listing_hide_date_filter' );
-	$hide_type_taxonomy  = $block['hide_type_taxonomy'] ?? get_field( 'listing_hide_type_taxonomy' );
-	$hide_featured_image = $block['hide_featured_image'] ?? get_field( 'listing_hide_featured_image' );
-	$hide_excerpt        = $block['hide_excerpt'] ?? get_field( 'listing_hide_excerpt' );
-	$hide_attachment     = $block['hide_attachment'] ?? get_field( 'listing_hide_attachment' );
+	$post_type              = $block['post_type'] ?? get_field( 'listing_post_type' );
+	$news_types             = $block['news_types'] ?? get_field( 'listing_news_type' );
+	$resource_types         = $block['resource_types'] ?? get_field( 'listing_resource_type' );
+	$topics_types           = $block['topics_types'] ?? get_field( 'listing_topic' );
+	$event_categories       = $block['event_categories'] ?? get_field( 'listing_event_categories' );
+	$posts_per_page         = $block['posts_per_page'] ?? get_field( 'listing_posts_per_page' );
+	$listing_layout         = get_field( 'listing_layout' ) ?? 'list';
+	$taxonomy_filters       = $block['taxonomy_filters'] ?? get_field( 'listing_taxonomy_filters' );
+	$hide_search            = $block['hide_search'] ?? get_field( 'listing_hide_search' );
+	$hide_date_filter       = $block['hide_search'] ?? get_field( 'listing_hide_date_filter' );
+	$hide_type_taxonomy     = $block['hide_type_taxonomy'] ?? get_field( 'listing_hide_type_taxonomy' );
+	$hide_featured_image    = $block['hide_featured_image'] ?? get_field( 'listing_hide_featured_image' );
+	$hide_excerpt           = $block['hide_excerpt'] ?? get_field( 'listing_hide_excerpt' );
+	$hide_attachment        = $block['hide_attachment'] ?? get_field( 'listing_hide_attachment' );
+	$listing_download_label = get_field( 'listing_download_label' ) ?? __( 'Download', 'wicket' );
+	$listing_link_label     = get_field( 'listing_link_label' ) ?? __( 'View Page', 'wicket' );
 
 
 	$paged   = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
@@ -57,7 +59,7 @@ function init( $block = [] ) {
 		$keyword = $_GET['keyword'];
 	}
 
-	$tax_query = [ 
+	$tax_query = [
 		'relation' => 'AND',
 	];
 
@@ -68,7 +70,7 @@ function init( $block = [] ) {
 			array_push( $terms, $term->slug );
 		}
 
-		$taxonomy_args = [ 
+		$taxonomy_args = [
 			'taxonomy' => 'news_type',
 			'field'    => 'slug',
 			'operator' => 'IN',
@@ -84,7 +86,7 @@ function init( $block = [] ) {
 			array_push( $terms, $term->slug );
 		}
 
-		$taxonomy_args = [ 
+		$taxonomy_args = [
 			'taxonomy' => 'resource_type',
 			'field'    => 'slug',
 			'operator' => 'IN',
@@ -100,7 +102,7 @@ function init( $block = [] ) {
 			array_push( $terms, $term->slug );
 		}
 
-		$taxonomy_args = [ 
+		$taxonomy_args = [
 			'taxonomy' => 'topics',
 			'field'    => 'slug',
 			'operator' => 'IN',
@@ -116,7 +118,7 @@ function init( $block = [] ) {
 			array_push( $terms, $term->slug );
 		}
 
-		$taxonomy_args = [ 
+		$taxonomy_args = [
 			'taxonomy' => 'tribe_events_cat',
 			'field'    => 'slug',
 			'operator' => 'IN',
@@ -130,7 +132,7 @@ function init( $block = [] ) {
 	if ( is_array( $taxonomy_filters ) ) {
 		foreach ( $taxonomy_filters as $taxonomy ) {
 			if ( isset( $_GET[ $taxonomy['slug'] ] ) ) {
-				$taxonomy_args = [ 
+				$taxonomy_args = [
 					'taxonomy' => $taxonomy['slug'],
 					'field'    => 'slug',
 					'operator' => 'IN',
@@ -172,7 +174,7 @@ function init( $block = [] ) {
 					<div
 						class="basis-1/4 bg-white relative after:content-[''] after:absolute after:top-0 after:bottom-0 after:right-full after:bg-white after:w-[30vw] before:block lg:before:hidden before:content-[''] before:absolute before:top-0 before:bottom-0 before:left-full before:bg-white before:w-[30vw]">
 						<?php
-						get_component( 'filter-form', [ 
+						get_component( 'filter-form', [
 							'taxonomies'       => $taxonomy_filters,
 							'hide_date_filter' => $hide_date_filter,
 						] )
@@ -182,7 +184,7 @@ function init( $block = [] ) {
 
 				<div class="<?php echo ! empty( $taxonomy_filters ) ? 'basis-3/4' : 'basis-full' ?> pt-4 lg:pt-10">
 					<?php
-					$args = [ 
+					$args = [
 						'post_type'      => $post_type,
 						'posts_per_page' => $posts_per_page,
 						'paged'          => $paged,
@@ -197,7 +199,7 @@ function init( $block = [] ) {
 						$start_date = $_GET['start_date'];
 						$end_date   = $_GET['end_date'];
 
-						$args['date_query'] = [ 
+						$args['date_query'] = [
 							'after'     => $start_date,
 							'before'    => $end_date,
 							'inclusive' => true,
@@ -286,30 +288,33 @@ function init( $block = [] ) {
 
 							while ( $query->have_posts() ) :
 								$query->the_post();
-								$post_id             = get_the_ID();
-								$title               = get_the_title( $post_id );
-								$excerpt             = get_the_excerpt( $post_id );
-								$date                = get_the_date( 'F j, Y', $post_id );
-								$featured_image      = get_post_thumbnail_id( $post_id );
-								$permalink           = get_the_permalink( $post_id );
-								$member_only         = is_member_only( $post_id );
-								$related_topic_type  = get_related_topic_type( get_post_type( $post_id ) );
-								$topics              = get_the_terms( $post_id, $related_topic_type );
-								$document_attachment = get_attached_document( $post_id );
+								$post_id                 = get_the_ID();
+								$title                   = get_the_title( $post_id );
+								$excerpt                 = get_the_excerpt( $post_id );
+								$date                    = get_the_date( 'F j, Y', $post_id );
+								$featured_image          = get_post_thumbnail_id( $post_id );
+								$permalink               = get_the_permalink( $post_id );
+								$member_only             = is_member_only( $post_id );
+								$related_topic_type      = get_related_topic_type( get_post_type( $post_id ) );
+								$topics                  = get_the_terms( $post_id, $related_topic_type );
+								$document_attachment     = get_field_from_block( $post_id, 'wicket/banner', 'banner_download_file' );
+								$document_attachment_url = wp_get_attachment_url( $document_attachment );
+								$helper_link             = get_field_from_block( $post_id, 'wicket/banner', 'banner_helper_link' );
+
 
 								if ( $post_type == 'tribe_events' ) {
 									$date = tribe_get_start_date( $post_id, false, 'F j, Y' );
 								}
 
 								if ( $listing_layout === 'grid' ) {
-									$grid_card_params = [ 
+									$grid_card_params = [
 										'classes'      => [ 'p-4' ],
 										'post_id'      => $post_id,
 										'content_type' => ! $hide_type_taxonomy ? get_related_content_type_term( $post_id ) : '',
 										'title'        => $title,
 										'excerpt'      => ! $hide_excerpt ? $excerpt : '',
 										'date'         => $date,
-										'image'        => ( ! $hide_featured_image && $featured_image ) ? [ 
+										'image'        => ( ! $hide_featured_image && $featured_image ) ? [
 											'id' => $featured_image,
 										] : '',
 										'link'         => $permalink,
@@ -320,21 +325,24 @@ function init( $block = [] ) {
 									get_component( $post_type == 'product' ? 'card-product' : 'card-featured', $grid_card_params );
 
 								} else {
-									$listing_card_params = [ 
+									$listing_card_params = [
 										'classes'        => [ 'mb-6' ],
 										'content_type'   => ! $hide_type_taxonomy ? get_related_content_type_term( $post_id ) : '',
 										'title'          => $title,
 										'excerpt'        => ! $hide_excerpt ? $excerpt : '',
 										'date'           => $date,
 										'featured_image' => ! $hide_featured_image ? $featured_image : '',
-										'link'           => [ 
+										'link'           => [
 											'url'    => $permalink,
 											'text'   => 'Read more',
 											'target' => '_self',
 										],
 										'member_only'    => $member_only,
 										'topics'         => $topics,
-										'document'       => ! $hide_attachment ? $document_attachment : '',
+										'document'       => ! $hide_attachment ? $document_attachment_url : '',
+										'download_label' => $listing_download_label,
+										'link_label'     => $listing_link_label,
+										'helper_link'    => $helper_link,
 									];
 
 									get_component( 'card-listing', $listing_card_params );
@@ -348,7 +356,7 @@ function init( $block = [] ) {
 								echo '</div>';
 							}
 
-							the_wicket_pagination( [ 
+							the_wicket_pagination( [
 								'total' => $query->max_num_pages,
 							] );
 							?>

@@ -592,6 +592,48 @@
             "ui_on_text": "",
             "ui_off_text": "",
             "ui": 1
+        },
+        {
+            "key": "field_66b9de7f6b97c",
+            "label": "Download Label",
+            "name": "listing_download_label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "If left blank label will be marked as ‘Download’",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66b9decf6b97d",
+            "label": "Link Label",
+            "name": "listing_link_label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "If left blank label will be marked as ‘View Page’",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -613,5 +655,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "translation",
-    "modified": 1723123831
+    "modified": 1723457253
 }

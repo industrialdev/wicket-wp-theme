@@ -13,6 +13,19 @@ if ( have_posts() ) :
 			<div class="container">
 				<!--Find all files inside of the components folder and loop through them-->
 				<?php foreach ( glob( get_components_dir() . '*.php' ) as $filename ) { ?>
+
+					<?php
+					// Create an array of excluded files
+					$excluded_files = [ 
+						'card-product.php',
+						'org-search-select.php',
+					];
+
+					// If the current file is in the excluded files array, skip it
+					if ( in_array( basename( $filename ), $excluded_files ) ) {
+						continue;
+					}
+					?>
 					<div class="mb-3">
 						<?php get_component( basename( $filename, '.php' ) ); ?>
 					</div>
