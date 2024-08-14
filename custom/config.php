@@ -1,4 +1,8 @@
 <?php
+// do not send default Wordpress emails on manual user creation in the current thread
+add_filter( 'send_password_change_email', '__return_false' );
+add_filter( 'send_email_change_email',    '__return_false' );
+
 function wicket_add_editor_styles() {
 	add_editor_style( 'editor-style.css' );
 }
