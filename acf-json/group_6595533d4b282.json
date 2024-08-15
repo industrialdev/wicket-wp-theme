@@ -462,14 +462,7 @@
             "type": "file",
             "instructions": "Only available in single post pages.",
             "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_6595533eeaf64",
-                        "operator": "!=empty"
-                    }
-                ]
-            ],
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -607,5 +600,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "translation",
-    "modified": 1719496292
+    "modified": 1723744725
 }

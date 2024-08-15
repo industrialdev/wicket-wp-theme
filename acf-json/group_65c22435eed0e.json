@@ -594,6 +594,27 @@
             "ui": 1
         },
         {
+            "key": "field_66be4066740fd",
+            "label": "Hide Helper Link",
+            "name": "listing_hide_helper_link",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
             "key": "field_66b9de7f6b97c",
             "label": "Download Label",
             "name": "listing_download_label",
@@ -607,7 +628,7 @@
                 "class": "",
                 "id": ""
             },
-            "wpml_cf_preferences": 0,
+            "wpml_cf_preferences": 2,
             "default_value": "",
             "maxlength": "",
             "placeholder": "",
@@ -628,7 +649,7 @@
                 "class": "",
                 "id": ""
             },
-            "wpml_cf_preferences": 0,
+            "wpml_cf_preferences": 2,
             "default_value": "",
             "maxlength": "",
             "placeholder": "",
@@ -655,5 +676,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "translation",
-    "modified": 1723457253
+    "modified": 1723744611
 }
