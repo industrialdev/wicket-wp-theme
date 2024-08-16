@@ -383,7 +383,7 @@ if ( have_posts() ) :
 						<div class="bg-dark-100 p-8">
 							<div class="mb-4">
 								<?php get_component( 'link', [ 
-									'classes'    => [ 'text-white' ],
+									'reversed'   => true,
 									'url'        => '#',
 									'text'       => 'Reversed link',
 									'icon_start' => [ 
