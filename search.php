@@ -84,37 +84,37 @@
 
   <div class="px-4 py-5 lg:px-0">
       <div class="container max-w-screen-lg mx-auto">
-        <h1 class="text-heading-xl font-bold text-center"><?php _e( 'Search Results', 'wicket' ); ?></h1>
+        <h1 class="search-page-heading text-heading-xl font-bold text-center"><?php _e( 'Search Results', 'wicket' ); ?></h1>
       </div>
     </div>
 
   <?php if ( $show_search_bar ) : ?>
     <div class="px-4 pb-12 lg:px-0">
       <div class="max-w-screen-lg mx-auto">
-        <p class="text-heading-xs mb-8 text-center"><?php echo $total_posts; ?> <?php _e( 'Results for:', 'wicket' ); ?></p>
+        <p class="search-page-results-count text-heading-xs mb-8 text-center"><?php echo $total_posts; ?> <?php _e( 'Results for:', 'wicket' ); ?></p>
         <?php 
         if( $_GET['s'] == 'clearresults' ) {
           $_GET['s'] = '';
         }
         get_component( 'search-form', [
-          'url-param' => 's'
+          'url-param' => 's',
         ] ); ?>
-        <a href="/?s=clearresults" class="block text-body-md text-center mt-4"><i class="fa-solid fa-x"></i> <?php _e( 'Clear Search', 'wicket' ); ?></a>
+        <a href="/?s=clearresults" class="search-page-clear-button block text-body-md text-center mt-4"><i class="fa-solid fa-x"></i> <?php _e( 'Clear Search', 'wicket' ); ?></a>
 
       </div>
     </div>
   <?php endif; ?>
 
   <?php
-  echo '<div class="bg-light-010 bg-opacity-15 overflow-x-hidden">';
+  echo '<div class="search-page-results-wrapper bg-light-010 bg-opacity-15 overflow-x-hidden">';
   ?>
 
   <div class="container">
-    <div class="flex flex-col lg:flex-row gap-4">
+    <div class="search-page-results-flex-wrap flex flex-col lg:flex-row gap-4">
 
       <?php if( $show_filter_bar ): ?>
         <div
-          class="basis-1/4 bg-white relative after:content-[''] after:absolute after:top-0 after:bottom-0 after:right-full after:bg-white after:w-[30vw] before:block lg:before:hidden before:content-[''] before:absolute before:top-0 before:bottom-0 before:left-full before:bg-white before:w-[30vw]">
+          class="search-page-left-col basis-1/4 bg-white relative after:content-[''] after:absolute after:top-0 after:bottom-0 after:right-full after:bg-white after:w-[30vw] before:block lg:before:hidden before:content-[''] before:absolute before:top-0 before:bottom-0 before:left-full before:bg-white before:w-[30vw]">
           <?php
           get_component( 'filter-form', [ 
             'taxonomies'       => $taxonomy_filters,
@@ -125,9 +125,9 @@
         </div>
       <?php endif; // End if $show_filter_bar ?>
 
-      <div class="pt-4 lg:pt-10 <?php if( !$show_filter_bar ) { echo 'max-w-screen-lg lg:mx-auto'; } else { echo 'basis-3/4' ;} ?>">
+      <div class="search-page-right-col pt-4 lg:pt-10 <?php if( !$show_filter_bar ) { echo 'max-w-screen-lg lg:mx-auto'; } else { echo 'basis-3/4' ;} ?>">
         <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-7 px-4 lg:px-0">
-          <div>Displaying:
+          <div><?php _e('Displaying:', 'wicket'); ?>
             <?php
             if ( $total_posts === 0 ) {
               echo '<span class="font-bold">0</span>' . __( ' Results', 'wicket' );
