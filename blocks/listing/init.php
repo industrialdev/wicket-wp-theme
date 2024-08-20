@@ -341,7 +341,7 @@ function init( $block = [] ) {
 										'member_only'    => $member_only,
 										'topics'         => $topics,
 										'document'       => ! $hide_attachment ? $document_attachment_url : '',
-										'download_label' => $listing_download_label,
+										'download_label' => $listing_download_label == '' ? __( 'Download', 'wicket' ) : $listing_download_label,
 										'link_label'     => $listing_link_label,
 										'helper_link'    => ! $hide_helper_link ? $helper_link : '',
 									];
