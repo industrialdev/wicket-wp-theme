@@ -11,23 +11,24 @@ namespace Wicket\Blocks\Wicket_Listing;
  */
 function init( $block = [] ) {
 
-	$post_type              = $block['post_type'] ?? get_field( 'listing_post_type' );
-	$news_types             = $block['news_types'] ?? get_field( 'listing_news_type' );
-	$resource_types         = $block['resource_types'] ?? get_field( 'listing_resource_type' );
-	$topics_types           = $block['topics_types'] ?? get_field( 'listing_topic' );
-	$event_categories       = $block['event_categories'] ?? get_field( 'listing_event_categories' );
-	$posts_per_page         = $block['posts_per_page'] ?? get_field( 'listing_posts_per_page' );
-	$listing_layout         = get_field( 'listing_layout' ) ?? 'list';
-	$taxonomy_filters       = $block['taxonomy_filters'] ?? get_field( 'listing_taxonomy_filters' );
-	$hide_search            = $block['hide_search'] ?? get_field( 'listing_hide_search' );
-	$hide_date_filter       = $block['hide_search'] ?? get_field( 'listing_hide_date_filter' );
-	$hide_type_taxonomy     = $block['hide_type_taxonomy'] ?? get_field( 'listing_hide_type_taxonomy' );
-	$hide_featured_image    = $block['hide_featured_image'] ?? get_field( 'listing_hide_featured_image' );
-	$hide_excerpt           = $block['hide_excerpt'] ?? get_field( 'listing_hide_excerpt' );
-	$hide_attachment        = $block['hide_attachment'] ?? get_field( 'listing_hide_attachment' );
-	$hide_helper_link       = $block['hide_helper_link'] ?? get_field( 'listing_hide_helper_link' );
-	$listing_download_label = get_field( 'listing_download_label' ) ?? __( 'Download', 'wicket' );
-	$listing_link_label     = get_field( 'listing_link_label' ) ?? __( 'View Page', 'wicket' );
+	$post_type                 = $block['post_type'] ?? get_field( 'listing_post_type' );
+	$news_types                = $block['news_types'] ?? get_field( 'listing_news_type' );
+	$resource_types            = $block['resource_types'] ?? get_field( 'listing_resource_type' );
+	$topics_types              = $block['topics_types'] ?? get_field( 'listing_topic' );
+	$event_categories          = $block['event_categories'] ?? get_field( 'listing_event_categories' );
+	$posts_per_page            = $block['posts_per_page'] ?? get_field( 'listing_posts_per_page' );
+	$listing_layout            = get_field( 'listing_layout' ) ?? 'list';
+	$taxonomy_filters          = $block['taxonomy_filters'] ?? get_field( 'listing_taxonomy_filters' );
+	$hide_search               = $block['hide_search'] ?? get_field( 'listing_hide_search' );
+	$hide_date_filter          = $block['hide_search'] ?? get_field( 'listing_hide_date_filter' );
+	$hide_type_taxonomy        = $block['hide_type_taxonomy'] ?? get_field( 'listing_hide_type_taxonomy' );
+	$hide_featured_image       = $block['hide_featured_image'] ?? get_field( 'listing_hide_featured_image' );
+	$hide_excerpt              = $block['hide_excerpt'] ?? get_field( 'listing_hide_excerpt' );
+	$hide_attachment           = $block['hide_attachment'] ?? get_field( 'listing_hide_attachment' );
+	$hide_helper_link          = $block['hide_helper_link'] ?? get_field( 'listing_hide_helper_link' );
+	$hide_document_format_icon = $block['hide_document_format_icon'] ?? get_field( 'listing_hide_document_format_icon' );
+	$listing_download_label    = get_field( 'listing_download_label' ) ?? __( 'Download', 'wicket' );
+	$listing_link_label        = get_field( 'listing_link_label' ) ?? __( 'View Page', 'wicket' );
 
 
 	$paged   = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
@@ -327,23 +328,24 @@ function init( $block = [] ) {
 
 								} else {
 									$listing_card_params = [ 
-										'classes'        => [ 'mb-6' ],
-										'content_type'   => ! $hide_type_taxonomy ? get_related_content_type_term( $post_id ) : '',
-										'title'          => $title,
-										'excerpt'        => ! $hide_excerpt ? $excerpt : '',
-										'date'           => $date,
-										'featured_image' => ! $hide_featured_image ? $featured_image : '',
-										'link'           => [ 
+										'classes'                   => [ 'mb-6' ],
+										'content_type'              => ! $hide_type_taxonomy ? get_related_content_type_term( $post_id ) : '',
+										'title'                     => $title,
+										'excerpt'                   => ! $hide_excerpt ? $excerpt : '',
+										'date'                      => $date,
+										'featured_image'            => ! $hide_featured_image ? $featured_image : '',
+										'link'                      => [ 
 											'url'    => $permalink,
 											'text'   => 'Read more',
 											'target' => '_self',
 										],
-										'member_only'    => $member_only,
-										'topics'         => $topics,
-										'document'       => ! $hide_attachment ? $document_attachment_url : '',
-										'download_label' => $listing_download_label == '' ? __( 'Download', 'wicket' ) : $listing_download_label,
-										'link_label'     => $listing_link_label,
-										'helper_link'    => ! $hide_helper_link ? $helper_link : '',
+										'member_only'               => $member_only,
+										'topics'                    => $topics,
+										'document'                  => ! $hide_attachment ? $document_attachment_url : '',
+										'download_label'            => $listing_download_label == '' ? __( 'Download', 'wicket' ) : $listing_download_label,
+										'link_label'                => $listing_link_label,
+										'helper_link'               => ! $hide_helper_link ? $helper_link : '',
+										'hide_document_format_icon' => $hide_document_format_icon,
 									];
 
 									get_component( 'card-listing', $listing_card_params );
