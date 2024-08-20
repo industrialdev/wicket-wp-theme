@@ -89,7 +89,7 @@ add_action( 'init', function () {
 		] );
 
 	/* Resource Post Type */
-	register_cpt( 'Resources', 'Resources',
+	register_cpt( 'Resource', 'Resources',
 		[ 
 			'menu_icon'   => 'dashicons-book-alt',
 			'has_archive' => 'resources-archive',
