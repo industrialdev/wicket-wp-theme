@@ -154,7 +154,7 @@ function init( $block = [] ) {
 
 	?>
 
-	<form action="">
+	<form action="" class="block-wicket-listing">
 
 		<?php if ( ! $hide_search ) : ?>
 			<div class="<?php echo $search_form_bg_color ?> px-4 py-5 lg:px-0">
