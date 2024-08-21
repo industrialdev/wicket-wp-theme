@@ -132,7 +132,7 @@
                     "min_height": "",
                     "min_size": "",
                     "max_width": "",
-                    "max_height": "",
+                    "max_height": 56,
                     "max_size": "",
                     "mime_types": "",
                     "preview_size": "medium",
@@ -231,5 +231,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "advanced",
-    "modified": 1707325255
+    "modified": 1724236966
 }
