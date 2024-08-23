@@ -371,7 +371,7 @@ function init( $block = [] ) {
 								<?php echo __( 'No results found.', 'wicket' ) ?>
 							</h2>
 							<div class="text-center">
-								<?php echo __( 'Try adjusting your search or filter to find what you are looking for.', 'wicket' ) ?>
+								<?php echo apply_filters( 'wicket_listing_block_no_results_message', __( 'Try adjusting your search or filter to find what you are looking for.', 'wicket' ) ); ?>
 							</div>
 						</div>
 						<?php
