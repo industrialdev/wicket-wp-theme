@@ -63,6 +63,26 @@
             "ui_off_text": ""
         },
         {
+            "key": "field_65b8215e163xp",
+            "label": "Show Arrow",
+            "name": "show_arrow",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_65b80ff0263e9",
             "label": "Icon Grid Icons",
             "name": "icon_grid_icons",
@@ -112,7 +132,7 @@
                     "min_height": "",
                     "min_size": "",
                     "max_width": "",
-                    "max_height": "",
+                    "max_height": 56,
                     "max_size": "",
                     "mime_types": "",
                     "preview_size": "medium",
@@ -211,5 +231,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "advanced",
-    "modified": 1707325255
+    "modified": 1724236966
 }

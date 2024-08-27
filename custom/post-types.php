@@ -21,6 +21,17 @@ function register_cpt( $singular, $plural = false, $args = [] ) {
 		'not_found_in_trash' => __( "No $plural found in Trash." ),
 	];
 
+	// Add an extra string to the rewrite slug because registering "News" and "Resources" post types
+	// need to be used with a singular name instead of a plural name like we have now: register_cpt( 'News', 'News', ... )
+	// and since we have a lot of cpt posts on the existing websites we gonna fix pagination issues with this
+	$rewrite_slug = sanitize_title( $singular ) . '-post';
+	$rewrite = array(
+		'slug'                  => $rewrite_slug,
+		'with_front'            => true,
+		'pages'                 => true,
+		'feeds'                 => true,
+	);
+
 	$defaults = [ 
 		'labels'              => $labels,
 		'exclude_from_search' => false,
@@ -35,6 +46,7 @@ function register_cpt( $singular, $plural = false, $args = [] ) {
 		'show_ui'             => true,
 		'show_in_rest'        => true,
 		'taxonomies'          => [],
+		'rewrite'             => $rewrite,
 		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields' ),
 	];
 

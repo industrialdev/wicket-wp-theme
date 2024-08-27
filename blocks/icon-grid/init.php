@@ -16,6 +16,7 @@ function init( $block = [] ) {
 	$title            = get_field( 'icon_grid_title' );
 	$use_fa_codes     = get_field( 'use_font-awesome_icon_codes' );
 	$use_drop_shadows = get_field( 'icon_grid_drop_shadow' );
+	$show_arrow       = get_field( 'show_arrow' );
 	$icons            = get_field( 'icon_grid_icons' );
 
 	echo '<div ' . $attrs . '>';
@@ -23,6 +24,7 @@ function init( $block = [] ) {
 		'title'            => $title,
 		'use-fa-codes'     => $use_fa_codes,
 		'use-drop-shadows' => $use_drop_shadows,
+		'show-arrow-icon'  => $show_arrow,
 		'icons'            => $icons,
 	] );
 	echo '</div>';
