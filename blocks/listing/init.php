@@ -29,7 +29,7 @@ function init( $block = [] ) {
 	$hide_document_format_icon = $block['hide_document_format_icon'] ?? get_field( 'listing_hide_document_format_icon' );
 	$listing_download_label    = get_field( 'listing_download_label' ) ?? __( 'Download', 'wicket' );
 	$listing_link_label        = get_field( 'listing_link_label' ) ?? __( 'View Page', 'wicket' );
-
+	$date_format               = apply_filters( 'wicket_general_date_format', 'F j, Y' );
 
 	$paged   = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 	$orderby = 'date';
@@ -293,7 +293,7 @@ function init( $block = [] ) {
 								$post_id                 = get_the_ID();
 								$title                   = get_the_title( $post_id );
 								$excerpt                 = get_the_excerpt( $post_id );
-								$date                    = get_the_date( 'F j, Y', $post_id );
+								$date                    = get_the_date( $date_format, $post_id );
 								$featured_image          = get_post_thumbnail_id( $post_id );
 								$permalink               = get_the_permalink( $post_id );
 								$member_only             = is_member_only( $post_id );
@@ -305,7 +305,7 @@ function init( $block = [] ) {
 
 
 								if ( $post_type == 'tribe_events' ) {
-									$date = tribe_get_start_date( $post_id, false, 'F j, Y' );
+									$date = tribe_get_start_date( $post_id, false, $date_format );
 								}
 
 								if ( $listing_layout === 'grid' ) {
