@@ -19,6 +19,7 @@ function init( $block = [] ) {
 	$posts_per_page            = $block['posts_per_page'] ?? get_field( 'listing_posts_per_page' );
 	$listing_layout            = get_field( 'listing_layout' ) ?? 'list';
 	$taxonomy_filters          = $block['taxonomy_filters'] ?? get_field( 'listing_taxonomy_filters' );
+	$exclude_from_results      = $block['exclude_from_results'] ?? get_field( 'listing_exclude_from_results' );
 	$hide_search               = $block['hide_search'] ?? get_field( 'listing_hide_search' );
 	$hide_date_filter          = $block['hide_search'] ?? get_field( 'listing_hide_date_filter' );
 	$hide_type_taxonomy        = $block['hide_type_taxonomy'] ?? get_field( 'listing_hide_type_taxonomy' );
@@ -31,10 +32,17 @@ function init( $block = [] ) {
 	$listing_link_label        = get_field( 'listing_link_label' ) ?? __( 'View Page', 'wicket' );
 	$date_format               = apply_filters( 'wicket_general_date_format', 'F j, Y' );
 
-	$paged   = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-	$orderby = 'date';
-	$order   = 'DESC';
-	$keyword = '';
+	$paged          = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+	$orderby        = 'date';
+	$order          = 'DESC';
+	$keyword        = '';
+	$excluded_posts = [];
+
+	if ( ! empty( $exclude_from_results ) ) {
+		$excluded_posts = array_map( function ($post) {
+			return $post->ID;
+		}, $exclude_from_results );
+	}
 
 	/* Get sort by from query string */
 	if ( isset( $_GET['sort-by'] ) ) {
@@ -290,7 +298,14 @@ function init( $block = [] ) {
 
 							while ( $query->have_posts() ) :
 								$query->the_post();
-								$post_id                 = get_the_ID();
+								$post_id = get_the_ID();
+
+								// If post is excluded from results, skip it
+								if ( in_array( $post_id, $excluded_posts ) ) {
+									$query->the_post();
+									continue;
+								}
+
 								$title                   = get_the_title( $post_id );
 								$excerpt                 = get_the_excerpt( $post_id );
 								$date                    = get_the_date( $date_format, $post_id );

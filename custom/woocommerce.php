@@ -201,3 +201,12 @@ function filter_woocommerce_product_add_to_cart_text( $text ) {
 	}
 	return $text;
 }
+
+add_filter( 'body_class', 'add_woocommerce_block_theme_classes' );
+function add_woocommerce_block_theme_classes( $classes ) {
+	if ( is_woocommerce() ) {
+		$classes[] = 'woocommerce-block-theme-has-button-styles';
+		$classes[] = 'woocommerce-uses-block-theme';
+	}
+	return $classes;
+}

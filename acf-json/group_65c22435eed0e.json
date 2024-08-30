@@ -468,6 +468,31 @@
             ]
         },
         {
+            "key": "field_66d1fc5356ca0",
+            "label": "Exclude From Results",
+            "name": "listing_exclude_from_results",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "Select the posts or pages you would like to exclude from results.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "post_type": "",
+            "post_status": "",
+            "taxonomy": "",
+            "return_format": "object",
+            "multiple": 1,
+            "allow_null": 0,
+            "bidirectional": 0,
+            "ui": 1,
+            "bidirectional_target": []
+        },
+        {
             "key": "field_65f184f1e967c",
             "label": "Hide Search",
             "name": "listing_hide_search",
@@ -697,5 +722,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "translation",
-    "modified": 1724153759
+    "modified": 1725038011
 }
