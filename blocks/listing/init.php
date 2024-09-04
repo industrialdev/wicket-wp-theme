@@ -242,7 +242,12 @@ function init( $block = [] ) {
 							if ( $total_posts === 0 ) {
 								echo '0' . __( ' Results', 'wicket' );
 							} else {
-								echo $paged . '-' . count( $posts ) . ' of ' . $total_posts . ' Results';
+								echo sprintf( 
+									__('%1$d-%2$d of %3$d Results', 'wicket'), 
+									$paged, 
+									count( $posts ), 
+									$total_posts 
+								);
 							}
 							?>
 						</div>
