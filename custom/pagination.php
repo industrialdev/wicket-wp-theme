@@ -15,8 +15,8 @@ if ( ! function_exists( 'wicket_paginate_links' ) ) {
 				'total'     => $total_pages,
 				'current'   => $current_page,
 				'type'      => 'array',
-				'next_text' => 'Next <i class="fa fa-arrow-right ml-2" aria-hidden="true"></i>',
-				'prev_text' => '<i class="fa fa-arrow-left mr-2" aria-hidden="true"></i> Previous',
+				'next_text' => __('Next', 'wicket') . ' <i class="fa fa-arrow-right ml-2" aria-hidden="true"></i>',
+				'prev_text' => '<i class="fa fa-arrow-left mr-2" aria-hidden="true"></i> ' . __('Previous', 'wicket'),
 			)
 		);
 		$total_pages  = (int) $args['total'];
