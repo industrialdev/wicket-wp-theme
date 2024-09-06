@@ -144,7 +144,7 @@
         </div>
 
         <?php
-        if ( $query->have_posts() && $_GET['s'] != '' ) : ?>
+        if ( $query->have_posts() ) : ?>
           <div class="pb-24 px-4 lg:px-0">
             <?php
             while ( $query->have_posts() ) :
