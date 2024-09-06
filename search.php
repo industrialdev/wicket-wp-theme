@@ -93,13 +93,10 @@
       <div class="max-w-screen-lg mx-auto">
         <p class="search-page-results-count text-heading-xs mb-8 text-center"><?php echo $total_posts; ?> <?php _e( 'Results for:', 'wicket' ); ?></p>
         <?php 
-        if( $_GET['s'] == 'clearresults' ) {
-          $_GET['s'] = '';
-        }
         get_component( 'search-form', [
           'url-param' => 's',
         ] ); ?>
-        <a href="/?s=clearresults" class="search-page-clear-button block text-body-md text-center mt-4"><i class="fa-solid fa-x"></i> <?php _e( 'Clear Search', 'wicket' ); ?></a>
+        <a href="/?s=" class="search-page-clear-button block text-body-md text-center mt-4"><i class="fa-solid fa-x"></i> <?php _e( 'Clear Search', 'wicket' ); ?></a>
 
       </div>
     </div>
@@ -147,7 +144,7 @@
         </div>
 
         <?php
-        if ( $query->have_posts() && $_GET['s'] != 'clearresults' ) : ?>
+        if ( $query->have_posts() && $_GET['s'] != '' ) : ?>
           <div class="pb-24 px-4 lg:px-0">
             <?php
             while ( $query->have_posts() ) :
