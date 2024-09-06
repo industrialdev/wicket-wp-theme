@@ -11,6 +11,10 @@ namespace Wicket\Blocks\Wicket_Listing;
  */
 function init( $block = [] ) {
 
+	$attrs = get_block_wrapper_attributes( [ 
+		'class' => 'block-wicket-listing alignfull',
+	] );
+
 	$post_type                 = $block['post_type'] ?? get_field( 'listing_post_type' );
 	$news_types                = $block['news_types'] ?? get_field( 'listing_news_type' );
 	$resource_types            = $block['resource_types'] ?? get_field( 'listing_resource_type' );
@@ -153,7 +157,8 @@ function init( $block = [] ) {
 		}
 	}
 
-	$search_form_bg_color = apply_filters( 'wicket_listing_search_form_bg_color', 'bg-dark-010' );
+	$search_form_bg_color       = apply_filters( 'wicket_listing_search_form_bg_color', 'bg-dark-010' );
+	$listing_container_bg_color = apply_filters( 'wicket_listing_container_bg_color', 'bg-light-010' );
 
 	/* Set listing layout to grid if post type is products */
 	if ( $post_type == 'product' ) {
@@ -162,10 +167,10 @@ function init( $block = [] ) {
 
 	?>
 
-	<form action="" class="block-wicket-listing">
+	<form action="" <?php echo $attrs ?> class="block-wicket-listing">
 
 		<?php if ( ! $hide_search ) : ?>
-			<div class="<?php echo $search_form_bg_color ?> px-4 py-5 lg:px-0">
+			<div class="block-wicket-listing__search-form <?php echo $search_form_bg_color ?> px-4 py-5 lg:px-0">
 				<div class="container">
 					<?php get_component( 'search-form' ); ?>
 				</div>
@@ -173,7 +178,7 @@ function init( $block = [] ) {
 		<?php endif; ?>
 
 		<?php
-		echo '<div class="bg-light-010 overflow-x-hidden">';
+		echo '<div class="block-wicket-listing__container ' . $listing_container_bg_color . ' overflow-x-hidden">';
 		if ( is_admin() && ! $post_type ) {
 			echo "<p>" . __( 'Use the Block controls in edit mode or on the right to configure listing.', 'wicket' ) . "</p>";
 		} ?>
@@ -182,7 +187,7 @@ function init( $block = [] ) {
 			<div class="flex flex-col lg:flex-row gap-4">
 				<?php if ( ! empty( $taxonomy_filters ) ) : ?>
 					<div
-						class="basis-1/4 bg-white relative after:content-[''] after:absolute after:top-0 after:bottom-0 after:right-full after:bg-white after:w-[30vw] before:block lg:before:hidden before:content-[''] before:absolute before:top-0 before:bottom-0 before:left-full before:bg-white before:w-[30vw]">
+						class="block-wicket-listing__filters basis-1/4 bg-white relative after:content-[''] after:absolute after:top-0 after:bottom-0 after:right-full after:bg-white after:w-[30vw] before:block lg:before:hidden before:content-[''] before:absolute before:top-0 before:bottom-0 before:left-full before:bg-white before:w-[30vw]">
 						<?php
 						get_component( 'filter-form', [ 
 							'taxonomies'       => $taxonomy_filters,
@@ -192,7 +197,8 @@ function init( $block = [] ) {
 					</div>
 				<?php endif; ?>
 
-				<div class="<?php echo ! empty( $taxonomy_filters ) ? 'basis-3/4' : 'basis-full' ?> pt-4 lg:pt-10">
+				<div
+					class="block-wicket-listing__entries <?php echo ! empty( $taxonomy_filters ) ? 'basis-3/4' : 'basis-full' ?> pt-4 lg:pt-10">
 					<?php
 					$args = [ 
 						'post_type'      => $post_type,

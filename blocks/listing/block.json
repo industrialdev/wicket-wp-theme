@@ -14,6 +14,7 @@
   "styles": [],
   "supports": {
     "anchor": false,
+    "align": false,
     "alignContent": false,
     "color": {
       "text": false,
