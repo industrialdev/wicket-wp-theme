@@ -64,12 +64,22 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
         $logo = get_field( 'site_logo', 'options' );
         $logo_url = $logo['url'] ?? get_template_directory_uri() . "/assets/images/logo-" . $lang . ".svg" ?? '';
         $bam_path = $lang == 'fr' ? '/fr/create-account' : '/create-account';
-        $account_center_slug_locale = get_field('field_66858df5a3430', 'option');
-        if( empty( $account_center_slug_locale['value'] ) ) {
-          $account_center_slug_locale['value'] = 'account-center';
+
+        $acc_index_url = get_post_type_archive_link('my-account');
+        if ($acc_index_url) {
+            $account_center_landing = $acc_index_url;
+            $acc_index_url          = $acc_index_url . $locale;
+        } else {
+            $account_center_slug_locale = get_field('ac_localization', 'option');
+            if (empty($account_center_slug_locale['value'])) {
+                $account_center_slug_locale['value'] = 'account-center';
+            }
+            $account_center_landing = $lang == 'fr' ? '/fr/mon-compte' : '/' . $account_center_slug_locale['value'];
+
+            $acc_index_url = $account_center_landing . $locale;
         }
-        $account_center_landing = $lang == 'fr' ? '/fr/mon-compte' : '/' . $account_center_slug_locale['value'];
-        $referrer = isset($_GET['referrer']) ? wicket_get_site_root_url().$_GET['referrer'].$locale : wicket_get_site_root_url().$account_center_landing.$locale;
+        $referrer = isset($_GET['referrer']) ? wicket_get_site_root_url() . $_GET['referrer'] . $locale : $acc_index_url;
+
         $cart_path = $lang == 'fr' ? '/fr/cart' : '/cart';
         $nav_state = 'logged_out'; // Will be one of logged_out, logged_in_user, logged_in_member
         if( is_user_logged_in() ) {
