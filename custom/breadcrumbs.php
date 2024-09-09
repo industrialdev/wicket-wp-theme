@@ -26,6 +26,7 @@ if ( ! function_exists( 'wicket_breadcrumb' ) ) {
 			'link',
 			[ 
 				'classes'    => [ 'flex' ],
+				'default_link_style' => true,
 				'url'        => get_home_url(),
 				'text'       => __( 'Home', 'wicket' ),
 				'icon_start' => [ 
@@ -57,6 +58,7 @@ if ( ! function_exists( 'wicket_breadcrumb' ) ) {
 						'link',
 						[ 
 							'classes' => [ '' ],
+							'default_link_style' => true,
 							'url'     => get_permalink( $ancestor ),
 							'text'    => get_the_title( $ancestor ),
 						],
