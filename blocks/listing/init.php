@@ -16,6 +16,7 @@ function init( $block = [] ) {
 	] );
 
 	$post_type                 = $block['post_type'] ?? get_field( 'listing_post_type' );
+	$default_order_by          = get_field( 'listing_sort_by' ) ?? 'date-desc';
 	$news_types                = $block['news_types'] ?? get_field( 'listing_news_type' );
 	$resource_types            = $block['resource_types'] ?? get_field( 'listing_resource_type' );
 	$topics_types              = $block['topics_types'] ?? get_field( 'listing_topic' );
@@ -37,8 +38,26 @@ function init( $block = [] ) {
 	$date_format               = apply_filters( 'wicket_general_date_format', 'F j, Y' );
 
 	$paged          = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-	$orderby        = 'date';
-	$order          = 'DESC';
+
+	switch ( $default_order_by ) {
+		case 'alpha-asc':
+			$orderby = 'title';
+			$order   = 'ASC';
+			break;
+		case 'alpha-desc':
+			$orderby = 'title';
+			$order   = 'DESC';
+			break;
+		case 'date-asc':
+			$orderby = 'date';
+			$order   = 'ASC';
+			break;
+		case 'date-desc':
+			$orderby = 'date';
+			$order   = 'DESC';
+			break;
+	}
+
 	$keyword        = '';
 	$excluded_posts = [];
 
@@ -265,6 +284,8 @@ function init( $block = [] ) {
 								<?php
 								$date_desc_label = __( 'Date (newest-oldest)', 'industrial' );
 								$date_asc_label  = __( 'Date (oldest-newest)', 'industrial' );
+								$alpha_asc_label  = __( 'Alphabetical (a-z)', 'industrial' );
+								$alpha_desc_label  = __( 'Alphabetical (z-a)', 'industrial' );
 								if ( isset( $_GET['sort-by'] ) ) : ?>
 									<option value="date-desc" <?php if ( $_GET['sort-by'] == 'date-desc' ) : ?>selected<?php endif; ?>>
 										<?php echo $date_desc_label; ?>
@@ -273,24 +294,24 @@ function init( $block = [] ) {
 										<?php echo $date_asc_label; ?>
 									</option>
 									<option value="alpha-asc" <?php if ( $_GET['sort-by'] == 'alpha-asc' ) : ?>selected<?php endif; ?>>
-										<?php echo __( 'Alphabetical (a-z)', 'industrial' ); ?>
+										<?php echo $alpha_asc_label; ?>
 									</option>
 									<option value="alpha-desc" <?php if ( $_GET['sort-by'] == 'alpha-desc' ) : ?>selected<?php endif; ?>>
-										<?php echo __( 'Alphabetical (z-a)', 'industrial' ); ?>
+										<?php echo $alpha_desc_label; ?>
 									</option>
 									<?php
 								else : ?>
-									<option value="date-desc" selected>
+									<option value="date-desc" <?php if ( $default_order_by == 'date-desc' ) : ?>selected<?php endif; ?>>
 										<?php echo $date_desc_label; ?>
 									</option>
-									<option value="date-asc">
+									<option value="date-asc" <?php if ( $default_order_by == 'date-asc' ) : ?>selected<?php endif; ?>>
 										<?php echo $date_asc_label; ?>
 									</option>
-									<option value="alpha-asc">
-										<?php echo __( 'Alphabetical (a-z)', 'industrial' ); ?>
+									<option value="alpha-asc" <?php if ( $default_order_by == 'alpha-asc' ) : ?>selected<?php endif; ?>>
+										<?php echo $alpha_asc_label; ?>
 									</option>
-									<option value="alpha-desc">
-										<?php echo __( 'Alphabetical (z-a)', 'industrial' ); ?>
+									<option value="alpha-desc" <?php if ( $default_order_by == 'alpha-desc' ) : ?>selected<?php endif; ?>>
+										<?php echo $alpha_desc_label; ?>
 									</option>
 									<?php
 								endif; ?>

@@ -44,6 +44,35 @@
             "placeholder": ""
         },
         {
+            "key": "field_66e0531e69062",
+            "label": "Default Sort By",
+            "name": "listing_sort_by",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "listing__select-sort-by",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "choices": {
+                "alpha-asc": "Alphabetical (a-z)",
+                "alpha-desc": "Alphabetical (z-a)",
+                "date-desc": "Date (newest-oldest)",
+                "date-asc": "Date (oldest-newest)"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
             "key": "field_65f44ddd16151",
             "label": "News Type",
             "name": "listing_news_type",
@@ -722,5 +751,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "translation",
-    "modified": 1725038011
+    "modified": 1725979173
 }
