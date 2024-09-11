@@ -364,6 +364,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
             <ul class="container w-full gap-4 flex relative <?php if( count($primary_nav_items_structured) > 4 ) { echo 'justify-between'; } else { echo 'justify-evenly'; } ?>">
             <?php
             foreach( $primary_nav_items_structured as $primary_nav_item ):
+                $is_primary_nav_item_last_item = ($primary_nav_item == end($primary_nav_items_structured)) ? true : false;
                 // If this is a single menu item link
                 if( $primary_nav_item['child_count'] == 0 ):
                 ?>
@@ -400,7 +401,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                             x-show="navDropdownOpen"
                             x-cloak
                             x-transition
-                            class="nav-dropdown absolute z-20 left-0 mt-3 w-56 bg-white p-3 lg:p-7 shadow-lg"
+                            class="nav-dropdown absolute z-20 mt-3 w-56 bg-white p-3 lg:p-7 shadow-lg <?php echo $is_primary_nav_item_last_item ? 'right-0' : 'left-0' ?>"
                         >
                             <?php
                             $child_loop_index = 0;
