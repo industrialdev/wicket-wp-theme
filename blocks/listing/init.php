@@ -397,6 +397,8 @@ function init( $block = [] ) {
 										'hide_document_format_icon' => $hide_document_format_icon,
 									];
 
+									$listing_card_params = apply_filters( 'wicket_listing_block_card_params', $listing_card_params, $post_id );
+
 									get_component( 'card-listing', $listing_card_params );
 								}
 
