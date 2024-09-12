@@ -332,6 +332,8 @@ function init( $block = [] ) {
 								$query->the_post();
 								$post_id = get_the_ID();
 
+								do_action( 'wicket_listing_block_before_card', $post_id );
+
 								// If post is excluded from results, skip it
 								if ( in_array( $post_id, $excluded_posts ) ) {
 									$query->the_post();
@@ -398,6 +400,7 @@ function init( $block = [] ) {
 									get_component( 'card-listing', $listing_card_params );
 								}
 
+								do_action( 'wicket_listing_block_after_card', $post_id );
 
 
 							endwhile;
