@@ -28,6 +28,10 @@
     align-items: center;
     gap: var(--wp--preset--spacing--100);
 
+    &[target="_blank"] {
+      @include add-external-icon;
+    }
+
     /* Default (Primary) button */
     @extend .button !optional;
     @extend .button--primary !optional;
