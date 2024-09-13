@@ -25,6 +25,13 @@ if ( ! function_exists( 'wicket_write_log' ) ) {
 
 function is_member_only( $post_id ) {
 	$visibility = get_post_meta( $post_id, '_wppcp_post_page_visibility', true );
+
+	// if roles are specified, check if a "member" role is present
+	if ( $visibility === 'role' ) {
+		$allowed_roles = get_post_meta( $post_id, '_wppcp_post_page_roles', true );
+		return in_array( 'member', $allowed_roles );
+	}
+
 	return $visibility === 'member';
 }
 
