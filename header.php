@@ -375,7 +375,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         $target = $primary_nav_item['target'] ?? '';
                         get_component( 'link', [
                               'text'     => $primary_nav_item['title'],
-                              'classes'  => [],
+                              'classes'  => [ '!items-baseline' ],
                               'target'   => $target,
                               'url'    => $primary_nav_item['url'],
                         ] );
