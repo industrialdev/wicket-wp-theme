@@ -37,24 +37,24 @@ function init( $block = [] ) {
 	$listing_link_label        = get_field( 'listing_link_label' ) ?? __( 'View Page', 'wicket' );
 	$date_format               = apply_filters( 'wicket_general_date_format', 'F j, Y' );
 
-	$paged          = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+	$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
 	switch ( $default_order_by ) {
 		case 'alpha-asc':
 			$orderby = 'title';
-			$order   = 'ASC';
+			$order = 'ASC';
 			break;
 		case 'alpha-desc':
 			$orderby = 'title';
-			$order   = 'DESC';
+			$order = 'DESC';
 			break;
 		case 'date-asc':
 			$orderby = 'date';
-			$order   = 'ASC';
+			$order = 'ASC';
 			break;
 		case 'date-desc':
 			$orderby = 'date';
-			$order   = 'DESC';
+			$order = 'DESC';
 			break;
 	}
 
@@ -267,11 +267,11 @@ function init( $block = [] ) {
 							if ( $total_posts === 0 ) {
 								echo '0' . __( ' Results', 'wicket' );
 							} else {
-								echo sprintf( 
-									__('%1$d-%2$d of %3$d Results', 'wicket'), 
-									$paged, 
-									count( $posts ), 
-									$total_posts 
+								echo sprintf(
+									__( '%1$d-%2$d of %3$d Results', 'wicket' ),
+									$paged,
+									count( $posts ),
+									$total_posts
 								);
 							}
 							?>
@@ -282,10 +282,10 @@ function init( $block = [] ) {
 							</label>
 							<select name="sort-by" id="sort-by" class="min-w-[260px]" onchange="this.form.submit()">
 								<?php
-								$date_desc_label = __( 'Date (newest-oldest)', 'industrial' );
-								$date_asc_label  = __( 'Date (oldest-newest)', 'industrial' );
+								$date_desc_label  = __( 'Date (newest-oldest)', 'industrial' );
+								$date_asc_label   = __( 'Date (oldest-newest)', 'industrial' );
 								$alpha_asc_label  = __( 'Alphabetical (a-z)', 'industrial' );
-								$alpha_desc_label  = __( 'Alphabetical (z-a)', 'industrial' );
+								$alpha_desc_label = __( 'Alphabetical (z-a)', 'industrial' );
 								if ( isset( $_GET['sort-by'] ) ) : ?>
 									<option value="date-desc" <?php if ( $_GET['sort-by'] == 'date-desc' ) : ?>selected<?php endif; ?>>
 										<?php echo $date_desc_label; ?>
@@ -360,6 +360,7 @@ function init( $block = [] ) {
 								if ( $listing_layout === 'grid' ) {
 									$grid_card_params = [ 
 										'classes'      => [ 'p-4' ],
+										'post_type'    => $post_type,
 										'post_id'      => $post_id,
 										'content_type' => ! $hide_type_taxonomy ? get_related_content_type_term( $post_id ) : '',
 										'title'        => $title,
@@ -378,6 +379,7 @@ function init( $block = [] ) {
 								} else {
 									$listing_card_params = [ 
 										'classes'                   => [ 'mb-6' ],
+										'post_type'                 => $post_type,
 										'content_type'              => ! $hide_type_taxonomy ? get_related_content_type_term( $post_id ) : '',
 										'title'                     => $title,
 										'excerpt'                   => ! $hide_excerpt ? $excerpt : '',
