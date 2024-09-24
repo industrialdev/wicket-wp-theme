@@ -900,4 +900,6 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
             echo "], ";
         };
         echo ']';
-    endif; ?>
+    endif;
+
+do_action('wicket_header_end');
