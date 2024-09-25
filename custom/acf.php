@@ -32,6 +32,11 @@ function wicket_acf_init() {
 			'menu_title'  => __( 'Global Search', 'wicket' ),
 			'parent_slug' => $parent['menu_slug'],
 		) );
+		acf_add_options_page( array(
+			'page_title'  => __( 'Theme Customization', 'wicket' ),
+			'menu_title'  => __( 'Customization', 'wicket' ),
+			'parent_slug' => $parent['menu_slug'],
+		) );
 	}
 }
 add_action( 'acf/init', 'wicket_acf_init' );

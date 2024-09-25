@@ -122,6 +122,29 @@ function wicket_enqueue_script( $handle, $path, $external = FALSE, $dependencies
 	}
 }
 
+// Get the customizations from the ACF options page and add them into a single CSS file
+function get_customizations_inline_css() {
+	$customized_fields = acf_get_fields( 'group_66f2d49c4ce0d' );
+	$css = ':root {';
+
+	foreach ( $customized_fields as $field ) {
+		if ( isset( $field['sub_fields'] ) ) {
+			$group = get_field( $field['name'], 'option' );
+
+			foreach ( $field['sub_fields'] as $sub_field ) {
+				$sub_field_name = $sub_field['name'];
+				$sub_field_value = $group[ $sub_field_name ];
+
+				$css .= '--' . $sub_field_name . ': ' . $sub_field_value . ';';
+			}
+		}
+	}
+
+	$css .= '}';
+
+	return $css;
+}
+
 function wicket_add_theme_assets() {
 	// wicket_enqueue_style( 'fontawesome', '/assets/fonts/FontAwesome/web-fonts-with-css/css/fontawesome-all.min.css' );
 	wicket_enqueue_style( 'font-awesome', '/font-awesome/css/fontawesome.css' );
@@ -129,6 +152,8 @@ function wicket_add_theme_assets() {
 	wicket_enqueue_style( 'font-awesome-solid', '/font-awesome/css/solid.css' );
 	wicket_enqueue_style( 'font-awesome-regular', '/font-awesome/css/regular.css' );
 	wicket_enqueue_style( 'theme', '/assets/styles/min/wicket.min.css' );
+
+	wp_add_inline_style( 'theme', get_customizations_inline_css() );
 
 	wicket_enqueue_script( 'jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js', True );
 	wicket_enqueue_script( 'wicket', '/assets/scripts/min/wicket.min.js', False, [ 'jquery' ], False, True );

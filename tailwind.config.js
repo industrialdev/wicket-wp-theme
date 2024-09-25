@@ -113,10 +113,10 @@ const generateColorVarieties = (color, name) => {
 
 // Reformat colors from theme.json to fit Tailwind config format
 // Credit: https://gist.github.com/alexstandiford/c4fbd990676a7511418f2e669c5be592
-const colors = theme.settings.color.palette.reduce((accumulator, item) => {
-  accumulator[item.slug] = generateColorVarieties(item.color, item.slug)
-  return accumulator
-}, {})
+// const colors = theme.settings.color.palette.reduce((accumulator, item) => {
+//   accumulator[item.slug] = generateColorVarieties(item.color, item.slug)
+//   return accumulator
+// }, {})
 
 // Reformat font families
 const fontFamily = theme.settings.typography.fontFamilies.reduce(
@@ -179,7 +179,7 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: colors,
+      // colors: colors,
       boxShadow: boxShadow,
       width: layout,
       lineHeight: lineHeight,
