@@ -133,7 +133,7 @@ function get_customizations_inline_css() {
 
 			foreach ( $field['sub_fields'] as $sub_field ) {
 				$sub_field_name = $sub_field['name'];
-				$sub_field_value = $group[ $sub_field_name ];
+				$sub_field_value = is_numeric( $group[ $sub_field_name ] ) ? $group[ $sub_field_name ] . 'px' : $group[ $sub_field_name ];
 
 				$css .= '--' . $sub_field_name . ': ' . $sub_field_value . ';';
 			}

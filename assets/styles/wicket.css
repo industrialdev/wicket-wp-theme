@@ -1269,6 +1269,15 @@ video {
 .rounded-600 {
   border-radius: 3rem;
 }
+.rounded-\[--interactive-corner-radius-lg\] {
+  border-radius: var(--interactive-corner-radius-lg);
+}
+.rounded-\[--interactive-corner-radius-md\] {
+  border-radius: var(--interactive-corner-radius-md);
+}
+.rounded-\[--interactive-corner-radius-sm\] {
+  border-radius: var(--interactive-corner-radius-sm);
+}
 .rounded-\[50\%\] {
   border-radius: 50%;
 }
@@ -67121,6 +67130,15 @@ video {
 .leading-tight {
   line-height: 1.25;
 }
+.text-\[--button-label-lg\] {
+  color: var(--button-label-lg);
+}
+.text-\[--button-label-md\] {
+  color: var(--button-label-md);
+}
+.text-\[--button-label-sm\] {
+  color: var(--button-label-sm);
+}
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -89585,111 +89603,6 @@ video {
   --s68px: 4.25rem;
   --s69px: 4.3125rem;
   --s70px: 4.375rem;
-  /* Global Text Colour Variables */
-  --text-content: #232A31;
-  --text-content-reversed: #FFFFFF;
-  --text-content-secondary: #515B64;
-  --text-content-secondary-reversed: #D3D4D6;
-  --interactive: #376DF9;
-  --interactive-reversed: #FFFFFF;
-  --text-disabled: #7E7E7E;
-  --text-button-label: #232A31;
-  --text-button-label-reversed: #FFFFFF;
-  --text-accent: #376DF9;
-  --text-accent-reversed: #FFFFFF;
-  --text-label-1: #232A31;
-  --text-label-2: #FFFFFF;
-  --text-tag: #0516B0;
-  /* Global Background Colour Variables */
-  --bg-label: #60CFFF;
-  --bg-label-2: #1D47B4;
-  --bg-tag: #BFE8FF;
-  --bg-interactive: #376DF9;
-  --bg-interactive-reversed: #B4E6FB;
-  --bg-white: #FFFFFF;
-  --bg-card: #FFFFFF;
-  --bg-dark: #4B50C5;
-  --bg-dark-alternate: #1F3671;
-  --bg-light: #F8F8F8;
-  --bg-light-alternate: #E8ECFF;
-  --bg-light-neutral: #F6F6F6;
-  --bg-image-overlay: rgba(75, 80, 197, 0.85);
-  --bg-accent-dark: #376DF9;
-  --bg-accent-light: #DBE5FF;
-  --bg-callout-1: #C9E8F5;
-  --bg-callout-2: #E8E8E8;
-  --bg-disabled: #D3D4D6;
-  /* States */
-  --highlight-light: #DFE7FC;
-  --highlight-dark: #002278;
-  --status-active: #198754;
-  --status-inactive: #7B7F83;
-  /* Borders */
-  --border-card: #376DF9;
-  --border-dark: #0516B0;
-  --border-light: #D3D4D6;
-  --border-white: #FFFFFF;
-  --border-accent: #86BBFA;
-  --border-interactive: #376DF9;
-  --border-interactive-reversed: #FFFFFF;
-  --border-tag: #59B9F0;
-  --border-input-default: #7B7F83;
-  --border-disabled: #D3D4D6;
-  /* Informational States */
-  --state-info-primary: #4AB2DE;
-  --state-info-primary-light: #C9E8F5;
-  --state-info-secondary: #A1A1A1;
-  --state-info-secondary-light: #E8E8E8;
-  --state-warning: #FFC107;
-  --state-warning-light: #FFECB5;
-  --state-error: #DC3545;
-  --state-error-light: #F5C2C7;
-  --state-success: #198754;
-  --state-success-light: #D1E7DD;
-  /* Table */
-  --table-header-bg: #232A31;
-  --table-header-label: #FFFFFF;
-  --table-row: #FFFFFF;
-  --table-row-alternate: #E9EAEA;
-  --table-row-border: #BDBFC1;
-  --table-footer-bg: #7B7F83;
-  --table-footer-label: #FFFFFF;
-  /* Main Navigation */
-  --nav-main-bg: #FFFFFF;
-  --nav-main-border: #D3D4D6;
-  --nav-main-label: #232A31;
-  --nav-main-highlight: #E8ECFF;
-  --nav-main-border-interactive: #1640AD;
-  --nav-secondary-label: #376DF9;
-  --dropdown-mega-bg: #FFFFFF;
-  --dropdown-mega-heading-link: #1640AD;
-  --dropdown-mega-link: #376DF9;
-  --dropdown-mega-bg-highlight: #F4F6FF;
-  /* Utility Nav */
-  --nav-utility-bg: #232A31;
-  --nav-utility-label: #FFFFFF;
-  --nav-utility-bg-highlight: #4F555A;
-  /* Footer Navigation */
-  --nav-footer-bg: #232A31;
-  --nav-footer-title: #FFFFFF;
-  --nav-footer-sublink: #FFFFFF;
-  --nav-footer-border: #7B7F83;
-  --nav-footer-border-top: #232A31;
-  --nav-footer-social-bg: #FFFFFF;
-  --nav-footer-social-text: #232A31;
-  --nav-footer-social-text-hover: #FFFFFF;
-  --nav-footer-social-border-hover: #FFFFFF;
-  --nav-footer-text-content: #FFFFFF;
-  --nav-footer-text-interactive: #FFFFFF;
-  --nav-footer-newsletter-bg: #393F46;
-  --nav-footer-newsletter-text-content: #FFFFFF;
-  /* Contextual Nav */
-  --nav-contextual-title: #232A31;
-  --nav-contextual-link-lvl-1: #376DF9;
-  --nav-contextual-sublink: #232A31;
-  /* Miscellaneous */
-  --dropshadow: rgba(35, 42, 49, 0.2);
-  --modal-bg-overlay: rgba(35, 42, 49, 0.9);
 }
 
 /* THEME BASELINE STYLES
