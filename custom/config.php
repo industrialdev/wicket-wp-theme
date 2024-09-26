@@ -8,6 +8,13 @@ function wicket_add_editor_styles() {
 }
 add_action( 'admin_init', 'wicket_add_editor_styles' );
 
+function wicket_add_css_variables() {
+	echo '<style type="text/css">';
+	echo get_customizations_inline_css();
+	echo '</style>';
+}
+add_action( 'admin_head', 'wicket_add_css_variables' );
+
 function wicket_setup() {
 	/*
 	 * Let WordPress manage the document title.

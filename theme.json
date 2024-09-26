@@ -10,7 +10,99 @@
       "customDuotone": false,
       "customGradient": false,
       "gradients": [],
-      "link": false
+      "link": false,
+      "palette": [
+        {
+          "slug": "bg-label",
+          "color": "var(--bg-label)",
+          "name": "bg-label"
+        },
+        {
+          "slug": "bg-label-2",
+          "color": "var(--bg-label-2)",
+          "name": "bg-label-2"
+        },
+        {
+          "slug": "bg-tag",
+          "color": "var(--bg-tag)",
+          "name": "bg-tag"
+        },
+        {
+          "slug": "bg-interactive",
+          "color": "var(--bg-interactive)",
+          "name": "bg-interactive"
+        },
+        {
+          "slug": "bg-interactive-reversed",
+          "color": "var(--bg-interactive-reversed)",
+          "name": "bg-interactive-reversed"
+        },
+        {
+          "slug": "bg-white",
+          "color": "var(--bg-white)",
+          "name": "bg-white"
+        },
+        {
+          "slug": "bg-card",
+          "color": "var(--bg-card)",
+          "name": "bg-card"
+        },
+        {
+          "slug": "bg-dark",
+          "color": "var(--bg-dark)",
+          "name": "bg-dark"
+        },
+        {
+          "slug": "bg-dark-alternate",
+          "color": "var(--bg-dark-alternate)",
+          "name": "bg-dark-alternate"
+        },
+        {
+          "slug": "bg-light",
+          "color": "var(--bg-light)",
+          "name": "bg-light"
+        },
+        {
+          "slug": "bg-light-alternate",
+          "color": "var(--bg-light-alternate)",
+          "name": "bg-light-alternate"
+        },
+        {
+          "slug": "bg-light-neutral",
+          "color": "var(--bg-light-neutral)",
+          "name": "bg-light-neutral"
+        },
+        {
+          "slug": "bg-image-overlay",
+          "color": "var(--bg-image-overlay)",
+          "name": "bg-image-overlay"
+        },
+        {
+          "slug": "bg-accent-dark",
+          "color": "var(--bg-accent-dark)",
+          "name": "bg-accent-dark"
+        },
+        {
+          "slug": "bg-accent-light",
+          "color": "var(--bg-accent-light)",
+          "name": "bg-accent-light"
+        },
+        {
+          "slug": "bg-callout-1",
+          "color": "var(--bg-callout-1)",
+          "name": "bg-callout-1"
+        },
+        {
+          "slug": "bg-callout-2",
+          "color": "var(--bg-callout-2)",
+          "name": "bg-callout-2"
+        },
+        {
+          "slug": "bg-disabled",
+          "color": "var(--bg-disabled)",
+          "name": "bg-disabled"
+        }
+      ]      
     },
     "custom": {
       "border-radius": {
@@ -143,37 +235,37 @@
       "fontSizes": [
         {
           "name": "Heading 3xl",
-          "size": "clamp(2.5rem, 3vw + 1rem, 3.25rem)",
+          "size": "var(--heading-3xl-font-size)",
           "slug": "heading-3xl"
         },
         {
           "name": "Heading 2xl",
-          "size": "clamp(2.25rem, 3vw + 1rem, 2.75rem)",
+          "size": "var(--heading-2xl-font-size)",
           "slug": "heading-2xl"
         },
         {
           "name": "Heading xl",
-          "size": "clamp(2rem, 2vw + 1rem, 2.25rem)",
+          "size": "var(--heading-xl-font-size)",
           "slug": "heading-xl"
         },
         {
           "name": "Heading lg",
-          "size": "clamp(1.75rem, 2vw + 1rem, 2rem)",
+          "size": "var(--heading-lg-font-size)",
           "slug": "heading-lg"
         },
         {
           "name": "Heading md",
-          "size": "clamp(1.5rem, 2vw + 1rem, 1.75rem)",
+          "size": "var(--heading-md-font-size)",
           "slug": "heading-md"
         },
         {
           "name": "Heading sm",
-          "size": "clamp(1.25rem, 1vw + 1rem, 1.5rem)",
+          "size": "var(--heading-sm-font-size)",
           "slug": "heading-sm"
         },
         {
           "name": "Heading xs",
-          "size": "clamp(1.125rem, 1vw + 1rem, 1.25rem)",
+          "size": "var(--heading-xs-font-size)",
           "slug": "heading-xs"
         },
         {

@@ -6,117 +6,6 @@ const themePath = './'
 
 const themeJson = fs.readFileSync(themePath + 'theme.json')
 const theme = JSON.parse(themeJson)
-const Colour = require('color') // Ref: https://github.com/Qix-/color
-
-const generateColorVarieties = (color, name) => {
-  const lowerLevels = {
-    100: 0,
-    '090': 0.05,
-    '080': 0.1,
-    '070': 0.15,
-    '060': 0.2,
-    '050': 0.25,
-    '040': 0.3,
-    '030': 0.35,
-    '020': 0.4,
-    '010': 0.45,
-    '000': 0.5,
-  }
-
-  const upperLevels = {
-    200: 0.5,
-    190: 0.45,
-    180: 0.4,
-    170: 0.35,
-    160: 0.3,
-    150: 0.25,
-    140: 0.2,
-    130: 0.15,
-    120: 0.1,
-    110: 0.05,
-  }
-
-  const lightLevels = {
-    '000': 0,
-    '010': 0.05,
-    '020': 0.1,
-    '030': 0.15,
-    '040': 0.2,
-    '050': 0.25,
-    '060': 0.3,
-    '070': 0.35,
-    '080': 0.4,
-    '090': 0.45,
-    100: 0.5,
-    110: 0.55,
-    120: 0.6,
-    130: 0.65,
-    140: 0.7,
-    150: 0.75,
-    160: 0.8,
-    170: 0.85,
-    180: 0.9,
-    190: 0.95,
-    200: 1,
-  }
-
-  let returnObject = {}
-
-  // Handle separately if this is the "light" colour
-  if (name === 'light') {
-    // Generate the -000 through -200 varieties (darker varients)
-    for (var varietyCode in lightLevels) {
-      let percentageChange = lightLevels[varietyCode]
-      let colourObject = Colour(color)
-      let newColour = colourObject.darken(percentageChange)
-      returnObject[varietyCode] = newColour.hex()
-    }
-
-    return returnObject
-  }
-
-  // Handle separately if this is the "white" colour
-  if (name === 'white') {
-    returnObject['DEFAULT'] = color
-    return returnObject
-  }
-
-  // Handle separately if this is the "black" colour
-  if (name === 'black') {
-    returnObject['DEFAULT'] = color
-    return returnObject
-  }
-
-  // Generate the -000 through -100 varieties (lighter varients)
-  for (var varietyCode in lowerLevels) {
-    let percentageChange = lowerLevels[varietyCode]
-    let colourObject = Colour(color)
-    let newColour = colourObject.lighten(percentageChange)
-    returnObject[varietyCode] = newColour.hex()
-
-    // Ensure no adjustments are done to the original color
-    if (varietyCode == 100) {
-      returnObject[varietyCode] = color
-    }
-  }
-
-  // Generate the -110 through -200 varieties (darker varients)
-  for (var varietyCode in upperLevels) {
-    let percentageChange = upperLevels[varietyCode]
-    let colourObject = Colour(color)
-    let newColour = colourObject.darken(percentageChange)
-    returnObject[varietyCode] = newColour.hex()
-  }
-
-  return returnObject
-}
-
-// Reformat colors from theme.json to fit Tailwind config format
-// Credit: https://gist.github.com/alexstandiford/c4fbd990676a7511418f2e669c5be592
-// const colors = theme.settings.color.palette.reduce((accumulator, item) => {
-//   accumulator[item.slug] = generateColorVarieties(item.color, item.slug)
-//   return accumulator
-// }, {})
 
 // Reformat font families
 const fontFamily = theme.settings.typography.fontFamilies.reduce(
@@ -145,7 +34,6 @@ const fontSize = theme.settings.typography.fontSizes.reduce(
 )
 
 const customThemeJsonSettings = theme.settings.custom
-const borderRadius = customThemeJsonSettings['border-radius']
 const boxShadow = customThemeJsonSettings['box-shadow']
 const layout = customThemeJsonSettings.layout
 const letterSpacing = customThemeJsonSettings['letter-spacing']
@@ -179,7 +67,6 @@ module.exports = {
   ],
   theme: {
     extend: {
-      // colors: colors,
       boxShadow: boxShadow,
       width: layout,
       lineHeight: lineHeight,
@@ -192,7 +79,6 @@ module.exports = {
     },
     fontFamily: fontFamily,
     fontSize: fontSize,
-    borderRadius: borderRadius,
     letterSpacing: letterSpacing,
   },
   plugins: [require('@tailwindcss/container-queries')],
@@ -240,10 +126,6 @@ console.log(
         danger: 'var(--bs-danger)',
         light: 'var(--bs-light)',
         dark: 'var(--bs-dark)'
-      },
-      boxShadow: {
-        '1': '0px 2px 8px rgba(33, 33, 33, 0.12)',
-        '2': '0px 3px 10px rgba(33, 33, 33, 0.25)'
       },
       width: {
         content: 'var(--bs-container-md)',
