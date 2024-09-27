@@ -328,12 +328,15 @@ if ( have_posts() ) :
 								'icon'  => 'fa-regular fa-lock',
 							] ); ?>
 						</div>
-						<div class="mb-4">
-							<?php get_component( 'tag', [ 
-								'label'    => __( 'Members Only', 'wicket' ),
-								'icon'     => 'fa-regular fa-lock',
-								'reversed' => true,
-							] ); ?>
+						
+						<div class="bg-black p-5 m-3">
+							<div class="mb-4">
+								<?php get_component( 'tag', [ 
+									'label'    => __( 'Members Only', 'wicket' ),
+									'icon'     => 'fa-regular fa-lock',
+									'reversed' => true,
+								] ); ?>
+							</div>
 						</div>
 						<div class="mb-4">
 							<?php get_component( 'tag', [ 

@@ -2533,7 +2533,27 @@
                 {
                     "key": "field_66f2d4dab7778",
                     "label": "Border Card",
-                    "name": "border-card",
+                    "name": "border-card-size",
+                    "aria-label": "",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 2,
+                    "default_value": 2,
+                    "placeholder": "",
+                    "prepend": "px",
+                    "append": ""
+                },
+                {
+                    "key": "field_66f2d4dab7938",
+                    "label": "Border Tag",
+                    "name": "border-tag-size",
                     "aria-label": "",
                     "type": "number",
                     "instructions": "",
@@ -3443,5 +3463,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "translation",
-    "modified": 1727277532
+    "modified": 1727438927
 }
