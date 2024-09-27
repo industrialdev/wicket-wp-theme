@@ -1,0 +1,80 @@
+// Primary
+.button-v2 {
+  @apply text-[--button-label-md] rounded-[--interactive-corner-radius-md] p-[--space-200];
+
+  .component-icon {
+    @apply text-[16px];
+  }
+  
+  &--sm {
+    @apply text-[--button-label-sm] rounded-[--interactive-corner-radius-md] p-[--space-150];
+
+    .component-icon {
+      @apply text-[24px];
+    }
+  }
+  
+  &--lg {
+    @apply text-[--button-label-lg] rounded-[--interactive-corner-radius-lg] p-[--space-250];
+
+    .component-icon {
+      @apply text-[24px];
+    }
+  }
+
+  // Primary
+  &--primary:not(.button-v2--reversed) {
+    @apply bg-[--bg-interactive] border-[length:--border-interactive-md] border-transparent text-[--text-button-label-reversed] hover:bg-transparent hover:border-[--border-interactive] hover:text-[--text-button-label] hover:underline focus:bg-[--highlight-light] focus:border-[--border-interactive] focus:text-[--text-button-label] focus:underline active:bg-[--highlight-light] active:border-transparent active:text-[--text-button-label];
+  }
+
+  // Secondary
+  &--secondary:not(.button-v2--reversed) {
+    @apply bg-transparent border-[--border-interactive] border-[length:--border-interactive-md] text-[--text-button-label] hover:bg-[--bg-interactive] hover:text-[--text-button-label-reversed] hover:underline focus:bg-[--highlight-dark] focus:text-[--text-button-label-reversed] focus:underline active:bg-[--highlight-dark] active:text-[--text-button-label-reversed];
+  }
+
+  // Ghost
+  &--ghost:not(.button-v2--reversed) {
+    @apply text-[--text-button-label] hover:bg-[--bg-interactive] hover:text-[--text-button-label-reversed] hover:underline focus:bg-[--highlight-dark] focus:text-[--text-button-label-reversed] focus:underline active:bg-[--highlight-light] active:text-[--text-button-label];
+  }
+
+  // Primary Reversed
+  &--primary.button-v2--reversed {
+    @apply bg-[--bg-interactive-reversed] border-[length:--border-interactive-md] border-transparent text-[--text-button-label] hover:bg-transparent hover:border-[--border-interactive-reversed] hover:text-[--text-button-label-reversed] hover:underline focus:bg-[--highlight-dark] focus:border-[--border-interactive-reversed] focus:text-[--text-button-label-reversed] focus:underline active:bg-[--highlight-light] active:text-[--text-button-label];
+  }
+
+  // Secondary Reversed
+  &--secondary.button-v2--reversed {
+    @apply bg-transparent border-[--border-interactive-reversed] border-[length:--border-interactive-md] text-[--text-button-label-reversed] hover:bg-[--bg-interactive-reversed] hover:text-[--text-button-label] hover:underline focus:bg-[--highlight-light] focus:text-[--text-button-label] focus:underline active:bg-[--highlight-light] active:text-[--text-button-label];
+  }
+
+  // Ghost Reversed
+  &--ghost.button-v2--reversed {
+    @apply text-[--text-button-label-reversed] hover:bg-[--bg-interactive-reversed] hover:text-[--text-button-label] hover:underline focus:bg-[--highlight-light] focus:text-[--text-button-label] focus:underline active:bg-[--highlight-light] active:text-[--text-button-label];
+  }
+
+  // Disabled States
+  &--primary.button-v2--disabled {
+    @apply bg-[--bg-disabled] text-[--text-disabled] border-transparent #{!important};
+  }
+
+  &--secondary.button-v2--disabled {
+    @apply bg-[--bg-transparent] text-[--text-disabled] border-[--border-disabled] #{!important};
+  }
+
+  &--ghost.button-v2--disabled {
+    @apply text-[--text-disabled] #{!important};
+  }
+  
+  // Disabled States Reversed
+  &--primary.button-v2--disabled.button-v2--reversed {
+    @apply bg-[--bg-disabled] text-[--text-disabled] border-transparent #{!important};
+  }
+
+  &--secondary.button-v2--disabled.button-v2--reversed {
+    @apply bg-[--bg-transparent] text-[--text-disabled] border-[--border-disabled] #{!important};
+  }
+
+  &--ghost.button-v2--disabled.button-v2--reversed {
+    @apply text-[--text-disabled] border-transparent #{!important};
+  }
+}

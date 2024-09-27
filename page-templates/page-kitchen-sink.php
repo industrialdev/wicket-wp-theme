@@ -153,7 +153,7 @@ if ( have_posts() ) :
 					</div>
 				</section>
 
-				<section class="bg-dark-100 p-8 mb-6">
+				<section class="bg-black p-8 mb-6">
 					<div class="py-3">
 						<h2 class="text-heading-lg mb-3 text-white">Primary reversed</h2>
 						<div class="mb-3">
