@@ -1,6 +1,7 @@
 .wp-block-quote {
-  border-left: 4px solid var(--wp--preset--color--tertiary);
-  padding-left: 1rem;
+  @apply border-l-[length:--border-lg] border-[--border-dark] text-[--text-content] pl-[--space-300];
+  // border-left: 4px solid var(--wp--preset--color--tertiary);
+  // padding-left: 1rem;
 
   cite {
     font-weight: 700;

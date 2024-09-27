@@ -307,6 +307,34 @@ if ( have_posts() ) :
 						] ); ?>
 					</div>
 				</section>
+				
+				<section class="py-8">
+					<h2 class="text-heading-lg mb-3">Tooltip</h2>
+					<div class="mb-6">
+						<?php get_component( 'tooltip', [
+							'content'  => __( 'Tooltip content', 'wicket' ),
+							'position' => 'right',
+						] ); ?>
+					</div>
+					<div class="mb-6">
+						<?php get_component( 'tooltip', [
+							'content'  => __( 'Tooltip content', 'wicket' ),
+							'position' => 'left',
+						] ); ?>
+					</div>
+					<div class="mb-6">
+						<?php get_component( 'tooltip', [
+							'content'  => __( 'Tooltip content', 'wicket' ),
+							'position' => 'top',
+						] ); ?>
+					</div>
+					<div class="mb-6">
+						<?php get_component( 'tooltip', [
+							'content'  => __( 'Tooltip content', 'wicket' ),
+							'position' => 'bottom',
+						] ); ?>
+					</div>
+				</section>
 
 				<section class="py-8">
 					<h2 class="text-heading-lg mb-3">Social Media Links</h2>

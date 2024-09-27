@@ -67260,6 +67260,14 @@ video {
 .text-heading-xs {
   font-size: var(--heading-xs-font-size);
 }
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
 .font-bold {
   font-weight: 700;
 }
@@ -90014,6 +90022,54 @@ h6 {
   line-height: var(--body-sm-line-height);
 }
 
+.component-tooltip-v2 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: var(--interactive);
+}
+.component-tooltip-v2 .icon-hover {
+  display: none;
+}
+form .wicket-form-help-text.component-tooltip-v2 .icon-hover,
+form p.wicket-form-help-text.component-tooltip-v2 .icon-hover,
+.form .wicket-form-help-text.component-tooltip-v2 .icon-hover,
+.form p.wicket-form-help-text.component-tooltip-v2 .icon-hover {
+  display: none;
+}
+.component-tooltip-v2 .icon-hover:hover {
+  display: inline;
+}
+.component-tooltip-v2:hover .icon-default {
+  display: none;
+}
+form .wicket-form-help-text.component-tooltip-v2:hover .icon-default,
+form p.wicket-form-help-text.component-tooltip-v2:hover .icon-default,
+.form .wicket-form-help-text.component-tooltip-v2:hover .icon-default,
+.form p.wicket-form-help-text.component-tooltip-v2:hover .icon-default {
+  display: none;
+}
+.component-tooltip-v2:hover .icon-hover {
+  display: inline;
+}
+.component-tooltip-v2-content {
+  position: absolute;
+  z-index: 10;
+  display: none;
+  min-width: 10rem;
+  border-radius: var(--label-corner-radius);
+  background-color: var(--text-content);
+  padding: var(--space-100);
+  padding-left: 1rem;
+  text-align: left;
+  color: var(--text-content-reversed);
+}
+form .wicket-form-help-text.component-tooltip-v2-content,
+form p.wicket-form-help-text.component-tooltip-v2-content,
+.form .wicket-form-help-text.component-tooltip-v2-content,
+.form p.wicket-form-help-text.component-tooltip-v2-content {
+  display: none;
+}
+
 /* BLOCKS
 ------------------------------------------------------------------------------*/
 /* Setting the max-width of the content area for all blocks */
@@ -90273,10 +90329,12 @@ li img {
 }
 
 .wp-block-pullquote {
-  border-top: 1px solid var(--wp--preset--color--light-030);
-  border-bottom: 1px solid var(--wp--preset--color--light-030);
-  color: var(--wp--preset--color--tertiary);
-  padding: 2em 0;
+  border-top-width: var(--border-sm);
+  border-bottom-width: var(--border-sm);
+  border-color: var(--border-dark);
+  padding-top: var(--space-300);
+  padding-bottom: var(--space-300);
+  color: var(--text-content);
 }
 .wp-block-pullquote cite {
   margin-top: 20px;
@@ -90284,8 +90342,10 @@ li img {
 }
 
 .wp-block-quote {
-  border-left: 4px solid var(--wp--preset--color--tertiary);
-  padding-left: 1rem;
+  border-left-width: var(--border-lg);
+  border-color: var(--border-dark);
+  padding-left: var(--space-300);
+  color: var(--text-content);
 }
 .wp-block-quote cite {
   font-weight: 700;

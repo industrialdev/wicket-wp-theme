@@ -1,8 +1,5 @@
 .wp-block-pullquote {
-  border-top: 1px solid var(--wp--preset--color--light-030);
-  border-bottom: 1px solid var(--wp--preset--color--light-030);
-  color: var(--wp--preset--color--tertiary);
-  padding: 2em 0;
+  @apply border-t-[length:--border-sm] border-b-[length:--border-sm] border-[--border-dark] text-[--text-content] py-[--space-300];
 
   cite {
     margin-top: 20px;

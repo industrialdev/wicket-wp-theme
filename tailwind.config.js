@@ -73,12 +73,12 @@ module.exports = {
       aspectRatio: {
         '3/2': '3 / 2',
       },
+      fontSize: fontSize
     },
     container: {
       center: true,
     },
     fontFamily: fontFamily,
-    fontSize: fontSize,
     letterSpacing: letterSpacing,
   },
   plugins: [require('@tailwindcss/container-queries')],

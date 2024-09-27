@@ -1,0 +1,21 @@
+.component-tooltip-v2 {
+  @apply text-[--interactive] text-base;
+
+  .icon-hover {
+    @apply hidden hover:inline;
+  }
+
+  &:hover {
+    .icon-default {
+      @apply hidden;
+    }
+
+    .icon-hover {
+      @apply inline;
+    }
+  }
+  
+  &-content {
+    @apply bg-[--text-content] p-[--space-100] text-[--text-content-reversed] rounded-[--label-corner-radius] absolute z-10 hidden min-w-40 text-left pl-4;
+  }
+}
