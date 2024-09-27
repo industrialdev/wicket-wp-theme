@@ -34,6 +34,81 @@
   --heading-xs-line-height: clamp(1.625rem, 5vw, 1.75rem);
   --heading-xs-font-weight-md: 700;
   --heading-xs-font-weight-sm: 700;
+
+  /* body-lg */
+  --body-lg-font-size: 1.25rem;
+  --body-lg-line-height: 1.75rem;
+  --body-lg-font-weight: 400;
+  
+  /* body-md */
+  --body-md-font-size: 1rem;
+  --body-md-line-height: 1.5rem;
+  --body-md-font-weight: 400;
+
+  /* body-sm */
+  --body-sm-font-size: 0.875rem;
+  --body-sm-line-height: 1.375rem;
+  --body-sm-font-weight: 400;
+
+  /* quote */
+  --quote-font-size: 1.5rem;
+  --quote-line-height: 2.25rem;
+  --quote-font-weight: 400;
+
+  /* placeholder */
+  --placeholder-font-size: 1rem;
+  --placeholder-line-height: 1.5rem;
+  --placeholder-font-weight: 400;
+
+  /* caption */
+  --caption-font-size: 0.875rem;
+  --caption-line-height: 1.375rem;
+  --caption-font-weight: 400;
+
+  /* button-label-lg */
+  --button-label-lg-font-size: 1.25rem;
+  --button-label-lg-line-height: 1.75rem;
+  --button-label-lg-font-weight: 700;
+
+  /* button-label-md */
+  --button-label-md-font-size: 1rem;
+  --button-label-md-line-height: 1.5rem;
+  --button-label-md-font-weight: 700;
+
+  /* button-label-sm */
+  --button-label-sm-font-size: 0.875rem;
+  --button-label-sm-line-height: 1.375rem;
+  --button-label-sm-font-weight: 700;
+
+  /* form-label */
+  --form-label-font-size: 1rem;
+  --form-label-line-height: 1.5rem;
+  --form-label-font-weight: 700;
+
+  /* date-label-md */
+  --date-label-md-font-size: 1rem;
+  --date-label-md-line-height: 1.5rem;
+  --date-label-md-font-weight: 400;
+
+  /* date-label-sm */
+  --date-label-sm-font-size: 0.875rem;
+  --date-label-sm-line-height: 1.375rem;
+  --date-label-sm-font-weight: 400;
+
+  /* label-lg */
+  --label-lg-font-size: 1.25rem;
+  --label-lg-line-height: 1.75rem;
+  --label-lg-font-weight: 700;
+
+  /* label-md */
+  --label-md-font-size: 1rem;
+  --label-md-line-height: 1.5rem;
+  --label-md-font-weight: 700;
+
+  /* label-sm */
+  --label-sm-font-size: 0.875rem;
+  --label-sm-line-height: 1.375rem;
+  --label-sm-font-weight: 700;
 }
 
 /* HELPERS
@@ -87,4 +162,90 @@
 //TODO: Temporary extend typography here
 .text-heading-3xl {
   @apply leading-[--heading-3xl-line-height] font-[--heading-3xl-font-weight-sm] md:font-[--heading-3xl-font-weight-md];
+}
+
+.text-heading-2xl {
+  @apply leading-[--heading-2xl-line-height] font-[--heading-2xl-font-weight-sm] md:font-[--heading-2xl-font-weight-md];
+}
+
+.text-heading-xl {
+  @apply leading-[--heading-xl-line-height] font-[--heading-xl-font-weight-sm] md:font-[--heading-xl-font-weight-md];
+}
+
+.text-heading-lg {
+  @apply leading-[--heading-lg-line-height] font-[--heading-lg-font-weight-sm] md:font-[--heading-lg-font-weight-md];
+}
+
+.text-heading-md {
+  @apply leading-[--heading-md-line-height] font-[--heading-md-font-weight-sm] md:font-[--heading-md-font-weight-md];
+}
+
+.text-heading-sm {
+  @apply leading-[--heading-sm-line-height] font-[--heading-sm-font-weight-sm] md:font-[--heading-sm-font-weight-md];
+}
+
+.text-heading-xs {
+  @apply leading-[--heading-xs-line-height] font-[--heading-xs-font-weight-xs] md:font-[--heading-xs-font-weight-md];
+}
+
+.text-body-lg {
+  @apply leading-[--body-lg-line-height] font-[--body-lg-font-weight];
+}
+
+// generate the rest of the typography classes:
+
+.text-body-md {
+  @apply leading-[--body-md-line-height] font-[--body-md-font-weight];
+}
+
+.text-body-sm {
+  @apply leading-[--body-sm-line-height] font-[--body-sm-font-weight];
+}
+
+.text-quote {
+  @apply leading-[--quote-line-height] font-[--quote-font-weight] italic;
+}
+
+.text-placeholder {
+  @apply leading-[--placeholder-line-height] font-[--placeholder-font-weight] italic;
+}
+
+.text-caption {
+  @apply leading-[--caption-line-height] font-[--caption-font-weight];
+}
+
+.text-button-label-lg {
+  @apply leading-[--button-label-lg-line-height] font-[--button-label-lg-font-weight];
+}
+
+.text-button-label-md {
+  @apply leading-[--button-label-md-line-height] font-[--button-label-md-font-weight];
+}
+
+.text-button-label-sm {
+  @apply leading-[--button-label-sm-line-height] font-[--button-label-sm-font-weight];
+}
+
+.text-form-label {
+  @apply leading-[--form-label-line-height] font-[--form-label-font-weight];
+}
+
+.text-date-label-md {
+  @apply leading-[--date-label-md-line-height] font-[--date-label-md-font-weight] italic;
+}
+
+.text-date-label-sm {
+  @apply leading-[--date-label-sm-line-height] font-[--date-label-sm-font-weight] italic;
+}
+
+.text-label-lg {
+  @apply leading-[--label-lg-line-height] font-[--label-lg-font-weight] uppercase;
+}
+
+.text-label-md {
+  @apply leading-[--label-md-line-height] font-[--label-md-font-weight] uppercase;
+}
+
+.text-label-sm {
+  @apply leading-[--label-sm-line-height] font-[--label-sm-font-weight] uppercase;
 }

@@ -270,23 +270,78 @@
         },
         {
           "name": "Body lg",
-          "size": "20px",
+          "size": "var(--body-lg-font-size)",
           "slug": "body-lg"
         },
         {
           "name": "Body md",
-          "size": "16px",
+          "size": "var(--body-md-font-size)",
           "slug": "body-md"
         },
         {
           "name": "Body sm",
-          "size": "14px",
+          "size": "var(--body-sm-font-size)",
           "slug": "body-sm"
         },
         {
-          "name": "Body xs",
-          "size": "12px",
-          "slug": "body-xs"
+          "name": "Quote",
+          "size": "var(--quote-font-size)",
+          "slug": "quote"
+        },
+        {
+          "name": "Placeholder",
+          "size": "var(--placeholder-font-size)",
+          "slug": "placeholder"
+        },
+        {
+          "name": "Caption",
+          "size": "var(--caption-font-size)",
+          "slug": "caption"
+        },
+        {
+          "name": "Button Label lg",
+          "size": "var(--button-label-lg-font-size)",
+          "slug": "button-label-lg"
+        },
+        {
+          "name": "Button Label md",
+          "size": "var(--button-label-md-font-size)",
+          "slug": "button-label-md"
+        },
+        {
+          "name": "Button Label sm",
+          "size": "var(--button-label-sm-font-size)",
+          "slug": "button-label-sm"
+        },
+        {
+          "name": "Form Label",
+          "size": "var(--form-label-font-size)",
+          "slug": "form-label"
+        },
+        {
+          "name": "Date Label md",
+          "size": "var(--date-label-md-font-size)",
+          "slug": "date-label-md"
+        },
+        {
+          "name": "Date Label sm",
+          "size": "var(--date-label-sm-font-size)",
+          "slug": "date-label-sm"
+        },
+        {
+          "name": "Label lg",
+          "size": "var(--label-lg-font-size)",
+          "slug": "label-lg"
+        },
+        {
+          "name": "Label md",
+          "size": "var(--label-md-font-size)",
+          "slug": "label-md"
+        },
+        {
+          "name": "Label sm",
+          "size": "var(--label-sm-font-size)",
+          "slug": "label-sm"
         }
       ]
     },
