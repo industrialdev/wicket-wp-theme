@@ -1,21 +1,21 @@
 // Primary
 .button-v2 {
-  @apply text-[--button-label-md] rounded-[--interactive-corner-radius-md] p-[--space-200];
+  @apply text-button-label-md rounded-[--interactive-corner-radius-md] p-[--space-200];
 
   .component-icon {
     @apply text-[16px];
   }
   
   &--sm {
-    @apply text-[--button-label-sm] rounded-[--interactive-corner-radius-md] p-[--space-150];
+    @apply text-button-label-sm rounded-[--interactive-corner-radius-md] p-[--space-150];
 
     .component-icon {
-      @apply text-[24px];
+      @apply text-[16px];
     }
   }
   
   &--lg {
-    @apply text-[--button-label-lg] rounded-[--interactive-corner-radius-lg] p-[--space-250];
+    @apply text-button-label-lg rounded-[--interactive-corner-radius-lg] p-[--space-250];
 
     .component-icon {
       @apply text-[24px];

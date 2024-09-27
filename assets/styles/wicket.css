@@ -89830,7 +89830,9 @@ h6 {
 .button-v2 {
   border-radius: var(--interactive-corner-radius-md);
   padding: var(--space-200);
-  color: var(--button-label-md);
+  font-size: var(--button-label-md-font-size);
+  font-weight: var(--button-label-md-font-weight);
+  line-height: var(--button-label-md-line-height);
 }
 .button-v2 .component-icon {
   font-size: 16px;
@@ -89838,15 +89840,19 @@ h6 {
 .button-v2--sm {
   border-radius: var(--interactive-corner-radius-md);
   padding: var(--space-150);
-  color: var(--button-label-sm);
+  font-size: var(--button-label-sm-font-size);
+  font-weight: var(--button-label-sm-font-weight);
+  line-height: var(--button-label-sm-line-height);
 }
 .button-v2--sm .component-icon {
-  font-size: 24px;
+  font-size: 16px;
 }
 .button-v2--lg {
   border-radius: var(--interactive-corner-radius-lg);
   padding: var(--space-250);
-  color: var(--button-label-lg);
+  font-size: var(--button-label-lg-font-size);
+  font-weight: var(--button-label-lg-font-weight);
+  line-height: var(--button-label-lg-line-height);
 }
 .button-v2--lg .component-icon {
   font-size: 24px;
