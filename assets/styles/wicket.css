@@ -990,6 +990,9 @@ video {
 .ml-4 {
   margin-left: 1rem;
 }
+.ml-\[--space-100\] {
+  margin-left: var(--space-100);
+}
 .ml-auto {
   margin-left: auto;
 }
@@ -1010,6 +1013,9 @@ video {
 }
 .mr-5 {
   margin-right: 1.25rem;
+}
+.mr-\[--space-100\] {
+  margin-right: var(--space-100);
 }
 .ms-2 {
   -webkit-margin-start: 0.5rem;
@@ -90126,6 +90132,36 @@ form p.wicket-form-help-text.component-tooltip-v2-content,
 .accordion-item-v2--card {
   border-radius: var(--interactive-corner-radius-md);
   border-width: var(--border-sm);
+}
+
+.wicket-pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  gap: var(--space-050);
+}
+.wicket-pagination .page-numbers {
+  border-radius: var(--interactive-corner-radius-md);
+  padding: var(--space-200);
+  font-size: var(--body-md-font-size);
+  color: var(--text-button-label);
+  font-weight: var(--body-md-font-weight);
+  line-height: var(--body-md-line-height);
+  font-weight: 700;
+}
+.wicket-pagination .page-numbers:hover, .wicket-pagination .page-numbers:focus, .wicket-pagination .page-numbers:active {
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+}
+.wicket-pagination .page-numbers:hover, .wicket-pagination .page-numbers:focus, .wicket-pagination .page-numbers:active, .wicket-pagination .page-numbers.current {
+  background-color: var(--highlight-dark);
+  color: var(--text-button-label-reversed);
+}
+.wicket-pagination span.page-numbers {
+  pointer-events: none;
 }
 
 /* BLOCKS

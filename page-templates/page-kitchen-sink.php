@@ -95,6 +95,25 @@ if ( have_posts() ) :
 					<?php endforeach; ?>
 				</section>
 
+				<h2 class="text-heading-lg mb-3">Pagination</h2>
+				<?php
+					$args = array(
+						'post_type'      => 'page',
+						'posts_per_page' => 1,
+						'orderby'        => 'date',
+						'order'          => 'DESC',
+						'paged'		  		 => get_query_var( 'paged' ) ? intval( get_query_var( 'paged' ) ) : 1,
+					);
+
+					$query = new WP_Query( $args );
+
+					the_wicket_pagination( [ 
+						'total' => $query->max_num_pages,
+					] );
+
+					wp_reset_postdata();
+				?>
+
 				<section class="py-8">
 					<h2 class="text-heading-lg mb-3">Primary buttons</h2>
 					<div class="mb-3">

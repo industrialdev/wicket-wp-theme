@@ -1,0 +1,20 @@
+.wicket-pagination {
+  @apply flex justify-center gap-[--space-050];
+
+  .page-numbers {
+    @apply p-[--space-200] text-[--text-button-label] text-body-md rounded-[--interactive-corner-radius-md];
+    @apply font-bold; // to override text-body-md font weight
+
+    &:hover, &:focus, &:active {
+      @apply underline;
+    }
+
+    &:hover, &:focus, &:active, &.current {
+      @apply bg-[--highlight-dark] text-[--text-button-label-reversed];
+    }
+  }
+
+  span.page-numbers {
+    @apply pointer-events-none;
+  }
+}
