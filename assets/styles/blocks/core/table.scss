@@ -1,12 +1,46 @@
 .wp-block-table {
-  thead {
-    background-color: var(--wp--preset--color--primary);
-    color: var(--wp--preset--color--white);
-    border: none;
+
+  table {
+    @apply text-left;
   }
+
+  .wp-element-caption {
+    @apply text-body-sm text-[--text-content];
+  }
+
+  td {
+    @apply border-[length:--border-sm] text-body-md;
+  }
+
+  thead {
+    tr {
+      th {    
+        @apply bg-[--table-header-bg] border-[--table-header-bg] text-[--table-header-label] font-bold;        
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      td {
+        @apply bg-[--table-row] border-[--table-row-border] text-[--text-content];
+      }
+
+      &:nth-child(even) {
+        td {
+          @apply bg-[--table-row-alternate];
+        }
+      }
+    }
+  }
+
   tfoot {
-    background-color: var(--wp--preset--color--tertiary);
-    color: var(--wp--preset--color--white);
-    border: none;
+    @apply border-t-0;
+
+    tr {
+      td {
+        @apply bg-[--table-footer-bg]  border-[--table-footer-bg] text-[--table-footer-label] font-bold;
+      }
+    }
   }
 }

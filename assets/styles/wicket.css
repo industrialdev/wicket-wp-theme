@@ -90445,15 +90445,43 @@ li img {
   font-weight: 700;
 }
 
-.wp-block-table thead {
-  background-color: var(--wp--preset--color--primary);
-  color: var(--wp--preset--color--white);
-  border: none;
+.wp-block-table table {
+  text-align: left;
+}
+.wp-block-table .wp-element-caption {
+  font-size: var(--body-sm-font-size);
+  color: var(--text-content);
+  font-weight: var(--body-sm-font-weight);
+  line-height: var(--body-sm-line-height);
+}
+.wp-block-table td {
+  border-width: var(--border-sm);
+  font-size: var(--body-md-font-size);
+  font-weight: var(--body-md-font-weight);
+  line-height: var(--body-md-line-height);
+}
+.wp-block-table thead tr th {
+  border-color: var(--table-header-bg);
+  background-color: var(--table-header-bg);
+  font-weight: 700;
+  color: var(--table-header-label);
+}
+.wp-block-table tbody tr td {
+  border-color: var(--table-row-border);
+  background-color: var(--table-row);
+  color: var(--text-content);
+}
+.wp-block-table tbody tr:nth-child(even) td {
+  background-color: var(--table-row-alternate);
 }
 .wp-block-table tfoot {
-  background-color: var(--wp--preset--color--tertiary);
-  color: var(--wp--preset--color--white);
-  border: none;
+  border-top-width: 0px;
+}
+.wp-block-table tfoot tr td {
+  border-color: var(--table-footer-bg);
+  background-color: var(--table-footer-bg);
+  font-weight: 700;
+  color: var(--table-footer-label);
 }
 
 .wp-block-columns {

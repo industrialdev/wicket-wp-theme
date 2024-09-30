@@ -95,6 +95,51 @@ if ( have_posts() ) :
 					<?php endforeach; ?>
 				</section>
 
+				<section class="py-8">
+					<h2 class="text-heading-lg mb-3">Table</h2>
+					<div class="mb-6">
+						<figure class="wp-block-table" >
+							<table>
+								<thead>
+									<tr>
+										<th scope="col">Person</th>
+										<th scope="col">Most interest in</th>
+										<th scope="col">Age</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row">Chris</th>
+										<td>HTML tables</td>
+										<td>22</td>
+									</tr>
+									<tr>
+										<th scope="row">Dennis</th>
+										<td>Web accessibility</td>
+										<td>45</td>
+									</tr>
+									<tr>
+										<th scope="row">Sarah</th>
+										<td>JavaScript frameworks</td>
+										<td>29</td>
+									</tr>
+									<tr>
+										<th scope="row">Karen</th>
+										<td>Web performance</td>
+										<td>36</td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<td scope="row" colspan="2">Average age</th>
+										<td>33</td>
+									</tr>
+								</tfoot>
+							</table>
+						</figure>
+					</div>
+				</section>
+
 				<h2 class="text-heading-lg mb-3">Pagination</h2>
 				<?php
 					$args = array(
