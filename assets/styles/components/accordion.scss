@@ -1,0 +1,41 @@
+.accordion-item-v2 {
+  @apply hover:cursor-pointer text-body-md p-[--space-150] text-[--text-content] border-[--border-light] mb-2;
+
+  &:last-child {
+    @apply mb-0;
+  }
+
+  &__body {
+    @apply mt-[--space-250] pr-12;
+  }
+
+  &__title {
+    @apply text-body-md text-[--text-content];
+  }
+
+  &__icon {
+    @apply ml-4 text-[--interactive];
+
+    .open & {
+      @apply text-[--highlight-dark];
+    }
+  }
+
+  &.open {
+    @apply border-[--highlight-dark] bg-[--highlight-light];
+  }
+
+  // List accordion
+  &--list {
+    @apply border-t-[length:--border-sm] border-b-[length:--border-sm];
+
+    &.open {
+      @apply border-b-[length:--border-lg];
+    }
+  }
+  
+  // Card accordion
+  &--card {
+    @apply border-[length:--border-sm] rounded-[--interactive-corner-radius-md];
+  }
+}

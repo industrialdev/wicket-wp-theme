@@ -19,6 +19,7 @@ if ( have_posts() ) :
 					$excluded_files = [ 
 						'card-product.php',
 						'org-search-select.php',
+						'accordion.php',
 					];
 
 					// If the current file is in the excluded files array, skip it
@@ -27,11 +28,72 @@ if ( have_posts() ) :
 					}
 					?>
 					<div class="mb-3">
+						<h2 class="text-heading-lg capitalize mb-3"><?php echo basename( $filename, '.php' ) ?></h2>
 						<?php get_component( basename( $filename, '.php' ) ); ?>
 					</div>
 				<?php } ?>
 
 				<hr>
+
+				<section class="py-8">
+					<h2 class="text-heading-lg mb-3">Accordion</h2>
+					<?php foreach ( [ 'list', 'card' ] as $accordion_type ) : ?>
+						<div class="mb-6">
+							<?php
+								$items = array (
+									0 => 
+									array (
+										'title' => 'Lorem Ipsum',
+										'title_is_a_link' => false,
+										'title_link' => NULL,
+										'body_content' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
+										'call_to_action' => 
+										array (
+											'button_link_style' => 'primary',
+											'link_and_label' => 
+											array (
+												'title' => 'Lorem Link',
+												'url' => '#',
+												'target' => '',
+											),
+										),
+										'open_by_default' => true,
+									),
+									1 => 
+									array (
+										'title' => 'PageMaker',
+										'title_is_a_link' => true,
+										'title_link' => 
+										array (
+											'title' => 'Hello World',
+											'url' => '#',
+											'target' => '',
+										),
+										'body_content' => 'Lorem Ipsum is simply dummy standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.',
+										'call_to_action' => 
+										array (
+											'button_link_style' => 'secondary',
+											'link_and_label' => 
+											array (
+												'title' => 'Hello',
+												'url' => '#',
+												'target' => '',
+											),
+										),
+										'open_by_default' => false,
+									),
+								);
+
+								get_component( 'accordion', [ 
+									'items'                 => $items,
+									'icon-type'             => 'plus-minus',
+									'accordion-type'        => $accordion_type,
+									'separate-title-body'   => false
+								] );
+							?>
+						</div>
+					<?php endforeach; ?>
+				</section>
 
 				<section class="py-8">
 					<h2 class="text-heading-lg mb-3">Primary buttons</h2>
