@@ -1,0 +1,28 @@
+.component-tabs-v2 {
+  @apply px-4 xl:px-0 text-[--text-content];
+
+  &__tab-content {
+    @apply p-[--space-300];
+  }
+
+  &__tab-cta {
+    @apply mt-[--space-300];
+  }
+
+  &__tab-button {
+    @apply text-body-lg border-b-[length:--border-interactive-md] border-[--interactive] p-[--space-150];
+    @apply font-normal;
+
+    &--active, &:focus {
+      @apply border-b-[length:--border-interactive-lg];
+    }
+
+    &--active {
+      @apply text-[--highlight-dark] border-[--highlight-dark] font-bold;
+    }
+
+    &:hover, &:focus {
+      @apply underline bg-[--highlight-light];
+    }
+  }
+}

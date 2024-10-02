@@ -21,6 +21,7 @@ if ( have_posts() ) :
 						'org-search-select.php',
 						'accordion.php',
 						'social-sharing.php',
+						'tabs.php',
 					];
 
 					// If the current file is in the excluded files array, skip it
@@ -35,6 +36,65 @@ if ( have_posts() ) :
 				<?php } ?>
 
 				<hr>
+
+				<section class="py-8">
+					<h2 class="text-heading-lg mb-3">Tabs</h2>
+					<div class="mb-6">
+						<?php
+							$items = array (
+								0 => 
+								array (
+									'title' => 'Nulla sit amet est',
+									'body_content' => '<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#8217;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>',
+									'call_to_action' => 
+									array (
+										'button_style' => 'secondary',
+										'link_and_label' => 
+										array (
+											'title' => 'Secondary',
+											'url' => '#',
+											'target' => '',
+										),
+									),
+								),
+								1 => 
+								array (
+									'title' => 'Aldus PageMaker',
+									'body_content' => '<p>There are many <strong>variations</strong> of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don&#8217;t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn&#8217;t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.</p>',
+									'call_to_action' => 
+									array (
+										'button_style' => 'primary',
+										'link_and_label' => 
+										array (
+											'title' => 'Primary Button',
+											'url' => '#',
+											'target' => '',
+										),
+									),
+								),
+								2 => 
+								array (
+									'title' => 'Hello World',
+									'body_content' => '<p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn&#8217;t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.</p>',
+									'call_to_action' => 
+									array (
+										'button_style' => 'ghost',
+										'link_and_label' => 
+										array (
+											'title' => 'Ghost button',
+											'url' => '#',
+											'target' => '',
+										),
+									),
+								),
+							);
+
+							get_component( 'tabs', [ 
+								'items' => $items,
+							] );
+						?>
+					</div>
+				</section>
 
 				<section class="py-8">
 					<h2 class="text-heading-lg mb-3">Accordion</h2>

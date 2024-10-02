@@ -90221,6 +90221,48 @@ form p.wicket-form-help-text.component-tooltip-v2-content,
   border-radius: var(--social-media-radius);
 }
 
+.component-tabs-v2 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  color: var(--text-content);
+}
+
+@media (min-width: 1280px) {
+
+  .component-tabs-v2 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+.component-tabs-v2__tab-content {
+  padding: var(--space-300);
+}
+.component-tabs-v2__tab-cta {
+  margin-top: var(--space-300);
+}
+.component-tabs-v2__tab-button {
+  border-bottom-width: var(--border-interactive-md);
+  border-color: var(--interactive);
+  padding: var(--space-150);
+  font-size: var(--body-lg-font-size);
+  font-weight: var(--body-lg-font-weight);
+  line-height: var(--body-lg-line-height);
+  font-weight: 400;
+}
+.component-tabs-v2__tab-button--active, .component-tabs-v2__tab-button:focus {
+  border-bottom-width: var(--border-interactive-lg);
+}
+.component-tabs-v2__tab-button--active {
+  border-color: var(--highlight-dark);
+  font-weight: 700;
+  color: var(--highlight-dark);
+}
+.component-tabs-v2__tab-button:hover, .component-tabs-v2__tab-button:focus {
+  background-color: var(--highlight-light);
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+}
+
 /* BLOCKS
 ------------------------------------------------------------------------------*/
 /* Setting the max-width of the content area for all blocks */
