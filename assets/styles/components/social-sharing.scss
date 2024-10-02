@@ -1,0 +1,16 @@
+.component-social-sharing-v2 {
+  @apply flex gap-[--space-100] list-none p-0 m-0 items-center;
+  
+  &__label {
+    @apply text-body-sm text-[--text-content];
+    @apply font-bold;
+
+    .component-social-sharing-v2--reversed & {
+      @apply text-[--text-content-reversed];
+    }
+  }
+
+  &__button {
+    @apply rounded-[--social-media-radius];
+  }
+}

@@ -90164,6 +90164,32 @@ form p.wicket-form-help-text.component-tooltip-v2-content,
   pointer-events: none;
 }
 
+.component-social-sharing-v2 {
+  margin: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: var(--space-100);
+  padding: 0px;
+}
+.component-social-sharing-v2__label {
+  font-size: var(--body-sm-font-size);
+  color: var(--text-content);
+  font-weight: var(--body-sm-font-weight);
+  line-height: var(--body-sm-line-height);
+  font-weight: 700;
+}
+.component-social-sharing-v2--reversed .component-social-sharing-v2__label {
+  color: var(--text-content-reversed);
+}
+.component-social-sharing-v2__button {
+  border-radius: var(--social-media-radius);
+}
+
 /* BLOCKS
 ------------------------------------------------------------------------------*/
 /* Setting the max-width of the content area for all blocks */

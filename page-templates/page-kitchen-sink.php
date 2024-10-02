@@ -20,6 +20,7 @@ if ( have_posts() ) :
 						'card-product.php',
 						'org-search-select.php',
 						'accordion.php',
+						'social-sharing.php',
 					];
 
 					// If the current file is in the excluded files array, skip it
@@ -427,7 +428,7 @@ if ( have_posts() ) :
 					<div class="mb-6">
 						<?php get_component( 'social-sharing' ); ?>
 					</div>
-					<div class="mb-6 p-4 bg-dark-100">
+					<div class="mb-6 p-4 bg-black">
 						<?php get_component( 'social-sharing', [ 
 							'reversed' => true,
 						] ); ?>
@@ -537,7 +538,7 @@ if ( have_posts() ) :
 								],
 							] ); ?>
 						</div>
-						<div class="bg-dark-100 p-8">
+						<div class="bg-black p-8">
 							<div class="mb-4">
 								<?php get_component( 'link', [ 
 									'reversed'   => true,
