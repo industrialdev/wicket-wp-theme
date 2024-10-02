@@ -7,3 +7,4 @@ node_modules
 *.log
 debug.log
 !assets/scripts/mingul/wicket.js
+.php-cs-fixer.cache
