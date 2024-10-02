@@ -1,6 +1,5 @@
 body {
-  font-size: var(--wp--preset--font-size--body-md, 16px);
-  color: var(--wp--preset--color--dark);
+  @apply text-body-md text-[--text-content];
 }
 
 h1,

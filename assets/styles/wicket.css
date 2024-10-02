@@ -89805,8 +89805,10 @@ video {
 /* THEME BASELINE STYLES
 ------------------------------------------------------------------------------*/
 body {
-  font-size: var(--wp--preset--font-size--body-md, 16px);
-  color: var(--wp--preset--color--dark);
+  font-size: var(--body-md-font-size);
+  color: var(--text-content);
+  font-weight: var(--body-md-font-weight);
+  line-height: var(--body-md-line-height);
 }
 
 h1,
