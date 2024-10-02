@@ -485,7 +485,7 @@ if ( have_posts() ) :
 						</div>
 						
 						<div class="bg-black p-5 m-3">
-							<div class="mb-4">
+							<div>
 								<?php get_component( 'tag', [ 
 									'label'    => __( 'Members Only', 'wicket' ),
 									'icon'     => 'fa-regular fa-lock',

@@ -90036,6 +90036,35 @@ h6 {
   font-weight: var(--body-sm-font-weight);
   line-height: var(--body-sm-line-height);
 }
+.component-tag-v2:has(.fa-lock) {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: var(--space-100);
+  border-radius: var(--label-corner-radius);
+  border-width: 0px;
+  background-color: var(--bg-label);
+  padding: var(--space-075);
+  font-size: var(--body-sm-font-size);
+  color: var(--text-label-1);
+  font-weight: var(--body-sm-font-weight);
+  line-height: var(--body-sm-line-height);
+}
+@media (min-width: 768px) {
+
+  .component-tag-v2:has(.fa-lock) {
+    font-size: var(--body-md-font-size);
+  }
+}
+.component-tag-v2:has(.fa-lock) {
+  font-weight: 700;
+}
+.component-tag-v2:has(.fa-lock) .component-icon {
+  font-size: 1rem;
+}
 
 .component-tooltip-v2 {
   font-size: 1rem;

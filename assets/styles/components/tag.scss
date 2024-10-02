@@ -1,3 +1,13 @@
 .component-tag-v2 {
-  @apply text-body-sm text-[--text-tag] p-[--spacing-100] bg-[--bg-tag] border-[--border-tag] border-[length:--border-tag-size] rounded-[--tag-corner-radius]; 
+  @apply text-body-sm text-[--text-tag] p-[--spacing-100] bg-[--bg-tag] border-[--border-tag] border-[length:--border-tag-size] rounded-[--tag-corner-radius];
+
+  // Member Only Tag
+  &:has(.fa-lock) {
+    @apply bg-[--bg-label] text-[--text-label-1] p-[--space-075] rounded-[--label-corner-radius] inline-flex items-center gap-[--space-100] border-0 text-body-sm md:text-body-md;
+    @apply font-bold;
+
+    .component-icon {
+      @apply text-[1rem];
+    }
+  }
 }
