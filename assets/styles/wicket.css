@@ -90263,6 +90263,84 @@ form p.wicket-form-help-text.component-tooltip-v2-content,
   text-decoration-line: underline;
 }
 
+.component-breadcrumbs-v2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: var(--space-100);
+  color: var(--text-content);
+}
+.component-breadcrumbs-v2.reversed {
+  color: var(--text-content-reversed);
+}
+.component-breadcrumbs-v2.reversed strong {
+  color: var(--highlight-light);
+}
+.component-link-v2 {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: var(--space-100);
+  font-weight: 700;
+}
+.component-link-v2:focus {
+  --tw-shadow: 0px 0px 1px 2px #0997FF;
+  --tw-shadow-colored: 0px 0px 1px 2px var(--tw-shadow-color);
+  -webkit-box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.component-link-v2--lg {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+.component-link-v2--lg .component-icon {
+  font-size: 1.5rem;
+}
+.component-link-v2--md {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.component-link-v2--md .component-icon {
+  font-size: 1rem;
+}
+.component-link-v2--sm {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+}
+.component-link-v2--sm .component-icon {
+  font-size: 1rem;
+}
+.component-link-v2:not(.component-link-v2--reversed) {
+  color: var(--interactive);
+}
+.component-link-v2:not(.component-link-v2--reversed):active {
+  color: var(--highlight-dark);
+}
+.component-link-v2--reversed {
+  color: var(--interactive-reversed);
+}
+.component-link-v2--reversed:active {
+  color: var(--highlight-light);
+}
+.component-link-v2:not(.component-link-v2--default):hover, .component-link-v2:not(.component-link-v2--default):focus {
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+}
+.component-link-v2--default {
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+}
+.component-link-v2--default:hover, .component-link-v2--default:focus, .component-link-v2--default:active {
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+}
+
 /* BLOCKS
 ------------------------------------------------------------------------------*/
 /* Setting the max-width of the content area for all blocks */

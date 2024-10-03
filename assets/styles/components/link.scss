@@ -1,0 +1,58 @@
+.component-link-v2 {
+  @apply font-bold inline-flex items-center focus:shadow-focus gap-[--space-100];
+
+  &--lg {
+    @apply text-[1.25rem] leading-[1.75rem];
+
+    .component-icon {
+      @apply text-[1.5rem];
+    }
+  }
+
+  &--md {
+    @apply text-[1rem] leading-[1.5rem];
+
+    .component-icon {
+      @apply text-[1rem];
+    }
+  }
+
+  &--sm {
+    @apply text-[0.75rem] leading-[1.25rem];
+
+    .component-icon {
+      @apply text-[1rem];
+    }
+  }
+
+  &:not(.component-link-v2--reversed) {
+    @apply text-[--interactive];
+
+    &:active {
+      @apply text-[--highlight-dark];
+    }
+  }
+
+  &--reversed {
+    @apply text-[--interactive-reversed];
+
+    &:active {
+      @apply text-[--highlight-light];
+    }
+  }
+
+  &:not(.component-link-v2--default) {
+    &:hover, &:focus {
+      @apply underline;
+    }
+  }
+
+  &--default {
+    @apply underline;
+
+    &:hover, &:focus, &:active {
+      @apply no-underline;
+    }
+  }
+
+}

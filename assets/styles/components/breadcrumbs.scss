@@ -1,0 +1,15 @@
+.component-breadcrumbs-v2 {
+  @apply flex items-center gap-[--space-100] text-[--text-content];
+
+  &.reversed {
+    @apply text-[--text-content-reversed];
+
+    strong {
+      @apply text-[--highlight-light];
+    }
+  }
+
+  .component-icon {
+    
+  }
+}

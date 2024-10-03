@@ -1,7 +1,7 @@
 <?php
 
 if ( ! function_exists( 'wicket_breadcrumb' ) ) {
-	function wicket_breadcrumb() {
+	function wicket_breadcrumb($reversed = false) {
 		$theme_locations = get_nav_menu_locations();
 		if ( ! isset( $theme_locations['header'] ) ) {
 			return '';
@@ -25,8 +25,8 @@ if ( ! function_exists( 'wicket_breadcrumb' ) ) {
 		$crumbs[]  = get_component(
 			'link',
 			[ 
-				'classes'    => [ 'flex' ],
 				'default_link_style' => true,
+				'reversed'   => $reversed,
 				'url'        => get_home_url(),
 				'text'       => __( 'Home', 'wicket' ),
 				'icon_start' => [ 
@@ -58,6 +58,7 @@ if ( ! function_exists( 'wicket_breadcrumb' ) ) {
 						'link',
 						[ 
 							'classes' => [ '' ],
+							'reversed' => $reversed,
 							'default_link_style' => true,
 							'url'     => get_permalink( $ancestor ),
 							'text'    => get_the_title( $ancestor ),

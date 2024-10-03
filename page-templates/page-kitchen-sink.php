@@ -22,6 +22,23 @@ if ( have_posts() ) :
 						'accordion.php',
 						'social-sharing.php',
 						'tabs.php',
+						'alert.php',
+						'author.php',
+						'banner.php',
+						'button.php',
+						'card-call-out.php',
+						'card-contact.php',
+						'card-featured.php',
+						'icon-grid.php',
+						'icon.php',
+						'image.php',
+						'link.php',
+						'card-listing.php',
+						'card-related.php',
+						'card.php',
+						'featured-posts.php',
+						'filter-form.php',
+						'tag.php',
 					];
 
 					// If the current file is in the excluded files array, skip it
@@ -36,6 +53,99 @@ if ( have_posts() ) :
 				<?php } ?>
 
 				<hr>
+
+				<section class="py-8">
+					<h2 class="text-heading-lg mb-3">Link</h2>
+					<div class="mb-6">
+						<?php get_component( 'link', [
+							'text'    => __( 'Go back to the homepage', 'wicket' ),
+							'url'    => get_home_url(),
+						] ) ?>
+					</div>
+					<div class="mb-6">
+						<h2 class="text-heading-md mb-3">Link with icon (Default style - Small)</h2>
+						<?php get_component(
+							'link', [ 
+								'default_link_style' => true,
+								'size' => 'sm',
+								'url'        => get_home_url(),
+								'text'       => __( 'Home', 'wicket' ),
+								'icon_start' => [ 
+									'icon' => 'fa-regular fa-house',
+								],
+								'icon_end'   => [],
+						] ) ?>
+					</div>
+					<div class="mb-6">
+						<h2 class="text-heading-md mb-3">Link with icon (Default style - Medium)</h2>
+						<?php get_component(
+							'link', [ 
+								'default_link_style' => true,
+								'size' => 'md',
+								'url'        => get_home_url(),
+								'text'       => __( 'Home', 'wicket' ),
+								'icon_start' => [ 
+									'icon' => 'fa-regular fa-house',
+								],
+								'icon_end'   => [],
+						] ) ?>
+					</div>
+					<div class="mb-6">
+						<h2 class="text-heading-md mb-3">Link with icon (Default style - Large)</h2>
+						<?php get_component(
+							'link', [ 
+								'default_link_style' => true,
+								'size' => 'lg',
+								'url'        => get_home_url(),
+								'text'       => __( 'Home', 'wicket' ),
+								'icon_start' => [ 
+									'icon' => 'fa-regular fa-house',
+								],
+								'icon_end'   => [],
+						] ) ?>
+					</div>
+					<div class="mb-6">
+						<h2 class="text-heading-md mb-3">Link with icon</h2>
+						<?php get_component(
+							'link', [ 
+								'default_link_style' => false,
+								'url'        => get_home_url(),
+								'text'       => __( 'Home', 'wicket' ),
+								'icon_start' => [ 
+									'icon' => 'fa-regular fa-house',
+								],
+								'icon_end'   => [],
+						] ) ?>
+					</div>
+					<div class="mb-6 bg-black p-3">
+						<h2 class="text-heading-md text-white mb-3">Link with icon (Reversed)</h2>
+						<?php get_component(
+							'link', [ 
+								'reversed' => true,
+								'default_link_style' => false,
+								'url'        => get_home_url(),
+								'text'       => __( 'Home', 'wicket' ),
+								'icon_start' => [ 
+									'icon' => 'fa-regular fa-house',
+								],
+								'icon_end'   => [],
+						] ) ?>
+					</div>
+					<div class="mb-6 bg-black p-3">
+						<h2 class="text-heading-md text-white mb-3">Link with icon (Reversed, Default style)</h2>
+						<?php get_component(
+							'link', [ 
+								'reversed' => true,
+								'default_link_style' => true,
+								'url'        => get_home_url(),
+								'text'       => __( 'Home', 'wicket' ),
+								'icon_start' => [ 
+									'icon' => 'fa-regular fa-house',
+								],
+								'icon_end'   => [],
+						] ) ?>
+					</div>
+				</section>
 
 				<section class="py-8">
 					<h2 class="text-heading-lg mb-3">Tabs</h2>
