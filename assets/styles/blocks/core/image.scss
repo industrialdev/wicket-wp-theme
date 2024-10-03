@@ -1,0 +1,5 @@
+.wp-block-image {
+  img {
+    @apply border-[length:--image-corner-radius];
+  }
+}

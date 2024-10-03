@@ -90341,6 +90341,44 @@ form p.wicket-form-help-text.component-tooltip-v2-content,
   text-decoration-line: none;
 }
 
+.component-banner-v2 {
+  position: relative;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.component-banner-v2 .cta-card {
+  width: 100%;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 0%;
+  flex: 1 1 0%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  padding: 1.5rem;
+}
+@media (min-width: 1024px) {
+
+  .component-banner-v2 .cta-card {
+    -ms-flex-preferred-size: 25%;
+    flex-basis: 25%;
+  }
+}
+.component-banner-v2__featured-image {
+  margin-left: auto;
+  border-width: var(--image-corner-radius);
+}
+@media (min-width: 1024px) {
+
+  .component-banner-v2__featured-image {
+    max-height: 425px;
+  }
+}
+
+.component-image {
+  border-width: var(--image-corner-radius);
+}
+
 /* BLOCKS
 ------------------------------------------------------------------------------*/
 /* Setting the max-width of the content area for all blocks */
@@ -90688,6 +90726,10 @@ li img {
   text-decoration: none !important;
 }
 
+.wp-block-image img {
+  border-width: var(--image-corner-radius);
+}
+
 /* INTEGRATIONS
 ------------------------------------------------------------------------------*/
 :root {
@@ -90898,6 +90940,9 @@ li img {
   padding: 2rem 0;
 }
 
+.woocommerce div.product div.images img {
+  border-width: var(--image-corner-radius);
+}
 .woocommerce div.product .woocommerce-product-gallery__wrapper {
   position: relative;
 }
@@ -91473,6 +91518,9 @@ form.woocommerce-checkout .variation-TeamName {
   float: none;
   width: 100%;
   margin: 0;
+}
+.woocommerce-shop ul.products li.product a img {
+  border-radius: var(--image-corner-radius);
 }
 .woocommerce-shop ul.products li.product .onsale {
   top: 10px;

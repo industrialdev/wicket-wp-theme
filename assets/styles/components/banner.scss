@@ -1,0 +1,11 @@
+.component-banner-v2 {
+  @apply py-8 px-4 relative;
+
+  .cta-card {
+    @apply flex-1 p-6 basis-full w-full lg:basis-3/12;
+  }
+
+  &__featured-image {
+    @apply border-[length:--image-corner-radius] lg:max-h-[425px] ml-auto;
+  }
+}
