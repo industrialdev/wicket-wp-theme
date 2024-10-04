@@ -15,6 +15,12 @@ if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 				<!-- Form Demos -->
 				<form class="wicket-form">
 					<div class="wicket-form-field-wrapper">
+						<label for="text" class="required">Single Line Text - Number</label>
+						<input type="number" id="text" name="number" placeholder="Example" />
+						<p class="wicket-form-help-text">Help text</p>
+					</div>
+					
+					<div class="wicket-form-field-wrapper">
 						<label for="text" class="required">Single Line Text</label>
 						<input type="text" id="text" name="text" placeholder="Example" />
 						<p class="wicket-form-help-text">Help text</p>

@@ -90379,6 +90379,10 @@ form p.wicket-form-help-text.component-tooltip-v2-content,
   border-width: var(--image-corner-radius);
 }
 
+.component-search-form .component-icon {
+  color: var(--interactive);
+}
+
 /* BLOCKS
 ------------------------------------------------------------------------------*/
 /* Setting the max-width of the content area for all blocks */
@@ -91558,12 +91562,15 @@ form textarea,
 .form input,
 .form select,
 .form textarea {
-  font-weight: 400;
-  font-family: inherit;
-  border: 1px solid var(--dark-060, #7b7f83);
-  background: var(--light-000, #fff);
-  border-radius: 4px;
-  padding: 11px 16px;
+  border-radius: var(--input-fields-corner-radius-md);
+  border-width: var(--border-interactive-sm);
+  border-color: var(--border-input-default);
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  padding: var(--space-200);
+  font-size: var(--body-md-font-size);
+  font-weight: var(--body-md-font-weight);
+  line-height: var(--body-md-line-height);
 }
 form input::-webkit-input-placeholder,
 form select::-webkit-input-placeholder,
@@ -91571,6 +91578,7 @@ form textarea::-webkit-input-placeholder,
 .form input::-webkit-input-placeholder,
 .form select::-webkit-input-placeholder,
 .form textarea::-webkit-input-placeholder {
+  color: var(--text-content-secondary);
   font-style: italic;
   color: var(--light-040, #a7aaad);
 }
@@ -91580,6 +91588,7 @@ form textarea::-moz-placeholder,
 .form input::-moz-placeholder,
 .form select::-moz-placeholder,
 .form textarea::-moz-placeholder {
+  color: var(--text-content-secondary);
   font-style: italic;
   color: var(--light-040, #a7aaad);
 }
@@ -91589,6 +91598,7 @@ form textarea::-ms-input-placeholder,
 .form input::-ms-input-placeholder,
 .form select::-ms-input-placeholder,
 .form textarea::-ms-input-placeholder {
+  color: var(--text-content-secondary);
   font-style: italic;
   color: var(--light-040, #a7aaad);
 }
@@ -91598,6 +91608,7 @@ form textarea::placeholder,
 .form input::placeholder,
 .form select::placeholder,
 .form textarea::placeholder {
+  color: var(--text-content-secondary);
   font-style: italic;
   color: var(--light-040, #a7aaad);
 }
@@ -91615,8 +91626,8 @@ form textarea:disabled,
 .form input:disabled,
 .form select:disabled,
 .form textarea:disabled {
-  border: 1px solid var(--light-020, #d3d4d6);
-  color: var(--light-020, #d3d4d6);
+  border-color: var(--border-disabled);
+  color: var(--text-disabled);
 }
 form input.error,
 form select.error,
@@ -91624,7 +91635,7 @@ form textarea.error,
 .form input.error,
 .form select.error,
 .form textarea.error {
-  border: 1px solid var(--danger-100, #dc3545);
+  border-color: var(--state-error);
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><g stroke-linecap="round" stroke-width="4" stroke="%23DC3545" fill="%23DC3545"><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c-13.3 0-24 10.7-24 24V264c0 13.3 10.7 24 24 24s24-10.7 24-24V152c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/></g></svg>');
   background-repeat: no-repeat;
   background-position: right 10px center;
@@ -91636,7 +91647,7 @@ form textarea.success,
 .form input.success,
 .form select.success,
 .form textarea.success {
-  border: 1px solid var(--success-100, #198754);
+  border-color: var(--state-success);
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><g stroke-linecap="round" stroke-width="4" stroke="%23198754" fill="%23198754"><path d="M256 32a224 224 0 1 1 0 448 224 224 0 1 1 0-448zm0 480A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM363.3 203.3L374.6 192 352 169.4l-11.3 11.3L224 297.4l-52.7-52.7L160 233.4 137.4 256l11.3 11.3 64 64L224 342.6l11.3-11.3 128-128z"/></g></svg>');
   background-repeat: no-repeat;
   background-position: right 10px center;
@@ -91646,7 +91657,7 @@ form input[type=radio], form input[type=checkbox],
 .form input[type=radio],
 .form input[type=checkbox] {
   margin: 3px;
-  accent-color: #000;
+  accent-color: var(--highlight-dark);
 }
 form input[type=radio]:focus, form input[type=checkbox]:focus,
 .form input[type=radio]:focus,
@@ -91690,15 +91701,16 @@ form select.success,
 }
 form label,
 .form label {
-  font-size: 16px;
-  font-weight: 700;
-  font-family: inherit;
+  font-size: var(--form-label-font-size);
+  font-weight: var(--form-label-font-weight);
+  line-height: var(--form-label-line-height);
   margin-bottom: 2px;
 }
 form label.required:after,
 .form label.required:after {
   content: "*";
-  color: var(--danger-100, #dc3545);
+  margin-left: 2px;
+  color: var(--state-error);
 }
 form label.forCheckOrRadio,
 .form label.forCheckOrRadio {
@@ -91709,8 +91721,10 @@ form p.wicket-form-help-text,
 .form .wicket-form-help-text,
 .form p.wicket-form-help-text {
   margin: 5px 0px 0px;
-  font-size: 14px;
-  color: var(--dark-070, #656a6f);
+  font-size: var(--body-sm-font-size);
+  color: var(--text-content-secondary);
+  font-weight: var(--body-sm-font-weight);
+  line-height: var(--body-sm-line-height);
 }
 form .wicket-form-help-text.forCheckOrRadio,
 form p.wicket-form-help-text.forCheckOrRadio,
@@ -91722,7 +91736,7 @@ form .wicket-form-help-text.error,
 form p.wicket-form-help-text.error,
 .form .wicket-form-help-text.error,
 .form p.wicket-form-help-text.error {
-  color: var(--danger-100, #dc3545);
+  color: var(--state-error);
 }
 form .wicket-form-help-text.hidden,
 form p.wicket-form-help-text.hidden,
