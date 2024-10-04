@@ -33,8 +33,8 @@ function wicket_acf_init() {
 			'parent_slug' => $parent['menu_slug'],
 		) );
 		acf_add_options_page( array(
-			'page_title'  => __( 'Theme Customization', 'wicket' ),
-			'menu_title'  => __( 'Customization', 'wicket' ),
+			'page_title'  => __( 'Theme Styling', 'wicket' ),
+			'menu_title'  => __( 'Theme Styling', 'wicket' ),
 			'parent_slug' => $parent['menu_slug'],
 		) );
 	}
