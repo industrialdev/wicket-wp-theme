@@ -740,6 +740,43 @@ if ( have_posts() ) :
 				</section>
 				
 				<section class="py-8">
+					<h2 class="text-heading-lg mb-3">Card Call-out</h2>
+					<div class="mb-6">
+						<div class="mb-4">
+							<?php foreach ( [ 'primary', 'secondary' ] as $style ) : ?>
+								<div class="mb-4" >
+								<?php
+									get_component( 'card-call-out', [ 
+										'title'       => 'Lorem Ipsum',
+										'description' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.',
+										'links'       => [
+											[
+												'link_style'    => 'primary',
+												'link' => [
+													'title'  				=> 'Link Primary',
+													'link_style'    => 'primary',
+													'url'    				=> '#',
+													'target' 				=> '_blank',
+												]
+											],
+											[
+												'link_style'    => 'ghost',
+												'link' => [
+												'title'  				=> 'Link Ghost',
+												'url'    				=> '#',
+												'target' 				=> '_blank',
+												]
+											]
+										],
+										'style'       => $style
+									]) ?>
+									</div>
+							<?php endforeach; ?>
+						</div>
+					</div>
+				</section>
+
+				<section class="py-8">
 					<h2 class="text-heading-lg mb-3">Banner</h2>
 					
 					<?php foreach ( ['light', 'reversed', 'image'] as $style ) : ?>

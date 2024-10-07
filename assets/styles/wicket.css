@@ -90473,6 +90473,104 @@ form p.wicket-form-help-text.component-tooltip-v2-content,
   color: var(--interactive);
 }
 
+.component-card-call-out {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 640px) {
+
+  .component-card-call-out {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+
+  .component-card-call-out {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .component-card-call-out {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+
+  .component-card-call-out {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+
+  .component-card-call-out {
+    max-width: 1536px;
+  }
+}
+
+.component-card-call-out {
+  border-radius: var(--card-accent-corner-radius);
+  padding: var(--space-250);
+  font-size: var(--body-md-font-size);
+  font-weight: var(--body-md-font-weight);
+  line-height: var(--body-md-line-height);
+}
+
+@media (min-width: 1536px) {
+  .component-card-call-out {
+    max-width: var(--wp--style--global--content-size);
+  }
+}
+
+@media (min-width: var(--wp--style--global--content-size)) {
+  .component-card-call-out {
+    max-width: var(--wp--style--global--content-size);
+  }
+}
+.component-card-call-out__title {
+  margin-bottom: var(--space-250);
+  font-size: var(--heading-sm-font-size);
+  font-weight: var(--heading-sm-font-weight-sm);
+  line-height: var(--heading-sm-line-height);
+}
+@media (min-width: 768px) {
+
+  .component-card-call-out__title {
+    font-weight: var(--heading-sm-font-weight-md);
+  }
+}
+.component-card-call-out__links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: var(--space-150);
+}
+@media (min-width: 768px) {
+
+  .component-card-call-out__links {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+.component-card-call-out--primary {
+  background-color: var(--bg-callout-1);
+}
+.component-card-call-out--secondary {
+  background-color: var(--bg-callout-2);
+}
+
 /* BLOCKS
 ------------------------------------------------------------------------------*/
 /* Setting the max-width of the content area for all blocks */
