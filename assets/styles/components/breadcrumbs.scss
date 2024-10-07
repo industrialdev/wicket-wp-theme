@@ -1,5 +1,9 @@
 .component-breadcrumbs-v2 {
-  @apply flex items-center gap-[--space-100] text-[--text-content];
+  @apply flex items-center gap-[--space-100] text-[--highlight-dark];
+
+  .component-link-v2 {
+    @apply font-normal;
+  }
 
   &.reversed {
     @apply text-[--text-content-reversed];
@@ -9,7 +13,4 @@
     }
   }
 
-  .component-icon {
-    
-  }
 }

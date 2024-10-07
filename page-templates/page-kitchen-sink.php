@@ -39,6 +39,7 @@ if ( have_posts() ) :
 						'featured-posts.php',
 						'filter-form.php',
 						'tag.php',
+						'breadcrumbs.php',
 					];
 
 					// If the current file is in the excluded files array, skip it
@@ -53,6 +54,16 @@ if ( have_posts() ) :
 				<?php } ?>
 
 				<hr>
+
+				<section class="py-8">
+					<h2 class="text-heading-lg mb-3">Link</h2>
+					<div class="mb-6">
+						<?php get_component( 'breadcrumbs', [ 'style' => 'normal' ] ); ?>
+					</div>
+					<div class="mb-6 bg-black">
+						<?php get_component( 'breadcrumbs', [ 'style' => 'reversed' ] ); ?>
+					</div>
+				</section>
 
 				<section class="py-8">
 					<h2 class="text-heading-lg mb-3">Link</h2>
@@ -726,6 +737,102 @@ if ( have_posts() ) :
 							</div>
 						</div>
 					</div>
+				</section>
+				
+				<section class="py-8">
+					<h2 class="text-heading-lg mb-3">Banner</h2>
+					
+					<?php foreach ( ['light', 'reversed', 'image'] as $style ) : ?>
+						<div class="mb-6">
+							<div class="mb-4">
+								<?php
+									$banner_args = array (
+										'classes' => 
+										[],
+										'title ' => 'Title Here',
+										'intro' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+										'show_breadcrumbs' => true,
+										'show_post_type' => true,
+										'show_share' => true,
+										'show_date' => true,
+										'member_only' => true,
+										'text_alignment' => 'left',
+										'image' => 'featured-image',
+										'custom_image' => NULL,
+										'call_to_action' => NULL,
+										'background_style' => $style,
+										'background_image' => NULL,
+										'back_link' => 'https://google.com',
+										'download_file' => [
+											'url' => '#',
+											'title' => 'Lorem Ipsum',
+										],
+										// 'download_button_style' => NULL,
+										'download_button_label' => 'Download',
+										'helper_link' => [
+											'url' => '#',
+											'title' => 'Lorem Ipsum',
+											'target' => '_self',
+										],
+										// 'helper_link_button_style' => NULL,
+										'title' => 'Lorem Ipsum',
+									);
+									get_component( 'banner', $banner_args );
+								?>
+							</div>
+							<div class="mb-6">
+								<?php
+									$banner_args['text_alignment'] = 'center';
+									$banner_args['image'] = '';
+									get_component( 'banner', $banner_args );
+								?>
+							</div>
+							<div class="mb-6">
+								<?php
+									$banner_args['text_alignment'] = 'left';
+									$banner_args['image'] = '';
+									$banner_args['call_to_action'] = array (
+										'title' => 'Title 1',
+										'description' => 'Aliquam lobortis. Nullam tincidunt adipiscing enim. Donec vitae sapien ut libero venenatis faucibus. Praesent ut ligula non mi varius sagittis. Phasellus viverra nulla ut metus varius laoreet.',
+										'links' => 
+										array (
+											0 => 
+											array (
+												'link' => 
+												array (
+													'title' => 'Link',
+													'url' => '#',
+													'target' => '_blank',
+												),
+												'variant' => 'primary',
+											),
+											1 => 
+											array (
+												'link' => 
+												array (
+													'title' => 'Link Two',
+													'url' => '#',
+													'target' => '_blank',
+												),
+												'variant' => 'secondary',
+											),
+											2 => 
+											array (
+												'link' => 
+												array (
+													'title' => 'Link Three',
+													'url' => '#',
+													'target' => '_blank',
+												),
+												'variant' => 'ghost',
+											),
+										),
+									);
+									get_component( 'banner', $banner_args );
+								?>
+							</div>
+						</div>
+					<?php endforeach; ?>
 				</section>
 
 				<section class="p-8 bg-light-020">

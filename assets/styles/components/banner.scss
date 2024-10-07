@@ -1,11 +1,81 @@
-.component-banner-v2 {
-  @apply py-8 px-4 relative;
+.component-banner {
+  @apply py-8 px-4 relative rounded-[--banner-radius];
 
-  .cta-card {
-    @apply flex-1 p-6 basis-full w-full lg:basis-3/12;
+  &__post-type {
+    @apply text-label-md;
   }
 
-  &__featured-image {
-    @apply border-[length:--image-corner-radius] lg:max-h-[425px] ml-auto;
+  &__title {
+    @apply text-heading-3xl;
+  }
+
+  &__intro {
+    @apply text-body-lg;
+  }
+
+  &__date {
+    @apply text-date-label-md;
+  }
+
+  .cta-card {
+    @apply flex-1 p-[--space-300] basis-full w-full lg:basis-3/12 rounded-[--card-accent-corner-radius];
+
+    &__title {
+      @apply text-heading-sm mb-[--space-250];
+    }
+
+    &__body {
+      @apply mb-[--space-300] text-body-md;
+    }
+
+    &__links {
+      @apply flex flex-col gap-[--space-150];
+    }
+  }
+
+  &__hr {
+    @apply border-t-[length:--border-lg] w-[54px] m-auto;
+  }
+
+  // Light variant
+  &--light {
+    @apply border-b-[length:--border-banner-bottom] border-[--border-light];
+
+    .cta-card {
+      @apply bg-[--bg-light-alternate];
+    }
+
+    .component-banner__post-type {
+      @apply text-[--text-accent];  
+    }
+    
+    .component-banner__hr {
+      @apply border-[--border-accent];
+    }
+
+    .component-banner__date {
+      @apply text-[--text-content-secondary];
+    }
+  }
+
+  // Reversed variant + Image
+  &--reversed, &--image {
+    @apply bg-[--bg-dark] text-[--text-content-reversed];
+
+    .cta-card {
+      @apply bg-[--bg-dark-alternate];
+    }
+
+    .component-banner__post-type {
+      @apply text-[--text-accent-reversed];
+    }
+    
+    .component-banner__hr {
+      @apply border-[--border-accent];
+    }
+
+    .component-banner__date {
+      @apply text-[--text-content-secondary-reversed];
+    }
   }
 }
