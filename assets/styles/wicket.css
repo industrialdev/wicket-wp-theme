@@ -1453,6 +1453,9 @@ video {
 .gap-8 {
   gap: 2rem;
 }
+.gap-\[--space-400\] {
+  gap: var(--space-400);
+}
 .divide-opacity-0 > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-opacity: 0;
 }
@@ -90623,6 +90626,80 @@ form p.wicket-form-help-text.component-tooltip-v2-content,
   background-color: var(--bg-callout-2);
 }
 
+.component-author {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: var(--space-300);
+}
+
+@media (min-width: 768px) {
+
+  .component-author {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+.component-author__avatar {
+  min-width: 72px;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 1 72px;
+  flex: 0 1 72px;
+}
+@media (min-width: 768px) {
+
+  .component-author__avatar {
+    min-width: 120px;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 120px;
+    flex: 0 1 120px;
+  }
+}
+.component-author__avatar img {
+  max-width: 72px;
+}
+@media (min-width: 768px) {
+
+  .component-author__avatar img {
+    max-width: 120px;
+  }
+}
+.component-author__name {
+  font-size: var(--heading-xs-font-size);
+  font-weight: var(--heading-xs-font-weight-xs);
+  line-height: var(--heading-xs-line-height);
+}
+@media (min-width: 768px) {
+
+  .component-author__name {
+    font-weight: var(--heading-xs-font-weight-md);
+  }
+}
+.component-author__name {
+  font-weight: 700;
+}
+.component-author__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: var(--space-300);
+}
+.component-author__bio {
+  font-size: var(--body-md-font-size);
+  font-weight: var(--body-md-font-weight);
+  line-height: var(--body-md-line-height);
+}
+
 /* BLOCKS
 ------------------------------------------------------------------------------*/
 /* Setting the max-width of the content area for all blocks */
@@ -90764,6 +90841,49 @@ form p.wicket-form-help-text.component-tooltip-v2-content,
 
 :where(.wp-block-column) .wp-block-wicket-card .component-card, :where(.wp-block-column) .wp-block-wicket-card > div {
   height: 100%;
+}
+
+.block-wicket-author {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: var(--space-500);
+}
+.block-wicket-author__top-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: var(--space-250);
+}
+.block-wicket-author__title {
+  font-size: var(--heading-sm-font-size);
+  font-weight: 700;
+  font-weight: var(--heading-sm-font-weight-sm);
+  line-height: var(--heading-sm-line-height);
+}
+@media (min-width: 768px) {
+
+  .block-wicket-author__title {
+    font-weight: var(--heading-sm-font-weight-md);
+  }
+}
+.block-wicket-author__border {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  border-width: var(--border-sm);
+  border-top-width: 1px;
+  border-color: var(--border-light);
 }
 
 .wp-block-heading {

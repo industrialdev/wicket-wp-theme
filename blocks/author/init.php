@@ -8,7 +8,7 @@ namespace Wicket\Blocks\Wicket_Author;
 
 function init( $block = [] ) {
 	$attrs = get_block_wrapper_attributes(
-		array( 'class' => 'flex flex-col gap-8' )
+		array( 'class' => 'block-wicket-author' )
 	);
 
 	$title   = get_field( 'author_title' );
@@ -17,14 +17,14 @@ function init( $block = [] ) {
 	echo '<div ' . $attrs . '>';
 
 	if ( $title ) {
-		echo '<div class="flex items-center gap-5">';
-		echo '<div class="text-heading-sm font-bold">' . $title . '</div>';
-		echo '<span class="border-t border-light-020 inline-flex flex-auto"></span>';
+		echo '<div class="block-wicket-author__top-wrap">';
+		echo '<div class="block-wicket-author__title">' . $title . '</div>';
+		echo '<span class="block-wicket-author__border"></span>';
 		echo '</div>';
 	}
 
 	if ( $authors ) {
-		echo '<div class="flex flex-col gap-8">';
+		echo '<div class="flex flex-col gap-[--space-400]">';
 		foreach ( $authors as $author ) {
 			get_component( 'author', [ 
 				'author'             => isset( $author['author'] ) ? $author['author'] : null,

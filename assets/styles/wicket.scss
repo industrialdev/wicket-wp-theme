@@ -238,12 +238,14 @@
 @import 'components/search-form';
 @import 'components/card-call-out';
 @import 'components/card-contact';
+@import 'components/author';
 
 /* BLOCKS
 ------------------------------------------------------------------------------*/
 @import 'blocks/wicket/baseline';
 @import 'blocks/core/button';
 @import 'blocks/wicket/card';
+@import 'blocks/wicket/author';
 @import 'blocks/core/heading';
 @import 'blocks/core/list';
 @import 'blocks/core/paragraph';
