@@ -977,10 +977,6 @@ video {
 .mb-8 {
   margin-bottom: 2rem;
 }
-.me-2 {
-  -webkit-margin-end: 0.5rem;
-  margin-inline-end: 0.5rem;
-}
 .ml-2 {
   margin-left: 0.5rem;
 }
@@ -1016,10 +1012,6 @@ video {
 }
 .mr-\[--space-100\] {
   margin-right: var(--space-100);
-}
-.ms-2 {
-  -webkit-margin-start: 0.5rem;
-  margin-inline-start: 0.5rem;
 }
 .mt-1 {
   margin-top: 0.25rem;
@@ -1067,9 +1059,6 @@ video {
 .h-4 {
   height: 1rem;
 }
-.h-\[70px\] {
-  height: 70px;
-}
 .h-full {
   height: 100%;
 }
@@ -1111,9 +1100,6 @@ video {
 }
 .w-60 {
   width: 15rem;
-}
-.w-\[70px\] {
-  width: 70px;
 }
 .w-full {
   width: 100%;
@@ -1157,10 +1143,6 @@ video {
   flex: none;
 }
 .flex-shrink-0 {
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-.shrink-0 {
   -ms-flex-negative: 0;
   flex-shrink: 0;
 }
@@ -92504,16 +92486,6 @@ form.wicket-form .wicket-form-field-wrapper,
 
   .lg\:gap-4 {
     gap: 1rem;
-  }
-
-  .lg\:gap-x-4 {
-    -webkit-column-gap: 1rem;
-    -moz-column-gap: 1rem;
-    column-gap: 1rem;
-  }
-
-  .lg\:gap-y-6 {
-    row-gap: 1.5rem;
   }
 
   .lg\:p-7 {

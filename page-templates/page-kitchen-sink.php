@@ -41,6 +41,12 @@ if (have_posts()) :
 						'filter-form.php',
 						'tag.php',
 						'breadcrumbs.php',
+						'author.php',
+						'related-posts.php',
+						'related-events.php',
+						'card-event.php',
+						'tooltip.php',
+						'social-links.php',
 					];
 
 					// If the current file is in the excluded files array, skip it
@@ -659,12 +665,15 @@ if (have_posts()) :
 
 				<section class="py-8">
 					<h2 class="text-heading-lg mb-3">Social Media Links</h2>
-					<div class="row mb-6">
-						<div class="col-sm-4">
-							<?php get_component('social-links', [
-								'variant' => 'default' // 'default' or 'reversed'
-							]); ?>
-						</div>
+					<div class="mb-6">
+						<?php get_component('social-links', [
+							'variant' => 'default'
+						]); ?>
+					</div>
+					<div class="mb-6 bg-black p-5">
+						<?php get_component('social-links', [
+							'variant' => 'reversed'
+						]); ?>
 					</div>
 				</section>
 
@@ -709,6 +718,37 @@ if (have_posts()) :
 						</div>
 					</div>
 				</section>
+
+				<section class="py-8">
+					<h2 class="text-heading-lg mb-3">Author</h2>
+					<div class="mb-6">
+						<div class="mb-4">
+							<?php 
+							
+								get_component('author', [
+									'author' => 
+									array (
+										'ID' => 15,
+										'user_firstname' => 'Mangus',
+										'user_lastname' => 'Awesome',
+										'nickname' => 'author_1',
+										'user_nicename' => 'author_1',
+										'display_name' => 'Mangus Awesome',
+										'user_email' => 'author@nomail.com',
+										'user_url' => 'https://wicket.io',
+										'user_registered' => '2024-10-07 10:37:50',
+										'user_description' => 'Nam commodo suscipit quam. Nulla porta dolor. Fusce fermentum odio nec arcu. Curabitur nisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce id purus.',
+										'user_avatar' => '<img src="https://placehold.co/120x120" width="120" height="120" >'
+									),
+									'hide_profile_image' => false,
+									'hide_bio' => false,
+								]);
+							
+							?>
+						</div>
+					</div>
+				</section>
+
 
 				<section class="py-8">
 					<h2 class="text-heading-lg mb-3">Link</h2>
