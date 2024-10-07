@@ -90571,6 +90571,48 @@ form p.wicket-form-help-text.component-tooltip-v2-content,
   background-color: var(--bg-callout-2);
 }
 
+.component-card-contact {
+  border-radius: var(--card-accent-corner-radius);
+  padding: var(--space-250);
+  font-size: var(--body-md-font-size);
+  font-weight: var(--body-md-font-weight);
+  line-height: var(--body-md-line-height);
+}
+.component-card-contact__title {
+  margin-bottom: var(--space-250);
+  font-size: var(--heading-sm-font-size);
+  font-weight: var(--heading-sm-font-weight-sm);
+  line-height: var(--heading-sm-line-height);
+}
+@media (min-width: 768px) {
+
+  .component-card-contact__title {
+    font-weight: var(--heading-sm-font-weight-md);
+  }
+}
+.component-card-contact__description {
+  margin-bottom: var(--space-250);
+}
+.component-card-contact__links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  gap: var(--space-100);
+}
+.component-card-contact--primary {
+  background-color: var(--bg-callout-1);
+}
+.component-card-contact--secondary {
+  background-color: var(--bg-callout-2);
+}
+
 /* BLOCKS
 ------------------------------------------------------------------------------*/
 /* Setting the max-width of the content area for all blocks */

@@ -1,0 +1,23 @@
+.component-card-contact {
+  @apply text-body-md rounded-[--card-accent-corner-radius] p-[--space-250];
+
+  &__title {
+    @apply text-heading-sm mb-[--space-250];
+  }
+
+  &__description {
+    @apply mb-[--space-250];
+  }
+
+  &__links {
+    @apply flex flex-col items-start gap-[--space-100];
+  }
+
+  &--primary {
+    @apply bg-[--bg-callout-1];
+  }
+  
+  &--secondary {
+    @apply bg-[--bg-callout-2];
+  }
+}
