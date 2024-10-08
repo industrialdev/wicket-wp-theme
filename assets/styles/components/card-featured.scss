@@ -1,0 +1,40 @@
+.component-card-featured {
+  @apply bg-[--bg-card] rounded-[--card-corner-radius] border-b-[length:--border-featured-card] border-[--border-card] p-[--space-200] flex flex-col gap-[--space-200] relative;
+  filter: drop-shadow( var(--elevation-4) );
+
+  .component-featured-posts__primary-secondary-level-col-2 & {
+    @apply border-0 filter-none p-0;
+  }
+
+  &__title {
+    @apply text-heading-sm;
+
+    .component-featured-posts__one-level-row-cols-1 & {
+      @apply text-heading-md;
+    }
+   
+    .component-featured-posts__primary-secondary-level-col-2 & {
+      @apply text-heading-xs;
+    }
+  }
+
+  &__content-wrapper {
+    @apply flex flex-col grow items-start gap-[--space-200];
+  }
+
+  &__content-type {
+    @apply text-label-md text-[--text-accent];
+  }
+  
+  &__excerpt {
+    @apply leading-6 text-body-md;
+  }
+  
+  &__date {
+    @apply text-date-label-md text-[--text-content-secondary];
+  }
+
+  &--image-position-top {}
+  &--image-position-left {}
+  &--image-position-right {}
+}

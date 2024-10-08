@@ -137,7 +137,7 @@
 }
 
 .text-heading-xs {
-  @apply leading-[--heading-xs-line-height] font-[--heading-xs-font-weight-xs] md:font-[--heading-xs-font-weight-md];
+  @apply leading-[--heading-xs-line-height] font-[--heading-xs-font-weight-sm] md:font-[--heading-xs-font-weight-md];
 }
 
 .text-body-lg {
@@ -238,7 +238,9 @@
 @import 'components/search-form';
 @import 'components/card-call-out';
 @import 'components/card-contact';
+@import 'components/card-featured';
 @import 'components/author';
+@import 'components/featured-posts';
 
 /* BLOCKS
 ------------------------------------------------------------------------------*/

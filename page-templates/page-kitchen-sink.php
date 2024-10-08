@@ -667,12 +667,12 @@ if (have_posts()) :
 					<h2 class="text-heading-lg mb-3">Social Media Links</h2>
 					<div class="mb-6">
 						<?php get_component('social-links', [
-							'variant' => 'default'
+							'reversed' => false
 						]); ?>
 					</div>
 					<div class="mb-6 bg-black p-5">
 						<?php get_component('social-links', [
-							'variant' => 'reversed'
+							'reversed' => true
 						]); ?>
 					</div>
 				</section>
@@ -852,6 +852,48 @@ if (have_posts()) :
 						</div>
 					</div>
 				</section>
+
+				<section class="py-8">
+					<h2 class="text-heading-lg mb-3">Featured Posts</h2>
+					<h2 class="text-heading-md mb-3">One Level</h2>
+					<div class="mb-6">
+						<?php
+							// get all posts
+							$posts = get_posts([
+								'posts_per_page' => -1,
+								'post_type' => 'post',
+								'orderby' => 'date',
+								'order' => 'DESC',
+							]);
+
+							$args = [
+								'classes' => [],
+								'title' => 'Lorem Ipsum',
+								'hide_block_title' => false,
+								'posts' => $posts,
+								'hide_excerpt' => false,
+								'hide_date' => false,
+								'hide_featured_image' => false,
+								'hide_content_type' => false,
+								'style' => 'one-level',
+								'column_count' => '2',
+							];
+
+							get_component('featured-posts', $args);
+						?>
+					</div>
+					
+					<h2 class="text-heading-md mb-3">Primary Secondary Level</h2>
+					<div class="mb-6">
+						<?php
+							$args['style'] = 'primary-secondary-level';
+							$args['column_count'] = null;
+
+							get_component('featured-posts', $args);
+						?>
+					</div>
+				</section>
+
 
 				<section class="py-8">
 					<h2 class="text-heading-lg mb-3">Banner</h2>

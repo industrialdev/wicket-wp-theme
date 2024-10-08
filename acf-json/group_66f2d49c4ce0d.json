@@ -2349,7 +2349,7 @@
                     "name": "dropshadow",
                     "aria-label": "",
                     "type": "color_picker",
-                    "instructions": "20% Opacity",
+                    "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -2359,11 +2359,7 @@
                     },
                     "wpml_cf_preferences": 1,
                     "default_value": "#232A31",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "enable_opacity": false,
+                    "enable_opacity": 1,
                     "return_format": "string"
                 },
                 {
@@ -2372,7 +2368,7 @@
                     "name": "modal-bg-overlay",
                     "aria-label": "",
                     "type": "color_picker",
-                    "instructions": "90% Opacity",
+                    "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -2382,11 +2378,7 @@
                     },
                     "wpml_cf_preferences": 1,
                     "default_value": "#232A31",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "enable_opacity": false,
+                    "enable_opacity": 1,
                     "return_format": "string"
                 }
             ]
@@ -3726,5 +3718,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "translation",
-    "modified": 1728059880
+    "modified": 1728374965
 }
