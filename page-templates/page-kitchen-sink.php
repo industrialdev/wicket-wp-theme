@@ -854,6 +854,103 @@ if (have_posts()) :
 				</section>
 
 				<section class="py-8">
+					<h2 class="text-heading-lg mb-3">Manually Related Content</h2>
+					<h2 class="text-heading-md mb-3">Card</h2>
+					<div class="mb-6">
+						<?php
+							$args = array (
+								'classes' => 
+								array (
+									0 => 'man-related-content-card',
+								),
+								'content_type' => 'document',
+								'link' => NULL,
+								'document' => 
+								array (
+									'ID' => 456,
+									'id' => 456,
+									'title' => 'dummy',
+									'filename' => 'dummy.pdf',
+									'filesize' => 13264,
+									'url' => 'https://localhost/app/uploads/2024/01/dummy.pdf',
+									'link' => 'https://localhost/dummy/',
+									'alt' => '',
+									'author' => '1',
+									'description' => '',
+									'caption' => '',
+									'name' => 'dummy',
+									'status' => 'inherit',
+									'uploaded_to' => 0,
+									'date' => '2024-01-31 19:44:56',
+									'modified' => '2024-01-31 19:44:56',
+									'menu_order' => 0,
+									'mime_type' => 'application/pdf',
+									'type' => 'application',
+									'subtype' => 'pdf',
+									'icon' => 'https://localhost/wp/wp-includes/images/media/document.png',
+								),
+								'display_text' => 'Document here',
+								'body_text' => 'Suspendisse potenti. Etiam imperdiet imperdiet orci. Vestibulum eu odio. Donec orci lectus, aliquam ut, faucibus non, euismod id, nulla. Praesent venenatis metus at tortor pulvinar varius.',
+								'icon_type' => 'default',
+								'icon' => false,
+								'layout_style' => 'card',
+								'cta_label_override' => 'Cta Label',
+								'rounded_corners' => false,
+							);
+
+							get_component('card-related', $args);
+						?>
+					</div>
+					
+					<h2 class="text-heading-md mb-3">List</h2>
+					<div class="mb-6">
+						<?php
+							$args = array (
+								'classes' => 
+								array (
+									0 => 'man-related-content-card',
+								),
+								'content_type' => 'document',
+								'link' => NULL,
+								'document' => 
+								array (
+									'ID' => 456,
+									'id' => 456,
+									'title' => 'dummy',
+									'filename' => 'dummy.pdf',
+									'filesize' => 13264,
+									'url' => 'https://localhost/app/uploads/2024/01/dummy.pdf',
+									'link' => 'https://localhost/dummy/',
+									'alt' => '',
+									'author' => '1',
+									'description' => '',
+									'caption' => '',
+									'name' => 'dummy',
+									'status' => 'inherit',
+									'uploaded_to' => 0,
+									'date' => '2024-01-31 19:44:56',
+									'modified' => '2024-01-31 19:44:56',
+									'menu_order' => 0,
+									'mime_type' => 'application/pdf',
+									'type' => 'application',
+									'subtype' => 'pdf',
+									'icon' => 'https://localhost/wp/wp-includes/images/media/document.png',
+								),
+								'display_text' => 'Document here',
+								'body_text' => 'Suspendisse potenti. Etiam imperdiet imperdiet orci. Vestibulum eu odio. Donec orci lectus, aliquam ut, faucibus non, euismod id, nulla. Praesent venenatis metus at tortor pulvinar varius.',
+								'icon_type' => 'default',
+								'icon' => false,
+								'layout_style' => 'list',
+								'cta_label_override' => 'Cta Label',
+								'rounded_corners' => false
+							);
+
+							get_component('card-related', $args);
+						?>
+					</div>
+				</section>
+
+				<section class="py-8">
 					<h2 class="text-heading-lg mb-3">Featured Posts</h2>
 					<h2 class="text-heading-md mb-3">One Level</h2>
 					<div class="mb-6">

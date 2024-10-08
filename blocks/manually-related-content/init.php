@@ -24,12 +24,12 @@ function init( $block = [] ) {
 	$rounded_corners          = get_field( 'manually_related_content_rounded_corners' );
 	$posts_wrapper_classes    = [ 
 		'grid',
-		'gap-3',
 		'grid-cols-1',
 		'items-start',
-		'px-4',
 		'xl:px-0',
 	];
+	$posts_wrapper_classes[]  = defined( 'WICKET_WP_THEME_V2' ) ? 'px-[--space-200]' : 'px-4';
+	$posts_wrapper_classes[]  = defined( 'WICKET_WP_THEME_V2' ) ? 'gap-[--space-150]' : 'gap-3';
 	$placeholder_styles       = '';
 	$button_same_width_params = '';
 	if ( is_admin() ) {
@@ -61,7 +61,11 @@ function init( $block = [] ) {
 	}
 
 	if ( $title ) {
-		echo '<div class="text-heading-sm font-bold mb-3 px-4 xl:px-0">' . $title . '</div>';
+		if ( defined( 'WICKET_WP_THEME_V2' ) ) {
+			echo '<div class="text-heading-sm mb-[--space-200] px-[--space-200] xl:px-0">' . $title . '</div>';
+		} else {
+			echo '<div class="text-heading-sm font-bold mb-3 px-4 xl:px-0">' . $title . '</div>';
+		}
 	}
 
 	if ( $buttons_equal_width ) {

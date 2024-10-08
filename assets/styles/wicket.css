@@ -977,6 +977,9 @@ video {
 .mb-8 {
   margin-bottom: 2rem;
 }
+.mb-\[--space-200\] {
+  margin-bottom: var(--space-200);
+}
 .me-2 {
   -webkit-margin-end: 0.5rem;
   margin-inline-end: 0.5rem;
@@ -1446,6 +1449,9 @@ video {
 }
 .gap-8 {
   gap: 2rem;
+}
+.gap-\[--space-150\] {
+  gap: var(--space-150);
 }
 .gap-\[--space-400\] {
   gap: var(--space-400);
@@ -67154,6 +67160,10 @@ video {
   padding-left: 2rem;
   padding-right: 2rem;
 }
+.px-\[--space-200\] {
+  padding-left: var(--space-200);
+  padding-right: var(--space-200);
+}
 .py-0 {
   padding-top: 0px;
   padding-bottom: 0px;
@@ -90716,6 +90726,55 @@ form p.wicket-form-help-text.component-tooltip-v2-content,
   font-style: italic;
   line-height: var(--date-label-md-line-height);
 }
+.component-card-related {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: var(--space-200);
+  border-radius: var(--card-corner-radius);
+  border-width: 1px;
+  border-width: var(--border-sm);
+  border-color: var(--border-light);
+  background-color: var(--bg-card);
+  padding: var(--space-200);
+}
+.component-card-related--rounded {
+  border-radius: 0.75rem;
+}
+.component-card-related .top-aligned-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: var(--space-200);
+}
+.component-card-related__title {
+  font-size: var(--heading-xs-font-size);
+  font-weight: var(--heading-xs-font-weight-sm);
+  line-height: var(--heading-xs-line-height);
+}
+@media (min-width: 768px) {
+
+  .component-card-related__title {
+    font-weight: var(--heading-xs-font-weight-md);
+  }
+}
+.component-card-related__body {
+  font-size: var(--body-md-font-size);
+  font-weight: var(--body-md-font-weight);
+  line-height: var(--body-md-line-height);
+}
+.component-card-related__icon {
+  color: var(--text-accent);
+}
+
 .component-author {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -90726,6 +90785,7 @@ form p.wicket-form-help-text.component-tooltip-v2-content,
   flex-direction: column;
   gap: var(--space-300);
 }
+
 @media (min-width: 768px) {
 
   .component-author {
