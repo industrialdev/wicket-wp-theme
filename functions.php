@@ -7,8 +7,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Wicket Includes
  */
-$wicket_includes = [ 
+$wicket_includes = [
 	'config.php',
+	'remote-media-proxy.php',
 	'constants.php',
 	'acf.php',
 	'blocks.php',
