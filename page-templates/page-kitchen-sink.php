@@ -76,7 +76,7 @@ if (have_posts()) :
 					<h2 class="text-heading-lg mb-3">Link</h2>
 					<div class="mb-6">
 						<?php get_component('link', [
-							'text'    => __('Go back to the homepage', 'wicket'),
+							'text'    => __('Link Label', 'wicket'),
 							'url'    => get_home_url(),
 						]) ?>
 					</div>
@@ -119,21 +119,6 @@ if (have_posts()) :
 							[
 								'default_link_style' => true,
 								'size' => 'lg',
-								'url'        => get_home_url(),
-								'text'       => __('Home', 'wicket'),
-								'icon_start' => [
-									'icon' => 'fa-regular fa-house',
-								],
-								'icon_end'   => [],
-							]
-						) ?>
-					</div>
-					<div class="mb-6">
-						<h2 class="text-heading-xs mb-3">Link with icon</h2>
-						<?php get_component(
-							'link',
-							[
-								'default_link_style' => false,
 								'url'        => get_home_url(),
 								'text'       => __('Home', 'wicket'),
 								'icon_start' => [
@@ -971,6 +956,12 @@ if (have_posts()) :
 						<div class="mb-6">
 							<div class="mb-4">
 								<?php
+								$featured_image_id = null;
+								
+								if ( $style === 'image' ) {
+									$featured_image_id = get_post_thumbnail_id();
+								}
+
 								$banner_args = array(
 									'classes' =>
 									[],
@@ -986,7 +977,10 @@ if (have_posts()) :
 									'custom_image' => NULL,
 									'call_to_action' => NULL,
 									'background_style' => $style,
-									'background_image' => NULL,
+									'background_image' => [
+										'id' => $featured_image_id,
+										'alt' => 'Image here',
+									],
 									'back_link' => 'https://google.com',
 									'download_file' => [
 										'url' => '#',
