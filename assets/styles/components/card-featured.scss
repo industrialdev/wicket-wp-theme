@@ -9,13 +9,14 @@
   &__title {
     @apply text-heading-sm;
 
-    .component-featured-posts__one-level-row-cols-1 & {
+    .component-featured-posts__one-level-row-cols-1 &,
+    .component-related-posts__col-1 & {
       @apply text-heading-md;
     }
    
-    .component-featured-posts__primary-secondary-level-col-2 & {
-      @apply text-heading-xs;
-    }
+    // .component-featured-posts__primary-secondary-level-col-2 & {
+    //   @apply text-heading-xs;
+    // }
   }
 
   &__content-wrapper {
@@ -27,7 +28,7 @@
   }
   
   &__excerpt {
-    @apply leading-6 text-body-md;
+    @apply text-body-md;
   }
   
   &__date {

@@ -54,16 +54,16 @@ if (have_posts()) :
 						continue;
 					}
 					?>
-					<div class="mb-3">
+					<!-- <div class="mb-3">
 						<h2 class="text-heading-lg capitalize mb-3"><?php echo basename($filename, '.php') ?></h2>
 						<?php get_component(basename($filename, '.php')); ?>
-					</div>
+					</div> -->
 				<?php } ?>
 
 				<hr>
 
 				<section class="py-8">
-					<h2 class="text-heading-lg mb-3">Link</h2>
+					<h2 class="text-heading-lg mb-3">Breadcrumbs</h2>
 					<div class="mb-6">
 						<?php get_component('breadcrumbs', ['style' => 'normal']); ?>
 					</div>
@@ -81,7 +81,7 @@ if (have_posts()) :
 						]) ?>
 					</div>
 					<div class="mb-6">
-						<h2 class="text-heading-md mb-3">Link with icon (Default style - Small)</h2>
+						<h2 class="text-heading-xs mb-3">Link with icon (Small)</h2>
 						<?php get_component(
 							'link',
 							[
@@ -97,7 +97,7 @@ if (have_posts()) :
 						) ?>
 					</div>
 					<div class="mb-6">
-						<h2 class="text-heading-md mb-3">Link with icon (Default style - Medium)</h2>
+						<h2 class="text-heading-xs mb-3">Link with icon (Medium)</h2>
 						<?php get_component(
 							'link',
 							[
@@ -113,7 +113,7 @@ if (have_posts()) :
 						) ?>
 					</div>
 					<div class="mb-6">
-						<h2 class="text-heading-md mb-3">Link with icon (Default style - Large)</h2>
+						<h2 class="text-heading-xs mb-3">Link with icon (Large)</h2>
 						<?php get_component(
 							'link',
 							[
@@ -129,7 +129,7 @@ if (have_posts()) :
 						) ?>
 					</div>
 					<div class="mb-6">
-						<h2 class="text-heading-md mb-3">Link with icon</h2>
+						<h2 class="text-heading-xs mb-3">Link with icon</h2>
 						<?php get_component(
 							'link',
 							[
@@ -144,7 +144,7 @@ if (have_posts()) :
 						) ?>
 					</div>
 					<div class="mb-6 bg-black p-3">
-						<h2 class="text-heading-md text-white mb-3">Link with icon (Reversed)</h2>
+						<h2 class="text-heading-xs text-white mb-3">Link with icon (Reversed)</h2>
 						<?php get_component(
 							'link',
 							[
@@ -160,7 +160,7 @@ if (have_posts()) :
 						) ?>
 					</div>
 					<div class="mb-6 bg-black p-3">
-						<h2 class="text-heading-md text-white mb-3">Link with icon (Reversed, Default style)</h2>
+						<h2 class="text-heading-xs text-white mb-3">Link with icon (Reversed, Default link style)</h2>
 						<?php get_component(
 							'link',
 							[
@@ -613,10 +613,24 @@ if (have_posts()) :
 				<section class="py-8">
 					<h2 class="text-heading-lg mb-3">Icon</h2>
 					<div class="row mb-6">
-						<div class="col-sm-4">
+						<div class="col-sm-1">
 							<?php get_component('icon', [
 								'classes' => ['custom-icon-class'],
-								'icon'    => 'fa fa-check', // Replace with the desired Font Awesome classes
+								'icon'    => 'fa fa-check',
+								'text'    => __('Icon Text'),
+							]); ?>
+						</div>
+						<div class="col-sm-1">
+							<?php get_component('icon', [
+								'classes' => ['custom-icon-class'],
+								'icon'    => 'fa-regular fa-home',
+								'text'    => __('Icon Text'),
+							]); ?>
+						</div>
+						<div class="col-sm-1">
+							<?php get_component('icon', [
+								'classes' => ['custom-icon-class'],
+								'icon'    => 'fa-regular fa-lock',
 								'text'    => __('Icon Text'),
 							]); ?>
 						</div>
@@ -686,35 +700,36 @@ if (have_posts()) :
 								'icon'  => 'fa-regular fa-lock',
 							]); ?>
 						</div>
-
-						<div class="bg-black p-5 m-3">
-							<div>
-								<?php get_component('tag', [
-									'label'    => __('Members Only', 'wicket'),
-									'icon'     => 'fa-regular fa-lock',
-									'reversed' => true,
-								]); ?>
-							</div>
-						</div>
 						<div class="mb-4">
 							<?php get_component('tag', [
 								'label' => __('', 'wicket'),
 								'icon'  => 'fa-regular fa-lock',
 							]); ?>
 						</div>
-						<div class="mb-4">
-							<?php get_component('tag', [
-								'label'    => __('', 'wicket'),
-								'icon'     => 'fa-regular fa-lock',
-								'reversed' => true,
-							]); ?>
-						</div>
+
 						<div class="mb-4">
 							<?php get_component('tag', [
 								'label' => __('Topic tag', 'wicket'),
 								'link'  => 'https://wicket.io/',
 								'icon'  => '',
 							]); ?>
+						</div>
+
+						<div class="bg-black p-5">
+							<div class="mb-4">
+								<?php get_component('tag', [
+									'label'    => __('Members Only', 'wicket'),
+									'icon'     => 'fa-regular fa-lock',
+									'reversed' => true,
+								]); ?>
+							</div>
+							<div>
+								<?php get_component('tag', [
+									'label'    => __('', 'wicket'),
+									'icon'     => 'fa-regular fa-lock',
+									'reversed' => true,
+								]); ?>
+							</div>
 						</div>
 					</div>
 				</section>
@@ -745,49 +760,6 @@ if (have_posts()) :
 								]);
 							
 							?>
-						</div>
-					</div>
-				</section>
-
-
-				<section class="py-8">
-					<h2 class="text-heading-lg mb-3">Link</h2>
-					<div class="mb-6">
-						<div class="mb-4">
-							<?php get_component('link', [
-								'url' => '#',
-							]); ?>
-						</div>
-						<div class="mb-4">
-							<?php get_component('link', [
-								'url'        => '#',
-								'text'       => 'Link label',
-								'icon_start' => [
-									'icon' => 'fa-regular fa-suitcase',
-									'text' => 'Icon text',
-								],
-								'icon_end'   => [
-									'icon' => 'fa-solid fa-arrow-right',
-									'text' => 'Icon text',
-								],
-							]); ?>
-						</div>
-						<div class="bg-black p-8">
-							<div class="mb-4">
-								<?php get_component('link', [
-									'reversed'   => true,
-									'url'        => '#',
-									'text'       => 'Reversed link',
-									'icon_start' => [
-										'icon' => 'fa-regular fa-suitcase',
-										'text' => 'Icon text',
-									],
-									'icon_end'   => [
-										'icon' => 'fa-solid fa-arrow-right',
-										'text' => 'Icon text',
-									],
-								]); ?>
-							</div>
 						</div>
 					</div>
 				</section>
