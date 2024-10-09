@@ -956,10 +956,13 @@ if (have_posts()) :
 						<div class="mb-6">
 							<div class="mb-4">
 								<?php
-								$featured_image_id = null;
-								
+								$featured_image = null;
+
 								if ( $style === 'image' ) {
-									$featured_image_id = get_post_thumbnail_id();
+									$featured_image = [
+										'id' => get_post_thumbnail_id(),
+										'alt' => 'Image here',
+									];
 								}
 
 								$banner_args = array(
@@ -977,10 +980,7 @@ if (have_posts()) :
 									'custom_image' => NULL,
 									'call_to_action' => NULL,
 									'background_style' => $style,
-									'background_image' => [
-										'id' => $featured_image_id,
-										'alt' => 'Image here',
-									],
+									'background_image' => $featured_image,
 									'back_link' => 'https://google.com',
 									'download_file' => [
 										'url' => '#',
