@@ -63,6 +63,31 @@ if (have_posts()) :
 				<hr>
 
 				<section class="py-8">
+					<h2 class="text-heading-lg mb-3">Filter Form</h2>
+					<div class="mb-6">
+						<form>
+							<?php get_component('filter-form', array (
+								'taxonomies' => 
+									array (
+										0 => 
+											array (
+												'slug' => 'category',
+												'tooltip' => 'Hello World',
+											),
+										1 => 
+											array (
+												'slug' => 'post_tag',
+												'tooltip' => 'Lorem Ipsum',
+											),
+									),
+								'post_types' => array (),
+								'hide_date_filter' => false,
+							)); ?>
+						</form>
+					</div>
+				</section>
+
+				<section class="py-8">
 					<h2 class="text-heading-lg mb-3">Breadcrumbs</h2>
 					<div class="mb-6">
 						<?php get_component('breadcrumbs', ['style' => 'normal']); ?>

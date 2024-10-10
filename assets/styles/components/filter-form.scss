@@ -1,0 +1,74 @@
+.component-filter-form {
+
+  &__group {
+    @apply mt-[--space-200] pt-[--space-200] px-[--space-200];
+  }
+
+  &__top {
+    @apply py-[--space-200] px-[--space-200];
+
+    @apply border-t-[length:--border-sm] border-b-[length:--border-sm] border-[--interactive] lg:border-0;
+
+    &:hover, &:focus {
+      @apply border-b-[length:--border-md] lg:border-0;
+    }
+
+    &.open {
+      @apply border-b-[length:--border-lg] border-[--highlight-dark] lg:border-0;
+    }
+  
+    &:focus, &.open {
+      @apply bg-[--highlight-light] lg:bg-transparent;
+    }
+
+    .fa-plus {
+      @apply text-[--interactive];
+    }
+    
+    .fa-minus {
+      @apply text-[--highlight-dark];
+    }
+  }
+
+  &__heading {
+    @apply text-heading-xs;
+  }
+
+  &__filter-section-label {
+    @apply text-body-md;
+    @apply font-bold; // to override the font-weight of text-body-md
+  }
+
+  &__selected-items-indicator {
+    @apply text-body-md text-[--text-accent] mr-3;
+    @apply font-bold;
+  }
+
+  &__expand-icon, &__collapse-icon {
+    @apply text-[--interactive];
+  }
+
+  &__filter-section{
+    @apply pb-[--space-200] mb-[--space-200] border-b-[length:--border-sm] border-[--border-light];
+  }
+
+  &__see-more {
+    @apply component-link-v2 component-link-v2--default;
+  }
+
+  &__date-label {
+    @apply font-normal mb-0 absolute top-1/2 translate-y-[-50%] pl-4;
+  }
+  
+  &__date-input {
+    @apply w-full italic pl-16;
+  }
+
+  &__submit {
+    @apply w-full md:w-auto justify-center;
+  }
+
+  &__clear-btn {
+    @apply mt-[--space-200] w-full md:w-auto justify-center;
+  }
+}
