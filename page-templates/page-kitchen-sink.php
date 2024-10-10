@@ -63,6 +63,17 @@ if (have_posts()) :
 				<hr>
 
 				<section class="py-8">
+					<h2 class="text-heading-lg mb-3">Search Form</h2>
+					<div class="mb-6">
+						<form>
+						<?php get_component( 'search-form', [
+								'placeholder' => 'Lorem Ipsum'
+							] ); ?>
+						</form>
+					</div>
+				</section>
+
+				<section class="py-8">
 					<h2 class="text-heading-lg mb-3">Filter Form</h2>
 					<div class="mb-6">
 						<form>
@@ -1079,11 +1090,11 @@ if (have_posts()) :
 					<?php endforeach; ?>
 				</section>
 
-				<section class="p-8 bg-light-020">
+				<section class="py-8">
 					<h2 class="text-heading-lg mb-3">Listing Card</h2>
 					<?php
 					$args = array(
-						'post_type'      => 'listing',
+						'post_type'      => 'post',
 						'posts_per_page' => 2,
 						'orderby'        => 'date',
 						'order'          => 'DESC',
@@ -1092,6 +1103,7 @@ if (have_posts()) :
 					$query = new WP_Query($args);
 
 					if ($query->have_posts()) {
+						$index = 1;
 						while ($query->have_posts()) {
 							$query->the_post();
 
@@ -1104,19 +1116,27 @@ if (have_posts()) :
 
 							get_component('card-listing', [
 								'classes'        => ['mb-6'],
-								'content_type'   => $post_type->label,
+								'content_type'   => 'Lorem Ipsum',
 								'title'          => $title,
 								'excerpt'        => $excerpt,
 								'date'           => $post_date,
 								'featured_image' => $featured_image,
-								'topics'         => [],
+								'topics'         => get_terms(),
 								'link'           => [
-									'url'    => '#',
+									'url'    => get_permalink(),
 									'text'   => 'Go somewhere',
 									'target' => '_self',
 								],
-								'member_only'    => $member_only,
+								'helper_link' => [
+									'url'    => '#',
+									'title'   => 'Helper Link',
+									'target' => '_self',
+								],
+								'document' => '#',
+								'member_only'    => true,
 							]);
+
+							$index++;
 						}
 						wp_reset_postdata();
 					}

@@ -54,27 +54,27 @@
 
   // Disabled States
   &--primary.button-v2--disabled {
-    @apply bg-[--bg-disabled] text-[--text-disabled] border-transparent #{!important};
+    @apply bg-[--bg-disabled] pointer-events-none text-[--text-disabled] border-transparent #{!important};
   }
 
   &--secondary.button-v2--disabled {
-    @apply bg-[--bg-transparent] text-[--text-disabled] border-[--border-disabled] #{!important};
+    @apply bg-[--bg-transparent] pointer-events-none text-[--text-disabled] border-[--border-disabled] #{!important};
   }
 
   &--ghost.button-v2--disabled {
-    @apply text-[--text-disabled] #{!important};
+    @apply text-[--text-disabled] pointer-events-none #{!important};
   }
   
   // Disabled States Reversed
   &--primary.button-v2--disabled.button-v2--reversed {
-    @apply bg-[--bg-disabled] text-[--text-disabled] border-transparent #{!important};
+    @apply bg-[--bg-disabled] pointer-events-none text-[--text-disabled] border-transparent #{!important};
   }
 
   &--secondary.button-v2--disabled.button-v2--reversed {
-    @apply bg-[--bg-transparent] text-[--text-disabled] border-[--border-disabled] #{!important};
+    @apply bg-[--bg-transparent] pointer-events-none text-[--text-disabled] border-[--border-disabled] #{!important};
   }
 
   &--ghost.button-v2--disabled.button-v2--reversed {
-    @apply text-[--text-disabled] border-transparent #{!important};
+    @apply text-[--text-disabled] pointer-events-none border-transparent #{!important};
   }
 }

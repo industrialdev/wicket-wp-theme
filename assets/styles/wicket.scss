@@ -232,6 +232,8 @@
 @import 'components/card-call-out';
 @import 'components/card-contact';
 @import 'components/card-featured';
+@import 'components/card-listing';
+@import 'components/card-product';
 @import 'components/card-related';
 @import 'components/featured-posts';
 @import 'components/filter-form';
@@ -253,6 +255,7 @@
 @import 'blocks/wicket/author';
 @import 'blocks/core/heading';
 @import 'blocks/core/list';
+@import 'blocks/wicket/listing';
 @import 'blocks/core/paragraph';
 @import 'blocks/core/post-terms';
 @import 'blocks/core/pullquote';

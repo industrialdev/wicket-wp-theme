@@ -176,8 +176,16 @@ function init( $block = [] ) {
 		}
 	}
 
-	$search_form_bg_color       = apply_filters( 'wicket_listing_search_form_bg_color', 'bg-dark-010' );
-	$listing_container_bg_color = apply_filters( 'wicket_listing_container_bg_color', 'bg-light-010' );
+	$default_search_form_bg_color       = '';
+	$default_listing_container_bg_color = '';	
+
+	if ( ! defined( 'WICKET_WP_THEME_V2' ) ) {
+		$default_search_form_bg_color       = 'bg-dark-010';
+		$default_listing_container_bg_color = 'bg-light-010';	
+	}
+
+	$search_form_bg_color       = apply_filters( 'wicket_listing_search_form_bg_color', $default_search_form_bg_color );
+	$listing_container_bg_color = apply_filters( 'wicket_listing_container_bg_color', $default_listing_container_bg_color );
 
 	/* Set listing layout to grid if post type is products */
 	if ( $post_type == 'product' ) {
@@ -189,7 +197,7 @@ function init( $block = [] ) {
 	<form action="" <?php echo $attrs ?> class="block-wicket-listing">
 
 		<?php if ( ! $hide_search ) : ?>
-			<div class="block-wicket-listing__search-form <?php echo $search_form_bg_color ?> px-4 py-5 lg:px-0">
+			<div class="block-wicket-listing__search-form <?php echo $search_form_bg_color ?> <?php echo defined( 'WICKET_WP_THEME_V2' ) ? '' : 'px-4 py-5 lg:px-0' ?>">
 				<div class="container">
 					<?php get_component( 'search-form' ); ?>
 				</div>
@@ -262,7 +270,7 @@ function init( $block = [] ) {
 					?>
 
 					<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-7 px-4 lg:px-0">
-						<div class="font-bold">
+						<div class="<?php echo defined( 'WICKET_WP_THEME_V2' ) ? 'block-wicket-listing__total' : 'font-bold' ?>">
 							<?php
 							if ( $total_posts === 0 ) {
 								echo '0' . __( ' Results', 'wicket' );
@@ -421,7 +429,7 @@ function init( $block = [] ) {
 						<?php
 					else : ?>
 						<div class="p-10">
-							<h2 class="text-center font-bold text-heading-md mb-6">
+							<h2 class="<?php echo defined( 'WICKET_WP_THEME_V2' ) ? 'block-wicket-listing__no-results' : 'text-center font-bold text-heading-md mb-6' ?>">
 								<?php echo __( 'No results found.', 'wicket' ) ?>
 							</h2>
 							<div class="text-center">

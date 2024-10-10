@@ -1,0 +1,23 @@
+.block-wicket-listing {
+
+  &__search-form {
+    @apply bg-[--bg-dark-alternate] py-[--space-250];
+  }
+
+  &__filters {
+    @apply bg-white;
+  }
+
+  &__container {
+    @apply bg-[--bg-light-neutral];
+  }
+
+  &__total {
+    @apply text-body-md;
+    @apply font-bold;
+  }
+
+  &__no-results {
+    @apply text-center text-heading-md mb-6;
+  }
+}

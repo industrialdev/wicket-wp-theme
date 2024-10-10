@@ -1,0 +1,68 @@
+.component-card-product-v2,
+.product {
+  @apply bg-[--bg-card] rounded-[--card-corner-radius] border-b-[length:--border-listing-card] border-[--border-card] p-[--space-200] gap-[--space-200] relative flex flex-col items-center h-full;
+  filter: drop-shadow( var(--elevation-4) );
+
+  .onsale {
+    background-color: var(--wp--preset--color--white);
+    padding: var(--wp--preset--spacing--100);
+    border-radius: var(--wp--custom--border-radius--100);
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .price {
+    font-size: var(--wp--preset--font-size--heading-xs);
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+
+    ins {
+      font-weight: bold;
+      text-decoration: none;
+    }
+  }
+
+  .button {
+    @apply button-v2 button-v2--primary;
+    border: var(--border-interactive-md) solid var(--border-interactive);
+
+    &:hover {
+      border: var(--border-interactive-md) solid var(--border-interactive);
+    }
+
+    &.product_type_external {
+      @include add-external-icon;
+    }
+
+    .add_to_cart_button__text-added {
+      @apply hidden;
+    }
+
+    .add_to_cart_button__text {
+      @apply block;
+    }
+
+    &.added {
+      .add_to_cart_button__text-added {
+        @apply block;
+      }
+
+      .add_to_cart_button__text {
+        @apply hidden;
+      }
+    }
+
+    &.button--disabled {
+      @apply bg-[--bg-disabled] text-[--text-disabled] border-transparent #{!important};
+    }
+  }
+}
+
+.component-card-product-v2__title,
+.woocommerce-loop-product__title {
+  @apply text-heading-xs block;
+}
