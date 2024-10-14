@@ -92929,6 +92929,33 @@ form.woocommerce-checkout .variation-TeamName {
   display: inline-flex;
 }
 
+/* BLOCKS
+------------------------------------------------------------------------------*/
+.wc-block-featured-product__title {
+  font-size: var(--heading-md-font-size);
+  color: var(--text-content-reversed);
+  font-weight: var(--heading-md-font-weight-sm);
+  line-height: var(--heading-md-line-height);
+}
+@media (min-width: 768px) {
+
+  .wc-block-featured-product__title {
+    font-weight: var(--heading-md-font-weight-md);
+  }
+}
+.wc-block-featured-product__description, .wc-block-featured-product__price {
+  font-size: var(--body-lg-font-size);
+  color: var(--text-content-reversed);
+  font-weight: var(--body-lg-font-weight);
+  line-height: var(--body-lg-line-height);
+}
+.wc-block-featured-product .background-dim__overlay {
+  background-color: var(--bg-image-overlay) !important;
+}
+.wc-block-featured-product .background-dim__overlay::after {
+  opacity: 1;
+}
+
 /* THEME STRUCTURE
 ------------------------------------------------------------------------------*/
 form input,

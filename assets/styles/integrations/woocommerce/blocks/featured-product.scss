@@ -1,0 +1,17 @@
+.wc-block-featured-product {
+  &__title {
+    @apply text-heading-md text-[--text-content-reversed];
+  }
+
+  &__description, &__price {
+    @apply text-body-lg text-[--text-content-reversed];
+  }
+
+  .background-dim__overlay {
+    @apply bg-[--bg-image-overlay] #{!important};
+
+    &::after {
+      opacity: 1;
+    }
+  }
+}

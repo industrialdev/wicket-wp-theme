@@ -660,7 +660,7 @@
                     "name": "bg-image-overlay",
                     "aria-label": "",
                     "type": "color_picker",
-                    "instructions": "85% Opacity",
+                    "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -669,12 +669,8 @@
                         "id": ""
                     },
                     "wpml_cf_preferences": 1,
-                    "default_value": "#4B50C5",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "enable_opacity": false,
+                    "default_value": "rgba(75,80,197,.85)",
+                    "enable_opacity": 1,
                     "return_format": "string"
                 },
                 {
@@ -2358,7 +2354,7 @@
                         "id": ""
                     },
                     "wpml_cf_preferences": 1,
-                    "default_value": "rgba(35,42,49,0.2)",
+                    "default_value": "#232A31",
                     "enable_opacity": 1,
                     "return_format": "string"
                 },
@@ -2377,7 +2373,7 @@
                         "id": ""
                     },
                     "wpml_cf_preferences": 1,
-                    "default_value": "rgba(35,42,49,0.9)",
+                    "default_value": "#232A31",
                     "enable_opacity": 1,
                     "return_format": "string"
                 }
@@ -3718,5 +3714,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "translation",
-    "modified": 1728374965
+    "modified": 1728904231
 }
