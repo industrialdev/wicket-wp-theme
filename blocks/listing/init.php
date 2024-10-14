@@ -367,7 +367,7 @@ function init( $block = [] ) {
 
 								if ( $listing_layout === 'grid' ) {
 									$grid_card_params = [ 
-										'classes'      => [ 'p-4' ],
+										'classes'      => defined( 'WICKET_WP_THEME_V2' ) ? [] : [ 'p-4' ],
 										'post_type'    => $post_type,
 										'post_id'      => $post_id,
 										'content_type' => ! $hide_type_taxonomy ? get_related_content_type_term( $post_id ) : '',

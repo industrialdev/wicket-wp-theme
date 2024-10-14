@@ -10,19 +10,12 @@
   div.product {
     /* Price */
     p.price {
-      color: var(--wp--preset--color--black);
-      font-size: var(--wp--preset--font-size--body-lg);
-      margin-bottom: 1rem;
-
-      del {
-        opacity: 1;
-        margin-right: 0.5rem;
-      }
-
-      ins {
-        text-decoration: none;
-      }
+      @apply justify-start;
     }
+
+    .onsale {
+      @apply bg-[--bg-label-2] rounded-[--label-corner-radius] text-[--text-label-2] text-label-md p-[--space-150] absolute top-[12px] left-[12px] uppercase;
+    }  
 
     /* Quantity */
     .quantity {
@@ -38,63 +31,53 @@
 
     /* Stock */
     p.stock {
-      font-weight: bold;
-      font-style: italic;
-      color: var(--wp--preset--color--dark);
-      margin-bottom: 1rem;
+      @apply font-bold italic mb-4;
 
       &.out-of-stock {
-        color: var(--wp--preset--color--danger);
+        @apply text-[--state-error];
       }
     }
 
     /* Add to cart */
     form.cart {
       div.quantity {
-        margin-right: 1rem;
+        @apply mb-4;
       }
 
       .button {
-        background-color: var(--wp--preset--color--primary);
-        color: var(--wp--preset--color--white);
-        padding: 1rem;
+        @apply button-v2 button-v2--primary;
+        border: var(--border-interactive-md) solid var(--border-interactive);
+    
+        &:hover {
+          border: var(--border-interactive-md) solid var(--border-interactive);
+        }
       }
     }
 
     /* Product meta */
     .product_meta {
       .sku_wrapper {
-        display: block;
-        margin-bottom: 1rem;
+        @apply mb-4 block;
       }
 
       .posted_in {
-        display: block;
-        margin-bottom: 1rem;
-        font-weight: bold;
+        @apply mb-4 block font-bold;
 
         a {
-          font-weight: normal;
-          text-decoration: underline;
+          @apply font-normal underline;
         }
       }
     }
 
     /* Social sharing */
     .component-social-sharing {
-      margin-top: 1rem;
-
-      .component-button {
-        background-color: transparent;
-        display: flex;
-        color: var(--wp--preset--color--primary);
-      }
+      @apply mb-4;
     }
   }
 
   /* Woocommerce Membership notifications */
   .woocommerce {
-    padding: 0;
+    @apply p-0;
   }
 
   /* Case: If product type is external */
