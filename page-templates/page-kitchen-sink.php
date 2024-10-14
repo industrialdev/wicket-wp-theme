@@ -63,6 +63,61 @@ if (have_posts()) :
 				<hr>
 
 				<section class="py-8">
+					<h2 class="text-heading-lg mb-3">Icon Grid</h2>
+					<div class="mb-6">
+						<?php get_component( 'icon-grid', [ 
+							'title'            => 'Lorem Ipsum',
+							'use-fa-codes'     => true,
+							'use-drop-shadows' => true,
+							'show-arrow-icon'  => true,
+							'icons'            => [
+								[
+									'icon_link_url' => '#',
+									'font-awesome_icon_code' => 'fa-solid fa-arrow-right',
+									'icon_grid_text' => 'Lorem Ipsum',
+								],
+								[
+									'icon_link_url' => '#',
+									'font-awesome_icon_code' => 'fa-solid fa-lock',
+									'icon_grid_text' => 'Lorem Ipsum',
+								],
+							],
+						] ); ?>
+					</div>
+					<div class="mb-6">
+						<?php get_component( 'icon-grid', [ 
+							'title'            => 'Lorem Ipsum',
+							'use-fa-codes'     => false,
+							'use-drop-shadows' => true,
+							'show-arrow-icon'  => true,
+							'icons'            => [
+								[
+									'icon_link_url' => '#',
+									'icon_grid_image' => [
+										'url' => 'https://place-hold.it/56x56',
+									],
+									'icon_grid_text' => 'Lorem Ipsum',
+								],
+								[
+									'icon_link_url' => '#',
+									'icon_grid_image' => [
+										'url' => 'https://place-hold.it/56x56',
+									],
+									'icon_grid_text' => 'Lorem Ipsum is simply dummy text of.'
+								],
+								[
+									'icon_link_url' => '#',
+									'icon_grid_image' => [
+										'url' => 'https://place-hold.it/56x56',
+									],
+									'icon_grid_text' => 'Lorem Ipsum',
+								],
+							],
+						] ); ?>
+					</div>
+				</section>
+
+				<section class="py-8">
 					<h2 class="text-heading-lg mb-3">Search Form</h2>
 					<div class="mb-6">
 						<form>

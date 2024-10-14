@@ -91242,6 +91242,86 @@ form p.wicket-form-help-text
   }
 }
 
+.component-icon-grid__title {
+  margin-bottom: 0.5rem;
+  text-align: center;
+  font-size: var(--heading-xl-font-size);
+  font-weight: var(--heading-xl-font-weight-sm);
+  line-height: var(--heading-xl-line-height);
+}
+
+@media (min-width: 768px) {
+
+  .component-icon-grid__title {
+    font-weight: var(--heading-xl-font-weight-md);
+  }
+}
+.component-icon-grid__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.component-icon-grid__item {
+  margin-bottom: 0.5rem;
+  width: 100%;
+  padding: 0.5rem;
+  font-size: var(--heading-xs-font-size);
+  font-weight: var(--heading-xs-font-weight-sm);
+  line-height: var(--heading-xs-line-height);
+}
+@media (min-width: 768px) {
+
+  .component-icon-grid__item {
+    font-weight: var(--heading-xs-font-weight-md);
+    width: 50%;
+  }
+}
+@media (min-width: 1024px) {
+
+  .component-icon-grid__item {
+    width: 33.333333%;
+  }
+}
+.component-icon-grid__item-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: var(--space-150);
+  border-radius: var(--card-corner-radius);
+  border-width: var(--border-interactive-sm);
+  border-color: transparent;
+  background-color: var(--bg-card);
+  padding: var(--space-150);
+}
+.component-icon-grid--use_drop_shadows .component-icon-grid__item-link {
+  -webkit-filter: drop-shadow(var(--elevation-4));
+  filter: drop-shadow(var(--elevation-4));
+}
+.component-icon-grid__item-link:focus {
+  border-color: var(--interactive);
+}
+.component-icon-grid__item-icon {
+  color: var(--interactive);
+}
+.component-icon-grid__item-arrow-icon {
+  margin-left: auto;
+  font-size: var(--heading-xs-font-size);
+  color: var(--interactive);
+  font-weight: var(--heading-xs-font-weight-sm);
+  line-height: var(--heading-xs-line-height);
+}
+@media (min-width: 768px) {
+
+  .component-icon-grid__item-arrow-icon {
+    font-weight: var(--heading-xs-font-weight-md);
+  }
+}
+
 .component-image {
   border-width: var(--image-corner-radius);
 }

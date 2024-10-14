@@ -1,0 +1,33 @@
+.component-icon-grid {
+  &__title {
+    @apply text-heading-xl text-center mb-2;
+  }
+
+  &__wrap {
+    @apply flex flex-wrap;
+  }
+
+  &__item {
+    @apply w-full md:w-1/2 lg:w-1/3 mb-2 p-2 text-heading-xs;
+  }
+
+  &__item-link {
+    @apply rounded-[--card-corner-radius] bg-[--bg-card] flex items-center gap-[--space-150] p-[--space-150] border-[length:--border-interactive-sm] border-transparent;
+
+    .component-icon-grid--use_drop_shadows & {
+      filter: drop-shadow( var(--elevation-4) );
+    }
+
+    &:focus {
+      @apply border-[--interactive];
+    }
+  }
+
+  &__item-icon {
+    @apply text-[--interactive];
+  }
+
+  &__item-arrow-icon {
+    @apply ml-auto text-heading-xs text-[--interactive];
+  }
+}
