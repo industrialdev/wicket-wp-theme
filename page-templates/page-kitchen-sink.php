@@ -1246,18 +1246,44 @@ if (have_posts()) :
 
 				<section class="py-8">
 					<h2 class="text-heading-lg mb-3">Welcome Block</h2>
-					<?php
-						$block_content = '
-						<!-- wp:wicket-ac/ac-welcome {"name":"wicket-ac/ac-welcome","data":{"field_66100d9eca323":"1","field_662a9bd181d60":{"title":"Edit Profile","url":"/my-account/edit-profile/","target":""},"field_6613e7dd4c413":"1","field_6613e7dc4c412":"1","field_66ad00c245a65":"1"},"mode":"edit","alignText":"left"} /-->';
 
-						$parsed_blocks = parse_blocks( $block_content );
+					<div class="flex" >
+						<div class="basis-9/12" >
+							<?php
+								$block_content = '
+								<!-- wp:wicket-ac/ac-welcome {"name":"wicket-ac/ac-welcome","data":{"field_66100d9eca323":"1","field_662a9bd181d60":{"title":"Edit Profile","url":"/my-account/edit-profile/","target":""},"field_6613e7dd4c413":"1","field_6613e7dc4c412":"1","field_66ad00c245a65":"1"},"mode":"edit","alignText":"left"} /-->';
 
-						if ( $parsed_blocks ) {
-							foreach ( $parsed_blocks as $block ) {
-								echo apply_filters( 'the_content', render_block( $block ) );
-							}
-						}
-					?>
+								$parsed_blocks = parse_blocks( $block_content );
+
+								if ( $parsed_blocks ) {
+									foreach ( $parsed_blocks as $block ) {
+										echo render_block( $block );
+									}
+								}
+							?>
+						</div>
+					</div>
+				</section>
+
+				<section class="py-8">
+					<h2 class="text-heading-lg mb-3">AC Profile Picture</h2>
+
+					<div class="flex" >
+						<div class="basis-9/12" >
+							<?php
+								$block_content = '
+								<!-- wp:wicket-ac/ac-profile-picture {"name":"wicket-ac/ac-profile-picture","data":{"profile_picture_max_size":"1","_profile_picture_max_size":"field_669ac1a47221e"},"mode":"preview","alignText":"left"} /-->';
+
+								$parsed_blocks = parse_blocks( $block_content );
+
+								if ( $parsed_blocks ) {
+									foreach ( $parsed_blocks as $block ) {
+										echo render_block( $block );
+									}
+								}
+							?>
+						</div>
+					</div>
 				</section>
 
 			</div>

@@ -1187,6 +1187,10 @@ video {
   -ms-flex-preferred-size: 75%;
   flex-basis: 75%;
 }
+.basis-9\/12 {
+  -ms-flex-preferred-size: 75%;
+  flex-basis: 75%;
+}
 .basis-full {
   -ms-flex-preferred-size: 100%;
   flex-basis: 100%;
