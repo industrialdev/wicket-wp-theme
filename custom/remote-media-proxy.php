@@ -22,6 +22,10 @@ if (
   define('WICKET_REMOTE_MEDIA_URL', 'https://wordpress-baseline-sandbox.ind.ninja');
 }
 
+if (class_exists('Wicket_Remote_Media_Proxy')) {
+  return;
+}
+
 class Wicket_Remote_Media_Proxy
 {
   /**
