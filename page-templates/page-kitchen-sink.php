@@ -1199,6 +1199,51 @@ if (have_posts()) :
 					?>
 				</section>
 
+				<section class="py-8">
+					<h2 class="text-heading-lg mb-3">AC Callouts</h2>
+
+					<?php
+						$ac_types = [
+							'callout-become_member' => [ '', 'callout-pending_approval' ],
+							'callout-renewal' => [ 'callout-grace_period', 'callout-early_renewal' ],
+							'callout-profile' => [ '' ]
+						];
+
+						foreach ( $ac_types as $ac_type => $item ) :
+							foreach ( $item as $subitem ) :
+					?>
+							<div class="mb-6" >
+								<?php
+									$attrs = get_block_wrapper_attributes(array('class' => "{$ac_type} {$subitem}"));
+									// echo "<h2 class='text-heading-md mb-3'>{$ac_type} - {$subitem}</h2>";
+									echo '<div ' . $attrs . '>';
+									get_component('card-call-out', [
+										'title'       => 'Lorem Ipsum',
+										'description' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.',
+										'links'       => [
+											[
+												'link' => [
+													'title' => 'Link Here',
+													'url' => '#'
+												]
+											],
+											[
+												'link_style' => 'ghost',
+												'link' => [
+													'title' => 'Link Here',
+													'url' => '#',
+												]
+											]
+										],
+										'style'       => '',
+									]);
+									echo '</div>';
+								?>
+							</div>
+						<?php endforeach; ?>
+					<?php endforeach; ?>
+				</section>
+
 			</div>
 		</main>
 
