@@ -1305,6 +1305,26 @@ if (have_posts()) :
 						</div>
 					</div>
 				</section>
+				
+				<section class="py-8">
+					<h2 class="text-heading-lg mb-3">AC Update Password</h2>
+
+					<div class="flex" >
+						<div class="basis-9/12" >
+							<?php
+								$block_content = '<!-- wp:wicket-ac/ac-password {"name":"wicket-ac/ac-password","data":{},"mode":"preview","alignText":"left"} /-->';
+
+								$parsed_blocks = parse_blocks( $block_content );
+
+								if ( $parsed_blocks ) {
+									foreach ( $parsed_blocks as $block ) {
+										echo render_block( $block );
+									}
+								}
+							?>
+						</div>
+					</div>
+				</section>
 
 			</div>
 		</main>
