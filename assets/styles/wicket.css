@@ -90390,17 +90390,6 @@ h6 {
     font-weight: var(--heading-sm-font-weight-md);
   }
 }
-.callout-become_member .component-card-call-out__title, .callout-renewal .component-card-call-out__title, .callout-profile .component-card-call-out__title {
-  font-size: var(--heading-md-font-size);
-  font-weight: var(--heading-md-font-weight-sm);
-  line-height: var(--heading-md-line-height);
-}
-@media (min-width: 768px) {
-
-  .callout-become_member .component-card-call-out__title, .callout-renewal .component-card-call-out__title, .callout-profile .component-card-call-out__title {
-    font-weight: var(--heading-md-font-weight-md);
-  }
-}
 .component-card-call-out__links {
   display: -webkit-box;
   display: -ms-flexbox;

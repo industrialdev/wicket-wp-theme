@@ -3,13 +3,6 @@
 
   &__title {
     @apply text-heading-sm mb-[--space-250];
-
-    // Make heading larger for AC callouts
-    .callout-become_member &,
-    .callout-renewal &,
-    .callout-profile & {
-    @apply text-heading-md;
-    }
   }
 
   &__links {
