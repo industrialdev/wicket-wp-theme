@@ -19,7 +19,13 @@ if (
   || str_contains($_SERVER['REMOTE_ADDR'], '192.')
   || str_contains($_SERVER['REMOTE_ADDR'], '172.')
 ) {
-  define('WICKET_REMOTE_MEDIA_URL', 'https://wordpress-baseline-sandbox.ind.ninja');
+  if (! defined('WICKET_REMOTE_MEDIA_URL')) {
+    define('WICKET_REMOTE_MEDIA_URL', 'https://wordpress-baseline-sandbox.ind.ninja');
+  }
+}
+
+if (class_exists('Wicket_Remote_Media_Proxy')) {
+  return;
 }
 
 class Wicket_Remote_Media_Proxy
