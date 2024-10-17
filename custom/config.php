@@ -254,3 +254,11 @@ function custom_excerpt_length( $length ) {
 	return 40;
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+function add_wicket_theme_classes( $classes ) {
+	$classes[] = 'wicket-theme-v2';
+
+	return $classes;
+}
+
+add_filter( 'body_class', 'add_wicket_theme_classes' );
