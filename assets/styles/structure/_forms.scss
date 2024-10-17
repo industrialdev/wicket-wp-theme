@@ -96,9 +96,8 @@ form,
     }
   }
 
-  label {
-    @apply text-form-label;
-    margin-bottom: 2px;
+  label, .label {
+    @apply text-form-label mb-[--space-050];
 
     &.required {
       &:after {
