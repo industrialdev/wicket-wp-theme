@@ -1325,6 +1325,38 @@ if (have_posts()) :
 						</div>
 					</div>
 				</section>
+				
+				<section class="py-8">
+					<h2 class="text-heading-lg mb-3">Dynamically Related Events</h2>
+
+					<div class="flex" >
+						<div class="basis-9/12" >
+							<?php
+								$block_content = '<!-- wp:wicket/dynamically-related-events {"name":"wicket/dynamically-related-events","data":{"field_66fa740f9c38f":"Dynamically Related Events","field_66fa740f9c791":"0","field_66fa740f9cb73":"1","field_66fa740f9cf5e":"0","field_66fa740f9d72d":"1","field_66fa740f9db12":"15","field_66fa740f9e2de":"","field_66fa740f9eea2":"0","field_66fa740f9f280":"0","field_66fa740f9f671":"0","field_66fa740f9fa54":"0","field_66fa7bf9f4ed0":"0","field_66fa7c8d121d3":"0","field_66fa7deda2a5e":"0","field_66fa7e03a2a5f":"0","field_66fa740f9fe3c":"0","field_66fa7eb4a2a60":"0","field_66fe80efc9500":{"field_66fe80efc9500_field_6602a771ef4a9":"0"},"field_66fa740f9e6cb":"0","field_66fa740f9eab1":""},"mode":"edit","alignText":"left"} /-->';
+
+								$parsed_blocks = parse_blocks( $block_content );
+
+								if ( $parsed_blocks ) {
+									foreach ( $parsed_blocks as $block ) {
+										echo render_block( $block );
+									}
+								}
+							?>
+						</div>
+					</div>
+				</section>
+				
+				<section class="py-8">
+					<h2 class="text-heading-lg mb-3"></h2>
+
+					<div class="mb-6" >
+						<?php
+							get_component( 'sidebar-contextual-nav', [
+								'icon-type'     => 'chevrons' // plus-minus, carets
+							] );
+						?>
+					</div>
+				</section>
 
 			</div>
 		</main>

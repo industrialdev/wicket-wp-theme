@@ -2,7 +2,7 @@
   @apply px-[--space-200] lg:px-0;
 
   &__top-wrap {
-    @apply mb-[--space-600] flex gap-[--space-200];
+    @apply mb-[--space-600] flex gap-[--space-200] items-center;
   }
 
   &__title {

@@ -89875,12 +89875,15 @@ h6 {
   border-color: var(--border-light);
   padding: var(--space-150);
   font-size: var(--body-md-font-size);
-  color: var(--text-content);
   font-weight: var(--body-md-font-weight);
   line-height: var(--body-md-line-height);
 }
 .accordion-item-v2:hover {
   cursor: pointer;
+}
+.component-sidebar-contextual-nav__accordion .accordion-item-v2 {
+  margin-bottom: 0px;
+  padding: var(--space-100);
 }
 .accordion-item-v2:last-child {
   margin-bottom: 0px;
@@ -89889,11 +89892,17 @@ h6 {
   margin-top: var(--space-250);
   padding-right: 3rem;
 }
+.component-sidebar-contextual-nav__accordion .accordion-item-v2__body {
+  margin-top: var(--space-100);
+}
 .accordion-item-v2__title {
   font-size: var(--body-md-font-size);
-  color: var(--text-content);
   font-weight: var(--body-md-font-weight);
   line-height: var(--body-md-line-height);
+}
+.component-sidebar-contextual-nav__accordion .accordion-item-v2__title {
+  font-weight: 700;
+  color: var(--nav-contextual-link-lvl-1);
 }
 .accordion-item-v2__icon {
   margin-left: 1rem;
@@ -89906,12 +89915,25 @@ h6 {
   border-color: var(--highlight-dark);
   background-color: var(--highlight-light);
 }
+.component-sidebar-contextual-nav__accordion .accordion-item-v2.open {
+  border-color: var(--border-light);
+  background-color: transparent;
+}
 .accordion-item-v2--list {
   border-top-width: var(--border-sm);
   border-bottom-width: var(--border-sm);
 }
+.component-sidebar-contextual-nav__accordion .accordion-item-v2--list {
+  border-top-width: 0px;
+}
+.component-sidebar-contextual-nav__accordion .accordion-item-v2--list:last-child {
+  border-bottom-width: 0px;
+}
 .accordion-item-v2--list.open {
   border-bottom-width: var(--border-lg);
+}
+.component-sidebar-contextual-nav__accordion .accordion-item-v2--list.open {
+  border-bottom-width: var(--border-sm);
 }
 .accordion-item-v2--card {
   border-radius: var(--interactive-corner-radius-md);
@@ -91825,6 +91847,33 @@ form p.wicket-form-help-text
   color: var(--interactive);
 }
 
+.component-sidebar-contextual-nav__title {
+  margin-bottom: var(--space-200);
+  padding-left: var(--space-075);
+  padding-right: var(--space-075);
+  font-size: var(--label-md-font-size);
+  color: var(--nav-contextual-title);
+  font-weight: var(--label-md-font-weight);
+  text-transform: uppercase;
+  line-height: var(--label-md-line-height);
+}
+.component-sidebar-contextual-nav__sublist {
+  padding-left: var(--space-200);
+}
+.component-sidebar-contextual-nav__sublist-item a {
+  display: block;
+  border-radius: var(--interactive-corner-radius-md);
+  padding: var(--space-100);
+}
+.component-sidebar-contextual-nav__sublist-item a:focus {
+  background-color: var(--highlight-light);
+}
+.component-sidebar-contextual-nav__sublist-item--active a {
+  background-color: var(--highlight-light);
+  font-weight: 700;
+  color: var(--highlight-dark);
+}
+
 .component-social-sharing-v2 {
   margin: 0px;
   display: -webkit-box;
@@ -91851,6 +91900,46 @@ form p.wicket-form-help-text
   border-radius: var(--social-media-radius);
 }
 
+.component-related-events {
+  padding-left: var(--space-200);
+  padding-right: var(--space-200);
+}
+
+@media (min-width: 1024px) {
+
+  .component-related-events {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+.component-related-events__top-wrap {
+  margin-bottom: var(--space-600);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: var(--space-200);
+}
+.component-related-events__title {
+  font-size: var(--heading-sm-font-size);
+  font-weight: var(--heading-sm-font-weight-sm);
+  line-height: var(--heading-sm-line-height);
+}
+@media (min-width: 768px) {
+
+  .component-related-events__title {
+    font-weight: var(--heading-sm-font-weight-md);
+  }
+}
+.component-related-events__view-all {
+  border-left-width: 1px;
+  border-color: var(--border-light);
+  padding-left: var(--space-200);
+  padding-right: var(--space-200);
+}
+
 .component-related-posts {
   padding-left: var(--space-200);
   padding-right: var(--space-200);
@@ -91868,6 +91957,9 @@ form p.wicket-form-help-text
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   gap: var(--space-200);
 }
 .component-related-posts__title {

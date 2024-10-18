@@ -1,0 +1,25 @@
+.component-sidebar-contextual-nav {
+  &__title {
+    @apply text-label-md text-[--nav-contextual-title] mb-[--space-200] px-[--space-075];
+  }
+
+  &__sublist {
+    @apply pl-[--space-200];
+  }
+
+  &__sublist-item {
+    a {
+      @apply p-[--space-100] block rounded-[--interactive-corner-radius-md];
+
+      &:focus {
+        @apply bg-[--highlight-light];
+      }
+    }
+    
+    &--active {
+      a {
+        @apply bg-[--highlight-light] font-bold text-[--highlight-dark];
+      }
+    }
+  }
+}

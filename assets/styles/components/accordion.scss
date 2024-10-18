@@ -1,5 +1,9 @@
 .accordion-item-v2 {
-  @apply hover:cursor-pointer text-body-md p-[--space-150] text-[--text-content] border-[--border-light] mb-2;
+  @apply hover:cursor-pointer text-body-md p-[--space-150] border-[--border-light] mb-2;
+
+  .component-sidebar-contextual-nav__accordion & {
+    @apply p-[--space-100] mb-0;
+  }
 
   &:last-child {
     @apply mb-0;
@@ -7,10 +11,18 @@
 
   &__body {
     @apply mt-[--space-250] pr-12;
+
+    .component-sidebar-contextual-nav__accordion & {
+      @apply mt-[--space-100];
+    }
   }
 
   &__title {
-    @apply text-body-md text-[--text-content];
+    @apply text-body-md;
+
+    .component-sidebar-contextual-nav__accordion & {
+      @apply text-[--nav-contextual-link-lvl-1] font-bold;
+    }
   }
 
   &__icon {
@@ -23,14 +35,30 @@
 
   &.open {
     @apply border-[--highlight-dark] bg-[--highlight-light];
+
+    .component-sidebar-contextual-nav__accordion & {
+      @apply bg-transparent border-[--border-light];
+    }
   }
 
   // List accordion
   &--list {
     @apply border-t-[length:--border-sm] border-b-[length:--border-sm];
 
+    .component-sidebar-contextual-nav__accordion & {
+      @apply border-t-0;
+
+      &:last-child {
+        @apply border-b-0;
+      }
+    }
+
     &.open {
       @apply border-b-[length:--border-lg];
+
+      .component-sidebar-contextual-nav__accordion & {
+        @apply border-b-[length:--border-sm];
+      }
     }
   }
   

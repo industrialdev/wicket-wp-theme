@@ -1,0 +1,15 @@
+.component-related-events {
+  @apply px-[--space-200] lg:px-0;
+
+  &__top-wrap {
+    @apply mb-[--space-600] flex gap-[--space-200] items-center;
+  }
+
+  &__title {
+    @apply text-heading-sm;
+  }
+
+  &__view-all {
+    @apply border-l border-[--border-light] px-[--space-200];
+  }
+}
