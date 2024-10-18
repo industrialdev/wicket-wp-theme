@@ -1,0 +1,61 @@
+.component-card-event {
+  @apply bg-[--bg-card] rounded-[--card-corner-radius] flex flex-col gap-[--space-200] relative items-start flex-col lg:flex-row @2xl:items-start justify-between p-[--space-200] border-[length:--border-dynamic-card] border-[--border-card];
+  filter: drop-shadow( var(--elevation-4) );
+
+  &__title {
+    @apply block text-heading-xs;
+
+    &.cols-1 {
+      @apply text-heading-xl;
+    }
+  }
+
+  &__image-wrapper {
+    @apply basis-full lg:basis-5/12;
+  }
+
+  &__date-indicator {
+    @apply bg-[--bg-accent-dark] text-[--text-content-reversed] text-center uppercase flex @xs:flex-row @xl:flex-col shrink-0 justify-center items-center @xl:w-[70px] @xl:h-[70px] rounded-[--label-corner-radius] px-2 py-3 gap-2 @xl:gap-0 text-body-lg font-bold;
+  }
+
+  &__date-indicator-day {
+    @apply text-heading-xs;
+  }
+
+  &__date-indicator-date {
+    @apply text-heading-sm;
+  }
+
+  &__content-wrapper {
+    @apply flex flex-col grow items-start gap-[--space-300] flex-1;
+  }
+
+  &__content-type {
+    @apply text-[--text-accent] uppercase text-label-md;
+    margin-bottom: calc( var(--space-100) * -1 );
+  }
+
+  &__date {
+    @apply font-bold;
+  }
+
+  &__venue-name {}
+
+  &__excerpt {}
+
+  &__ticket-price {}
+
+  &__cta {}
+
+  .card__topics {
+    @apply flex flex-wrap gap-[--space-075];
+
+    > * {
+      @apply inline-block;
+
+      .component-tag-v2 {
+        @apply inline-block;
+      }
+    }
+  }
+}

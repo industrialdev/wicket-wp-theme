@@ -90466,6 +90466,200 @@ h6 {
   background-color: var(--bg-callout-2);
 }
 
+.component-card-event {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: var(--space-200);
+  border-radius: var(--card-corner-radius);
+  border-width: var(--border-dynamic-card);
+  border-color: var(--border-card);
+  background-color: var(--bg-card);
+  padding: var(--space-200);
+}
+
+@container (min-width: 42rem) {
+
+  .component-card-event {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .component-card-event {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+.component-card-event {
+  -webkit-filter: drop-shadow(var(--elevation-4));
+  filter: drop-shadow(var(--elevation-4));
+}
+.component-card-event__title {
+  display: block;
+  font-size: var(--heading-xs-font-size);
+  font-weight: var(--heading-xs-font-weight-sm);
+  line-height: var(--heading-xs-line-height);
+}
+@media (min-width: 768px) {
+
+  .component-card-event__title {
+    font-weight: var(--heading-xs-font-weight-md);
+  }
+}
+.component-card-event__title.cols-1 {
+  font-size: var(--heading-xl-font-size);
+  font-weight: var(--heading-xl-font-weight-sm);
+  line-height: var(--heading-xl-line-height);
+}
+@media (min-width: 768px) {
+
+  .component-card-event__title.cols-1 {
+    font-weight: var(--heading-xl-font-weight-md);
+  }
+}
+.component-card-event__image-wrapper {
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+}
+@media (min-width: 1024px) {
+
+  .component-card-event__image-wrapper {
+    -ms-flex-preferred-size: 41.666667%;
+    flex-basis: 41.666667%;
+  }
+}
+.component-card-event__date-indicator {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: var(--label-corner-radius);
+  background-color: var(--bg-accent-dark);
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  text-align: center;
+  font-size: var(--body-lg-font-size);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-content-reversed);
+  font-weight: var(--body-lg-font-weight);
+  line-height: var(--body-lg-line-height);
+}
+@container (min-width: 20rem) {
+
+  .component-card-event__date-indicator {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+@container (min-width: 36rem) {
+
+  .component-card-event__date-indicator {
+    height: 70px;
+    width: 70px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 0px;
+  }
+}
+.component-card-event__date-indicator-day {
+  font-size: var(--heading-xs-font-size);
+  font-weight: var(--heading-xs-font-weight-sm);
+  line-height: var(--heading-xs-line-height);
+}
+@media (min-width: 768px) {
+
+  .component-card-event__date-indicator-day {
+    font-weight: var(--heading-xs-font-weight-md);
+  }
+}
+.component-card-event__date-indicator-date {
+  font-size: var(--heading-sm-font-size);
+  font-weight: var(--heading-sm-font-weight-sm);
+  line-height: var(--heading-sm-line-height);
+}
+@media (min-width: 768px) {
+
+  .component-card-event__date-indicator-date {
+    font-weight: var(--heading-sm-font-weight-md);
+  }
+}
+.component-card-event__content-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 0%;
+  flex: 1 1 0%;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  gap: var(--space-300);
+}
+.component-card-event__content-type {
+  font-size: var(--label-md-font-size);
+  color: var(--text-accent);
+  font-weight: var(--label-md-font-weight);
+  text-transform: uppercase;
+  line-height: var(--label-md-line-height);
+  margin-bottom: calc(var(--space-100) * -1);
+}
+.component-card-event__date {
+  font-weight: 700;
+}
+.component-card-event .card__topics {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  gap: var(--space-075);
+}
+.component-card-event .card__topics > * {
+  display: inline-block;
+}
+.component-card-event .card__topics > * .component-tag-v2 {
+  display: inline-block;
+}
+
 .component-card-featured {
   position: relative;
   display: -webkit-box;
@@ -91180,6 +91374,10 @@ form p.wicket-form-help-text
   border-color: var(--border-light);
   padding-bottom: var(--space-200);
 }
+.component-filter-form__see-more {
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+}
 .component-breadcrumbs-v2 .component-filter-form__see-more {
   font-weight: 400;
 }
@@ -91209,15 +91407,7 @@ form p.wicket-form-help-text
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.component-link-v2:not(.component-filter-form__see-more):hover, .component-link-v2:not(.component-filter-form__see-more):focus {
-  -webkit-text-decoration-line: underline;
-  text-decoration-line: underline;
-}
-.component-filter-form__see-more {
-  -webkit-text-decoration-line: underline;
-  text-decoration-line: underline;
-}
-.component-filter-form__see-more:hover,.component-filter-form__see-more:focus,.component-filter-form__see-more:active {
+.component-filter-form__see-more:hover, .component-filter-form__see-more:focus, .component-filter-form__see-more:active {
   -webkit-text-decoration-line: none;
   text-decoration-line: none;
 }
