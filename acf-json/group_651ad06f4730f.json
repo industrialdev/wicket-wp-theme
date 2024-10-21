@@ -3,32 +3,6 @@
     "title": "Footer Settings",
     "fields": [
         {
-            "key": "field_65e0b0148b2d3",
-            "label": "Footer Style",
-            "name": "footer_style",
-            "aria-label": "",
-            "type": "radio",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "wpml_cf_preferences": 0,
-            "choices": {
-                "coloured": "Coloured",
-                "light": "Light"
-            },
-            "default_value": "coloured",
-            "return_format": "value",
-            "allow_null": 0,
-            "other_choice": 0,
-            "layout": "horizontal",
-            "save_other_choice": 0
-        },
-        {
             "key": "field_651ad74e60f09",
             "label": "Copyright",
             "name": "footer_copyright",
@@ -507,5 +481,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "advanced",
-    "modified": 1709224042
+    "modified": 1729514912
 }
