@@ -91474,6 +91474,10 @@ form p.wicket-form-help-text
   }
 }
 
+.component-sidebar-contextual-nav__accordion .component-icon {
+  color: var(--nav-contextual-link-lvl-1);
+}
+
 .component-icon-grid__title {
   margin-bottom: 0.5rem;
   text-align: center;
@@ -91864,6 +91868,7 @@ form p.wicket-form-help-text
   display: block;
   border-radius: var(--interactive-corner-radius-md);
   padding: var(--space-100);
+  color: var(--nav-contextual-sublink);
 }
 .component-sidebar-contextual-nav__sublist-item a:focus {
   background-color: var(--highlight-light);

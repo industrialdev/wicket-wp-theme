@@ -22,7 +22,7 @@
                 "chevrons": "Chevrons",
                 "carets": "Carets"
             },
-            "default_value": "chevrons",
+            "default_value": "carets",
             "return_format": "value",
             "multiple": 0,
             "allow_null": 0,
@@ -50,5 +50,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "advanced",
-    "modified": 1717415239
+    "modified": 1729497072
 }

@@ -9,7 +9,7 @@
 
   &__sublist-item {
     a {
-      @apply p-[--space-100] block rounded-[--interactive-corner-radius-md];
+      @apply p-[--space-100] block rounded-[--interactive-corner-radius-md] text-[--nav-contextual-sublink];
 
       &:focus {
         @apply bg-[--highlight-light];
