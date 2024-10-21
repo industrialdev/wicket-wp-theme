@@ -1,7 +1,7 @@
 <?php
 	
 ?>
-<footer class="">
+<footer class="site-footer">
 	<?php
 	$newsletter = get_field( 'newsletter', 'option' );
 	if ( ! empty( $newsletter['title'] ) ) : ?>
@@ -40,18 +40,20 @@
 		</div>
 	<?php endif; ?>
 
-	<div class="main-footer-section container py-8 px-4 md:px-0">
+	<div class="main-footer-section container">
 		<?php if ( have_rows( 'footer_columns', 'option' ) ) :
 			$column_count = count( get_field( 'footer_columns', 'option' ) );
 			?>
 			<div class="grid gap-4 grid-cols-1 lg:grid-cols-<?php echo $column_count ?>">
+				<?php
+					$col_number = 1;
+				?>
 				<?php while ( have_rows( 'footer_columns', 'option' ) ) :
 					the_row();
 					$section_title  = get_sub_field( 'section_title' );
 					$section_id     = sanitize_title( $section_title );
 					$row            = get_row();
 					$is_menu_column = false;
-					$col_count      = 1;
 
 					foreach ( $row as $layout ) {
 						if ( is_array( $layout ) && array_key_exists( 'acf_fc_layout', $layout[0] ) ) {
@@ -61,7 +63,7 @@
 						}
 					}
 					?>
-					<div class="footer-column col-num-<?php echo $col_count; ?> flex flex-col items-start gap-5" x-data="{
+					<div class="footer-column col-num-<?php echo $col_number; ?> <?php echo $is_menu_column ? 'is-menu-column' : '' ?>" x-data="{
 						windowWidth: window.innerWidth,
 						isOpen : false,
 					}" x-on:resize.window="windowWidth= window.innerWidth">
@@ -78,7 +80,7 @@
 								</div>
 							<?php endif; ?>
 
-							<div class="section-title font-bold hidden lg:block">
+							<div class="section-title">
 								<?php echo $section_title ?>
 							</div>
 
@@ -109,11 +111,33 @@
 											$email   = get_sub_field( 'email' );
 
 											if ( $email ) {
-												echo '<a class="text-white mb-4 font-bold flex items-center gap-1.5 hover:no-underline group" href="mailto:' . $email . '"><i class="fa-regular fa-envelope group-hover:no-underline"></i><span class="sr-only">'.__( 'Send email to: ', 'wicket' ).'</span><span class="group-hover:underline">' . $email . '</span></a>';
+												get_component(
+													'link',
+													[
+														'classes'    => [ 'main-footer-section__email-link' ],
+														'url'        => "mailto:{$email}",
+														'text'       => $email,
+														'icon_start' => [
+															'icon' => 'fa-regular fa-envelope',
+														]
+													]
+												);
 											}
 
 											if ( $phone ) {
-												echo '<a class="text-white font-bold flex items-center gap-1.5 hover:no-underline group" href="tel:' . $phone . '"><i class="fa-regular fa-phone group-hover:no-underline"></i><span class="sr-only">'.__( 'Call: ', 'wicket' ).'</span><span class="group-hover:underline">' . $phone . '</span></a>';
+												//echo '<a class="text-white font-bold flex items-center gap-1.5 hover:no-underline group" href="tel:' . $phone . '"><i class="fa-regular fa-phone group-hover:no-underline"></i><span class="sr-only">'.__( 'Call: ', 'wicket' ).'</span><span class="group-hover:underline">' . $phone . '</span></a>';
+
+												get_component(
+													'link',
+													[
+														'classes'    => [ 'main-footer-section__phone-link' ],
+														'url'        => "tel:{$phone}",
+														'text'       => $phone,
+														'icon_start' => [
+															'icon' => 'fa-regular fa-envelope',
+														]
+													]
+												);
 											}
 										}
 
@@ -121,7 +145,7 @@
 										elseif ( get_row_layout() == 'menu' ) {
 											$menu = get_sub_field( 'menu' );
 
-											echo '<div class="footer-col-menu [&>ul>li>a]:mb-3 [&>ul>li>a]:inline-flex">';
+											echo '<div class="footer-col-menu">';
 											wp_nav_menu( array(
 												'menu'        => $menu,
 												'container'   => '',
@@ -175,7 +199,7 @@
 						<?php } ?>
 					</div>
 					<hr class="border-b-1 border-[#7B7F83] lg:hidden">
-					<?php $col_count++; ?>
+					<?php $col_number++; ?>
 				<?php endwhile; ?>
 			</div>
 		<?php endif; ?>
@@ -192,7 +216,7 @@
 		<?php endif; ?>
 
 		<?php if ( has_nav_menu( 'footer' ) ) : ?>
-			<div class="footer-nav-menu py-8 border-t border-[#7B7F83] <?php echo $hide_social_links === true ? 'mt-8' : '' ?>">
+			<div class="footer-nav-menu">
 				<?php wp_nav_menu( array(
 					'theme_location' => 'footer',
 					'container'      => '',

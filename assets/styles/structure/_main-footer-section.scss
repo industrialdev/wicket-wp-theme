@@ -1,0 +1,34 @@
+.main-footer-section {
+  @apply py-[--space-250] md:py-[--space-250] px-[--space-200] md:px-[--space-300] lg:px-0;
+
+  &__phone-link, &__email-link {
+    @apply block;
+    @apply text-[--nav-footer-text-interactive] #{!important};
+  }
+
+  &__email-link {
+    @apply mb-[--space-150];
+  }
+
+  .footer-column {
+    @apply gap-[--space-250] flex flex-col items-start;
+
+    &.is-menu-column {
+      @apply gap-[--space-150];
+    }
+
+    .text {
+      @apply text-[--nav-footer-text-content];
+    }
+    
+    .image {}
+  }
+
+  .section-title {
+    @apply font-bold hidden lg:block;
+  }
+
+  .footer-col-menu {
+    @apply [&>ul>li>a]:mb-[--space-150] [&>ul>li>a]:inline-flex text-[--nav-footer-sublink];
+  }
+}

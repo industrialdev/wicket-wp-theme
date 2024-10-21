@@ -1,5 +1,5 @@
 .newsletter-section {
-  @apply bg-[--nav-footer-newsletter-bg] text-[--nav-footer-newsletter-text-content] py-[--space-250] px-[--space-200] md:px-[--space-250] lg:px-[60px];
+  @apply bg-[--nav-footer-newsletter-bg] text-[--nav-footer-newsletter-text-content] py-[--space-250] px-[--space-200] md:px-[--space-250] lg:px-0;
 
   &__title {
     @apply text-heading-xs mb-[--space-250];
