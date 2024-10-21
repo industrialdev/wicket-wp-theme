@@ -1,29 +1,22 @@
 <?php
-
-	$footer_style = get_field('footer_style', 'option') ?? 'coloured';
-	$is_coloured_style = $footer_style == 'coloured' ? true : false;
-	$is_light_style = $footer_style == 'light' ? true : false;
-
-	$default_text_colour_class = $is_coloured_style ? 'text-white' : 'text-dark-100';
-	$default_text_colour_class = $is_light_style ? 'text-dark-100' : $default_text_colour_class;
-
+	
 ?>
-<footer class="<?php if($is_coloured_style){echo 'bg-primary-100';} if($is_light_style){echo 'bg-white';}?>">
+<footer class="">
 	<?php
 	$newsletter = get_field( 'newsletter', 'option' );
-	if ( ! empty( $newsletter['title'] ) ) { ?>
-		<div class="newsletter-section <?php if($is_coloured_style){echo 'bg-primary-060 text-white';} if($is_light_style){echo 'bg-tertiary-100 text-white';}?> py-5 px-4 md:px-0">
+	if ( ! empty( $newsletter['title'] ) ) : ?>
+		<div class="newsletter-section">
 			<div class="container">
 				<div class="flex flex-col gap-5 items-start lg:flex-row lg:justify-between ">
 					<div class="flex-1">
 						<?php if ( $newsletter['title'] ) : ?>
-							<div class="newsletter-title text-body-lg mb-2 font-bold">
+							<div class="newsletter-section__title">
 								<?php echo $newsletter['title']; ?>
 							</div>
 						<?php endif; ?>
 
 						<?php if ( $newsletter['description'] ) : ?>
-							<div class="newsletter-description">
+							<div class="newsletter-section__description">
 								<?php echo $newsletter['description']; ?>
 							</div>
 						<?php endif; ?>
@@ -31,11 +24,11 @@
 
 					<?php if ( ! empty( $newsletter['link'] ) ) {
 						get_component( 'button', [ 
-							'variant'     => 'secondary',
+							'variant'     => 'primary',
 							'link'        => $newsletter['link']['url'],
 							'link_target' => $newsletter['link']['target'],
 							'a_tag'       => true,
-							'reversed'    => $is_coloured_style,
+							'reversed'    => true,
 							'label'       => __( 'Subscribe to our newsletter', 'wicket' ),
 							'prefix_icon' => 'fa-regular fa-envelope',
 							'suffix_icon' => '',
@@ -45,7 +38,7 @@
 				</div>
 			</div>
 		</div>
-	<?php } ?>
+	<?php endif; ?>
 
 	<div class="main-footer-section container py-8 px-4 md:px-0">
 		<?php if ( have_rows( 'footer_columns', 'option' ) ) :
@@ -74,18 +67,18 @@
 					}" x-on:resize.window="windowWidth= window.innerWidth">
 						<?php if ( $section_title ) { ?>
 							<?php if ( $is_menu_column ) : ?>
-								<button type="button" class="section-title-button font-bold <?php echo $default_text_colour_class; ?> w-full flex items-center justify-between lg:hidden"
+								<button type="button" class="section-title-button font-bold w-full flex items-center justify-between lg:hidden"
 									x-on:click="isOpen = !isOpen">
 									<?php echo $section_title ?>
 									<i class="fa-solid fa-caret-down" :class="!isOpen || 'rotate-180'"></i>
 								</button>
 							<?php else : ?>
-								<div class="section-title font-bold <?php echo $default_text_colour_class; ?> lg:hidden">
+								<div class="section-title font-bold lg:hidden">
 									<?php echo $section_title ?>
 								</div>
 							<?php endif; ?>
 
-							<div class="section-title font-bold <?php echo $default_text_colour_class; ?> hidden lg:block">
+							<div class="section-title font-bold hidden lg:block">
 								<?php echo $section_title ?>
 							</div>
 
@@ -106,7 +99,7 @@
 										// Text layout.
 										elseif ( get_row_layout() == 'text' ) {
 											$text = get_sub_field( 'text' );
-											echo '<div class="'. $default_text_colour_class .'">' . $text . '</div>';
+											echo '<div class="">' . $text . '</div>';
 										}
 
 										// Contact info layout.
@@ -128,7 +121,7 @@
 										elseif ( get_row_layout() == 'menu' ) {
 											$menu = get_sub_field( 'menu' );
 
-											echo '<div class="footer-col-menu '. $default_text_colour_class .' [&>ul>li>a]:mb-3 [&>ul>li>a]:inline-flex">';
+											echo '<div class="footer-col-menu [&>ul>li>a]:mb-3 [&>ul>li>a]:inline-flex">';
 											wp_nav_menu( array(
 												'menu'        => $menu,
 												'container'   => '',
@@ -139,7 +132,7 @@
 
 										// Social Sharing layout.
 										elseif ( get_row_layout() == 'social_sharing' ) {
-											get_component( 'social-sharing', array( 'reversed' => $is_coloured_style ) );
+											get_component( 'social-sharing', array( 'reversed' => false ) );
 										}
 
 										// Embed layout.
@@ -154,7 +147,7 @@
 											$newsletter_page = get_sub_field( 'newsletter_page' );
 
 											if ( $description ) {
-												echo '<div class="'. $default_text_colour_class .' mb-4">' . $description . '</div>';
+												echo '<div class="mb-4">' . $description . '</div>';
 											}
 
 											if ( $newsletter_page ) {
@@ -163,7 +156,7 @@
 													'link'        => $newsletter_page['url'],
 													'link_target' => $newsletter_page['target'],
 													'a_tag'       => true,
-													'reversed'    => $is_coloured_style,
+													'reversed'    => false,
 													'label'       => __( 'Subscribe to our newsletter', 'wicket' ),
 													'prefix_icon' => 'fa-regular fa-envelope',
 													'suffix_icon' => '',
@@ -192,7 +185,7 @@
 		if ( have_rows( 'social_media_links', 'option' ) && $hide_social_links === false ) : ?>
 			<div class="social-links-section py-8 flex justify-center">
 				<?php get_component( 'social-links', [
-								'reversed'       => $is_coloured_style ,
+								'reversed'       => false,
 								'button-variant' => 'secondary',
 							] ); ?>
 			</div>
@@ -204,12 +197,12 @@
 					'theme_location' => 'footer',
 					'container'      => '',
 					'fallback_cb'    => false,
-					'menu_class'     => 'flex flex-col md:flex-row gap-8 font-bold '. $default_text_colour_class .' md:justify-center',
+					'menu_class'     => 'flex flex-col md:flex-row gap-8 font-bold md:justify-center',
 				) ); ?>
 			</div>
 		<?php endif; ?>
 
-		<div class="footer-bottom-text flex justify-center <?php echo $default_text_colour_class; ?> text-body-sm">
+		<div class="footer-bottom-text flex justify-center text-body-sm">
 			<span>
 				<?php echo sprintf( '© %s %s', date( 'Y' ), get_field( 'footer_copyright', 'option' ) ); ?>
 			</span>

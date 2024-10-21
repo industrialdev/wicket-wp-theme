@@ -93691,6 +93691,43 @@ form.wicket-form .wicket-form-field-wrapper,
   -ms-flex-direction: column;
   flex-direction: column;
 }
+
+.newsletter-section {
+  background-color: var(--nav-footer-newsletter-bg);
+  padding-top: var(--space-250);
+  padding-bottom: var(--space-250);
+  padding-left: var(--space-200);
+  padding-right: var(--space-200);
+  color: var(--nav-footer-newsletter-text-content);
+}
+
+@media (min-width: 768px) {
+
+  .newsletter-section {
+    padding-left: var(--space-250);
+    padding-right: var(--space-250);
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .newsletter-section {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+.newsletter-section__title {
+  margin-bottom: var(--space-250);
+  font-size: var(--heading-xs-font-size);
+  font-weight: var(--heading-xs-font-weight-sm);
+  line-height: var(--heading-xs-line-height);
+}
+@media (min-width: 768px) {
+
+  .newsletter-section__title {
+    font-weight: var(--heading-xs-font-weight-md);
+  }
+}
 .before\:absolute::before {
   content: var(--tw-content);
   position: absolute;
