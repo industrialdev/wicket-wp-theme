@@ -31,4 +31,22 @@
   .footer-col-menu {
     @apply [&>ul>li>a]:mb-[--space-150] [&>ul>li>a]:inline-flex text-[--nav-footer-sublink];
   }
+
+  .footer-bottom-text {
+    @apply text-body-sm text-[--nav-footer-text-content] flex justify-center;
+
+    .utility-menu {
+      @apply flex gap-2 items-center border-l border-[--nav-footer-text-content] pl-2 ml-2;
+
+      li {
+        a {
+          @apply underline;
+
+          &:hover {
+            @apply no-underline;
+          }
+        }
+      }
+    }
+  }
 }

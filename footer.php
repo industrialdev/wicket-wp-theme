@@ -221,12 +221,12 @@
 					'theme_location' => 'footer',
 					'container'      => '',
 					'fallback_cb'    => false,
-					'menu_class'     => 'flex flex-col md:flex-row gap-8 font-bold md:justify-center',
+					'menu_class'     => 'footer-nav-menu__items',
 				) ); ?>
 			</div>
 		<?php endif; ?>
 
-		<div class="footer-bottom-text flex justify-center text-body-sm">
+		<div class="footer-bottom-text">
 			<span>
 				<?php echo sprintf( '© %s %s', date( 'Y' ), get_field( 'footer_copyright', 'option' ) ); ?>
 			</span>
@@ -235,7 +235,7 @@
 					'theme_location' => 'footer-utility',
 					'container'      => '',
 					'fallback_cb'    => false,
-					'menu_class'     => 'flex gap-2 items-center [&>li>a]:underline [&>li>a:hover]:no-underline border-l border-white pl-2 ml-2',
+					'menu_class'     => 'utility-menu',
 				) );
 			} ?>
 		</div>

@@ -2038,10 +2038,6 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(123 127 131 / var(--tw-border-opacity));
 }
-.border-white {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 255 255 / var(--tw-border-opacity));
-}
 .border-opacity-0 {
   --tw-border-opacity: 0;
 }
@@ -67221,9 +67217,6 @@ video {
 .pl-16 {
   padding-left: 4rem;
 }
-.pl-2 {
-  padding-left: 0.5rem;
-}
 .pl-4 {
   padding-left: 1rem;
 }
@@ -93733,6 +93726,30 @@ form.wicket-form .wicket-form-field-wrapper,
   border-color: var(--nav-footer-border);
   padding-top: var(--space-400);
   padding-bottom: var(--space-400);
+  color: var(--nav-footer-sublink);
+}
+.footer-nav-menu__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: var(--space-400);
+  font-weight: 700;
+}
+@media (min-width: 768px) {
+
+  .footer-nav-menu__items {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
 }
 
 .site-footer {
@@ -93816,6 +93833,39 @@ form p.wicket-form-help-text.main-footer-section .section-title,
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
+}
+.main-footer-section .footer-bottom-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: var(--body-sm-font-size);
+  color: var(--nav-footer-text-content);
+  font-weight: var(--body-sm-font-weight);
+  line-height: var(--body-sm-line-height);
+}
+.main-footer-section .footer-bottom-text .utility-menu {
+  margin-left: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0.5rem;
+  border-left-width: 1px;
+  border-color: var(--nav-footer-text-content);
+  padding-left: 0.5rem;
+}
+.main-footer-section .footer-bottom-text .utility-menu li a {
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+}
+.main-footer-section .footer-bottom-text .utility-menu li a:hover {
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
 }
 .before\:absolute::before {
   content: var(--tw-content);
@@ -94108,12 +94158,6 @@ form p.wicket-form-help-text.main-footer-section .section-title,
     align-items: center;
   }
 
-  .md\:justify-center {
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-  }
-
   .md\:gap-5 {
     gap: 1.25rem;
   }
@@ -94314,13 +94358,5 @@ form p.wicket-form-help-text.main-footer-section .section-title,
   .\32xl\:hidden {
     display: none;
   }
-}
-.\[\&\>li\>a\:hover\]\:no-underline>li>a:hover {
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-}
-.\[\&\>li\>a\]\:underline>li>a {
-  -webkit-text-decoration-line: underline;
-  text-decoration-line: underline;
 }
 /*# sourceMappingURL=../../maps/wicket.css.map */
