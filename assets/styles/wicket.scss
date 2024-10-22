@@ -280,12 +280,14 @@
 
 /* THEME STRUCTURE
 ------------------------------------------------------------------------------*/
-//@import "structure/header";
+@import "structure/header";
 @import 'structure/navigation';
 @import 'structure/page';
 @import 'structure/forms';
 @import 'structure/newsletter';
 @import 'structure/footer-nav-menu';
+@import 'structure/secondary-nav';
+@import 'structure/search-bar-mobile';
 @import 'structure/site-footer';
 @import 'structure/main-footer-section';
 @import 'structure/utility-nav';

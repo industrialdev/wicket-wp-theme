@@ -1,0 +1,7 @@
+.secondary-nav {
+  @apply w-full px-2 xl:px-0 py-3;
+}
+
+.secondary-nav-mobile {
+  @apply flex flex-col px-3 py-2;
+}

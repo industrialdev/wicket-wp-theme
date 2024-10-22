@@ -1,0 +1,4 @@
+.search-bar-mobile {
+  @apply bg-[--bg-light-neutral] lg:hidden w-full p-3 z-30;
+  filter: drop-shadow( var(--elevation-4) );
+}

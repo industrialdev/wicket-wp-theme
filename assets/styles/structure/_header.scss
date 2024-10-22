@@ -1,0 +1,15 @@
+.site-header {
+
+  .right-hamburger-button {
+    @apply hidden md:inline-flex lg:hidden ml-4 items-center;
+  }
+
+  .left-hamburger-button {
+    @apply inline-flex md:hidden mr-10 items-center;
+  }
+
+  .right-hamburger-close-button {
+    @apply inline-flex md:hidden mr-10 items-center;
+  }
+
+}
