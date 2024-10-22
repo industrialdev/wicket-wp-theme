@@ -28,6 +28,10 @@
     @apply hidden lg:block;
   }
   
+  .section-title-button {
+    @apply font-bold w-full flex items-center justify-between lg:hidden;
+  }
+  
   .section-title,
   .section-title-button {
     @apply font-bold text-[--nav-footer-title];

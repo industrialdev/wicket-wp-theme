@@ -69,7 +69,7 @@
 					}" x-on:resize.window="windowWidth= window.innerWidth">
 						<?php if ( $section_title ) { ?>
 							<?php if ( $is_menu_column ) : ?>
-								<button type="button" class="section-title-button font-bold w-full flex items-center justify-between lg:hidden"
+								<button type="button" class="section-title-button"
 									x-on:click="isOpen = !isOpen">
 									<?php echo $section_title ?>
 									<i class="fa-solid fa-caret-down" :class="!isOpen || 'rotate-180'"></i>
