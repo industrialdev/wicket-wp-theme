@@ -90340,6 +90340,18 @@ h6 {
   border-color: transparent !important;
   color: var(--text-disabled) !important;
 }
+.social-links-v2 .button-v2 {
+  border-radius: var(--social-media-radius);
+  border-width: var(--border-footer-social);
+  border-color: transparent;
+  background-color: var(--nav-footer-social-bg);
+  color: var(--nav-footer-social-text);
+}
+.social-links-v2 .button-v2:hover {
+  border-color: var(--nav-footer-social-border-hover);
+  background-color: transparent;
+  color: var(--nav-footer-social-text-hover);
+}
 
 .component-card-call-out {
   width: 100%;
@@ -91054,6 +91066,24 @@ h6 {
   border-color: transparent !important;
   background-color: var(--bg-disabled) !important;
   color: var(--text-disabled) !important;
+}
+.social-links-v2 .component-card-product-v2 .button,.social-links-v2  .component-card-product-v2 .wp-block-button .wp-block-button__link.wp-element-button,.social-links-v2  .wp-block-button .component-card-product-v2 .wp-block-button__link.wp-element-button,.social-links-v2 
+.product .button,.social-links-v2 
+.product .wp-block-button .wp-block-button__link.wp-element-button,.social-links-v2 
+.wp-block-button .product .wp-block-button__link.wp-element-button {
+  border-radius: var(--social-media-radius);
+  border-width: var(--border-footer-social);
+  border-color: transparent;
+  background-color: var(--nav-footer-social-bg);
+  color: var(--nav-footer-social-text);
+}
+.social-links-v2 .component-card-product-v2 .button:hover,.social-links-v2  .component-card-product-v2 .wp-block-button .wp-block-button__link.wp-element-button:hover,.social-links-v2  .wp-block-button .component-card-product-v2 .wp-block-button__link.wp-element-button:hover,.social-links-v2 
+.product .button:hover,.social-links-v2 
+.product .wp-block-button .wp-block-button__link.wp-element-button:hover,.social-links-v2 
+.wp-block-button .product .wp-block-button__link.wp-element-button:hover {
+  border-color: var(--nav-footer-social-border-hover);
+  background-color: transparent;
+  color: var(--nav-footer-social-text-hover);
 }
 .component-card-product-v2 .button, .component-card-product-v2 .wp-block-button .wp-block-button__link.wp-element-button, .wp-block-button .component-card-product-v2 .wp-block-button__link.wp-element-button,
 .product .button,
@@ -91896,6 +91926,19 @@ form p.wicket-form-help-text
 }
 .component-social-sharing-v2__button {
   border-radius: var(--social-media-radius);
+}
+
+.social-links-v2 {
+  margin: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0px;
 }
 
 .component-related-events {
@@ -92978,6 +93021,18 @@ li img {
   background-color: var(--bg-disabled) !important;
   color: var(--text-disabled) !important;
 }
+.social-links-v2 .woocommerce div.product form.cart .button,.social-links-v2  .woocommerce div.product form.cart .wp-block-button .wp-block-button__link.wp-element-button,.social-links-v2  .wp-block-button .woocommerce div.product form.cart .wp-block-button__link.wp-element-button {
+  border-radius: var(--social-media-radius);
+  border-width: var(--border-footer-social);
+  border-color: transparent;
+  background-color: var(--nav-footer-social-bg);
+  color: var(--nav-footer-social-text);
+}
+.social-links-v2 .woocommerce div.product form.cart .button:hover,.social-links-v2  .woocommerce div.product form.cart .wp-block-button .wp-block-button__link.wp-element-button:hover,.social-links-v2  .wp-block-button .woocommerce div.product form.cart .wp-block-button__link.wp-element-button:hover {
+  border-color: var(--nav-footer-social-border-hover);
+  background-color: transparent;
+  color: var(--nav-footer-social-text-hover);
+}
 .woocommerce div.product form.cart .button, .woocommerce div.product form.cart .wp-block-button .wp-block-button__link.wp-element-button, .wp-block-button .woocommerce div.product form.cart .wp-block-button__link.wp-element-button {
   border: var(--border-interactive-md) solid var(--border-interactive);
 }
@@ -93866,6 +93921,16 @@ form p.wicket-form-help-text.main-footer-section .section-title,
 .main-footer-section .footer-bottom-text .utility-menu li a:hover {
   -webkit-text-decoration-line: none;
   text-decoration-line: none;
+}
+.main-footer-section .social-links-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-top: var(--space-400);
+  padding-bottom: var(--space-400);
 }
 .before\:absolute::before {
   content: var(--tw-content);

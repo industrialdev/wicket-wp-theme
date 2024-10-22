@@ -207,7 +207,7 @@
 		<?php
 		$hide_social_links = get_field( 'footer_hide_social_links', 'option' );
 		if ( have_rows( 'social_media_links', 'option' ) && $hide_social_links === false ) : ?>
-			<div class="social-links-section py-8 flex justify-center">
+			<div class="social-links-section">
 				<?php get_component( 'social-links', [
 								'reversed'       => false,
 								'button-variant' => 'secondary',

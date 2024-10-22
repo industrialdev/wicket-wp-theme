@@ -49,4 +49,8 @@
       }
     }
   }
+
+  .social-links-section {
+    @apply py-[--space-400] flex justify-center;
+  }
 }
