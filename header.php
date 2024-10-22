@@ -506,7 +506,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
             x-anchor.bottom-start="$refs.secondary-nav"
             class="w-full bg-white border-t-base border-b-base font-bold"
             >
-            <div class="pt-3 pb-2 px-3">
+            <div class="pt-3 pb-2 px-3 text-center">
                 <?php
                 // Conditional Account Buttons
                 if( $nav_state == 'logged_out' ) {
@@ -514,7 +514,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         'variant'     => 'primary',
                         'a_tag'     => true,
                         'link'      => $bam_path,
-                        'classes'     => ['create-account-button-mobile', 'w-full', 'mb-2', 'justify-center', 'md:hidden'],
+                        'classes'     => ['create-account-button-mobile', 'w-full', 'mb-4', 'justify-center', 'md:hidden'],
                         'label'     => __( 'Create Account', 'wicket' ),
                     ] );
                 } else if ( $nav_state == 'logged_in_user' ) {
@@ -522,14 +522,14 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         'variant'     => 'primary',
                         'a_tag'     => true,
                         'link'      => $bam_path,
-                        'classes'     => ['become-a-member-button-mobile', 'w-full', 'mb-2', 'justify-center', 'md:hidden'],
+                        'classes'     => ['become-a-member-button-mobile', 'w-full', 'mb-4', 'justify-center', 'md:hidden'],
                         'label'     => __( 'Become a member', 'wicket' ),
                     ] );
                     get_component( 'button', [
                         'variant'     => 'secondary',
                         'a_tag'     => true,
                         'link'      => $account_center_landing,
-                        'classes'     => ['my-account-button-mobile', 'w-full', 'mb-2', 'justify-center'],
+                        'classes'     => ['my-account-button-mobile', 'w-full', 'mb-4', 'justify-center'],
                         'label'     => __( 'My Account', 'wicket' ),
                     ] );
                 } else if ( $nav_state == 'logged_in_member' ) {
@@ -537,7 +537,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         'variant'     => 'secondary',
                         'a_tag'     => true,
                         'link'      => $account_center_landing,
-                        'classes'     => ['member-portal-button-mobile', 'w-full', 'mb-2', 'justify-center'],
+                        'classes'     => ['member-portal-button-mobile', 'w-full', 'mb-4', 'justify-center'],
                         'label'     => __( 'Member Portal', 'wicket' ),
                     ] );
                 }
@@ -565,7 +565,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                 <?php endif; ?>
             </div> <!-- End items above main nav items and utility nav -->
 
-            <div class="font-normal">
+            <div class="main-nav-mobile">
             <?php
             // Loop main nav items
                   foreach( $primary_nav_items_structured as $primary_nav_item ):
@@ -576,7 +576,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         $target = $primary_nav_item['target'] ?? '';
                         get_component( 'link', [
                               'text'     => $primary_nav_item['title'],
-                              'classes'  => ['single-nav-item-mobile', 'block', 'p-3', 'border-t-base', 'border-dark-060'],
+                              'classes'  => [ 'single-nav-item-mobile' ],
                               'target'   => $target,
                               'url'    => $primary_nav_item['url'],
                         ] );
@@ -588,7 +588,8 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                   ?>
                         <!-- Start Nav Item -->
                         <div
-                              class="nav-parent-item-mobile flex flex-col w-full border-t-base border-dark-060 relative hover:cursor-pointer"
+                              class="nav-parent-item-mobile"
+                              :class="navDropdownOpen ? 'open' : ''"
                               x-data="{ navDropdownOpen: false }"
                               x-on:click="navDropdownOpen = ! navDropdownOpen; $dispatch('close-nav-dropdowns')"
                               <?php // If the sending element isn't this element, close dropdown ?>
@@ -596,8 +597,8 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                               if( $event.target !== $el ) {navDropdownOpen = false}"
                               >
                               <div
-                                    class="inline-flex justify-between items-center w-full p-3"
-                                    x-bind:class=" navDropdownOpen ? 'bg-dark-040' : '' "
+                                    class="nav-parent-item-mobile-wrap"
+                                    x-bind:class=" navDropdownOpen ? 'open' : '' "
                               >
                                     <span><?php echo $primary_nav_item['title']; ?></span>
                                     <i x-show="! navDropdownOpen" x-cloak class="fa-solid fa-caret-down"></i>
@@ -608,7 +609,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                               x-show="navDropdownOpen"
                               x-cloak
                               x-transition
-                              class="nav-dropdown-mobile block w-full bg-white p-3"
+                              class="nav-dropdown-mobile block w-full p-3"
                               >
                               <?php
                               $child_loop_index = 0;
@@ -641,7 +642,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
 
                         <!-- Start Nav Item -->
                         <div
-                              class="nav-mega-parent-item-mobile flex flex-col w-full border-t-base border-dark-060 relative hover:cursor-pointer"
+                              class="nav-mega-parent-item-mobile"
                               x-data="{ navDropdownOpen: false }"
                               x-on:click="navDropdownOpen = ! navDropdownOpen; $dispatch('close-nav-dropdowns')"
                               <?php // If the sending element isn't this element, close dropdown ?>
@@ -649,8 +650,8 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                               if( $event.target !== $el ) {navDropdownOpen = false}"
                               >
                               <div
-                                    class="inline-flex justify-between items-center w-full p-3"
-                                    x-bind:class=" navDropdownOpen ? 'bg-dark-040' : '' "
+                                    class="nav-mega-parent-item-mobile-wrap"
+                                    x-bind:class=" navDropdownOpen ? 'open' : '' "
                               >
                                     <span><?php echo $primary_nav_item['title']; ?></span>
                                     <i x-show="! navDropdownOpen" x-cloak class="fa-solid fa-caret-down"></i>
@@ -665,8 +666,6 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                               >
                               <?php
                               foreach( $primary_nav_item['children'] as $child ):
-
-
                                     // Just print these as a header if there are no children
                                     if( $child['child_count'] == 0 ):
 
@@ -679,11 +678,9 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                                     ] );
                                     ?>
 
-                                    <?php
-                                    else:
-                                    ?>
+                                    <?php else: ?>
                                           <div
-                                                class="flex flex-col w-full border-dark-060 relative hover:cursor-pointer"
+                                                class="flex flex-col w-full relative hover:cursor-pointer"
                                                 x-data="{ subNavDropdownOpen: false }"
                                                 <?php // Note: .stop prevents this click event from propagating/bubbling up to the parent dropdown; see https://alpinejs.dev/directives/on#stop ?>
                                                 x-on:click.stop="if(mobileMenuMegaSubDropdowns) {subNavDropdownOpen = ! subNavDropdownOpen;} $dispatch('close-sub-nav-dropdowns')"
@@ -692,8 +689,8 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                                                 if( $event.target !== $el ) {subNavDropdownOpen = false}"
                                                 >
                                                 <div
-                                                      class="inline-flex justify-between items-center w-full p-3 font-bold border-b-medium border-dark-100"
-                                                      x-bind:class=" subNavDropdownOpen ? 'bg-dark-040' : '' "
+                                                      class="inline-flex justify-between items-center w-full p-3 font-bold"
+                                                      x-bind:class=" subNavDropdownOpen ? '' : '' "
                                                 >
                                                       <span><?php echo $child['title']; ?></span>
                                                       <i x-show="! subNavDropdownOpen && mobileMenuMegaSubDropdowns" x-cloak class="fa-solid fa-caret-down"></i>
@@ -704,7 +701,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                                                 x-show="subNavDropdownOpen || !mobileMenuMegaSubDropdowns"
                                                 x-cloak
                                                 x-transition
-                                                class="block w-full bg-white p-3"
+                                                class="block w-full p-3"
                                           >
                                                 <?php
                                                 $child_loop_index = 0;

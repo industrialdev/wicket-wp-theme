@@ -15,8 +15,9 @@
   .main-nav {
     @apply w-full hidden lg:flex border-t-[--nav-main-border] border-b-[--nav-main-border] border-t-[length:--border-main-nav-top] border-b-[length:--border-main-nav-bottom] bg-[--nav-main-bg];
 
-    &__dropdown-menu-item, &__mega-menu-item {
-      @include desktop-main-menu-item-styles;
+    &__dropdown-menu-item,
+    &__mega-menu-item {
+      @include primary-menu-item-styles;
     }
 
     &__mega-menu-item {
@@ -36,6 +37,27 @@
           @apply right-0 left-auto;
         }
       }
+    }
+  }
+
+  .main-nav-mobile {
+
+    .nav-parent-item-mobile-wrap {
+      @include primary-menu-item-styles;
+      @apply inline-flex justify-between items-center w-full;
+    }
+    
+    .nav-parent-item-mobile {
+      @apply flex flex-col w-full;
+    }
+
+    .nav-mega-parent-item-mobile-wrap {
+      @include primary-menu-item-styles;
+      @apply inline-flex justify-between items-center w-full;
+    }
+
+    .nav-mega-parent-item-mobile {
+      @apply flex flex-col w-full;
     }
   }
 }

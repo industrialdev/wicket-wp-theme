@@ -45,8 +45,8 @@
   }
 }
 
-@mixin desktop-main-menu-item-styles {
-  @apply font-normal text-[--nav-main-label] block p-[--space-150] relative rounded-t-[--main-menu-highlight-radius] border-b-[length:--border-md] border-transparent transition;
+@mixin primary-menu-item-styles {
+  @apply font-normal text-[--nav-main-label] block p-[--space-150] relative rounded-t-[--main-menu-highlight-radius] border-b-[length:--border-md] border-transparent;
 
   &:hover {
     @apply cursor-pointer border-[--nav-main-border-interactive];
