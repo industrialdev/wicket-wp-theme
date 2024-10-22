@@ -132,7 +132,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
             mobileMenuOpen: false,
             mobileMenuMegaSubDropdowns: <?php echo $sub_menu_dropdowns; ?>,
         }"
-        class="w-full flex flex-col bg-white text-primary-100"
+        class="w-full flex flex-col site-header"
     >
         <!-- Utility Nav -->
         <div
@@ -158,39 +158,37 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
         </div> <!-- End Utility Nav -->
 
         <!-- Secondary Nav (Logo, login button, language switcher, etc.) -->
-        <div x-ref="secondary-nav" class="secondary-nav w-full px-2 xl:px-0 py-3">
+        <div x-ref="secondary-nav" class="secondary-nav">
             <div class="container flex items-center justify-between relative ">
                 <!-- Left-aligned hamburger menu button that only shows on Base/SM breakpoints -->
-                <button
-                    x-show="! mobileMenuOpen"
-                    x-cloak
-                    x-on:click="mobileMenuOpen = ! mobileMenuOpen; if(mobileMenuOpen){$dispatch('close-mobile-search')};"
-                    x-on:close-mobile-menu.window="mobileMenuOpen = false"
-                    class="left-hamburger-button inline-flex md:hidden mr-20 items-center"
-                    >
-                    <?php
-                    get_component( 'icon', [
-                        'classes' => [ 'text-x-large', 'lg:text-large' ],
-                        'icon'    => 'fa-solid fa-bars',
-                        'text'    => '',
-                    ] );
-                    ?>
-                </button>
+                <?php
+                    get_component('button', [
+                        'variant'     => 'ghost',
+                        'classes'     => [ 'left-hamburger-button' ],
+                        'label'       => '',
+                        'prefix_icon' => 'fa-solid fa-bars',
+                        'atts'        => [
+                            'x-show="! mobileMenuOpen"',
+                            'x-cloak',
+                            'x-on:click="mobileMenuOpen = ! mobileMenuOpen; if(mobileMenuOpen){$dispatch(\'close-mobile-search\')};"',
+                            'x-on:close-mobile-menu.window="mobileMenuOpen = false"'
+                        ]
+                    ])
+                ?>
                 <!-- Left-aligned hamburger menu CLOSE button that only shows on Base/SM breakpoints -->
-                <button
-                    x-show="mobileMenuOpen"
-                    x-cloak
-                    x-on:click="mobileMenuOpen = ! mobileMenuOpen"
-                    class="right-hamburger-close-button inline-flex md:hidden mr-16 items-center"
-                    >
-                    <?php
-                    get_component( 'icon', [
-                        'classes' => [ 'text-x-large', 'lg:text-large', 'bg-white', 'rounded-base', 'px-2', 'py-0' ],
-                        'icon'    => 'fa-solid fa-x',
-                        'text'    => '',
-                    ] );
-                    ?>
-                </button>
+                <?php
+                    get_component('button', [
+                        'variant'     => 'ghost',
+                        'classes'     => [ 'right-hamburger-close-button' ],
+                        'label'       => '',
+                        'prefix_icon' => 'fa-solid fa-x',
+                        'atts'        => [
+                            'x-show="mobileMenuOpen"',
+                            'x-cloak',
+                            'x-on:click="mobileMenuOpen = ! mobileMenuOpen"',
+                        ]
+                    ])
+                ?>
 
                 <!-- Logo -->
                 <a href="/" class="logo w-60"><img src="<?php echo $logo_url; ?>" /></a>
@@ -205,7 +203,6 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                             $target = $secondary_nav_item->target ?? '';
                             get_component( 'link', [
                                 'text'     => $secondary_nav_item->title,
-                                'classes'  => ['secondary-nav-item', 'mr-4', 'items-center', 'hidden', 'lg:inline-flex'],
                                 'target'   => $target,
                                 'url'      => $secondary_nav_item->url,
                                 'atts'     => ['x-show="! searchOpen"', 'x-cloak'],
@@ -252,19 +249,23 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                     ?>
                     <?php if( $nav_state == 'logged_out' ): ?>
                         <?php
-                            get_component( 'link', [
-                                'text'     => __( 'Login', 'wicket' ),
+                            get_component( 'button', [
+                                'variant'  => 'ghost',
+                                'a_tag'    => true,
+                                'label'    => __( 'Login', 'wicket' ),
                                 'classes'  => ['login-button', 'mx-4', 'items-center', 'hidden', 'lg:inline-flex'],
-                                'url'      => get_option('wp_cassify_base_url').'login?service='.$referrer,
+                                'link'     => get_option('wp_cassify_base_url').'login?service='.$referrer,
                                 'atts'     => ['x-show="! searchOpen"', 'x-cloak'],
                             ] );
                         ?>
                     <?php else: ?>
                         <?php
                             get_component( 'link', [
-                                'text'     => __( 'Logout', 'wicket' ),
+                                'variant'  => 'ghost',
+                                'a_tag'    => true,
+                                'label'     => __( 'Logout', 'wicket' ),
                                 'classes'  => ['logout-button', 'mx-4', 'items-center', 'hidden', 'lg:inline-flex'],
-                                'url'      => wp_logout_url(),
+                                'link'      => wp_logout_url(),
                                 'atts'     => ['x-show="! searchOpen"', 'x-cloak'],
                             ] );
                         ?>
@@ -294,7 +295,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         <span x-show="! searchOpen" x-cloak>
                         <?php
                         get_component( 'icon', [
-                            'classes' => [ 'text-x-large', 'lg:text-large' ],
+                            'classes' => [],
                             'icon'    => 'fa-solid fa-magnifying-glass',
                             'text'    => '',
                         ] );
@@ -303,7 +304,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         <span x-show="searchOpen" x-cloak>
                         <?php
                         get_component( 'icon', [
-                            'classes' => [ 'text-x-large', 'lg:text-large', 'bg-white', 'rounded-base', 'px-2', 'py-0' ],
+                            'classes' => [],
                             'icon'    => 'fa-solid fa-x',
                             'text'    => '',
                         ] );
@@ -312,15 +313,14 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                     </button>
                     <!-- End search button states -->
 
-                    <a x-show="showCart" x-cloak href="<?php echo $cart_path; ?>" class="cart-button ml-4 md:mx-4 inline-flex items-center">
-                        <?php
-                        get_component( 'icon', [
-                            'classes' => [ 'text-x-large', 'lg:text-large' ],
-                            'icon'    => 'fa-regular fa-cart-shopping',
-                            'text'    => '',
-                        ] );
-                        ?>
-                    </a>
+                    <?php get_component('button', [
+							'variant'     => 'ghost',
+                            'link'        => $cart_path,
+                            'a_tag'       => true,
+							'label'       => '',
+							'prefix_icon' => 'fa-regular fa-cart-shopping',
+                            'atts'        => [ 'x-show="showCart"' ]
+						]) ?>
 
                     <?php do_action( 'wpml_language_switcher' ); ?>
 
@@ -328,7 +328,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                     <button
                         x-on:click="mobileMenuOpen = ! mobileMenuOpen; if(mobileMenuOpen){$dispatch('close-mobile-search')};"
                         x-on:close-mobile-menu.window="mobileMenuOpen = false"
-                        class="right-hamburger-button hidden md:inline-flex lg:hidden ml-4 items-center"
+                        class="right-hamburger-button"
                     >
                         <span x-show="! mobileMenuOpen" x-cloak>
                         <?php
@@ -559,18 +559,6 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                     ] );
                 }
                 ?>
-                <?php
-                // Secondary Nav Items
-                foreach( $secondary_nav_items as $secondary_nav_item ) {
-                    $target = $secondary_nav_item->target ?? '';
-                    get_component( 'link', [
-                        'text'     => $secondary_nav_item->title,
-                        'classes'  => ['secondary-nav-item-mobile', 'block', 'mb-2'],
-                        'target'   => $target,
-                        'url'    => $secondary_nav_item->url,
-                    ] );
-                }
-                ?>
                 <?php if( $lang == 'en' ): ?>
                     <a x-show="showLangToggle" x-cloak href="<?php echo wicket_get_lang_url( 'fr' ); ?>" class="lang-button ml-4 hidden lg:inline-flex items-center">Fr</a>
                 <?php else: ?>
@@ -750,15 +738,30 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                   endforeach; // End main nav looping ?>
             </div>
 
+            <div class="secondary-nav-mobile" >
+                <?php
+                    // Secondary Nav Items
+                    foreach( $secondary_nav_items as $secondary_nav_item ) {
+                        $target = $secondary_nav_item->target ?? '';
+                        get_component( 'link', [
+                            'text'     => $secondary_nav_item->title,
+                            'classes'  => ['secondary-nav-item-mobile', 'block', 'mb-2'],
+                            'target'   => $target,
+                            'url'    => $secondary_nav_item->url,
+                        ] );
+                    }
+                ?>
+            </div>
+
             <?php if( !empty( $utility_nav_items ) ): ?>
-            <div class="utility-nav-mobile bg-dark-100 text-light-000 px-3 py-2 pb-3">
+            <div class="utility-nav-mobile">
                 <?php
                 // Utility Nav Items
                 foreach( $utility_nav_items as $utility_nav_item ) {
                     $target = $utility_nav_item->target ?? '';
                     get_component( 'link', [
                         'text'     => $utility_nav_item->title,
-                        'classes'  => ['block', 'px-2', 'py-2', 'hover:bg-light-040'],
+                        'classes'  => [ 'utility-nav-mobile__item' ],
                         'target'   => $target,
                         'url'    => $utility_nav_item->url,
                     ] );
@@ -775,11 +778,11 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
             x-cloak
             x-transition
             x-anchor.bottom-start="$refs.secondary-nav"
-            class="search-bar-mobile lg:hidden w-full p-3 bg-white shadow-lg z-30"
+            class="search-bar-mobile"
             >
             <form class="flex" action="/" method="get">
                 <label for="search" class="hidden"><?php _e('Search the website', 'wicket'); ?></label>
-                <input class="w-full p-1" type="text" name="s" id="search" value="<?php the_search_query(); ?>" placeholder="<?php _e('Search by Keyword', 'wicket'); ?>" />
+                <input class="w-full" type="text" name="s" id="search" value="<?php the_search_query(); ?>" placeholder="<?php _e('Search by Keyword', 'wicket'); ?>" />
                 <?php get_component( 'button', [
                     'variant'     => 'primary',
                     'type'      => 'submit',
@@ -812,88 +815,5 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
         </div>
     <?php endif; ?>
 
-    <?php if( isset( $_GET['breakpoints'] ) && $wicket_is_administrator ): ?>
-        <div class="fixed block sm:hidden bottom-0 right-0 bg-dark-080 text-light-000 p-2">Base</div>
-        <div class="fixed hidden sm:block md:hidden bottom-0 right-0 bg-dark-080 text-light-000 p-2">SM</div>
-        <div class="fixed hidden md:block lg:hidden bottom-0 right-0 bg-dark-080 text-light-000 p-2">MD</div>
-        <div class="fixed hidden lg:block xl:hidden bottom-0 right-0 bg-dark-080 text-light-000 p-2">LG</div>
-        <div class="fixed hidden xl:block 2xl:hidden bottom-0 right-0 bg-dark-080 text-light-000 p-2">XL</div>
-        <div class="fixed hidden 2xl:block bottom-0 right-0 bg-dark-080 text-light-000 p-2">2XL</div>
-    <?php endif; ?>
-
-    <?php
-    // Tailwind Colour Variance View
-    if( isset( $_GET['colours'] ) && $wicket_is_administrator ):
-        // NOTE: If you need to update the below array, use ?generate_colours_array, which will generate a fresh associative array that you can paste in as the value of $all_possible_colours
-        $all_possible_colours = ['primary' => ['bg-primary-000', 'bg-primary-010', 'bg-primary-020', 'bg-primary-030', 'bg-primary-040', 'bg-primary-050', 'bg-primary-060', 'bg-primary-070', 'bg-primary-080', 'bg-primary-090', 'bg-primary-100', 'bg-primary-110', 'bg-primary-120', 'bg-primary-130', 'bg-primary-140', 'bg-primary-150', 'bg-primary-160', 'bg-primary-170', 'bg-primary-180', 'bg-primary-190', 'bg-primary-200', ], 'secondary' => ['bg-secondary-000', 'bg-secondary-010', 'bg-secondary-020', 'bg-secondary-030', 'bg-secondary-040', 'bg-secondary-050', 'bg-secondary-060', 'bg-secondary-070', 'bg-secondary-080', 'bg-secondary-090', 'bg-secondary-100', 'bg-secondary-110', 'bg-secondary-120', 'bg-secondary-130', 'bg-secondary-140', 'bg-secondary-150', 'bg-secondary-160', 'bg-secondary-170', 'bg-secondary-180', 'bg-secondary-190', 'bg-secondary-200', ], 'tertiary' => ['bg-tertiary-000', 'bg-tertiary-010', 'bg-tertiary-020', 'bg-tertiary-030', 'bg-tertiary-040', 'bg-tertiary-050', 'bg-tertiary-060', 'bg-tertiary-070', 'bg-tertiary-080', 'bg-tertiary-090', 'bg-tertiary-100', 'bg-tertiary-110', 'bg-tertiary-120', 'bg-tertiary-130', 'bg-tertiary-140', 'bg-tertiary-150', 'bg-tertiary-160', 'bg-tertiary-170', 'bg-tertiary-180', 'bg-tertiary-190', 'bg-tertiary-200', ], 'dark' => ['bg-dark-000', 'bg-dark-010', 'bg-light-050', 'bg-dark-030', 'bg-dark-040', 'bg-dark-050', 'bg-dark-060', 'bg-dark-070', 'bg-dark-080', 'bg-dark-090', 'bg-dark-100', 'bg-dark-110', 'bg-dark-120', 'bg-dark-130', 'bg-dark-140', 'bg-dark-150', 'bg-dark-160', 'bg-dark-170', 'bg-dark-180', 'bg-dark-190', 'bg-dark-200', ], 'light' => ['bg-light-000', 'bg-light-010', 'bg-light-020', 'bg-light-030', 'bg-light-040', 'bg-light-050', 'bg-light-060', 'bg-light-070', 'bg-light-080', 'bg-light-090', 'bg-light-100', 'bg-light-110', 'bg-light-120', 'bg-light-130', 'bg-light-140', 'bg-light-150', 'bg-light-160', 'bg-light-170', 'bg-light-180', 'bg-light-190', 'bg-light-200', ], 'accent' => ['bg-accent-000', 'bg-accent-010', 'bg-accent-020', 'bg-accent-030', 'bg-accent-040', 'bg-accent-050', 'bg-accent-060', 'bg-accent-070', 'bg-accent-080', 'bg-accent-090', 'bg-accent-100', 'bg-accent-110', 'bg-accent-120', 'bg-accent-130', 'bg-accent-140', 'bg-accent-150', 'bg-accent-160', 'bg-accent-170', 'bg-accent-180', 'bg-accent-190', 'bg-accent-200', ], 'info-a' => ['bg-info-a-000', 'bg-info-a-010', 'bg-info-a-020', 'bg-info-a-030', 'bg-info-a-040', 'bg-info-a-050', 'bg-info-a-060', 'bg-info-a-070', 'bg-info-a-080', 'bg-info-a-090', 'bg-info-a-100', 'bg-info-a-110', 'bg-info-a-120', 'bg-info-a-130', 'bg-info-a-140', 'bg-info-a-150', 'bg-info-a-160', 'bg-info-a-170', 'bg-info-a-180', 'bg-info-a-190', 'bg-info-a-200', ], 'info-b' => ['bg-info-b-000', 'bg-info-b-010', 'bg-info-b-020', 'bg-info-b-030', 'bg-info-b-040', 'bg-info-b-050', 'bg-info-b-060', 'bg-info-b-070', 'bg-info-b-080', 'bg-info-b-090', 'bg-info-b-100', 'bg-info-b-110', 'bg-info-b-120', 'bg-info-b-130', 'bg-info-b-140', 'bg-info-b-150', 'bg-info-b-160', 'bg-info-b-170', 'bg-info-b-180', 'bg-info-b-190', 'bg-info-b-200', ], 'danger' => ['bg-danger-000', 'bg-danger-010', 'bg-danger-020', 'bg-danger-030', 'bg-danger-040', 'bg-danger-050', 'bg-danger-060', 'bg-danger-070', 'bg-danger-080', 'bg-danger-090', 'bg-danger-100', 'bg-danger-110', 'bg-danger-120', 'bg-danger-130', 'bg-danger-140', 'bg-danger-150', 'bg-danger-160', 'bg-danger-170', 'bg-danger-180', 'bg-danger-190', 'bg-danger-200', ], 'warning' => ['bg-warning-000', 'bg-warning-010', 'bg-warning-020', 'bg-warning-030', 'bg-warning-040', 'bg-warning-050', 'bg-warning-060', 'bg-warning-070', 'bg-warning-080', 'bg-warning-090', 'bg-warning-100', 'bg-warning-110', 'bg-warning-120', 'bg-warning-130', 'bg-warning-140', 'bg-warning-150', 'bg-warning-160', 'bg-warning-170', 'bg-warning-180', 'bg-warning-190', 'bg-warning-200', ], 'success' => ['bg-success-000', 'bg-success-010', 'bg-success-020', 'bg-success-030', 'bg-success-040', 'bg-success-050', 'bg-success-060', 'bg-success-070', 'bg-success-080', 'bg-success-090', 'bg-success-100', 'bg-success-110', 'bg-success-120', 'bg-success-130', 'bg-success-140', 'bg-success-150', 'bg-success-160', 'bg-success-170', 'bg-success-180', 'bg-success-190', 'bg-success-200', ], 'white' => ['bg-white'], ];
-        ?>
-        <?php foreach( $all_possible_colours as $colour => $colours ):?>
-        <h2 class="font-bold text-x-large my-2 font-sans"><?php echo $colour; ?>:</h2>
-        <div class="flex flex-wrap w-full">
-            <?php foreach( $colours as $colour ): ?>
-            <div class="flex justify-center items-center p-5 <?php echo "$colour"; ?> <?php if( !str_contains( $colour, 'light' ) ) { echo 'text-light-000'; } ?>"><?php echo "$colour"; ?></div>
-            <?php endforeach; ?>
-        </div>
-        <?php endforeach; ?>
-    <?php endif; ?>
-
-    <?php if( isset( $_GET['font_sizes'] ) ){
-        $theme_json = file_get_contents( get_template_directory() . '/theme.json' );
-        $theme_json = json_decode( $theme_json, true );
-        $font_sizes = $theme_json['settings']['typography']['fontSizes'];
-        foreach( $font_sizes as $font_size ): ?>
-            <div class="text-<?php echo $font_size['slug']; ?> font-bold"><?php echo $font_size['name']; ?></div>
-        <?php endforeach;
-    } ?>
-
 <?php
-    // For generating colours array used for ?colours view
-    if( isset( $_GET['generate_colours_array'] ) && $wicket_is_administrator ):
-        $colour_names = [
-            'primary',
-            'secondary',
-            'tertiary',
-            'dark',
-            'light',
-            'accent',
-            'info-a',
-            'info-b',
-            'danger',
-            'warning',
-            'success'
-        ];
-        $colour_varieties = [
-            '000',
-            '010',
-            '020',
-            '030',
-            '040',
-            '050',
-            '060',
-            '070',
-            '080',
-            '090',
-            '100',
-            '110',
-            '120',
-            '130',
-            '140',
-            '150',
-            '160',
-            '170',
-            '180',
-            '190',
-            '200'
-        ];
-        echo '[';
-        foreach( $colour_names as $colour ) {
-            echo "'" . "$colour" . "' => [";
-            foreach( $colour_varieties as $variety ) {
-                echo "'" . "bg-$colour-$variety" . "', ";
-            };
-            echo "], ";
-        };
-        echo ']';
-    endif;
-
 do_action('wicket_header_end');
