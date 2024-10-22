@@ -25,11 +25,25 @@
   }
 
   .section-title {
-    @apply font-bold hidden lg:block;
+    @apply hidden lg:block;
+  }
+  
+  .section-title,
+  .section-title-button {
+    @apply font-bold text-[--nav-footer-title];
   }
 
   .footer-col-menu {
-    @apply [&>ul>li>a]:mb-[--space-150] [&>ul>li>a]:inline-flex text-[--nav-footer-sublink];
+    @apply text-[--nav-footer-sublink];
+
+    > ul {
+
+      > li {
+        > a {
+          @apply mb-[--space-150] inline-flex;
+        }
+      }
+    }
   }
 
   .footer-bottom-text {

@@ -94401,7 +94401,6 @@ form.wicket-form .wicket-form-field-wrapper,
 }
 .main-footer-section .section-title {
   display: none;
-  font-weight: 700;
 }
 form .wicket-form-help-text.main-footer-section .section-title,
 form p.wicket-form-help-text.main-footer-section .section-title,
@@ -94415,10 +94414,15 @@ form p.wicket-form-help-text.main-footer-section .section-title,
     display: block;
   }
 }
+.main-footer-section .section-title,
+.main-footer-section .section-title-button {
+  font-weight: 700;
+  color: var(--nav-footer-title);
+}
 .main-footer-section .footer-col-menu {
   color: var(--nav-footer-sublink);
 }
-.main-footer-section .footer-col-menu>ul>li>a {
+.main-footer-section .footer-col-menu > ul > li > a {
   margin-bottom: var(--space-150);
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
