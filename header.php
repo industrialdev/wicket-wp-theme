@@ -138,24 +138,18 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
         <div
             x-show="showUtilityNav"
             x-cloak
-            class="utility-nav hidden lg:block w-full bg-dark-100 text-white font-bold"
+            class="utility-nav"
             >
-            <div class="container flex justify-end">
+            <div class="container utility-nav__wrap">
                 <?php
                     $utility_loop_index = 0;
                     foreach( $utility_nav_items as $utility_nav_item ) {
-                        $is_last_element = $utility_loop_index == ( count( $utility_nav_items ) - 1 );
-                        $margin_r = '';
-                        if( $is_last_element ) {
-                            $margin_r = '-mr-2';
-                        }
-
                         $target = $utility_nav_item->target ?? '';
                         get_component( 'link', [
                             'text'     => $utility_nav_item->title,
-                            'classes'  => ['ml-4', $margin_r, 'items-center', 'hidden', 'lg:inline-flex', 'px-2', 'py-1', 'hover:bg-light-040'],
+                            'classes'  => [ 'utility-nav__link' ],
                             'target'   => $target,
-                            'url'    => $utility_nav_item->url,
+                            'url'      => $utility_nav_item->url,
                         ] );
                         $utility_loop_index++;
                     }

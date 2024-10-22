@@ -80,7 +80,7 @@
 
   // If social link component is used
   .social-links-v2 & {
-    @apply rounded-[length:--social-media-radius] bg-[--nav-footer-social-bg] text-[--nav-footer-social-text] border-[length:--border-footer-social] border-transparent;
+    @apply rounded-[--social-media-radius] bg-[--nav-footer-social-bg] text-[--nav-footer-social-text] border-[length:--border-footer-social] border-transparent;
 
     &:hover {
       @apply bg-transparent text-[--nav-footer-social-text-hover] border-[--nav-footer-social-border-hover];

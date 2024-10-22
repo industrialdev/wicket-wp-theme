@@ -55,4 +55,13 @@
     }
   }
 
+  // If header nav utility link
+  .utility-nav & {
+    @apply text-[--nav-utility-label] px-[--space-200] py-[--space-075];
+
+    &:hover {
+      @apply bg-[--nav-utility-bg-highlight];
+    }
+  }
+
 }
