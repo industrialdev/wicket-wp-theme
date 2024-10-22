@@ -354,7 +354,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
         </div> <!-- End secondary nav -->
 
         <!-- Main Nav -->
-        <nav x-ref="main-nav" class="main-nav w-full hidden lg:flex border-t-base border-b-base border-dark-040">
+        <nav x-ref="main-nav" class="main-nav">
             <ul class="container w-full gap-4 flex relative <?php if( count($primary_nav_items_structured) > 4 ) { echo 'justify-between'; } else { echo 'justify-evenly'; } ?>">
             <?php
             foreach( $primary_nav_items_structured as $primary_nav_item ):
@@ -363,7 +363,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                 if( $primary_nav_item['child_count'] == 0 ):
                 ?>
                   <li
-                        class="single-menu-item block py-3 px-2 relative hover:cursor-pointer border-b-large border-light-000 hover:border-primary-100 transition"
+                        class="main-nav__single-menu-item"
                   >
                         <?php
                         $target = $primary_nav_item['target'] ?? '';
@@ -382,7 +382,8 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                 ?>
                     <!-- Start Nav Item -->
                     <li
-                        class="dropdown-menu-item block py-3 px-2 relative hover:cursor-pointer border-b-large border-light-000 hover:border-primary-100 transition"
+                        class="main-nav__dropdown-menu-item"
+                        :class="navDropdownOpen ? 'open' : ''"
                         x-data="{ navDropdownOpen: false }"
                         x-on:click="navDropdownOpen = ! navDropdownOpen; $dispatch('close-nav-dropdowns')"
                         <?php // If the sending element isn't this element, close dropdown ?>
@@ -395,7 +396,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                             x-show="navDropdownOpen"
                             x-cloak
                             x-transition
-                            class="nav-dropdown absolute z-20 mt-3 w-56 bg-white p-3 lg:p-7 shadow-lg <?php echo $is_primary_nav_item_last_item ? 'right-0' : 'left-0' ?>"
+                            class="nav-dropdown <?php echo $is_primary_nav_item_last_item ? 'last' : '' ?>"
                         >
                             <?php
                             $child_loop_index = 0;
@@ -427,8 +428,9 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                 ?>
                     <!-- Start Nav Item -->
                     <li
-                        class="mega-menu-item block py-3 px-2 hover:cursor-pointer border-b-large border-light-000 hover:border-primary-100 transition"
+                        class="main-nav__mega-menu-item"
                         x-data="{ navDropdownOpen: false }"
+                        :class="navDropdownOpen ? 'open' : ''"
                         x-on:click="navDropdownOpen = ! navDropdownOpen; $dispatch('close-nav-dropdowns')"
                         <?php // If the sending element isn't this element, close dropdown ?>
                         x-on:close-nav-dropdowns.window="
@@ -436,12 +438,11 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         >
                         <?php echo $primary_nav_item['title']; ?><i class="fa-solid fa-caret-down ml-2"></i>
 
-
                         <div
                             x-show="navDropdownOpen"
                             x-cloak
                             x-transition
-                            class="nav-mega-dropdown container absolute z-20 flex gap-2 left-0 mt-3 w-full bg-white p-3 lg:p-7 shadow-lg flex-wrap"
+                            class="nav-mega-dropdown container"
                             >
                             <?php
                             foreach ( $primary_nav_item['children'] as $child ):
@@ -453,21 +454,19 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                                         $target = $child['target'] ?? '';
                                         get_component( 'link', [
                                             'text'     => $child['title'],
-                                            'classes'  => ['block', 'pb-2', 'mb-2', 'mr-2', 'text-primary-100', 'font-bold', 'border-b-medium', 'border-dark-100'],
+                                            'classes'  => ['desktop-mega-menu-heading-item'],
                                             'target'   => $target,
                                             'url'    => $child['url'],
                                         ] );
                                         ?>
                                     </div>
-                                <?php
-                                else:
-                                ?>
+                                <?php else: ?>
                                     <div class="w-1/4">
                                         <?php
                                         $target = $child['target'] ?? '';
                                         get_component( 'link', [
                                             'text'     => $child['title'],
-                                            'classes'  => ['block', 'pb-2', 'mb-2', 'mr-2', 'text-primary-100', 'font-bold', 'border-b-medium', 'border-dark-100'],
+                                            'classes'  => ['desktop-mega-menu-heading-item'],
                                             'target'   => $target,
                                             'url'    => $child['url'],
                                         ] );

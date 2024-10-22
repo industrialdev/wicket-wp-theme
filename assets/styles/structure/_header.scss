@@ -12,4 +12,30 @@
     @apply inline-flex md:hidden mr-10 items-center;
   }
 
+  .main-nav {
+    @apply w-full hidden lg:flex border-t-[--nav-main-border] border-b-[--nav-main-border] border-t-[length:--border-main-nav-top] border-b-[length:--border-main-nav-bottom] bg-[--nav-main-bg];
+
+    &__dropdown-menu-item, &__mega-menu-item {
+      @include desktop-main-menu-item-styles;
+    }
+
+    &__mega-menu-item {
+      @apply static;
+
+      .nav-mega-dropdown {
+        @apply absolute z-20 flex gap-2 left-0 mt-3 w-full bg-[--dropdown-mega-bg] p-3 lg:p-7 flex-wrap rounded-t-[--dropdown-mega-corner-radius];
+        filter: drop-shadow( var(--elevation-4) );
+      }
+    }
+
+    &__dropdown-menu-item {
+      .nav-dropdown {
+        @apply absolute z-20 mt-3 w-56 bg-[--dropdown-mega-bg] p-3 lg:p-7 shadow-lg left-0;
+
+        &.last {
+          @apply right-0 left-auto;
+        }
+      }
+    }
+  }
 }
