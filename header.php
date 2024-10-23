@@ -271,7 +271,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         ?>
                     <?php endif; ?>
                     <!-- Start search field -->
-                    <div x-show="searchOpen" x-cloak class="hidden lg:block flex-grow px-2 py-3 ml-20 bg-white">
+                    <div x-show="searchOpen" x-cloak class="hidden lg:block flex-grow px-2 ml-20">
                         <form class="flex" action="/" method="get">
                             <label for="search" class="hidden"><?php _e('Search the website', 'wicket'); ?></label>
                             <input class="w-full p-1" type="text" name="s" id="search" value="<?php the_search_query(); ?>" placeholder="<?php _e('Search by Keyword', 'wicket'); ?>" />
