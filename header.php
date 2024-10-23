@@ -260,7 +260,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         ?>
                     <?php else: ?>
                         <?php
-                            get_component( 'link', [
+                            get_component( 'button', [
                                 'variant'  => 'ghost',
                                 'a_tag'    => true,
                                 'label'     => __( 'Logout', 'wicket' ),
@@ -514,7 +514,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         'variant'     => 'primary',
                         'a_tag'     => true,
                         'link'      => $bam_path,
-                        'classes'     => ['create-account-button-mobile', 'w-full', 'mb-4', 'justify-center', 'md:hidden'],
+                        'classes'     => ['create-account-button-mobile', 'w-full', 'mb-3', 'justify-center', 'md:hidden'],
                         'label'     => __( 'Create Account', 'wicket' ),
                     ] );
                 } else if ( $nav_state == 'logged_in_user' ) {
@@ -522,14 +522,14 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         'variant'     => 'primary',
                         'a_tag'     => true,
                         'link'      => $bam_path,
-                        'classes'     => ['become-a-member-button-mobile', 'w-full', 'mb-4', 'justify-center', 'md:hidden'],
+                        'classes'     => ['become-a-member-button-mobile', 'w-full', 'mb-3', 'justify-center', 'md:hidden'],
                         'label'     => __( 'Become a member', 'wicket' ),
                     ] );
                     get_component( 'button', [
                         'variant'     => 'secondary',
                         'a_tag'     => true,
                         'link'      => $account_center_landing,
-                        'classes'     => ['my-account-button-mobile', 'w-full', 'mb-4', 'justify-center'],
+                        'classes'     => ['my-account-button-mobile', 'w-full', 'mb-3', 'justify-center'],
                         'label'     => __( 'My Account', 'wicket' ),
                     ] );
                 } else if ( $nav_state == 'logged_in_member' ) {
@@ -537,7 +537,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         'variant'     => 'secondary',
                         'a_tag'     => true,
                         'link'      => $account_center_landing,
-                        'classes'     => ['member-portal-button-mobile', 'w-full', 'mb-4', 'justify-center'],
+                        'classes'     => ['member-portal-button-mobile', 'w-full', 'mb-3', 'justify-center'],
                         'label'     => __( 'Member Portal', 'wicket' ),
                     ] );
                 }
@@ -545,16 +545,20 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                 <?php
                 // Conditional login/logout buttons
                 if( $nav_state == 'logged_out' ) {
-                    get_component( 'link', [
-                        'text'     => __( 'Login', 'wicket' ),
-                        'classes'  => ['login-button-mobile', 'block', 'text-center', 'mb-2'],
-                        'url'    => get_option('wp_cassify_base_url').'login?service='.$referrer,
+                    get_component( 'button', [
+                        'label'     => __( 'Login', 'wicket' ),
+                        'variant'   => 'ghost',
+                        'a_tag'     => true,
+                        'classes'   => [ 'login-button-mobile', 'mb-2', 'w-full', 'justify-center' ],
+                        'link'       => get_option('wp_cassify_base_url').'login?service='.$referrer,
                     ] );
                 } else {
-                    get_component( 'link', [
-                        'text'     => __( 'Logout', 'wicket' ),
-                        'classes'  => ['logout-button-mobile', 'block', 'text-center', 'mb-2'],
-                        'url'    => wp_logout_url(),
+                    get_component( 'button', [
+                        'label'     => __( 'Logout', 'wicket' ),
+                        'variant'  => 'ghost',
+                        'a_tag'    => true,
+                        'classes'  => [ 'logout-button-mobile', 'mb-2', 'w-full', 'justify-center' ],
+                        'link'      => wp_logout_url(),
                     ] );
                 }
                 ?>
