@@ -20,7 +20,16 @@ const WPTARL_RATE_LIMITED_IPS = []; // << CHANGE THIS
  */
 const WPTARL_NEVER_RATE_LIMITED_IPS = array(
    '127.0.0.1',
-   '::1'
+   '::1',
+   '52.40.200.248',
+   '52.39.10.61',
+   '52.26.59.155',
+   '108.129.66.83',
+   '54.73.116.155',
+   '63.33.233.130',
+   '3.105.252.6',
+   '54.79.191.214',
+   '3.24.148.13'
 );
 /**
  * Check multiple $_SERVER elements to find the remote client's IP address.
