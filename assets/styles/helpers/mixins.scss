@@ -46,7 +46,7 @@
 }
 
 @mixin primary-menu-item-styles {
-  @apply font-normal text-[--nav-main-label] block p-[--space-150] relative rounded-t-[--main-menu-highlight-radius] border-b-[length:--border-md] border-transparent;
+  @apply font-normal text-[--nav-main-label] block p-[--space-150] relative bg-[--nav-main-bg] lg:rounded-t-[--main-menu-highlight-radius] border-t-[length:--border-sm] lg:border-t-0 lg:border-b-[length:--border-md] border-[--nav-main-border] lg:border-transparent;
 
   &:hover {
     @apply cursor-pointer border-[--nav-main-border-interactive];
