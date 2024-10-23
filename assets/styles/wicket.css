@@ -94362,6 +94362,7 @@ form.wicket-form .wicket-form-field-wrapper,
 .wicket-base-plugin-form .alert {
   border-left: solid var(--border-alert, 4px);
   padding: var(--space-250, 20px 15px);
+  border-radius: var(--alerts-corner-radius, 0px);
   margin-bottom: 40px;
 }
 .wicket-base-plugin-form .alert.alert-danger {
