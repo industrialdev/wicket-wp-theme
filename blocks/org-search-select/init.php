@@ -29,6 +29,7 @@ function init( $block = [] ) {
   $hide_select_buttons = get_field('orgss_hide_select_buttons');
   $no_results_found_message = get_field('orgss_no_results_found_message');
   $new_org_created_checkbox_id = get_field('orgss_new_org_created_checkbox_id');
+  $display_removal_alert_message = get_field('orgss_display_removal_alert_message');
 
 	echo '<div ' . $attrs . '>';
 
@@ -49,6 +50,7 @@ function init( $block = [] ) {
     'hide_select_buttons'                 => $hide_select_buttons,
     'no_results_found_message'            => $no_results_found_message,
     'checkbox_id_new_org'                 => $new_org_created_checkbox_id,
+    'display_removal_alert_message'       => $display_removal_alert_message,
 	] );
 
 	echo '</div>';
