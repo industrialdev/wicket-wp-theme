@@ -1,0 +1,28 @@
+.component-card {
+  @apply p-[--space-200] h-full bg-[--bg-card] rounded-[--card-corner-radius] border border-[--border-light] border-[length:--border-sm] flex flex-col gap-[--space-200] justify-between relative lg:flex-row lg:items-center;
+  filter: drop-shadow( var(--elevation-4) );
+
+  &__container {
+    @apply flex flex-col gap-[--space-200];
+
+    &--with-image {
+      @apply lg:basis-1/2;
+    }
+  }
+
+  &__pre-heading {
+    @apply block uppercase text-label-md text-[--text-accent] -mb-3;
+  }
+
+  &__title {
+    @apply block text-heading-xs;
+  }
+
+  &__subtitle {
+    @apply italic;
+  }
+
+  &__excerpt {}
+
+  &__subtitle {}
+}

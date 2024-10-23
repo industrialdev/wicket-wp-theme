@@ -90324,47 +90324,121 @@ h6 {
   color: var(--nav-footer-social-text-hover);
 }
 
+.component-card {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: var(--space-200);
+  border-radius: var(--card-corner-radius);
+  border-width: 1px;
+  border-width: var(--border-sm);
+  border-color: var(--border-light);
+  background-color: var(--bg-card);
+  padding: var(--space-200);
+}
+
+@media (min-width: 1024px) {
+
+  .component-card {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+.component-card {
+  -webkit-filter: drop-shadow(var(--elevation-4));
+  filter: drop-shadow(var(--elevation-4));
+}
+.component-card__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: var(--space-200);
+}
+@media (min-width: 1024px) {
+
+  .component-card__container--with-image {
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+  }
+}
+.component-card__pre-heading {
+  margin-bottom: -0.75rem;
+  display: block;
+  font-size: var(--label-md-font-size);
+  color: var(--text-accent);
+  font-weight: var(--label-md-font-weight);
+  text-transform: uppercase;
+  line-height: var(--label-md-line-height);
+}
+.component-card__title {
+  display: block;
+  font-size: var(--heading-xs-font-size);
+  font-weight: var(--heading-xs-font-weight-sm);
+  line-height: var(--heading-xs-line-height);
+}
+@media (min-width: 768px) {
+
+  .component-card__title {
+    font-weight: var(--heading-xs-font-weight-md);
+  }
+}
+.component-card__subtitle {
+  font-style: italic;
+}
 .component-card-call-out {
   width: 100%;
   margin-right: auto;
   margin-left: auto;
 }
-
 @media (min-width: 640px) {
 
   .component-card-call-out {
     max-width: 640px;
   }
 }
-
 @media (min-width: 768px) {
 
   .component-card-call-out {
     max-width: 768px;
   }
 }
-
 @media (min-width: 1024px) {
 
   .component-card-call-out {
     max-width: 1024px;
   }
 }
-
 @media (min-width: 1280px) {
 
   .component-card-call-out {
     max-width: 1280px;
   }
 }
-
 @media (min-width: 1536px) {
 
   .component-card-call-out {
     max-width: 1536px;
   }
 }
-
 .component-card-call-out {
   border-radius: var(--card-accent-corner-radius);
   padding: var(--space-250);
@@ -90372,13 +90446,11 @@ h6 {
   font-weight: var(--body-md-font-weight);
   line-height: var(--body-md-line-height);
 }
-
 @media (min-width: 1536px) {
   .component-card-call-out {
     max-width: var(--wp--style--global--content-size);
   }
 }
-
 @media (min-width: var(--wp--style--global--content-size)) {
   .component-card-call-out {
     max-width: var(--wp--style--global--content-size);

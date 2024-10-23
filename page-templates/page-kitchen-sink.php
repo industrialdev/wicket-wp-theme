@@ -834,6 +834,34 @@ if (have_posts()) :
 				</section>
 
 				<section class="py-8">
+					<h2 class="text-heading-lg mb-3">Card</h2>
+					<div class="flex">
+						<div class="basis-9/12">
+							<?php foreach (['after-heading', 'after-excerpt'] as $style) : ?>
+								<div class="mb-4">
+									<?php
+									get_component('card', [ 
+										'classes'        => [],
+										'title'          => 'Lorem Ipsum',
+										'subtitle'        => 'Lorem Ipsum Subtitle',
+										'subtitle_location' => $style,
+										'pre_heading' => 'Lorem Ipsum Pre Headung',
+										'excerpt' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s',
+										'link'           => [ 
+											'url'    => '#',
+											'title'   => 'Read more',
+											'target' => '_self',
+										],
+										'cta_style'         => 'link',
+										'image'             => '',
+									]) ?>
+								</div>
+							<?php endforeach; ?>
+						</div>
+					</div>
+				</section>
+
+				<section class="py-8">
 					<h2 class="text-heading-lg mb-3">Card Contact</h2>
 					<div class="mb-6">
 						<div class="mb-4">
