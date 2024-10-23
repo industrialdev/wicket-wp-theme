@@ -3,6 +3,24 @@
     "title": "Block - Org Search\/Select",
     "fields": [
         {
+            "key": "field_6716a2a75be0e",
+            "label": "General",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
             "key": "field_666c67ffc9ac5",
             "label": "Search Mode",
             "name": "orgss_search_mode",
@@ -58,7 +76,7 @@
         },
         {
             "key": "field_666c693540f4b",
-            "label": "Relationship Type Upon Org Creation",
+            "label": "Relationship Type Upon Org Creation\/Selection",
             "name": "orgss_relationship_type_upon_org_creation",
             "aria-label": "",
             "type": "text",
@@ -80,6 +98,7 @@
             },
             "default_value": "employee",
             "maxlength": "",
+            "allow_in_bindings": 1,
             "placeholder": "",
             "prepend": "",
             "append": ""
@@ -139,6 +158,252 @@
             "placeholder": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_6716a3a05be13",
+            "label": "Disable ability to create new org\/entity?",
+            "name": "orgss_disable_ability_to_create_new_orgentity",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_6716a3c75be14",
+            "label": "Disable ability to select orgs with active membership?",
+            "name": "orgss_disable_ability_to_select_orgs_with_active_membership",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_6716a3de5be15",
+            "label": "Grant roster management on next purchase?",
+            "name": "orgss_grant_roster_management_on_next_purchase",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_6716a3ed5be16",
+            "label": "Grant org_editor role on selection?",
+            "name": "orgss_grant_org_editor_role_on_selection",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_6716a1c15f5e9",
+            "label": "Text, Messages, and Hiding Elements",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_6716a1f05f5ea",
+            "label": "Org name singular",
+            "name": "orgss_name_singular",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "How the org will be shown on the frontend, e.g. \"Organization\" or \"Chapter\". Can be left blank to use default.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Organization",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6716a2115f5eb",
+            "label": "Org name plural",
+            "name": "orgss_name_plural",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "How the org will be shown on the frontend, e.g. \"Organizations\" or \"Chapters\". Can be left blank to use default.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Organizations",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6716a2e65be0f",
+            "label": "Hide remove buttons?",
+            "name": "orgss_hide_remove_buttons",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_6716a3045be10",
+            "label": "Hide select buttons?",
+            "name": "orgss_hide_select_buttons",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_6716a2295f5ec",
+            "label": "No results found message",
+            "name": "orgss_no_results_found_message",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Message that will display if nothing is found by their search. Can be left blank to use default.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6716a3395be11",
+            "label": "Advanced",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_6716a3465be12",
+            "label": "'New Org Created' checkbox ID",
+            "name": "orgss_new_org_created_checkbox_id",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "ID of a checkbox to be checked if a new org gets created. Usually this will be a hidden checkbox used for later conditional logic.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "E.g. choice_5_12_1",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -159,5 +424,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1718382261
+    "modified": 1729538009
 }
