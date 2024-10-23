@@ -1,13 +1,17 @@
 .component-card {
-  @apply p-[--space-200] h-full bg-[--bg-card] rounded-[--card-corner-radius] border border-[--border-light] border-[length:--border-sm] flex flex-col gap-[--space-200] justify-between relative lg:flex-row lg:items-center;
+  @apply p-[--space-200] h-full bg-[--bg-card] rounded-[--card-corner-radius] border border-[--border-light] border-[length:--border-sm] gap-[--space-200] relative flex flex-col gap-[--space-200];
   filter: drop-shadow( var(--elevation-4) );
 
   &__container {
     @apply flex flex-col gap-[--space-200];
 
     &--with-image {
-      @apply lg:basis-1/2;
+      @apply @2xl:basis-1/2;
     }
+  }
+
+  &__image {
+    @apply @2xl:basis-1/2;
   }
 
   &__pre-heading {

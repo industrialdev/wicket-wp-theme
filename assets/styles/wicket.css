@@ -1165,6 +1165,10 @@ video {
   -ms-flex-preferred-size: 75%;
   flex-basis: 75%;
 }
+.basis-4\/12 {
+  -ms-flex-preferred-size: 33.333333%;
+  flex-basis: 33.333333%;
+}
 .basis-9\/12 {
   -ms-flex-preferred-size: 75%;
   flex-basis: 75%;
@@ -90334,9 +90338,6 @@ h6 {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
   gap: var(--space-200);
   border-radius: var(--card-corner-radius);
   border-width: 1px;
@@ -90344,22 +90345,6 @@ h6 {
   border-color: var(--border-light);
   background-color: var(--bg-card);
   padding: var(--space-200);
-}
-
-@media (min-width: 1024px) {
-
-  .component-card {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-  }
-}
-
-.component-card {
   -webkit-filter: drop-shadow(var(--elevation-4));
   filter: drop-shadow(var(--elevation-4));
 }
@@ -90373,9 +90358,14 @@ h6 {
   flex-direction: column;
   gap: var(--space-200);
 }
-@media (min-width: 1024px) {
+@container (min-width: 42rem) {
 
   .component-card__container--with-image {
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+  }
+
+  .component-card__image {
     -ms-flex-preferred-size: 50%;
     flex-basis: 50%;
   }
