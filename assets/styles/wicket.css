@@ -91694,7 +91694,7 @@ form p.wicket-form-help-text.secondary-nav .component-filter-form__see-more,
 }
 
 .component-image {
-  border-width: var(--image-corner-radius);
+  border-radius: var(--image-corner-radius);
 }
 
 .component-link {
@@ -92872,7 +92872,7 @@ li img {
 }
 
 .wp-block-image img {
-  border-width: var(--image-corner-radius);
+  border-radius: var(--image-corner-radius);
 }
 
 /* INTEGRATIONS
@@ -93094,7 +93094,7 @@ li img {
 }
 
 .woocommerce div.product div.images img {
-  border-width: var(--image-corner-radius);
+  border-radius: var(--image-corner-radius);
 }
 .woocommerce div.product .woocommerce-product-gallery__wrapper {
   position: relative;
