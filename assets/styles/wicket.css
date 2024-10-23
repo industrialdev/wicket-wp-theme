@@ -2083,6 +2083,10 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
+.bg-slate-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(203 213 225 / var(--tw-bg-opacity));
+}
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -89830,7 +89834,7 @@ h6 {
 
 /* COMPONENTS STYLES
 ------------------------------------------------------------------------------*/
-.accordion-item-v2 {
+.accordion-item {
   margin-bottom: 0.5rem;
   border-color: var(--border-light);
   padding: var(--space-150);
@@ -89838,64 +89842,64 @@ h6 {
   font-weight: var(--body-md-font-weight);
   line-height: var(--body-md-line-height);
 }
-.accordion-item-v2:hover {
+.accordion-item:hover {
   cursor: pointer;
 }
-.component-sidebar-contextual-nav__accordion .accordion-item-v2 {
+.component-sidebar-contextual-nav__accordion .accordion-item {
   margin-bottom: 0px;
   padding: var(--space-100);
 }
-.accordion-item-v2:last-child {
+.accordion-item:last-child {
   margin-bottom: 0px;
 }
-.accordion-item-v2__body {
+.accordion-item__body {
   margin-top: var(--space-250);
   padding-right: 3rem;
 }
-.component-sidebar-contextual-nav__accordion .accordion-item-v2__body {
+.component-sidebar-contextual-nav__accordion .accordion-item__body {
   margin-top: var(--space-100);
 }
-.accordion-item-v2__title {
+.accordion-item__title {
   font-size: var(--body-md-font-size);
   font-weight: var(--body-md-font-weight);
   line-height: var(--body-md-line-height);
 }
-.component-sidebar-contextual-nav__accordion .accordion-item-v2__title {
+.component-sidebar-contextual-nav__accordion .accordion-item__title {
   font-weight: 700;
   color: var(--nav-contextual-link-lvl-1);
 }
-.accordion-item-v2__icon {
+.accordion-item__icon {
   margin-left: 1rem;
   color: var(--interactive);
 }
-.open .accordion-item-v2__icon {
+.open .accordion-item__icon {
   color: var(--highlight-dark);
 }
-.accordion-item-v2.open {
+.accordion-item.open {
   border-color: var(--highlight-dark);
   background-color: var(--highlight-light);
 }
-.component-sidebar-contextual-nav__accordion .accordion-item-v2.open {
+.component-sidebar-contextual-nav__accordion .accordion-item.open {
   border-color: var(--border-light);
   background-color: transparent;
 }
-.accordion-item-v2--list {
+.accordion-item--list {
   border-top-width: var(--border-sm);
   border-bottom-width: var(--border-sm);
 }
-.component-sidebar-contextual-nav__accordion .accordion-item-v2--list {
+.component-sidebar-contextual-nav__accordion .accordion-item--list {
   border-top-width: 0px;
 }
-.component-sidebar-contextual-nav__accordion .accordion-item-v2--list:last-child {
+.component-sidebar-contextual-nav__accordion .accordion-item--list:last-child {
   border-bottom-width: 0px;
 }
-.accordion-item-v2--list.open {
+.accordion-item--list.open {
   border-bottom-width: var(--border-lg);
 }
-.component-sidebar-contextual-nav__accordion .accordion-item-v2--list.open {
+.component-sidebar-contextual-nav__accordion .accordion-item--list.open {
   border-bottom-width: var(--border-sm);
 }
-.accordion-item-v2--card {
+.accordion-item--card {
   border-radius: var(--interactive-corner-radius-md);
   border-width: var(--border-sm);
 }
@@ -90093,7 +90097,7 @@ h6 {
   color: var(--text-content-secondary-reversed);
 }
 
-.component-breadcrumbs-v2 {
+.component-breadcrumbs {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -90103,218 +90107,218 @@ h6 {
   gap: var(--space-100);
   color: var(--highlight-dark);
 }
-.component-breadcrumbs-v2 .component-link-v2 {
+.component-breadcrumbs .component-link {
   font-weight: 400;
 }
-.component-breadcrumbs-v2.reversed {
+.component-breadcrumbs.reversed {
   color: var(--text-content-reversed);
 }
-.component-breadcrumbs-v2.reversed strong {
+.component-breadcrumbs.reversed strong {
   color: var(--highlight-light);
 }
 
-.button-v2 {
+.button, .wp-block-button.is-style-ghost .wp-block-button__link.wp-element-button, .wp-block-button.is-style-secondary .wp-block-button__link.wp-element-button, .wp-block-button.is-style-default .wp-block-button__link.wp-element-button, .wp-block-button .wp-block-button__link.wp-element-button {
   border-radius: var(--interactive-corner-radius-md);
   padding: var(--space-200);
   font-size: var(--button-label-md-font-size);
   font-weight: var(--button-label-md-font-weight);
   line-height: var(--button-label-md-line-height);
 }
-.button-v2 .component-icon {
+.button .component-icon, .wp-block-button .wp-block-button__link.wp-element-button .component-icon {
   font-size: 16px;
 }
-.button-v2--sm {
+.button--sm {
   border-radius: var(--interactive-corner-radius-md);
   padding: var(--space-150);
   font-size: var(--button-label-sm-font-size);
   font-weight: var(--button-label-sm-font-weight);
   line-height: var(--button-label-sm-line-height);
 }
-.button-v2--sm .component-icon {
+.button--sm .component-icon {
   font-size: 16px;
 }
-.button-v2--lg {
+.button--lg {
   border-radius: var(--interactive-corner-radius-lg);
   padding: var(--space-250);
   font-size: var(--button-label-lg-font-size);
   font-weight: var(--button-label-lg-font-weight);
   line-height: var(--button-label-lg-line-height);
 }
-.button-v2--lg .component-icon {
+.button--lg .component-icon {
   font-size: 24px;
 }
-.button-v2--primary:not(.button-v2--reversed) {
+.button--primary:not(.button--reversed), .wp-block-button .wp-block-button__link.wp-element-button:not(.button--reversed) {
   border-width: var(--border-interactive-md);
   border-color: transparent;
   background-color: var(--bg-interactive);
   color: var(--text-button-label-reversed);
 }
-.button-v2--primary:not(.button-v2--reversed):hover {
+.button--primary:not(.button--reversed):hover, .wp-block-button .wp-block-button__link.wp-element-button:not(.button--reversed):hover {
   border-color: var(--border-interactive);
   background-color: transparent;
   color: var(--text-button-label);
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.button-v2--primary:not(.button-v2--reversed):focus {
+.button--primary:not(.button--reversed):focus, .wp-block-button .wp-block-button__link.wp-element-button:not(.button--reversed):focus {
   border-color: var(--border-interactive);
   background-color: var(--highlight-light);
   color: var(--text-button-label);
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.button-v2--primary:not(.button-v2--reversed):active {
+.button--primary:not(.button--reversed):active, .wp-block-button .wp-block-button__link.wp-element-button:not(.button--reversed):active {
   border-color: transparent;
   background-color: var(--highlight-light);
   color: var(--text-button-label);
 }
-.button-v2--secondary:not(.button-v2--reversed) {
+.button--secondary:not(.button--reversed), .wp-block-button.is-style-ghost .wp-block-button__link.wp-element-button:not(.button--reversed), .wp-block-button.is-style-secondary .wp-block-button__link.wp-element-button:not(.button--reversed) {
   border-width: var(--border-interactive-md);
   border-color: var(--border-interactive);
   background-color: transparent;
   color: var(--text-button-label);
 }
-.button-v2--secondary:not(.button-v2--reversed):hover {
+.button--secondary:not(.button--reversed):hover, .wp-block-button.is-style-ghost .wp-block-button__link.wp-element-button:not(.button--reversed):hover, .wp-block-button.is-style-secondary .wp-block-button__link.wp-element-button:not(.button--reversed):hover {
   background-color: var(--bg-interactive);
   color: var(--text-button-label-reversed);
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.button-v2--secondary:not(.button-v2--reversed):focus {
+.button--secondary:not(.button--reversed):focus, .wp-block-button.is-style-ghost .wp-block-button__link.wp-element-button:not(.button--reversed):focus, .wp-block-button.is-style-secondary .wp-block-button__link.wp-element-button:not(.button--reversed):focus {
   background-color: var(--highlight-dark);
   color: var(--text-button-label-reversed);
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.button-v2--secondary:not(.button-v2--reversed):active {
+.button--secondary:not(.button--reversed):active, .wp-block-button.is-style-ghost .wp-block-button__link.wp-element-button:not(.button--reversed):active, .wp-block-button.is-style-secondary .wp-block-button__link.wp-element-button:not(.button--reversed):active {
   background-color: var(--highlight-dark);
   color: var(--text-button-label-reversed);
 }
-.button-v2--ghost:not(.button-v2--reversed) {
+.button--ghost:not(.button--reversed) {
   color: var(--text-button-label);
 }
-.button-v2--ghost:not(.button-v2--reversed):hover {
+.button--ghost:not(.button--reversed):hover {
   background-color: var(--bg-interactive);
   color: var(--text-button-label-reversed);
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.button-v2--ghost:not(.button-v2--reversed):focus {
+.button--ghost:not(.button--reversed):focus {
   background-color: var(--highlight-dark);
   color: var(--text-button-label-reversed);
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.button-v2--ghost:not(.button-v2--reversed):active {
+.button--ghost:not(.button--reversed):active {
   background-color: var(--highlight-light);
   color: var(--text-button-label);
 }
-.button-v2--primary.button-v2--reversed {
+.button--primary.button--reversed, .wp-block-button .button--reversed.wp-block-button__link.wp-element-button {
   border-width: var(--border-interactive-md);
   border-color: transparent;
   background-color: var(--bg-interactive-reversed);
   color: var(--text-button-label);
 }
-.button-v2--primary.button-v2--reversed:hover {
+.button--primary.button--reversed:hover, .wp-block-button .button--reversed.wp-block-button__link.wp-element-button:hover {
   border-color: var(--border-interactive-reversed);
   background-color: transparent;
   color: var(--text-button-label-reversed);
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.button-v2--primary.button-v2--reversed:focus {
+.button--primary.button--reversed:focus, .wp-block-button .button--reversed.wp-block-button__link.wp-element-button:focus {
   border-color: var(--border-interactive-reversed);
   background-color: var(--highlight-dark);
   color: var(--text-button-label-reversed);
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.button-v2--primary.button-v2--reversed:active {
+.button--primary.button--reversed:active, .wp-block-button .button--reversed.wp-block-button__link.wp-element-button:active {
   background-color: var(--highlight-light);
   color: var(--text-button-label);
 }
-.button-v2--secondary.button-v2--reversed {
+.button--secondary.button--reversed, .wp-block-button.is-style-ghost .button--reversed.wp-block-button__link.wp-element-button, .wp-block-button.is-style-secondary .button--reversed.wp-block-button__link.wp-element-button {
   border-width: var(--border-interactive-md);
   border-color: var(--border-interactive-reversed);
   background-color: transparent;
   color: var(--text-button-label-reversed);
 }
-.button-v2--secondary.button-v2--reversed:hover {
+.button--secondary.button--reversed:hover, .wp-block-button.is-style-ghost .button--reversed.wp-block-button__link.wp-element-button:hover, .wp-block-button.is-style-secondary .button--reversed.wp-block-button__link.wp-element-button:hover {
   background-color: var(--bg-interactive-reversed);
   color: var(--text-button-label);
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.button-v2--secondary.button-v2--reversed:focus {
+.button--secondary.button--reversed:focus, .wp-block-button.is-style-ghost .button--reversed.wp-block-button__link.wp-element-button:focus, .wp-block-button.is-style-secondary .button--reversed.wp-block-button__link.wp-element-button:focus {
   background-color: var(--highlight-light);
   color: var(--text-button-label);
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.button-v2--secondary.button-v2--reversed:active {
+.button--secondary.button--reversed:active, .wp-block-button.is-style-ghost .button--reversed.wp-block-button__link.wp-element-button:active, .wp-block-button.is-style-secondary .button--reversed.wp-block-button__link.wp-element-button:active {
   background-color: var(--highlight-light);
   color: var(--text-button-label);
 }
-.button-v2--ghost.button-v2--reversed {
+.button--ghost.button--reversed {
   color: var(--text-button-label-reversed);
 }
-.button-v2--ghost.button-v2--reversed:hover {
+.button--ghost.button--reversed:hover {
   background-color: var(--bg-interactive-reversed);
   color: var(--text-button-label);
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.button-v2--ghost.button-v2--reversed:focus {
+.button--ghost.button--reversed:focus {
   background-color: var(--highlight-light);
   color: var(--text-button-label);
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.button-v2--ghost.button-v2--reversed:active {
+.button--ghost.button--reversed:active {
   background-color: var(--highlight-light);
   color: var(--text-button-label);
 }
-.button-v2--primary.button-v2--disabled {
+.button--primary.button--disabled, .wp-block-button .button--disabled.wp-block-button__link.wp-element-button {
   pointer-events: none !important;
   border-color: transparent !important;
   background-color: var(--bg-disabled) !important;
   color: var(--text-disabled) !important;
 }
-.button-v2--secondary.button-v2--disabled {
+.button--secondary.button--disabled, .wp-block-button.is-style-ghost .button--disabled.wp-block-button__link.wp-element-button, .wp-block-button.is-style-secondary .button--disabled.wp-block-button__link.wp-element-button {
   pointer-events: none !important;
   border-color: var(--border-disabled) !important;
   background-color: var(--bg-transparent) !important;
   color: var(--text-disabled) !important;
 }
-.button-v2--ghost.button-v2--disabled {
+.button--ghost.button--disabled {
   pointer-events: none !important;
   color: var(--text-disabled) !important;
 }
-.button-v2--primary.button-v2--disabled.button-v2--reversed {
+.button--primary.button--disabled.button--reversed, .wp-block-button .button--disabled.button--reversed.wp-block-button__link.wp-element-button {
   pointer-events: none !important;
   border-color: transparent !important;
   background-color: var(--bg-disabled) !important;
   color: var(--text-disabled) !important;
 }
-.button-v2--secondary.button-v2--disabled.button-v2--reversed {
+.button--secondary.button--disabled.button--reversed, .wp-block-button.is-style-ghost .button--disabled.button--reversed.wp-block-button__link.wp-element-button, .wp-block-button.is-style-secondary .button--disabled.button--reversed.wp-block-button__link.wp-element-button {
   pointer-events: none !important;
   border-color: var(--border-disabled) !important;
   background-color: var(--bg-transparent) !important;
   color: var(--text-disabled) !important;
 }
-.button-v2--ghost.button-v2--disabled.button-v2--reversed {
+.button--ghost.button--disabled.button--reversed {
   pointer-events: none !important;
   border-color: transparent !important;
   color: var(--text-disabled) !important;
 }
-.social-links-v2 .button-v2 {
+.social-links .button, .social-links .wp-block-button .wp-block-button__link.wp-element-button, .wp-block-button .social-links .wp-block-button__link.wp-element-button {
   border-radius: var(--social-media-radius);
   border-width: var(--border-footer-social);
   border-color: transparent;
   background-color: var(--nav-footer-social-bg);
   color: var(--nav-footer-social-text);
 }
-.social-links-v2 .button-v2:hover {
+.social-links .button:hover, .social-links .wp-block-button .wp-block-button__link.wp-element-button:hover, .wp-block-button .social-links .wp-block-button__link.wp-element-button:hover {
   border-color: var(--nav-footer-social-border-hover);
   background-color: transparent;
   color: var(--nav-footer-social-text-hover);
@@ -90650,7 +90654,7 @@ h6 {
 .component-card-event .card__topics > * {
   display: inline-block;
 }
-.component-card-event .card__topics > * .component-tag-v2 {
+.component-card-event .card__topics > * .component-tag {
   display: inline-block;
 }
 
@@ -90775,7 +90779,7 @@ h6 {
 .component-card-listing .card__topics > * {
   display: inline-block;
 }
-.component-card-listing .card__topics > * .component-tag-v2 {
+.component-card-listing .card__topics > * .component-tag {
   display: inline-block;
 }
 .component-card-listing__content {
@@ -90869,7 +90873,7 @@ h6 {
   line-height: var(--date-label-md-line-height);
 }
 
-.component-card-product-v2,
+.component-card-product,
 .product {
   position: relative;
   display: -webkit-box;
@@ -90892,7 +90896,7 @@ h6 {
   -webkit-filter: drop-shadow(var(--elevation-4));
   filter: drop-shadow(var(--elevation-4));
 }
-.component-card-product-v2 .onsale,
+.component-card-product .onsale,
 .product .onsale {
   position: absolute;
   top: 12px;
@@ -90906,7 +90910,7 @@ h6 {
   text-transform: uppercase;
   line-height: var(--label-md-line-height);
 }
-.component-card-product-v2 .price,
+.component-card-product .price,
 .product .price {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -90919,152 +90923,118 @@ h6 {
   font-weight: var(--body-lg-font-weight);
   line-height: var(--body-lg-line-height);
 }
-.component-card-product-v2 .price del,
+.component-card-product .price del,
 .product .price del {
   color: var(--text-content-secondary);
 }
-.component-card-product-v2 .price ins,
+.component-card-product .price ins,
 .product .price ins {
   text-decoration: none;
 }
-.component-card-product-v2 .button, .component-card-product-v2 .wp-block-button .wp-block-button__link.wp-element-button, .wp-block-button .component-card-product-v2 .wp-block-button__link.wp-element-button,
-.product .button,
-.product .wp-block-button .wp-block-button__link.wp-element-button,
-.wp-block-button .product .wp-block-button__link.wp-element-button {
-  border-radius: var(--interactive-corner-radius-md);
-  padding: var(--space-200);
-  font-size: var(--button-label-md-font-size);
-  font-weight: var(--button-label-md-font-weight);
-  line-height: var(--button-label-md-line-height);
-}
-.component-card-product-v2 .button .component-icon, .component-card-product-v2 .wp-block-button .wp-block-button__link.wp-element-button .component-icon, .wp-block-button .component-card-product-v2 .wp-block-button__link.wp-element-button .component-icon,
-.product .button .component-icon,
-.product .wp-block-button .wp-block-button__link.wp-element-button .component-icon,
-.wp-block-button .product .wp-block-button__link.wp-element-button .component-icon {
-  font-size: 16px;
-}
-.component-card-product-v2 .button:not(.button-v2--reversed), .component-card-product-v2 .wp-block-button .wp-block-button__link.wp-element-button:not(.button-v2--reversed), .wp-block-button .component-card-product-v2 .wp-block-button__link.wp-element-button:not(.button-v2--reversed),
-.product .button:not(.button-v2--reversed),
-.product .wp-block-button .wp-block-button__link.wp-element-button:not(.button-v2--reversed),
-.wp-block-button .product .wp-block-button__link.wp-element-button:not(.button-v2--reversed) {
+.component-card-product .button:not(.button--reversed), .component-card-product .wp-block-button .wp-block-button__link.wp-element-button:not(.button--reversed), .wp-block-button .component-card-product .wp-block-button__link.wp-element-button:not(.button--reversed),
+.product .button:not(.button--reversed),
+.product .wp-block-button .wp-block-button__link.wp-element-button:not(.button--reversed),
+.wp-block-button .product .wp-block-button__link.wp-element-button:not(.button--reversed) {
   border-width: var(--border-interactive-md);
   border-color: transparent;
   background-color: var(--bg-interactive);
   color: var(--text-button-label-reversed);
 }
-.component-card-product-v2 .button:not(.button-v2--reversed):hover, .component-card-product-v2 .wp-block-button .wp-block-button__link.wp-element-button:not(.button-v2--reversed):hover, .wp-block-button .component-card-product-v2 .wp-block-button__link.wp-element-button:not(.button-v2--reversed):hover,
-.product .button:not(.button-v2--reversed):hover,
-.product .wp-block-button .wp-block-button__link.wp-element-button:not(.button-v2--reversed):hover,
-.wp-block-button .product .wp-block-button__link.wp-element-button:not(.button-v2--reversed):hover {
+.component-card-product .button:not(.button--reversed):hover, .component-card-product .wp-block-button .wp-block-button__link.wp-element-button:not(.button--reversed):hover, .wp-block-button .component-card-product .wp-block-button__link.wp-element-button:not(.button--reversed):hover,
+.product .button:not(.button--reversed):hover,
+.product .wp-block-button .wp-block-button__link.wp-element-button:not(.button--reversed):hover,
+.wp-block-button .product .wp-block-button__link.wp-element-button:not(.button--reversed):hover {
   border-color: var(--border-interactive);
   background-color: transparent;
   color: var(--text-button-label);
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.component-card-product-v2 .button:not(.button-v2--reversed):focus, .component-card-product-v2 .wp-block-button .wp-block-button__link.wp-element-button:not(.button-v2--reversed):focus, .wp-block-button .component-card-product-v2 .wp-block-button__link.wp-element-button:not(.button-v2--reversed):focus,
-.product .button:not(.button-v2--reversed):focus,
-.product .wp-block-button .wp-block-button__link.wp-element-button:not(.button-v2--reversed):focus,
-.wp-block-button .product .wp-block-button__link.wp-element-button:not(.button-v2--reversed):focus {
+.component-card-product .button:not(.button--reversed):focus, .component-card-product .wp-block-button .wp-block-button__link.wp-element-button:not(.button--reversed):focus, .wp-block-button .component-card-product .wp-block-button__link.wp-element-button:not(.button--reversed):focus,
+.product .button:not(.button--reversed):focus,
+.product .wp-block-button .wp-block-button__link.wp-element-button:not(.button--reversed):focus,
+.wp-block-button .product .wp-block-button__link.wp-element-button:not(.button--reversed):focus {
   border-color: var(--border-interactive);
   background-color: var(--highlight-light);
   color: var(--text-button-label);
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.component-card-product-v2 .button:not(.button-v2--reversed):active, .component-card-product-v2 .wp-block-button .wp-block-button__link.wp-element-button:not(.button-v2--reversed):active, .wp-block-button .component-card-product-v2 .wp-block-button__link.wp-element-button:not(.button-v2--reversed):active,
-.product .button:not(.button-v2--reversed):active,
-.product .wp-block-button .wp-block-button__link.wp-element-button:not(.button-v2--reversed):active,
-.wp-block-button .product .wp-block-button__link.wp-element-button:not(.button-v2--reversed):active {
+.component-card-product .button:not(.button--reversed):active, .component-card-product .wp-block-button .wp-block-button__link.wp-element-button:not(.button--reversed):active, .wp-block-button .component-card-product .wp-block-button__link.wp-element-button:not(.button--reversed):active,
+.product .button:not(.button--reversed):active,
+.product .wp-block-button .wp-block-button__link.wp-element-button:not(.button--reversed):active,
+.wp-block-button .product .wp-block-button__link.wp-element-button:not(.button--reversed):active {
   border-color: transparent;
   background-color: var(--highlight-light);
   color: var(--text-button-label);
 }
-.component-card-product-v2 .button.button-v2--reversed, .component-card-product-v2 .wp-block-button .wp-block-button__link.wp-element-button.button-v2--reversed, .wp-block-button .component-card-product-v2 .wp-block-button__link.wp-element-button.button-v2--reversed,
-.product .button.button-v2--reversed,
-.product .wp-block-button .wp-block-button__link.wp-element-button.button-v2--reversed,
-.wp-block-button .product .wp-block-button__link.wp-element-button.button-v2--reversed {
+.component-card-product .button.button--reversed, .component-card-product .wp-block-button .wp-block-button__link.wp-element-button.button--reversed, .wp-block-button .component-card-product .wp-block-button__link.wp-element-button.button--reversed,
+.product .button.button--reversed,
+.product .wp-block-button .wp-block-button__link.wp-element-button.button--reversed,
+.wp-block-button .product .wp-block-button__link.wp-element-button.button--reversed {
   border-width: var(--border-interactive-md);
   border-color: transparent;
   background-color: var(--bg-interactive-reversed);
   color: var(--text-button-label);
 }
-.component-card-product-v2 .button.button-v2--reversed:hover, .component-card-product-v2 .wp-block-button .wp-block-button__link.wp-element-button.button-v2--reversed:hover, .wp-block-button .component-card-product-v2 .wp-block-button__link.wp-element-button.button-v2--reversed:hover,
-.product .button.button-v2--reversed:hover,
-.product .wp-block-button .wp-block-button__link.wp-element-button.button-v2--reversed:hover,
-.wp-block-button .product .wp-block-button__link.wp-element-button.button-v2--reversed:hover {
+.component-card-product .button.button--reversed:hover, .component-card-product .wp-block-button .wp-block-button__link.wp-element-button.button--reversed:hover, .wp-block-button .component-card-product .wp-block-button__link.wp-element-button.button--reversed:hover,
+.product .button.button--reversed:hover,
+.product .wp-block-button .wp-block-button__link.wp-element-button.button--reversed:hover,
+.wp-block-button .product .wp-block-button__link.wp-element-button.button--reversed:hover {
   border-color: var(--border-interactive-reversed);
   background-color: transparent;
   color: var(--text-button-label-reversed);
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.component-card-product-v2 .button.button-v2--reversed:focus, .component-card-product-v2 .wp-block-button .wp-block-button__link.wp-element-button.button-v2--reversed:focus, .wp-block-button .component-card-product-v2 .wp-block-button__link.wp-element-button.button-v2--reversed:focus,
-.product .button.button-v2--reversed:focus,
-.product .wp-block-button .wp-block-button__link.wp-element-button.button-v2--reversed:focus,
-.wp-block-button .product .wp-block-button__link.wp-element-button.button-v2--reversed:focus {
+.component-card-product .button.button--reversed:focus, .component-card-product .wp-block-button .wp-block-button__link.wp-element-button.button--reversed:focus, .wp-block-button .component-card-product .wp-block-button__link.wp-element-button.button--reversed:focus,
+.product .button.button--reversed:focus,
+.product .wp-block-button .wp-block-button__link.wp-element-button.button--reversed:focus,
+.wp-block-button .product .wp-block-button__link.wp-element-button.button--reversed:focus {
   border-color: var(--border-interactive-reversed);
   background-color: var(--highlight-dark);
   color: var(--text-button-label-reversed);
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.component-card-product-v2 .button.button-v2--reversed:active, .component-card-product-v2 .wp-block-button .wp-block-button__link.wp-element-button.button-v2--reversed:active, .wp-block-button .component-card-product-v2 .wp-block-button__link.wp-element-button.button-v2--reversed:active,
-.product .button.button-v2--reversed:active,
-.product .wp-block-button .wp-block-button__link.wp-element-button.button-v2--reversed:active,
-.wp-block-button .product .wp-block-button__link.wp-element-button.button-v2--reversed:active {
+.component-card-product .button.button--reversed:active, .component-card-product .wp-block-button .wp-block-button__link.wp-element-button.button--reversed:active, .wp-block-button .component-card-product .wp-block-button__link.wp-element-button.button--reversed:active,
+.product .button.button--reversed:active,
+.product .wp-block-button .wp-block-button__link.wp-element-button.button--reversed:active,
+.wp-block-button .product .wp-block-button__link.wp-element-button.button--reversed:active {
   background-color: var(--highlight-light);
   color: var(--text-button-label);
 }
-.component-card-product-v2 .button.button-v2--disabled, .component-card-product-v2 .wp-block-button .wp-block-button__link.wp-element-button.button-v2--disabled, .wp-block-button .component-card-product-v2 .wp-block-button__link.wp-element-button.button-v2--disabled,
-.product .button.button-v2--disabled,
-.product .wp-block-button .wp-block-button__link.wp-element-button.button-v2--disabled,
-.wp-block-button .product .wp-block-button__link.wp-element-button.button-v2--disabled {
+.component-card-product .button.button--disabled, .component-card-product .wp-block-button .wp-block-button__link.wp-element-button.button--disabled, .wp-block-button .component-card-product .wp-block-button__link.wp-element-button.button--disabled,
+.product .button.button--disabled,
+.product .wp-block-button .wp-block-button__link.wp-element-button.button--disabled,
+.wp-block-button .product .wp-block-button__link.wp-element-button.button--disabled {
   pointer-events: none !important;
   border-color: transparent !important;
   background-color: var(--bg-disabled) !important;
   color: var(--text-disabled) !important;
 }
-.component-card-product-v2 .button.button-v2--disabled.button-v2--reversed, .component-card-product-v2 .wp-block-button .wp-block-button__link.wp-element-button.button-v2--disabled.button-v2--reversed, .wp-block-button .component-card-product-v2 .wp-block-button__link.wp-element-button.button-v2--disabled.button-v2--reversed,
-.product .button.button-v2--disabled.button-v2--reversed,
-.product .wp-block-button .wp-block-button__link.wp-element-button.button-v2--disabled.button-v2--reversed,
-.wp-block-button .product .wp-block-button__link.wp-element-button.button-v2--disabled.button-v2--reversed {
+.component-card-product .button.button--disabled.button--reversed, .component-card-product .wp-block-button .wp-block-button__link.wp-element-button.button--disabled.button--reversed, .wp-block-button .component-card-product .wp-block-button__link.wp-element-button.button--disabled.button--reversed,
+.product .button.button--disabled.button--reversed,
+.product .wp-block-button .wp-block-button__link.wp-element-button.button--disabled.button--reversed,
+.wp-block-button .product .wp-block-button__link.wp-element-button.button--disabled.button--reversed {
   pointer-events: none !important;
   border-color: transparent !important;
   background-color: var(--bg-disabled) !important;
   color: var(--text-disabled) !important;
 }
-.social-links-v2 .component-card-product-v2 .button,.social-links-v2  .component-card-product-v2 .wp-block-button .wp-block-button__link.wp-element-button,.social-links-v2  .wp-block-button .component-card-product-v2 .wp-block-button__link.wp-element-button,.social-links-v2 
-.product .button,.social-links-v2 
-.product .wp-block-button .wp-block-button__link.wp-element-button,.social-links-v2 
-.wp-block-button .product .wp-block-button__link.wp-element-button {
-  border-radius: var(--social-media-radius);
-  border-width: var(--border-footer-social);
-  border-color: transparent;
-  background-color: var(--nav-footer-social-bg);
-  color: var(--nav-footer-social-text);
-}
-.social-links-v2 .component-card-product-v2 .button:hover,.social-links-v2  .component-card-product-v2 .wp-block-button .wp-block-button__link.wp-element-button:hover,.social-links-v2  .wp-block-button .component-card-product-v2 .wp-block-button__link.wp-element-button:hover,.social-links-v2 
-.product .button:hover,.social-links-v2 
-.product .wp-block-button .wp-block-button__link.wp-element-button:hover,.social-links-v2 
-.wp-block-button .product .wp-block-button__link.wp-element-button:hover {
-  border-color: var(--nav-footer-social-border-hover);
-  background-color: transparent;
-  color: var(--nav-footer-social-text-hover);
-}
-.component-card-product-v2 .button, .component-card-product-v2 .wp-block-button .wp-block-button__link.wp-element-button, .wp-block-button .component-card-product-v2 .wp-block-button__link.wp-element-button,
+.component-card-product .button, .component-card-product .wp-block-button .wp-block-button__link.wp-element-button, .wp-block-button .component-card-product .wp-block-button__link.wp-element-button,
 .product .button,
 .product .wp-block-button .wp-block-button__link.wp-element-button,
 .wp-block-button .product .wp-block-button__link.wp-element-button {
   border: var(--border-interactive-md) solid var(--border-interactive);
 }
-.component-card-product-v2 .button:hover, .component-card-product-v2 .wp-block-button .wp-block-button__link.wp-element-button:hover, .wp-block-button .component-card-product-v2 .wp-block-button__link.wp-element-button:hover,
+.component-card-product .button:hover, .component-card-product .wp-block-button .wp-block-button__link.wp-element-button:hover, .wp-block-button .component-card-product .wp-block-button__link.wp-element-button:hover,
 .product .button:hover,
 .product .wp-block-button .wp-block-button__link.wp-element-button:hover,
 .wp-block-button .product .wp-block-button__link.wp-element-button:hover {
   border: var(--border-interactive-md) solid var(--border-interactive);
 }
-.component-card-product-v2 .button.product_type_external:after, .component-card-product-v2 .wp-block-button .product_type_external.wp-block-button__link.wp-element-button:after, .wp-block-button .component-card-product-v2 .product_type_external.wp-block-button__link.wp-element-button:after,
+.component-card-product .button.product_type_external:after, .component-card-product .wp-block-button .product_type_external.wp-block-button__link.wp-element-button:after, .wp-block-button .component-card-product .product_type_external.wp-block-button__link.wp-element-button:after,
 .product .button.product_type_external:after,
 .product .wp-block-button .product_type_external.wp-block-button__link.wp-element-button:after,
 .wp-block-button .product .product_type_external.wp-block-button__link.wp-element-button:after {
@@ -91075,22 +91045,22 @@ h6 {
   margin-left: 4px;
   font-size: 90%;
 }
-.component-card-product-v2 .button .add_to_cart_button__text-added, .component-card-product-v2 .wp-block-button .wp-block-button__link.wp-element-button .add_to_cart_button__text-added, .wp-block-button .component-card-product-v2 .wp-block-button__link.wp-element-button .add_to_cart_button__text-added,
+.component-card-product .button .add_to_cart_button__text-added, .component-card-product .wp-block-button .wp-block-button__link.wp-element-button .add_to_cart_button__text-added, .wp-block-button .component-card-product .wp-block-button__link.wp-element-button .add_to_cart_button__text-added,
 .product .button .add_to_cart_button__text-added,
 .product .wp-block-button .wp-block-button__link.wp-element-button .add_to_cart_button__text-added,
 .wp-block-button .product .wp-block-button__link.wp-element-button .add_to_cart_button__text-added {
   display: none;
 }
-form .wicket-form-help-text.component-card-product-v2 .button .add_to_cart_button__text-added,
-form p.wicket-form-help-text.component-card-product-v2 .button .add_to_cart_button__text-added,
-.form .wicket-form-help-text.component-card-product-v2 .button .add_to_cart_button__text-added,
-.form p.wicket-form-help-text.component-card-product-v2 .button .add_to_cart_button__text-added,form .wicket-form-help-text .component-card-product-v2 .wp-block-button .wp-block-button__link.wp-element-button .add_to_cart_button__text-added,
-form p.wicket-form-help-text .component-card-product-v2 .wp-block-button .wp-block-button__link.wp-element-button .add_to_cart_button__text-added,
-.form .wicket-form-help-text .component-card-product-v2 .wp-block-button .wp-block-button__link.wp-element-button .add_to_cart_button__text-added,
-.form p.wicket-form-help-text .component-card-product-v2 .wp-block-button .wp-block-button__link.wp-element-button .add_to_cart_button__text-added,form .wicket-form-help-text .wp-block-button .component-card-product-v2 .wp-block-button__link.wp-element-button .add_to_cart_button__text-added,
-form p.wicket-form-help-text .wp-block-button .component-card-product-v2 .wp-block-button__link.wp-element-button .add_to_cart_button__text-added,
-.form .wicket-form-help-text .wp-block-button .component-card-product-v2 .wp-block-button__link.wp-element-button .add_to_cart_button__text-added,
-.form p.wicket-form-help-text .wp-block-button .component-card-product-v2 .wp-block-button__link.wp-element-button .add_to_cart_button__text-added,form .wicket-form-help-text
+form .wicket-form-help-text.component-card-product .button .add_to_cart_button__text-added,
+form p.wicket-form-help-text.component-card-product .button .add_to_cart_button__text-added,
+.form .wicket-form-help-text.component-card-product .button .add_to_cart_button__text-added,
+.form p.wicket-form-help-text.component-card-product .button .add_to_cart_button__text-added,form .wicket-form-help-text .component-card-product .wp-block-button .wp-block-button__link.wp-element-button .add_to_cart_button__text-added,
+form p.wicket-form-help-text .component-card-product .wp-block-button .wp-block-button__link.wp-element-button .add_to_cart_button__text-added,
+.form .wicket-form-help-text .component-card-product .wp-block-button .wp-block-button__link.wp-element-button .add_to_cart_button__text-added,
+.form p.wicket-form-help-text .component-card-product .wp-block-button .wp-block-button__link.wp-element-button .add_to_cart_button__text-added,form .wicket-form-help-text .wp-block-button .component-card-product .wp-block-button__link.wp-element-button .add_to_cart_button__text-added,
+form p.wicket-form-help-text .wp-block-button .component-card-product .wp-block-button__link.wp-element-button .add_to_cart_button__text-added,
+.form .wicket-form-help-text .wp-block-button .component-card-product .wp-block-button__link.wp-element-button .add_to_cart_button__text-added,
+.form p.wicket-form-help-text .wp-block-button .component-card-product .wp-block-button__link.wp-element-button .add_to_cart_button__text-added,form .wicket-form-help-text
 .product .button .add_to_cart_button__text-added,
 form p.wicket-form-help-text
 .product .button .add_to_cart_button__text-added,
@@ -91114,34 +91084,34 @@ form p.wicket-form-help-text
 .wp-block-button .product .wp-block-button__link.wp-element-button .add_to_cart_button__text-added {
   display: none;
 }
-.component-card-product-v2 .button .add_to_cart_button__text, .component-card-product-v2 .wp-block-button .wp-block-button__link.wp-element-button .add_to_cart_button__text, .wp-block-button .component-card-product-v2 .wp-block-button__link.wp-element-button .add_to_cart_button__text,
+.component-card-product .button .add_to_cart_button__text, .component-card-product .wp-block-button .wp-block-button__link.wp-element-button .add_to_cart_button__text, .wp-block-button .component-card-product .wp-block-button__link.wp-element-button .add_to_cart_button__text,
 .product .button .add_to_cart_button__text,
 .product .wp-block-button .wp-block-button__link.wp-element-button .add_to_cart_button__text,
 .wp-block-button .product .wp-block-button__link.wp-element-button .add_to_cart_button__text {
   display: block;
 }
-.component-card-product-v2 .button.added .add_to_cart_button__text-added, .component-card-product-v2 .wp-block-button .added.wp-block-button__link.wp-element-button .add_to_cart_button__text-added, .wp-block-button .component-card-product-v2 .added.wp-block-button__link.wp-element-button .add_to_cart_button__text-added,
+.component-card-product .button.added .add_to_cart_button__text-added, .component-card-product .wp-block-button .added.wp-block-button__link.wp-element-button .add_to_cart_button__text-added, .wp-block-button .component-card-product .added.wp-block-button__link.wp-element-button .add_to_cart_button__text-added,
 .product .button.added .add_to_cart_button__text-added,
 .product .wp-block-button .added.wp-block-button__link.wp-element-button .add_to_cart_button__text-added,
 .wp-block-button .product .added.wp-block-button__link.wp-element-button .add_to_cart_button__text-added {
   display: block;
 }
-.component-card-product-v2 .button.added .add_to_cart_button__text, .component-card-product-v2 .wp-block-button .added.wp-block-button__link.wp-element-button .add_to_cart_button__text, .wp-block-button .component-card-product-v2 .added.wp-block-button__link.wp-element-button .add_to_cart_button__text,
+.component-card-product .button.added .add_to_cart_button__text, .component-card-product .wp-block-button .added.wp-block-button__link.wp-element-button .add_to_cart_button__text, .wp-block-button .component-card-product .added.wp-block-button__link.wp-element-button .add_to_cart_button__text,
 .product .button.added .add_to_cart_button__text,
 .product .wp-block-button .added.wp-block-button__link.wp-element-button .add_to_cart_button__text,
 .wp-block-button .product .added.wp-block-button__link.wp-element-button .add_to_cart_button__text {
   display: none;
 }
-form .wicket-form-help-text.component-card-product-v2 .button.added .add_to_cart_button__text,
-form p.wicket-form-help-text.component-card-product-v2 .button.added .add_to_cart_button__text,
-.form .wicket-form-help-text.component-card-product-v2 .button.added .add_to_cart_button__text,
-.form p.wicket-form-help-text.component-card-product-v2 .button.added .add_to_cart_button__text,form .wicket-form-help-text .component-card-product-v2 .wp-block-button .added.wp-block-button__link.wp-element-button .add_to_cart_button__text,
-form p.wicket-form-help-text .component-card-product-v2 .wp-block-button .added.wp-block-button__link.wp-element-button .add_to_cart_button__text,
-.form .wicket-form-help-text .component-card-product-v2 .wp-block-button .added.wp-block-button__link.wp-element-button .add_to_cart_button__text,
-.form p.wicket-form-help-text .component-card-product-v2 .wp-block-button .added.wp-block-button__link.wp-element-button .add_to_cart_button__text,form .wicket-form-help-text .wp-block-button .component-card-product-v2 .added.wp-block-button__link.wp-element-button .add_to_cart_button__text,
-form p.wicket-form-help-text .wp-block-button .component-card-product-v2 .added.wp-block-button__link.wp-element-button .add_to_cart_button__text,
-.form .wicket-form-help-text .wp-block-button .component-card-product-v2 .added.wp-block-button__link.wp-element-button .add_to_cart_button__text,
-.form p.wicket-form-help-text .wp-block-button .component-card-product-v2 .added.wp-block-button__link.wp-element-button .add_to_cart_button__text,form .wicket-form-help-text
+form .wicket-form-help-text.component-card-product .button.added .add_to_cart_button__text,
+form p.wicket-form-help-text.component-card-product .button.added .add_to_cart_button__text,
+.form .wicket-form-help-text.component-card-product .button.added .add_to_cart_button__text,
+.form p.wicket-form-help-text.component-card-product .button.added .add_to_cart_button__text,form .wicket-form-help-text .component-card-product .wp-block-button .added.wp-block-button__link.wp-element-button .add_to_cart_button__text,
+form p.wicket-form-help-text .component-card-product .wp-block-button .added.wp-block-button__link.wp-element-button .add_to_cart_button__text,
+.form .wicket-form-help-text .component-card-product .wp-block-button .added.wp-block-button__link.wp-element-button .add_to_cart_button__text,
+.form p.wicket-form-help-text .component-card-product .wp-block-button .added.wp-block-button__link.wp-element-button .add_to_cart_button__text,form .wicket-form-help-text .wp-block-button .component-card-product .added.wp-block-button__link.wp-element-button .add_to_cart_button__text,
+form p.wicket-form-help-text .wp-block-button .component-card-product .added.wp-block-button__link.wp-element-button .add_to_cart_button__text,
+.form .wicket-form-help-text .wp-block-button .component-card-product .added.wp-block-button__link.wp-element-button .add_to_cart_button__text,
+.form p.wicket-form-help-text .wp-block-button .component-card-product .added.wp-block-button__link.wp-element-button .add_to_cart_button__text,form .wicket-form-help-text
 .product .button.added .add_to_cart_button__text,
 form p.wicket-form-help-text
 .product .button.added .add_to_cart_button__text,
@@ -91165,7 +91135,7 @@ form p.wicket-form-help-text
 .wp-block-button .product .added.wp-block-button__link.wp-element-button .add_to_cart_button__text {
   display: none;
 }
-.component-card-product-v2 .button.button--disabled, .component-card-product-v2 .wp-block-button .button--disabled.wp-block-button__link.wp-element-button, .wp-block-button .component-card-product-v2 .button--disabled.wp-block-button__link.wp-element-button,
+.component-card-product .button.button--disabled, .component-card-product .wp-block-button .button--disabled.wp-block-button__link.wp-element-button, .wp-block-button .component-card-product .button--disabled.wp-block-button__link.wp-element-button,
 .product .button.button--disabled,
 .product .wp-block-button .button--disabled.wp-block-button__link.wp-element-button,
 .wp-block-button .product .button--disabled.wp-block-button__link.wp-element-button {
@@ -91174,7 +91144,7 @@ form p.wicket-form-help-text
   color: var(--text-disabled) !important;
 }
 
-.component-card-product-v2__title,
+.component-card-product__title,
 .woocommerce-loop-product__title {
   display: block;
   font-size: var(--heading-xs-font-size);
@@ -91184,7 +91154,7 @@ form p.wicket-form-help-text
 
 @media (min-width: 768px) {
 
-  .component-card-product-v2__title,
+  .component-card-product__title,
 .woocommerce-loop-product__title {
     font-weight: var(--heading-xs-font-weight-md);
   }
@@ -91390,7 +91360,7 @@ form p.wicket-form-help-text
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.component-breadcrumbs-v2 .component-filter-form__see-more {
+.component-breadcrumbs .component-filter-form__see-more {
   font-weight: 400;
 }
 .component-filter-form__see-more {
@@ -91409,13 +91379,13 @@ form p.wicket-form-help-text
   -webkit-box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
-.component-filter-form__see-more:not(.component-link-v2--reversed) {
+.component-filter-form__see-more:not(.component-link--reversed) {
   color: var(--interactive);
 }
-.component-filter-form__see-more:not(.component-link-v2--reversed):active {
+.component-filter-form__see-more:not(.component-link--reversed):active {
   color: var(--highlight-dark);
 }
-.component-filter-form__see-more:not(.component-link-v2--default):hover,.component-filter-form__see-more:not(.component-link-v2--default):focus {
+.component-filter-form__see-more:not(.component-link--default):hover,.component-filter-form__see-more:not(.component-link--default):focus {
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
@@ -91687,7 +91657,7 @@ form p.wicket-form-help-text.secondary-nav .component-filter-form__see-more,
   border-width: var(--image-corner-radius);
 }
 
-.component-link-v2 {
+.component-link {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -91698,71 +91668,71 @@ form p.wicket-form-help-text.secondary-nav .component-filter-form__see-more,
   font-weight: 700;
 }
 
-.component-link-v2:focus {
+.component-link:focus {
   --tw-shadow: 0px 0px 1px 2px #0997FF;
   --tw-shadow-colored: 0px 0px 1px 2px var(--tw-shadow-color);
   -webkit-box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
-.component-link-v2--lg {
+.component-link--lg {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
-.component-link-v2--lg .component-icon {
+.component-link--lg .component-icon {
   font-size: 1.5rem;
 }
-.component-link-v2--md {
+.component-link--md {
   font-size: 1rem;
   line-height: 1.5rem;
 }
-.component-link-v2--md .component-icon {
+.component-link--md .component-icon {
   font-size: 1rem;
 }
-.component-link-v2--sm {
+.component-link--sm {
   font-size: 0.75rem;
   line-height: 1.25rem;
 }
-.component-link-v2--sm .component-icon {
+.component-link--sm .component-icon {
   font-size: 1rem;
 }
-.component-link-v2:not(.component-link-v2--reversed) {
+.component-link:not(.component-link--reversed) {
   color: var(--interactive);
 }
-.component-link-v2:not(.component-link-v2--reversed):active {
+.component-link:not(.component-link--reversed):active {
   color: var(--highlight-dark);
 }
-.component-link-v2--reversed {
+.component-link--reversed {
   color: var(--interactive-reversed);
 }
-.component-link-v2--reversed:active {
+.component-link--reversed:active {
   color: var(--highlight-light);
 }
-.component-link-v2:not(.component-link-v2--default):hover, .component-link-v2:not(.component-link-v2--default):focus {
+.component-link:not(.component-link--default):hover, .component-link:not(.component-link--default):focus {
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.component-link-v2--default {
+.component-link--default {
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.component-link-v2--default:hover, .component-link-v2--default:focus, .component-link-v2--default:active {
+.component-link--default:hover, .component-link--default:focus, .component-link--default:active {
   -webkit-text-decoration-line: none;
   text-decoration-line: none;
 }
-.utility-nav .component-link-v2 {
+.utility-nav .component-link {
   padding-left: var(--space-200);
   padding-right: var(--space-200);
   padding-top: var(--space-075);
   padding-bottom: var(--space-075);
   color: var(--nav-utility-label);
 }
-.utility-nav .component-link-v2:active {
+.utility-nav .component-link:active {
   color: var(--nav-utility-label);
 }
-.utility-nav .component-link-v2:hover {
+.utility-nav .component-link:hover {
   background-color: var(--nav-utility-bg-highlight);
 }
-.utility-nav-mobile .component-link-v2 {
+.utility-nav-mobile .component-link {
   display: block;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -91770,13 +91740,13 @@ form p.wicket-form-help-text.secondary-nav .component-filter-form__see-more,
   padding-bottom: 0.5rem;
   color: var(--nav-utility-label);
 }
-.utility-nav-mobile .component-link-v2:active {
+.utility-nav-mobile .component-link:active {
   color: var(--nav-utility-label);
 }
-.utility-nav-mobile .component-link-v2:hover {
+.utility-nav-mobile .component-link:hover {
   background-color: var(--nav-utility-bg-highlight);
 }
-.secondary-nav-mobile .component-link-v2 {
+.secondary-nav-mobile .component-link {
   display: block;
   padding-left: var(--space-200);
   padding-right: var(--space-200);
@@ -91786,7 +91756,7 @@ form p.wicket-form-help-text.secondary-nav .component-filter-form__see-more,
   padding-bottom: 0.5rem;
   color: var(--nav-secondary-label);
 }
-.secondary-nav .component-link-v2 {
+.secondary-nav .component-link {
   margin-right: 1.75rem;
   display: none;
   -webkit-box-align: center;
@@ -91794,21 +91764,21 @@ form p.wicket-form-help-text.secondary-nav .component-filter-form__see-more,
   align-items: center;
   color: var(--nav-secondary-label);
 }
-form .wicket-form-help-text.secondary-nav .component-link-v2,
-form p.wicket-form-help-text.secondary-nav .component-link-v2,
-.form .wicket-form-help-text.secondary-nav .component-link-v2,
-.form p.wicket-form-help-text.secondary-nav .component-link-v2 {
+form .wicket-form-help-text.secondary-nav .component-link,
+form p.wicket-form-help-text.secondary-nav .component-link,
+.form .wicket-form-help-text.secondary-nav .component-link,
+.form p.wicket-form-help-text.secondary-nav .component-link {
   display: none;
 }
 @media (min-width: 1024px) {
 
-  .secondary-nav .component-link-v2 {
+  .secondary-nav .component-link {
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex;
   }
 }
-.main-nav__single-menu-item .component-link-v2, .component-link-v2.single-nav-item-mobile {
+.main-nav__single-menu-item .component-link, .component-link.single-nav-item-mobile {
   position: relative;
   display: block;
   border-top-left-radius: var(--main-menu-highlight-radius);
@@ -91819,17 +91789,17 @@ form p.wicket-form-help-text.secondary-nav .component-link-v2,
   font-weight: 400;
   color: var(--nav-main-label);
 }
-.main-nav__single-menu-item .component-link-v2:hover, .component-link-v2.single-nav-item-mobile:hover {
+.main-nav__single-menu-item .component-link:hover, .component-link.single-nav-item-mobile:hover {
   cursor: pointer;
   border-color: var(--nav-main-border-interactive);
 }
-.main-nav__single-menu-item .component-link-v2:active, .main-nav__single-menu-item .component-link-v2.open, .component-link-v2.single-nav-item-mobile:active, .component-link-v2.single-nav-item-mobile.open {
+.main-nav__single-menu-item .component-link:active, .main-nav__single-menu-item .component-link.open, .component-link.single-nav-item-mobile:active, .component-link.single-nav-item-mobile.open {
   border-bottom-width: var(--border-lg);
 }
-.main-nav__single-menu-item .component-link-v2:focus, .main-nav__single-menu-item .component-link-v2:active, .main-nav__single-menu-item .component-link-v2.open, .component-link-v2.single-nav-item-mobile:focus, .component-link-v2.single-nav-item-mobile:active, .component-link-v2.single-nav-item-mobile.open {
+.main-nav__single-menu-item .component-link:focus, .main-nav__single-menu-item .component-link:active, .main-nav__single-menu-item .component-link.open, .component-link.single-nav-item-mobile:focus, .component-link.single-nav-item-mobile:active, .component-link.single-nav-item-mobile.open {
   background-color: var(--nav-main-highlight);
 }
-.main-nav__mega-menu-item .component-link-v2, .main-nav__dropdown-menu-item .component-link-v2, .nav-dropdown-mobile .component-link-v2 {
+.main-nav__mega-menu-item .component-link, .main-nav__dropdown-menu-item .component-link, .nav-dropdown-mobile .component-link {
   border-radius: var(--nav-links-highlight-radius);
   padding-left: var(--space-200);
   padding-right: var(--space-200);
@@ -91838,10 +91808,10 @@ form p.wicket-form-help-text.secondary-nav .component-link-v2,
   font-weight: 400;
   color: var(--dropdown-mega-link);
 }
-.main-nav__mega-menu-item .component-link-v2:hover, .main-nav__mega-menu-item .component-link-v2:focus, .main-nav__dropdown-menu-item .component-link-v2:hover, .main-nav__dropdown-menu-item .component-link-v2:focus, .nav-dropdown-mobile .component-link-v2:hover, .nav-dropdown-mobile .component-link-v2:focus {
+.main-nav__mega-menu-item .component-link:hover, .main-nav__mega-menu-item .component-link:focus, .main-nav__dropdown-menu-item .component-link:hover, .main-nav__dropdown-menu-item .component-link:focus, .nav-dropdown-mobile .component-link:hover, .nav-dropdown-mobile .component-link:focus {
   background-color: var(--dropdown-mega-bg-highlight);
 }
-.component-link-v2.desktop-mega-menu-heading-item {
+.component-link.desktop-mega-menu-heading-item {
   margin-bottom: 0.5rem;
   margin-right: 0.5rem;
   display: block;
@@ -91852,7 +91822,7 @@ form p.wicket-form-help-text.secondary-nav .component-link-v2,
   font-weight: 700;
   color: var(--dropdown-mega-heading-link);
 }
-.component-link-v2.single-nav-item-mobile {
+.component-link.single-nav-item-mobile {
   position: relative;
   display: block;
   border-top-left-radius: var(--main-menu-highlight-radius);
@@ -91874,14 +91844,14 @@ form p.wicket-form-help-text.secondary-nav .component-link-v2,
   -ms-flex-align: start;
   align-items: flex-start;
 }
-.component-link-v2.single-nav-item-mobile:hover {
+.component-link.single-nav-item-mobile:hover {
   cursor: pointer;
   border-color: var(--nav-main-border-interactive);
 }
-.component-link-v2.single-nav-item-mobile:active, .component-link-v2.single-nav-item-mobile.open {
+.component-link.single-nav-item-mobile:active, .component-link.single-nav-item-mobile.open {
   border-bottom-width: var(--border-lg);
 }
-.component-link-v2.single-nav-item-mobile:focus, .component-link-v2.single-nav-item-mobile:active, .component-link-v2.single-nav-item-mobile.open {
+.component-link.single-nav-item-mobile:focus, .component-link.single-nav-item-mobile:active, .component-link.single-nav-item-mobile.open {
   background-color: var(--nav-main-highlight);
 }
 
@@ -92139,7 +92109,7 @@ form p.wicket-form-help-text.secondary-nav .component-link-v2,
   color: var(--highlight-dark);
 }
 
-.component-social-sharing-v2 {
+.component-social-sharing {
   margin: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -92151,21 +92121,21 @@ form p.wicket-form-help-text.secondary-nav .component-link-v2,
   gap: var(--space-100);
   padding: 0px;
 }
-.component-social-sharing-v2__label {
+.component-social-sharing__label {
   font-size: var(--body-sm-font-size);
   color: var(--text-content);
   font-weight: var(--body-sm-font-weight);
   line-height: var(--body-sm-line-height);
   font-weight: 700;
 }
-.component-social-sharing-v2--reversed .component-social-sharing-v2__label {
+.component-social-sharing--reversed .component-social-sharing__label {
   color: var(--text-content-reversed);
 }
-.component-social-sharing-v2__button {
+.component-social-sharing__button {
   border-radius: var(--social-media-radius);
 }
 
-.social-links-v2 {
+.social-links {
   margin: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -92288,7 +92258,7 @@ form p.wicket-form-help-text.secondary-nav .component-link-v2,
   pointer-events: none;
 }
 
-.component-tag-v2 {
+.component-tag {
   border-radius: var(--tag-corner-radius);
   border-width: var(--border-tag-size);
   border-color: var(--border-tag);
@@ -92299,7 +92269,7 @@ form p.wicket-form-help-text.secondary-nav .component-link-v2,
   font-weight: var(--body-sm-font-weight);
   line-height: var(--body-sm-line-height);
 }
-.component-tag-v2:has(.fa-lock) {
+.component-tag:has(.fa-lock) {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -92318,18 +92288,18 @@ form p.wicket-form-help-text.secondary-nav .component-link-v2,
 }
 @media (min-width: 768px) {
 
-  .component-tag-v2:has(.fa-lock) {
+  .component-tag:has(.fa-lock) {
     font-size: var(--body-md-font-size);
   }
 }
-.component-tag-v2:has(.fa-lock) {
+.component-tag:has(.fa-lock) {
   font-weight: 700;
 }
-.component-tag-v2:has(.fa-lock) .component-icon {
+.component-tag:has(.fa-lock) .component-icon {
   font-size: 1rem;
 }
 
-.component-tabs-v2 {
+.component-tabs {
   padding-left: 1rem;
   padding-right: 1rem;
   color: var(--text-content);
@@ -92337,18 +92307,18 @@ form p.wicket-form-help-text.secondary-nav .component-link-v2,
 
 @media (min-width: 1280px) {
 
-  .component-tabs-v2 {
+  .component-tabs {
     padding-left: 0px;
     padding-right: 0px;
   }
 }
-.component-tabs-v2__tab-content {
+.component-tabs__tab-content {
   padding: var(--space-300);
 }
-.component-tabs-v2__tab-cta {
+.component-tabs__tab-cta {
   margin-top: var(--space-300);
 }
-.component-tabs-v2__tab-button {
+.component-tabs__tab-button {
   border-bottom-width: var(--border-interactive-md);
   border-color: var(--interactive);
   padding: var(--space-150);
@@ -92357,50 +92327,50 @@ form p.wicket-form-help-text.secondary-nav .component-link-v2,
   line-height: var(--body-lg-line-height);
   font-weight: 400;
 }
-.component-tabs-v2__tab-button--active, .component-tabs-v2__tab-button:focus {
+.component-tabs__tab-button--active, .component-tabs__tab-button:focus {
   border-bottom-width: var(--border-interactive-lg);
 }
-.component-tabs-v2__tab-button--active {
+.component-tabs__tab-button--active {
   border-color: var(--highlight-dark);
   font-weight: 700;
   color: var(--highlight-dark);
 }
-.component-tabs-v2__tab-button:hover, .component-tabs-v2__tab-button:focus {
+.component-tabs__tab-button:hover, .component-tabs__tab-button:focus {
   background-color: var(--highlight-light);
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
 
-.component-tooltip-v2 {
+.component-tooltip {
   font-size: 1rem;
   line-height: 1.5rem;
   color: var(--interactive);
 }
-.component-tooltip-v2 .icon-hover {
+.component-tooltip .icon-hover {
   display: none;
 }
-form .wicket-form-help-text.component-tooltip-v2 .icon-hover,
-form p.wicket-form-help-text.component-tooltip-v2 .icon-hover,
-.form .wicket-form-help-text.component-tooltip-v2 .icon-hover,
-.form p.wicket-form-help-text.component-tooltip-v2 .icon-hover {
+form .wicket-form-help-text.component-tooltip .icon-hover,
+form p.wicket-form-help-text.component-tooltip .icon-hover,
+.form .wicket-form-help-text.component-tooltip .icon-hover,
+.form p.wicket-form-help-text.component-tooltip .icon-hover {
   display: none;
 }
-.component-tooltip-v2 .icon-hover:hover {
+.component-tooltip .icon-hover:hover {
   display: inline;
 }
-.component-tooltip-v2:hover .icon-default {
+.component-tooltip:hover .icon-default {
   display: none;
 }
-form .wicket-form-help-text.component-tooltip-v2:hover .icon-default,
-form p.wicket-form-help-text.component-tooltip-v2:hover .icon-default,
-.form .wicket-form-help-text.component-tooltip-v2:hover .icon-default,
-.form p.wicket-form-help-text.component-tooltip-v2:hover .icon-default {
+form .wicket-form-help-text.component-tooltip:hover .icon-default,
+form p.wicket-form-help-text.component-tooltip:hover .icon-default,
+.form .wicket-form-help-text.component-tooltip:hover .icon-default,
+.form p.wicket-form-help-text.component-tooltip:hover .icon-default {
   display: none;
 }
-.component-tooltip-v2:hover .icon-hover {
+.component-tooltip:hover .icon-hover {
   display: inline;
 }
-.component-tooltip-v2-content {
+.component-tooltip-content {
   position: absolute;
   z-index: 10;
   display: none;
@@ -92412,10 +92382,10 @@ form p.wicket-form-help-text.component-tooltip-v2:hover .icon-default,
   text-align: left;
   color: var(--text-content-reversed);
 }
-form .wicket-form-help-text.component-tooltip-v2-content,
-form p.wicket-form-help-text.component-tooltip-v2-content,
-.form .wicket-form-help-text.component-tooltip-v2-content,
-.form p.wicket-form-help-text.component-tooltip-v2-content {
+form .wicket-form-help-text.component-tooltip-content,
+form p.wicket-form-help-text.component-tooltip-content,
+.form .wicket-form-help-text.component-tooltip-content,
+.form p.wicket-form-help-text.component-tooltip-content {
   display: none;
 }
 
@@ -93195,88 +93165,66 @@ li img {
 .woocommerce div.product form.cart div.quantity {
   margin-bottom: 1rem;
 }
-.woocommerce div.product form.cart .button, .woocommerce div.product form.cart .wp-block-button .wp-block-button__link.wp-element-button, .wp-block-button .woocommerce div.product form.cart .wp-block-button__link.wp-element-button {
-  border-radius: var(--interactive-corner-radius-md);
-  padding: var(--space-200);
-  font-size: var(--button-label-md-font-size);
-  font-weight: var(--button-label-md-font-weight);
-  line-height: var(--button-label-md-line-height);
-}
-.woocommerce div.product form.cart .button .component-icon, .woocommerce div.product form.cart .wp-block-button .wp-block-button__link.wp-element-button .component-icon, .wp-block-button .woocommerce div.product form.cart .wp-block-button__link.wp-element-button .component-icon {
-  font-size: 16px;
-}
-.woocommerce div.product form.cart .button:not(.button-v2--reversed), .woocommerce div.product form.cart .wp-block-button .wp-block-button__link.wp-element-button:not(.button-v2--reversed), .wp-block-button .woocommerce div.product form.cart .wp-block-button__link.wp-element-button:not(.button-v2--reversed) {
+.woocommerce div.product form.cart .button:not(.button--reversed), .woocommerce div.product form.cart .wp-block-button .wp-block-button__link.wp-element-button:not(.button--reversed), .wp-block-button .woocommerce div.product form.cart .wp-block-button__link.wp-element-button:not(.button--reversed) {
   border-width: var(--border-interactive-md);
   border-color: transparent;
   background-color: var(--bg-interactive);
   color: var(--text-button-label-reversed);
 }
-.woocommerce div.product form.cart .button:not(.button-v2--reversed):hover, .woocommerce div.product form.cart .wp-block-button .wp-block-button__link.wp-element-button:not(.button-v2--reversed):hover, .wp-block-button .woocommerce div.product form.cart .wp-block-button__link.wp-element-button:not(.button-v2--reversed):hover {
+.woocommerce div.product form.cart .button:not(.button--reversed):hover, .woocommerce div.product form.cart .wp-block-button .wp-block-button__link.wp-element-button:not(.button--reversed):hover, .wp-block-button .woocommerce div.product form.cart .wp-block-button__link.wp-element-button:not(.button--reversed):hover {
   border-color: var(--border-interactive);
   background-color: transparent;
   color: var(--text-button-label);
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.woocommerce div.product form.cart .button:not(.button-v2--reversed):focus, .woocommerce div.product form.cart .wp-block-button .wp-block-button__link.wp-element-button:not(.button-v2--reversed):focus, .wp-block-button .woocommerce div.product form.cart .wp-block-button__link.wp-element-button:not(.button-v2--reversed):focus {
+.woocommerce div.product form.cart .button:not(.button--reversed):focus, .woocommerce div.product form.cart .wp-block-button .wp-block-button__link.wp-element-button:not(.button--reversed):focus, .wp-block-button .woocommerce div.product form.cart .wp-block-button__link.wp-element-button:not(.button--reversed):focus {
   border-color: var(--border-interactive);
   background-color: var(--highlight-light);
   color: var(--text-button-label);
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.woocommerce div.product form.cart .button:not(.button-v2--reversed):active, .woocommerce div.product form.cart .wp-block-button .wp-block-button__link.wp-element-button:not(.button-v2--reversed):active, .wp-block-button .woocommerce div.product form.cart .wp-block-button__link.wp-element-button:not(.button-v2--reversed):active {
+.woocommerce div.product form.cart .button:not(.button--reversed):active, .woocommerce div.product form.cart .wp-block-button .wp-block-button__link.wp-element-button:not(.button--reversed):active, .wp-block-button .woocommerce div.product form.cart .wp-block-button__link.wp-element-button:not(.button--reversed):active {
   border-color: transparent;
   background-color: var(--highlight-light);
   color: var(--text-button-label);
 }
-.woocommerce div.product form.cart .button.button-v2--reversed, .woocommerce div.product form.cart .wp-block-button .wp-block-button__link.wp-element-button.button-v2--reversed, .wp-block-button .woocommerce div.product form.cart .wp-block-button__link.wp-element-button.button-v2--reversed {
+.woocommerce div.product form.cart .button.button--reversed, .woocommerce div.product form.cart .wp-block-button .wp-block-button__link.wp-element-button.button--reversed, .wp-block-button .woocommerce div.product form.cart .wp-block-button__link.wp-element-button.button--reversed {
   border-width: var(--border-interactive-md);
   border-color: transparent;
   background-color: var(--bg-interactive-reversed);
   color: var(--text-button-label);
 }
-.woocommerce div.product form.cart .button.button-v2--reversed:hover, .woocommerce div.product form.cart .wp-block-button .wp-block-button__link.wp-element-button.button-v2--reversed:hover, .wp-block-button .woocommerce div.product form.cart .wp-block-button__link.wp-element-button.button-v2--reversed:hover {
+.woocommerce div.product form.cart .button.button--reversed:hover, .woocommerce div.product form.cart .wp-block-button .wp-block-button__link.wp-element-button.button--reversed:hover, .wp-block-button .woocommerce div.product form.cart .wp-block-button__link.wp-element-button.button--reversed:hover {
   border-color: var(--border-interactive-reversed);
   background-color: transparent;
   color: var(--text-button-label-reversed);
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.woocommerce div.product form.cart .button.button-v2--reversed:focus, .woocommerce div.product form.cart .wp-block-button .wp-block-button__link.wp-element-button.button-v2--reversed:focus, .wp-block-button .woocommerce div.product form.cart .wp-block-button__link.wp-element-button.button-v2--reversed:focus {
+.woocommerce div.product form.cart .button.button--reversed:focus, .woocommerce div.product form.cart .wp-block-button .wp-block-button__link.wp-element-button.button--reversed:focus, .wp-block-button .woocommerce div.product form.cart .wp-block-button__link.wp-element-button.button--reversed:focus {
   border-color: var(--border-interactive-reversed);
   background-color: var(--highlight-dark);
   color: var(--text-button-label-reversed);
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.woocommerce div.product form.cart .button.button-v2--reversed:active, .woocommerce div.product form.cart .wp-block-button .wp-block-button__link.wp-element-button.button-v2--reversed:active, .wp-block-button .woocommerce div.product form.cart .wp-block-button__link.wp-element-button.button-v2--reversed:active {
+.woocommerce div.product form.cart .button.button--reversed:active, .woocommerce div.product form.cart .wp-block-button .wp-block-button__link.wp-element-button.button--reversed:active, .wp-block-button .woocommerce div.product form.cart .wp-block-button__link.wp-element-button.button--reversed:active {
   background-color: var(--highlight-light);
   color: var(--text-button-label);
 }
-.woocommerce div.product form.cart .button.button-v2--disabled, .woocommerce div.product form.cart .wp-block-button .wp-block-button__link.wp-element-button.button-v2--disabled, .wp-block-button .woocommerce div.product form.cart .wp-block-button__link.wp-element-button.button-v2--disabled {
+.woocommerce div.product form.cart .button.button--disabled, .woocommerce div.product form.cart .wp-block-button .wp-block-button__link.wp-element-button.button--disabled, .wp-block-button .woocommerce div.product form.cart .wp-block-button__link.wp-element-button.button--disabled {
   pointer-events: none !important;
   border-color: transparent !important;
   background-color: var(--bg-disabled) !important;
   color: var(--text-disabled) !important;
 }
-.woocommerce div.product form.cart .button.button-v2--disabled.button-v2--reversed, .woocommerce div.product form.cart .wp-block-button .wp-block-button__link.wp-element-button.button-v2--disabled.button-v2--reversed, .wp-block-button .woocommerce div.product form.cart .wp-block-button__link.wp-element-button.button-v2--disabled.button-v2--reversed {
+.woocommerce div.product form.cart .button.button--disabled.button--reversed, .woocommerce div.product form.cart .wp-block-button .wp-block-button__link.wp-element-button.button--disabled.button--reversed, .wp-block-button .woocommerce div.product form.cart .wp-block-button__link.wp-element-button.button--disabled.button--reversed {
   pointer-events: none !important;
   border-color: transparent !important;
   background-color: var(--bg-disabled) !important;
   color: var(--text-disabled) !important;
-}
-.social-links-v2 .woocommerce div.product form.cart .button,.social-links-v2  .woocommerce div.product form.cart .wp-block-button .wp-block-button__link.wp-element-button,.social-links-v2  .wp-block-button .woocommerce div.product form.cart .wp-block-button__link.wp-element-button {
-  border-radius: var(--social-media-radius);
-  border-width: var(--border-footer-social);
-  border-color: transparent;
-  background-color: var(--nav-footer-social-bg);
-  color: var(--nav-footer-social-text);
-}
-.social-links-v2 .woocommerce div.product form.cart .button:hover,.social-links-v2  .woocommerce div.product form.cart .wp-block-button .wp-block-button__link.wp-element-button:hover,.social-links-v2  .wp-block-button .woocommerce div.product form.cart .wp-block-button__link.wp-element-button:hover {
-  border-color: var(--nav-footer-social-border-hover);
-  background-color: transparent;
-  color: var(--nav-footer-social-text-hover);
 }
 .woocommerce div.product form.cart .button, .woocommerce div.product form.cart .wp-block-button .wp-block-button__link.wp-element-button, .wp-block-button .woocommerce div.product form.cart .wp-block-button__link.wp-element-button {
   border: var(--border-interactive-md) solid var(--border-interactive);
@@ -93698,9 +93646,13 @@ form.woocommerce-checkout .variation-TeamName {
   display: none;
 }
 .woocommerce-shop ul.products li.product {
+  position: relative;
+  margin: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: 100%;
+  width: 100%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
@@ -93708,17 +93660,29 @@ form.woocommerce-checkout .variation-TeamName {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  float: none;
-  width: 100%;
-  margin: 0;
+  gap: var(--space-200);
+  border-radius: var(--card-corner-radius);
+  border-bottom-width: var(--border-listing-card);
+  border-color: var(--border-card);
+  background-color: var(--bg-card);
+  padding: var(--space-200);
 }
 .woocommerce-shop ul.products li.product a img {
   border-radius: var(--image-corner-radius);
 }
 .woocommerce-shop ul.products li.product .onsale {
-  top: 10px;
-  left: 10px;
+  position: absolute;
+  top: 12px;
+  left: 12px;
   right: auto;
+  border-radius: var(--label-corner-radius);
+  background-color: var(--bg-label-2);
+  padding: var(--space-150);
+  font-size: var(--label-md-font-size);
+  color: var(--text-label-2);
+  font-weight: var(--label-md-font-weight);
+  text-transform: uppercase;
+  line-height: var(--label-md-line-height);
 }
 .woocommerce-shop ul.products li.product .woocommerce-loop-product__title {
   font-size: var(--wp--preset--font-size--heading-xs);

@@ -1,4 +1,4 @@
-.accordion-item-v2 {
+.accordion-item {
   @apply hover:cursor-pointer text-body-md p-[--space-150] border-[--border-light] mb-2;
 
   .component-sidebar-contextual-nav__accordion & {

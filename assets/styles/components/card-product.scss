@@ -1,5 +1,6 @@
-.component-card-product-v2,
+.component-card-product,
 .product {
+  
   @apply bg-[--bg-card] rounded-[--card-corner-radius] border-b-[length:--border-listing-card] border-[--border-card] p-[--space-200] gap-[--space-200] relative flex flex-col items-center h-full;
   filter: drop-shadow( var(--elevation-4) );
 
@@ -20,7 +21,7 @@
   }
 
   .button {
-    @apply button-v2 button-v2--primary;
+    @apply button--primary;
     border: var(--border-interactive-md) solid var(--border-interactive);
 
     &:hover {
@@ -55,7 +56,7 @@
   }
 }
 
-.component-card-product-v2__title,
+.component-card-product__title,
 .woocommerce-loop-product__title {
   @apply text-heading-xs block;
 }

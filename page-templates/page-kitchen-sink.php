@@ -755,15 +755,8 @@ if (have_posts()) :
 
 				<section class="py-8">
 					<h2 class="text-heading-lg mb-3">Social Media Links</h2>
-					<div class="mb-6">
-						<?php get_component('social-links', [
-							'reversed' => false
-						]); ?>
-					</div>
-					<div class="mb-6 bg-black p-5">
-						<?php get_component('social-links', [
-							'reversed' => true
-						]); ?>
+					<div class="mb-6 bg-slate-300 p-5">
+						<?php get_component('social-links'); ?>
 					</div>
 				</section>
 

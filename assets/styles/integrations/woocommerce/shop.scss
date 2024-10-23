@@ -17,21 +17,14 @@
     }
 
     li.product {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      float: none;
-      width: 100%;
-      margin: 0;
+      @apply bg-[--bg-card] rounded-[--card-corner-radius] border-b-[length:--border-listing-card] border-[--border-card] p-[--space-200] gap-[--space-200] relative flex flex-col items-center h-full w-full m-0;
 
       a img {
         border-radius: var(--image-corner-radius);
       }
 
       .onsale {
-        top: 10px;
-        left: 10px;
-        right: auto;
+        @apply bg-[--bg-label-2] rounded-[--label-corner-radius] text-[--text-label-2] text-label-md p-[--space-150] absolute top-[12px] left-[12px] uppercase right-auto;
       }
 
       .woocommerce-loop-product__title {

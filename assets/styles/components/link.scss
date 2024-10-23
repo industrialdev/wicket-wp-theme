@@ -1,4 +1,4 @@
-.component-link-v2 {
+.component-link {
   @apply font-bold inline-flex items-center focus:shadow-focus gap-[--space-100];
 
   &--lg {
@@ -25,7 +25,7 @@
     }
   }
 
-  &:not(.component-link-v2--reversed) {
+  &:not(.component-link--reversed) {
     @apply text-[--interactive];
 
     &:active {
@@ -41,7 +41,7 @@
     }
   }
 
-  &:not(.component-link-v2--default) {
+  &:not(.component-link--default) {
     &:hover, &:focus {
       @apply underline;
     }

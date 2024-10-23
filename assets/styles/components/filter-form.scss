@@ -53,7 +53,7 @@
   }
 
   &__see-more {
-    @apply component-link-v2 underline;
+    @apply component-link underline;
 
     &:hover, &:focus, &:active {
       @apply no-underline;

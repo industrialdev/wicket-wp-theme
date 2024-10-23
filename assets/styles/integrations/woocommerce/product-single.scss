@@ -45,7 +45,7 @@
       }
 
       .button {
-        @apply button-v2 button-v2--primary;
+        @apply button--primary;
         border: var(--border-interactive-md) solid var(--border-interactive);
     
         &:hover {

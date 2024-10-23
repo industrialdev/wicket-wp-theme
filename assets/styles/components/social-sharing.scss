@@ -1,11 +1,11 @@
-.component-social-sharing-v2 {
+.component-social-sharing {
   @apply flex gap-[--space-100] list-none p-0 m-0 items-center;
   
   &__label {
     @apply text-body-sm text-[--text-content];
     @apply font-bold;
 
-    .component-social-sharing-v2--reversed & {
+    .component-social-sharing--reversed & {
       @apply text-[--text-content-reversed];
     }
   }
