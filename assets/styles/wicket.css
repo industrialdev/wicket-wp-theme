@@ -93959,6 +93959,13 @@ form p.wicket-form-help-text.site-header .main-nav,
   right: 0px;
   left: auto;
 }
+.site-header .main-nav-mobile .mobile-mega-menu-heading-item {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  font-weight: 700;
+  color: var(--dropdown-mega-heading-link);
+}
 .site-header .main-nav-mobile .nav-parent-item-mobile-wrap {
   position: relative;
   display: block;

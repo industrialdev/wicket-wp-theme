@@ -693,7 +693,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                                                 if( $event.target !== $el ) {subNavDropdownOpen = false}"
                                                 >
                                                 <div
-                                                      class="inline-flex justify-between items-center w-full p-3 font-bold"
+                                                      class="mobile-mega-menu-heading-item"
                                                       x-bind:class=" subNavDropdownOpen ? '' : '' "
                                                 >
                                                       <span><?php echo $child['title']; ?></span>

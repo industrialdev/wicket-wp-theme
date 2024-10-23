@@ -42,6 +42,11 @@
 
   .main-nav-mobile {
 
+    // Mobile Main Menu > Mega Menu Heading Item
+    .mobile-mega-menu-heading-item {
+      @apply block w-full p-3 text-[--dropdown-mega-heading-link] font-bold;
+    }
+
     .nav-parent-item-mobile-wrap {
       @include primary-menu-item-styles;
       @apply inline-flex justify-between items-center w-full;
