@@ -39,7 +39,7 @@
 
   // Light variant
   &--light {
-    @apply border-b-[length:--border-banner-bottom] border-[--border-light];
+    @apply border-b-[length:--border-banner-bottom] border-[--border-light] bg-[--bg-light];
 
     .cta-card {
       @apply bg-[--bg-light-alternate];

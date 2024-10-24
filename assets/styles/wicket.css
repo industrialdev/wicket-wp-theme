@@ -90071,6 +90071,7 @@ h6 {
 .component-banner--light {
   border-bottom-width: var(--border-banner-bottom);
   border-color: var(--border-light);
+  background-color: var(--bg-light);
 }
 .component-banner--light .cta-card {
   background-color: var(--bg-light-alternate);
