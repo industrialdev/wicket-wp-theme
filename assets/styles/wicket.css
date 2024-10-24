@@ -92519,6 +92519,9 @@ form p.wicket-form-help-text.component-tooltip-content,
 .form p.wicket-form-help-text.component-tooltip-content {
   display: none;
 }
+.component-tooltip-content svg {
+  color: var(--text-content);
+}
 
 /* BLOCKS
 ------------------------------------------------------------------------------*/
