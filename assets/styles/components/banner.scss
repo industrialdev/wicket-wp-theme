@@ -1,5 +1,5 @@
 .component-banner {
-  @apply py-8 px-4 relative rounded-[--banner-radius];
+  @apply py-8 px-4 relative rounded-[--banner-radius] overflow-hidden;
 
   &__post-type {
     @apply text-label-md;

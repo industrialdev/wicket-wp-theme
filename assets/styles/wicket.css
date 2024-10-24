@@ -89984,6 +89984,7 @@ h6 {
 
 .component-banner {
   position: relative;
+  overflow: hidden;
   border-radius: var(--banner-radius);
   padding-top: 2rem;
   padding-bottom: 2rem;
