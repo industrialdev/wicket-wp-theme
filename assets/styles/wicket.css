@@ -93875,8 +93875,6 @@ form.woocommerce-checkout .variation-TeamName {
   border-color: var(--border-card);
   background-color: var(--bg-card);
   padding: var(--space-200);
-  -webkit-filter: drop-shadow(var(--elevation-4));
-  filter: drop-shadow(var(--elevation-4));
 }
 .wp-block-product-category.wc-block-grid .wc-block-grid__product-title {
   margin-bottom: var(--space-200);
