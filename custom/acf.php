@@ -10,6 +10,7 @@ function wicket_acf_init() {
 			'page_title' => __( 'Options', 'wicket' ),
 			'redirect'   => true,
 			'position'   => '75',
+			'icon_url'   => 'dashicons-screenoptions',
 		) );
 
 		acf_add_options_page( array(
