@@ -1,3 +1,7 @@
 .component-image {
   @apply rounded-[--image-corner-radius];
+
+  &.component-banner__bg-image {
+    @apply rounded-none;
+  }
 }

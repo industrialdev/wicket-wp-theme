@@ -91764,6 +91764,9 @@ form p.wicket-form-help-text.secondary-nav .component-filter-form__see-more,
 .component-image {
   border-radius: var(--image-corner-radius);
 }
+.component-image.component-banner__bg-image {
+  border-radius: 0px;
+}
 
 .component-link {
   display: -webkit-inline-box;
