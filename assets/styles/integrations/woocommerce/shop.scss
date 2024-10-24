@@ -17,7 +17,7 @@
     }
 
     li.product {
-      @apply bg-[--bg-card] rounded-[--card-corner-radius] border-b-[length:--border-listing-card] border-[--border-card] p-[--space-200] gap-[--space-200] relative flex flex-col items-center h-full w-full m-0;
+      @apply bg-[--bg-card] rounded-[--card-corner-radius] border-b-[length:--border-listing-card] p-[--space-200] gap-[--space-200] relative flex flex-col items-center h-full w-full m-0;
 
       a img {
         border-radius: var(--image-corner-radius);
@@ -29,6 +29,7 @@
 
       .woocommerce-loop-product__title {
         font-size: var(--wp--preset--font-size--heading-xs);
+        text-align: center;
       }
 
       .price {
