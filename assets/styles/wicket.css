@@ -90102,6 +90102,10 @@ h6 {
   color: var(--text-content-secondary-reversed);
 }
 
+.alignfull.wp-block-wicket-banner > .component-banner {
+  border-radius: 0px;
+}
+
 .component-breadcrumbs {
   display: -webkit-box;
   display: -ms-flexbox;

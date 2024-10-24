@@ -79,3 +79,9 @@
     }
   }
 }
+
+.alignfull.wp-block-wicket-banner {
+  > .component-banner {
+    @apply rounded-none;
+  }
+}
