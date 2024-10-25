@@ -121,9 +121,15 @@ if (have_posts()) :
 					<h2 class="text-heading-lg mb-3">Search Form</h2>
 					<div class="mb-6">
 						<form>
-						<?php get_component( 'search-form', [
-								'placeholder' => 'Lorem Ipsum'
-							] ); ?>
+							<?php get_component( 'search-form', [
+									'placeholder' => 'Lorem Ipsum'
+								] ); ?>
+							<div class="bg-black p-3 mt-4" >
+								<?php get_component( 'search-form', [
+										'placeholder' => 'Lorem Ipsum',
+										'button_reversed' => true
+									] ); ?>
+							</div>
 						</form>
 					</div>
 				</section>

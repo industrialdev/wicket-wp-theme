@@ -90836,6 +90836,9 @@ h6 {
   -webkit-filter: drop-shadow(var(--elevation-4));
   filter: drop-shadow(var(--elevation-4));
 }
+.component-card-listing--member-only:not(.item-number-1) {
+  margin-top: 2.5rem;
+}
 .component-card-listing .card__topics {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -90925,6 +90928,10 @@ h6 {
   .component-card-listing__title {
     font-weight: var(--heading-xs-font-weight-md);
   }
+}
+.component-card-listing__title:hover {
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
 }
 .component-card-listing__excerpt {
   margin-bottom: var(--space-200);

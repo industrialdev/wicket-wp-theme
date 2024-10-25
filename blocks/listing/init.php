@@ -199,7 +199,9 @@ function init( $block = [] ) {
 		<?php if ( ! $hide_search ) : ?>
 			<div class="block-wicket-listing__search-form <?php echo $search_form_bg_color ?> <?php echo defined( 'WICKET_WP_THEME_V2' ) ? '' : 'px-4 py-5 lg:px-0' ?>">
 				<div class="container">
-					<?php get_component( 'search-form' ); ?>
+					<?php get_component( 'search-form', [
+						'button_reversed' => defined( 'WICKET_WP_THEME_V2' ) ? true : false,
+					] ); ?>
 				</div>
 			</div>
 		<?php endif; ?>
@@ -336,6 +338,8 @@ function init( $block = [] ) {
 								echo '<div class="grid gap-10 grid-cols-1 lg:gap-4 lg:grid-cols-3 mb-6">';
 							}
 
+							$item_number = 1;
+
 							while ( $query->have_posts() ) :
 								$query->the_post();
 								$post_id = get_the_ID();
@@ -385,8 +389,8 @@ function init( $block = [] ) {
 									get_component( $post_type == 'product' ? 'card-product' : 'card-featured', $grid_card_params );
 
 								} else {
-									$listing_card_params = [ 
-										'classes'                   => [ 'mb-6' ],
+									$listing_card_params = [
+										'classes'                   => [ 'mb-6', "item-number-{$item_number}" ],
 										'post_type'                 => $post_type,
 										'content_type'              => ! $hide_type_taxonomy ? get_related_content_type_term( $post_id ) : '',
 										'title'                     => $title,
@@ -412,6 +416,7 @@ function init( $block = [] ) {
 									get_component( 'card-listing', $listing_card_params );
 								}
 
+								$item_number++;
 								do_action( 'wicket_listing_block_after_card', $post_id );
 
 
