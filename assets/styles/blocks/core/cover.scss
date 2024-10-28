@@ -1,0 +1,10 @@
+.wp-block-cover {
+
+  *[class*=wp-block]:not(.wp-block-cover__inner-container) {
+    @apply max-w-none #{!important};
+  }
+
+  .wp-block-paragraph > p {
+    @apply max-w-none #{!important};
+  }
+}

@@ -92822,6 +92822,13 @@ li img {
   }
 }
 
+.wp-block-cover *[class*=wp-block]:not(.wp-block-cover__inner-container) {
+  max-width: none !important;
+}
+.wp-block-cover .wp-block-paragraph > p {
+  max-width: none !important;
+}
+
 .wp-block-paragraph > p {
   margin-bottom: 0.5rem;
   /* Case: Paragraphs in the single post */
