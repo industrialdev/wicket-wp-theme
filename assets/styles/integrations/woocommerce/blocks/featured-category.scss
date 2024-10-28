@@ -1,8 +1,12 @@
 .wc-block-featured-category {
-  @apply rounded-[--card-corner-radius];
+  @apply rounded-[--card-corner-radius] px-[--space-250];
 
   &__title {
     @apply text-heading-md text-[--text-content-reversed];
+  }
+
+  &__description {
+    @apply mb-[--space-500];
   }
 
   .background-dim__overlay {

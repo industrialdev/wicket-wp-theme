@@ -93886,6 +93886,8 @@ form.woocommerce-checkout .variation-TeamName {
 
 .wc-block-featured-category {
   border-radius: var(--card-corner-radius);
+  padding-left: var(--space-250);
+  padding-right: var(--space-250);
 }
 .wc-block-featured-category__title {
   font-size: var(--heading-md-font-size);
@@ -93898,6 +93900,9 @@ form.woocommerce-checkout .variation-TeamName {
   .wc-block-featured-category__title {
     font-weight: var(--heading-md-font-weight-md);
   }
+}
+.wc-block-featured-category__description {
+  margin-bottom: var(--space-500);
 }
 .wc-block-featured-category .background-dim__overlay {
   background-color: var(--bg-image-overlay) !important;
