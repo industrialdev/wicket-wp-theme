@@ -18,6 +18,10 @@
       filter: drop-shadow( var(--elevation-4) );
     }
 
+    &:hover {
+      @apply underline;
+    }
+
     &:focus {
       @apply border-[--interactive];
     }

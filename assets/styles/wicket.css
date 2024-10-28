@@ -91748,6 +91748,10 @@ form p.wicket-form-help-text.secondary-nav .component-filter-form__see-more,
   -webkit-filter: drop-shadow(var(--elevation-4));
   filter: drop-shadow(var(--elevation-4));
 }
+.component-icon-grid__item-link:hover {
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+}
 .component-icon-grid__item-link:focus {
   border-color: var(--interactive);
 }
