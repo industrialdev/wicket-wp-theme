@@ -4,7 +4,7 @@
 
   &--member-only {
     &:not(.item-number-1) {
-      @apply mt-10;
+      @apply mt-10 pt-7;
     }    
   }
 
@@ -21,7 +21,7 @@
   }
 
   &__content {
-    @apply order-2 md:order-1;
+    // @apply order-2 md:order-1;
   }
 
   &__file-icon-wrap {

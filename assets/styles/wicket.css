@@ -90838,6 +90838,7 @@ h6 {
 }
 .component-card-listing--member-only:not(.item-number-1) {
   margin-top: 2.5rem;
+  padding-top: 1.75rem;
 }
 .component-card-listing .card__topics {
   display: -webkit-box;
@@ -90852,19 +90853,6 @@ h6 {
 }
 .component-card-listing .card__topics > * .component-tag {
   display: inline-block;
-}
-.component-card-listing__content {
-  -webkit-box-ordinal-group: 3;
-  -ms-flex-order: 2;
-  order: 2;
-}
-@media (min-width: 768px) {
-
-  .component-card-listing__content {
-    -webkit-box-ordinal-group: 2;
-    -ms-flex-order: 1;
-    order: 1;
-  }
 }
 .component-card-listing__file-icon-wrap {
   -webkit-box-ordinal-group: 2;
