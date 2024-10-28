@@ -5,7 +5,7 @@
     @apply flex-[0_1_72px] min-w-[72px] md:flex-[0_1_120px] md:min-w-[120px];
 
     img {
-      @apply max-w-[72px] md:max-w-[120px];
+      @apply max-w-[72px] md:max-w-[120px] rounded-[--image-corner-radius];
     }
   }
 
