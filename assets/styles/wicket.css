@@ -94924,6 +94924,42 @@ form.wicket-form .wicket-form-field-wrapper,
     font-weight: var(--heading-xs-font-weight-md);
   }
 }
+.page-not-found {
+  padding-top: var(--space-400);
+  padding-bottom: var(--space-400);
+  text-align: center;
+}
+.page-not-found__title {
+  margin-bottom: var(--space-200);
+  font-size: var(--heading-3xl-font-size);
+  font-weight: var(--heading-3xl-font-weight-sm);
+  line-height: var(--heading-3xl-line-height);
+}
+@media (min-width: 768px) {
+
+  .page-not-found__title {
+    font-weight: var(--heading-3xl-font-weight-md);
+  }
+}
+.page-not-found__subtitle {
+  margin-bottom: var(--space-600);
+  font-size: var(--heading-sm-font-size);
+  font-weight: var(--heading-sm-font-weight-sm);
+  line-height: var(--heading-sm-line-height);
+}
+@media (min-width: 768px) {
+
+  .page-not-found__subtitle {
+    font-weight: var(--heading-sm-font-weight-md);
+  }
+}
+.page-not-found__content {
+  margin-bottom: var(--space-600);
+  font-size: var(--body-lg-font-size);
+  font-weight: var(--body-lg-font-weight);
+  line-height: var(--body-lg-line-height);
+}
+
 .footer-nav-menu {
   border-top-width: var(--border-footer-divider);
   border-color: var(--nav-footer-border);

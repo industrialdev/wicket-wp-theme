@@ -3,14 +3,18 @@
 <main id="main-content">
 	<section id="page-content">
 		<div class="container">
-			<h1>404</h1>
-			<h2><?php _e('Page not found', 'wicket'); ?></h2>
-			<p><?php _e("The page you're looking for cannot be found", 'wicket'); ?></p>
-			<?php get_component( 'link', [
-				'variant' => 'primary',
-				'text'    => __( 'Go back to the homepage', 'wicket' ),
-				'url'    => home_url(),
-			] ) ?>
+			<div class="page-not-found" >
+				<h1 class="page-not-found__title" >404</h1>
+				<h2 class="page-not-found__subtitle" ><?php _e('Page not found', 'wicket'); ?></h2>
+				<div class="page-not-found__content" >
+					<p><?php _e("The page you're looking for cannot be found.", 'wicket'); ?></p>
+				</div>
+				<?php get_component( 'button', [
+					'variant' => 'secondary',
+					'label'    => __( 'Go back to the Homepage', 'wicket' ),
+					'link'    => home_url(),
+				] ) ?>
+			</div>
 		</div>
 	</div>
 </main>
