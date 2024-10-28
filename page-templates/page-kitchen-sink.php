@@ -893,6 +893,42 @@ if (have_posts()) :
 				</section>
 
 				<section class="py-8">
+					<h2 class="text-heading-lg mb-3">Card Event</h2>
+					<div class="mb-6">
+						<div class="mb-4">
+							<div class="mb-4">
+								<?php
+								// get random post id
+								$post_id = get_posts([
+									'numberposts' => 1,
+									'orderby'     => 'rand',
+									'post_type'   => 'post',
+									'post_status' => 'publish',
+								])[0]->ID;
+
+								get_component('card-event', [
+									'classes'                    => [],
+									'post_id'                    => $post_id,
+									'hide_excerpt'               => false,
+									'hide_date'                  => false,
+									'hide_event_category'        => false,
+									'hide_event_format_location' => false,
+									'hide_start_date_indicator'  => false,
+									'member_only'                => false,
+									'cta'                        => 'primary',
+									'cta_label'                  => 'Label',
+									'remove_drop_shadow'         => false,
+									'show_tags'                  => true,
+									'tag_taxonomy'               => [
+										'taxonomy' => 'category'
+									]
+								]) ?>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="py-8">
 					<h2 class="text-heading-lg mb-3">Card Call-out</h2>
 					<div class="mb-6">
 						<div class="mb-4">

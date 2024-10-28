@@ -51,7 +51,7 @@
     @apply flex flex-wrap gap-[--space-075];
 
     > * {
-      @apply inline-block;
+      @apply inline-block pointer-events-none;
 
       .component-tag {
         @apply inline-block;

@@ -90721,6 +90721,7 @@ h6 {
   gap: var(--space-075);
 }
 .component-card-event .card__topics > * {
+  pointer-events: none;
   display: inline-block;
 }
 .component-card-event .card__topics > * .component-tag {
@@ -90857,6 +90858,7 @@ h6 {
   gap: var(--space-075);
 }
 .component-card-listing .card__topics > * {
+  pointer-events: none;
   display: inline-block;
 }
 .component-card-listing .card__topics > * .component-tag {
