@@ -1,0 +1,16 @@
+.wc-block-featured-category {
+  @apply rounded-[--card-corner-radius];
+
+  &__title {
+    @apply text-heading-md text-[--text-content-reversed];
+  }
+
+  .background-dim__overlay {
+    @apply bg-[--bg-image-overlay] #{!important};
+
+    &::before {
+      opacity: 1 !important;
+    }
+  }
+
+}

@@ -93884,6 +93884,28 @@ form.woocommerce-checkout .variation-TeamName {
   opacity: 1;
 }
 
+.wc-block-featured-category {
+  border-radius: var(--card-corner-radius);
+}
+.wc-block-featured-category__title {
+  font-size: var(--heading-md-font-size);
+  color: var(--text-content-reversed);
+  font-weight: var(--heading-md-font-weight-sm);
+  line-height: var(--heading-md-line-height);
+}
+@media (min-width: 768px) {
+
+  .wc-block-featured-category__title {
+    font-weight: var(--heading-md-font-weight-md);
+  }
+}
+.wc-block-featured-category .background-dim__overlay {
+  background-color: var(--bg-image-overlay) !important;
+}
+.wc-block-featured-category .background-dim__overlay::before {
+  opacity: 1 !important;
+}
+
 .wp-block-product-category.wc-block-grid .wc-block-grid__product {
   border-radius: var(--card-corner-radius);
   border-width: 0px;
