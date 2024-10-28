@@ -2,12 +2,20 @@
   @apply bg-[--bg-card] rounded-[--card-corner-radius] border-b-[length:--border-featured-card] border-[--border-card] p-[--space-200] flex flex-col gap-[--space-200] relative;
   filter: drop-shadow( var(--elevation-4) );
 
+  .component-related-posts & {
+    @apply border-b-[length:--border-dynamic-card];
+  }
+
   .component-featured-posts__primary-secondary-level-col-2 & {
     @apply border-0 filter-none p-0;
   }
 
   &__title {
     @apply text-heading-sm;
+
+    &:hover {
+      @apply underline;
+    }
 
     .component-featured-posts__one-level-row-cols-1 &,
     .component-related-posts__col-1 & {
