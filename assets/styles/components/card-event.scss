@@ -1,12 +1,20 @@
 .component-card-event {
-  @apply bg-[--bg-card] rounded-[--card-corner-radius] flex flex-col gap-[--space-200] relative items-start flex-col lg:flex-row @2xl:items-start justify-between p-[--space-200] border-[length:--border-dynamic-card] border-[--border-card];
+  @apply bg-[--bg-card] rounded-[--card-corner-radius] gap-[--space-200] relative flex items-start flex-col lg:flex-row justify-between p-[--space-200] border-b-[length:--border-dynamic-card] border-[--border-card];
   filter: drop-shadow( var(--elevation-4) );
 
-  &__title {
-    @apply block text-heading-xs;
+  &--no-drop-shadow {
+    filter: none;
+  }
 
-    &.cols-1 {
-      @apply text-heading-xl;
+  &.cols-3, &.cols-4 {
+    @apply lg:flex-col;
+  }
+
+  &__title {
+    @apply block text-heading-xs hover:underline;
+
+    .cols-1 & {
+      @apply text-heading-md;
     }
   }
 
@@ -15,7 +23,11 @@
   }
 
   &__date-indicator {
-    @apply bg-[--bg-accent-dark] text-[--text-content-reversed] text-center uppercase flex @xs:flex-row @xl:flex-col shrink-0 justify-center items-center @xl:w-[70px] @xl:h-[70px] rounded-[--label-corner-radius] px-2 py-3 gap-2 @xl:gap-0 text-body-lg font-bold;
+    @apply bg-[--bg-accent-dark] text-[--text-content-reversed] text-center uppercase flex flex-row lg:flex-col shrink-0 justify-center items-center lg:w-[70px] lg:h-[70px] rounded-[--label-corner-radius] px-2 py-3 gap-2 lg:gap-0 text-body-lg font-bold;
+
+    .cols-3 &, .cols-4 & {
+      @apply lg:flex-row lg:gap-1 lg:w-auto lg:h-auto;
+    }
   }
 
   &__date-indicator-day {
