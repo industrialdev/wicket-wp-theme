@@ -5,11 +5,19 @@
     @apply font-normal;
   }
 
+  .component-icon {
+    @apply text-[--text-content];
+  }
+
   &.reversed {
     @apply text-[--text-content-reversed];
 
     strong {
       @apply text-[--highlight-light];
+    }
+
+    .component-icon {
+      @apply text-[--text-content-reversed];
     }
   }
 

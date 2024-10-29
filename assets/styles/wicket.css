@@ -90121,11 +90121,17 @@ h6 {
 .component-breadcrumbs .component-link {
   font-weight: 400;
 }
+.component-breadcrumbs .component-icon {
+  color: var(--text-content);
+}
 .component-breadcrumbs.reversed {
   color: var(--text-content-reversed);
 }
 .component-breadcrumbs.reversed strong {
   color: var(--highlight-light);
+}
+.component-breadcrumbs.reversed .component-icon {
+  color: var(--text-content-reversed);
 }
 
 .button, .wp-block-button.is-style-ghost .wp-block-button__link.wp-element-button, .wp-block-button.is-style-secondary .wp-block-button__link.wp-element-button, .wp-block-button.is-style-default .wp-block-button__link.wp-element-button, .wp-block-button .wp-block-button__link.wp-element-button {
