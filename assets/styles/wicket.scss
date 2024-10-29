@@ -112,6 +112,8 @@
 }
 
 //TODO: Temporary extend typography here
+
+// Typography are defined without font-size because they are already defined via theme.json
 .text-heading-3xl {
   @apply leading-[--heading-3xl-line-height] font-[--heading-3xl-font-weight-sm] md:font-[--heading-3xl-font-weight-md];
 }
@@ -143,8 +145,6 @@
 .text-body-lg {
   @apply leading-[--body-lg-line-height] font-[--body-lg-font-weight];
 }
-
-// generate the rest of the typography classes:
 
 .text-body-md {
   @apply leading-[--body-md-line-height] font-[--body-md-font-weight];

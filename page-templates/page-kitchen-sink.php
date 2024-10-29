@@ -63,6 +63,42 @@ if (have_posts()) :
 				<hr>
 
 				<section class="py-8">
+					<h2 class="text-heading-lg mb-3">Typography</h2>
+					<div class="mb-6">
+						<?php
+							$typography_classes = [
+								'text-heading-3xl',
+								'text-heading-2xl',
+								'text-heading-xl',
+								'text-heading-lg',
+								'text-heading-md',
+								'text-heading-sm',
+								'text-heading-xs',
+								'text-body-lg',
+								'text-body-md',
+								'text-body-sm',
+								'text-quote',
+								'text-placeholder',
+								'text-caption',
+								'text-button-label-lg',
+								'text-button-label-md',
+								'text-button-label-sm',
+								'text-form-label',
+								'text-date-label-md',
+								'text-date-label-sm',
+								'text-label-lg',
+								'text-label-md',
+								'text-label-sm'
+							];
+
+							foreach ( $typography_classes as $classname ) {
+								echo "<div class='py-1 {$classname}' >{$classname}</div>";
+							}
+						?>
+					</div>
+				</section>
+
+				<section class="py-8">
 					<h2 class="text-heading-lg mb-3">Icon Grid</h2>
 					<div class="mb-6">
 						<?php get_component( 'icon-grid', [ 

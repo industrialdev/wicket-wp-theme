@@ -67154,6 +67154,10 @@ video {
   padding-top: 0px;
   padding-bottom: 0px;
 }
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
 .py-10 {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
@@ -67240,6 +67244,30 @@ video {
 .text-body-sm {
   font-size: var(--body-sm-font-size);
 }
+.text-button-label-lg {
+  font-size: var(--button-label-lg-font-size);
+}
+.text-button-label-md {
+  font-size: var(--button-label-md-font-size);
+}
+.text-button-label-sm {
+  font-size: var(--button-label-sm-font-size);
+}
+.text-caption {
+  font-size: var(--caption-font-size);
+}
+.text-date-label-md {
+  font-size: var(--date-label-md-font-size);
+}
+.text-date-label-sm {
+  font-size: var(--date-label-sm-font-size);
+}
+.text-form-label {
+  font-size: var(--form-label-font-size);
+}
+.text-heading-2xl {
+  font-size: var(--heading-2xl-font-size);
+}
 .text-heading-3xl {
   font-size: var(--heading-3xl-font-size);
 }
@@ -67258,9 +67286,24 @@ video {
 .text-heading-xs {
   font-size: var(--heading-xs-font-size);
 }
+.text-label-lg {
+  font-size: var(--label-lg-font-size);
+}
+.text-label-md {
+  font-size: var(--label-md-font-size);
+}
+.text-label-sm {
+  font-size: var(--label-sm-font-size);
+}
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
+}
+.text-placeholder {
+  font-size: var(--placeholder-font-size);
+}
+.text-quote {
+  font-size: var(--quote-font-size);
 }
 .text-sm {
   font-size: 0.875rem;
