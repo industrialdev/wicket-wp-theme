@@ -92988,6 +92988,7 @@ li img {
   line-height: var(--body-md-line-height);
 }
 .wp-block-table thead tr th {
+  border-width: var(--border-sm);
   border-color: var(--table-header-bg);
   background-color: var(--table-header-bg);
   font-weight: 700;

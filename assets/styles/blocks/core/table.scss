@@ -14,8 +14,8 @@
 
   thead {
     tr {
-      th {    
-        @apply bg-[--table-header-bg] border-[--table-header-bg] text-[--table-header-label] font-bold;        
+      th {
+        @apply bg-[--table-header-bg] border-[--table-header-bg] text-[--table-header-label] border-[length:--border-sm] font-bold;
       }
     }
   }
