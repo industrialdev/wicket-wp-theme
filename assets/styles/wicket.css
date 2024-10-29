@@ -90396,11 +90396,26 @@ h6 {
   flex-direction: column;
   gap: var(--space-200);
   border-radius: var(--card-corner-radius);
-  border-width: 1px;
-  border-width: var(--border-sm);
-  border-color: var(--border-light);
+  border-bottom-width: var(--border-card-size);
+  border-color: var(--border-card);
   background-color: var(--bg-card);
   padding: var(--space-200);
+}
+
+@container (min-width: 42rem) {
+
+  .component-card {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+.component-card {
   -webkit-filter: drop-shadow(var(--elevation-4));
   filter: drop-shadow(var(--elevation-4));
 }
