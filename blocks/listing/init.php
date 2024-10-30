@@ -286,7 +286,7 @@ function init( $block = [] ) {
 							}
 							?>
 						</div>
-						<div class="flex items-center gap-3">
+						<div class="<?php echo defined( 'WICKET_WP_THEME_V2' ) ? 'block-wicket-listing__sort-by' : 'flex items-center gap-3' ?>">
 							<label for="sort-by">
 								<?php echo __( 'Sort by', 'wicket' ); ?>
 							</label>

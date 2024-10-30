@@ -5,9 +5,7 @@
   }
 
   &__top {
-    @apply py-[--space-200] px-[--space-200];
-
-    @apply border-t-[length:--border-sm] border-b-[length:--border-sm] border-[--interactive] lg:border-0;
+    @apply py-[--space-200] px-[--space-200] border-[--border-light] border-t-[length:--border-sm] border-b-[length:--border-sm] lg:border-0;
 
     &:hover, &:focus {
       @apply border-b-[length:--border-md] lg:border-0;

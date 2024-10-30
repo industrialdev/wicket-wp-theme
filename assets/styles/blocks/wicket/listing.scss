@@ -1,11 +1,28 @@
 .block-wicket-listing {
 
+  &__sort-by {
+    @apply flex gap-0 md:gap-3 flex-col md:flex-row w-full md:w-auto items-start md:items-center;
+
+    select {
+      @apply w-full md:w-auto;
+    }
+  }
+
   &__search-form {
     @apply bg-[--bg-dark-alternate] py-[--space-250];
   }
 
   &__filters {
     @apply bg-white;
+
+    @media screen and (max-width: 767px) {
+      margin-left: calc( calc(var(--bs-gutter-x) * .5) * -1 );
+      margin-right: calc( calc(var(--bs-gutter-x) * .5) * -1 );
+
+      &:has(.open) {
+        filter: drop-shadow( var(--elevation-4) );
+      }
+    }
   }
 
   &__container {
