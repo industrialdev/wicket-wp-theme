@@ -95151,10 +95151,19 @@ form.wicket-form .wicket-form-field-wrapper,
 
 .secondary-nav {
   width: 100%;
+  border-width: var(--border-main-nav-bottom);
+  border-bottom-color: var(--nav-main-border);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+}
+
+@media (min-width: 768px) {
+
+  .secondary-nav {
+    border-bottom-width: 0px;
+  }
 }
 
 @media (min-width: 1280px) {
