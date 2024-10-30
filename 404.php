@@ -11,7 +11,8 @@
 				</div>
 				<?php get_component( 'button', [
 					'variant' => 'secondary',
-					'label'    => __( 'Go back to the Homepage', 'wicket' ),
+					'a_tag'   => true,
+					'label'   => __( 'Go back to the Homepage', 'wicket' ),
 					'link'    => home_url(),
 				] ) ?>
 			</div>
