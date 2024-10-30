@@ -160,48 +160,6 @@
             "append": ""
         },
         {
-            "key": "field_6716a3a05be13",
-            "label": "Disable ability to create new org\/entity?",
-            "name": "orgss_disable_ability_to_create_new_orgentity",
-            "aria-label": "",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "25",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "allow_in_bindings": 0,
-            "ui_on_text": "",
-            "ui_off_text": "",
-            "ui": 1
-        },
-        {
-            "key": "field_6716a3c75be14",
-            "label": "Disable ability to select orgs with active membership?",
-            "name": "orgss_disable_ability_to_select_orgs_with_active_membership",
-            "aria-label": "",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "25",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "allow_in_bindings": 0,
-            "ui_on_text": "",
-            "ui_off_text": "",
-            "ui": 1
-        },
-        {
             "key": "field_6716a3de5be15",
             "label": "Grant roster management on next purchase?",
             "name": "orgss_grant_roster_management_on_next_purchase",
@@ -245,7 +203,7 @@
         },
         {
             "key": "field_6716a1c15f5e9",
-            "label": "Text, Messages, and Hiding Elements",
+            "label": "Visual: Text, Messages, and Elements",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -304,6 +262,27 @@
             "append": ""
         },
         {
+            "key": "field_6716a2295f5ec",
+            "label": "No results found message",
+            "name": "orgss_no_results_found_message",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Message that will display if nothing is found by their search. Can be left blank to use default.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_6716a2e65be0f",
             "label": "Hide remove buttons?",
             "name": "orgss_hide_remove_buttons",
@@ -313,7 +292,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "25",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -334,7 +313,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "25",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -346,25 +325,67 @@
             "ui": 1
         },
         {
-            "key": "field_6716a2295f5ec",
-            "label": "No results found message",
-            "name": "orgss_no_results_found_message",
+            "key": "field_6716a3a05be13",
+            "label": "Disable ability to create new org\/entity? (Hide create org UI)",
+            "name": "orgss_disable_ability_to_create_new_orgentity",
             "aria-label": "",
-            "type": "text",
-            "instructions": "Message that will display if nothing is found by their search. Can be left blank to use default.",
+            "type": "true_false",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "maxlength": "",
+            "message": "",
+            "default_value": 0,
             "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_6716a3c75be14",
+            "label": "Disable ability to select orgs with active membership?",
+            "name": "orgss_disable_ability_to_select_orgs_with_active_membership",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Will gray out the select button for an org that the user already has an active membership with.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_67194a854594a",
+            "label": "Display Removal Alert Message",
+            "name": "orgss_display_removal_alert_message",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Will prompt the user with a popup to confirm if they really want to remove their relationship with an org.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
         },
         {
             "key": "field_6716a3395be11",
@@ -424,5 +445,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1729538009
+    "modified": 1729711427
 }
