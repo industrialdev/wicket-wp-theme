@@ -91,13 +91,22 @@
   <?php if ( $show_search_bar ) : ?>
     <div class="px-4 pb-12 lg:px-0">
       <div class="max-w-screen-lg mx-auto">
-        <p class="search-page-results-count text-heading-xs mb-8 text-center"><?php echo $total_posts; ?> <?php _e( 'Results for:', 'wicket' ); ?></p>
+        <p class="search-page-results-count text-heading-sm mb-8 font-normal text-center"><?php echo $total_posts; ?> <?php _e( 'Results for:', 'wicket' ); ?></p>
         <?php 
         get_component( 'search-form', [
           'url-param' => 's',
         ] ); ?>
-        <a href="/?s=" class="search-page-clear-button block text-body-md text-center mt-4"><i class="fa-solid fa-x"></i> <?php _e( 'Clear Search', 'wicket' ); ?></a>
 
+        <div class="text-center" >
+          <?php get_component('link', [
+            'classes' => [ 'search-page-clear-button', 'block', 'text-body-md', 'mt-4' ],
+            'text'    => __( 'Clear Search', 'wicket' ),
+            'url'    => '/?s=',
+            'icon_start' => [
+              'icon' => 'fa-solid fa-x'
+            ]
+          ]) ?>
+        </div>
       </div>
     </div>
   <?php endif; ?>
