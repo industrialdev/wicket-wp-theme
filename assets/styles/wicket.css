@@ -92209,6 +92209,18 @@ form p.wicket-form-help-text.secondary-nav .component-link,
   flex-direction: column;
 }
 
+.component-search-form {
+  padding-left: var(--space-100);
+  padding-right: var(--space-100);
+}
+
+@media (min-width: 768px) {
+
+  .component-search-form {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
 .component-search-form .component-icon {
   color: var(--interactive);
 }
