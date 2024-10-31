@@ -23,7 +23,17 @@ global $product;
 $login_link = '';
 
 if ( ! is_user_logged_in() ) {
-	$login_link = '<a href="' . get_login_url() . '"><span class="font-bold underline">' . __( 'Login to Purchase', 'woocommerce' ) . '</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a>';
+	ob_start();
+	get_component( 'link', [
+			'text'     => __( 'Login to Purchase', 'woocommerce' ),
+			'default_link_style' => true,
+			'target'   => '_blank',
+			'url'      => get_login_url(),
+			'icon_end' => [
+				'icon' => 'fa-solid fa-arrow-up-right-from-square'
+			],
+	] );
+	$login_link = ob_get_clean();
 }
 
 echo apply_filters(

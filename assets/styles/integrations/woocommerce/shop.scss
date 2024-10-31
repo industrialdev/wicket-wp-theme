@@ -14,13 +14,61 @@
       &:before {
         display: none;
       }
+
+      @media screen and (max-width: 767px) {
+        grid-template-columns: repeat(1, 1fr);
+      }
     }
 
     li.product {
-      @apply bg-[--bg-card] rounded-[--card-corner-radius] border-b-[length:--border-listing-card] p-[--space-200] gap-[--space-200] relative flex flex-col items-center h-full w-full m-0;
+      @apply bg-[--bg-card] rounded-[--card-corner-radius] border-b-[length:--border-listing-card] border-[--border-card] p-[--space-200] gap-[--space-200] relative flex flex-col items-center h-full w-full m-0;
+      filter: drop-shadow( var(--elevation-4) );
+
+      @media screen and (max-width: 767px) {
+        @apply w-full #{!important};
+      }
+
+      a.component-link {
+        @apply underline hover:no-underline;
+      }
+
+      .button {
+        @apply button--primary;
+        border: var(--border-interactive-md) solid var(--border-interactive);
+    
+        &:hover {
+          border: var(--border-interactive-md) solid var(--border-interactive);
+        }
+    
+        &.product_type_external {
+          @include add-external-icon;
+        }
+    
+        .add_to_cart_button__text-added {
+          @apply hidden;
+        }
+    
+        .add_to_cart_button__text {
+          @apply block;
+        }
+    
+        &.added {
+          .add_to_cart_button__text-added {
+            @apply block;
+          }
+    
+          .add_to_cart_button__text {
+            @apply hidden;
+          }
+        }
+    
+        &.button--disabled {
+          @apply bg-[--bg-disabled] text-[--text-disabled] border-transparent #{!important};
+        }
+      }
 
       a img {
-        border-radius: var(--image-corner-radius);
+        @apply rounded-[--image-corner-radius] mb-[--space-050];
       }
 
       .onsale {
@@ -28,15 +76,15 @@
       }
 
       .woocommerce-loop-product__title {
-        font-size: var(--wp--preset--font-size--heading-xs);
-        text-align: center;
+        @apply text-heading-xs block text-center;
       }
 
       .price {
         font-size: var(--wp--preset--font-size--heading-xs);
         display: flex;
         justify-content: center;
-        gap: 0.5rem;
+        gap: var(--space-200);
+        @apply mb-0;
 
         ins {
           font-weight: bold;
