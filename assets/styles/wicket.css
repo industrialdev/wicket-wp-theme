@@ -90858,6 +90858,17 @@ h6 {
     font-weight: var(--heading-md-font-weight-md);
   }
 }
+.component-featured-posts__primary-secondary-level-col-2 .component-card-featured__title {
+  font-size: var(--heading-xs-font-size);
+  font-weight: var(--heading-xs-font-weight-sm);
+  line-height: var(--heading-xs-line-height);
+}
+@media (min-width: 768px) {
+
+  .component-featured-posts__primary-secondary-level-col-2 .component-card-featured__title {
+    font-weight: var(--heading-xs-font-weight-md);
+  }
+}
 .component-card-featured__content-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;

@@ -22,9 +22,9 @@
       @apply text-heading-md;
     }
    
-    // .component-featured-posts__primary-secondary-level-col-2 & {
-    //   @apply text-heading-xs;
-    // }
+    .component-featured-posts__primary-secondary-level-col-2 & {
+      @apply text-heading-xs;
+    }
   }
 
   &__content-wrapper {
