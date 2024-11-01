@@ -63,10 +63,13 @@
 						}
 					}
 					?>
-					<div class="footer-column col-num-<?php echo $col_number; ?> <?php echo $is_menu_column ? 'is-menu-column' : '' ?>" x-data="{
-						windowWidth: window.innerWidth,
-						isOpen : false,
-					}" x-on:resize.window="windowWidth= window.innerWidth">
+					<div
+						class="footer-column col-num-<?php echo $col_number; ?> <?php echo $is_menu_column ? 'is-menu-column' : '' ?>" 
+						x-data="{
+							windowWidth: window.innerWidth,
+							isOpen : false,
+						}"
+						x-on:resize.window="windowWidth= window.innerWidth">
 						<?php if ( $section_title ) { ?>
 							<?php if ( $is_menu_column ) : ?>
 								<button type="button" class="section-title-button"
@@ -198,7 +201,7 @@
 							</div>
 						<?php } ?>
 					</div>
-					<hr class="border-b-1 border-[#7B7F83] lg:hidden">
+					<hr class="footer-column-border">
 					<?php $col_number++; ?>
 				<?php endwhile; ?>
 			</div>

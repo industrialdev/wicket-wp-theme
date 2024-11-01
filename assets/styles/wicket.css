@@ -2016,10 +2016,6 @@ video {
 .border-solid {
   border-style: solid;
 }
-.border-\[\#7B7F83\] {
-  --tw-border-opacity: 1;
-  border-color: rgb(123 127 131 / var(--tw-border-opacity));
-}
 .border-opacity-0 {
   --tw-border-opacity: 0;
 }
@@ -95336,6 +95332,25 @@ form.wicket-form .wicket-form-field-wrapper,
 .main-footer-section .footer-column .text {
   color: var(--nav-footer-text-content);
 }
+.main-footer-section .footer-column .text a {
+  color: var(--footer-text-interactive);
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+}
+.main-footer-section .footer-column .text a:hover {
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+}
+.main-footer-section .footer-column-border {
+  border-bottom-width: var(--border-sm);
+  border-color: var(--nav-footer-border);
+}
+@media (min-width: 1024px) {
+
+  .main-footer-section .footer-column-border {
+    display: none;
+  }
+}
 .main-footer-section .section-title {
   display: none;
 }
@@ -95410,6 +95425,7 @@ form p.wicket-form-help-text.main-footer-section .section-title,
   padding-left: 0.5rem;
 }
 .main-footer-section .footer-bottom-text .utility-menu li a {
+  color: var(--nav-footer-text-interactive);
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }

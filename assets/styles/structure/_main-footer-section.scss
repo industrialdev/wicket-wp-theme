@@ -19,9 +19,17 @@
 
     .text {
       @apply text-[--nav-footer-text-content];
+
+      a {
+        @apply text-[--footer-text-interactive] underline hover:no-underline;
+      }
     }
     
     .image {}
+  }
+
+  .footer-column-border {
+    @apply border-b-[length:--border-sm] border-[--nav-footer-border] lg:hidden;
   }
 
   .section-title {
@@ -58,7 +66,7 @@
 
       li {
         a {
-          @apply underline;
+          @apply underline text-[--nav-footer-text-interactive];
 
           &:hover {
             @apply no-underline;
