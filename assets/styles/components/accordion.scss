@@ -21,7 +21,7 @@
     @apply text-body-md;
 
     .component-sidebar-contextual-nav__accordion & {
-      @apply text-[--nav-contextual-link-lvl-1] font-bold;
+      @apply text-[--nav-contextual-link-lvl-1] font-bold hover:underline;
     }
   }
 

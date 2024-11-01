@@ -89915,6 +89915,10 @@ h6 {
   font-weight: 700;
   color: var(--nav-contextual-link-lvl-1);
 }
+.component-sidebar-contextual-nav__accordion .accordion-item__title:hover {
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+}
 .accordion-item__icon {
   margin-left: 1rem;
   color: var(--interactive);
@@ -92254,6 +92258,10 @@ form p.wicket-form-help-text.secondary-nav .component-link,
   border-radius: var(--interactive-corner-radius-md);
   padding: var(--space-100);
   color: var(--nav-contextual-sublink);
+}
+.component-sidebar-contextual-nav__sublist-item a:hover {
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
 }
 .component-sidebar-contextual-nav__sublist-item a:focus {
   background-color: var(--highlight-light);

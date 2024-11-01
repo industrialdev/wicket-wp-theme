@@ -11,6 +11,10 @@
     a {
       @apply p-[--space-100] block rounded-[--interactive-corner-radius-md] text-[--nav-contextual-sublink];
 
+      &:hover {
+        @apply underline;
+      }
+
       &:focus {
         @apply bg-[--highlight-light];
       }
