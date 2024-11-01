@@ -2988,7 +2988,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "wpml_cf_preferences": 2,
+                    "wpml_cf_preferences": 1,
                     "default_value": "0 4px 8px var(--dropshadow)",
                     "placeholder": "",
                     "prepend": "",
@@ -3009,7 +3009,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "wpml_cf_preferences": 2,
+                    "wpml_cf_preferences": 1,
                     "default_value": "0 8px 12px var(--dropshadow)",
                     "placeholder": "",
                     "prepend": "",
@@ -3030,7 +3030,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "wpml_cf_preferences": 2,
+                    "wpml_cf_preferences": 1,
                     "default_value": "0 12px 12px var(--dropshadow)",
                     "placeholder": "",
                     "prepend": "",
@@ -3749,6 +3749,6 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "acfml_field_group_mode": "translation",
-    "modified": 1729780352
+    "acfml_field_group_mode": "advanced",
+    "modified": 1730464280
 }
