@@ -5,6 +5,10 @@
     filter: drop-shadow( var(--elevation-4) );
   }
 
+  .wc-block-grid__product-link {
+    @apply no-underline hover:underline;
+  }
+
   .wc-block-grid__product-title {
     @apply text-heading-xs block mb-[--space-200] text-[--text-content];
   }

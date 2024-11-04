@@ -52,7 +52,7 @@
 
       > li {
         > a {
-          @apply mb-[--space-150] inline-flex text-[--nav-footer-sublink];
+          @apply mb-[--space-150] inline-flex text-[--nav-footer-sublink] no-underline hover:underline;
         }
       }
     }

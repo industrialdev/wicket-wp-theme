@@ -6,7 +6,7 @@
 
     li {
       a {
-        @apply text-[--nav-footer-sublink];
+        @apply text-[--nav-footer-sublink] no-underline hover:underline;
       }
     }
   }
