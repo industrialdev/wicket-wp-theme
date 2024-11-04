@@ -1,5 +1,11 @@
 body {
   @apply text-body-md text-[--text-content];
+
+  #main-content {
+    a:where(:not(.wp-element-button)) {
+      @apply text-[--interactive] underline hover:no-underline; 
+    }
+  }
 }
 
 h1,

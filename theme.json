@@ -378,19 +378,19 @@
     "elements": {
       "link": {
         "color": {
-          "text": "var(--wp--custom--color--link)"
+          "text": "var(--interactive)"
         }
       },
       "button": {
         "color": {
-          "background": "var(--wp--preset--color--dark)",
-          "text": "var(--wp--preset--color--light)"
+          "background": "var(--wp--preset--color--black)",
+          "text": "var(--wp--preset--color--white)"
         },
         "border": {
           "width": "2px",
           "radius": "var(--interactive-corner-radius-md)",
           "style": "solid",
-          "color": "var(--wp--preset--color--dark)"
+          "color": "var(--wp--preset--color--black)"
         },
         "spacing": {
           "padding": {
