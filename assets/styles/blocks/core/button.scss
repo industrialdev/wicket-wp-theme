@@ -31,14 +31,17 @@
     &[target="_blank"] {
       @include add-external-icon;
     }
+  }
 
-    /* Default (Primary) button */
-    @extend .button !optional;
-    @extend .button--primary !optional;
+  /* Default (Primary) button */
+  &:not([class*="is-style"]) {
+    .wp-block-button__link.wp-element-button {
+      @include button-primary;
 
-    &:hover {
-      img {
-        filter: invert(100%);
+      &:hover {
+        img {
+          filter: invert(100%);
+        }
       }
     }
   }
@@ -46,8 +49,20 @@
   /* Default (Primary) button */
   &.is-style-default {
     .wp-block-button__link.wp-element-button {
-      @extend .button !optional;
-      @extend .button--primary !optional;
+      @include button-primary;
+
+      &:hover {
+        img {
+          filter: invert(100%);
+        }
+      }
+    }
+  }
+
+  /* Default (Primary) reversed button */
+  &.is-style-primary_reversed {
+    .wp-block-button__link.wp-element-button {
+      @include button-primary-rev;
 
       &:hover {
         img {
@@ -60,8 +75,20 @@
   /* Secondary button */
   &.is-style-secondary {
     .wp-block-button__link.wp-element-button {
-      @extend .button !optional;
-      @extend .button--secondary !optional;
+      @include button-secondary;
+
+      &:hover {
+        img {
+          filter: invert(100%);
+        }
+      }
+    }
+  }
+  
+  /* Secondary Reversed button */
+  &.is-style-secondary_reversed {
+    .wp-block-button__link.wp-element-button {
+      @include button-secondary-rev;
 
       &:hover {
         img {
@@ -74,8 +101,20 @@
   /* Ghost button */
   &.is-style-ghost {
     .wp-block-button__link.wp-element-button {
-      @extend .button !optional;
-      @extend .button--secondary !optional;
+      @include button-ghost;
+
+      &:hover {
+        img {
+          filter: invert(100%);
+        }
+      }
+    }
+  }
+
+  /* Ghost button reversed */
+  &.is-style-ghost_reversed {
+    .wp-block-button__link.wp-element-button {
+      @include button-ghost-rev;
 
       &:hover {
         img {

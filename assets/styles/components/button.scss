@@ -24,58 +24,58 @@
 
   // Primary
   &--primary:not(.button--reversed) {
-    @apply bg-[--bg-interactive] border-[length:--border-interactive-md] border-transparent text-[--text-button-label-reversed] hover:bg-transparent hover:border-[--border-interactive] hover:text-[--text-button-label] hover:underline focus:bg-[--highlight-light] focus:border-[--border-interactive] focus:text-[--text-button-label] focus:underline active:bg-[--highlight-light] active:border-transparent active:text-[--text-button-label];
+    @include button-primary;
   }
 
   // Secondary
   &--secondary:not(.button--reversed) {
-    @apply bg-transparent border-[--border-interactive] border-[length:--border-interactive-md] text-[--text-button-label] hover:bg-[--bg-interactive] hover:text-[--text-button-label-reversed] hover:underline focus:bg-[--highlight-dark] focus:text-[--text-button-label-reversed] focus:underline active:bg-[--highlight-dark] active:text-[--text-button-label-reversed];
+    @include button-secondary;
   }
 
   // Ghost
   &--ghost:not(.button--reversed) {
-    @apply text-[--text-button-label] hover:bg-[--bg-interactive] hover:text-[--text-button-label-reversed] hover:underline focus:bg-[--highlight-dark] focus:text-[--text-button-label-reversed] focus:underline active:bg-[--highlight-light] active:text-[--text-button-label];
+    @include button-ghost;
   }
 
   // Primary Reversed
   &--primary.button--reversed {
-    @apply bg-[--bg-interactive-reversed] border-[length:--border-interactive-md] border-transparent text-[--text-button-label] hover:bg-transparent hover:border-[--border-interactive-reversed] hover:text-[--text-button-label-reversed] hover:underline focus:bg-[--highlight-dark] focus:border-[--border-interactive-reversed] focus:text-[--text-button-label-reversed] focus:underline active:bg-[--highlight-light] active:text-[--text-button-label];
+    @include button-primary-rev;
   }
 
   // Secondary Reversed
   &--secondary.button--reversed {
-    @apply bg-transparent border-[--border-interactive-reversed] border-[length:--border-interactive-md] text-[--text-button-label-reversed] hover:bg-[--bg-interactive-reversed] hover:text-[--text-button-label] hover:underline focus:bg-[--highlight-light] focus:text-[--text-button-label] focus:underline active:bg-[--highlight-light] active:text-[--text-button-label];
+    @include button-secondary-rev;
   }
 
   // Ghost Reversed
   &--ghost.button--reversed {
-    @apply text-[--text-button-label-reversed] hover:bg-[--bg-interactive-reversed] hover:text-[--text-button-label] hover:underline focus:bg-[--highlight-light] focus:text-[--text-button-label] focus:underline active:bg-[--highlight-light] active:text-[--text-button-label];
+    @include button-ghost-rev;
   }
 
   // Disabled States
   &--primary.button--disabled {
-    @apply bg-[--bg-disabled] pointer-events-none text-[--text-disabled] border-transparent #{!important};
+    @include button-primary-disabled;
   }
 
   &--secondary.button--disabled {
-    @apply bg-[--bg-transparent] pointer-events-none text-[--text-disabled] border-[--border-disabled] #{!important};
+    @include button-secondary-disabled;
   }
 
   &--ghost.button--disabled {
-    @apply text-[--text-disabled] pointer-events-none #{!important};
+    @include button-ghost-disabled;
   }
   
   // Disabled States Reversed
   &--primary.button--disabled.button--reversed {
-    @apply bg-[--bg-disabled] pointer-events-none text-[--text-disabled] border-transparent #{!important};
+    @include button-primary-rev-disabled;
   }
 
   &--secondary.button--disabled.button--reversed {
-    @apply bg-[--bg-transparent] pointer-events-none text-[--text-disabled] border-[--border-disabled] #{!important};
+    @include button-secondary-rev-disabled;
   }
 
   &--ghost.button--disabled.button--reversed {
-    @apply text-[--text-disabled] pointer-events-none border-transparent #{!important};
+    @include button-ghost-rev-disabled;
   }
 
   // If social link component is used

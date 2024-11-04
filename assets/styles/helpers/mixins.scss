@@ -60,3 +60,52 @@
     @apply bg-[--nav-main-highlight]
   }
 }
+
+@mixin button-primary {
+  @apply bg-[--bg-interactive] border-[length:--border-interactive-md] border-transparent text-[--text-button-label-reversed] hover:bg-transparent hover:border-[--border-interactive] hover:text-[--text-button-label] hover:underline focus:bg-[--highlight-light] focus:border-[--border-interactive] focus:text-[--text-button-label] focus:underline active:bg-[--highlight-light] active:border-transparent active:text-[--text-button-label];
+}
+
+@mixin button-secondary {
+  @apply bg-transparent border-[--border-interactive] border-[length:--border-interactive-md] text-[--text-button-label] hover:bg-[--bg-interactive] hover:text-[--text-button-label-reversed] hover:underline focus:bg-[--highlight-dark] focus:text-[--text-button-label-reversed] focus:underline active:bg-[--highlight-dark] active:text-[--text-button-label-reversed];
+}
+
+@mixin button-ghost {
+  @apply text-[--text-button-label] bg-transparent hover:bg-[--bg-interactive] hover:text-[--text-button-label-reversed] hover:underline focus:bg-[--highlight-dark] focus:text-[--text-button-label-reversed] focus:underline active:bg-[--highlight-light] active:text-[--text-button-label];
+}
+
+@mixin button-primary-rev {
+  @apply bg-[--bg-interactive-reversed] border-[length:--border-interactive-md] border-transparent text-[--text-button-label] hover:bg-transparent hover:border-[--border-interactive-reversed] hover:text-[--text-button-label-reversed] hover:underline focus:bg-[--highlight-dark] focus:border-[--border-interactive-reversed] focus:text-[--text-button-label-reversed] focus:underline active:bg-[--highlight-light] active:text-[--text-button-label];
+}
+
+@mixin button-secondary-rev {
+  @apply bg-transparent border-[--border-interactive-reversed] border-[length:--border-interactive-md] text-[--text-button-label-reversed] hover:bg-[--bg-interactive-reversed] hover:text-[--text-button-label] hover:underline focus:bg-[--highlight-light] focus:text-[--text-button-label] focus:underline active:bg-[--highlight-light] active:text-[--text-button-label];
+}
+
+@mixin button-ghost-rev {
+  @apply text-[--text-button-label-reversed] hover:bg-[--bg-interactive-reversed] hover:text-[--text-button-label] hover:underline focus:bg-[--highlight-light] focus:text-[--text-button-label] focus:underline active:bg-[--highlight-light] active:text-[--text-button-label];
+}
+
+// Disabled States
+@mixin button-primary-disabled {
+  @apply bg-[--bg-disabled] pointer-events-none text-[--text-disabled] border-transparent #{!important};
+}
+
+@mixin button-secondary-disabled {
+  @apply bg-[--bg-transparent] pointer-events-none text-[--text-disabled] border-[--border-disabled] #{!important};
+}
+
+@mixin button-ghost-disabled {
+  @apply text-[--text-disabled] pointer-events-none #{!important};
+}
+
+@mixin button-primary-rev-disabled {
+  @apply bg-[--bg-disabled] pointer-events-none text-[--text-disabled] border-transparent #{!important};
+}
+
+@mixin button-secondary-rev-disabled {
+  @apply bg-[--bg-transparent] pointer-events-none text-[--text-disabled] border-[--border-disabled] #{!important};
+}
+
+@mixin button-ghost-rev-disabled {
+  @apply text-[--text-disabled] pointer-events-none border-transparent #{!important};
+}

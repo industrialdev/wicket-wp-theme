@@ -90198,7 +90198,7 @@ a:where(:not(.wp-element-button)):active {
   color: var(--text-content-reversed);
 }
 
-.button, .wp-block-button.is-style-ghost .wp-block-button__link.wp-element-button, .wp-block-button.is-style-secondary .wp-block-button__link.wp-element-button, .wp-block-button.is-style-default .wp-block-button__link.wp-element-button, .wp-block-button .wp-block-button__link.wp-element-button {
+.button {
   border-radius: var(--interactive-corner-radius-md);
   padding: var(--space-200);
   font-size: var(--button-label-md-font-size);
@@ -90207,7 +90207,7 @@ a:where(:not(.wp-element-button)):active {
   font-weight: var(--button-label-md-font-weight);
   line-height: var(--button-label-md-line-height);
 }
-.button .component-icon, .wp-block-button .wp-block-button__link.wp-element-button .component-icon {
+.button .component-icon {
   font-size: 16px;
 }
 .button--sm {
@@ -90230,54 +90230,55 @@ a:where(:not(.wp-element-button)):active {
 .button--lg .component-icon {
   font-size: 24px;
 }
-.button--primary:not(.button--reversed), .wp-block-button .wp-block-button__link.wp-element-button:not(.button--reversed) {
+.button--primary:not(.button--reversed) {
   border-width: var(--border-interactive-md);
   border-color: transparent;
   background-color: var(--bg-interactive);
   color: var(--text-button-label-reversed);
 }
-.button--primary:not(.button--reversed):hover, .wp-block-button .wp-block-button__link.wp-element-button:not(.button--reversed):hover {
+.button--primary:not(.button--reversed):hover {
   border-color: var(--border-interactive);
   background-color: transparent;
   color: var(--text-button-label);
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.button--primary:not(.button--reversed):focus, .wp-block-button .wp-block-button__link.wp-element-button:not(.button--reversed):focus {
+.button--primary:not(.button--reversed):focus {
   border-color: var(--border-interactive);
   background-color: var(--highlight-light);
   color: var(--text-button-label);
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.button--primary:not(.button--reversed):active, .wp-block-button .wp-block-button__link.wp-element-button:not(.button--reversed):active {
+.button--primary:not(.button--reversed):active {
   border-color: transparent;
   background-color: var(--highlight-light);
   color: var(--text-button-label);
 }
-.button--secondary:not(.button--reversed), .wp-block-button.is-style-ghost .wp-block-button__link.wp-element-button:not(.button--reversed), .wp-block-button.is-style-secondary .wp-block-button__link.wp-element-button:not(.button--reversed) {
+.button--secondary:not(.button--reversed) {
   border-width: var(--border-interactive-md);
   border-color: var(--border-interactive);
   background-color: transparent;
   color: var(--text-button-label);
 }
-.button--secondary:not(.button--reversed):hover, .wp-block-button.is-style-ghost .wp-block-button__link.wp-element-button:not(.button--reversed):hover, .wp-block-button.is-style-secondary .wp-block-button__link.wp-element-button:not(.button--reversed):hover {
+.button--secondary:not(.button--reversed):hover {
   background-color: var(--bg-interactive);
   color: var(--text-button-label-reversed);
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.button--secondary:not(.button--reversed):focus, .wp-block-button.is-style-ghost .wp-block-button__link.wp-element-button:not(.button--reversed):focus, .wp-block-button.is-style-secondary .wp-block-button__link.wp-element-button:not(.button--reversed):focus {
+.button--secondary:not(.button--reversed):focus {
   background-color: var(--highlight-dark);
   color: var(--text-button-label-reversed);
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.button--secondary:not(.button--reversed):active, .wp-block-button.is-style-ghost .wp-block-button__link.wp-element-button:not(.button--reversed):active, .wp-block-button.is-style-secondary .wp-block-button__link.wp-element-button:not(.button--reversed):active {
+.button--secondary:not(.button--reversed):active {
   background-color: var(--highlight-dark);
   color: var(--text-button-label-reversed);
 }
 .button--ghost:not(.button--reversed) {
+  background-color: transparent;
   color: var(--text-button-label);
 }
 .button--ghost:not(.button--reversed):hover {
@@ -90296,49 +90297,49 @@ a:where(:not(.wp-element-button)):active {
   background-color: var(--highlight-light);
   color: var(--text-button-label);
 }
-.button--primary.button--reversed, .wp-block-button .button--reversed.wp-block-button__link.wp-element-button {
+.button--primary.button--reversed {
   border-width: var(--border-interactive-md);
   border-color: transparent;
   background-color: var(--bg-interactive-reversed);
   color: var(--text-button-label);
 }
-.button--primary.button--reversed:hover, .wp-block-button .button--reversed.wp-block-button__link.wp-element-button:hover {
+.button--primary.button--reversed:hover {
   border-color: var(--border-interactive-reversed);
   background-color: transparent;
   color: var(--text-button-label-reversed);
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.button--primary.button--reversed:focus, .wp-block-button .button--reversed.wp-block-button__link.wp-element-button:focus {
+.button--primary.button--reversed:focus {
   border-color: var(--border-interactive-reversed);
   background-color: var(--highlight-dark);
   color: var(--text-button-label-reversed);
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.button--primary.button--reversed:active, .wp-block-button .button--reversed.wp-block-button__link.wp-element-button:active {
+.button--primary.button--reversed:active {
   background-color: var(--highlight-light);
   color: var(--text-button-label);
 }
-.button--secondary.button--reversed, .wp-block-button.is-style-ghost .button--reversed.wp-block-button__link.wp-element-button, .wp-block-button.is-style-secondary .button--reversed.wp-block-button__link.wp-element-button {
+.button--secondary.button--reversed {
   border-width: var(--border-interactive-md);
   border-color: var(--border-interactive-reversed);
   background-color: transparent;
   color: var(--text-button-label-reversed);
 }
-.button--secondary.button--reversed:hover, .wp-block-button.is-style-ghost .button--reversed.wp-block-button__link.wp-element-button:hover, .wp-block-button.is-style-secondary .button--reversed.wp-block-button__link.wp-element-button:hover {
+.button--secondary.button--reversed:hover {
   background-color: var(--bg-interactive-reversed);
   color: var(--text-button-label);
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.button--secondary.button--reversed:focus, .wp-block-button.is-style-ghost .button--reversed.wp-block-button__link.wp-element-button:focus, .wp-block-button.is-style-secondary .button--reversed.wp-block-button__link.wp-element-button:focus {
+.button--secondary.button--reversed:focus {
   background-color: var(--highlight-light);
   color: var(--text-button-label);
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.button--secondary.button--reversed:active, .wp-block-button.is-style-ghost .button--reversed.wp-block-button__link.wp-element-button:active, .wp-block-button.is-style-secondary .button--reversed.wp-block-button__link.wp-element-button:active {
+.button--secondary.button--reversed:active {
   background-color: var(--highlight-light);
   color: var(--text-button-label);
 }
@@ -90361,13 +90362,13 @@ a:where(:not(.wp-element-button)):active {
   background-color: var(--highlight-light);
   color: var(--text-button-label);
 }
-.button--primary.button--disabled, .wp-block-button .button--disabled.wp-block-button__link.wp-element-button {
+.button--primary.button--disabled {
   pointer-events: none !important;
   border-color: transparent !important;
   background-color: var(--bg-disabled) !important;
   color: var(--text-disabled) !important;
 }
-.button--secondary.button--disabled, .wp-block-button.is-style-ghost .button--disabled.wp-block-button__link.wp-element-button, .wp-block-button.is-style-secondary .button--disabled.wp-block-button__link.wp-element-button {
+.button--secondary.button--disabled {
   pointer-events: none !important;
   border-color: var(--border-disabled) !important;
   background-color: var(--bg-transparent) !important;
@@ -90377,13 +90378,13 @@ a:where(:not(.wp-element-button)):active {
   pointer-events: none !important;
   color: var(--text-disabled) !important;
 }
-.button--primary.button--disabled.button--reversed, .wp-block-button .button--disabled.button--reversed.wp-block-button__link.wp-element-button {
+.button--primary.button--disabled.button--reversed {
   pointer-events: none !important;
   border-color: transparent !important;
   background-color: var(--bg-disabled) !important;
   color: var(--text-disabled) !important;
 }
-.button--secondary.button--disabled.button--reversed, .wp-block-button.is-style-ghost .button--disabled.button--reversed.wp-block-button__link.wp-element-button, .wp-block-button.is-style-secondary .button--disabled.button--reversed.wp-block-button__link.wp-element-button {
+.button--secondary.button--disabled.button--reversed {
   pointer-events: none !important;
   border-color: var(--border-disabled) !important;
   background-color: var(--bg-transparent) !important;
@@ -90394,14 +90395,14 @@ a:where(:not(.wp-element-button)):active {
   border-color: transparent !important;
   color: var(--text-disabled) !important;
 }
-.social-links .button, .social-links .wp-block-button .wp-block-button__link.wp-element-button, .wp-block-button .social-links .wp-block-button__link.wp-element-button {
+.social-links .button {
   border-radius: var(--social-media-radius);
   border-width: var(--border-footer-social);
   border-color: transparent;
   background-color: var(--nav-footer-social-bg);
   color: var(--nav-footer-social-text);
 }
-.social-links .button:hover, .social-links .wp-block-button .wp-block-button__link.wp-element-button:hover, .wp-block-button .social-links .wp-block-button__link.wp-element-button:hover {
+.social-links .button:hover {
   border-color: var(--nav-footer-social-border-hover);
   background-color: transparent;
   color: var(--nav-footer-social-text-hover);
@@ -91126,74 +91127,74 @@ a:where(:not(.wp-element-button)):active {
   -webkit-text-decoration-line: none;
   text-decoration-line: none;
 }
-.component-card-product .button:not(.button--reversed), .component-card-product .wp-block-button .wp-block-button__link.wp-element-button:not(.button--reversed), .wp-block-button .component-card-product .wp-block-button__link.wp-element-button:not(.button--reversed) {
+.component-card-product .button:not(.button--reversed) {
   border-width: var(--border-interactive-md);
   border-color: transparent;
   background-color: var(--bg-interactive);
   color: var(--text-button-label-reversed);
 }
-.component-card-product .button:not(.button--reversed):hover, .component-card-product .wp-block-button .wp-block-button__link.wp-element-button:not(.button--reversed):hover, .wp-block-button .component-card-product .wp-block-button__link.wp-element-button:not(.button--reversed):hover {
+.component-card-product .button:not(.button--reversed):hover {
   border-color: var(--border-interactive);
   background-color: transparent;
   color: var(--text-button-label);
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.component-card-product .button:not(.button--reversed):focus, .component-card-product .wp-block-button .wp-block-button__link.wp-element-button:not(.button--reversed):focus, .wp-block-button .component-card-product .wp-block-button__link.wp-element-button:not(.button--reversed):focus {
+.component-card-product .button:not(.button--reversed):focus {
   border-color: var(--border-interactive);
   background-color: var(--highlight-light);
   color: var(--text-button-label);
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.component-card-product .button:not(.button--reversed):active, .component-card-product .wp-block-button .wp-block-button__link.wp-element-button:not(.button--reversed):active, .wp-block-button .component-card-product .wp-block-button__link.wp-element-button:not(.button--reversed):active {
+.component-card-product .button:not(.button--reversed):active {
   border-color: transparent;
   background-color: var(--highlight-light);
   color: var(--text-button-label);
 }
-.component-card-product .button.button--reversed, .component-card-product .wp-block-button .wp-block-button__link.wp-element-button.button--reversed, .wp-block-button .component-card-product .wp-block-button__link.wp-element-button.button--reversed {
+.component-card-product .button.button--reversed {
   border-width: var(--border-interactive-md);
   border-color: transparent;
   background-color: var(--bg-interactive-reversed);
   color: var(--text-button-label);
 }
-.component-card-product .button.button--reversed:hover, .component-card-product .wp-block-button .wp-block-button__link.wp-element-button.button--reversed:hover, .wp-block-button .component-card-product .wp-block-button__link.wp-element-button.button--reversed:hover {
+.component-card-product .button.button--reversed:hover {
   border-color: var(--border-interactive-reversed);
   background-color: transparent;
   color: var(--text-button-label-reversed);
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.component-card-product .button.button--reversed:focus, .component-card-product .wp-block-button .wp-block-button__link.wp-element-button.button--reversed:focus, .wp-block-button .component-card-product .wp-block-button__link.wp-element-button.button--reversed:focus {
+.component-card-product .button.button--reversed:focus {
   border-color: var(--border-interactive-reversed);
   background-color: var(--highlight-dark);
   color: var(--text-button-label-reversed);
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.component-card-product .button.button--reversed:active, .component-card-product .wp-block-button .wp-block-button__link.wp-element-button.button--reversed:active, .wp-block-button .component-card-product .wp-block-button__link.wp-element-button.button--reversed:active {
+.component-card-product .button.button--reversed:active {
   background-color: var(--highlight-light);
   color: var(--text-button-label);
 }
-.component-card-product .button.button--disabled, .component-card-product .wp-block-button .wp-block-button__link.wp-element-button.button--disabled, .wp-block-button .component-card-product .wp-block-button__link.wp-element-button.button--disabled {
+.component-card-product .button.button--disabled {
   pointer-events: none !important;
   border-color: transparent !important;
   background-color: var(--bg-disabled) !important;
   color: var(--text-disabled) !important;
 }
-.component-card-product .button.button--disabled.button--reversed, .component-card-product .wp-block-button .wp-block-button__link.wp-element-button.button--disabled.button--reversed, .wp-block-button .component-card-product .wp-block-button__link.wp-element-button.button--disabled.button--reversed {
+.component-card-product .button.button--disabled.button--reversed {
   pointer-events: none !important;
   border-color: transparent !important;
   background-color: var(--bg-disabled) !important;
   color: var(--text-disabled) !important;
 }
-.component-card-product .button, .component-card-product .wp-block-button .wp-block-button__link.wp-element-button, .wp-block-button .component-card-product .wp-block-button__link.wp-element-button {
+.component-card-product .button {
   border: var(--border-interactive-md) solid var(--border-interactive);
 }
-.component-card-product .button:hover, .component-card-product .wp-block-button .wp-block-button__link.wp-element-button:hover, .wp-block-button .component-card-product .wp-block-button__link.wp-element-button:hover {
+.component-card-product .button:hover {
   border: var(--border-interactive-md) solid var(--border-interactive);
 }
-.component-card-product .button.product_type_external:after, .component-card-product .wp-block-button .product_type_external.wp-block-button__link.wp-element-button:after, .wp-block-button .component-card-product .product_type_external.wp-block-button__link.wp-element-button:after {
+.component-card-product .button.product_type_external:after {
   display: inline-block;
   content: "\f35d";
   font-family: var(--fa-style-family, "Font Awesome 6 Pro");
@@ -91201,43 +91202,31 @@ a:where(:not(.wp-element-button)):active {
   margin-left: 4px;
   font-size: 90%;
 }
-.component-card-product .button .add_to_cart_button__text-added, .component-card-product .wp-block-button .wp-block-button__link.wp-element-button .add_to_cart_button__text-added, .wp-block-button .component-card-product .wp-block-button__link.wp-element-button .add_to_cart_button__text-added {
+.component-card-product .button .add_to_cart_button__text-added {
   display: none;
 }
 form .wicket-form-help-text.component-card-product .button .add_to_cart_button__text-added,
 form p.wicket-form-help-text.component-card-product .button .add_to_cart_button__text-added,
 .form .wicket-form-help-text.component-card-product .button .add_to_cart_button__text-added,
-.form p.wicket-form-help-text.component-card-product .button .add_to_cart_button__text-added,form .wicket-form-help-text .component-card-product .wp-block-button .wp-block-button__link.wp-element-button .add_to_cart_button__text-added,
-form p.wicket-form-help-text .component-card-product .wp-block-button .wp-block-button__link.wp-element-button .add_to_cart_button__text-added,
-.form .wicket-form-help-text .component-card-product .wp-block-button .wp-block-button__link.wp-element-button .add_to_cart_button__text-added,
-.form p.wicket-form-help-text .component-card-product .wp-block-button .wp-block-button__link.wp-element-button .add_to_cart_button__text-added,form .wicket-form-help-text .wp-block-button .component-card-product .wp-block-button__link.wp-element-button .add_to_cart_button__text-added,
-form p.wicket-form-help-text .wp-block-button .component-card-product .wp-block-button__link.wp-element-button .add_to_cart_button__text-added,
-.form .wicket-form-help-text .wp-block-button .component-card-product .wp-block-button__link.wp-element-button .add_to_cart_button__text-added,
-.form p.wicket-form-help-text .wp-block-button .component-card-product .wp-block-button__link.wp-element-button .add_to_cart_button__text-added {
+.form p.wicket-form-help-text.component-card-product .button .add_to_cart_button__text-added {
   display: none;
 }
-.component-card-product .button .add_to_cart_button__text, .component-card-product .wp-block-button .wp-block-button__link.wp-element-button .add_to_cart_button__text, .wp-block-button .component-card-product .wp-block-button__link.wp-element-button .add_to_cart_button__text {
+.component-card-product .button .add_to_cart_button__text {
   display: block;
 }
-.component-card-product .button.added .add_to_cart_button__text-added, .component-card-product .wp-block-button .added.wp-block-button__link.wp-element-button .add_to_cart_button__text-added, .wp-block-button .component-card-product .added.wp-block-button__link.wp-element-button .add_to_cart_button__text-added {
+.component-card-product .button.added .add_to_cart_button__text-added {
   display: block;
 }
-.component-card-product .button.added .add_to_cart_button__text, .component-card-product .wp-block-button .added.wp-block-button__link.wp-element-button .add_to_cart_button__text, .wp-block-button .component-card-product .added.wp-block-button__link.wp-element-button .add_to_cart_button__text {
+.component-card-product .button.added .add_to_cart_button__text {
   display: none;
 }
 form .wicket-form-help-text.component-card-product .button.added .add_to_cart_button__text,
 form p.wicket-form-help-text.component-card-product .button.added .add_to_cart_button__text,
 .form .wicket-form-help-text.component-card-product .button.added .add_to_cart_button__text,
-.form p.wicket-form-help-text.component-card-product .button.added .add_to_cart_button__text,form .wicket-form-help-text .component-card-product .wp-block-button .added.wp-block-button__link.wp-element-button .add_to_cart_button__text,
-form p.wicket-form-help-text .component-card-product .wp-block-button .added.wp-block-button__link.wp-element-button .add_to_cart_button__text,
-.form .wicket-form-help-text .component-card-product .wp-block-button .added.wp-block-button__link.wp-element-button .add_to_cart_button__text,
-.form p.wicket-form-help-text .component-card-product .wp-block-button .added.wp-block-button__link.wp-element-button .add_to_cart_button__text,form .wicket-form-help-text .wp-block-button .component-card-product .added.wp-block-button__link.wp-element-button .add_to_cart_button__text,
-form p.wicket-form-help-text .wp-block-button .component-card-product .added.wp-block-button__link.wp-element-button .add_to_cart_button__text,
-.form .wicket-form-help-text .wp-block-button .component-card-product .added.wp-block-button__link.wp-element-button .add_to_cart_button__text,
-.form p.wicket-form-help-text .wp-block-button .component-card-product .added.wp-block-button__link.wp-element-button .add_to_cart_button__text {
+.form p.wicket-form-help-text.component-card-product .button.added .add_to_cart_button__text {
   display: none;
 }
-.component-card-product .button.button--disabled, .component-card-product .wp-block-button .button--disabled.wp-block-button__link.wp-element-button, .wp-block-button .component-card-product .button--disabled.wp-block-button__link.wp-element-button {
+.component-card-product .button.button--disabled {
   border-color: transparent !important;
   background-color: var(--bg-disabled) !important;
   color: var(--text-disabled) !important;
@@ -92717,8 +92706,12 @@ form p.wicket-form-help-text.component-tooltip-content,
 
 .wp-block-button {
   /* Default (Primary) button */
+  /* Default (Primary) button */
+  /* Default (Primary) reversed button */
   /* Secondary button */
+  /* Secondary Reversed button */
   /* Ghost button */
+  /* Ghost button reversed */
 }
 .wp-block-button .wp-block-button__link.wp-element-button {
   display: -webkit-inline-box;
@@ -92728,7 +92721,6 @@ form p.wicket-form-help-text.component-tooltip-content,
   -ms-flex-align: center;
   align-items: center;
   gap: var(--wp--preset--spacing--100);
-  /* Default (Primary) button */
 }
 .wp-block-button .wp-block-button__link.wp-element-button[target=_blank]:after {
   display: inline-block;
@@ -92738,19 +92730,188 @@ form p.wicket-form-help-text.component-tooltip-content,
   margin-left: 4px;
   font-size: 90%;
 }
-.wp-block-button .wp-block-button__link.wp-element-button:hover img {
+.wp-block-button:not([class*=is-style]) .wp-block-button__link.wp-element-button {
+  border-width: var(--border-interactive-md);
+  border-color: transparent;
+  background-color: var(--bg-interactive);
+  color: var(--text-button-label-reversed);
+}
+.wp-block-button:not([class*=is-style]) .wp-block-button__link.wp-element-button:hover {
+  border-color: var(--border-interactive);
+  background-color: transparent;
+  color: var(--text-button-label);
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+}
+.wp-block-button:not([class*=is-style]) .wp-block-button__link.wp-element-button:focus {
+  border-color: var(--border-interactive);
+  background-color: var(--highlight-light);
+  color: var(--text-button-label);
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+}
+.wp-block-button:not([class*=is-style]) .wp-block-button__link.wp-element-button:active {
+  border-color: transparent;
+  background-color: var(--highlight-light);
+  color: var(--text-button-label);
+}
+.wp-block-button:not([class*=is-style]) .wp-block-button__link.wp-element-button:hover img {
   -webkit-filter: invert(100%);
   filter: invert(100%);
+}
+.wp-block-button.is-style-default .wp-block-button__link.wp-element-button {
+  border-width: var(--border-interactive-md);
+  border-color: transparent;
+  background-color: var(--bg-interactive);
+  color: var(--text-button-label-reversed);
+}
+.wp-block-button.is-style-default .wp-block-button__link.wp-element-button:hover {
+  border-color: var(--border-interactive);
+  background-color: transparent;
+  color: var(--text-button-label);
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+}
+.wp-block-button.is-style-default .wp-block-button__link.wp-element-button:focus {
+  border-color: var(--border-interactive);
+  background-color: var(--highlight-light);
+  color: var(--text-button-label);
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+}
+.wp-block-button.is-style-default .wp-block-button__link.wp-element-button:active {
+  border-color: transparent;
+  background-color: var(--highlight-light);
+  color: var(--text-button-label);
 }
 .wp-block-button.is-style-default .wp-block-button__link.wp-element-button:hover img {
   -webkit-filter: invert(100%);
   filter: invert(100%);
 }
+.wp-block-button.is-style-primary_reversed .wp-block-button__link.wp-element-button {
+  border-width: var(--border-interactive-md);
+  border-color: transparent;
+  background-color: var(--bg-interactive-reversed);
+  color: var(--text-button-label);
+}
+.wp-block-button.is-style-primary_reversed .wp-block-button__link.wp-element-button:hover {
+  border-color: var(--border-interactive-reversed);
+  background-color: transparent;
+  color: var(--text-button-label-reversed);
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+}
+.wp-block-button.is-style-primary_reversed .wp-block-button__link.wp-element-button:focus {
+  border-color: var(--border-interactive-reversed);
+  background-color: var(--highlight-dark);
+  color: var(--text-button-label-reversed);
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+}
+.wp-block-button.is-style-primary_reversed .wp-block-button__link.wp-element-button:active {
+  background-color: var(--highlight-light);
+  color: var(--text-button-label);
+}
+.wp-block-button.is-style-primary_reversed .wp-block-button__link.wp-element-button:hover img {
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
+.wp-block-button.is-style-secondary .wp-block-button__link.wp-element-button {
+  border-width: var(--border-interactive-md);
+  border-color: var(--border-interactive);
+  background-color: transparent;
+  color: var(--text-button-label);
+}
+.wp-block-button.is-style-secondary .wp-block-button__link.wp-element-button:hover {
+  background-color: var(--bg-interactive);
+  color: var(--text-button-label-reversed);
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+}
+.wp-block-button.is-style-secondary .wp-block-button__link.wp-element-button:focus {
+  background-color: var(--highlight-dark);
+  color: var(--text-button-label-reversed);
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+}
+.wp-block-button.is-style-secondary .wp-block-button__link.wp-element-button:active {
+  background-color: var(--highlight-dark);
+  color: var(--text-button-label-reversed);
+}
 .wp-block-button.is-style-secondary .wp-block-button__link.wp-element-button:hover img {
   -webkit-filter: invert(100%);
   filter: invert(100%);
 }
+.wp-block-button.is-style-secondary_reversed .wp-block-button__link.wp-element-button {
+  border-width: var(--border-interactive-md);
+  border-color: var(--border-interactive-reversed);
+  background-color: transparent;
+  color: var(--text-button-label-reversed);
+}
+.wp-block-button.is-style-secondary_reversed .wp-block-button__link.wp-element-button:hover {
+  background-color: var(--bg-interactive-reversed);
+  color: var(--text-button-label);
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+}
+.wp-block-button.is-style-secondary_reversed .wp-block-button__link.wp-element-button:focus {
+  background-color: var(--highlight-light);
+  color: var(--text-button-label);
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+}
+.wp-block-button.is-style-secondary_reversed .wp-block-button__link.wp-element-button:active {
+  background-color: var(--highlight-light);
+  color: var(--text-button-label);
+}
+.wp-block-button.is-style-secondary_reversed .wp-block-button__link.wp-element-button:hover img {
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
+.wp-block-button.is-style-ghost .wp-block-button__link.wp-element-button {
+  background-color: transparent;
+  color: var(--text-button-label);
+}
+.wp-block-button.is-style-ghost .wp-block-button__link.wp-element-button:hover {
+  background-color: var(--bg-interactive);
+  color: var(--text-button-label-reversed);
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+}
+.wp-block-button.is-style-ghost .wp-block-button__link.wp-element-button:focus {
+  background-color: var(--highlight-dark);
+  color: var(--text-button-label-reversed);
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+}
+.wp-block-button.is-style-ghost .wp-block-button__link.wp-element-button:active {
+  background-color: var(--highlight-light);
+  color: var(--text-button-label);
+}
 .wp-block-button.is-style-ghost .wp-block-button__link.wp-element-button:hover img {
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
+.wp-block-button.is-style-ghost_reversed .wp-block-button__link.wp-element-button {
+  color: var(--text-button-label-reversed);
+}
+.wp-block-button.is-style-ghost_reversed .wp-block-button__link.wp-element-button:hover {
+  background-color: var(--bg-interactive-reversed);
+  color: var(--text-button-label);
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+}
+.wp-block-button.is-style-ghost_reversed .wp-block-button__link.wp-element-button:focus {
+  background-color: var(--highlight-light);
+  color: var(--text-button-label);
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+}
+.wp-block-button.is-style-ghost_reversed .wp-block-button__link.wp-element-button:active {
+  background-color: var(--highlight-light);
+  color: var(--text-button-label);
+}
+.wp-block-button.is-style-ghost_reversed .wp-block-button__link.wp-element-button:hover img {
   -webkit-filter: invert(100%);
   filter: invert(100%);
 }
@@ -93434,71 +93595,71 @@ li img {
 .woocommerce div.product form.cart div.quantity {
   margin-bottom: 1rem;
 }
-.woocommerce div.product form.cart .button:not(.button--reversed), .woocommerce div.product form.cart .wp-block-button .wp-block-button__link.wp-element-button:not(.button--reversed), .wp-block-button .woocommerce div.product form.cart .wp-block-button__link.wp-element-button:not(.button--reversed) {
+.woocommerce div.product form.cart .button:not(.button--reversed) {
   border-width: var(--border-interactive-md);
   border-color: transparent;
   background-color: var(--bg-interactive);
   color: var(--text-button-label-reversed);
 }
-.woocommerce div.product form.cart .button:not(.button--reversed):hover, .woocommerce div.product form.cart .wp-block-button .wp-block-button__link.wp-element-button:not(.button--reversed):hover, .wp-block-button .woocommerce div.product form.cart .wp-block-button__link.wp-element-button:not(.button--reversed):hover {
+.woocommerce div.product form.cart .button:not(.button--reversed):hover {
   border-color: var(--border-interactive);
   background-color: transparent;
   color: var(--text-button-label);
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.woocommerce div.product form.cart .button:not(.button--reversed):focus, .woocommerce div.product form.cart .wp-block-button .wp-block-button__link.wp-element-button:not(.button--reversed):focus, .wp-block-button .woocommerce div.product form.cart .wp-block-button__link.wp-element-button:not(.button--reversed):focus {
+.woocommerce div.product form.cart .button:not(.button--reversed):focus {
   border-color: var(--border-interactive);
   background-color: var(--highlight-light);
   color: var(--text-button-label);
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.woocommerce div.product form.cart .button:not(.button--reversed):active, .woocommerce div.product form.cart .wp-block-button .wp-block-button__link.wp-element-button:not(.button--reversed):active, .wp-block-button .woocommerce div.product form.cart .wp-block-button__link.wp-element-button:not(.button--reversed):active {
+.woocommerce div.product form.cart .button:not(.button--reversed):active {
   border-color: transparent;
   background-color: var(--highlight-light);
   color: var(--text-button-label);
 }
-.woocommerce div.product form.cart .button.button--reversed, .woocommerce div.product form.cart .wp-block-button .wp-block-button__link.wp-element-button.button--reversed, .wp-block-button .woocommerce div.product form.cart .wp-block-button__link.wp-element-button.button--reversed {
+.woocommerce div.product form.cart .button.button--reversed {
   border-width: var(--border-interactive-md);
   border-color: transparent;
   background-color: var(--bg-interactive-reversed);
   color: var(--text-button-label);
 }
-.woocommerce div.product form.cart .button.button--reversed:hover, .woocommerce div.product form.cart .wp-block-button .wp-block-button__link.wp-element-button.button--reversed:hover, .wp-block-button .woocommerce div.product form.cart .wp-block-button__link.wp-element-button.button--reversed:hover {
+.woocommerce div.product form.cart .button.button--reversed:hover {
   border-color: var(--border-interactive-reversed);
   background-color: transparent;
   color: var(--text-button-label-reversed);
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.woocommerce div.product form.cart .button.button--reversed:focus, .woocommerce div.product form.cart .wp-block-button .wp-block-button__link.wp-element-button.button--reversed:focus, .wp-block-button .woocommerce div.product form.cart .wp-block-button__link.wp-element-button.button--reversed:focus {
+.woocommerce div.product form.cart .button.button--reversed:focus {
   border-color: var(--border-interactive-reversed);
   background-color: var(--highlight-dark);
   color: var(--text-button-label-reversed);
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.woocommerce div.product form.cart .button.button--reversed:active, .woocommerce div.product form.cart .wp-block-button .wp-block-button__link.wp-element-button.button--reversed:active, .wp-block-button .woocommerce div.product form.cart .wp-block-button__link.wp-element-button.button--reversed:active {
+.woocommerce div.product form.cart .button.button--reversed:active {
   background-color: var(--highlight-light);
   color: var(--text-button-label);
 }
-.woocommerce div.product form.cart .button.button--disabled, .woocommerce div.product form.cart .wp-block-button .wp-block-button__link.wp-element-button.button--disabled, .wp-block-button .woocommerce div.product form.cart .wp-block-button__link.wp-element-button.button--disabled {
+.woocommerce div.product form.cart .button.button--disabled {
   pointer-events: none !important;
   border-color: transparent !important;
   background-color: var(--bg-disabled) !important;
   color: var(--text-disabled) !important;
 }
-.woocommerce div.product form.cart .button.button--disabled.button--reversed, .woocommerce div.product form.cart .wp-block-button .wp-block-button__link.wp-element-button.button--disabled.button--reversed, .wp-block-button .woocommerce div.product form.cart .wp-block-button__link.wp-element-button.button--disabled.button--reversed {
+.woocommerce div.product form.cart .button.button--disabled.button--reversed {
   pointer-events: none !important;
   border-color: transparent !important;
   background-color: var(--bg-disabled) !important;
   color: var(--text-disabled) !important;
 }
-.woocommerce div.product form.cart .button, .woocommerce div.product form.cart .wp-block-button .wp-block-button__link.wp-element-button, .wp-block-button .woocommerce div.product form.cart .wp-block-button__link.wp-element-button {
+.woocommerce div.product form.cart .button {
   border: var(--border-interactive-md) solid var(--border-interactive);
 }
-.woocommerce div.product form.cart .button:hover, .woocommerce div.product form.cart .wp-block-button .wp-block-button__link.wp-element-button:hover, .wp-block-button .woocommerce div.product form.cart .wp-block-button__link.wp-element-button:hover {
+.woocommerce div.product form.cart .button:hover {
   border: var(--border-interactive-md) solid var(--border-interactive);
 }
 .woocommerce div.product .product_meta .sku_wrapper {
@@ -93570,10 +93731,8 @@ li img {
 .woocommerce .related.products ul.products li.product .price del {
   opacity: 1;
 }
-.woocommerce .upsells ul.products li.product .button, .woocommerce .upsells ul.products li.product .wp-block-button .wp-block-button__link.wp-element-button, .wp-block-button .woocommerce .upsells ul.products li.product .wp-block-button__link.wp-element-button,
-.woocommerce .related.products ul.products li.product .button,
-.woocommerce .related.products ul.products li.product .wp-block-button .wp-block-button__link.wp-element-button,
-.wp-block-button .woocommerce .related.products ul.products li.product .wp-block-button__link.wp-element-button {
+.woocommerce .upsells ul.products li.product .button,
+.woocommerce .related.products ul.products li.product .button {
   background-color: var(--wp--preset--color--primary);
   color: var(--wp--preset--color--white);
   padding: 1rem;
@@ -93956,74 +94115,74 @@ form.woocommerce-checkout .variation-TeamName {
   -webkit-text-decoration-line: none;
   text-decoration-line: none;
 }
-.woocommerce-shop ul.products li.product .button:not(.button--reversed), .woocommerce-shop ul.products li.product .wp-block-button .wp-block-button__link.wp-element-button:not(.button--reversed), .wp-block-button .woocommerce-shop ul.products li.product .wp-block-button__link.wp-element-button:not(.button--reversed) {
+.woocommerce-shop ul.products li.product .button:not(.button--reversed) {
   border-width: var(--border-interactive-md);
   border-color: transparent;
   background-color: var(--bg-interactive);
   color: var(--text-button-label-reversed);
 }
-.woocommerce-shop ul.products li.product .button:not(.button--reversed):hover, .woocommerce-shop ul.products li.product .wp-block-button .wp-block-button__link.wp-element-button:not(.button--reversed):hover, .wp-block-button .woocommerce-shop ul.products li.product .wp-block-button__link.wp-element-button:not(.button--reversed):hover {
+.woocommerce-shop ul.products li.product .button:not(.button--reversed):hover {
   border-color: var(--border-interactive);
   background-color: transparent;
   color: var(--text-button-label);
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.woocommerce-shop ul.products li.product .button:not(.button--reversed):focus, .woocommerce-shop ul.products li.product .wp-block-button .wp-block-button__link.wp-element-button:not(.button--reversed):focus, .wp-block-button .woocommerce-shop ul.products li.product .wp-block-button__link.wp-element-button:not(.button--reversed):focus {
+.woocommerce-shop ul.products li.product .button:not(.button--reversed):focus {
   border-color: var(--border-interactive);
   background-color: var(--highlight-light);
   color: var(--text-button-label);
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.woocommerce-shop ul.products li.product .button:not(.button--reversed):active, .woocommerce-shop ul.products li.product .wp-block-button .wp-block-button__link.wp-element-button:not(.button--reversed):active, .wp-block-button .woocommerce-shop ul.products li.product .wp-block-button__link.wp-element-button:not(.button--reversed):active {
+.woocommerce-shop ul.products li.product .button:not(.button--reversed):active {
   border-color: transparent;
   background-color: var(--highlight-light);
   color: var(--text-button-label);
 }
-.woocommerce-shop ul.products li.product .button.button--reversed, .woocommerce-shop ul.products li.product .wp-block-button .wp-block-button__link.wp-element-button.button--reversed, .wp-block-button .woocommerce-shop ul.products li.product .wp-block-button__link.wp-element-button.button--reversed {
+.woocommerce-shop ul.products li.product .button.button--reversed {
   border-width: var(--border-interactive-md);
   border-color: transparent;
   background-color: var(--bg-interactive-reversed);
   color: var(--text-button-label);
 }
-.woocommerce-shop ul.products li.product .button.button--reversed:hover, .woocommerce-shop ul.products li.product .wp-block-button .wp-block-button__link.wp-element-button.button--reversed:hover, .wp-block-button .woocommerce-shop ul.products li.product .wp-block-button__link.wp-element-button.button--reversed:hover {
+.woocommerce-shop ul.products li.product .button.button--reversed:hover {
   border-color: var(--border-interactive-reversed);
   background-color: transparent;
   color: var(--text-button-label-reversed);
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.woocommerce-shop ul.products li.product .button.button--reversed:focus, .woocommerce-shop ul.products li.product .wp-block-button .wp-block-button__link.wp-element-button.button--reversed:focus, .wp-block-button .woocommerce-shop ul.products li.product .wp-block-button__link.wp-element-button.button--reversed:focus {
+.woocommerce-shop ul.products li.product .button.button--reversed:focus {
   border-color: var(--border-interactive-reversed);
   background-color: var(--highlight-dark);
   color: var(--text-button-label-reversed);
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.woocommerce-shop ul.products li.product .button.button--reversed:active, .woocommerce-shop ul.products li.product .wp-block-button .wp-block-button__link.wp-element-button.button--reversed:active, .wp-block-button .woocommerce-shop ul.products li.product .wp-block-button__link.wp-element-button.button--reversed:active {
+.woocommerce-shop ul.products li.product .button.button--reversed:active {
   background-color: var(--highlight-light);
   color: var(--text-button-label);
 }
-.woocommerce-shop ul.products li.product .button.button--disabled, .woocommerce-shop ul.products li.product .wp-block-button .wp-block-button__link.wp-element-button.button--disabled, .wp-block-button .woocommerce-shop ul.products li.product .wp-block-button__link.wp-element-button.button--disabled {
+.woocommerce-shop ul.products li.product .button.button--disabled {
   pointer-events: none !important;
   border-color: transparent !important;
   background-color: var(--bg-disabled) !important;
   color: var(--text-disabled) !important;
 }
-.woocommerce-shop ul.products li.product .button.button--disabled.button--reversed, .woocommerce-shop ul.products li.product .wp-block-button .wp-block-button__link.wp-element-button.button--disabled.button--reversed, .wp-block-button .woocommerce-shop ul.products li.product .wp-block-button__link.wp-element-button.button--disabled.button--reversed {
+.woocommerce-shop ul.products li.product .button.button--disabled.button--reversed {
   pointer-events: none !important;
   border-color: transparent !important;
   background-color: var(--bg-disabled) !important;
   color: var(--text-disabled) !important;
 }
-.woocommerce-shop ul.products li.product .button, .woocommerce-shop ul.products li.product .wp-block-button .wp-block-button__link.wp-element-button, .wp-block-button .woocommerce-shop ul.products li.product .wp-block-button__link.wp-element-button {
+.woocommerce-shop ul.products li.product .button {
   border: var(--border-interactive-md) solid var(--border-interactive);
 }
-.woocommerce-shop ul.products li.product .button:hover, .woocommerce-shop ul.products li.product .wp-block-button .wp-block-button__link.wp-element-button:hover, .wp-block-button .woocommerce-shop ul.products li.product .wp-block-button__link.wp-element-button:hover {
+.woocommerce-shop ul.products li.product .button:hover {
   border: var(--border-interactive-md) solid var(--border-interactive);
 }
-.woocommerce-shop ul.products li.product .button.product_type_external:after, .woocommerce-shop ul.products li.product .wp-block-button .product_type_external.wp-block-button__link.wp-element-button:after, .wp-block-button .woocommerce-shop ul.products li.product .product_type_external.wp-block-button__link.wp-element-button:after {
+.woocommerce-shop ul.products li.product .button.product_type_external:after {
   display: inline-block;
   content: "\f35d";
   font-family: var(--fa-style-family, "Font Awesome 6 Pro");
@@ -94031,43 +94190,31 @@ form.woocommerce-checkout .variation-TeamName {
   margin-left: 4px;
   font-size: 90%;
 }
-.woocommerce-shop ul.products li.product .button .add_to_cart_button__text-added, .woocommerce-shop ul.products li.product .wp-block-button .wp-block-button__link.wp-element-button .add_to_cart_button__text-added, .wp-block-button .woocommerce-shop ul.products li.product .wp-block-button__link.wp-element-button .add_to_cart_button__text-added {
+.woocommerce-shop ul.products li.product .button .add_to_cart_button__text-added {
   display: none;
 }
 form .wicket-form-help-text.woocommerce-shop ul.products li.product .button .add_to_cart_button__text-added,
 form p.wicket-form-help-text.woocommerce-shop ul.products li.product .button .add_to_cart_button__text-added,
 .form .wicket-form-help-text.woocommerce-shop ul.products li.product .button .add_to_cart_button__text-added,
-.form p.wicket-form-help-text.woocommerce-shop ul.products li.product .button .add_to_cart_button__text-added,form .wicket-form-help-text .woocommerce-shop ul.products li.product .wp-block-button .wp-block-button__link.wp-element-button .add_to_cart_button__text-added,
-form p.wicket-form-help-text .woocommerce-shop ul.products li.product .wp-block-button .wp-block-button__link.wp-element-button .add_to_cart_button__text-added,
-.form .wicket-form-help-text .woocommerce-shop ul.products li.product .wp-block-button .wp-block-button__link.wp-element-button .add_to_cart_button__text-added,
-.form p.wicket-form-help-text .woocommerce-shop ul.products li.product .wp-block-button .wp-block-button__link.wp-element-button .add_to_cart_button__text-added,form .wicket-form-help-text .wp-block-button .woocommerce-shop ul.products li.product .wp-block-button__link.wp-element-button .add_to_cart_button__text-added,
-form p.wicket-form-help-text .wp-block-button .woocommerce-shop ul.products li.product .wp-block-button__link.wp-element-button .add_to_cart_button__text-added,
-.form .wicket-form-help-text .wp-block-button .woocommerce-shop ul.products li.product .wp-block-button__link.wp-element-button .add_to_cart_button__text-added,
-.form p.wicket-form-help-text .wp-block-button .woocommerce-shop ul.products li.product .wp-block-button__link.wp-element-button .add_to_cart_button__text-added {
+.form p.wicket-form-help-text.woocommerce-shop ul.products li.product .button .add_to_cart_button__text-added {
   display: none;
 }
-.woocommerce-shop ul.products li.product .button .add_to_cart_button__text, .woocommerce-shop ul.products li.product .wp-block-button .wp-block-button__link.wp-element-button .add_to_cart_button__text, .wp-block-button .woocommerce-shop ul.products li.product .wp-block-button__link.wp-element-button .add_to_cart_button__text {
+.woocommerce-shop ul.products li.product .button .add_to_cart_button__text {
   display: block;
 }
-.woocommerce-shop ul.products li.product .button.added .add_to_cart_button__text-added, .woocommerce-shop ul.products li.product .wp-block-button .added.wp-block-button__link.wp-element-button .add_to_cart_button__text-added, .wp-block-button .woocommerce-shop ul.products li.product .added.wp-block-button__link.wp-element-button .add_to_cart_button__text-added {
+.woocommerce-shop ul.products li.product .button.added .add_to_cart_button__text-added {
   display: block;
 }
-.woocommerce-shop ul.products li.product .button.added .add_to_cart_button__text, .woocommerce-shop ul.products li.product .wp-block-button .added.wp-block-button__link.wp-element-button .add_to_cart_button__text, .wp-block-button .woocommerce-shop ul.products li.product .added.wp-block-button__link.wp-element-button .add_to_cart_button__text {
+.woocommerce-shop ul.products li.product .button.added .add_to_cart_button__text {
   display: none;
 }
 form .wicket-form-help-text.woocommerce-shop ul.products li.product .button.added .add_to_cart_button__text,
 form p.wicket-form-help-text.woocommerce-shop ul.products li.product .button.added .add_to_cart_button__text,
 .form .wicket-form-help-text.woocommerce-shop ul.products li.product .button.added .add_to_cart_button__text,
-.form p.wicket-form-help-text.woocommerce-shop ul.products li.product .button.added .add_to_cart_button__text,form .wicket-form-help-text .woocommerce-shop ul.products li.product .wp-block-button .added.wp-block-button__link.wp-element-button .add_to_cart_button__text,
-form p.wicket-form-help-text .woocommerce-shop ul.products li.product .wp-block-button .added.wp-block-button__link.wp-element-button .add_to_cart_button__text,
-.form .wicket-form-help-text .woocommerce-shop ul.products li.product .wp-block-button .added.wp-block-button__link.wp-element-button .add_to_cart_button__text,
-.form p.wicket-form-help-text .woocommerce-shop ul.products li.product .wp-block-button .added.wp-block-button__link.wp-element-button .add_to_cart_button__text,form .wicket-form-help-text .wp-block-button .woocommerce-shop ul.products li.product .added.wp-block-button__link.wp-element-button .add_to_cart_button__text,
-form p.wicket-form-help-text .wp-block-button .woocommerce-shop ul.products li.product .added.wp-block-button__link.wp-element-button .add_to_cart_button__text,
-.form .wicket-form-help-text .wp-block-button .woocommerce-shop ul.products li.product .added.wp-block-button__link.wp-element-button .add_to_cart_button__text,
-.form p.wicket-form-help-text .wp-block-button .woocommerce-shop ul.products li.product .added.wp-block-button__link.wp-element-button .add_to_cart_button__text {
+.form p.wicket-form-help-text.woocommerce-shop ul.products li.product .button.added .add_to_cart_button__text {
   display: none;
 }
-.woocommerce-shop ul.products li.product .button.button--disabled, .woocommerce-shop ul.products li.product .wp-block-button .button--disabled.wp-block-button__link.wp-element-button, .wp-block-button .woocommerce-shop ul.products li.product .button--disabled.wp-block-button__link.wp-element-button {
+.woocommerce-shop ul.products li.product .button.button--disabled {
   border-color: transparent !important;
   background-color: var(--bg-disabled) !important;
   color: var(--text-disabled) !important;
@@ -94118,7 +94265,7 @@ form p.wicket-form-help-text .wp-block-button .woocommerce-shop ul.products li.p
   font-weight: bold;
   text-decoration: none;
 }
-.woocommerce-shop ul.products li.product .button, .woocommerce-shop ul.products li.product .wp-block-button .wp-block-button__link.wp-element-button, .wp-block-button .woocommerce-shop ul.products li.product .wp-block-button__link.wp-element-button {
+.woocommerce-shop ul.products li.product .button {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
