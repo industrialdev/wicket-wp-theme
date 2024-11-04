@@ -89849,15 +89849,6 @@ body {
   font-weight: var(--body-md-font-weight);
   line-height: var(--body-md-line-height);
 }
-body #main-content a:where(:not(.wp-element-button)) {
-  color: var(--interactive);
-  -webkit-text-decoration-line: underline;
-  text-decoration-line: underline;
-}
-body #main-content a:where(:not(.wp-element-button)):hover {
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-}
 
 h1,
 h2,
