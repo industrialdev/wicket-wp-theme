@@ -82,7 +82,7 @@
 }
 
 @mixin button-ghost-rev {
-  @apply text-[--text-button-label-reversed] hover:bg-[--bg-interactive-reversed] hover:text-[--text-button-label] hover:underline focus:bg-[--highlight-light] focus:text-[--text-button-label] focus:underline active:bg-[--highlight-light] active:text-[--text-button-label];
+  @apply text-[--text-button-label-reversed] bg-transparent hover:bg-[--bg-interactive-reversed] hover:text-[--text-button-label] hover:underline focus:bg-[--highlight-light] focus:text-[--text-button-label] focus:underline active:bg-[--highlight-light] active:text-[--text-button-label];
 }
 
 // Disabled States

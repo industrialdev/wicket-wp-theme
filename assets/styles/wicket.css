@@ -90344,6 +90344,7 @@ a:where(:not(.wp-element-button)):active {
   color: var(--text-button-label);
 }
 .button--ghost.button--reversed {
+  background-color: transparent;
   color: var(--text-button-label-reversed);
 }
 .button--ghost.button--reversed:hover {
@@ -92893,6 +92894,7 @@ form p.wicket-form-help-text.component-tooltip-content,
   filter: invert(100%);
 }
 .wp-block-button.is-style-ghost_reversed .wp-block-button__link.wp-element-button {
+  background-color: transparent;
   color: var(--text-button-label-reversed);
 }
 .wp-block-button.is-style-ghost_reversed .wp-block-button__link.wp-element-button:hover {
