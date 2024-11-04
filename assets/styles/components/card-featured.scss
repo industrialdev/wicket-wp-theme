@@ -11,7 +11,7 @@
   }
 
   &__title {
-    @apply text-heading-sm text-[--text-content];
+    @apply text-heading-sm text-[--text-content] no-underline;
 
     &:hover {
       @apply underline;

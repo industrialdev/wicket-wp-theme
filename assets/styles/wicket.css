@@ -89861,6 +89861,18 @@ h6 {
 
 a:where(:not(.wp-element-button)) {
   color: var(--interactive);
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+}
+
+a:where(:not(.wp-element-button)):hover {
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+}
+
+a:where(:not(.wp-element-button)):active {
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
 }
 
 @media (min-width: 1536px) {
@@ -89911,11 +89923,16 @@ a:where(:not(.wp-element-button)) {
   font-weight: var(--body-md-font-weight);
   line-height: var(--body-md-line-height);
 }
-.component-sidebar-contextual-nav__accordion .accordion-item__title {
+.accordion-item__title a {
+  color: var(--text-content);
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+}
+.component-sidebar-contextual-nav__accordion .accordion-item__title a {
   font-weight: 700;
   color: var(--nav-contextual-link-lvl-1);
 }
-.component-sidebar-contextual-nav__accordion .accordion-item__title:hover {
+.component-sidebar-contextual-nav__accordion .accordion-item__title a:hover {
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
@@ -90185,6 +90202,8 @@ a:where(:not(.wp-element-button)) {
   border-radius: var(--interactive-corner-radius-md);
   padding: var(--space-200);
   font-size: var(--button-label-md-font-size);
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
   font-weight: var(--button-label-md-font-weight);
   line-height: var(--button-label-md-line-height);
 }
@@ -90655,6 +90674,8 @@ a:where(:not(.wp-element-button)) {
   display: block;
   font-size: var(--heading-xs-font-size);
   color: var(--text-content);
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
   font-weight: var(--heading-xs-font-weight-sm);
   line-height: var(--heading-xs-line-height);
 }
@@ -90840,6 +90861,8 @@ a:where(:not(.wp-element-button)) {
 .component-card-featured__title {
   font-size: var(--heading-sm-font-size);
   color: var(--text-content);
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
   font-weight: var(--heading-sm-font-weight-sm);
   line-height: var(--heading-sm-line-height);
 }
@@ -91013,6 +91036,8 @@ a:where(:not(.wp-element-button)) {
   display: inline-block;
   font-size: var(--heading-xs-font-size);
   color: var(--text-content);
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
   font-weight: var(--heading-xs-font-weight-sm);
   line-height: var(--heading-xs-line-height);
 }
@@ -91461,7 +91486,11 @@ form p.wicket-form-help-text .wp-block-button .component-card-product .added.wp-
 .component-filter-form__see-more:not(.component-link--reversed):active {
   color: var(--highlight-dark);
 }
-.component-filter-form__see-more:not(.component-link--default):hover,.component-filter-form__see-more:not(.component-link--default):focus {
+.component-filter-form__see-more:not(.component-link--default) {
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+}
+.component-filter-form__see-more:not(.component-link--default):hover,.component-filter-form__see-more:not(.component-link--default):focus,.component-filter-form__see-more:not(.component-link--default):active {
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
@@ -91753,6 +91782,8 @@ form p.wicket-form-help-text.secondary-nav .component-filter-form__see-more,
   background-color: var(--bg-card);
   padding: var(--space-150);
   color: var(--text-content);
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
 }
 .component-icon-grid--use_drop_shadows .component-icon-grid__item-link {
   -webkit-filter: drop-shadow(var(--elevation-4));
@@ -91839,7 +91870,11 @@ form p.wicket-form-help-text.secondary-nav .component-filter-form__see-more,
 .component-link--reversed:active {
   color: var(--highlight-light);
 }
-.component-link:not(.component-link--default):hover, .component-link:not(.component-link--default):focus {
+.component-link:not(.component-link--default) {
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+}
+.component-link:not(.component-link--default):hover, .component-link:not(.component-link--default):focus, .component-link:not(.component-link--default):active {
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
@@ -92257,6 +92292,12 @@ form p.wicket-form-help-text.secondary-nav .component-link,
 }
 .component-sidebar-contextual-nav__title a {
   color: var(--text-content);
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+}
+.component-sidebar-contextual-nav__title a:hover {
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
 }
 .component-sidebar-contextual-nav__sublist {
   padding-left: var(--space-200);
@@ -92266,6 +92307,8 @@ form p.wicket-form-help-text.secondary-nav .component-link,
   border-radius: var(--interactive-corner-radius-md);
   padding: var(--space-100);
   color: var(--nav-contextual-sublink);
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
 }
 .component-sidebar-contextual-nav__sublist-item a:hover {
   -webkit-text-decoration-line: underline;
@@ -92468,6 +92511,16 @@ form p.wicket-form-help-text.secondary-nav .component-link,
 }
 .component-tag:has(.fa-lock) .component-icon {
   font-size: 1rem;
+}
+
+.component-tag-link {
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+}
+
+.component-tag-link:hover {
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
 }
 
 .component-tabs {
@@ -92914,20 +92967,6 @@ li img {
 }
 .wp-block-paragraph > p.alignfull {
   max-width: 100%;
-}
-.wp-block-paragraph > p a {
-  text-decoration: underline;
-}
-.wp-block-paragraph > p a:hover {
-  text-decoration: none;
-}
-.wp-block-paragraph > p a:focus {
-  -webkit-box-shadow: 0px 0px 1px 2px #0997ff;
-  box-shadow: 0px 0px 1px 2px #0997ff;
-  text-decoration: none;
-}
-.wp-block-paragraph > p a:active {
-  text-decoration: underline;
 }
 .single-post .wp-block-paragraph > p {
   padding-inline: 1rem;
@@ -94202,6 +94241,8 @@ form p.wicket-form-help-text .wp-block-button .woocommerce-shop ul.products li.p
   border-radius: var(--interactive-corner-radius-md);
   padding: var(--space-200);
   font-size: var(--button-label-md-font-size);
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
   font-weight: var(--button-label-md-font-weight);
   line-height: var(--button-label-md-line-height);
 }

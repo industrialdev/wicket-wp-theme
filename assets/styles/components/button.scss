@@ -1,6 +1,6 @@
 // Primary
 .button {
-  @apply text-button-label-md rounded-[--interactive-corner-radius-md] p-[--space-200];
+  @apply text-button-label-md rounded-[--interactive-corner-radius-md] p-[--space-200] no-underline;
 
   .component-icon {
     @apply text-[16px];

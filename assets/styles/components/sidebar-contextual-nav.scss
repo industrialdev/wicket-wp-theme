@@ -3,7 +3,7 @@
     @apply text-label-md text-[--nav-contextual-title] mb-[--space-200] px-[--space-075];
 
     a {
-      @apply text-[--text-content];
+      @apply text-[--text-content] no-underline hover:underline;
     }
   }
 
@@ -13,7 +13,7 @@
 
   &__sublist-item {
     a {
-      @apply p-[--space-100] block rounded-[--interactive-corner-radius-md] text-[--nav-contextual-sublink];
+      @apply p-[--space-100] block rounded-[--interactive-corner-radius-md] text-[--nav-contextual-sublink] no-underline;
 
       &:hover {
         @apply underline;

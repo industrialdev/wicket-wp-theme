@@ -41,12 +41,16 @@
     }
   }
 
+  // Primary Styles
   &:not(.component-link--default) {
-    &:hover, &:focus {
+    @apply no-underline;
+
+    &:hover, &:focus, &:active {
       @apply underline;
     }
   }
 
+  // Default Link styles
   &--default {
     @apply underline;
 

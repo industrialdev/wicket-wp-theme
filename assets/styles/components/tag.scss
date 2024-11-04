@@ -11,3 +11,7 @@
     }
   }
 }
+
+.component-tag-link {
+  @apply no-underline hover:underline;
+}

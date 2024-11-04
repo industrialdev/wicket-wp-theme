@@ -12,7 +12,7 @@ h6 {
 }
 
 a:where(:not(.wp-element-button)) {
-  color: var(--interactive);
+  @apply text-[--interactive] underline hover:no-underline active:underline;
 }
 
 // Extend tailwind container

@@ -20,8 +20,12 @@
   &__title {
     @apply text-body-md;
 
-    .component-sidebar-contextual-nav__accordion & {
-      @apply text-[--nav-contextual-link-lvl-1] font-bold hover:underline;
+    a {
+      @apply text-[--text-content] no-underline;
+
+      .component-sidebar-contextual-nav__accordion & {
+        @apply text-[--nav-contextual-link-lvl-1] font-bold hover:underline;
+      }
     }
   }
 

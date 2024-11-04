@@ -11,7 +11,7 @@
   }
 
   &__title {
-    @apply block text-heading-xs hover:underline text-[--text-content];
+    @apply block text-heading-xs no-underline hover:underline text-[--text-content];
 
     .cols-1 & {
       @apply text-heading-md;
