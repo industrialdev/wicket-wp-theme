@@ -94810,6 +94810,9 @@ form p.wicket-form-help-text.site-header .right-hamburger-button,
     display: none;
   }
 }
+.site-header .left-hamburger-button.open i.fa-bars::before {
+  content: "X";
+}
 .site-header .right-hamburger-close-button {
   margin-right: 2.5rem;
   display: -webkit-inline-box;
@@ -95041,6 +95044,37 @@ form p.wicket-form-help-text.site-header .main-nav,
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.search-toggle-button {
+  border-radius: var(--interactive-corner-radius-md);
+  padding: var(--space-200);
+  font-size: var(--button-label-md-font-size);
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+  font-weight: var(--button-label-md-font-weight);
+  line-height: var(--button-label-md-line-height);
+  background-color: transparent;
+  color: var(--text-button-label);
+}
+
+.search-toggle-button:hover {
+  background-color: var(--bg-interactive);
+  color: var(--text-button-label-reversed);
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+}
+
+.search-toggle-button:focus {
+  background-color: var(--highlight-dark);
+  color: var(--text-button-label-reversed);
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+}
+
+.search-toggle-button:active {
+  background-color: var(--highlight-light);
+  color: var(--text-button-label);
 }
 
 form input,
@@ -96045,6 +96079,12 @@ form p.wicket-form-help-text.utility-nav,
 
   .lg\:block {
     display: block;
+  }
+
+  .lg\:flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 
   .lg\:inline-flex {

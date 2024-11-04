@@ -168,24 +168,10 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         'label'       => '',
                         'prefix_icon' => 'fa-solid fa-bars',
                         'atts'        => [
-                            'x-show="! mobileMenuOpen"',
                             'x-cloak',
+                            ':class = "mobileMenuOpen ? \'open\' : \'\'"',
                             'x-on:click="mobileMenuOpen = ! mobileMenuOpen; if(mobileMenuOpen){$dispatch(\'close-mobile-search\')};"',
                             'x-on:close-mobile-menu.window="mobileMenuOpen = false"'
-                        ]
-                    ])
-                ?>
-                <!-- Left-aligned hamburger menu CLOSE button that only shows on Base/SM breakpoints -->
-                <?php
-                    get_component('button', [
-                        'variant'     => 'ghost',
-                        'classes'     => [ 'right-hamburger-close-button' ],
-                        'label'       => '',
-                        'prefix_icon' => 'fa-solid fa-x',
-                        'atts'        => [
-                            'x-show="mobileMenuOpen"',
-                            'x-cloak',
-                            'x-on:click="mobileMenuOpen = ! mobileMenuOpen"',
                         ]
                     ])
                 ?>
@@ -290,25 +276,25 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         x-on:close-mobile-search.window="searchOpen = false"
                         x-show="showSearch"
                         x-cloak
-                        class="search-toggle-button mx-4 inline-flex items-center"
+                        class="search-toggle-button mx-4"
                     >
                         <span x-show="! searchOpen" x-cloak>
-                        <?php
-                        get_component( 'icon', [
-                            'classes' => [],
-                            'icon'    => 'fa-solid fa-magnifying-glass',
-                            'text'    => '',
-                        ] );
-                        ?>
-                        </span>
+                            <?php
+                            get_component( 'icon', [
+                                'classes' => [],
+                                'icon'    => 'fa-solid fa-magnifying-glass',
+                                'text'    => '',
+                            ] );
+                            ?>
+                            </span>
                         <span x-show="searchOpen" x-cloak>
-                        <?php
-                        get_component( 'icon', [
-                            'classes' => [],
-                            'icon'    => 'fa-solid fa-x',
-                            'text'    => '',
-                        ] );
-                        ?>
+                            <?php
+                            get_component( 'icon', [
+                                'classes' => [],
+                                'icon'    => 'fa-solid fa-x',
+                                'text'    => '',
+                            ] );
+                            ?>
                         </span>
                     </button>
                     <!-- End search button states -->
@@ -322,7 +308,9 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                             'atts'        => [ 'x-show="showCart"' ]
 						]) ?>
 
-                    <?php do_action( 'wpml_language_switcher' ); ?>
+                    <div class="hidden lg:flex items-center" >
+                        <?php do_action( 'wpml_language_switcher' ); ?>
+                    </div>
 
                     <!-- Right-aligned hamburger menu button that only shows on MD breakpoint -->
                     <button
@@ -562,11 +550,6 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                     ] );
                 }
                 ?>
-                <?php if( $lang == 'en' ): ?>
-                    <a x-show="showLangToggle" x-cloak href="<?php echo wicket_get_lang_url( 'fr' ); ?>" class="lang-button ml-4 hidden lg:inline-flex items-center">Fr</a>
-                <?php else: ?>
-                    <a x-show="showLangToggle" x-cloak href="<?php echo wicket_get_lang_url( 'en' ); ?>" class="lang-button ml-4 hidden lg:inline-flex items-center">En</a>
-                <?php endif; ?>
             </div> <!-- End items above main nav items and utility nav -->
 
             <div class="main-nav-mobile">
@@ -751,6 +734,28 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         ] );
                     }
                 ?>
+
+                <?php if( $lang == 'en' ): ?>
+                    <?php
+                        get_component( 'link', [
+                            'text'     => __('Fr', 'wicket'),
+                            'classes'  => [ 'secondary-nav-item-mobile', 'lang-button', 'block' ],
+                            'target'   => $target,
+                            'url'      => wicket_get_lang_url( 'fr' ),
+                            'atts'     => [ 'x-show="showLangToggle"', 'x-cloak' ]
+                        ] );
+                    ?>
+                <?php else: ?>
+                    <?php
+                        get_component( 'link', [
+                            'text'     => __('En', 'wicket'),
+                            'classes'  => [ 'secondary-nav-item-mobile', 'lang-button', 'block' ],
+                            'target'   => $target,
+                            'url'      => wicket_get_lang_url( 'en' ),
+                            'atts'     => [ 'x-show="showLangToggle"', 'x-cloak' ]
+                        ] );
+                    ?>
+                <?php endif; ?>
             </div>
 
             <?php if( !empty( $utility_nav_items ) ): ?>

@@ -6,6 +6,14 @@
 
   .left-hamburger-button {
     @apply inline-flex md:hidden mr-10 items-center;
+
+    &.open {
+      i.fa-bars {
+        &::before {
+          content: "\58";
+        }
+      }
+    }
   }
 
   .right-hamburger-close-button {
@@ -65,4 +73,9 @@
       @apply flex flex-col w-full;
     }
   }
+}
+
+.search-toggle-button {
+  @apply text-button-label-md rounded-[--interactive-corner-radius-md] p-[--space-200] no-underline;
+  @include button-ghost;
 }
