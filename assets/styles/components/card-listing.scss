@@ -41,7 +41,7 @@
   }
 
   &__title {
-    @apply text-heading-xs mb-[--space-200] inline-block;
+    @apply text-heading-xs mb-[--space-200] inline-block text-[--text-content];
 
     &:hover {
       @apply underline;

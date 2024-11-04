@@ -1,6 +1,10 @@
 .component-sidebar-contextual-nav {
   &__title {
     @apply text-label-md text-[--nav-contextual-title] mb-[--space-200] px-[--space-075];
+
+    a {
+      @apply text-[--text-content];
+    }
   }
 
   &__sublist {

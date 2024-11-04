@@ -89859,6 +89859,10 @@ h6 {
   font-family: var(--wp--preset--font-family--system-sans-serif);
 }
 
+a:where(:not(.wp-element-button)) {
+  color: var(--interactive);
+}
+
 @media (min-width: 1536px) {
   .container {
     max-width: var(--wp--style--global--content-size) !important;
@@ -90650,6 +90654,7 @@ h6 {
 .component-card-event__title {
   display: block;
   font-size: var(--heading-xs-font-size);
+  color: var(--text-content);
   font-weight: var(--heading-xs-font-weight-sm);
   line-height: var(--heading-xs-line-height);
 }
@@ -90834,6 +90839,7 @@ h6 {
 }
 .component-card-featured__title {
   font-size: var(--heading-sm-font-size);
+  color: var(--text-content);
   font-weight: var(--heading-sm-font-weight-sm);
   line-height: var(--heading-sm-line-height);
 }
@@ -91006,6 +91012,7 @@ h6 {
   margin-bottom: var(--space-200);
   display: inline-block;
   font-size: var(--heading-xs-font-size);
+  color: var(--text-content);
   font-weight: var(--heading-xs-font-weight-sm);
   line-height: var(--heading-xs-line-height);
 }
@@ -91216,6 +91223,7 @@ form p.wicket-form-help-text .wp-block-button .component-card-product .added.wp-
   display: block;
   text-align: center;
   font-size: var(--heading-xs-font-size);
+  color: var(--text-content);
   font-weight: var(--heading-xs-font-weight-sm);
   line-height: var(--heading-xs-line-height);
 }
@@ -91744,6 +91752,7 @@ form p.wicket-form-help-text.secondary-nav .component-filter-form__see-more,
   border-color: transparent;
   background-color: var(--bg-card);
   padding: var(--space-150);
+  color: var(--text-content);
 }
 .component-icon-grid--use_drop_shadows .component-icon-grid__item-link {
   -webkit-filter: drop-shadow(var(--elevation-4));
@@ -92245,6 +92254,9 @@ form p.wicket-form-help-text.secondary-nav .component-link,
   font-weight: var(--label-md-font-weight);
   text-transform: uppercase;
   line-height: var(--label-md-line-height);
+}
+.component-sidebar-contextual-nav__title a {
+  color: var(--text-content);
 }
 .component-sidebar-contextual-nav__sublist {
   padding-left: var(--space-200);
@@ -94141,6 +94153,7 @@ form p.wicket-form-help-text .wp-block-button .woocommerce-shop ul.products li.p
   margin-bottom: var(--space-200);
   display: block;
   font-size: var(--heading-xs-font-size);
+  color: var(--text-content);
   font-weight: var(--heading-xs-font-weight-sm);
   line-height: var(--heading-xs-line-height);
 }
@@ -95191,7 +95204,6 @@ form.wicket-form .wicket-form-field-wrapper,
   border-color: var(--nav-footer-border);
   padding-top: var(--space-400);
   padding-bottom: var(--space-400);
-  color: var(--nav-footer-sublink);
 }
 .footer-nav-menu__items {
   display: -webkit-box;
@@ -95215,6 +95227,9 @@ form.wicket-form .wicket-form-field-wrapper,
     -ms-flex-pack: center;
     justify-content: center;
   }
+}
+.footer-nav-menu__items li a {
+  color: var(--nav-footer-sublink);
 }
 
 .secondary-nav {
@@ -95398,6 +95413,7 @@ form p.wicket-form-help-text.main-footer-section .section-title,
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  color: var(--nav-footer-sublink);
 }
 .main-footer-section .footer-bottom-text {
   display: -webkit-box;

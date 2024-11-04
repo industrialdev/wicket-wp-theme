@@ -61,5 +61,5 @@
 
 .component-card-product__title,
 .woocommerce-loop-product__title {
-  @apply text-heading-xs block text-center;
+  @apply text-heading-xs block text-center text-[--text-content];
 }

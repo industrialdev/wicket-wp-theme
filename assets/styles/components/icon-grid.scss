@@ -12,7 +12,7 @@
   }
 
   &__item-link {
-    @apply rounded-[--card-corner-radius] bg-[--bg-card] flex items-center gap-[--space-150] p-[--space-150] border-[length:--border-interactive-sm] border-transparent;
+    @apply rounded-[--card-corner-radius] bg-[--bg-card] flex items-center gap-[--space-150] p-[--space-150] border-[length:--border-interactive-sm] border-transparent text-[--text-content];
 
     .component-icon-grid--use_drop_shadows & {
       filter: drop-shadow( var(--elevation-4) );

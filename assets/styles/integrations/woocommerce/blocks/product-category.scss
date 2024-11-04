@@ -6,7 +6,7 @@
   }
 
   .wc-block-grid__product-title {
-    @apply text-heading-xs block mb-[--space-200];
+    @apply text-heading-xs block mb-[--space-200] text-[--text-content];
   }
 
   .wc-block-grid__product-onsale {
