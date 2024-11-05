@@ -32,14 +32,14 @@
       @apply static;
 
       .nav-mega-dropdown {
-        @apply absolute z-20 flex gap-2 left-0 mt-3 w-full bg-[--dropdown-mega-bg] p-3 lg:p-7 flex-wrap rounded-t-[--dropdown-mega-corner-radius];
+        @apply absolute z-20 flex gap-2 left-0 mt-4 w-full bg-[--dropdown-mega-bg] p-3 lg:p-7 flex-wrap rounded-b-[--dropdown-mega-corner-radius];
         filter: drop-shadow( var(--elevation-4) );
       }
     }
 
     &__dropdown-menu-item {
       .nav-dropdown {
-        @apply absolute z-20 mt-3 w-56 bg-[--dropdown-mega-bg] p-3 lg:p-7 shadow-lg left-0;
+        @apply absolute z-20 mt-4 w-56 bg-[--dropdown-mega-bg] p-3 lg:p-7 shadow-lg left-0 rounded-b-[--dropdown-mega-corner-radius];
 
         &.last {
           @apply right-0 left-auto;
@@ -58,6 +58,12 @@
     .nav-parent-item-mobile-wrap {
       @include primary-menu-item-styles;
       @apply inline-flex justify-between items-center w-full;
+
+      &:hover {
+        > span {
+          @apply underline;
+        }
+      }
     }
     
     .nav-parent-item-mobile {

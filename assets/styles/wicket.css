@@ -94909,7 +94909,7 @@ form p.wicket-form-help-text.site-header .main-nav,
   position: absolute;
   left: 0px;
   z-index: 20;
-  margin-top: 0.75rem;
+  margin-top: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -94917,8 +94917,8 @@ form p.wicket-form-help-text.site-header .main-nav,
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   gap: 0.5rem;
-  border-top-left-radius: var(--dropdown-mega-corner-radius);
-  border-top-right-radius: var(--dropdown-mega-corner-radius);
+  border-bottom-right-radius: var(--dropdown-mega-corner-radius);
+  border-bottom-left-radius: var(--dropdown-mega-corner-radius);
   background-color: var(--dropdown-mega-bg);
   padding: 0.75rem;
 }
@@ -94936,8 +94936,10 @@ form p.wicket-form-help-text.site-header .main-nav,
   position: absolute;
   left: 0px;
   z-index: 20;
-  margin-top: 0.75rem;
+  margin-top: 1rem;
   width: 14rem;
+  border-bottom-right-radius: var(--dropdown-mega-corner-radius);
+  border-bottom-left-radius: var(--dropdown-mega-corner-radius);
   background-color: var(--dropdown-mega-bg);
   padding: 0.75rem;
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
@@ -95003,6 +95005,10 @@ form p.wicket-form-help-text.site-header .main-nav,
 }
 .site-header .main-nav-mobile .nav-parent-item-mobile-wrap:focus, .site-header .main-nav-mobile .nav-parent-item-mobile-wrap:active, .site-header .main-nav-mobile .nav-parent-item-mobile-wrap.open {
   background-color: var(--nav-main-highlight);
+}
+.site-header .main-nav-mobile .nav-parent-item-mobile-wrap:hover > span {
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
 }
 .site-header .main-nav-mobile .nav-parent-item-mobile {
   display: -webkit-box;
