@@ -49,19 +49,20 @@
   @apply font-normal text-[--nav-main-label] block p-[--space-150] relative bg-[--nav-main-bg] lg:rounded-t-[--main-menu-highlight-radius] border-t-[length:--border-sm] lg:border-t-0 lg:border-b-[length:--border-md] border-[--nav-main-border] lg:border-transparent;
 
   &:hover {
-    @apply cursor-pointer border-[--nav-main-border-interactive];
+    @apply cursor-pointer;
   }
 
   &:active, &.open {
     @apply border-b-[length:--border-lg];
 
+    // prevent jumping when larger border is added
     @media screen and (min-width: 992px) {
       margin-bottom: calc( (var(--border-lg) - var(--border-md)) * -1 ); 
     }
   }
 
-  &:focus, &:active, &.open {
-    @apply bg-[--nav-main-highlight]
+  &:hover, &:focus, &:active, &.open {
+    @apply bg-[--nav-main-highlight] border-[--nav-main-border-interactive];
   }
 }
 
