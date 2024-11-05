@@ -6,7 +6,7 @@
   }
 
   .component-icon {
-    @apply text-[--text-content];
+    @apply text-[--interactive];
   }
 
   &.reversed {
@@ -17,7 +17,7 @@
     }
 
     .component-icon {
-      @apply text-[--text-content-reversed];
+      @apply text-[--interactive-reversed];
     }
   }
 

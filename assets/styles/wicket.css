@@ -90207,7 +90207,7 @@ a:where(:not(.wp-element-button)):active {
   font-weight: 400;
 }
 .component-breadcrumbs .component-icon {
-  color: var(--text-content);
+  color: var(--interactive);
 }
 .component-breadcrumbs.reversed {
   color: var(--text-content-reversed);
@@ -90216,7 +90216,7 @@ a:where(:not(.wp-element-button)):active {
   color: var(--highlight-light);
 }
 .component-breadcrumbs.reversed .component-icon {
-  color: var(--text-content-reversed);
+  color: var(--interactive-reversed);
 }
 
 .button {
