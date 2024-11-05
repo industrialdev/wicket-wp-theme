@@ -13,6 +13,126 @@
       "link": false,
       "palette": [
         {
+          "slug": "text-content",
+          "color": "var(--text-content)",
+          "name": "text-content"
+        },
+        {
+          "slug": "text-content-reversed",
+          "color": "var(--text-content-reversed)",
+          "name": "text-content-reversed"
+        },
+        {
+          "slug": "text-content-secondary",
+          "color": "var(--text-content-secondary)",
+          "name": "text-content-secondary"
+        },
+        {
+          "slug": "text-content-secondary-reversed",
+          "color": "var(--text-content-secondary-reversed)",
+          "name": "text-content-secondary-reversed"
+        },
+        {
+          "slug": "interactive",
+          "color": "var(--interactive)",
+          "name": "interactive"
+        },
+        {
+          "slug": "interactive-reversed",
+          "color": "var(--interactive-reversed)",
+          "name": "interactive-reversed"
+        },
+        {
+          "slug": "text-disabled",
+          "color": "var(--text-disabled)",
+          "name": "text-disabled"
+        },
+        {
+          "slug": "text-button-label",
+          "color": "var(--text-button-label)",
+          "name": "text-button-label"
+        },
+        {
+          "slug": "text-button-label-reversed",
+          "color": "var(--text-button-label-reversed)",
+          "name": "text-button-label-reversed"
+        },
+        {
+          "slug": "text-accent",
+          "color": "var(--text-accent)",
+          "name": "text-accent"
+        },
+        {
+          "slug": "text-accent-reversed",
+          "color": "var(--text-accent-reversed)",
+          "name": "text-accent-reversed"
+        },
+        {
+          "slug": "text-label-1",
+          "color": "var(--text-label-1)",
+          "name": "text-label-1"
+        },
+        {
+          "slug": "text-label-2",
+          "color": "var(--text-label-2)",
+          "name": "text-label-2"
+        },
+        {
+          "slug": "text-tag",
+          "color": "var(--text-tag)",
+          "name": "text-tag"
+        },
+        {
+          "slug": "state-info-primary",
+          "color": "var(--state-info-primary)",
+          "name": "state-info-primary"
+        },
+        {
+          "slug": "state-info-primary-light",
+          "color": "var(--state-info-primary-light)",
+          "name": "state-info-primary-light"
+        },
+        {
+          "slug": "state-info-secondary",
+          "color": "var(--state-info-secondary)",
+          "name": "state-info-secondary"
+        },
+        {
+          "slug": "state-info-secondary-light",
+          "color": "var(--state-info-secondary-light)",
+          "name": "state-info-secondary-light"
+        },
+        {
+          "slug": "state-warning",
+          "color": "var(--state-warning)",
+          "name": "state-warning"
+        },
+        {
+          "slug": "state-warning-light",
+          "color": "var(--state-warning-light)",
+          "name": "state-warning-light"
+        },
+        {
+          "slug": "state-error",
+          "color": "var(--state-error)",
+          "name": "state-error"
+        },
+        {
+          "slug": "state-error-light",
+          "color": "var(--state-error-light)",
+          "name": "state-error-light"
+        },
+        {
+          "slug": "state-success",
+          "color": "var(--state-success)",
+          "name": "state-success"
+        },
+        {
+          "slug": "state-success-light",
+          "color": "var(--state-success-light)",
+          "name": "state-success-light"
+        },
+        {
           "slug": "bg-label",
           "color": "var(--bg-label)",
           "name": "bg-label"

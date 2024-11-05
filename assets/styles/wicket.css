@@ -89689,6 +89689,30 @@ video {
 /* VARIABLES
 ------------------------------------------------------------------------------*/
 :root {
+  --color-text-content: var(--text-content);
+  --color-text-content-reversed: var(--text-content-reversed);
+  --color-text-content-secondary: var(--text-content-secondary);
+  --color-text-content-secondary-reversed: var(--text-content-secondary-reversed);
+  --color-interactive: var(--interactive);
+  --color-interactive-reversed: var(--interactive-reversed);
+  --color-text-disabled: var(--text-disabled);
+  --color-text-button-label: var(--text-button-label);
+  --color-text-button-label-reversed: var(--text-button-label-reversed);
+  --color-text-accent: var(--text-accent);
+  --color-text-accent-reversed: var(--text-accent-reversed);
+  --color-text-label-1: var(--text-label-1);
+  --color-text-label-2: var(--text-label-2);
+  --color-text-tag: var(--text-tag);
+  --color-state-info-primary: var(--state-info-primary);
+  --color-state-info-primary-light: var(--state-info-primary-light);
+  --color-state-info-secondary: var(--state-info-secondary);
+  --color-state-info-secondary-light: var(--state-info-secondary-light);
+  --color-state-warning: var(--state-warning);
+  --color-state-warning-light: var(--state-warning-light);
+  --color-state-error: var(--state-error);
+  --color-state-error-light: var(--state-error-light);
+  --color-state-success: var(--state-success);
+  --color-state-success-light: var(--state-success-light);
   --color-bg-label: var(--bg-label);
   --color-bg-label-2: var(--bg-label-2);
   --color-bg-tag: var(--bg-tag);
