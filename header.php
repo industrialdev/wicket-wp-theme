@@ -492,7 +492,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
             x-cloak
             x-transition
             x-anchor.bottom-start="$refs.secondary-nav"
-            class="w-full bg-white border-t-base border-b-base font-bold"
+            class="w-full bg-white font-bold"
             >
             <div class="pt-3 pb-2 px-3 text-center">
                 <?php
