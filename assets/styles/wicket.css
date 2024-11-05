@@ -95550,7 +95550,7 @@ form.wicket-form .wicket-form-field-wrapper,
   padding-bottom: 0.75rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
 
   .secondary-nav {
     border-bottom-width: 0px;
