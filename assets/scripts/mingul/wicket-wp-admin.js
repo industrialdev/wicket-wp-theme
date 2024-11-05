@@ -111,6 +111,18 @@ wp.domReady(() => {
       name: 'ghost',
       label: 'Ghost',
     },
+    {
+      name: 'primary_reversed',
+      label: 'Default (Reversed)',
+    },
+    {
+      name: 'secondary_reversed',
+      label: 'Secondary (Reversed)',
+    },
+    {
+      name: 'ghost_reversed',
+      label: 'Ghost (Reversed)',
+    },
   ])
 })
 

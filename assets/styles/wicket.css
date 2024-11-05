@@ -92487,15 +92487,19 @@ form p.wicket-form-help-text.secondary-nav .component-link,
   padding: var(--space-200);
   font-size: var(--body-md-font-size);
   color: var(--text-button-label);
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
   font-weight: var(--body-md-font-weight);
   line-height: var(--body-md-line-height);
   font-weight: 700;
 }
-.wicket-pagination .page-numbers:hover, .wicket-pagination .page-numbers:focus, .wicket-pagination .page-numbers:active {
+.wicket-pagination .page-numbers:hover, .wicket-pagination .page-numbers:focus {
+  background-color: var(--bg-interactive);
+  color: var(--text-button-label-reversed);
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.wicket-pagination .page-numbers:hover, .wicket-pagination .page-numbers:focus, .wicket-pagination .page-numbers:active, .wicket-pagination .page-numbers.current {
+.wicket-pagination .page-numbers.current, .wicket-pagination .page-numbers:active {
   background-color: var(--highlight-dark);
   color: var(--text-button-label-reversed);
 }
