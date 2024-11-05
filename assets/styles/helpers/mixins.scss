@@ -54,6 +54,7 @@
 
   &:active, &.open {
     @apply border-b-[length:--border-lg];
+    margin-bottom: calc( (var(--border-lg) - var(--border-md)) * -1 );
   }
 
   &:focus, &:active, &.open {

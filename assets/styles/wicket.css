@@ -91610,6 +91610,7 @@ form p.wicket-form-help-text.secondary-nav .component-filter-form__see-more,
 }
 .main-nav__single-menu-item .component-filter-form__see-more:active, .main-nav__single-menu-item .component-filter-form__see-more.open,.component-filter-form__see-more.single-nav-item-mobile:active,.component-filter-form__see-more.single-nav-item-mobile.open {
   border-bottom-width: var(--border-lg);
+  margin-bottom: calc((var(--border-lg) - var(--border-md)) * -1);
 }
 .main-nav__single-menu-item .component-filter-form__see-more:focus, .main-nav__single-menu-item .component-filter-form__see-more:active, .main-nav__single-menu-item .component-filter-form__see-more.open,.component-filter-form__see-more.single-nav-item-mobile:focus,.component-filter-form__see-more.single-nav-item-mobile:active,.component-filter-form__see-more.single-nav-item-mobile.open {
   background-color: var(--nav-main-highlight);
@@ -91676,6 +91677,7 @@ form p.wicket-form-help-text.secondary-nav .component-filter-form__see-more,
 }
 .component-filter-form__see-more.single-nav-item-mobile:active,.component-filter-form__see-more.single-nav-item-mobile.open {
   border-bottom-width: var(--border-lg);
+  margin-bottom: calc((var(--border-lg) - var(--border-md)) * -1);
 }
 .component-filter-form__see-more.single-nav-item-mobile:focus,.component-filter-form__see-more.single-nav-item-mobile:active,.component-filter-form__see-more.single-nav-item-mobile.open {
   background-color: var(--nav-main-highlight);
@@ -91982,6 +91984,7 @@ form p.wicket-form-help-text.secondary-nav .component-link,
 }
 .main-nav__single-menu-item .component-link:active, .main-nav__single-menu-item .component-link.open, .component-link.single-nav-item-mobile:active, .component-link.single-nav-item-mobile.open {
   border-bottom-width: var(--border-lg);
+  margin-bottom: calc((var(--border-lg) - var(--border-md)) * -1);
 }
 .main-nav__single-menu-item .component-link:focus, .main-nav__single-menu-item .component-link:active, .main-nav__single-menu-item .component-link.open, .component-link.single-nav-item-mobile:focus, .component-link.single-nav-item-mobile:active, .component-link.single-nav-item-mobile.open {
   background-color: var(--nav-main-highlight);
@@ -92048,6 +92051,7 @@ form p.wicket-form-help-text.secondary-nav .component-link,
 }
 .component-link.single-nav-item-mobile:active, .component-link.single-nav-item-mobile.open {
   border-bottom-width: var(--border-lg);
+  margin-bottom: calc((var(--border-lg) - var(--border-md)) * -1);
 }
 .component-link.single-nav-item-mobile:focus, .component-link.single-nav-item-mobile:active, .component-link.single-nav-item-mobile.open {
   background-color: var(--nav-main-highlight);
@@ -94898,6 +94902,7 @@ form p.wicket-form-help-text.site-header .main-nav,
 }
 .site-header .main-nav__dropdown-menu-item:active, .site-header .main-nav__dropdown-menu-item.open, .site-header .main-nav__mega-menu-item:active, .site-header .main-nav__mega-menu-item.open {
   border-bottom-width: var(--border-lg);
+  margin-bottom: calc((var(--border-lg) - var(--border-md)) * -1);
 }
 .site-header .main-nav__dropdown-menu-item:focus, .site-header .main-nav__dropdown-menu-item:active, .site-header .main-nav__dropdown-menu-item.open, .site-header .main-nav__mega-menu-item:focus, .site-header .main-nav__mega-menu-item:active, .site-header .main-nav__mega-menu-item.open {
   background-color: var(--nav-main-highlight);
@@ -95002,6 +95007,7 @@ form p.wicket-form-help-text.site-header .main-nav,
 }
 .site-header .main-nav-mobile .nav-parent-item-mobile-wrap:active, .site-header .main-nav-mobile .nav-parent-item-mobile-wrap.open {
   border-bottom-width: var(--border-lg);
+  margin-bottom: calc((var(--border-lg) - var(--border-md)) * -1);
 }
 .site-header .main-nav-mobile .nav-parent-item-mobile-wrap:focus, .site-header .main-nav-mobile .nav-parent-item-mobile-wrap:active, .site-header .main-nav-mobile .nav-parent-item-mobile-wrap.open {
   background-color: var(--nav-main-highlight);
@@ -95058,6 +95064,7 @@ form p.wicket-form-help-text.site-header .main-nav,
 }
 .site-header .main-nav-mobile .nav-mega-parent-item-mobile-wrap:active, .site-header .main-nav-mobile .nav-mega-parent-item-mobile-wrap.open {
   border-bottom-width: var(--border-lg);
+  margin-bottom: calc((var(--border-lg) - var(--border-md)) * -1);
 }
 .site-header .main-nav-mobile .nav-mega-parent-item-mobile-wrap:focus, .site-header .main-nav-mobile .nav-mega-parent-item-mobile-wrap:active, .site-header .main-nav-mobile .nav-mega-parent-item-mobile-wrap.open {
   background-color: var(--nav-main-highlight);
