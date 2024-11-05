@@ -1415,9 +1415,6 @@ video {
 .gap-1 {
   gap: 0.25rem;
 }
-.gap-1\.5 {
-  gap: 0.375rem;
-}
 .gap-10 {
   gap: 2.5rem;
 }
@@ -95586,7 +95583,7 @@ form.wicket-form .wicket-form-field-wrapper,
   color: var(--nav-footer-text-content);
 }
 .main-footer-section .footer-column .text a {
-  color: var(--footer-text-interactive);
+  color: var(--nav-footer-text-interactive);
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
@@ -95859,11 +95856,6 @@ form p.wicket-form-help-text.utility-nav,
 .group:hover .group-hover\:underline {
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
-}
-
-.group:hover .group-hover\:no-underline {
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
 }
 
 .group:focus .group-focus\:underline {

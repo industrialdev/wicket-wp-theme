@@ -21,7 +21,7 @@
       @apply text-[--nav-footer-text-content];
 
       a {
-        @apply text-[--footer-text-interactive] underline hover:no-underline;
+        @apply text-[--nav-footer-text-interactive] underline hover:no-underline;
       }
     }
     

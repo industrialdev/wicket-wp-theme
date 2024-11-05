@@ -128,8 +128,6 @@
 											}
 
 											if ( $phone ) {
-												//echo '<a class="text-white font-bold flex items-center gap-1.5 hover:no-underline group" href="tel:' . $phone . '"><i class="fa-regular fa-phone group-hover:no-underline"></i><span class="sr-only">'.__( 'Call: ', 'wicket' ).'</span><span class="group-hover:underline">' . $phone . '</span></a>';
-
 												get_component(
 													'link',
 													[
@@ -137,7 +135,7 @@
 														'url'        => "tel:{$phone}",
 														'text'       => $phone,
 														'icon_start' => [
-															'icon' => 'fa-regular fa-envelope',
+															'icon' => 'fa-regular fa-phone',
 														]
 													]
 												);
