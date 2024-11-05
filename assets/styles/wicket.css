@@ -95062,6 +95062,10 @@ form p.wicket-form-help-text.site-header .main-nav,
 .site-header .main-nav-mobile .nav-mega-parent-item-mobile-wrap:focus, .site-header .main-nav-mobile .nav-mega-parent-item-mobile-wrap:active, .site-header .main-nav-mobile .nav-mega-parent-item-mobile-wrap.open {
   background-color: var(--nav-main-highlight);
 }
+.site-header .main-nav-mobile .nav-mega-parent-item-mobile-wrap:hover > span {
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+}
 .site-header .main-nav-mobile .nav-mega-parent-item-mobile {
   display: -webkit-box;
   display: -ms-flexbox;

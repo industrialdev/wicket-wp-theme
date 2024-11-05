@@ -73,6 +73,12 @@
     .nav-mega-parent-item-mobile-wrap {
       @include primary-menu-item-styles;
       @apply inline-flex justify-between items-center w-full;
+
+      &:hover {
+        > span {
+          @apply underline;
+        }
+      }
     }
 
     .nav-mega-parent-item-mobile {
