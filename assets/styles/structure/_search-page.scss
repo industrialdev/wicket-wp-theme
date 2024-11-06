@@ -1,6 +1,8 @@
 .search-page-left-col {
   &:has(.open) {
-    filter: drop-shadow( var(--elevation-4) );
+    @media screen and (max-width: 767px) {
+      filter: drop-shadow( var(--elevation-4) );
+    }
   }
 }
 

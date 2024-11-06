@@ -95700,9 +95700,11 @@ form.wicket-form .wicket-form-field-wrapper,
   text-decoration-line: underline;
 }
 
-.search-page-left-col:has(.open) {
-  -webkit-filter: drop-shadow(var(--elevation-4));
-  filter: drop-shadow(var(--elevation-4));
+@media screen and (max-width: 767px) {
+  .search-page-left-col:has(.open) {
+    -webkit-filter: drop-shadow(var(--elevation-4));
+    filter: drop-shadow(var(--elevation-4));
+  }
 }
 
 .search-page-right-col__sort-by {
