@@ -142,7 +142,7 @@
             }
             ?>
           </div>
-          <div class="flex items-center">
+          <div class="search-page-right-col__sort-by">
             <div class="font-bold mr-4"><?php _e('Sort by', 'wicket'); ?></div>
             <select x-on:change="window.location.href = updateUrlParam(window.location.href, 'sortby', $el.value);" class="pr-8">
               <option value="new-to-old" <?php if(isset($_GET['sortby'])) { if ($_GET['sortby'] == 'new-to-old') {echo 'selected';} } ?>><?php _e('Date (Newest - Oldest)', 'wicket'); ?></option>

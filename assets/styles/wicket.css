@@ -95687,6 +95687,50 @@ form.wicket-form .wicket-form-field-wrapper,
   color: var(--nav-secondary-label);
 }
 
+.search-page-left-col:has(.open) {
+  -webkit-filter: drop-shadow(var(--elevation-4));
+  filter: drop-shadow(var(--elevation-4));
+}
+
+.search-page-right-col__sort-by {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  gap: 0px;
+}
+
+@media (min-width: 768px) {
+
+  .search-page-right-col__sort-by {
+    width: auto;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 0.75rem;
+  }
+}
+.search-page-right-col__sort-by select {
+  width: 100%;
+}
+@media (min-width: 768px) {
+
+  .search-page-right-col__sort-by select {
+    width: auto;
+  }
+}
+
 .search-bar-mobile {
   z-index: 30;
   width: 100%;

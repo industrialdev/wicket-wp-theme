@@ -1,0 +1,15 @@
+.search-page-left-col {
+  &:has(.open) {
+    filter: drop-shadow( var(--elevation-4) );
+  }
+}
+
+.search-page-right-col {
+  &__sort-by {
+    @apply flex gap-0 md:gap-3 flex-col md:flex-row w-full md:w-auto items-start md:items-center;
+
+    select {
+      @apply w-full md:w-auto;
+    }
+  }
+}
