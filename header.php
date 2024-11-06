@@ -39,7 +39,6 @@ if(defined('ICL_LANGUAGE_CODE')) {
         href="<?php echo get_template_directory_uri(); ?>/assets/icons/android-chrome-192x192.png" sizes="192x192">
     <link rel="icon" type="image/png"
         href="<?php echo get_template_directory_uri(); ?>/assets/icons/android-chrome-512x512.png" sizes="512x512">
-    <link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/assets/icons/site.webmanifest">
 
     <!-- Font Family -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -742,7 +741,7 @@ if($nav_state == 'logged_out') {
         ]);
     }
 ?>
-                
+
                 <div class="secondary-nav-item-mobile-wpml" >
                     <?php do_action('wpml_language_switcher'); ?>
                 </div>
