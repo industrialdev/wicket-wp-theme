@@ -91254,6 +91254,17 @@ form p.wicket-form-help-text.component-card-product .button.added .add_to_cart_b
   color: var(--text-disabled) !important;
 }
 
+.component-card-product__title-link {
+  color: var(--text-content);
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+}
+
+.component-card-product__title-link:hover {
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+}
+
 .component-card-product__title,
 .woocommerce-loop-product__title {
   display: block;
@@ -94356,6 +94367,10 @@ form p.wicket-form-help-text.woocommerce-shop ul.products li.product .button.add
 
 /* BLOCKS
 ------------------------------------------------------------------------------*/
+.wc-block-featured-product {
+  border-radius: var(--card-corner-radius);
+  padding: var(--space-200) !important;
+}
 .wc-block-featured-product__title {
   font-size: var(--heading-md-font-size);
   color: var(--text-content-reversed);
@@ -94374,11 +94389,21 @@ form p.wicket-form-help-text.woocommerce-shop ul.products li.product .button.add
   font-weight: var(--body-lg-font-weight);
   line-height: var(--body-lg-line-height);
 }
+.wc-block-featured-product__price {
+  font-weight: 700;
+}
+.wc-block-featured-product__price del {
+  color: var(--text-content-secondary-reversed);
+}
+.wc-block-featured-product__price ins {
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+}
 .wc-block-featured-product .background-dim__overlay {
   background-color: var(--bg-image-overlay) !important;
 }
-.wc-block-featured-product .background-dim__overlay::after {
-  opacity: 1;
+.wc-block-featured-product .background-dim__overlay::after, .wc-block-featured-product .background-dim__overlay::before {
+  opacity: 1 !important;
 }
 
 .wc-block-featured-category {
@@ -94419,6 +94444,7 @@ form p.wicket-form-help-text.woocommerce-shop ul.products li.product .button.add
   filter: drop-shadow(var(--elevation-4));
 }
 .wp-block-product-category.wc-block-grid .wc-block-grid__product-link {
+  color: var(--text-content);
   -webkit-text-decoration-line: none;
   text-decoration-line: none;
 }

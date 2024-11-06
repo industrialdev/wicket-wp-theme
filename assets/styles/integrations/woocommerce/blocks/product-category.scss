@@ -6,7 +6,7 @@
   }
 
   .wc-block-grid__product-link {
-    @apply no-underline hover:underline;
+    @apply no-underline hover:underline text-[--text-content];
   }
 
   .wc-block-grid__product-title {

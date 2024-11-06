@@ -1,4 +1,7 @@
 .wc-block-featured-product {
+  @apply rounded-[--card-corner-radius];
+  @apply p-[--space-200] #{!important};
+
   &__title {
     @apply text-heading-md text-[--text-content-reversed];
   }
@@ -7,11 +10,30 @@
     @apply text-body-lg text-[--text-content-reversed];
   }
 
+  &__price {
+    @apply font-bold;
+
+    del {
+      @apply text-[--text-content-secondary-reversed];
+    }
+
+    ins {
+      @apply no-underline;
+    }
+  }
+
+  &__link {
+    // .wp-block-button__link.wp-element-button {
+    //   @apply button;
+    //   @include button-primary-rev;
+    // }
+  }
+
   .background-dim__overlay {
     @apply bg-[--bg-image-overlay] #{!important};
 
-    &::after {
-      opacity: 1;
+    &::after, &::before {
+      opacity: 1 !important;
     }
   }
 }
