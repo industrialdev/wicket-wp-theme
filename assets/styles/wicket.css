@@ -95595,6 +95595,36 @@ form.wicket-form .wicket-form-field-wrapper,
   padding-bottom: 0.5rem;
 }
 
+.secondary-nav-item-mobile-wpml {
+  margin-bottom: 0.5rem;
+}
+.secondary-nav-item-mobile-wpml .wpml-ls-legacy-list-horizontal {
+  border-width: 0px;
+  padding: 0px;
+}
+.secondary-nav-item-mobile-wpml .wpml-ls-legacy-list-horizontal ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.secondary-nav-item-mobile-wpml .wpml-ls-legacy-list-horizontal a {
+  display: block;
+  padding-left: var(--space-200);
+  padding-right: var(--space-200);
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: var(--nav-secondary-label);
+}
+
 .search-bar-mobile {
   z-index: 30;
   width: 100%;

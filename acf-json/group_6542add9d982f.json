@@ -66,27 +66,6 @@
             "ui_off_text": ""
         },
         {
-            "key": "field_65552939e6a92",
-            "label": "Secondary Nav Language Toggle Enabled",
-            "name": "secondary_nav_language_toggle_enabled",
-            "aria-label": "",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "20",
-                "class": "",
-                "id": ""
-            },
-            "wpml_cf_preferences": "",
-            "message": "",
-            "default_value": 1,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
             "key": "field_65552952e6a93",
             "label": "Secondary Nav Cart Enabled",
             "name": "secondary_nav_cart_enabled",
@@ -174,5 +153,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "advanced",
-    "modified": 1700516873
+    "modified": 1730882986
 }

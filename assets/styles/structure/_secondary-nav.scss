@@ -5,3 +5,19 @@
 .secondary-nav-mobile {
   @apply flex flex-col px-3 py-2;
 }
+
+.secondary-nav-item-mobile-wpml {
+  @apply mb-2;
+
+  .wpml-ls-legacy-list-horizontal {
+    @apply p-0 border-0;
+
+    ul {
+      @apply flex flex-col gap-2;
+    }
+
+    a {
+      @apply px-[--space-200] px-2 block py-2 text-[--nav-secondary-label] text-[1rem] leading-[1.5rem];
+    }
+  }
+}

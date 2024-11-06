@@ -117,7 +117,6 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
 
         // Data formatted for Alpine
         $show_search        = get_field( 'secondary_nav_search_enabled', 'options' ) ? 'true' : 'false';
-        $show_lang_toggle   = get_field( 'secondary_nav_language_toggle_enabled', 'options' ) ? 'true' : 'false';
         $show_cart          = get_field( 'secondary_nav_cart_enabled', 'options' ) ? 'true' : 'false';
         $show_utility       = !empty( $utility_nav_items ) ? 'true' : 'false';
         $sub_menu_dropdowns = get_field( 'mobile_menu_sub_menu_dropdowns', 'options' ) ? 'true' : 'false';
@@ -126,7 +125,6 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
         x-data="{
             searchOpen:     false,
             showSearch:     <?php echo $show_search; ?>,
-            showLangToggle: <?php echo $show_lang_toggle; ?>,
             showCart:     <?php echo $show_cart; ?>,
             showUtilityNav: <?php echo $show_utility; ?>,
             mobileMenuOpen: false,
@@ -734,28 +732,10 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         ] );
                     }
                 ?>
-
-                <?php if( $lang == 'en' ): ?>
-                    <?php
-                        get_component( 'link', [
-                            'text'     => __('Fr', 'wicket'),
-                            'classes'  => [ 'secondary-nav-item-mobile', 'lang-button', 'block' ],
-                            'target'   => $target,
-                            'url'      => wicket_get_lang_url( 'fr' ),
-                            'atts'     => [ 'x-show="showLangToggle"', 'x-cloak' ]
-                        ] );
-                    ?>
-                <?php else: ?>
-                    <?php
-                        get_component( 'link', [
-                            'text'     => __('En', 'wicket'),
-                            'classes'  => [ 'secondary-nav-item-mobile', 'lang-button', 'block' ],
-                            'target'   => $target,
-                            'url'      => wicket_get_lang_url( 'en' ),
-                            'atts'     => [ 'x-show="showLangToggle"', 'x-cloak' ]
-                        ] );
-                    ?>
-                <?php endif; ?>
+                
+                <div class="secondary-nav-item-mobile-wpml" >
+                    <?php do_action( 'wpml_language_switcher' ); ?>
+                </div>
             </div>
 
             <?php if( !empty( $utility_nav_items ) ): ?>
