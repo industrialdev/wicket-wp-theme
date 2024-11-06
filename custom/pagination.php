@@ -1,60 +1,65 @@
 <?php
-if ( ! function_exists( 'wicket_paginate_links' ) ) {
 
-	function wicket_paginate_links( $args = array() ) {
+if (! function_exists('wicket_paginate_links')) {
 
-		global $wp_query;
+    function wicket_paginate_links($args = [])
+    {
 
-		$current_page = get_query_var( 'paged' ) ? intval( get_query_var( 'paged' ) ) : 1;
-		$total_pages  = isset( $wp_query->max_num_pages ) ? $wp_query->max_num_pages : 1;
+        global $wp_query;
 
-		// default args
-		$args         = wp_parse_args(
-			$args,
-			array(
-				'total'     => $total_pages,
-				'current'   => $current_page,
-				'type'      => 'array',
-				'next_text' => __('Next', 'wicket') . ' <i class="fa fa-arrow-right ml-[--space-100]" aria-hidden="true"></i>',
-				'prev_text' => '<i class="fa fa-arrow-left mr-[--space-100]" aria-hidden="true"></i> ' . __('Previous', 'wicket'),
-			)
-		);
-		$total_pages  = (int) $args['total'];
-		$current_page = (int) $args['current'];
-		$orig_type    = $args['type'];
+        $current_page = get_query_var('paged') ? intval(get_query_var('paged')) : 1;
+        $total_pages  = $wp_query->max_num_pages ?? 1;
 
-		$page_links = paginate_links( $args );
+        // default args
+        $args         = wp_parse_args(
+            $args,
+            [
+                'total'     => $total_pages,
+                'current'   => $current_page,
+                'type'      => 'array',
+                'next_text' => __('Next', 'wicket') . ' <i class="fa fa-arrow-right ml-[--space-100]" aria-hidden="true"></i>',
+                'prev_text' => '<i class="fa fa-arrow-left mr-[--space-100]" aria-hidden="true"></i> ' . __('Previous', 'wicket'),
+            ]
+        );
+        $total_pages  = (int) $args['total'];
+        $current_page = (int) $args['current'];
+        $orig_type    = $args['type'];
 
-		if ( ! $page_links ) {
-			return false;
-		}
+        $page_links = paginate_links($args);
 
-		$r = "";
-		switch ( $orig_type ) {
-			case 'array':
-				$r = join( "\n", $page_links );
-			default:
-				$r = join( "\n", $page_links );
-				break;
-		}
-		return $r;
-	}
+        if (! $page_links) {
+            return false;
+        }
+
+        $r = "";
+        switch ($orig_type) {
+            case 'array':
+                $r = join("\n", $page_links);
+                // no break
+            default:
+                $r = join("\n", $page_links);
+                break;
+        }
+        return $r;
+    }
 }
 
-if ( ! function_exists( 'wicket_pagination' ) ) {
+if (! function_exists('wicket_pagination')) {
 
-	function wicket_pagination( $args = array() ) {
+    function wicket_pagination($args = [])
+    {
 
-		return '<nav class="wicket-pagination" aria-label="' . __( 'Pagination', 'wicket' ) . '">' . wicket_paginate_links( $args ) . '</nav>';
+        return '<nav class="wicket-pagination" aria-label="' . __('Pagination', 'wicket') . '">' . wicket_paginate_links($args) . '</nav>';
 
-	}
+    }
 }
 
-if ( ! function_exists( 'the_wicket_pagination' ) ) {
+if (! function_exists('the_wicket_pagination')) {
 
-	function the_wicket_pagination( $args = array() ) {
+    function the_wicket_pagination($args = [])
+    {
 
-		echo wicket_pagination( $args );
+        echo wicket_pagination($args);
 
-	}
+    }
 }

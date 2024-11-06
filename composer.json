@@ -1,7 +1,10 @@
 {
   "name": "industrialdev/wicket-wp-theme",
   "description": "Wicket Theme",
-  "keywords": ["wordpress", "theme"],
+  "keywords": [
+    "wordpress",
+    "theme"
+  ],
   "homepage": "https://github.com/industrialdev/wicket-wp-theme",
   "authors": [
     {
@@ -12,5 +15,8 @@
   "type": "wordpress-theme",
   "require": {
     "php": ">=8.0"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^3.64"
   }
 }

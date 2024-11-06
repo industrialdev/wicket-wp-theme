@@ -6,4 +6,4 @@
 
 use Wicket\Blocks\Wicket_Dynamically_Related_Events;
 
-echo Wicket_Dynamically_Related_Events\init( $block );
+echo Wicket_Dynamically_Related_Events\init($block);

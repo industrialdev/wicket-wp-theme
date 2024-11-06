@@ -8,3 +8,5 @@ node_modules
 debug.log
 !assets/scripts/mingul/wicket.js
 .php-cs-fixer.cache
+vendor/
+.php-cs-fixer.cache

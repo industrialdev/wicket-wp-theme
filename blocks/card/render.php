@@ -6,4 +6,4 @@
 
 use Wicket\Blocks\Wicket_Card;
 
-echo Wicket_Card\init( $block );
+echo Wicket_Card\init($block);

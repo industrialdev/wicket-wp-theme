@@ -15,38 +15,38 @@
  * @version     3.3.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+if (! defined('ABSPATH')) {
+    exit;
 }
 
 global $product;
 $login_link = '';
 
-if ( ! is_user_logged_in() ) {
-	ob_start();
-	get_component( 'link', [
-			'text'     => __( 'Login to Purchase', 'woocommerce' ),
-			'default_link_style' => true,
-			'target'   => '_blank',
-			'url'      => get_login_url(),
-			'icon_end' => [
-				'icon' => 'fa-solid fa-arrow-up-right-from-square'
-			],
-	] );
-	$login_link = ob_get_clean();
+if (! is_user_logged_in()) {
+    ob_start();
+    get_component('link', [
+        'text'     => __('Login to Purchase', 'woocommerce'),
+        'default_link_style' => true,
+        'target'   => '_blank',
+        'url'      => get_login_url(),
+        'icon_end' => [
+            'icon' => 'fa-solid fa-arrow-up-right-from-square',
+        ],
+    ]);
+    $login_link = ob_get_clean();
 }
 
 echo apply_filters(
-	'woocommerce_loop_add_to_cart_link', // WPCS: XSS ok.
-	sprintf(
-		'<a href="%s" data-quantity="%s" class="%s" %s>%s</a>%s',
-		esc_url( $product->add_to_cart_url() ),
-		esc_attr( isset( $args['quantity'] ) ? $args['quantity'] : 1 ),
-		esc_attr( isset( $args['class'] ) ? $args['class'] : 'button' ),
-		isset( $args['attributes'] ) ? wc_implode_html_attributes( $args['attributes'] ) : '',
-		'<span class="add_to_cart_button__text">' . esc_html( $product->add_to_cart_text() ) . '</span>' . '<span class="add_to_cart_button__text-added">' . __( 'Added to cart' ) . ' <i class="fa-solid fa-check"></i></span>',
-		$login_link
-	),
-	$product,
-	$args
+    'woocommerce_loop_add_to_cart_link', // WPCS: XSS ok.
+    sprintf(
+        '<a href="%s" data-quantity="%s" class="%s" %s>%s</a>%s',
+        esc_url($product->add_to_cart_url()),
+        esc_attr($args['quantity'] ?? 1),
+        esc_attr($args['class'] ?? 'button'),
+        isset($args['attributes']) ? wc_implode_html_attributes($args['attributes']) : '',
+        '<span class="add_to_cart_button__text">' . esc_html($product->add_to_cart_text()) . '</span>' . '<span class="add_to_cart_button__text-added">' . __('Added to cart') . ' <i class="fa-solid fa-check"></i></span>',
+        $login_link
+    ),
+    $product,
+    $args
 );

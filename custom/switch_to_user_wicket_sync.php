@@ -1,9 +1,10 @@
 <?php
 
-// THIS IS MEANT FOR WHEN WE USE THE "SWITCH TO" PLUGIN (IMPERSONATION). 
+// THIS IS MEANT FOR WHEN WE USE THE "SWITCH TO" PLUGIN (IMPERSONATION).
 // There was a need to have the most up to date roles on a user if an admin was impersonating them.
 
-function switch_to_user_wicket_sync($user_id){
+function switch_to_user_wicket_sync($user_id)
+{
     $user_info = get_userdata($user_id);
     // check if this is a uuid format (we don't want this to fire for non-wicket accounts)
     // https://gist.github.com/joel-james/3a6201861f12a7acf4f2
@@ -13,5 +14,5 @@ function switch_to_user_wicket_sync($user_id){
     }
 }
 if (function_exists('switch_to_user')) {
-    add_action( 'switch_to_user', 'switch_to_user_wicket_sync');
+    add_action('switch_to_user', 'switch_to_user_wicket_sync');
 }

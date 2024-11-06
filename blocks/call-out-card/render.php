@@ -6,4 +6,4 @@
 
 use Wicket\Blocks\Wicket_Call_Out_Card;
 
-echo Wicket_Call_Out_Card\init( $block );
+echo Wicket_Call_Out_Card\init($block);

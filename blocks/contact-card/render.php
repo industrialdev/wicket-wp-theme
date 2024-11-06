@@ -6,4 +6,4 @@
 
 use Wicket\Blocks\Wicket_Contact_Card;
 
-echo Wicket_Contact_Card\init( $block );
+echo Wicket_Contact_Card\init($block);

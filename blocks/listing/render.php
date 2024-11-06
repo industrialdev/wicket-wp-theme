@@ -6,4 +6,4 @@
 
 use Wicket\Blocks\Wicket_Listing;
 
-echo Wicket_Listing\init( $block );
+echo Wicket_Listing\init($block);

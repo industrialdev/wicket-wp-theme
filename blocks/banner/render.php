@@ -6,4 +6,4 @@
 
 use Wicket\Blocks\Wicket_Banner;
 
-echo Wicket_Banner\init( $block );
+echo Wicket_Banner\init($block);

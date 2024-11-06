@@ -6,4 +6,4 @@
 
 use Wicket\Blocks\Wicket_Tabs;
 
-echo Wicket_Tabs\init( $block );
+echo Wicket_Tabs\init($block);

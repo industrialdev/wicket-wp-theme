@@ -3,7 +3,7 @@
  * Title: A block template for listings
  * Slug: wicket/listing-block-template
  * Inserter: true
- * Categories: wicket 
+ * Categories: wicket
  */
 
 ?>

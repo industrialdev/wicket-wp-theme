@@ -6,4 +6,4 @@
 
 use Wicket\Blocks\Wicket_Manually_Related_Content;
 
-echo Wicket_Manually_Related_Content\init( $block );
+echo Wicket_Manually_Related_Content\init($block);

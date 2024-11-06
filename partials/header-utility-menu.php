@@ -1,6 +1,6 @@
 <?php
-  $post = get_field('header_utility_menu', 'options');
-  $dropdown_count = 0;
+$post = get_field('header_utility_menu', 'options');
+$dropdown_count = 0;
 ?>
 
 <?php if($post) : ?>
@@ -9,19 +9,19 @@
     <?php if(have_rows('menu_items')) : ?>
       <ul class="nav__menu">
         <?php while(have_rows('menu_items')) : the_row(); ?>
-          <?php 
+          <?php
             $link = get_sub_field('link');
             $icon = get_sub_field('icon');
             $has_dropdown = false;
-            if(have_rows('submenu_items')){
-              $dropdown_count++;
-              $unique_id = uniqid();
-              $submenu_id = 'submenu-' . $unique_id;
-              $submenu_toggle_id = 'submenu-' . $unique_id . '-toggle';
-              $has_dropdown = true;
-              get_row();
+            if(have_rows('submenu_items')) {
+                $dropdown_count++;
+                $unique_id = uniqid();
+                $submenu_id = 'submenu-' . $unique_id;
+                $submenu_toggle_id = 'submenu-' . $unique_id . '-toggle';
+                $has_dropdown = true;
+                get_row();
             }
-          ?>
+            ?>
           <li class="nav__menu-item<?php if($has_dropdown) : ?> dropdown<?php endif; ?>">
             <a <?php if($has_dropdown) : ?>id="<?php echo $submenu_toggle_id; ?>"<?php endif; ?> class="nav__link<?php if($has_dropdown) : ?> dropdown__toggle<?php endif; ?>" href="<?php echo $link['url']; ?>" <?php if($link['target'] == "_blank") : ?>target="<?php echo $link['target']; ?>"<?php endif; ?> <?php if($has_dropdown) : ?>aria-controls="<?php echo $submenu_id; ?>" aria-expanded="false"<?php endif; ?>>
               <?php if($icon) : ?>
@@ -38,10 +38,10 @@
             <?php if(have_rows('submenu_items')) : ?>
               <ul id="<?php echo $submenu_id; ?>" class="nav__submenu dropdown__content" aria-labelledby="<?php echo $submenu_toggle_id; ?>" aria-expanded="false">
                 <?php while(have_rows('submenu_items')) : the_row(); ?>
-                  <?php 
-                    $link = get_sub_field('link');
-                    $icon = get_sub_field('icon'); 
-                  ?>
+                  <?php
+                      $link = get_sub_field('link');
+                    $icon = get_sub_field('icon');
+                    ?>
                   <li class="submenu__menu-item">
                     <a class="submenu__link" href="<?php echo $link['url']; ?>" <?php if($link['target'] == "_blank") : ?>target="<?php echo $link['target']; ?>"<?php endif; ?>>
                       <?php if($icon) : ?>

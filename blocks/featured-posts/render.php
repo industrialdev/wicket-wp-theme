@@ -6,4 +6,4 @@
 
 use Wicket\Blocks\Wicket_Featured_Posts;
 
-echo Wicket_Featured_Posts\init( $block );
+echo Wicket_Featured_Posts\init($block);

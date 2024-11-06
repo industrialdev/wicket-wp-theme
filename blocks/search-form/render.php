@@ -6,4 +6,4 @@
 
 use Wicket\Blocks\Wicket_Search_Form;
 
-echo Wicket_Search_Form\init( $block );
+echo Wicket_Search_Form\init($block);

@@ -25,19 +25,19 @@
 					<h1><?php the_title(); ?></h1>
 					<?php the_content(); ?>
 					<?php $locale = ICL_LANGUAGE_CODE == 'fr' ? '&locale=fr' : '&locale=en'; ?>
-					<?php $referrer = isset($_GET['referrer']) ? WP_HOME.$_GET['referrer'].$locale : home_url($wp->request, 'https').'/'.$locale; ?>
+					<?php $referrer = isset($_GET['referrer']) ? WP_HOME . $_GET['referrer'] . $locale : home_url($wp->request, 'https') . '/' . $locale; ?>
 
-					<?php get_component( 'link', [
-						'variant' => 'primary',
-						'text'    => __( 'Login', 'wicket' ),
-						'url'    => get_option('wp_cassify_base_url').'login?service='.$referrer,
-					] ) ?>
+					<?php get_component('link', [
+					    'variant' => 'primary',
+					    'text'    => __('Login', 'wicket'),
+					    'url'    => get_option('wp_cassify_base_url') . 'login?service=' . $referrer,
+					]) ?>
 
-					<?php get_component( 'link', [
-						'variant' => 'secondary',
-						'text'    => __( 'Create an Account', 'wicket' ),
-						'url'    => '/create-account',
-					] ) ?>
+					<?php get_component('link', [
+					    'variant' => 'secondary',
+					    'text'    => __('Create an Account', 'wicket'),
+					    'url'    => '/create-account',
+					]) ?>
 
 				<?php endif; ?>
 			</div>

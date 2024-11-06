@@ -1,27 +1,32 @@
 <?php
+
 /**
  * Wicket's PHP CS Fixer Configuration
- * Type: almost disable all formatting.
- * Description: to be used on legacy repositories.
  *
  * @link https://github.com/PHP-CS-Fixer/PHP-CS-Fixer
  * @link https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/blob/master/doc/config.rst
  */
 
-$finder = (new PhpCsFixer\Finder())
-    ->in(__DIR__)
+$finder = PhpCsFixer\Finder::create()
     ->exclude([
+        '.ci',
         'node_modules',
         'vendor',
-        '.ci',
+        'languages',
         'dist',
     ])
     ->notName([
         'composer.lock',
-    ]);
+    ])
+    ->in(__DIR__);
 
 return (new PhpCsFixer\Config())
     ->setRules([
-        'line_ending' => true,
+        '@PSR12'            => true,
+        '@PER-CS'           => true,
+        '@PHP81Migration'   => true,
+        'array_syntax'      => ['syntax' => 'short'],   // Enforce short array syntax
+        'no_unused_imports' => true,                    // Remove unused imports
     ])
-    ->setFinder($finder);
+    ->setFinder($finder)
+    ->setParallelConfig(PhpCsFixer\Runner\Parallel\ParallelConfigFactory::detect());
