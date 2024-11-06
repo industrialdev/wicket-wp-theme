@@ -1,5 +1,5 @@
 .wicket-pagination {
-  @apply flex justify-center gap-[--space-050];
+  @apply flex justify-center gap-[--space-050] flex-wrap md:flex-nowrap;
 
   .page-numbers {
     @apply p-[--space-200] text-[--text-button-label] text-body-md rounded-[--interactive-corner-radius-md] no-underline;
@@ -11,6 +11,24 @@
 
     &.current, &:active {
       @apply bg-[--highlight-dark] text-[--text-button-label-reversed];
+    }
+
+    &.prev, &.next {
+      @apply text-center order-first md:order-none;
+
+      @media screen and (max-width: 767px) {
+        flex: 0 0 calc(100% - var(--space-050));
+      }
+    }
+  }
+
+  &:has(.prev):has(.next) {
+    .page-numbers {
+      &.prev, &.next {
+        @media screen and (max-width: 767px) {
+          flex: 0 0 calc(50% - var(--space-050));
+        }
+      }
     }
   }
 

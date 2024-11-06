@@ -92524,10 +92524,20 @@ form p.wicket-form-help-text.secondary-nav .component-link,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
   gap: var(--space-050);
+}
+
+@media (min-width: 768px) {
+
+  .wicket-pagination {
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
 }
 .wicket-pagination .page-numbers {
   border-radius: var(--interactive-corner-radius-md);
@@ -92549,6 +92559,32 @@ form p.wicket-form-help-text.secondary-nav .component-link,
 .wicket-pagination .page-numbers.current, .wicket-pagination .page-numbers:active {
   background-color: var(--highlight-dark);
   color: var(--text-button-label-reversed);
+}
+.wicket-pagination .page-numbers.prev, .wicket-pagination .page-numbers.next {
+  -webkit-box-ordinal-group: -9998;
+  -ms-flex-order: -9999;
+  order: -9999;
+  text-align: center;
+}
+@media (min-width: 768px) {
+
+  .wicket-pagination .page-numbers.prev, .wicket-pagination .page-numbers.next {
+    -webkit-box-ordinal-group: 1;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  .wicket-pagination .page-numbers.prev, .wicket-pagination .page-numbers.next {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 calc(100% - var(--space-050));
+    flex: 0 0 calc(100% - var(--space-050));
+  }
+  .wicket-pagination:has(.prev):has(.next) .page-numbers.prev, .wicket-pagination:has(.prev):has(.next) .page-numbers.next {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 calc(50% - var(--space-050));
+    flex: 0 0 calc(50% - var(--space-050));
+  }
 }
 .wicket-pagination span.page-numbers {
   pointer-events: none;
