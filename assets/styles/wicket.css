@@ -95642,6 +95642,15 @@ form.wicket-form .wicket-form-field-wrapper,
     padding-right: 0px;
   }
 }
+.secondary-nav .wpml-ls-legacy-list-horizontal a {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: var(--nav-secondary-label);
+}
+.secondary-nav .wpml-ls-legacy-list-horizontal a:hover {
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+}
 
 .secondary-nav-mobile {
   display: -webkit-box;
@@ -95685,6 +95694,10 @@ form.wicket-form .wicket-form-field-wrapper,
   font-size: 1rem;
   line-height: 1.5rem;
   color: var(--nav-secondary-label);
+}
+.secondary-nav-item-mobile-wpml .wpml-ls-legacy-list-horizontal a:hover {
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
 }
 
 .search-page-left-col:has(.open) {
