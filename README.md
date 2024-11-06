@@ -5,6 +5,15 @@
 * Run `yarn` to install node dependencies
 * Run `yarn gulp` (or just `gulp` if you have it installed globally on your system) to freshly build the scripts and styles, and kickoff the 'watch' command while you make frontend file changes
 
+### Requirements
+
+- WSL2 on Windows, or Linux/macOS with Bash 5.x or greater (ZSH is also compatible). On macOS, ensure Bash is up to date, even if you're using ZSH. Use [Homebrew](https://formulae.brew.sh/formula/bash) to update Bash if needed.
+- [Composer](https://getcomposer.org/).
+- [EditorConfig](https://editorconfig.org/) installed in your code editor.
+- (Optional) [PHP CS Fixer](https://marketplace.visualstudio.com/items?itemName=junstyle.php-cs-fixer) extension for VSCode, or the equivalent for your editor of choice (e.g., [Sublime Text](https://packagecontrol.io/packages/PHP%20CS%20Fixer)). Having this extension installed allows PHP-CS-Fixer to run on file save, so your code is formatted automatically without needing to wait for a git commit to trigger the formatting.
+
+You can run the command `composer vendor/bin/php-cs-fixer fix` from the root of the repository (or `docker compose exec php sh -c "cd /var/www/html/web/app/themes/wicket-wp-theme && vendor/bin/php-cs-fixer fix"` if the theme is used from the baseline in a docker container) to run PHP-CS-Fixer with the embedded PHP binary.
+
 ## Developer Helpers:
 * Add `?bootstrap` to your URL to temporarily enqueue Bootstrap via CDN for purposes of migrating from legacy Bootstrap styles
 * Add `?breakpoints` to your URL to show what Tailwind breakpoint you're currently viewing with an indicator in the bottom-right corner
