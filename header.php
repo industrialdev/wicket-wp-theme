@@ -378,7 +378,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         x-on:close-nav-dropdowns.window="
                             if( $event.target !== $el ) {navDropdownOpen = false}"
                         >
-                        <?php echo $primary_nav_item['title']; ?><i class="fa-solid fa-caret-down ml-2"></i>
+                        <span><?php echo $primary_nav_item['title']; ?></span><i class="fa-solid fa-caret-down ml-2"></i>
 
                         <ul
                             x-show="navDropdownOpen"
@@ -424,7 +424,7 @@ if( defined( 'ICL_LANGUAGE_CODE' ) ) {
                         x-on:close-nav-dropdowns.window="
                             if( $event.target !== $el ) {navDropdownOpen = false}"
                         >
-                        <?php echo $primary_nav_item['title']; ?><i class="fa-solid fa-caret-down ml-2"></i>
+                        <span><?php echo $primary_nav_item['title']; ?></span><i class="fa-solid fa-caret-down ml-2"></i>
 
                         <div
                             x-show="navDropdownOpen"

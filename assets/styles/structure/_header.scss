@@ -55,33 +55,20 @@
       @apply block w-full p-3 text-[--dropdown-mega-heading-link] font-bold;
     }
 
-    .nav-parent-item-mobile-wrap {
-      @include primary-menu-item-styles;
-      @apply inline-flex justify-between items-center w-full;
-
-      &:hover {
-        > span {
-          @apply underline;
-        }
-      }
-    }
-    
-    .nav-parent-item-mobile {
-      @apply flex flex-col w-full;
-    }
-
+    .nav-parent-item-mobile-wrap,
     .nav-mega-parent-item-mobile-wrap {
       @include primary-menu-item-styles;
       @apply inline-flex justify-between items-center w-full;
 
-      &:hover {
+      &:hover, &:active, &:focus, &.open {
         > span {
           @apply underline;
         }
       }
     }
 
-    .nav-mega-parent-item-mobile {
+    .nav-mega-parent-item-mobile,
+    .nav-parent-item-mobile {
       @apply flex flex-col w-full;
     }
   }
