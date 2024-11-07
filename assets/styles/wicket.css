@@ -90435,7 +90435,7 @@ a:where(:not(.wp-element-button)):active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 100%;
+  min-height: 100%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
@@ -90648,6 +90648,7 @@ a:where(:not(.wp-element-button)):active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  min-height: 100%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
@@ -90859,6 +90860,7 @@ a:where(:not(.wp-element-button)):active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  min-height: 100%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
@@ -91287,7 +91289,7 @@ form p.wicket-form-help-text.component-card-product .button.added .add_to_cart_b
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 100%;
+  min-height: 100%;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
@@ -91822,6 +91824,7 @@ form p.wicket-form-help-text.secondary-nav .component-filter-form__see-more,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  min-height: 100%;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -93046,8 +93049,11 @@ form p.wicket-form-help-text.component-tooltip-content,
   filter: invert(100%);
 }
 
+:where(.wp-block-column) .wp-block-wicket-card {
+  min-height: 100%;
+}
 :where(.wp-block-column) .wp-block-wicket-card .component-card, :where(.wp-block-column) .wp-block-wicket-card > div {
-  height: 100%;
+  min-height: 100%;
 }
 
 .block-wicket-author {

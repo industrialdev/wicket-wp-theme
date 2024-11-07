@@ -1,5 +1,5 @@
 .component-card {
-  @apply p-[--space-200] h-full bg-[--bg-card] rounded-[--card-corner-radius] border-[--border-card] border-b-[length:--border-card-size] gap-[--space-200] relative flex flex-col @2xl:flex-row @2xl:items-center gap-[--space-200];
+  @apply p-[--space-200] min-h-full bg-[--bg-card] rounded-[--card-corner-radius] border-[--border-card] border-b-[length:--border-card-size] gap-[--space-200] relative flex flex-col @2xl:flex-row @2xl:items-center gap-[--space-200];
   filter: drop-shadow( var(--elevation-4) );
 
   &__container {

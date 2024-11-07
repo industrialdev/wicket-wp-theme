@@ -1,5 +1,5 @@
 .component-card-featured {
-  @apply bg-[--bg-card] rounded-[--card-corner-radius] border-b-[length:--border-featured-card] border-[--border-card] p-[--space-200] flex flex-col gap-[--space-200] relative;
+  @apply bg-[--bg-card] rounded-[--card-corner-radius] border-b-[length:--border-featured-card] border-[--border-card] p-[--space-200] flex flex-col gap-[--space-200] relative min-h-full;
   filter: drop-shadow( var(--elevation-4) );
 
   .component-related-posts & {
@@ -21,7 +21,7 @@
     .component-related-posts__col-1 & {
       @apply text-heading-md;
     }
-   
+
     .component-featured-posts__primary-secondary-level-col-2 & {
       @apply text-heading-xs;
     }
@@ -34,11 +34,11 @@
   &__content-type {
     @apply text-label-md text-[--text-accent];
   }
-  
+
   &__excerpt {
     @apply text-body-md;
   }
-  
+
   &__date {
     @apply text-date-label-md text-[--text-content-secondary];
   }

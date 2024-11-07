@@ -1,5 +1,5 @@
 .component-card-event {
-  @apply bg-[--bg-card] rounded-[--card-corner-radius] gap-[--space-200] relative flex items-start flex-col lg:flex-row justify-between p-[--space-200] border-b-[length:--border-dynamic-card] border-[--border-card];
+  @apply bg-[--bg-card] rounded-[--card-corner-radius] gap-[--space-200] relative flex items-start flex-col lg:flex-row justify-between p-[--space-200] border-b-[length:--border-dynamic-card] border-[--border-card] min-h-full;
   filter: drop-shadow( var(--elevation-4) );
 
   &--no-drop-shadow {
