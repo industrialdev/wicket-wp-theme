@@ -61,7 +61,7 @@ $page_count  = ceil($total_posts / $posts_per_page);
 ?>
 
 <form action="" x-data="
-  { foo: 'bar', 
+  { foo: 'bar',
     updateUrlParam(url, param, value) {
       let the_url = new URL(url);
       let search_params = the_url.searchParams;
@@ -99,7 +99,7 @@ $page_count  = ceil($total_posts / $posts_per_page);
 
         <div class="text-center" >
           <?php get_component('link', [
-              'classes' => [ 'search-page-clear-button', 'block', 'text-body-md', 'mt-4' ],
+              'classes' => [ 'search-page-clear-button', 'text-body-md', 'mt-4' ],
               'text'    => __('Clear Search', 'wicket'),
               'url'    => '/?s=',
               'icon_start' => [
@@ -161,7 +161,7 @@ $page_count  = ceil($total_posts / $posts_per_page);
               } ?>><?php _e('Date (Oldest - Newest)', 'wicket'); ?></option>
             </select>
           </div>
-          
+
         </div>
 
         <?php
