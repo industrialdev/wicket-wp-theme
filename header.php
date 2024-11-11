@@ -41,15 +41,16 @@ if(defined('ICL_LANGUAGE_CODE')) {
         href="<?php echo get_template_directory_uri(); ?>/assets/icons/android-chrome-512x512.png" sizes="512x512">
 
     <!-- Font Family -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <?php
+        $theme_ff_group = get_field('theme-font-family', 'option');
+        echo $theme_ff_group['head-font-html-code'];
+    ?>
 
     <?php
         wp_head();
 
-echo get_field('tracking_codes_in_head', 'options');
-?>
+        the_field('tracking_codes_in_head', 'options');
+    ?>
 </head>
 
 <body <?php body_class(); ?>>

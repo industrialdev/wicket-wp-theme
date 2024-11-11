@@ -3729,6 +3729,85 @@
                     "return_format": "string"
                 }
             ]
+        },
+        {
+            "key": "field_6731cdcaf4e88",
+            "label": "Typography",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_6731d401c541b",
+            "label": "Font Family",
+            "name": "theme-font-family",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_6731cde8f4e89",
+                    "label": "Head Font HTML Code",
+                    "name": "head-font-html-code",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "Use this to add custom fonts from CDN, for example:\r\n&lt;link rel=\"stylesheet\" href=\"https:\/\/use.typekit.net\/bot2tyc.css\"&gt;",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 1,
+                    "default_value": "<link rel=\"preconnect\" href=\"https:\/\/fonts.googleapis.com\">\r\n<link rel=\"preconnect\" href=\"https:\/\/fonts.gstatic.com\" crossorigin>\r\n<link href=\"https:\/\/fonts.googleapis.com\/css2?family=Montserrat:wght@400;700&display=swap\" rel=\"stylesheet\">",
+                    "maxlength": "",
+                    "rows": "",
+                    "placeholder": "",
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_6731d152bc7fa",
+                    "label": "Font Family name",
+                    "name": "font-family-name",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "e.g. \"Montserrat,sans-serif\" or \"proxima-nova-condensed,sans-serif\"",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 1,
+                    "default_value": "Montserrat,sans-serif",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                }
+            ]
         }
     ],
     "location": [
@@ -3750,5 +3829,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "advanced",
-    "modified": 1730464280
+    "modified": 1731318836
 }
