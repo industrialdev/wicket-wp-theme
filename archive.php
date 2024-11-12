@@ -13,14 +13,14 @@ if ( is_post_type_archive() ) {
 	$title = single_term_title();
 } elseif ( is_search() ) {
 	$title = 'Search results for: ' . get_search_query();
-} elseif ( is_singuler() ) {
+} elseif ( is_singular() ) {
 	$title = get_the_title();
 }
 ?>
 
 <main id="main-content">
 	<?php
-	get_component( 'banner', [ 
+	get_component( 'banner', [
 		'title'            => $title,
 		'show_breadcrumbs' => true,
 		'classes'          => [ 'mb-0' ],
@@ -29,7 +29,6 @@ if ( is_post_type_archive() ) {
 	$block['post_type'] = $post_type;
 	echo Wicket_Listing\init( $block );
 	?>
-
 
 </main>
 
