@@ -31,40 +31,67 @@ if ( function_exists( 'register_block_pattern_category' ) ) {
 }
 
 /**
- * Load ACF Blocks
+ * Registers all ACF blocks in the parent theme.
+ *
+ * This function is called by the load_acf_blocks_field_group filter and
+ * registers all ACF blocks in the parent theme.
+ *
+ * @since 1.0.0
  */
 function load_acf_blocks() {
 	$blocks = get_blocks();
+
 	foreach ( $blocks as $block ) {
+		// Check if Block is already registered
+		$registry = WP_Block_Type_Registry::get_instance();
+
+		if ($registry->get_registered( 'wicket/' . $block )) {
+			continue;
+		}
+
 		if ( file_exists( get_template_directory() . '/blocks/' . $block . '/block.json' ) ) {
-			// Check if Block is already registered
-			$registry = WP_Block_Type_Registry::get_instance();
-			if ( ! $registry->get_registered( 'wicket/' . $block ) ) {
-				register_block_type( get_template_directory() . '/blocks/' . $block . '/block.json' );
-				if ( file_exists( get_template_directory() . '/blocks/' . $block . '/style.css' ) ) {
-					wp_register_style( 'block-' . $block, get_template_directory_uri() . '/blocks/' . $block . '/style.css', array(), filemtime( get_template_directory() . '/blocks/' . $block . '/style.css' ) );
-				}
-				if ( file_exists( get_template_directory() . '/blocks/' . $block . '/init.php' ) ) {
-					include_once get_template_directory() . '/blocks/' . $block . '/init.php';
-				}
+			register_block_type( get_template_directory() . '/blocks/' . $block . '/block.json' );
+
+			if ( file_exists( get_template_directory() . '/blocks/' . $block . '/style.css' ) ) {
+				wp_register_style( 'block-' . $block, get_template_directory_uri() . '/blocks/' . $block . '/style.css', array(), filemtime( get_template_directory() . '/blocks/' . $block . '/style.css' ) );
+			}
+
+			if ( file_exists( get_template_directory() . '/blocks/' . $block . '/init.php' ) ) {
+				include_once get_template_directory() . '/blocks/' . $block . '/init.php';
 			}
 		}
 	}
 }
+
+/**
+ * Registers all ACF blocks in the child theme.
+ *
+ * This function works just like load_acf_blocks(), but loads blocks from the
+ * child theme instead of the parent theme.
+ *
+ * @since 1.0.0
+ * @see load_acf_blocks()
+ */
 function load_child_acf_blocks() {
 	$blocks = get_child_blocks();
+
 	foreach ( $blocks as $block ) {
+		// Check if Block is already registered
+		$registry = WP_Block_Type_Registry::get_instance();
+
+		if ($registry->get_registered( 'wicket/' . $block )) {
+			continue;
+		}
+
 		if ( file_exists( get_stylesheet_directory() . '/blocks/' . $block . '/block.json' ) ) {
-			// Check if Block is already registered
-			$registry = WP_Block_Type_Registry::get_instance();
-			if ( ! $registry->get_registered( 'wicket/' . $block ) ) {
-				register_block_type( get_stylesheet_directory() . '/blocks/' . $block . '/block.json' );
-				if ( file_exists( get_stylesheet_directory() . '/blocks/' . $block . '/style.css' ) ) {
-					wp_register_style( 'block-' . $block, get_stylesheet_directory_uri() . '/blocks/' . $block . '/style.css', array(), filemtime( get_template_directory() . '/blocks/' . $block . '/style.css' ) );
-				}
-				if ( file_exists( get_stylesheet_directory() . '/blocks/' . $block . '/init.php' ) ) {
-					include_once get_stylesheet_directory() . '/blocks/' . $block . '/init.php';
-				}
+			register_block_type( get_stylesheet_directory() . '/blocks/' . $block . '/block.json' );
+
+			if ( file_exists( get_stylesheet_directory() . '/blocks/' . $block . '/style.css' ) ) {
+				wp_register_style( 'block-' . $block, get_stylesheet_directory_uri() . '/blocks/' . $block . '/style.css', array(), filemtime( get_template_directory() . '/blocks/' . $block . '/style.css' ) );
+			}
+
+			if ( file_exists( get_stylesheet_directory() . '/blocks/' . $block . '/init.php' ) ) {
+				include_once get_stylesheet_directory() . '/blocks/' . $block . '/init.php';
 			}
 		}
 	}
@@ -145,8 +172,8 @@ add_filter( 'render_block', 'wicket_core_block_wrappers', 10, 2 );
  */
 function register_post_template() {
 	$template                   = array(
-		array( 'wicket/banner', [ 
-			'data'  => [ 
+		array( 'wicket/banner', [
+			'data'  => [
 				'banner_show_breadcrumbs' => false,
 				'banner_show_post_type'   => true,
 				'banner_back_link'        => '',
@@ -158,22 +185,22 @@ function register_post_template() {
 				'remove' => true,
 			),
 		] ),
-		array( 'core/paragraph', [ 
+		array( 'core/paragraph', [
 			'content' => '<b>Topics:</b>',
-			'style'   => [ 
-				'spacing' => [ 
-					'padding' => [ 
+			'style'   => [
+				'spacing' => [
+					'padding' => [
 						'top'    => '1.5rem',
 						'bottom' => '0',
 					],
 				] ],
 		] ),
-		array( 'core/post-terms', [ 
+		array( 'core/post-terms', [
 			'term' => 'post_tag',
 		] ),
 		array( 'wicket/manually-related-content' ),
-		array( 'wicket/dynamically-related-content', [ 
-			'data' => [ 
+		array( 'wicket/dynamically-related-content', [
+			'data' => [
 				'related_content_max_posts'    => 3,
 				'related_content_column_count' => 3,
 				'post_type'                    => 'post',
