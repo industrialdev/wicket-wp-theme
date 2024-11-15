@@ -37,7 +37,7 @@ function init($block = [])
     get_component('org-search-select', [
         'classes'                             => [],
         'search_mode'                         => $search_mode,
-        'search_org_type'                     => $search_org_typ,
+        'search_org_type'                     => $search_org_type,
         'relationship_type_upon_org_creation' => $relationship_type_upon_org_creation,
         'relationship_mode'                   => $relationship_mode,
         'new_org_type_override'               => $new_org_type_override,
