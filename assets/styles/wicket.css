@@ -3,93 +3,116 @@
   --heading-3xl-line-height: clamp(3rem, 5vw, 3.75rem);
   --heading-3xl-font-weight-md: 700;
   --heading-3xl-font-weight-sm: 700;
+  --heading-3xl-font-family: var(--font-family-name);
   --heading-2xl-font-size: clamp(2.25rem, 5vw, 2.75rem);
   --heading-2xl-line-height: clamp(2.75rem, 5vw, 3.25rem);
   --heading-2xl-font-weight-md: 400;
   --heading-2xl-font-weight-sm: 400;
+  --heading-2xl-font-family: var(--font-family-name);
   --heading-xl-font-size: clamp(2rem, 5vw, 2.25rem);
   --heading-xl-line-height: clamp(2.5rem, 5vw, 2.75rem);
   --heading-xl-font-weight-md: 700;
   --heading-xl-font-weight-sm: 700;
+  --heading-xl-font-family: var(--font-family-name);
   --heading-lg-font-size: clamp(1.75rem, 5vw, 2rem);
   --heading-lg-line-height: clamp(2.25rem, 5vw, 2.5rem);
   --heading-lg-font-weight-md: 400;
   --heading-lg-font-weight-sm: 400;
+  --heading-lg-font-family: var(--font-family-name);
   --heading-md-font-size: clamp(1.5rem, 5vw, 1.75rem);
   --heading-md-line-height: clamp(2rem, 5vw, 2.25rem);
   --heading-md-font-weight-md: 700;
   --heading-md-font-weight-sm: 700;
+  --heading-md-font-family: var(--font-family-name);
   --heading-sm-font-size: clamp(1.25rem, 5vw, 1.5rem);
   --heading-sm-line-height: clamp(1.75rem, 5vw, 2rem);
   --heading-sm-font-weight-md: 700;
   --heading-sm-font-weight-sm: 700;
+  --heading-sm-font-family: var(--font-family-name);
   --heading-xs-font-size: clamp(1.125rem, 5vw, 1.25rem);
   --heading-xs-line-height: clamp(1.625rem, 5vw, 1.75rem);
   --heading-xs-font-weight-md: 700;
   --heading-xs-font-weight-sm: 700;
+  --heading-xs-font-family: var(--font-family-name);
   /* body-lg */
   --body-lg-font-size: 1.25rem;
   --body-lg-line-height: 1.75rem;
   --body-lg-font-weight: 400;
+  --body-lg-font-family: var(--font-family-name);
   /* body-md */
   --body-md-font-size: 1rem;
   --body-md-line-height: 1.5rem;
   --body-md-font-weight: 400;
+  --body-md-font-family: var(--font-family-name);
   /* body-sm */
   --body-sm-font-size: 0.875rem;
   --body-sm-line-height: 1.375rem;
   --body-sm-font-weight: 400;
+  --body-sm-font-family: var(--font-family-name);
   /* quote */
   --quote-font-size: 1.5rem;
   --quote-line-height: 2.25rem;
   --quote-font-weight: 400;
+  --quote-font-family: var(--font-family-name);
   /* placeholder */
   --placeholder-font-size: 1rem;
   --placeholder-line-height: 1.5rem;
   --placeholder-font-weight: 400;
+  --placeholder-font-family: var(--font-family-name);
   /* caption */
   --caption-font-size: 0.875rem;
   --caption-line-height: 1.375rem;
   --caption-font-weight: 400;
+  --caption-font-family: var(--font-family-name);
   /* button-label-lg */
   --button-label-lg-font-size: 1.25rem;
   --button-label-lg-line-height: 1.75rem;
   --button-label-lg-font-weight: 700;
+  --button-label-lg-font-family: var(--font-family-name);
   /* button-label-md */
   --button-label-md-font-size: 1rem;
   --button-label-md-line-height: 1.5rem;
   --button-label-md-font-weight: 700;
+  --button-label-md-font-family: var(--font-family-name);
   /* button-label-sm */
   --button-label-sm-font-size: 0.875rem;
   --button-label-sm-line-height: 1.375rem;
   --button-label-sm-font-weight: 700;
+  --button-label-sm-font-family: var(--font-family-name);
   /* form-label */
   --form-label-font-size: 1rem;
   --form-label-line-height: 1.5rem;
   --form-label-font-weight: 700;
+  --form-label-font-family: var(--font-family-name);
   /* date-label-md */
   --date-label-md-font-size: 1rem;
   --date-label-md-line-height: 1.5rem;
   --date-label-md-font-weight: 400;
+  --date-label-md-font-family: var(--font-family-name);
   /* date-label-sm */
   --date-label-sm-font-size: 0.875rem;
   --date-label-sm-line-height: 1.375rem;
   --date-label-sm-font-weight: 400;
+  --date-label-sm-font-family: var(--font-family-name);
   /* label-lg */
   --label-lg-font-size: 1.25rem;
   --label-lg-line-height: 1.75rem;
   --label-lg-font-weight: 700;
+  --label-lg-font-family: var(--font-family-name);
   /* label-md */
   --label-md-font-size: 1rem;
   --label-md-line-height: 1.5rem;
   --label-md-font-weight: 700;
+  --label-md-font-family: var(--font-family-name);
   /* label-sm */
   --label-sm-font-size: 0.875rem;
   --label-sm-line-height: 1.375rem;
   --label-sm-font-weight: 700;
+  --label-sm-font-family: var(--font-family-name);
 }
 
 .text-heading-3xl {
+  font-family: var(--heading-3xl-font-family);
   font-weight: var(--heading-3xl-font-weight-sm);
   line-height: var(--heading-3xl-line-height);
 }
@@ -102,6 +125,7 @@
 }
 
 .text-heading-2xl {
+  font-family: var(--heading-2xl-font-family);
   font-weight: var(--heading-2xl-font-weight-sm);
   line-height: var(--heading-2xl-line-height);
 }
@@ -114,6 +138,7 @@
 }
 
 .text-heading-xl {
+  font-family: var(--heading-xl-font-family);
   font-weight: var(--heading-xl-font-weight-sm);
   line-height: var(--heading-xl-line-height);
 }
@@ -126,6 +151,7 @@
 }
 
 .text-heading-lg {
+  font-family: var(--heading-lg-font-family);
   font-weight: var(--heading-lg-font-weight-sm);
   line-height: var(--heading-lg-line-height);
 }
@@ -138,6 +164,7 @@
 }
 
 .text-heading-md {
+  font-family: var(--heading-md-font-family);
   font-weight: var(--heading-md-font-weight-sm);
   line-height: var(--heading-md-line-height);
 }
@@ -150,6 +177,7 @@
 }
 
 .text-heading-sm {
+  font-family: var(--heading-sm-font-family);
   font-weight: var(--heading-sm-font-weight-sm);
   line-height: var(--heading-sm-line-height);
 }
@@ -162,6 +190,7 @@
 }
 
 .text-heading-xs {
+  font-family: var(--heading-xs-font-family);
   font-weight: var(--heading-xs-font-weight-sm);
   line-height: var(--heading-xs-line-height);
 }
@@ -174,82 +203,97 @@
 }
 
 .text-body-lg {
+  font-family: var(--body-lg-font-family);
   font-weight: var(--body-lg-font-weight);
   line-height: var(--body-lg-line-height);
 }
 
 .text-body-md {
+  font-family: var(--body-md-font-family);
   font-weight: var(--body-md-font-weight);
   line-height: var(--body-md-line-height);
 }
 
 .text-body-sm {
+  font-family: var(--body-sm-font-family);
   font-weight: var(--body-sm-font-weight);
   line-height: var(--body-sm-line-height);
 }
 
 .text-quote {
+  font-family: var(--quote-font-family);
   font-weight: var(--quote-font-weight);
   font-style: italic;
   line-height: var(--quote-line-height);
 }
 
 .text-placeholder {
+  font-family: var(--placeholder-font-family);
   font-weight: var(--placeholder-font-weight);
   font-style: italic;
   line-height: var(--placeholder-line-height);
 }
 
 .text-caption {
+  font-family: var(--caption-font-family);
   font-weight: var(--caption-font-weight);
   line-height: var(--caption-line-height);
 }
 
 .text-button-label-lg {
+  font-family: var(--button-label-lg-font-family);
   font-weight: var(--button-label-lg-font-weight);
   line-height: var(--button-label-lg-line-height);
 }
 
 .text-button-label-md {
+  font-family: var(--button-label-md-font-family);
   font-weight: var(--button-label-md-font-weight);
   line-height: var(--button-label-md-line-height);
 }
 
 .text-button-label-sm {
+  font-family: var(--button-label-sm-font-family);
   font-weight: var(--button-label-sm-font-weight);
   line-height: var(--button-label-sm-line-height);
 }
 
 .text-form-label {
+  font-family: var(--form-label-font-family);
   font-weight: var(--form-label-font-weight);
   line-height: var(--form-label-line-height);
 }
 
 .text-date-label-md {
+  font-family: var(--date-label-md-font-family);
   font-weight: var(--date-label-md-font-weight);
   font-style: italic;
   line-height: var(--date-label-md-line-height);
 }
 
 .text-date-label-sm {
+  font-family: var(--date-label-sm-font-family);
   font-weight: var(--date-label-sm-font-weight);
   font-style: italic;
   line-height: var(--date-label-sm-line-height);
 }
 
 .text-label-lg {
+  font-family: var(--label-lg-font-family);
   font-weight: var(--label-lg-font-weight);
   text-transform: uppercase;
   line-height: var(--label-lg-line-height);
 }
 
 .text-label-md {
+  font-family: var(--label-md-font-family);
   font-weight: var(--label-md-font-weight);
   text-transform: uppercase;
   line-height: var(--label-md-line-height);
 }
 
 .text-label-sm {
+  font-family: var(--label-sm-font-family);
   font-weight: var(--label-sm-font-weight);
   text-transform: uppercase;
   line-height: var(--label-sm-line-height);
@@ -89867,6 +89911,7 @@ video {
 body {
   font-size: var(--body-md-font-size);
   color: var(--text-content);
+  font-family: var(--body-md-font-family);
   font-weight: var(--body-md-font-weight);
   line-height: var(--body-md-line-height);
 }
@@ -89919,6 +89964,7 @@ a:where(:not(.wp-element-button)):active {
   border-color: var(--border-light);
   padding: var(--space-150);
   font-size: var(--body-md-font-size);
+  font-family: var(--body-md-font-family);
   font-weight: var(--body-md-font-weight);
   line-height: var(--body-md-line-height);
 }
@@ -89941,6 +89987,7 @@ a:where(:not(.wp-element-button)):active {
 }
 .accordion-item__title {
   font-size: var(--body-md-font-size);
+  font-family: var(--body-md-font-family);
   font-weight: var(--body-md-font-weight);
   line-height: var(--body-md-line-height);
 }
@@ -90040,6 +90087,7 @@ a:where(:not(.wp-element-button)):active {
 }
 .component-author__name {
   font-size: var(--heading-xs-font-size);
+  font-family: var(--heading-xs-font-family);
   font-weight: var(--heading-xs-font-weight-sm);
   line-height: var(--heading-xs-line-height);
 }
@@ -90064,6 +90112,7 @@ a:where(:not(.wp-element-button)):active {
 }
 .component-author__bio {
   font-size: var(--body-md-font-size);
+  font-family: var(--body-md-font-family);
   font-weight: var(--body-md-font-weight);
   line-height: var(--body-md-line-height);
 }
@@ -90079,12 +90128,14 @@ a:where(:not(.wp-element-button)):active {
 }
 .component-banner__post-type {
   font-size: var(--label-md-font-size);
+  font-family: var(--label-md-font-family);
   font-weight: var(--label-md-font-weight);
   text-transform: uppercase;
   line-height: var(--label-md-line-height);
 }
 .component-banner__title {
   font-size: var(--heading-3xl-font-size);
+  font-family: var(--heading-3xl-font-family);
   font-weight: var(--heading-3xl-font-weight-sm);
   line-height: var(--heading-3xl-line-height);
 }
@@ -90096,11 +90147,13 @@ a:where(:not(.wp-element-button)):active {
 }
 .component-banner__intro {
   font-size: var(--body-lg-font-size);
+  font-family: var(--body-lg-font-family);
   font-weight: var(--body-lg-font-weight);
   line-height: var(--body-lg-line-height);
 }
 .component-banner__date {
   font-size: var(--date-label-md-font-size);
+  font-family: var(--date-label-md-font-family);
   font-weight: var(--date-label-md-font-weight);
   font-style: italic;
   line-height: var(--date-label-md-line-height);
@@ -90125,6 +90178,7 @@ a:where(:not(.wp-element-button)):active {
 .component-banner .cta-card__title {
   margin-bottom: var(--space-250);
   font-size: var(--heading-sm-font-size);
+  font-family: var(--heading-sm-font-family);
   font-weight: var(--heading-sm-font-weight-sm);
   line-height: var(--heading-sm-line-height);
 }
@@ -90137,6 +90191,7 @@ a:where(:not(.wp-element-button)):active {
 .component-banner .cta-card__body {
   margin-bottom: var(--space-300);
   font-size: var(--body-md-font-size);
+  font-family: var(--body-md-font-family);
   font-weight: var(--body-md-font-weight);
   line-height: var(--body-md-line-height);
 }
@@ -90225,6 +90280,7 @@ a:where(:not(.wp-element-button)):active {
   font-size: var(--button-label-md-font-size);
   -webkit-text-decoration-line: none;
   text-decoration-line: none;
+  font-family: var(--button-label-md-font-family);
   font-weight: var(--button-label-md-font-weight);
   line-height: var(--button-label-md-line-height);
 }
@@ -90235,6 +90291,7 @@ a:where(:not(.wp-element-button)):active {
   border-radius: var(--interactive-corner-radius-md);
   padding: var(--space-150);
   font-size: var(--button-label-sm-font-size);
+  font-family: var(--button-label-sm-font-family);
   font-weight: var(--button-label-sm-font-weight);
   line-height: var(--button-label-sm-line-height);
 }
@@ -90245,6 +90302,7 @@ a:where(:not(.wp-element-button)):active {
   border-radius: var(--interactive-corner-radius-lg);
   padding: var(--space-250);
   font-size: var(--button-label-lg-font-size);
+  font-family: var(--button-label-lg-font-family);
   font-weight: var(--button-label-lg-font-weight);
   line-height: var(--button-label-lg-line-height);
 }
@@ -90492,6 +90550,7 @@ a:where(:not(.wp-element-button)):active {
   display: block;
   font-size: var(--label-md-font-size);
   color: var(--text-accent);
+  font-family: var(--label-md-font-family);
   font-weight: var(--label-md-font-weight);
   text-transform: uppercase;
   line-height: var(--label-md-line-height);
@@ -90499,6 +90558,7 @@ a:where(:not(.wp-element-button)):active {
 .component-card__title {
   display: block;
   font-size: var(--heading-xs-font-size);
+  font-family: var(--heading-xs-font-family);
   font-weight: var(--heading-xs-font-weight-sm);
   line-height: var(--heading-xs-line-height);
 }
@@ -90550,6 +90610,7 @@ a:where(:not(.wp-element-button)):active {
   border-radius: var(--card-accent-corner-radius);
   padding: var(--space-250);
   font-size: var(--body-md-font-size);
+  font-family: var(--body-md-font-family);
   font-weight: var(--body-md-font-weight);
   line-height: var(--body-md-line-height);
 }
@@ -90566,6 +90627,7 @@ a:where(:not(.wp-element-button)):active {
 .component-card-call-out__title {
   margin-bottom: var(--space-250);
   font-size: var(--heading-sm-font-size);
+  font-family: var(--heading-sm-font-family);
   font-weight: var(--heading-sm-font-weight-sm);
   line-height: var(--heading-sm-line-height);
 }
@@ -90605,12 +90667,14 @@ a:where(:not(.wp-element-button)):active {
   border-radius: var(--card-accent-corner-radius);
   padding: var(--space-250);
   font-size: var(--body-md-font-size);
+  font-family: var(--body-md-font-family);
   font-weight: var(--body-md-font-weight);
   line-height: var(--body-md-line-height);
 }
 .component-card-contact__title {
   margin-bottom: var(--space-250);
   font-size: var(--heading-sm-font-size);
+  font-family: var(--heading-sm-font-family);
   font-weight: var(--heading-sm-font-weight-sm);
   line-height: var(--heading-sm-line-height);
 }
@@ -90700,6 +90764,7 @@ a:where(:not(.wp-element-button)):active {
   color: var(--text-content);
   -webkit-text-decoration-line: none;
   text-decoration-line: none;
+  font-family: var(--heading-xs-font-family);
   font-weight: var(--heading-xs-font-weight-sm);
   line-height: var(--heading-xs-line-height);
 }
@@ -90715,6 +90780,7 @@ a:where(:not(.wp-element-button)):active {
 }
 .cols-1 .component-card-event__title {
   font-size: var(--heading-md-font-size);
+  font-family: var(--heading-md-font-family);
   font-weight: var(--heading-md-font-weight-sm);
   line-height: var(--heading-md-line-height);
 }
@@ -90763,6 +90829,7 @@ a:where(:not(.wp-element-button)):active {
   font-weight: 700;
   text-transform: uppercase;
   color: var(--text-content-reversed);
+  font-family: var(--body-lg-font-family);
   font-weight: var(--body-lg-font-weight);
   line-height: var(--body-lg-line-height);
 }
@@ -90790,6 +90857,7 @@ a:where(:not(.wp-element-button)):active {
 }
 .component-card-event__date-indicator-day {
   font-size: var(--heading-xs-font-size);
+  font-family: var(--heading-xs-font-family);
   font-weight: var(--heading-xs-font-weight-sm);
   line-height: var(--heading-xs-line-height);
 }
@@ -90801,6 +90869,7 @@ a:where(:not(.wp-element-button)):active {
 }
 .component-card-event__date-indicator-date {
   font-size: var(--heading-sm-font-size);
+  font-family: var(--heading-sm-font-family);
   font-weight: var(--heading-sm-font-weight-sm);
   line-height: var(--heading-sm-line-height);
 }
@@ -90831,6 +90900,7 @@ a:where(:not(.wp-element-button)):active {
 .component-card-event__content-type {
   font-size: var(--label-md-font-size);
   color: var(--text-accent);
+  font-family: var(--label-md-font-family);
   font-weight: var(--label-md-font-weight);
   text-transform: uppercase;
   line-height: var(--label-md-line-height);
@@ -90888,6 +90958,7 @@ a:where(:not(.wp-element-button)):active {
   color: var(--text-content);
   -webkit-text-decoration-line: none;
   text-decoration-line: none;
+  font-family: var(--heading-sm-font-family);
   font-weight: var(--heading-sm-font-weight-sm);
   line-height: var(--heading-sm-line-height);
 }
@@ -90903,6 +90974,7 @@ a:where(:not(.wp-element-button)):active {
 }
 .component-featured-posts__one-level-row-cols-1 .component-card-featured__title, .component-related-posts__col-1 .component-card-featured__title {
   font-size: var(--heading-md-font-size);
+  font-family: var(--heading-md-font-family);
   font-weight: var(--heading-md-font-weight-sm);
   line-height: var(--heading-md-line-height);
 }
@@ -90914,6 +90986,7 @@ a:where(:not(.wp-element-button)):active {
 }
 .component-featured-posts__primary-secondary-level-col-2 .component-card-featured__title {
   font-size: var(--heading-xs-font-size);
+  font-family: var(--heading-xs-font-family);
   font-weight: var(--heading-xs-font-weight-sm);
   line-height: var(--heading-xs-line-height);
 }
@@ -90942,18 +91015,21 @@ a:where(:not(.wp-element-button)):active {
 .component-card-featured__content-type {
   font-size: var(--label-md-font-size);
   color: var(--text-accent);
+  font-family: var(--label-md-font-family);
   font-weight: var(--label-md-font-weight);
   text-transform: uppercase;
   line-height: var(--label-md-line-height);
 }
 .component-card-featured__excerpt {
   font-size: var(--body-md-font-size);
+  font-family: var(--body-md-font-family);
   font-weight: var(--body-md-font-weight);
   line-height: var(--body-md-line-height);
 }
 .component-card-featured__date {
   font-size: var(--date-label-md-font-size);
   color: var(--text-content-secondary);
+  font-family: var(--date-label-md-font-family);
   font-weight: var(--date-label-md-font-weight);
   font-style: italic;
   line-height: var(--date-label-md-line-height);
@@ -91043,6 +91119,7 @@ a:where(:not(.wp-element-button)):active {
   margin-bottom: var(--space-200);
   font-size: var(--label-md-font-size);
   color: var(--text-accent);
+  font-family: var(--label-md-font-family);
   font-weight: var(--label-md-font-weight);
   text-transform: uppercase;
   line-height: var(--label-md-line-height);
@@ -91063,6 +91140,7 @@ a:where(:not(.wp-element-button)):active {
   color: var(--text-content);
   -webkit-text-decoration-line: none;
   text-decoration-line: none;
+  font-family: var(--heading-xs-font-family);
   font-weight: var(--heading-xs-font-weight-sm);
   line-height: var(--heading-xs-line-height);
 }
@@ -91079,6 +91157,7 @@ a:where(:not(.wp-element-button)):active {
 .component-card-listing__excerpt {
   margin-bottom: var(--space-200);
   font-size: var(--body-md-font-size);
+  font-family: var(--body-md-font-family);
   font-weight: var(--body-md-font-weight);
   line-height: var(--body-md-line-height);
 }
@@ -91086,6 +91165,7 @@ a:where(:not(.wp-element-button)):active {
   margin-bottom: var(--space-200);
   font-size: var(--date-label-md-font-size);
   color: var(--text-content-secondary);
+  font-family: var(--date-label-md-font-family);
   font-weight: var(--date-label-md-font-weight);
   font-style: italic;
   line-height: var(--date-label-md-line-height);
@@ -91126,6 +91206,7 @@ a:where(:not(.wp-element-button)):active {
   padding: var(--space-150);
   font-size: var(--label-md-font-size);
   color: var(--text-label-2);
+  font-family: var(--label-md-font-family);
   font-weight: var(--label-md-font-weight);
   text-transform: uppercase;
   line-height: var(--label-md-line-height);
@@ -91139,6 +91220,7 @@ a:where(:not(.wp-element-button)):active {
   justify-content: center;
   gap: var(--space-200);
   font-size: var(--body-lg-font-size);
+  font-family: var(--body-lg-font-family);
   font-weight: var(--body-lg-font-weight);
   line-height: var(--body-lg-line-height);
   font-weight: 400;
@@ -91273,6 +91355,7 @@ form p.wicket-form-help-text.component-card-product .button.added .add_to_cart_b
   text-align: center;
   font-size: var(--heading-xs-font-size);
   color: var(--text-content);
+  font-family: var(--heading-xs-font-family);
   font-weight: var(--heading-xs-font-weight-sm);
   line-height: var(--heading-xs-line-height);
 }
@@ -91316,6 +91399,7 @@ form p.wicket-form-help-text.component-card-product .button.added .add_to_cart_b
 }
 .component-card-related__title {
   font-size: var(--heading-xs-font-size);
+  font-family: var(--heading-xs-font-family);
   font-weight: var(--heading-xs-font-weight-sm);
   line-height: var(--heading-xs-line-height);
 }
@@ -91327,6 +91411,7 @@ form p.wicket-form-help-text.component-card-product .button.added .add_to_cart_b
 }
 .component-card-related__body {
   font-size: var(--body-md-font-size);
+  font-family: var(--body-md-font-family);
   font-weight: var(--body-md-font-weight);
   line-height: var(--body-md-line-height);
 }
@@ -91354,6 +91439,7 @@ form p.wicket-form-help-text.component-card-product .button.added .add_to_cart_b
 }
 .component-featured-posts__title {
   font-size: var(--heading-sm-font-size);
+  font-family: var(--heading-sm-font-family);
   font-weight: var(--heading-sm-font-weight-sm);
   line-height: var(--heading-sm-line-height);
 }
@@ -91449,6 +91535,7 @@ form p.wicket-form-help-text.component-card-product .button.added .add_to_cart_b
 }
 .component-filter-form__heading {
   font-size: var(--heading-xs-font-size);
+  font-family: var(--heading-xs-font-family);
   font-weight: var(--heading-xs-font-weight-sm);
   line-height: var(--heading-xs-line-height);
 }
@@ -91460,6 +91547,7 @@ form p.wicket-form-help-text.component-card-product .button.added .add_to_cart_b
 }
 .component-filter-form__filter-section-label {
   font-size: var(--body-md-font-size);
+  font-family: var(--body-md-font-family);
   font-weight: var(--body-md-font-weight);
   line-height: var(--body-md-line-height);
   font-weight: 700;
@@ -91468,6 +91556,7 @@ form p.wicket-form-help-text.component-card-product .button.added .add_to_cart_b
   margin-right: 0.75rem;
   font-size: var(--body-md-font-size);
   color: var(--text-accent);
+  font-family: var(--body-md-font-family);
   font-weight: var(--body-md-font-weight);
   line-height: var(--body-md-line-height);
   font-weight: 700;
@@ -91782,6 +91871,7 @@ form p.wicket-form-help-text.secondary-nav .component-filter-form__see-more,
   margin-bottom: 0.5rem;
   text-align: center;
   font-size: var(--heading-xl-font-size);
+  font-family: var(--heading-xl-font-family);
   font-weight: var(--heading-xl-font-weight-sm);
   line-height: var(--heading-xl-line-height);
 }
@@ -91804,6 +91894,7 @@ form p.wicket-form-help-text.secondary-nav .component-filter-form__see-more,
   width: 100%;
   padding: 0.5rem;
   font-size: var(--heading-xs-font-size);
+  font-family: var(--heading-xs-font-family);
   font-weight: var(--heading-xs-font-weight-sm);
   line-height: var(--heading-xs-line-height);
 }
@@ -91856,6 +91947,7 @@ form p.wicket-form-help-text.secondary-nav .component-filter-form__see-more,
   margin-left: auto;
   font-size: var(--heading-xs-font-size);
   color: var(--interactive);
+  font-family: var(--heading-xs-font-family);
   font-weight: var(--heading-xs-font-weight-sm);
   line-height: var(--heading-xs-line-height);
 }
@@ -92127,6 +92219,7 @@ form p.wicket-form-help-text.secondary-nav .component-link,
   margin-top: var(--space-250);
   margin-bottom: var(--space-250);
   font-size: var(--heading-md-font-size);
+  font-family: var(--heading-md-font-family);
   font-weight: var(--heading-md-font-weight-sm);
   line-height: var(--heading-md-line-height);
 }
@@ -92149,6 +92242,7 @@ form p.wicket-form-help-text.secondary-nav .component-link,
 .component-org-search-select__search-orgs-title {
   margin-bottom: var(--space-400);
   font-size: var(--heading-md-font-size);
+  font-family: var(--heading-md-font-family);
   font-weight: var(--heading-md-font-weight-sm);
   line-height: var(--heading-md-line-height);
 }
@@ -92181,6 +92275,7 @@ form p.wicket-form-help-text.secondary-nav .component-link,
   margin-bottom: var(--space-250);
   margin-top: var(--space-400);
   font-size: var(--heading-xs-font-size);
+  font-family: var(--heading-xs-font-family);
   font-weight: var(--heading-xs-font-weight-sm);
   line-height: var(--heading-xs-line-height);
 }
@@ -92202,12 +92297,14 @@ form p.wicket-form-help-text.secondary-nav .component-link,
 .component-org-search-select__org-description {
   margin-bottom: var(--space-250);
   font-size: var(--body-sm-font-size);
+  font-family: var(--body-sm-font-family);
   font-weight: var(--body-sm-font-weight);
   line-height: var(--body-sm-line-height);
 }
 .component-org-search-select__org-type {
   margin-bottom: var(--space-100);
   font-size: var(--label-md-font-size);
+  font-family: var(--label-md-font-family);
   font-weight: var(--label-md-font-weight);
   text-transform: uppercase;
   line-height: var(--label-md-line-height);
@@ -92215,6 +92312,7 @@ form p.wicket-form-help-text.secondary-nav .component-link,
 .component-org-search-select__org-name {
   margin-right: var(--space-200);
   font-size: var(--heading-sm-font-size);
+  font-family: var(--heading-sm-font-family);
   font-weight: var(--heading-sm-font-weight-sm);
   line-height: var(--heading-sm-line-height);
 }
@@ -92233,6 +92331,7 @@ form p.wicket-form-help-text.secondary-nav .component-link,
   align-items: center;
   gap: var(--space-100);
   font-size: var(--body-sm-font-size);
+  font-family: var(--body-sm-font-family);
   font-weight: var(--body-sm-font-weight);
   line-height: var(--body-sm-line-height);
 }
@@ -92269,6 +92368,7 @@ form p.wicket-form-help-text.secondary-nav .component-link,
 }
 .component-org-search-select__matching-org-title {
   font-size: var(--heading-xs-font-size);
+  font-family: var(--heading-xs-font-family);
   font-weight: var(--heading-xs-font-weight-sm);
   line-height: var(--heading-xs-line-height);
 }
@@ -92295,6 +92395,7 @@ form p.wicket-form-help-text.secondary-nav .component-link,
   background-color: var(--state-info-secondary-light);
   padding: var(--space-200);
   font-size: var(--body-lg-font-size);
+  font-family: var(--body-lg-font-family);
   font-weight: var(--body-lg-font-weight);
   line-height: var(--body-lg-line-height);
 }
@@ -92325,6 +92426,7 @@ form p.wicket-form-help-text.secondary-nav .component-link,
 .component-org-search-select__cant-find-org-title {
   margin-bottom: var(--space-300);
   font-size: var(--heading-xs-font-size);
+  font-family: var(--heading-xs-font-family);
   font-weight: var(--heading-xs-font-weight-sm);
   line-height: var(--heading-xs-line-height);
 }
@@ -92367,6 +92469,7 @@ form p.wicket-form-help-text.secondary-nav .component-link,
   padding-right: var(--space-075);
   font-size: var(--label-md-font-size);
   color: var(--nav-contextual-title);
+  font-family: var(--label-md-font-family);
   font-weight: var(--label-md-font-weight);
   text-transform: uppercase;
   line-height: var(--label-md-line-height);
@@ -92419,6 +92522,7 @@ form p.wicket-form-help-text.secondary-nav .component-link,
 .component-social-sharing__label {
   font-size: var(--body-sm-font-size);
   color: var(--text-content);
+  font-family: var(--body-sm-font-family);
   font-weight: var(--body-sm-font-weight);
   line-height: var(--body-sm-line-height);
   font-weight: 700;
@@ -92467,6 +92571,7 @@ form p.wicket-form-help-text.secondary-nav .component-link,
 }
 .component-related-events__title {
   font-size: var(--heading-sm-font-size);
+  font-family: var(--heading-sm-font-family);
   font-weight: var(--heading-sm-font-weight-sm);
   line-height: var(--heading-sm-line-height);
 }
@@ -92507,6 +92612,7 @@ form p.wicket-form-help-text.secondary-nav .component-link,
 }
 .component-related-posts__title {
   font-size: var(--heading-sm-font-size);
+  font-family: var(--heading-sm-font-family);
   font-weight: var(--heading-sm-font-weight-sm);
   line-height: var(--heading-sm-line-height);
 }
@@ -92549,6 +92655,7 @@ form p.wicket-form-help-text.secondary-nav .component-link,
   color: var(--text-button-label);
   -webkit-text-decoration-line: none;
   text-decoration-line: none;
+  font-family: var(--body-md-font-family);
   font-weight: var(--body-md-font-weight);
   line-height: var(--body-md-line-height);
   font-weight: 700;
@@ -92601,6 +92708,7 @@ form p.wicket-form-help-text.secondary-nav .component-link,
   padding: var(--spacing-100);
   font-size: var(--body-sm-font-size);
   color: var(--text-tag);
+  font-family: var(--body-sm-font-family);
   font-weight: var(--body-sm-font-weight);
   line-height: var(--body-sm-line-height);
 }
@@ -92618,6 +92726,7 @@ form p.wicket-form-help-text.secondary-nav .component-link,
   padding: var(--space-075);
   font-size: var(--body-sm-font-size);
   color: var(--text-label-1);
+  font-family: var(--body-sm-font-family);
   font-weight: var(--body-sm-font-weight);
   line-height: var(--body-sm-line-height);
 }
@@ -92668,6 +92777,7 @@ form p.wicket-form-help-text.secondary-nav .component-link,
   border-color: var(--interactive);
   padding: var(--space-150);
   font-size: var(--body-lg-font-size);
+  font-family: var(--body-lg-font-family);
   font-weight: var(--body-lg-font-weight);
   line-height: var(--body-lg-line-height);
   font-weight: 400;
@@ -93078,6 +93188,7 @@ form p.wicket-form-help-text.component-tooltip-content,
 .block-wicket-author__title {
   font-size: var(--heading-sm-font-size);
   font-weight: 700;
+  font-family: var(--heading-sm-font-family);
   font-weight: var(--heading-sm-font-weight-sm);
   line-height: var(--heading-sm-line-height);
 }
@@ -93233,6 +93344,7 @@ li img {
 }
 .block-wicket-listing__total {
   font-size: var(--body-md-font-size);
+  font-family: var(--body-md-font-family);
   font-weight: var(--body-md-font-weight);
   line-height: var(--body-md-line-height);
   font-weight: 700;
@@ -93241,6 +93353,7 @@ li img {
   margin-bottom: 1.5rem;
   text-align: center;
   font-size: var(--heading-md-font-size);
+  font-family: var(--heading-md-font-family);
   font-weight: var(--heading-md-font-weight-sm);
   line-height: var(--heading-md-line-height);
 }
@@ -93316,12 +93429,14 @@ li img {
 .wp-block-table .wp-element-caption {
   font-size: var(--body-sm-font-size);
   color: var(--text-content);
+  font-family: var(--body-sm-font-family);
   font-weight: var(--body-sm-font-weight);
   line-height: var(--body-sm-line-height);
 }
 .wp-block-table td {
   border-width: var(--border-sm);
   font-size: var(--body-md-font-size);
+  font-family: var(--body-md-font-family);
   font-weight: var(--body-md-font-weight);
   line-height: var(--body-md-line-height);
 }
@@ -93710,6 +93825,7 @@ li img {
   padding: var(--space-150);
   font-size: var(--label-md-font-size);
   color: var(--text-label-2);
+  font-family: var(--label-md-font-family);
   font-weight: var(--label-md-font-weight);
   text-transform: uppercase;
   line-height: var(--label-md-line-height);
@@ -93886,6 +94002,7 @@ li img {
   padding-left: 4rem;
   font-size: var(--body-md-font-size);
   color: var(--text-content);
+  font-family: var(--body-md-font-family);
   font-weight: var(--body-md-font-weight);
   line-height: var(--body-md-line-height);
 }
@@ -94369,6 +94486,7 @@ form p.wicket-form-help-text.woocommerce-shop ul.products li.product .button.add
   padding: var(--space-150);
   font-size: var(--label-md-font-size);
   color: var(--text-label-2);
+  font-family: var(--label-md-font-family);
   font-weight: var(--label-md-font-weight);
   text-transform: uppercase;
   line-height: var(--label-md-line-height);
@@ -94377,6 +94495,7 @@ form p.wicket-form-help-text.woocommerce-shop ul.products li.product .button.add
   display: block;
   text-align: center;
   font-size: var(--heading-xs-font-size);
+  font-family: var(--heading-xs-font-family);
   font-weight: var(--heading-xs-font-weight-sm);
   line-height: var(--heading-xs-line-height);
 }
@@ -94416,6 +94535,7 @@ form p.wicket-form-help-text.woocommerce-shop ul.products li.product .button.add
 .wc-block-featured-product__title {
   font-size: var(--heading-md-font-size);
   color: var(--text-content-reversed);
+  font-family: var(--heading-md-font-family);
   font-weight: var(--heading-md-font-weight-sm);
   line-height: var(--heading-md-line-height);
 }
@@ -94428,6 +94548,7 @@ form p.wicket-form-help-text.woocommerce-shop ul.products li.product .button.add
 .wc-block-featured-product__description, .wc-block-featured-product__price {
   font-size: var(--body-lg-font-size);
   color: var(--text-content-reversed);
+  font-family: var(--body-lg-font-family);
   font-weight: var(--body-lg-font-weight);
   line-height: var(--body-lg-line-height);
 }
@@ -94456,6 +94577,7 @@ form p.wicket-form-help-text.woocommerce-shop ul.products li.product .button.add
 .wc-block-featured-category__title {
   font-size: var(--heading-md-font-size);
   color: var(--text-content-reversed);
+  font-family: var(--heading-md-font-family);
   font-weight: var(--heading-md-font-weight-sm);
   line-height: var(--heading-md-line-height);
 }
@@ -94499,6 +94621,7 @@ form p.wicket-form-help-text.woocommerce-shop ul.products li.product .button.add
   display: block;
   font-size: var(--heading-xs-font-size);
   color: var(--text-content);
+  font-family: var(--heading-xs-font-family);
   font-weight: var(--heading-xs-font-weight-sm);
   line-height: var(--heading-xs-line-height);
 }
@@ -94519,6 +94642,7 @@ form p.wicket-form-help-text.woocommerce-shop ul.products li.product .button.add
   padding: var(--space-150);
   font-size: var(--label-md-font-size);
   color: var(--text-label-2);
+  font-family: var(--label-md-font-family);
   font-weight: var(--label-md-font-weight);
   text-transform: uppercase;
   line-height: var(--label-md-line-height);
@@ -94530,6 +94654,7 @@ form p.wicket-form-help-text.woocommerce-shop ul.products li.product .button.add
 .wp-block-product-category.wc-block-grid .wc-block-grid__product-price {
   margin-bottom: var(--space-200);
   font-size: var(--body-lg-font-size);
+  font-family: var(--body-lg-font-family);
   font-weight: var(--body-lg-font-weight);
   line-height: var(--body-lg-line-height);
   font-weight: 400;
@@ -94549,6 +94674,7 @@ form p.wicket-form-help-text.woocommerce-shop ul.products li.product .button.add
   font-size: var(--button-label-md-font-size);
   -webkit-text-decoration-line: none;
   text-decoration-line: none;
+  font-family: var(--button-label-md-font-family);
   font-weight: var(--button-label-md-font-weight);
   line-height: var(--button-label-md-line-height);
 }
@@ -95206,6 +95332,7 @@ form p.wicket-form-help-text.site-header .main-nav,
   font-size: var(--button-label-md-font-size);
   -webkit-text-decoration-line: none;
   text-decoration-line: none;
+  font-family: var(--button-label-md-font-family);
   font-weight: var(--button-label-md-font-weight);
   line-height: var(--button-label-md-line-height);
   background-color: transparent;
@@ -95244,6 +95371,7 @@ form textarea,
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   padding: var(--space-200);
   font-size: var(--body-md-font-size);
+  font-family: var(--body-md-font-family);
   font-weight: var(--body-md-font-weight);
   line-height: var(--body-md-line-height);
 }
@@ -95383,6 +95511,7 @@ form label, form .label,
 .form .label {
   margin-bottom: var(--space-050);
   font-size: var(--form-label-font-size);
+  font-family: var(--form-label-font-family);
   font-weight: var(--form-label-font-weight);
   line-height: var(--form-label-line-height);
 }
@@ -95405,6 +95534,7 @@ form p.wicket-form-help-text,
   margin: 5px 0px 0px;
   font-size: var(--body-sm-font-size);
   color: var(--text-content-secondary);
+  font-family: var(--body-sm-font-family);
   font-weight: var(--body-sm-font-weight);
   line-height: var(--body-sm-line-height);
 }
@@ -95540,6 +95670,7 @@ form.wicket-form .wicket-form-field-wrapper,
 .newsletter-section__title {
   margin-bottom: var(--space-250);
   font-size: var(--heading-xs-font-size);
+  font-family: var(--heading-xs-font-family);
   font-weight: var(--heading-xs-font-weight-sm);
   line-height: var(--heading-xs-line-height);
 }
@@ -95557,6 +95688,7 @@ form.wicket-form .wicket-form-field-wrapper,
 .page-not-found__title {
   margin-bottom: var(--space-200);
   font-size: var(--heading-3xl-font-size);
+  font-family: var(--heading-3xl-font-family);
   font-weight: var(--heading-3xl-font-weight-sm);
   line-height: var(--heading-3xl-line-height);
 }
@@ -95569,6 +95701,7 @@ form.wicket-form .wicket-form-field-wrapper,
 .page-not-found__subtitle {
   margin-bottom: var(--space-600);
   font-size: var(--heading-sm-font-size);
+  font-family: var(--heading-sm-font-family);
   font-weight: var(--heading-sm-font-weight-sm);
   line-height: var(--heading-sm-line-height);
 }
@@ -95581,6 +95714,7 @@ form.wicket-form .wicket-form-field-wrapper,
 .page-not-found__content {
   margin-bottom: var(--space-600);
   font-size: var(--body-lg-font-size);
+  font-family: var(--body-lg-font-family);
   font-weight: var(--body-lg-font-weight);
   line-height: var(--body-lg-line-height);
 }
@@ -95911,6 +96045,7 @@ form p.wicket-form-help-text.main-footer-section .section-title,
   justify-content: center;
   font-size: var(--body-sm-font-size);
   color: var(--nav-footer-text-content);
+  font-family: var(--body-sm-font-family);
   font-weight: var(--body-sm-font-weight);
   line-height: var(--body-sm-line-height);
 }
