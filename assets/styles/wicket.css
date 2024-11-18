@@ -89941,6 +89941,12 @@ a:where(:not(.wp-element-button)):active {
   text-decoration-line: underline;
 }
 
+.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @media (min-width: 1536px) {
   .container {
     max-width: var(--wp--style--global--content-size) !important;
@@ -95955,6 +95961,9 @@ form.wicket-form .wicket-form-field-wrapper,
   -ms-flex-align: start;
   align-items: flex-start;
   gap: var(--space-250);
+}
+.main-footer-section .footer-column.col-num-1 {
+  display: block;
 }
 .main-footer-section .footer-column.is-menu-column {
   gap: var(--space-150);

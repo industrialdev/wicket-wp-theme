@@ -13,6 +13,11 @@
   .footer-column {
     @apply gap-[--space-250] flex flex-col items-start;
 
+    // no need to use flex for a single column
+    &.col-num-1 {
+      @apply block;
+    }
+
     &.is-menu-column {
       @apply gap-[--space-150];
     }
@@ -24,7 +29,7 @@
         @apply text-[--nav-footer-text-interactive] underline hover:no-underline;
       }
     }
-    
+
     .image {}
   }
 
@@ -35,11 +40,11 @@
   .section-title {
     @apply hidden lg:block;
   }
-  
+
   .section-title-button {
     @apply font-bold w-full flex items-center justify-between lg:hidden;
   }
-  
+
   .section-title,
   .section-title-button {
     @apply font-bold text-[--nav-footer-title];
