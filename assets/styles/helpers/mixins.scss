@@ -61,7 +61,7 @@
 
     // prevent jumping when larger border is added
     @media screen and (min-width: 992px) {
-      margin-bottom: calc( (var(--border-lg) - var(--border-md)) * -1 ); 
+      margin-bottom: calc( (var(--border-lg) - var(--border-md)) * -1 );
     }
   }
 
@@ -73,6 +73,14 @@
     .fa-caret-down {
       @apply rotate-180;
     }
+  }
+}
+
+@mixin button-base {
+  @apply text-button-label-md rounded-[--interactive-corner-radius-md] p-[--space-200] no-underline border-solid;
+
+  .component-icon {
+    @apply text-[16px];
   }
 }
 

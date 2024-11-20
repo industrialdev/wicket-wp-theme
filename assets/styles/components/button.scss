@@ -1,11 +1,7 @@
 // Primary
 .button {
-  @apply text-button-label-md rounded-[--interactive-corner-radius-md] p-[--space-200] no-underline;
+  @include button-base;
 
-  .component-icon {
-    @apply text-[16px];
-  }
-  
   &--sm {
     @apply text-button-label-sm rounded-[--interactive-corner-radius-md] p-[--space-150];
 
@@ -13,7 +9,7 @@
       @apply text-[16px];
     }
   }
-  
+
   &--lg {
     @apply text-button-label-lg rounded-[--interactive-corner-radius-lg] p-[--space-250];
 
@@ -64,7 +60,7 @@
   &--ghost.button--disabled {
     @include button-ghost-disabled;
   }
-  
+
   // Disabled States Reversed
   &--primary.button--disabled.button--reversed {
     @include button-primary-rev-disabled;
