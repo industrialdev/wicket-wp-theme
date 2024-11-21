@@ -3788,7 +3788,7 @@
                 },
                 {
                     "key": "field_6731d152bc7fa",
-                    "label": "Font Family name",
+                    "label": "Default font-family name",
                     "name": "font-family-name",
                     "aria-label": "",
                     "type": "text",

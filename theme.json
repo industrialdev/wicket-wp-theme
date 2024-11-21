@@ -221,6 +221,56 @@
           "slug": "bg-disabled",
           "color": "var(--bg-disabled)",
           "name": "bg-disabled"
+        },
+        {
+          "slug": "border-card",
+          "color": "var(--border-card)",
+          "name": "border-card"
+        },
+        {
+          "slug": "border-dark",
+          "color": "var(--border-dark)",
+          "name": "border-dark"
+        },
+        {
+          "slug": "border-light",
+          "color": "var(--border-light)",
+          "name": "border-light"
+        },
+        {
+          "slug": "border-white",
+          "color": "var(--border-white)",
+          "name": "border-white"
+        },
+        {
+          "slug": "border-accent",
+          "color": "var(--border-accent)",
+          "name": "border-accent"
+        },
+        {
+          "slug": "border-interactive",
+          "color": "var(--border-interactive)",
+          "name": "border-interactive"
+        },
+        {
+          "slug": "border-interactive-reversed",
+          "color": "var(--border-interactive-reversed)",
+          "name": "border-interactive-reversed"
+        },
+        {
+          "slug": "border-tag",
+          "color": "var(--border-tag)",
+          "name": "border-tag"
+        },
+        {
+          "slug": "border-input-default",
+          "color": "var(--border-input-default)",
+          "name": "border-input-default"
+        },
+        {
+          "slug": "border-disabled",
+          "color": "var(--border-disabled)",
+          "name": "border-disabled"
         }
       ]
     },

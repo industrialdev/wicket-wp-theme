@@ -89775,6 +89775,16 @@ video {
   --color-bg-callout-1: var(--bg-callout-1);
   --color-bg-callout-2: var(--bg-callout-2);
   --color-bg-disabled: var(--bg-disabled);
+  --color-border-card: var(--border-card);
+  --color-border-dark: var(--border-dark);
+  --color-border-light: var(--border-light);
+  --color-border-white: var(--border-white);
+  --color-border-accent: var(--border-accent);
+  --color-border-interactive: var(--border-interactive);
+  --color-border-interactive-reversed: var(--border-interactive-reversed);
+  --color-border-tag: var(--border-tag);
+  --color-border-input-default: var(--border-input-default);
+  --color-border-disabled: var(--border-disabled);
   --border-radius-0: 0rem;
   --border-radius-100: 0.5rem;
   --border-radius-150: 0.75rem;
