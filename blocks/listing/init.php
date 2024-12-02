@@ -162,6 +162,18 @@ function init($block = [])
         array_push($tax_query, $taxonomy_args);
     }
 
+    /* Add WooCommerce product attributes */
+	if ( class_exists( 'WooCommerce' ) ) {
+		$attributes = wc_get_attribute_taxonomies();
+
+		foreach ( $attributes as $attribute ) {
+			$taxonomy_filters[] = [
+				'slug' => 'pa_' . $attribute->attribute_name,
+				'name' => $attribute->attribute_label,
+			];
+		}
+	}
+
     /* Add custom taxonomy filters to tax query if they are set */
     if (is_array($taxonomy_filters)) {
         foreach ($taxonomy_filters as $taxonomy) {
