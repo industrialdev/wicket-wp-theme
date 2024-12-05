@@ -6,6 +6,7 @@
   #tribe-events-footer, .tribe-block, .tribe-events-schedule,
   *[class*='tribe-block__']:not(.tribe-block__venue__meta):not(.tribe-block__venue__map), // Exclude venue meta and map blocks
   .tribe-related-events,
+  .tribe-link-view-attendee,
   .tribe-common {
     //@apply container;
     @include the-container;
