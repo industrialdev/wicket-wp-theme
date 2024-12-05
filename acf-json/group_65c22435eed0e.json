@@ -24,6 +24,7 @@
                 "attachment": "Media",
                 "tribe_event_series": "Series",
                 "product": "Products",
+                "my-account": "Account Centre",
                 "wicket_membership": "Memberships",
                 "wicket_mship_config": "Membership Configs",
                 "wicket_mship_tier": "Membership Tiers",
@@ -112,7 +113,7 @@
             "name": "listing_event_categories",
             "aria-label": "",
             "type": "taxonomy",
-            "instructions": "Select the news types you would like to appear in this listing.",
+            "instructions": "Select the event categories you would like to appear in this listing.",
             "required": 0,
             "conditional_logic": [
                 [
@@ -135,6 +136,42 @@
             "load_terms": 0,
             "return_format": "object",
             "field_type": "checkbox",
+            "allow_in_bindings": 1,
+            "bidirectional": 0,
+            "multiple": 0,
+            "allow_null": 0,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_675166e24d3cf",
+            "label": "Product Categories",
+            "name": "listing_product_categories",
+            "aria-label": "",
+            "type": "taxonomy",
+            "instructions": "Select the product categories you would like to appear in this listing.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_65c2245631b3e",
+                        "operator": "==",
+                        "value": "product"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "listing__select-post-type",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "taxonomy": "product_cat",
+            "add_term": 1,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "object",
+            "field_type": "checkbox",
+            "allow_in_bindings": 1,
             "bidirectional": 0,
             "multiple": 0,
             "allow_null": 0,
@@ -751,5 +788,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "translation",
-    "modified": 1725979173
+    "modified": 1733388043
 }
