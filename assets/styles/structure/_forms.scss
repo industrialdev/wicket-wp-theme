@@ -6,6 +6,8 @@ form,
   textarea {
     @apply rounded-[--input-fields-corner-radius-md] border-[length:--border-interactive-sm] border-[--border-input-default] placeholder:text-[--text-content-secondary] text-body-md p-[--space-200] bg-white;
 
+    padding: var(--space-075);
+
     &::placeholder {
       font-style: italic;
       color: var(--light-040, #a7aaad);
