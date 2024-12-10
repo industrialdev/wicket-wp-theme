@@ -90970,6 +90970,7 @@ a:where(:not(.wp-element-button)):active {
 }
 .component-featured-posts__primary-secondary-level-col-2 .component-card-featured {
   border-width: 0px;
+  background-color: transparent;
   padding: 0px;
   -webkit-filter: none;
   filter: none;

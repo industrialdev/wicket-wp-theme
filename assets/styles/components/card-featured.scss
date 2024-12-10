@@ -7,7 +7,7 @@
   }
 
   .component-featured-posts__primary-secondary-level-col-2 & {
-    @apply border-0 filter-none p-0;
+    @apply border-0 filter-none p-0 bg-transparent;
   }
 
   &__title {
