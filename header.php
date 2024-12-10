@@ -55,7 +55,7 @@ if(defined('ICL_LANGUAGE_CODE')) {
 
 <body <?php body_class(); ?>>
     <?php echo get_field('tracking_codes_right_after_body', 'options'); ?>
-    <a class="transition left-0 bg-primary text-primary-content absolute p-3 m-3 -translate-y-32 z-10 bg-white focus:translate-y-0" href="#main-content">
+    <a class="transition left-0 bg-primary text-primary-content absolute p-3 m-3 -translate-y-32 z-10 bg-[--bg-white] focus:translate-y-0" href="#main-content">
         <?php echo __('Skip to main content', 'wicket'); ?>
     </a>
 
@@ -496,7 +496,7 @@ get_component('icon', [
             x-cloak
             x-transition
             x-anchor.bottom-start="$refs.secondary-nav"
-            class="w-full bg-white font-bold"
+            class="w-full bg-[--bg-white] font-bold"
             >
             <div class="pt-3 pb-2 px-3 text-center">
                 <?php
@@ -655,7 +655,7 @@ if($nav_state == 'logged_out') {
                               x-show="navDropdownOpen"
                               x-cloak
                               x-transition
-                              class="nav-dropdown-mobile block w-full bg-white"
+                              class="nav-dropdown-mobile block w-full bg-[--bg-white]"
                               >
                               <?php
                       foreach($primary_nav_item['children'] as $child):
@@ -800,7 +800,7 @@ if (in_array('administrator', (array) $wicket_helpers_current_user->roles)) {
 ?>
 
     <?php if(isset($_GET['wp-info']) && $wicket_is_administrator): ?>
-        <div class="fixed block bottom-0 left-0 bg-white border text-dark-100 p-2">
+        <div class="fixed block bottom-0 left-0 bg-[--bg-white] border text-dark-100 p-2">
             <div><strong>Post type:</strong> <?php echo get_post_type(); ?></div>
             <?php
             $wicket_helper_current_template = get_page_template_slug();

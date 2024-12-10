@@ -120,7 +120,7 @@ $page_count  = ceil($total_posts / $posts_per_page);
 
       <?php if($show_filter_bar): ?>
         <div
-          class="search-page-left-col basis-1/4 bg-white relative after:content-[''] after:absolute after:top-0 after:bottom-0 after:right-full after:bg-white after:w-[30vw] before:block lg:before:hidden before:content-[''] before:absolute before:top-0 before:bottom-0 before:left-full before:bg-white before:w-[30vw]">
+          class="search-page-left-col">
           <?php
         get_component('filter-form', [
             'taxonomies'       => $taxonomy_filters,
