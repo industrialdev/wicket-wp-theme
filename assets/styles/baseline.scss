@@ -24,6 +24,7 @@ a:where(:not(.wp-element-button)) {
 // Extend tailwind container
 .container {
   @include container-adjustments;
+  @apply px-0;
 }
 
 /* AlpineJS Helpers */

@@ -92927,10 +92927,6 @@ form p.wicket-form-help-text.component-tooltip-content,
     max-width: var(--wp--style--global--content-size);
   }
 }
-*[class*=wp-block] {
-  padding-left: 0px;
-  padding-right: 0px;
-}
 @media (min-width: 1536px) {
   *[class*=wp-block] {
     max-width: var(--wp--style--global--content-size) !important;
@@ -93715,20 +93711,6 @@ li img {
     max-width: var(--wp--style--global--content-size);
   }
 }
-#tribe-events-pg-template .tribe-events-back, #tribe-events-pg-template .tribe-events-single-event-title,
-#tribe-events-pg-template #tribe-events-footer, #tribe-events-pg-template .tribe-block, #tribe-events-pg-template .tribe-events-schedule,
-#tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map),
-#tribe-events-pg-template .tribe-related-events,
-#tribe-events-pg-template .tribe-link-view-attendee,
-#tribe-events-pg-template .tribe-common, .tribe-events-pg-template .tribe-events-back, .tribe-events-pg-template .tribe-events-single-event-title,
-.tribe-events-pg-template #tribe-events-footer, .tribe-events-pg-template .tribe-block, .tribe-events-pg-template .tribe-events-schedule,
-.tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map),
-.tribe-events-pg-template .tribe-related-events,
-.tribe-events-pg-template .tribe-link-view-attendee,
-.tribe-events-pg-template .tribe-common {
-  padding-left: 0px;
-  padding-right: 0px;
-}
 @media (min-width: 1536px) {
   #tribe-events-pg-template .tribe-events-back, #tribe-events-pg-template .tribe-events-single-event-title,
   #tribe-events-pg-template #tribe-events-footer, #tribe-events-pg-template .tribe-block, #tribe-events-pg-template .tribe-events-schedule,
@@ -93826,11 +93808,6 @@ li img {
   .single-tribe_events #tribe-events-content.tribe-blocks-editor .tribe-events-event-meta {
     max-width: var(--wp--style--global--content-size);
   }
-}
-
-.single-tribe_events #tribe-events-content.tribe-blocks-editor .tribe-events-event-meta {
-  padding-left: 0px;
-  padding-right: 0px;
 }
 @media (min-width: 1536px) {
   .single-tribe_events #tribe-events-content.tribe-blocks-editor .tribe-events-event-meta {
@@ -94584,8 +94561,6 @@ form.woocommerce-checkout .variation-TeamName {
 }
 
 .woocommerce-shop .woocommerce.columns-4 {
-  padding-left: 0px;
-  padding-right: 0px;
   padding: 1rem 0;
 }
 @media (min-width: 1536px) {

@@ -23,7 +23,6 @@
   @media (min-width: var(--wp--style--global--content-size)) {
     max-width: var(--wp--style--global--content-size) !important;
   }
-  @apply px-0;
 }
 // Make the combined Tailwind and adjusted container rules available via mixin, if needed
 @mixin the-container {
