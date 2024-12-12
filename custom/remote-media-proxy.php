@@ -1,11 +1,11 @@
 <?php
 
 // No direct access
-if (! defined('ABSPATH')) {
+if (!defined('ABSPATH')) {
     exit;
 }
 
-/**
+/*
  * Wicket_Remote_Media_Proxy class.
  *
  * Configuration.
@@ -22,8 +22,10 @@ if (
     || str_contains($_SERVER['REMOTE_ADDR'], '192.')
     || str_contains($_SERVER['REMOTE_ADDR'], '172.')
 ) {
-    if (! defined('WICKET_REMOTE_MEDIA_URL')) {
-        define('WICKET_REMOTE_MEDIA_URL', 'https://wordpress-baseline-sandbox.ind.ninja');
+    $remote_media_url = apply_filters('wicket_remote_media_proxy_url', 'https://wordpress-baseline-sandbox.ind.ninja');
+
+    if (!defined('WICKET_REMOTE_MEDIA_URL')) {
+        define('WICKET_REMOTE_MEDIA_URL', $remote_media_url);
     }
 }
 
@@ -82,13 +84,13 @@ class Wicket_Remote_Media_Proxy
         // Make sure the home URL contains a trailing slash for consistent find/replace actions.
         $this->home_url = trailingslashit(get_home_url());
 
-        if (defined('WICKET_REMOTE_MEDIA_URL') && ! empty(constant('WICKET_REMOTE_MEDIA_URL'))) {
+        if (defined('WICKET_REMOTE_MEDIA_URL') && !empty(constant('WICKET_REMOTE_MEDIA_URL'))) {
             // Make sure the remote URL contains a trailing slash for consistent find/replace actions.
             $this->remote_medial_url = trailingslashit(WICKET_REMOTE_MEDIA_URL);
         }
 
         // Store the WordPress uploads directory path & URL for image/media replacements.
-        $wp_upload_dir            = wp_upload_dir();
+        $wp_upload_dir = wp_upload_dir();
         $this->wp_upload_base_dir = $wp_upload_dir['basedir'];
         $this->wp_upload_base_url = $wp_upload_dir['baseurl'];
 
@@ -154,13 +156,13 @@ class Wicket_Remote_Media_Proxy
      *
      * @link https://developer.wordpress.org/reference/hooks/wp_get_attachment_image_src/
      *
-     * @param array|boolean $image Array of image data, or boolean false if no image is available.
+     * @param array|bool $image Array of image data, or boolean false if no image is available.
      *
-     * @return array|boolean
+     * @return array|bool
      */
     public function filter_wp_get_attachment_image_src($image = [])
     {
-        if (! is_array($image) || empty($image)) {
+        if (!is_array($image) || empty($image)) {
             return $image;
         }
 
@@ -180,9 +182,9 @@ class Wicket_Remote_Media_Proxy
      */
     public function filter_wp_calculate_image_srcset($sources = [])
     {
-        if (is_array($sources) && ! is_admin()) {
+        if (is_array($sources) && !is_admin()) {
             foreach ($sources as $key => $val) {
-                $val['url']  = $this->replace_url($val['url']);
+                $val['url'] = $this->replace_url($val['url']);
                 $sources[$key] = $val;
             }
         }
