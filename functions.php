@@ -19,6 +19,7 @@ $wicket_includes = [
     'widgets.php',
     'dates.php',
     'remove_wp_toolbar_except_admins.php',
+    'remove-admin-bar.php',
     'curl_timeout.php',
     'private_content_redirect.php',
     'woocommerce.php',
