@@ -1,6 +1,6 @@
 <?php
 /**
- * Wicket author block
+ * Wicket author block.
  *
  **/
 
@@ -9,10 +9,10 @@ namespace Wicket\Blocks\Wicket_Author;
 function init($block = [])
 {
     $attrs = get_block_wrapper_attributes(
-        [ 'class' => 'block-wicket-author' ]
+        ['class' => 'block-wicket-author']
     );
 
-    $title   = get_field('author_title');
+    $title = get_field('author_title');
     $authors = get_field('author_authors');
 
     echo '<div ' . $attrs . '>';

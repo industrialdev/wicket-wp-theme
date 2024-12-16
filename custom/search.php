@@ -1,23 +1,22 @@
 <?php
 
-
 // See https://developer.wordpress.org/reference/hooks/pre_get_posts/ for reference
 add_action('pre_get_posts', function ($query) {
 
     // Check that it is the query we want to change: front-end search query
-    if ($query->is_main_query() && ! is_admin() && $query->is_search()) {
+    if ($query->is_main_query() && !is_admin() && $query->is_search()) {
 
-        $options_group           = get_field('search_listing_page', 'option');
+        $options_group = get_field('search_listing_page', 'option');
 
         // Filter configs
-        $excluded_post_types     = $options_group['excluded_post_types'] ?? '';
-        $excluded_post_ids       = $options_group['excluded_post_ids'] ?? '';
-        $posts_per_page          = $options_group['posts_per_page'] ?? 10;
-        $taxonomy_filters_field  = $options_group['taxonomy_filters'] ?? '';
-        $post_type_filters_field  = $options_group['post_type_filters'] ?? '';
+        $excluded_post_types = $options_group['excluded_post_types'] ?? '';
+        $excluded_post_ids = $options_group['excluded_post_ids'] ?? '';
+        $posts_per_page = $options_group['posts_per_page'] ?? 10;
+        $taxonomy_filters_field = $options_group['taxonomy_filters'] ?? '';
+        $post_type_filters_field = $options_group['post_type_filters'] ?? '';
 
         // URL parameters
-        $paged       = $_GET['paged'] ?? 1;
+        $paged = $_GET['paged'] ?? 1;
 
         // Set the page sorting based on parameter
         $order = 'DESC';
@@ -35,7 +34,7 @@ add_action('pre_get_posts', function ($query) {
 
         // Set filtered post types
         $filtered_post_types = $post_type_filters_field === '' ? [] : explode(',', $post_type_filters_field);
-        if (! empty($filtered_post_types)) {
+        if (!empty($filtered_post_types)) {
             if (isset($_GET['post_type']) && is_array($_GET['post_type'])) {
                 // Only keep the post types that are specified in the filter settings
                 $post_types = array_intersect($filtered_post_types, $_GET['post_type']);
@@ -85,7 +84,7 @@ add_action('pre_get_posts', function ($query) {
         /* Add start date and end date to tax query if they are set */
         if (isset($_GET['start_date']) && isset($_GET['end_date'])) {
             $start_date = $_GET['start_date'];
-            $end_date   = $_GET['end_date'];
+            $end_date = $_GET['end_date'];
 
             $query->set('date_query', [
                 'after'     => $start_date,

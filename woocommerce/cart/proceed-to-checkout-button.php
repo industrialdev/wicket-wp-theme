@@ -1,6 +1,6 @@
 <?php
 /**
- * Proceed to checkout button
+ * Proceed to checkout button.
  *
  * Contains the markup for the proceed to checkout button on the cart.
  *
@@ -13,11 +13,9 @@
  * the readme will list any important changes.
  *
  * @see     https://woocommerce.com/document/template-structure/
- * @package WooCommerce\Templates
  * @version 7.0.1
  */
-
-if (! defined('ABSPATH')) {
+if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 ?>

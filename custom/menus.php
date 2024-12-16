@@ -9,31 +9,31 @@ function wicket_generate_structured_menu($wp_nav_items)
     // Initial pass to add all parent items
     foreach ($wp_nav_items as $wp_nav_item) {
         if ($wp_nav_item->menu_item_parent == 0) {
-            $nav_items_structured[ $wp_nav_item->ID ] = (array) $wp_nav_item;
-            $nav_items_structured[ $wp_nav_item->ID ]['child_count'] = 0;
-            $nav_items_structured[ $wp_nav_item->ID ]['grand_child_count'] = 0;
+            $nav_items_structured[$wp_nav_item->ID] = (array) $wp_nav_item;
+            $nav_items_structured[$wp_nav_item->ID]['child_count'] = 0;
+            $nav_items_structured[$wp_nav_item->ID]['grand_child_count'] = 0;
         }
     }
     // Second pass to add all 2nd tier child items
     foreach ($wp_nav_items as $wp_nav_item) {
         if ($wp_nav_item->menu_item_parent != 0) {
             // Add this as a child element if its parent item is present
-            if (isset($nav_items_structured[ $wp_nav_item->menu_item_parent])) {
-                $nav_items_structured[ $wp_nav_item->menu_item_parent]['children'][ $wp_nav_item->ID] = (array) $wp_nav_item;
+            if (isset($nav_items_structured[$wp_nav_item->menu_item_parent])) {
+                $nav_items_structured[$wp_nav_item->menu_item_parent]['children'][$wp_nav_item->ID] = (array) $wp_nav_item;
                 // Update child count of the parent item
                 $current_child_count = 0;
-                if (isset($nav_items_structured[ $wp_nav_item->menu_item_parent]['child_count'])) {
-                    $current_child_count = $nav_items_structured[ $wp_nav_item->menu_item_parent]['child_count'];
+                if (isset($nav_items_structured[$wp_nav_item->menu_item_parent]['child_count'])) {
+                    $current_child_count = $nav_items_structured[$wp_nav_item->menu_item_parent]['child_count'];
                 }
                 $current_child_count++;
-                $nav_items_structured[ $wp_nav_item->menu_item_parent]['child_count'] = $current_child_count;
+                $nav_items_structured[$wp_nav_item->menu_item_parent]['child_count'] = $current_child_count;
 
                 // Set initial value for the child count of this item, if not already set
                 $current_child_count = 0;
-                if (isset($nav_items_structured[ $wp_nav_item->menu_item_parent]['children'][ $wp_nav_item->ID]['child_count'])) {
-                    $current_child_count = $nav_items_structured[ $wp_nav_item->menu_item_parent]['children'][ $wp_nav_item->ID]['child_count'];
+                if (isset($nav_items_structured[$wp_nav_item->menu_item_parent]['children'][$wp_nav_item->ID]['child_count'])) {
+                    $current_child_count = $nav_items_structured[$wp_nav_item->menu_item_parent]['children'][$wp_nav_item->ID]['child_count'];
                 }
-                $nav_items_structured[ $wp_nav_item->menu_item_parent]['children'][ $wp_nav_item->ID]['child_count'] = $current_child_count;
+                $nav_items_structured[$wp_nav_item->menu_item_parent]['children'][$wp_nav_item->ID]['child_count'] = $current_child_count;
 
             }
         }
@@ -46,22 +46,22 @@ function wicket_generate_structured_menu($wp_nav_items)
                 foreach ($nav_structured_item['children'] as $second_tier_child_item) {
                     // $second_tier_child_item is array->parent_item->child_item
                     if ($wp_nav_item->menu_item_parent == $second_tier_child_item['ID']) {
-                        $nav_items_structured[ $nav_structured_item['ID'] ]['children'][ $second_tier_child_item['ID'] ]['children'][ $wp_nav_item->ID] = (array) $wp_nav_item;
+                        $nav_items_structured[$nav_structured_item['ID']]['children'][$second_tier_child_item['ID']]['children'][$wp_nav_item->ID] = (array) $wp_nav_item;
 
                         // Update child count of the parent items
                         $current_grand_child_count = 0;
                         $current_child_count = 0;
-                        if (isset($nav_items_structured[ $nav_structured_item['ID'] ]['grand_child_count'])) {
-                            $current_grand_child_count = $nav_items_structured[ $nav_structured_item['ID'] ]['grand_child_count'];
+                        if (isset($nav_items_structured[$nav_structured_item['ID']]['grand_child_count'])) {
+                            $current_grand_child_count = $nav_items_structured[$nav_structured_item['ID']]['grand_child_count'];
                         }
-                        if (isset($nav_items_structured[ $nav_structured_item['ID'] ]['children'][ $second_tier_child_item['ID'] ]['child_count'])) {
-                            $current_child_count = $nav_items_structured[ $nav_structured_item['ID'] ]['children'][ $second_tier_child_item['ID'] ]['child_count'];
+                        if (isset($nav_items_structured[$nav_structured_item['ID']]['children'][$second_tier_child_item['ID']]['child_count'])) {
+                            $current_child_count = $nav_items_structured[$nav_structured_item['ID']]['children'][$second_tier_child_item['ID']]['child_count'];
                         }
                         $current_grand_child_count++;
                         $current_child_count++;
 
-                        $nav_items_structured[ $nav_structured_item['ID'] ]['grand_child_count'] = $current_grand_child_count;
-                        $nav_items_structured[ $nav_structured_item['ID'] ]['children'][ $second_tier_child_item['ID'] ]['child_count'] = $current_child_count;
+                        $nav_items_structured[$nav_structured_item['ID']]['grand_child_count'] = $current_grand_child_count;
+                        $nav_items_structured[$nav_structured_item['ID']]['children'][$second_tier_child_item['ID']]['child_count'] = $current_child_count;
 
                     }
                 }
@@ -96,7 +96,6 @@ function wicket_get_all_parent_and_child_pages($post_id, $post_type = 'page')
     $tree_depth = 0;
     $curr_page_location_from_top = [];
 
-
     if (isset($ancestry_array['ancestors_top_to_curr'][0])) {
         $topmost_parent_id = $ancestry_array['ancestors_top_to_curr'][0];
         $tree_depth = 1;
@@ -117,7 +116,7 @@ function wicket_get_all_parent_and_child_pages($post_id, $post_type = 'page')
         $children_ids_to_add[$child_id] = [];
 
         if ($post_id == $child_id) {
-            $curr_page_location_from_top = [ $topmost_parent_id, $child_id ];
+            $curr_page_location_from_top = [$topmost_parent_id, $child_id];
         }
     }
 
@@ -138,7 +137,7 @@ function wicket_get_all_parent_and_child_pages($post_id, $post_type = 'page')
             $sibling_children_to_add[$sibling_child_id] = [];
 
             if ($post_id == $sibling_child_id) {
-                $curr_page_location_from_top = [ $topmost_parent_id, $sibling_id, $sibling_child_id ];
+                $curr_page_location_from_top = [$topmost_parent_id, $sibling_id, $sibling_child_id];
             }
         }
         $children_ids_to_add[$sibling_id] = $sibling_children_to_add;
@@ -158,7 +157,7 @@ function wicket_get_all_parent_and_child_pages($post_id, $post_type = 'page')
                 $sibling_children_to_add[$sibling_child_id] = [];
 
                 if ($post_id == $sibling_child_id) {
-                    $curr_page_location_from_top = [ $topmost_parent_id, $sibling_id, $sibling_2_id, $sibling_child_id ];
+                    $curr_page_location_from_top = [$topmost_parent_id, $sibling_id, $sibling_2_id, $sibling_child_id];
                 }
             }
             $children_ids_to_add[$sibling_id][$sibling_2_id] = $sibling_children_to_add;
@@ -178,7 +177,7 @@ function wicket_get_all_parent_and_child_pages($post_id, $post_type = 'page')
                     $sibling_children_to_add[$sibling_child_id] = [];
 
                     if ($post_id == $sibling_child_id) {
-                        $curr_page_location_from_top = [ $topmost_parent_id, $sibling_id, $sibling_2_id, $sibling_3_id, $sibling_child_id ];
+                        $curr_page_location_from_top = [$topmost_parent_id, $sibling_id, $sibling_2_id, $sibling_3_id, $sibling_child_id];
                     }
                 }
                 $children_ids_to_add[$sibling_id][$sibling_2_id][$sibling_3_id] = $sibling_children_to_add;
@@ -198,7 +197,7 @@ function wicket_get_all_parent_and_child_pages($post_id, $post_type = 'page')
                         $sibling_children_to_add[$sibling_child_id] = [];
 
                         if ($post_id == $sibling_child_id) {
-                            $curr_page_location_from_top = [ $topmost_parent_id, $sibling_id, $sibling_2_id, $sibling_3_id, $sibling_4_id, $sibling_child_id ];
+                            $curr_page_location_from_top = [$topmost_parent_id, $sibling_id, $sibling_2_id, $sibling_3_id, $sibling_4_id, $sibling_child_id];
                         }
                     }
                     $children_ids_to_add[$sibling_id][$sibling_2_id][$sibling_3_id][$sibling_4_id] = $sibling_children_to_add;
@@ -218,7 +217,7 @@ function wicket_get_all_parent_and_child_pages($post_id, $post_type = 'page')
                             $sibling_children_to_add[$sibling_child_id] = [];
 
                             if ($post_id == $sibling_child_id) {
-                                $curr_page_location_from_top = [ $topmost_parent_id, $sibling_id, $sibling_2_id, $sibling_3_id, $sibling_4_id, $sibling_5_id, $sibling_child_id ];
+                                $curr_page_location_from_top = [$topmost_parent_id, $sibling_id, $sibling_2_id, $sibling_3_id, $sibling_4_id, $sibling_5_id, $sibling_child_id];
                             }
                         }
                         $children_ids_to_add[$sibling_id][$sibling_2_id][$sibling_3_id][$sibling_4_id][$sibling_5_id] = $sibling_children_to_add;
@@ -236,8 +235,6 @@ function wicket_get_all_parent_and_child_pages($post_id, $post_type = 'page')
     $ancestry_array['curr_page_level_from_zero'] = count($curr_page_location_from_top) - 1;
     $ancestry_array['curr_page_location_from_top'] = $curr_page_location_from_top;
     $ancestry_array['num_levels'] = $tree_depth;
-
-
 
     return $ancestry_array;
 }

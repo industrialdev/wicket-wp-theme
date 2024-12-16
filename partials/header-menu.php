@@ -29,7 +29,7 @@ $dropdown_count = 0;
             }
             ?>
           <li class="nav__menu-item<?php if($is_mega) : ?> nav__menu-item--mega<?php endif; ?><?php if($has_dropdown) : ?> dropdown<?php endif; ?>">
-            <a <?php if($has_dropdown) : ?>id="<?php echo $submenu_toggle_id; ?>"<?php endif; ?> class="nav__link<?php if($has_dropdown) : ?> dropdown__toggle<?php endif; ?>" href="<?php echo $link['url']; ?>" <?php if($link['target'] == "_blank") : ?>target="<?php echo $link['target']; ?>"<?php endif; ?> <?php if($has_dropdown) : ?>aria-controls="<?php echo $submenu_id; ?>" aria-expanded="false"<?php endif; ?>>
+            <a <?php if($has_dropdown) : ?>id="<?php echo $submenu_toggle_id; ?>"<?php endif; ?> class="nav__link<?php if($has_dropdown) : ?> dropdown__toggle<?php endif; ?>" href="<?php echo $link['url']; ?>" <?php if($link['target'] == '_blank') : ?>target="<?php echo $link['target']; ?>"<?php endif; ?> <?php if($has_dropdown) : ?>aria-controls="<?php echo $submenu_id; ?>" aria-expanded="false"<?php endif; ?>>
               <?php if($icon) : ?>
                 <span class="nav__icon-wrapper">
                   <i class="icon <?php echo $icon; ?>" aria-hidden="true"></i>
@@ -56,7 +56,7 @@ $dropdown_count = 0;
                     $icon = get_sub_field('icon');
                     ?>
                   <li class="submenu__menu-item">
-                    <a class="submenu__link" href="<?php echo $link['url']; ?>" <?php if($link['target'] == "_blank") : ?>target="<?php echo $link['target']; ?>"<?php endif; ?>>
+                    <a class="submenu__link" href="<?php echo $link['url']; ?>" <?php if($link['target'] == '_blank') : ?>target="<?php echo $link['target']; ?>"<?php endif; ?>>
                       <?php if($icon) : ?>
                         <span class="nav__icon-wrapper">
                           <i class="icon <?php echo $icon; ?>" aria-hidden="true"></i>
@@ -77,7 +77,7 @@ $dropdown_count = 0;
                             $icon = get_sub_field('icon');
                             ?>
                           <li>
-                            <a href="<?php echo $link['url']; ?>" <?php if($link['target'] == "_blank") : ?>target="<?php echo $link['target']; ?>"<?php endif; ?>>
+                            <a href="<?php echo $link['url']; ?>" <?php if($link['target'] == '_blank') : ?>target="<?php echo $link['target']; ?>"<?php endif; ?>>
                               <?php if($icon) : ?>
                                 <span class="nav__icon-wrapper">
                                   <i class="icon <?php echo $icon; ?>" aria-hidden="true"></i>

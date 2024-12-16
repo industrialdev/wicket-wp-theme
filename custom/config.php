@@ -3,7 +3,7 @@
 // No direct access
 defined('ABSPATH') || die();
 
-/**
+/*
  * Remote media proxy
  *
  * Allows local dev sites to proxy remote media assets to a remote site.

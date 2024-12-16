@@ -1,13 +1,13 @@
 <?php
 /**
- * Wicket Welcome block
+ * Wicket Welcome block.
  *
  **/
 
 namespace Wicket\Blocks\Wicket_Welcome;
 
 /**
- * Admin Welcome
+ * Admin Welcome.
  */
 function site($block = [])
 {

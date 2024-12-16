@@ -1,13 +1,13 @@
 <?php
 /**
- * Wicket Tabs
+ * Wicket Tabs.
  *
  **/
 
 namespace Wicket\Blocks\Wicket_Tabs;
 
 /**
- * Tab block registration function
+ * Tab block registration function.
  */
 function init($block = [])
 {
@@ -20,6 +20,5 @@ function init($block = [])
         'items' => $items,
     ]);
     echo '</div>';
-
 
 }

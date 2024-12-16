@@ -43,14 +43,14 @@ if(defined('ICL_LANGUAGE_CODE')) {
     <!-- Font Family -->
     <?php
         $theme_ff_group = get_field('theme-font-family', 'option');
-        echo $theme_ff_group['head-font-html-code'];
-    ?>
+echo $theme_ff_group['head-font-html-code'];
+?>
 
     <?php
-        wp_head();
+    wp_head();
 
-        the_field('tracking_codes_in_head', 'options');
-    ?>
+the_field('tracking_codes_in_head', 'options');
+?>
 </head>
 
 <body <?php body_class(); ?>>
@@ -60,15 +60,15 @@ if(defined('ICL_LANGUAGE_CODE')) {
     </a>
 
     <?php
-    // Set PHP variables needed for secondary nav
-    $logo = get_field('site_logo', 'options');
-$logo_url = $logo['url'] ?? get_template_directory_uri() . "/assets/images/logo-" . $lang . ".svg" ?? '';
+// Set PHP variables needed for secondary nav
+$logo = get_field('site_logo', 'options');
+$logo_url = $logo['url'] ?? get_template_directory_uri() . '/assets/images/logo-' . $lang . '.svg' ?? '';
 $bam_path = $lang == 'fr' ? '/fr/create-account' : '/create-account';
 
 $acc_index_url = get_post_type_archive_link('my-account');
 if ($acc_index_url) {
     $account_center_landing = $acc_index_url;
-    $acc_index_url          = $acc_index_url . $locale;
+    $acc_index_url = $acc_index_url . $locale;
 } else {
     $account_center_slug_locale = get_field('ac_localization', 'option');
     if (empty($account_center_slug_locale['value'])) {
@@ -116,9 +116,9 @@ if(isset($theme_locations['header'])) {
 $primary_nav_items_structured = wicket_generate_structured_menu($primary_nav_items);
 
 // Data formatted for Alpine
-$show_search        = get_field('secondary_nav_search_enabled', 'options') ? 'true' : 'false';
-$show_cart          = get_field('secondary_nav_cart_enabled', 'options') ? 'true' : 'false';
-$show_utility       = !empty($utility_nav_items) ? 'true' : 'false';
+$show_search = get_field('secondary_nav_search_enabled', 'options') ? 'true' : 'false';
+$show_cart = get_field('secondary_nav_cart_enabled', 'options') ? 'true' : 'false';
+$show_utility = !empty($utility_nav_items) ? 'true' : 'false';
 $sub_menu_dropdowns = get_field('mobile_menu_sub_menu_dropdowns', 'options') ? 'true' : 'false';
 ?>
     <header
@@ -145,7 +145,7 @@ foreach($utility_nav_items as $utility_nav_item) {
     $target = $utility_nav_item->target ?? '';
     get_component('link', [
         'text'     => $utility_nav_item->title,
-        'classes'  => [ 'utility-nav__link' ],
+        'classes'  => ['utility-nav__link'],
         'target'   => $target,
         'url'      => $utility_nav_item->url,
     ]);
@@ -162,7 +162,7 @@ foreach($utility_nav_items as $utility_nav_item) {
                 <?php
     get_component('button', [
         'variant'     => 'ghost',
-        'classes'     => [ 'left-hamburger-button' ],
+        'classes'     => ['left-hamburger-button'],
         'label'       => '',
         'prefix_icon' => 'fa-solid fa-bars',
         'atts'        => [
@@ -303,7 +303,7 @@ get_component('icon', [
                         'a_tag'       => true,
                         'label'       => '',
                         'prefix_icon' => 'fa-regular fa-cart-shopping',
-                        'atts'        => [ 'x-show="showCart"' ],
+                        'atts'        => ['x-show="showCart"'],
                     ]) ?>
 
                     <div class="hidden lg:flex items-center" >
@@ -319,7 +319,7 @@ get_component('icon', [
                         <span x-show="! mobileMenuOpen" x-cloak>
                         <?php
                         get_component('icon', [
-                            'classes' => [ 'text-x-large', 'lg:text-large', 'px-2' ],
+                            'classes' => ['text-x-large', 'lg:text-large', 'px-2'],
                             'icon'    => 'fa-solid fa-bars',
                             'text'    => '',
                         ]);
@@ -328,7 +328,7 @@ get_component('icon', [
                         <span x-show="mobileMenuOpen" x-cloak>
                         <?php
 get_component('icon', [
-    'classes' => [ 'text-x-large', 'lg:text-large', 'bg-dark-040', 'rounded-base', 'px-2', 'py-0' ],
+    'classes' => ['text-x-large', 'lg:text-large', 'bg-dark-040', 'rounded-base', 'px-2', 'py-0'],
     'icon'    => 'fa-solid fa-x',
     'text'    => '',
 ]);
@@ -359,7 +359,7 @@ get_component('icon', [
                             $target = $primary_nav_item['target'] ?? '';
                     get_component('link', [
                         'text'     => $primary_nav_item['title'],
-                        'classes'  => [ '!items-baseline' ],
+                        'classes'  => ['!items-baseline'],
                         'target'   => $target,
                         'url'    => $primary_nav_item['url'],
                     ]);
@@ -541,7 +541,7 @@ if($nav_state == 'logged_out') {
         'label'     => __('Login', 'wicket'),
         'variant'   => 'ghost',
         'a_tag'     => true,
-        'classes'   => [ 'login-button-mobile', 'mb-2', 'w-full', 'justify-center' ],
+        'classes'   => ['login-button-mobile', 'mb-2', 'w-full', 'justify-center'],
         'link'       => get_option('wp_cassify_base_url') . 'login?service=' . $referrer,
     ]);
 } else {
@@ -549,7 +549,7 @@ if($nav_state == 'logged_out') {
         'label'     => __('Logout', 'wicket'),
         'variant'  => 'ghost',
         'a_tag'    => true,
-        'classes'  => [ 'logout-button-mobile', 'mb-2', 'w-full', 'justify-center' ],
+        'classes'  => ['logout-button-mobile', 'mb-2', 'w-full', 'justify-center'],
         'link'      => wp_logout_url(),
     ]);
 }
@@ -567,7 +567,7 @@ if($nav_state == 'logged_out') {
                 $target = $primary_nav_item['target'] ?? '';
           get_component('link', [
               'text'     => $primary_nav_item['title'],
-              'classes'  => [ 'single-nav-item-mobile' ],
+              'classes'  => ['single-nav-item-mobile'],
               'target'   => $target,
               'url'    => $primary_nav_item['url'],
           ]);
@@ -756,7 +756,7 @@ foreach($utility_nav_items as $utility_nav_item) {
     $target = $utility_nav_item->target ?? '';
     get_component('link', [
         'text'     => $utility_nav_item->title,
-        'classes'  => [ 'utility-nav-mobile__item' ],
+        'classes'  => ['utility-nav-mobile__item'],
         'target'   => $target,
         'url'    => $utility_nav_item->url,
     ]);

@@ -1,8 +1,7 @@
 <?php
 /**
- * ACF Customizations
+ * ACF Customizations.
  **/
-
 function wicket_acf_init()
 {
     // Check function exists.
@@ -58,6 +57,7 @@ function wicket_acf_prepare_copyright_field($field)
     if ($field['value'] === '') {
         $field['value'] = get_bloginfo('name');
     }
+
     return $field;
 }
 add_filter('acf/prepare_field/key=field_651ad74e60f09', 'wicket_acf_prepare_copyright_field');
@@ -65,14 +65,15 @@ add_filter('acf/prepare_field/key=field_651ad74e60f09', 'wicket_acf_prepare_copy
 function wicket_acf_load_footer_menu_field_choices($field)
 {
     $field['choices'] = [];
-    $menus            = get_terms('nav_menu', [ 'hide_empty' => true ]);
+    $menus = get_terms('nav_menu', ['hide_empty' => true]);
 
     if (is_array($menus)) {
         $field['choices'][0] = __('-- Select Menu --', 'wicket');
         foreach ($menus as $menu) {
-            $field['choices'][ $menu->term_id ] = $menu->name;
+            $field['choices'][$menu->term_id] = $menu->name;
         }
     }
+
     return $field;
 }
 add_filter('acf/load_field/key=field_65203a1fff220', 'wicket_acf_load_footer_menu_field_choices');
@@ -81,14 +82,15 @@ add_filter('acf/load_field/key=field_65203a1fff220', 'wicket_acf_load_footer_men
 function wicket_acf_load_post_types_field_choices($field)
 {
     $field['choices'] = [];
-    $post_types       = get_post_types([ 'public' => true ], 'objects');
+    $post_types = get_post_types(['public' => true], 'objects');
 
     if (is_array($post_types)) {
         $field['choices'][0] = __('-- Select Post Type --', 'wicket');
         foreach ($post_types as $post_type) {
-            $field['choices'][ $post_type->name ] = $post_type->label;
+            $field['choices'][$post_type->name] = $post_type->label;
         }
     }
+
     return $field;
 }
 add_filter('acf/load_field/key=field_65c2245631b3e', 'wicket_acf_load_post_types_field_choices');
@@ -98,14 +100,15 @@ add_filter('acf/load_field/key=field_6602a59e4176f', 'wicket_acf_load_post_types
 function wicket_acf_load_taxonomies_field_choices($field)
 {
     $field['choices'] = [];
-    $taxonomies       = get_taxonomies([ 'public' => true ], 'objects');
+    $taxonomies = get_taxonomies(['public' => true], 'objects');
 
     if (is_array($taxonomies)) {
         $field['choices'][0] = __('-- Select Taxonomy --', 'wicket');
         foreach ($taxonomies as $taxonomy) {
-            $field['choices'][ $taxonomy->name ] = $taxonomy->label;
+            $field['choices'][$taxonomy->name] = $taxonomy->label;
         }
     }
+
     return $field;
 }
 add_filter('acf/load_field/key=field_6602a771ef4a9', 'wicket_acf_load_taxonomies_field_choices');
@@ -114,33 +117,33 @@ add_filter('acf/load_field/key=field_6602a771ef4a9', 'wicket_acf_load_taxonomies
 function wicket_acf_load_taxonomy_terms_field_choices($field)
 {
     $field['choices'] = [];
-    $taxonomies       = get_taxonomies([ 'public' => true ], 'objects');
+    $taxonomies = get_taxonomies(['public' => true], 'objects');
 
     if (is_array($taxonomies)) {
         $field['choices']['0'] = __('-- Select Taxonomy Term --', 'wicket');
         foreach ($taxonomies as $taxonomy) {
-            $terms = get_terms($taxonomy->name, [ 'hide_empty' => false ]);
+            $terms = get_terms($taxonomy->name, ['hide_empty' => false]);
             if (is_array($terms)) {
                 foreach ($terms as $term) {
-                    $field['choices'][ $term->term_id ] = $taxonomy->label . ' -> ' . $term->name;
+                    $field['choices'][$term->term_id] = $taxonomy->label . ' -> ' . $term->name;
                 }
             }
         }
     }
+
     return $field;
 }
 add_filter('acf/load_field/key=field_660be4668327f', 'wicket_acf_load_taxonomy_terms_field_choices');
 
-
 // Add image preview to ACF featured image field
 function wicket_acf_prepare_featured_image_field($field)
 {
-    $post_id           = get_the_ID();
+    $post_id = get_the_ID();
     $featured_image_id = get_post_thumbnail_id($post_id);
     if ($featured_image_id) {
         $featured_image_url = wp_get_attachment_image_url($featured_image_id, 'thumbnail');
 
-        $image_classes = [ 'banner__image-preview', 'mt-4', 'w-10' ];
+        $image_classes = ['banner__image-preview', 'mt-4', 'w-10'];
         if ($field['value'] === 'featured-image') {
             $image_classes[] = 'block';
         } else {

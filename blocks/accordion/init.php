@@ -1,23 +1,23 @@
 <?php
 /**
- * Wicket Accordion
+ * Wicket Accordion.
  *
  **/
 
 namespace Wicket\Blocks\Wicket_Accordion;
 
 /**
- * Accordion block registration function
+ * Accordion block registration function.
  */
 function init($block = [])
 {
 
     $attrs = get_block_wrapper_attributes();
 
-    $items                 = get_field('accordion_items');
-    $icon_type             = get_field('icon_type');
-    $accordion_type 			 = get_field('accordion_type');
-    $separate_title_body   = get_field('separate_title_body');
+    $items = get_field('accordion_items');
+    $icon_type = get_field('icon_type');
+    $accordion_type = get_field('accordion_type');
+    $separate_title_body = get_field('separate_title_body');
 
     echo '<div ' . $attrs . '>';
     get_component('accordion', [
@@ -27,6 +27,5 @@ function init($block = [])
         'separate-title-body'   => $separate_title_body,
     ]);
     echo '</div>';
-
 
 }

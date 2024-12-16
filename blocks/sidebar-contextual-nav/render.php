@@ -1,6 +1,6 @@
 <?php
 /**
- * Wicket Sidebar/Contextual Nav
+ * Wicket Sidebar/Contextual Nav.
  *
  **/
 

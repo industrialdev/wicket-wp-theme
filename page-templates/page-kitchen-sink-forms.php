@@ -1,8 +1,7 @@
 <?php
 /**
- * Template Name: Kitchen Sink Forms Page
+ * Template Name: Kitchen Sink Forms Page.
  */
-
 get_header();
 
 if (have_posts()) : while (have_posts()) : the_post(); ?>

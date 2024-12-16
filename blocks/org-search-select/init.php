@@ -1,24 +1,24 @@
 <?php
 /**
- * Wicket Org Search Select block
+ * Wicket Org Search Select block.
  *
  **/
 
 namespace Wicket\Blocks\Wicket_Org_Search_Select;
 
 /**
- * Org Search Select block registration function
+ * Org Search Select block registration function.
  */
 function init($block = [])
 {
 
     $attrs = get_block_wrapper_attributes();
 
-    $search_mode                         = get_field('orgss_search_mode');
-    $search_org_type                     = get_field('orgss_search_org_type');
+    $search_mode = get_field('orgss_search_mode');
+    $search_org_type = get_field('orgss_search_org_type');
     $relationship_type_upon_org_creation = get_field('orgss_relationship_type_upon_org_creation');
-    $relationship_mode                   = get_field('orgss_relationship_mode');
-    $new_org_type_override               = get_field('orgss_new_org_type_override');
+    $relationship_mode = get_field('orgss_relationship_mode');
+    $new_org_type_override = get_field('orgss_new_org_type_override');
 
     $disable_ability_to_create_new_orgentity = get_field('orgss_disable_ability_to_create_new_orgentity');
     $disable_ability_to_select_orgs_with_active_membership = get_field('orgss_disable_ability_to_select_orgs_with_active_membership');
@@ -55,6 +55,5 @@ function init($block = [])
     ]);
 
     echo '</div>';
-
 
 }

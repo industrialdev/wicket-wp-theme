@@ -1,6 +1,6 @@
 <?php
 /**
- * Cart Page
+ * Cart Page.
  *
  * This template can be overridden by copying it to yourtheme/woocommerce/cart/cart.php.
  *
@@ -11,10 +11,8 @@
  * the readme will list any important changes.
  *
  * @see     https://woocommerce.com/document/template-structure/
- * @package WooCommerce\Templates
  * @version 7.9.0
  */
-
 defined('ABSPATH') || exit; ?>
 
 <div class="container">
@@ -45,7 +43,7 @@ defined('ABSPATH') || exit; ?>
 
 						<?php
                         foreach (WC()->cart->get_cart() as $cart_item_key => $cart_item) {
-                            $_product   = apply_filters('woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key);
+                            $_product = apply_filters('woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key);
                             $product_id = apply_filters('woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key);
                             /**
                              * Filter the product name.
@@ -84,7 +82,7 @@ defined('ABSPATH') || exit; ?>
 										<?php
                                 $thumbnail = apply_filters('woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key);
 
-                                if (! $product_permalink) {
+                                if (!$product_permalink) {
                                     echo $thumbnail; // PHPCS: XSS ok.
                                 } else {
                                     printf('<a href="%s">%s</a>', esc_url($product_permalink), $thumbnail); // PHPCS: XSS ok.
@@ -94,10 +92,10 @@ defined('ABSPATH') || exit; ?>
 
 									<td class="product-name" data-title="<?php esc_attr_e('Product', 'woocommerce'); ?>">
 										<?php
-                                if (! $product_permalink) {
+                                if (!$product_permalink) {
                                     echo wp_kses_post($product_name . '&nbsp;');
                                 } else {
-                                    /**
+                                    /*
                                      * This filter is documented above.
                                      *
                                      * @since 2.1.0

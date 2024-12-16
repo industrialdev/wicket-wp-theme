@@ -1,9 +1,8 @@
 <?php
 
 /**
- * Template Name: Kitchen Sink Page
+ * Template Name: Kitchen Sink Page.
  */
-
 get_header();
 
 if (have_posts()) :
@@ -175,19 +174,16 @@ if (have_posts()) :
 					<div class="mb-6">
 						<form>
 							<?php get_component('filter-form', [
-							    'taxonomies' =>
-							        [
-							            0 =>
-							                [
-							                    'slug' => 'category',
-							                    'tooltip' => 'Hello World',
-							                ],
-							            1 =>
-							                [
-							                    'slug' => 'post_tag',
-							                    'tooltip' => 'Lorem Ipsum',
-							                ],
+							    'taxonomies' => [
+							        0 => [
+							            'slug' => 'category',
+							            'tooltip' => 'Hello World',
 							        ],
+							        1 => [
+							            'slug' => 'post_tag',
+							            'tooltip' => 'Lorem Ipsum',
+							        ],
+							    ],
 							    'post_types' => [],
 							    'hide_date_filter' => false,
 							]); ?>
@@ -300,45 +296,36 @@ if (have_posts()) :
 					<div class="mb-6">
 						<?php
 						$items = [
-						    0 =>
-						    [
+						    0 => [
 						        'title' => 'Nulla sit amet est',
 						        'body_content' => '<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#8217;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>',
-						        'call_to_action' =>
-						        [
+						        'call_to_action' => [
 						            'button_style' => 'secondary',
-						            'link_and_label' =>
-						            [
+						            'link_and_label' => [
 						                'title' => 'Secondary',
 						                'url' => '#',
 						                'target' => '',
 						            ],
 						        ],
 						    ],
-						    1 =>
-						    [
+						    1 => [
 						        'title' => 'Aldus PageMaker',
 						        'body_content' => '<p>There are many <strong>variations</strong> of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don&#8217;t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn&#8217;t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.</p>',
-						        'call_to_action' =>
-						        [
+						        'call_to_action' => [
 						            'button_style' => 'primary',
-						            'link_and_label' =>
-						            [
+						            'link_and_label' => [
 						                'title' => 'Primary Button',
 						                'url' => '#',
 						                'target' => '',
 						            ],
 						        ],
 						    ],
-						    2 =>
-						    [
+						    2 => [
 						        'title' => 'Hello World',
 						        'body_content' => '<p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn&#8217;t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.</p>',
-						        'call_to_action' =>
-						        [
+						        'call_to_action' => [
 						            'button_style' => 'ghost',
-						            'link_and_label' =>
-						            [
+						            'link_and_label' => [
 						                'title' => 'Ghost button',
 						                'url' => '#',
 						                'target' => '',
@@ -360,17 +347,14 @@ if (have_posts()) :
 						<div class="mb-6">
 							<?php
             $items = [
-                0 =>
-                [
+                0 => [
                     'title' => 'Lorem Ipsum',
                     'title_is_a_link' => false,
                     'title_link' => null,
                     'body_content' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
-                    'call_to_action' =>
-                    [
+                    'call_to_action' => [
                         'button_link_style' => 'primary',
-                        'link_and_label' =>
-                        [
+                        'link_and_label' => [
                             'title' => 'Lorem Link',
                             'url' => '#',
                             'target' => '',
@@ -378,22 +362,18 @@ if (have_posts()) :
                     ],
                     'open_by_default' => true,
                 ],
-                1 =>
-                [
+                1 => [
                     'title' => 'PageMaker',
                     'title_is_a_link' => true,
-                    'title_link' =>
-                    [
+                    'title_link' => [
                         'title' => 'Hello World',
                         'url' => '#',
                         'target' => '',
                     ],
                     'body_content' => 'Lorem Ipsum is simply dummy standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.',
-                    'call_to_action' =>
-                    [
+                    'call_to_action' => [
                         'button_link_style' => 'secondary',
-                        'link_and_label' =>
-                        [
+                        'link_and_label' => [
                             'title' => 'Hello',
                             'url' => '#',
                             'target' => '',
@@ -852,8 +832,7 @@ if (have_posts()) :
 							<?php
 
                         get_component('author', [
-                            'author' =>
-                            [
+                            'author' => [
                                 'ID' => 15,
                                 'user_firstname' => 'Mangus',
                                 'user_lastname' => 'Awesome',
@@ -878,7 +857,7 @@ if (have_posts()) :
 				<section class="py-8">
 					<h2 class="text-heading-lg mb-3">Card</h2>
 					<div class="flex gap-3">
-						<?php foreach ([ 1, 2, 3 ] as $style) : ?>
+						<?php foreach ([1, 2, 3] as $style) : ?>
 							<div class="basis-4/12">
 								<?php
             get_component('card', [
@@ -912,8 +891,7 @@ if (have_posts()) :
 								<div class="mb-4">
 									<?php
                 get_component('card-contact', [
-                    'classes' =>
-                    [],
+                    'classes' => [],
                     'title ' => '',
                     'description' => '
 										Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
@@ -1007,14 +985,12 @@ if (have_posts()) :
 					<div class="mb-6">
 						<?php
                             $args = [
-                                'classes' =>
-                                [
+                                'classes' => [
                                     0 => 'man-related-content-card',
                                 ],
                                 'content_type' => 'document',
                                 'link' => null,
-                                'document' =>
-                                [
+                                'document' => [
                                     'ID' => 456,
                                     'id' => 456,
                                     'title' => 'dummy',
@@ -1054,14 +1030,12 @@ if (have_posts()) :
 					<div class="mb-6">
 						<?php
             $args = [
-                'classes' =>
-                [
+                'classes' => [
                     0 => 'man-related-content-card',
                 ],
                 'content_type' => 'document',
                 'link' => null,
-                'document' =>
-                [
+                'document' => [
                     'ID' => 456,
                     'id' => 456,
                     'title' => 'dummy',
@@ -1157,8 +1131,7 @@ if (have_posts()) :
 					    }
 
 					    $banner_args = [
-					        'classes' =>
-					        [],
+					        'classes' => [],
 					        'title ' => 'Title Here',
 					        'intro' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
 					        'show_breadcrumbs' => true,
@@ -1204,32 +1177,25 @@ if (have_posts()) :
 					    $banner_args['call_to_action'] = [
 					        'title' => 'Title 1',
 					        'description' => 'Aliquam lobortis. Nullam tincidunt adipiscing enim. Donec vitae sapien ut libero venenatis faucibus. Praesent ut ligula non mi varius sagittis. Phasellus viverra nulla ut metus varius laoreet.',
-					        'links' =>
-					        [
-					            0 =>
-					            [
-					                'link' =>
-					                [
+					        'links' => [
+					            0 => [
+					                'link' => [
 					                    'title' => 'Link',
 					                    'url' => '#',
 					                    'target' => '_blank',
 					                ],
 					                'variant' => 'primary',
 					            ],
-					            1 =>
-					            [
-					                'link' =>
-					                [
+					            1 => [
+					                'link' => [
 					                    'title' => 'Link Two',
 					                    'url' => '#',
 					                    'target' => '_blank',
 					                ],
 					                'variant' => 'secondary',
 					            ],
-					            2 =>
-					            [
-					                'link' =>
-					                [
+					            2 => [
+					                'link' => [
 					                    'title' => 'Link Three',
 					                    'url' => '#',
 					                    'target' => '_blank',
@@ -1262,12 +1228,12 @@ if (have_posts()) :
             while ($query->have_posts()) {
                 $query->the_post();
 
-                $post_type      = get_post_type_object(get_post_type());
-                $title          = get_the_title();
-                $excerpt        = get_the_excerpt();
-                $post_date      = get_the_date('F j, Y');
+                $post_type = get_post_type_object(get_post_type());
+                $title = get_the_title();
+                $excerpt = get_the_excerpt();
+                $post_date = get_the_date('F j, Y');
                 $featured_image = get_post_thumbnail_id();
-                $member_only    = is_member_only(get_the_ID());
+                $member_only = is_member_only(get_the_ID());
 
                 get_component('card-listing', [
                     'classes'        => ['mb-6'],
@@ -1304,9 +1270,9 @@ if (have_posts()) :
 
 					<?php
             $ac_types = [
-                'callout-become_member' => [ '', 'callout-pending_approval' ],
-                'callout-renewal' => [ 'callout-grace_period', 'callout-early_renewal' ],
-                'callout-profile' => [ '' ],
+                'callout-become_member' => ['', 'callout-pending_approval'],
+                'callout-renewal' => ['callout-grace_period', 'callout-early_renewal'],
+                'callout-profile' => [''],
             ];
 
         foreach ($ac_types as $ac_type => $item) :

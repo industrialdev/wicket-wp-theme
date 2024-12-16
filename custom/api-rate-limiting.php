@@ -1,6 +1,5 @@
 <?php
 
-
 // -----------------------------------------------------------------------------------
 // Rate-Limit Incoming WordPress API Calls (for both WooCommerce Api and WP Rest API)
 // Stolen from here: https://wp-tutorials.tech/optimise-wordpress/rate-limit-wordpress-api-calls/
@@ -63,6 +62,7 @@ function wptarl_client_ip()
             $wptarl_client_ip = null;
         }
     }
+
     return $wptarl_client_ip;
 }
 

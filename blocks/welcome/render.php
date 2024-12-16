@@ -1,6 +1,6 @@
 <?php
 /**
- * Wicket Welcome block
+ * Wicket Welcome block.
  *
  **/
 

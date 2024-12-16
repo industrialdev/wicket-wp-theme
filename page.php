@@ -1,12 +1,12 @@
 <?php get_header(); ?>
 
 <?php
-$wrapper_classes     = [];
+$wrapper_classes = [];
 $dev_wrapper_classes = get_field('page_wrapper_class');
-if (! empty($dev_wrapper_classes)) {
+if (!empty($dev_wrapper_classes)) {
     $wrapper_classes[] = $dev_wrapper_classes;
 }
-$display_breadcrumb   = get_field('display_breadcrumb');
+$display_breadcrumb = get_field('display_breadcrumb');
 $display_publish_date = get_field('display_publish_date');
 ?>
 
@@ -22,7 +22,7 @@ $display_publish_date = get_field('display_publish_date');
         }
         if ($display_publish_date) {
             echo '<div class="wp-block-published-date">';
-            echo "<p class='mt-3 mb-4'><strong>" . __('Published:', 'wicket') . ' ' . get_the_date('d-m-Y') . "</strong></p>";
+            echo "<p class='mt-3 mb-4'><strong>" . __('Published:', 'wicket') . ' ' . get_the_date('d-m-Y') . '</strong></p>';
             echo '</div>';
         }
         ?>

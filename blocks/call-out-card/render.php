@@ -1,6 +1,6 @@
 <?php
 /**
- * Wicket Call out card block
+ * Wicket Call out card block.
  *
  **/
 

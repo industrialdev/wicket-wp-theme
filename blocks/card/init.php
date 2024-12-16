@@ -1,24 +1,24 @@
 <?php
 /**
- * Wicket Card block
+ * Wicket Card block.
  *
  **/
 
 namespace Wicket\Blocks\Wicket_Card;
 
 /**
- * Card block registration function
+ * Card block registration function.
  */
 function init($block = [])
 {
     $attrs = get_block_wrapper_attributes();
 
-    $title     = get_field('card_title');
-    $subtitle  = get_field('card_subtitle');
-    $excerpt   = get_field('card_excerpt');
-    $link      = get_field('card_link');
+    $title = get_field('card_title');
+    $subtitle = get_field('card_subtitle');
+    $excerpt = get_field('card_excerpt');
+    $link = get_field('card_link');
     $cta_style = get_field('card_cta_style');
-    $image     = get_field('card_image');
+    $image = get_field('card_image');
 
     echo '<div ' . $attrs . '>';
     get_component('card', [

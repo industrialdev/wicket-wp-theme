@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying product content in the single-product.php template
+ * The template for displaying product content in the single-product.php template.
  *
  * This template can be overridden by copying it to yourtheme/woocommerce/content-single-product.php.
  *
@@ -11,15 +11,13 @@
  * the readme will list any important changes.
  *
  * @see     https://woocommerce.com/document/template-structure/
- * @package WooCommerce\Templates
  * @version 3.6.0
  */
-
 defined('ABSPATH') || exit;
 
 global $product;
 
-/**
+/*
  * Hook: woocommerce_before_single_product.
  *
  * @hooked woocommerce_output_all_notices - 10
@@ -30,6 +28,7 @@ echo '</div>';
 
 if (post_password_required()) {
     echo get_the_password_form(); // WPCS: XSS ok.
+
     return;
 }
 ?>
@@ -58,7 +57,7 @@ if (post_password_required()) {
 $product_title = get_the_title();
 echo '<h1 class="text-heading-xl font-bold mb-4 leading-tight">' . $product_title . '</h1>';
 
-/**
+/*
  * Hook: woocommerce_single_product_summary.
  *
  * @hooked woocommerce_template_single_title - 5

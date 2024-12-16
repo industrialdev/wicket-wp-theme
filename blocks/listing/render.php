@@ -1,6 +1,6 @@
 <?php
 /**
- * Wicket Listing Block
+ * Wicket Listing Block.
  *
  **/
 

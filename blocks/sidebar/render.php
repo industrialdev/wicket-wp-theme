@@ -1,6 +1,6 @@
 <?php
 /**
- * Wicket sidebar block
+ * Wicket sidebar block.
  *
  **/
 

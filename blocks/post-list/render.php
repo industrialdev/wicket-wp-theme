@@ -1,6 +1,6 @@
 <?php
 /**
- * Wicket Post list block
+ * Wicket Post list block.
  *
  **/
 

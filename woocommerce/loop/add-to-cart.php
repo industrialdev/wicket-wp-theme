@@ -1,6 +1,6 @@
 <?php
 /**
- * Loop Add to Cart
+ * Loop Add to Cart.
  *
  * This template can be overridden by copying it to yourtheme/woocommerce/loop/add-to-cart.php.
  *
@@ -11,18 +11,16 @@
  * the readme will list any important changes.
  *
  * @see         https://woocommerce.com/document/template-structure/
- * @package     WooCommerce\Templates
  * @version     3.3.0
  */
-
-if (! defined('ABSPATH')) {
+if (!defined('ABSPATH')) {
     exit;
 }
 
 global $product;
 $login_link = '';
 
-if (! is_user_logged_in()) {
+if (!is_user_logged_in()) {
     ob_start();
     get_component('link', [
         'text'     => __('Login to Purchase', 'woocommerce'),
