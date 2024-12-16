@@ -1,5 +1,24 @@
 <?php
-// do not send default Wordpress emails on manual user creation in the current thread
+// No direct access
+defined( 'ABSPATH' ) || die( '' );
+
+/**
+ * Remote media proxy
+ *
+ * Allows local dev sites to proxy remote media assets to a remote site.
+ * Helps to work locally, without having to download assets from the server and to not experience local slowdowns because of missing "uploads" content.
+ *
+ * Copy the following snippet into your child theme, and set the URL to your remote media site (generally: staging site).
+ *
+ * Example:
+ *
+ * return 'https://wordpress-baseline-sandbox.ind.ninja/';
+ */
+add_filter('wicket_remote_media_proxy_url', function () {
+    //return '';
+});
+
+// do not send default WordPress emails on manual user creation in the current thread
 add_filter( 'send_password_change_email', '__return_false' );
 add_filter( 'send_email_change_email',    '__return_false' );
 
@@ -35,7 +54,7 @@ function wicket_setup() {
 
 	add_image_size( 'sassqutch-thumbnail-avatar', 100, 100, TRUE );
 
-	register_nav_menus( [ 
+	register_nav_menus( [
 		'header-utility'   => __( 'Header Utility Menu', 'wicket' ),
 		'header-secondary' => __( 'Header Secondary Menu', 'wicket' ),
 		'header'           => __( 'Header Menu', 'wicket' ),
@@ -48,7 +67,7 @@ function wicket_setup() {
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
 	 */
-	add_theme_support( 'html5', [ 
+	add_theme_support( 'html5', [
 		'comment-form',
 		'comment-list',
 		'gallery',
@@ -60,7 +79,7 @@ function wicket_setup() {
 	 *
 	 * See: https://codex.wordpress.org/Post_Formats
 	 */
-	add_theme_support( 'post-formats', [ 
+	add_theme_support( 'post-formats', [
 		'aside',
 		'image',
 		'video',
@@ -73,7 +92,7 @@ function wicket_setup() {
 	] );
 
 	// Add theme support for Custom Logo.
-	add_theme_support( 'custom-logo', [ 
+	add_theme_support( 'custom-logo', [
 		'width'      => 250,
 		'height'     => 250,
 		'flex-width' => TRUE,
@@ -110,7 +129,7 @@ function wicket_enqueue_script( $handle, $path, $external = FALSE, $dependencies
 		'in_footer' => $in_footer ? true : false,
 		'strategy'  => $strategy,
 	];
-	
+
 	if ( $external ) {
 		wp_enqueue_script( $handle, $path, $dependencies, FALSE, $args );
 	} else {
