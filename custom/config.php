@@ -8,10 +8,15 @@ defined('ABSPATH') || die();
  *
  * Allows local dev sites to proxy remote media assets to a remote site.
  * Helps to work locally, without having to download assets from the server and to not experience local slowdowns because of missing "uploads" content.
+ *
+ * Copy the following snippet into your child theme, and set the URL to your remote media site (generally: staging site).
+ *
+ * Example:
+ *
+ * return 'https://wordpress-baseline-sandbox.ind.ninja/';
  */
 add_filter('wicket_remote_media_proxy_url', function () {
-    // Remove the comment below to enable remote media proxy. Set the remote URL to the correct one for the staging site.
-    //return 'https://wordpress-baseline-sandbox.ind.ninja/';
+    //return '';
 });
 
 // do not send default Wordpress emails on manual user creation in the current thread
