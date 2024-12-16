@@ -1,5 +1,19 @@
 <?php
 
+// No direct access
+defined('ABSPATH') || die();
+
+/**
+ * Remote media proxy
+ *
+ * Allows local dev sites to proxy remote media assets to a remote site.
+ * Helps to work locally, without having to download assets from the server and to not experience local slowdowns because of missing "uploads" content.
+ */
+add_filter('wicket_remote_media_proxy_url', function () {
+    // Remove the comment below to enable remote media proxy. Set the remote URL to the correct one for the staging site.
+    //return 'https://wordpress-baseline-sandbox.ind.ninja/';
+});
+
 // do not send default Wordpress emails on manual user creation in the current thread
 add_filter('send_password_change_email', '__return_false');
 add_filter('send_email_change_email', '__return_false');
@@ -32,10 +46,9 @@ function wicket_setup()
     add_editor_style('assets/styles/min/wicket.min.css');
     add_editor_style('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700');
 
-
     // Register Custom Post Types
     foreach (glob(dirname(__FILE__) . '/post-types/*.php') as $class_path) {
-        include_once($class_path);
+        include_once $class_path;
     }
 
     add_theme_support('post-thumbnails');
@@ -153,9 +166,11 @@ function get_customizations_inline_css()
                 $sub_field_name = $sub_field['name'];
 
                 // Skip acf fields that are not meant to be used as CSS variables
-                if ( in_array($sub_field_name , [ 'head-font-html-code' ]) ) { continue; }
+                if (in_array($sub_field_name, ['head-font-html-code'])) {
+                    continue;
+                }
 
-                $sub_field_value = is_numeric($group[ $sub_field_name ]) ? $group[ $sub_field_name ] . 'px' : $group[ $sub_field_name ];
+                $sub_field_value = is_numeric($group[$sub_field_name]) ? $group[$sub_field_name] . 'px' : $group[$sub_field_name];
 
                 $css .= '--' . $sub_field_name . ': ' . $sub_field_value . ';';
             }
@@ -179,7 +194,7 @@ function wicket_add_theme_assets()
     wp_add_inline_style('theme', get_customizations_inline_css());
 
     wicket_enqueue_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js', true);
-    wicket_enqueue_script('wicket', '/assets/scripts/min/wicket.min.js', false, [ 'jquery' ], false, true);
+    wicket_enqueue_script('wicket', '/assets/scripts/min/wicket.min.js', false, ['jquery'], false, true);
 
     // Conditional Bootstrap enqueue:
     if (isset($_GET['bootstrap'])) {
@@ -192,8 +207,8 @@ add_action('wp_enqueue_scripts', 'wicket_add_theme_assets');
 /* Gutenberg scripts and styles */
 function wicket_gutenberg_scripts()
 {
-    $array_dependencies = [ 'wp-blocks', 'wp-dom-ready' ];
-    $screen             = get_current_screen();
+    $array_dependencies = ['wp-blocks', 'wp-dom-ready'];
+    $screen = get_current_screen();
 
     switch ($screen->base) {
         case 'post':
@@ -246,7 +261,7 @@ function icl_post_languages()
             }
         }
 
-        return join('', $langs);
+        return implode('', $langs);
     }
 }
 
