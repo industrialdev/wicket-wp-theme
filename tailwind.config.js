@@ -172,6 +172,7 @@ module.exports = {
     './job_manager/**/*.php',
     '../../plugins/wicket-wp-base-plugin/includes/components/**/*.php',
     './page-templates/**/*.php',
+    './templates-wicket/**/*.php',
     './partials/**/*.php',
     './assets/scripts/**/*.js',
     './*.php',
