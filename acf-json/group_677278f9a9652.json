@@ -1,11 +1,11 @@
 {
-    "key": "group_660be4667fd31",
-    "title": "Shared - Taxonomy Term",
+    "key": "group_677278f9a9652",
+    "title": "Shared - Taxonomy Terms",
     "fields": [
         {
-            "key": "field_660be4668327f",
-            "label": "Taxonomy Term",
-            "name": "taxonomy_term",
+            "key": "field_677278f9b73f8",
+            "label": "Taxonomy Terms",
+            "name": "taxonomy_terms",
             "aria-label": "",
             "type": "select",
             "instructions": "",
@@ -47,12 +47,12 @@
                 "51": "News Type -> Markets",
                 "52": "Topics -> Must Read"
             },
-            "default_value": false,
+            "default_value": [],
             "return_format": "value",
-            "multiple": 0,
+            "multiple": 1,
             "allow_null": 0,
             "allow_in_bindings": 1,
-            "ui": 0,
+            "ui": 1,
             "ajax": 0,
             "placeholder": ""
         }
@@ -76,5 +76,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "translation",
-    "modified": 1735555303
+    "modified": 1735555369
 }
