@@ -1,12 +1,12 @@
 <?php
 
 // No direct access
-if (! defined('ABSPATH')) {
+if (!defined('ABSPATH')) {
     exit;
 }
 
 /**
- * Wicket Includes
+ * Wicket Includes.
  */
 $wicket_includes = [
     'config.php',
@@ -19,6 +19,7 @@ $wicket_includes = [
     'widgets.php',
     'dates.php',
     'remove_wp_toolbar_except_admins.php',
+    'remove-admin-bar.php',
     'curl_timeout.php',
     'private_content_redirect.php',
     'woocommerce.php',
@@ -39,14 +40,14 @@ if (is_array($wicket_includes)) {
     foreach ($wicket_includes as $wicket_inc) {
         $file_inc = get_template_directory() . '/custom/' . $wicket_inc;
 
-        if (! file_exists($file_inc)) {
+        if (!file_exists($file_inc)) {
             continue;
         }
         require_once $file_inc;
     }
 }
 
-/**
+/*
  * DO NOT ADD ANYTHING BELOW THIS COMMENT
  * DO NOT ADD ANYTHING BELOW THIS COMMENT
  * DO NOT ADD ANYTHING BELOW THIS COMMENT

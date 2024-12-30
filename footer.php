@@ -4,7 +4,7 @@
 <footer class="site-footer">
 	<?php
     $newsletter = get_field('newsletter', 'option');
-if (! empty($newsletter['title'])) : ?>
+if (!empty($newsletter['title'])) : ?>
 		<div class="newsletter-section">
 			<div class="container">
 				<div class="flex flex-col gap-5 items-start lg:flex-row lg:justify-between ">
@@ -22,7 +22,7 @@ if (! empty($newsletter['title'])) : ?>
 						<?php endif; ?>
 					</div>
 
-					<?php if (! empty($newsletter['link'])) {
+					<?php if (!empty($newsletter['link'])) {
 					    get_component('button', [
 					        'variant'     => 'primary',
 					        'link'        => $newsletter['link']['url'],
@@ -32,7 +32,7 @@ if (! empty($newsletter['title'])) : ?>
 					        'label'       => __('Subscribe to our newsletter', 'wicket'),
 					        'prefix_icon' => 'fa-regular fa-envelope',
 					        'suffix_icon' => '',
-					        'classes'     => [ 'newsletter-button' ],
+					        'classes'     => ['newsletter-button'],
 					    ]);
 					} ?>
 				</div>
@@ -50,9 +50,9 @@ if (! empty($newsletter['title'])) : ?>
 		    ?>
 				<?php while (have_rows('footer_columns', 'option')) :
 				    the_row();
-				    $section_title  = get_sub_field('section_title');
-				    $section_id     = sanitize_title($section_title);
-				    $row            = get_row();
+				    $section_title = get_sub_field('section_title');
+				    $section_id = sanitize_title($section_title);
+				    $row = get_row();
 				    $is_menu_column = false;
 
 				    foreach ($row as $layout) {
@@ -110,14 +110,14 @@ if (! empty($newsletter['title'])) : ?>
 							            // Contact info layout.
 							            elseif (get_row_layout() == 'contact_info') {
 							                $address = get_sub_field('address');
-							                $phone   = get_sub_field('phone_number');
-							                $email   = get_sub_field('email');
+							                $phone = get_sub_field('phone_number');
+							                $email = get_sub_field('email');
 
 							                if ($email) {
 							                    get_component(
 							                        'link',
 							                        [
-							                            'classes'    => [ 'main-footer-section__email-link' ],
+							                            'classes'    => ['main-footer-section__email-link'],
 							                            'url'        => "mailto:{$email}",
 							                            'text'       => $email,
 							                            'icon_start' => [
@@ -131,7 +131,7 @@ if (! empty($newsletter['title'])) : ?>
 							                    get_component(
 							                        'link',
 							                        [
-							                            'classes'    => [ 'main-footer-section__phone-link' ],
+							                            'classes'    => ['main-footer-section__phone-link'],
 							                            'url'        => "tel:{$phone}",
 							                            'text'       => $phone,
 							                            'icon_start' => [
@@ -157,7 +157,7 @@ if (! empty($newsletter['title'])) : ?>
 
 							            // Social Sharing layout.
 							            elseif (get_row_layout() == 'social_sharing') {
-							                get_component('social-sharing', [ 'reversed' => false ]);
+							                get_component('social-sharing', ['reversed' => false]);
 							            }
 
 							            // Embed layout.
@@ -168,7 +168,7 @@ if (! empty($newsletter['title'])) : ?>
 
 							            // Form layout.
 							            elseif (get_row_layout() == 'form') {
-							                $description     = get_sub_field('description');
+							                $description = get_sub_field('description');
 							                $newsletter_page = get_sub_field('newsletter_page');
 
 							                if ($description) {
@@ -185,7 +185,7 @@ if (! empty($newsletter['title'])) : ?>
 							                        'label'       => __('Subscribe to our newsletter', 'wicket'),
 							                        'prefix_icon' => 'fa-regular fa-envelope',
 							                        'suffix_icon' => '',
-							                        'classes'     => [ 'newsletter-button' ],
+							                        'classes'     => ['newsletter-button'],
 							                    ]);
 							                }
 							            }

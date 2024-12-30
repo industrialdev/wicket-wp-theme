@@ -7,28 +7,28 @@ $defaults = [
     'prev_text'  => 'Previous',
     'next_text'  => 'Next',
     'prev_icon'  => [
-        'classes' => [ 'pagination-icon' ],
+        'classes' => ['pagination-icon'],
         'icon'    => 'fa fa-arrow-left', // Replace with desired Font Awesome classes
         'text'    => '',
     ],
     'next_icon'  => [
-        'classes' => [ 'pagination-icon' ],
+        'classes' => ['pagination-icon'],
         'icon'    => 'fa fa-arrow-right', // Replace with desired Font Awesome classes
         'text'    => '',
     ],
     'show_range' => true, // Whether to show a range of page numbers
 ];
 
-$args       = wp_parse_args($args, $defaults);
-$classes    = $args['classes'];
-$current    = $args['current'];
-$total      = $args['total'];
-$prev_text  = $args['prev_text'];
-$next_text  = $args['next_text'];
-$prev_icon  = $args['prev_icon'];
-$next_icon  = $args['next_icon'];
+$args = wp_parse_args($args, $defaults);
+$classes = $args['classes'];
+$current = $args['current'];
+$total = $args['total'];
+$prev_text = $args['prev_text'];
+$next_text = $args['next_text'];
+$prev_icon = $args['prev_icon'];
+$next_icon = $args['next_icon'];
 $show_range = $args['show_range'];
-$classes[]  = 'pagination';
+$classes[] = 'pagination';
 
 ?>
 
@@ -49,7 +49,7 @@ $classes[]  = 'pagination';
 				<div class="pagination-pages">
 					<?php
                     $start = max(1, $current - 5);
-			    $end   = min($total, $start + 10);
+			    $end = min($total, $start + 10);
 
 			    for ($i = $start; $i <= $end; $i++) {
 			        $active_class = ($i === $current) ? 'active' : '';

@@ -1,11 +1,11 @@
 <?php
 
 // No direct access
-if (! defined('ABSPATH')) {
+if (!defined('ABSPATH')) {
     exit;
 }
 
-/**
+/*
  * Wicket_Remote_Media_Proxy class.
  *
  * Configuration.
@@ -16,20 +16,6 @@ if (! defined('ABSPATH')) {
  *
  * Use the proper URL for the desired remote site.
  */
-
-if (
-    in_array($_SERVER['REMOTE_ADDR'], ['127.0.0.1', '::1', 'localhost'])
-    || str_contains($_SERVER['REMOTE_ADDR'], '192.')
-    || str_contains($_SERVER['REMOTE_ADDR'], '172.')
-) {
-    if (! defined('WICKET_REMOTE_MEDIA_URL')) {
-        define('WICKET_REMOTE_MEDIA_URL', 'https://wordpress-baseline-sandbox.ind.ninja');
-    }
-}
-
-if (class_exists('Wicket_Remote_Media_Proxy')) {
-    return;
-}
 
 class Wicket_Remote_Media_Proxy
 {
@@ -52,7 +38,7 @@ class Wicket_Remote_Media_Proxy
      *
      * @var string
      */
-    protected $remote_medial_url = '';
+    protected $remote_media_url = '';
 
     /**
      * The WordPress uploads directory path. Default: ''.
@@ -74,21 +60,19 @@ class Wicket_Remote_Media_Proxy
      */
     private function __construct()
     {
-        // Exit early
-        if (!defined('WICKET_REMOTE_MEDIA_URL') || empty(constant('WICKET_REMOTE_MEDIA_URL'))) {
+        // Get the filtered remote media URL
+        $this->remote_media_url = trailingslashit(apply_filters('wicket_remote_media_proxy_url', ''));
+
+        // Exit early if remote media URL is empty
+        if (empty($this->remote_media_url)) {
             return;
         }
 
         // Make sure the home URL contains a trailing slash for consistent find/replace actions.
         $this->home_url = trailingslashit(get_home_url());
 
-        if (defined('WICKET_REMOTE_MEDIA_URL') && ! empty(constant('WICKET_REMOTE_MEDIA_URL'))) {
-            // Make sure the remote URL contains a trailing slash for consistent find/replace actions.
-            $this->remote_medial_url = trailingslashit(WICKET_REMOTE_MEDIA_URL);
-        }
-
         // Store the WordPress uploads directory path & URL for image/media replacements.
-        $wp_upload_dir            = wp_upload_dir();
+        $wp_upload_dir = wp_upload_dir();
         $this->wp_upload_base_dir = $wp_upload_dir['basedir'];
         $this->wp_upload_base_url = $wp_upload_dir['baseurl'];
 
@@ -121,7 +105,7 @@ class Wicket_Remote_Media_Proxy
     private function register_hooks()
     {
         // Check for remote media URL and add hooks to proxy media library images.
-        if (!empty($this->remote_medial_url)) {
+        if (!empty($this->remote_media_url)) {
             // Add filters only if constant is configured.
             add_filter('wp_get_attachment_image_src', [$this, 'filter_wp_get_attachment_image_src']);
             add_filter('wp_calculate_image_srcset', [$this, 'filter_wp_calculate_image_srcset']);
@@ -144,7 +128,7 @@ class Wicket_Remote_Media_Proxy
             return $image_url;
         }
 
-        $image_url = str_replace($this->home_url, $this->remote_medial_url, $image_url);
+        $image_url = str_replace($this->home_url, $this->remote_media_url, $image_url);
 
         return $image_url;
     }
@@ -154,13 +138,13 @@ class Wicket_Remote_Media_Proxy
      *
      * @link https://developer.wordpress.org/reference/hooks/wp_get_attachment_image_src/
      *
-     * @param array|boolean $image Array of image data, or boolean false if no image is available.
+     * @param array|bool $image Array of image data, or boolean false if no image is available.
      *
-     * @return array|boolean
+     * @return array|bool
      */
     public function filter_wp_get_attachment_image_src($image = [])
     {
-        if (! is_array($image) || empty($image)) {
+        if (!is_array($image) || empty($image)) {
             return $image;
         }
 
@@ -180,9 +164,9 @@ class Wicket_Remote_Media_Proxy
      */
     public function filter_wp_calculate_image_srcset($sources = [])
     {
-        if (is_array($sources) && ! is_admin()) {
+        if (is_array($sources) && !is_admin()) {
             foreach ($sources as $key => $val) {
-                $val['url']  = $this->replace_url($val['url']);
+                $val['url'] = $this->replace_url($val['url']);
                 $sources[$key] = $val;
             }
         }
@@ -209,5 +193,14 @@ class Wicket_Remote_Media_Proxy
     }
 }
 
-// Run the Class inmediately
-$WicketRemoteMediaProxy = Wicket_Remote_Media_Proxy::get_instance();
+// Run the class on WP init
+add_action('init', function () {
+    // Only run on localhost/docker
+    if (
+        in_array($_SERVER['REMOTE_ADDR'], ['127.0.0.1', '::1', 'localhost'])
+        || str_contains($_SERVER['REMOTE_ADDR'], '192.')
+        || str_contains($_SERVER['REMOTE_ADDR'], '172.')
+    ) {
+        $WicketRemoteMediaProxy = Wicket_Remote_Media_Proxy::get_instance();
+    }
+});

@@ -18,7 +18,8 @@
             },
             "wpml_cf_preferences": 1,
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_66f2d4cbb7672",
@@ -378,6 +379,26 @@
             "wpml_cf_preferences": 1,
             "layout": "block",
             "sub_fields": [
+                {
+                    "key": "field_6758454cc8726",
+                    "label": "Body Background",
+                    "name": "bg-body",
+                    "aria-label": "",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 1,
+                    "default_value": "#FFFFFF",
+                    "enable_opacity": 0,
+                    "return_format": "string",
+                    "allow_in_bindings": 1
+                },
                 {
                     "key": "field_66f2d4dab7687",
                     "label": "Background Label",
@@ -1740,7 +1761,8 @@
             },
             "wpml_cf_preferences": 1,
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_66f2d4cbb7673",
@@ -2214,7 +2236,8 @@
             },
             "wpml_cf_preferences": 1,
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_66f2d4cbb7674",
@@ -2573,7 +2596,8 @@
             },
             "wpml_cf_preferences": 1,
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_66f2d4cbb7675",
@@ -2955,7 +2979,8 @@
             },
             "wpml_cf_preferences": 1,
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_66f2d4cbb7676",
@@ -3055,7 +3080,8 @@
             },
             "wpml_cf_preferences": 1,
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_66f2d4cbb7788",
@@ -3410,7 +3436,8 @@
             },
             "wpml_cf_preferences": 1,
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_66f2d4cbb7790",
@@ -3746,7 +3773,8 @@
             },
             "wpml_cf_preferences": 1,
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_6731d401c541b",
@@ -3829,5 +3857,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "advanced",
-    "modified": 1731318836
+    "modified": 1733838272
 }

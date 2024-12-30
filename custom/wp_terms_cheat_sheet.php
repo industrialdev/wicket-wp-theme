@@ -1,6 +1,6 @@
 <?php
 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/wp/wp-load.php');
+require_once $_SERVER['DOCUMENT_ROOT'] . '/wp/wp-load.php';
 
 global $current_user;
 $user_roles = $current_user->roles;
@@ -59,8 +59,8 @@ $args = [
     //'tax_query'      => $tax_query,
 ];
 
-$query       = new WP_Query($args);
-$posts       = $query->posts;
+$query = new WP_Query($args);
+$posts = $query->posts;
 
 $cleaned_posts = [];
 foreach ($posts as $post) {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Wicket Manually Related Content Block
+ * Wicket Manually Related Content Block.
  *
  **/
 

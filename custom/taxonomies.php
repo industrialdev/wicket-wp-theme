@@ -5,10 +5,10 @@ add_action('init', function () {
     /* News Type Taxonomy */
     register_taxonomy(
         'news_type',
-        [ 'news' ],
+        ['news'],
         [
             'label'             => __('News Type'),
-            'rewrite'           => [ 'slug' => 'news-type' ],
+            'rewrite'           => ['slug' => 'news-type'],
             'show_admin_column' => true,
             'hierarchical'      => true,
             'show_in_rest'      => true,
@@ -18,10 +18,10 @@ add_action('init', function () {
     /* Resource Type Taxonomy */
     register_taxonomy(
         'resource_type',
-        [ 'resources' ],
+        ['resources'],
         [
             'label'             => __('Resource Type'),
-            'rewrite'           => [ 'slug' => 'resource-type' ],
+            'rewrite'           => ['slug' => 'resource-type'],
             'show_admin_column' => true,
             'hierarchical'      => true,
             'show_in_rest'      => true,
@@ -31,15 +31,14 @@ add_action('init', function () {
     /* Topics Taxonomy */
     register_taxonomy(
         'topics',
-        [ 'news', 'resources' ],
+        ['news', 'resources'],
         [
             'label'             => __('Topics'),
-            'rewrite'           => [ 'slug' => 'topics' ],
+            'rewrite'           => ['slug' => 'topics'],
             'show_admin_column' => true,
             'hierarchical'      => true,
             'show_in_rest'      => true,
         ]
     );
-
 
 });

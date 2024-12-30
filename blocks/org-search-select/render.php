@@ -1,6 +1,6 @@
 <?php
 /**
- * Wicket Org Search Select
+ * Wicket Org Search Select.
  *
  **/
 

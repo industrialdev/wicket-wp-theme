@@ -1,6 +1,6 @@
 <?php
 /**
- * Wicket Banner block
+ * Wicket Banner block.
  *
  **/
 

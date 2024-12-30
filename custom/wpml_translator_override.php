@@ -9,8 +9,6 @@
 // The work to ignore the administrator role would be done in the CAS role sync plugin and this would be used to make sure they can edit translated pages.
 // All other role settings should be done using the user role editor plugin.
 
-
-
 // Assign WPML Translators Based on User Roles.
 // https://hoolite.be/wordpress/how-to-assign-wpml-translators-based-on-user-roles/
 add_filter(

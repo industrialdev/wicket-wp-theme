@@ -1,6 +1,6 @@
 <?php
 /**
- * Wicket sidebar block
+ * Wicket sidebar block.
  *
  **/
 
@@ -16,6 +16,7 @@ function init($block = [])
         echo '<div class="block-sidebar">';
         echo '<p class="block-sidebar__message">This block displays the sidebar widgets. To edit the sidebar widgets, please visit the <a href="' . $widgets_url . '" target="_blank">Widgets page</a>.</p>';
         echo '</div>';
+
         return;
     }
 

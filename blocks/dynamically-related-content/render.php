@@ -1,6 +1,6 @@
 <?php
 /**
- * Wicket Dynamically Related Content Block
+ * Wicket Dynamically Related Content Block.
  *
  **/
 

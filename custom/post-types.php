@@ -49,7 +49,7 @@ function register_cpt($singular, $plural = false, $args = [])
         'show_in_rest'        => true,
         'taxonomies'          => [],
         'rewrite'             => $rewrite,
-        'supports'            => [ 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields' ],
+        'supports'            => ['title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields'],
     ];
 
     $args = wp_parse_args($args, $defaults);
@@ -67,7 +67,7 @@ add_action('init', function () {
             'menu_icon'   => 'dashicons-nametag',
             'has_archive' => 'news-archive',
             'template'    => [
-                [ 'wicket/banner', [
+                ['wicket/banner', [
                     'data'  => [
                         'banner_show_breadcrumbs' => false,
                         'banner_show_post_type'   => true,
@@ -79,8 +79,8 @@ add_action('init', function () {
                         'move'   => true,
                         'remove' => true,
                     ],
-                ] ],
-                [ 'core/paragraph', [
+                ]],
+                ['core/paragraph', [
                     'content' => '<b>Topics:</b>',
                     'style'   => [
                         'spacing' => [
@@ -88,19 +88,19 @@ add_action('init', function () {
                                 'top'    => '1.5rem',
                                 'bottom' => '0',
                             ],
-                        ] ],
-                ] ],
-                [ 'core/post-terms', [
+                        ]],
+                ]],
+                ['core/post-terms', [
                     'term' => 'post_tag',
-                ] ],
-                [ 'wicket/manually-related-content' ],
-                [ 'wicket/dynamically-related-content', [
+                ]],
+                ['wicket/manually-related-content'],
+                ['wicket/dynamically-related-content', [
                     'data' => [
                         'related_content_max_posts'    => 3,
                         'related_content_column_count' => 3,
                         'post_type'                    => 'news',
                     ],
-                ] ],
+                ]],
             ],
         ]
     );
@@ -113,7 +113,7 @@ add_action('init', function () {
             'menu_icon'   => 'dashicons-book-alt',
             'has_archive' => 'resources-archive',
             'template'    => [
-                [ 'wicket/banner', [
+                ['wicket/banner', [
                     'data'  => [
                         'banner_show_breadcrumbs' => false,
                         'banner_show_post_type'   => true,
@@ -125,8 +125,8 @@ add_action('init', function () {
                         'move'   => true,
                         'remove' => true,
                     ],
-                ] ],
-                [ 'core/paragraph', [
+                ]],
+                ['core/paragraph', [
                     'content' => '<b>Topics:</b>',
                     'style'   => [
                         'spacing' => [
@@ -134,19 +134,19 @@ add_action('init', function () {
                                 'top'    => '1.5rem',
                                 'bottom' => '0',
                             ],
-                        ] ],
-                ] ],
-                [ 'core/post-terms', [
+                        ]],
+                ]],
+                ['core/post-terms', [
                     'term' => 'post_tag',
-                ] ],
-                [ 'wicket/manually-related-content' ],
-                [ 'wicket/dynamically-related-content', [
+                ]],
+                ['wicket/manually-related-content'],
+                ['wicket/dynamically-related-content', [
                     'data' => [
                         'related_content_max_posts'    => 3,
                         'related_content_column_count' => 3,
                         'post_type'                    => 'resources',
                     ],
-                ] ],
+                ]],
             ],
         ]
     );

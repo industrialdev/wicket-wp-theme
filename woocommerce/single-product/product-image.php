@@ -1,6 +1,6 @@
 <?php
 /**
- * Single Product Image
+ * Single Product Image.
  *
  * This template can be overridden by copying it to yourtheme/woocommerce/single-product/product-image.php.
  *
@@ -11,22 +11,20 @@
  * the readme will list any important changes.
  *
  * @see     https://woocommerce.com/document/template-structure/
- * @package WooCommerce\Templates
  * @version 7.8.0
  */
-
 defined('ABSPATH') || exit;
 
 // Note: `wc_get_gallery_image_html` was added in WC 3.3.2 and did not exist prior. This check protects against theme overrides being used on older versions of WC.
-if (! function_exists('wc_get_gallery_image_html')) {
+if (!function_exists('wc_get_gallery_image_html')) {
     return;
 }
 
 global $product;
 
-$columns           = apply_filters('woocommerce_product_thumbnails_columns', 4);
+$columns = apply_filters('woocommerce_product_thumbnails_columns', 4);
 $post_thumbnail_id = $product->get_image_id();
-$wrapper_classes   = apply_filters(
+$wrapper_classes = apply_filters(
     'woocommerce_single_product_image_gallery_classes',
     [
         'woocommerce-product-gallery',
@@ -42,7 +40,7 @@ $wrapper_classes   = apply_filters(
         if ($post_thumbnail_id) {
             $html = wc_get_gallery_image_html($post_thumbnail_id, true);
         } else {
-            $html  = '<div class="woocommerce-product-gallery__image--placeholder">';
+            $html = '<div class="woocommerce-product-gallery__image--placeholder">';
             $html .= sprintf('<img src="%s" alt="%s" class="wp-post-image" />', esc_url(wc_placeholder_img_src('woocommerce_single')), esc_html__('Awaiting product image', 'woocommerce'));
             $html .= '</div>';
         }

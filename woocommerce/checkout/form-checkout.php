@@ -1,6 +1,6 @@
 <?php
 /**
- * Checkout Form
+ * Checkout Form.
  *
  * This template can be overridden by copying it to yourtheme/woocommerce/checkout/form-checkout.php.
  *
@@ -11,11 +11,9 @@
  * the readme will list any important changes.
  *
  * @see https://woocommerce.com/document/template-structure/
- * @package WooCommerce\Templates
  * @version 3.5.0
  */
-
-if (! defined('ABSPATH')) {
+if (!defined('ABSPATH')) {
     exit;
 } ?>
 
@@ -23,8 +21,9 @@ if (! defined('ABSPATH')) {
 	<?php do_action('woocommerce_before_checkout_form', $checkout);
 
 // If checkout registration is disabled and not logged in, the user cannot checkout.
-if (! $checkout->is_registration_enabled() && $checkout->is_registration_required() && ! is_user_logged_in()) {
+if (!$checkout->is_registration_enabled() && $checkout->is_registration_required() && !is_user_logged_in()) {
     echo esc_html(apply_filters('woocommerce_checkout_must_be_logged_in_message', __('You must be logged in to checkout.', 'woocommerce')));
+
     return;
 }
 

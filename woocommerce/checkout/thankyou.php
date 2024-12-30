@@ -1,6 +1,6 @@
 <?php
 /**
- * Thankyou page
+ * Thankyou page.
  *
  * This template can be overridden by copying it to yourtheme/woocommerce/checkout/thankyou.php.
  *
@@ -11,12 +11,10 @@
  * the readme will list any important changes.
  *
  * @see https://woocommerce.com/document/template-structure/
- * @package WooCommerce\Templates
  * @version 8.1.0
  *
  * @var WC_Order $order
  */
-
 defined('ABSPATH') || exit;
 ?>
 
@@ -51,7 +49,7 @@ defined('ABSPATH') || exit;
 
 				<?php else : ?>
 
-					<?php wc_get_template('checkout/order-received.php', [ 'order' => $order ]); ?>
+					<?php wc_get_template('checkout/order-received.php', ['order' => $order]); ?>
 
 					<ul class="woocommerce-order-overview woocommerce-thankyou-order-details order_details">
 
@@ -93,7 +91,7 @@ defined('ABSPATH') || exit;
 
 			<?php else : ?>
 
-				<?php wc_get_template('checkout/order-received.php', [ 'order' => false ]); ?>
+				<?php wc_get_template('checkout/order-received.php', ['order' => false]); ?>
 
 			<?php endif; ?>
 		</div>

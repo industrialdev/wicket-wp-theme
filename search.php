@@ -2,22 +2,22 @@
 
 <?php
 
-  $options_group           = get_field('search_listing_page', 'option');
+  $options_group = get_field('search_listing_page', 'option');
 //wicket_write_log($options_group, true);
 
-$show_search_bar         = $options_group['show_search_bar'] ?? true;
+$show_search_bar = $options_group['show_search_bar'] ?? true;
 
 // Filter configs
-$show_filter_bar         = $options_group['show_filter_bar'] ?? true;
-$taxonomy_filters_field  = $options_group['taxonomy_filters'] ?? '';
-$post_type_filters_field  = $options_group['post_type_filters'] ?? '';
+$show_filter_bar = $options_group['show_filter_bar'] ?? true;
+$taxonomy_filters_field = $options_group['taxonomy_filters'] ?? '';
+$post_type_filters_field = $options_group['post_type_filters'] ?? '';
 $show_filter_by_pub_date = $options_group['show_filter_by_published_date'] ?? true;
 
 // Card listing view configs
-$show_featured_image     = $options_group['card_show_featured_image'] ?? true;
-$show_content_type_tags  = $options_group['card_show_content_type_tags'] ?? true; // TODO: Update
-$show_pub_date           = $options_group['card_show_published_date'] ?? true;
-$show_excerpt            = $options_group['card_show_excerpt'] ?? true;
+$show_featured_image = $options_group['card_show_featured_image'] ?? true;
+$show_content_type_tags = $options_group['card_show_content_type_tags'] ?? true; // TODO: Update
+$show_pub_date = $options_group['card_show_published_date'] ?? true;
+$show_excerpt = $options_group['card_show_excerpt'] ?? true;
 
 // TODO: Add support for advanced/elastic search
 
@@ -40,23 +40,21 @@ foreach($post_type_filters_field as $post_type) {
     ];
 }
 
-
 //$query       = new WP_Query( $args );
-$query       = $wp_query; // Using the WordPress-provided query object that gets modified in custom/search.php
-$posts       = $query->posts;
+$query = $wp_query; // Using the WordPress-provided query object that gets modified in custom/search.php
+$posts = $query->posts;
 $total_posts = $query->found_posts;
-$page_num    = ($paged == 0) ? 1 : $paged;
-$start_page  = ($page_num * $posts_per_page) - ($posts_per_page - 1);
-$end_page    = ($page_num * $posts_per_page);
-$end_page    = ($total_posts < $end_page) ? $total_posts : $end_page;
-$page_count  = ceil($total_posts / $posts_per_page);
+$page_num = ($paged == 0) ? 1 : $paged;
+$start_page = ($page_num * $posts_per_page) - ($posts_per_page - 1);
+$end_page = ($page_num * $posts_per_page);
+$end_page = ($total_posts < $end_page) ? $total_posts : $end_page;
+$page_count = ceil($total_posts / $posts_per_page);
 
 // wicket_write_log( 'Total posts: ' . $total_posts, true );
 // wicket_write_log( 'Page num: ' . $page_num, true );
 // wicket_write_log( 'Start page: ' . $start_page, true );
 // wicket_write_log( 'End page: ' . $end_page, true );
 //wicket_write_log( $posts, true );
-
 
 ?>
 
@@ -99,7 +97,7 @@ $page_count  = ceil($total_posts / $posts_per_page);
 
         <div class="text-center" >
           <?php get_component('link', [
-              'classes' => [ 'search-page-clear-button', 'text-body-md', 'mt-4' ],
+              'classes' => ['search-page-clear-button', 'text-body-md', 'mt-4'],
               'text'    => __('Clear Search', 'wicket'),
               'url'    => '/?s=',
               'icon_start' => [
@@ -120,12 +118,12 @@ $page_count  = ceil($total_posts / $posts_per_page);
 
       <?php if($show_filter_bar): ?>
         <div
-          class="search-page-left-col basis-1/4 bg-white relative after:content-[''] after:absolute after:top-0 after:bottom-0 after:right-full after:bg-white after:w-[30vw] before:block lg:before:hidden before:content-[''] before:absolute before:top-0 before:bottom-0 before:left-full before:bg-white before:w-[30vw]">
+          class="search-page-left-col">
           <?php
         get_component('filter-form', [
             'taxonomies'       => $taxonomy_filters,
             'post_types'       => $post_type_filters,
-            'hide_date_filter' => ! $show_filter_by_pub_date,
+            'hide_date_filter' => !$show_filter_by_pub_date,
         ]);
           ?>
         </div>
@@ -134,7 +132,7 @@ $page_count  = ceil($total_posts / $posts_per_page);
       <div class="search-page-right-col pt-4 lg:pt-10 <?php if(!$show_filter_bar) {
           echo 'max-w-screen-lg lg:mx-auto';
       } else {
-          echo 'basis-3/4' ;
+          echo 'basis-3/4';
       } ?>">
         <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-7 px-4 lg:px-0">
           <div><?php _e('Displaying:', 'wicket'); ?>
@@ -170,18 +168,18 @@ $page_count  = ceil($total_posts / $posts_per_page);
             <?php
             while ($query->have_posts()) :
                 $query->the_post();
-                $post_id              = get_the_ID();
-                $permalink            = get_the_permalink($post_id);
+                $post_id = get_the_ID();
+                $permalink = get_the_permalink($post_id);
                 // TODO: Update taxonomies array this reads from
-                $content_type         = ! is_wp_error(get_the_terms($post_id, 'categories')) ? get_the_terms($post_id, 'categories') : [];
-                $title                = get_the_title($post_id);
-                $excerpt              = get_the_excerpt($post_id);
-                $pub_date             = get_the_date('M d, Y', $post_id);
-                $featured_image       = get_post_thumbnail_id($post_id);
-                $member_only          = is_member_only($post_id);
+                $content_type = !is_wp_error(get_the_terms($post_id, 'categories')) ? get_the_terms($post_id, 'categories') : [];
+                $title = get_the_title($post_id);
+                $excerpt = get_the_excerpt($post_id);
+                $pub_date = get_the_date('M d, Y', $post_id);
+                $featured_image = get_post_thumbnail_id($post_id);
+                $member_only = is_member_only($post_id);
 
                 $card_params = [
-                    'classes'           => [ 'mb-6' ],
+                    'classes'           => ['mb-6'],
                     //'content_type'      => $content_type,
                     'date'              => $show_pub_date ? $pub_date : '',
                     'topics'            => $show_content_type_tags && !empty($content_type) ? $content_type[0]->name : '',

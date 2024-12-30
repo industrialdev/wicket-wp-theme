@@ -1,7 +1,7 @@
 <?php
 /**
  * Block: Tickets
- * Items
+ * Items.
  *
  * Override this template in your own theme by creating a file at:
  * [your-theme]/tribe/tickets/v2/tickets/items.php
@@ -35,7 +35,6 @@
  * @var string                             $cart_url                    [Global] Link to Cart (could be empty).
  * @var string                             $checkout_url                [Global] Link to Checkout (could be empty).
  */
-
 if (empty($tickets_on_sale)) {
     return;
 }
@@ -112,7 +111,7 @@ foreach ($tickets_on_sale as $key => $ticket) {
                 'currency_symbol'     => $currency->get_currency_symbol($ticket->ID, true),
                 'show_unlimited'      => (bool) $show_unlimited,
                 'available_count'     => $available_count,
-                'is_unlimited'        => - 1 === $available_count,
+                'is_unlimited'        => -1 === $available_count,
                 'max_at_a_time'       => $handler->get_ticket_max_purchase($ticket->ID),
             ]
         );

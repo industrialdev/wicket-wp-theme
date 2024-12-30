@@ -1,10 +1,10 @@
 <?php
 
-if (! function_exists('wicket_breadcrumb')) {
+if (!function_exists('wicket_breadcrumb')) {
     function wicket_breadcrumb($reversed = false)
     {
         $theme_locations = get_nav_menu_locations();
-        if (! isset($theme_locations['header'])) {
+        if (!isset($theme_locations['header'])) {
             return '';
         }
         global $post;
@@ -16,14 +16,14 @@ if (! function_exists('wicket_breadcrumb')) {
         $separator = get_component(
             'icon',
             [
-                'classes' => [ '' ],
+                'classes' => [''],
                 'icon'    => $separator_icon,
                 'text'    => '',
             ],
             false
         );
-        $crumbs    = [];
-        $crumbs[]  = get_component(
+        $crumbs = [];
+        $crumbs[] = get_component(
             'link',
             [
                 'default_link_style' => true,
@@ -37,7 +37,7 @@ if (! function_exists('wicket_breadcrumb')) {
             ],
             false
         );
-        $url       = get_permalink();
+        $url = get_permalink();
         if (str_contains($url, 'resource')) {
             $crumbs[] = '<span class="font-bold">' . __('Resources', 'wicket') . '</span>';
         } elseif (str_contains($url, 'news')) {
@@ -52,14 +52,14 @@ if (! function_exists('wicket_breadcrumb')) {
                 // Get parents in the right order
                 $anc = array_reverse($anc);
                 // Parent page loop
-                if (! isset($parents)) {
+                if (!isset($parents)) {
                     $parents = null;
                 }
                 foreach ($anc as $ancestor) {
                     $crumbs[] = get_component(
                         'link',
                         [
-                            'classes' => [ '' ],
+                            'classes' => [''],
                             'reversed' => $reversed,
                             'default_link_style' => true,
                             'url'     => get_permalink($ancestor),

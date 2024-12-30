@@ -7,13 +7,13 @@
 // Has an option to print to screen with the value wrapped in <pre> tags.
 // Usage example: write_log( 'The variable value is: ' . $myVariable );
 // Usage example 2: write_log( $myVariable, true );
-if (! function_exists('wicket_write_log')) {
+if (!function_exists('wicket_write_log')) {
     function wicket_write_log($log, $print_preformatted_to_screen = false)
     {
         if ($print_preformatted_to_screen) {
-            print_r("<pre>");
+            print_r('<pre>');
             print_r($log);
-            print_r("</pre>");
+            print_r('</pre>');
         } else {
             if (is_array($log) || is_object($log)) {
                 error_log(print_r($log, true));
@@ -31,6 +31,7 @@ function is_member_only($post_id)
     // if roles are specified, check if a "member" role is present
     if ($visibility === 'role') {
         $allowed_roles = get_post_meta($post_id, '_wppcp_post_page_roles', true);
+
         return in_array('member', $allowed_roles);
     }
 
@@ -76,9 +77,9 @@ function wicket_get_current_url($root_only = false)
     // Credit: https://www.javatpoint.com/how-to-get-current-page-url-in-php
 
     if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
-        $url = "https://";
+        $url = 'https://';
     } else {
-        $url = "http://";
+        $url = 'http://';
     }
 
     // Append the host(domain name, ip) to the URL.
@@ -112,13 +113,13 @@ function wicket_get_lang_url($lang, $url = '')
         $split_url = explode('/', $url);
         if ($default_lang == 'en') {
             if (($key = array_search('fr', $split_url)) !== false) {
-                unset($split_url[ $key ]);
+                unset($split_url[$key]);
             }
             $new_url = implode('/', $split_url);
             // Todo: add support for more languages
         } else {
             if (($key = array_search('en', $split_url)) !== false) {
-                unset($split_url[ $key ]);
+                unset($split_url[$key]);
             }
             $new_url = implode('/', $split_url);
         }
@@ -146,13 +147,13 @@ function get_related_content_type($post_type)
 
     $content_types = apply_filters('wicket_related_content_types', $default_content_types);
 
-    return $content_types[ $post_type ] ?? '';
+    return $content_types[$post_type] ?? '';
 }
 
 function get_related_content_type_term($post_id)
 {
     $related_content_type = get_related_content_type(get_post_type($post_id));
-    $content_type         = ! is_wp_error(get_the_terms($post_id, $related_content_type)) ? get_the_terms($post_id, $related_content_type) : [];
+    $content_type = !is_wp_error(get_the_terms($post_id, $related_content_type)) ? get_the_terms($post_id, $related_content_type) : [];
 
     if ($content_type) {
         return $content_type[0]->name;
@@ -172,7 +173,7 @@ function get_related_topic_type($post_type)
 
     $topic_types = apply_filters('wicket_related_topic_types', $default_topic_types);
 
-    return $topic_types[ $post_type ] ?? '';
+    return $topic_types[$post_type] ?? '';
 }
 
 function get_login_url()
@@ -185,10 +186,11 @@ function get_login_url()
 function get_field_from_block($post_id, $block_name, $field_name)
 {
     $content = get_post_field('post_content', $post_id);
-    $blocks  = parse_blocks($content);
+    $blocks = parse_blocks($content);
     foreach ($blocks as $block) {
         if ($block['blockName'] === $block_name) {
-            $field = $block['attrs']['data'][ $field_name ];
+            $field = $block['attrs']['data'][$field_name];
+
             return $field;
         }
     }

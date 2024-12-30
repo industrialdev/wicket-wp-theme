@@ -1,6 +1,6 @@
 <?php
 /**
- * Wicket Dynamically Related Events Block
+ * Wicket Dynamically Related Events Block.
  *
  **/
 

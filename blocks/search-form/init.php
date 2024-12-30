@@ -1,6 +1,6 @@
 <?php
 /**
- * Wicket Search Form Block
+ * Wicket Search Form Block.
  *
  **/
 

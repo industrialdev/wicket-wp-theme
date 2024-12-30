@@ -11,7 +11,7 @@ namespace Wicket\Blocks\Wicket_Listing;
  */
 function init( $block = [] ) {
 
-	$attrs = get_block_wrapper_attributes( [ 
+	$attrs = get_block_wrapper_attributes( [
 		'class' => 'block-wicket-listing alignfull',
 	] );
 
@@ -106,7 +106,7 @@ function init( $block = [] ) {
 		$keyword = $_GET['keyword'];
 	}
 
-	$tax_query = [ 
+	$tax_query = [
 		'relation' => 'AND',
 	];
 
@@ -117,7 +117,7 @@ function init( $block = [] ) {
 			array_push( $terms, $term->slug );
 		}
 
-		$taxonomy_args = [ 
+		$taxonomy_args = [
 			'taxonomy' => 'news_type',
 			'field'    => 'slug',
 			'operator' => 'IN',
@@ -133,7 +133,7 @@ function init( $block = [] ) {
 			array_push( $terms, $term->slug );
 		}
 
-		$taxonomy_args = [ 
+		$taxonomy_args = [
 			'taxonomy' => 'resource_type',
 			'field'    => 'slug',
 			'operator' => 'IN',
@@ -149,7 +149,7 @@ function init( $block = [] ) {
 			array_push( $terms, $term->slug );
 		}
 
-		$taxonomy_args = [ 
+		$taxonomy_args = [
 			'taxonomy' => 'topics',
 			'field'    => 'slug',
 			'operator' => 'IN',
@@ -165,7 +165,7 @@ function init( $block = [] ) {
 			array_push( $terms, $term->slug );
 		}
 
-		$taxonomy_args = [ 
+		$taxonomy_args = [
 			'taxonomy' => 'tribe_events_cat',
 			'field'    => 'slug',
 			'operator' => 'IN',
@@ -182,7 +182,7 @@ function init( $block = [] ) {
 			array_push( $terms, $term->slug );
 		}
 
-		$taxonomy_args = [ 
+		$taxonomy_args = [
 			'taxonomy' => 'product_cat',
 			'field'    => 'slug',
 			'operator' => 'IN',
@@ -201,7 +201,7 @@ function init( $block = [] ) {
 			$terms[] = $term->slug;
 		}
 
-		$taxonomy_args = [ 
+		$taxonomy_args = [
 			'taxonomy' => $term->taxonomy,
 			'field'    => 'slug',
 			'operator' => 'IN',
@@ -215,7 +215,7 @@ function init( $block = [] ) {
 	if ( class_exists( 'WooCommerce' ) && $post_type == 'product' ) {
 		$attributes = wc_get_attribute_taxonomies();
 		foreach ( $attributes as $attribute ) {
-			$taxonomy_filters[] = [ 
+			$taxonomy_filters[] = [
 				'slug' => 'pa_' . $attribute->attribute_name,
 				'name' => $attribute->attribute_label,
 			];
@@ -227,7 +227,7 @@ function init( $block = [] ) {
 	if ( is_array( $additional_filters ) ) {
 		foreach ( $additional_filters as $filter ) {
 			if ( isset( $_GET[ $filter['taxonomy'] ] ) ) {
-				$taxonomy_args = [ 
+				$taxonomy_args = [
 					'taxonomy' => $filter['taxonomy'],
 					'field'    => 'slug',
 					'operator' => 'IN',
@@ -252,7 +252,7 @@ function init( $block = [] ) {
 	if ( is_array( $taxonomy_filters ) ) {
 		foreach ( $taxonomy_filters as $taxonomy ) {
 			if ( isset( $_GET[ $taxonomy['slug'] ] ) ) {
-				$taxonomy_args = [ 
+				$taxonomy_args = [
 					'taxonomy' => $taxonomy['slug'],
 					'field'    => 'slug',
 					'operator' => 'IN',
@@ -287,7 +287,7 @@ function init( $block = [] ) {
 			<div
 				class="block-wicket-listing__search-form <?php echo $search_form_bg_color ?> <?php echo defined( 'WICKET_WP_THEME_V2' ) ? '' : 'px-4 py-5 lg:px-0' ?>">
 				<div class="container">
-					<?php get_component( 'search-form', [ 
+					<?php get_component( 'search-form', [
 						'button_reversed' => defined( 'WICKET_WP_THEME_V2' ) ? true : false,
 					] ); ?>
 				</div>
@@ -306,7 +306,7 @@ function init( $block = [] ) {
 					<div
 						class="block-wicket-listing__filters basis-1/4 bg-white relative after:content-[''] after:absolute after:top-0 after:bottom-0 after:right-full after:bg-white after:w-[30vw] before:block lg:before:hidden before:content-[''] before:absolute before:top-0 before:bottom-0 before:left-full before:bg-white before:w-[30vw]">
 						<?php
-						get_component( 'filter-form', [ 
+						get_component( 'filter-form', [
 							'taxonomies'            => $taxonomy_filters,
 							'hide_date_filter'      => $hide_date_filter,
 							'pre_filter_categories' => $pre_filter_categories,
@@ -317,7 +317,7 @@ function init( $block = [] ) {
 				<div
 					class="block-wicket-listing__entries <?php echo ! empty( $taxonomy_filters ) ? 'basis-3/4' : 'basis-full' ?> pt-4 lg:pt-10">
 					<?php
-					$args = [ 
+					$args = [
 						'post_type'      => $post_type,
 						'posts_per_page' => $posts_per_page,
 						'paged'          => $paged,
@@ -332,22 +332,22 @@ function init( $block = [] ) {
 						$start_date = $_GET['start_date'];
 						$end_date   = $_GET['end_date'];
 
-						$args['date_query'] = [ 
+						$args['date_query'] = [
 							'after'     => $start_date,
 							'before'    => $end_date,
 							'inclusive' => true,
 						];
 					}
 
-					$args['meta_query'] = [ 
-						[ 
+					$args['meta_query'] = [
+						[
 							'relation' => 'OR',
-							[ 
+							[
 								'key'     => 'hide_on_listings',
 								'value'   => '0',
 								'compare' => '=',
 							],
-							[ 
+							[
 								'key'     => 'hide_on_listings',
 								'compare' => 'NOT EXISTS',
 							],
@@ -461,7 +461,7 @@ function init( $block = [] ) {
 								}
 
 								if ( $listing_layout === 'grid' ) {
-									$grid_card_params = [ 
+									$grid_card_params = [
 										'classes'      => defined( 'WICKET_WP_THEME_V2' ) ? [] : [ 'p-4' ],
 										'post_type'    => $post_type,
 										'post_id'      => $post_id,
@@ -469,7 +469,7 @@ function init( $block = [] ) {
 										'title'        => $title,
 										'excerpt'      => ! $hide_excerpt ? $excerpt : '',
 										'date'         => $date,
-										'image'        => ( ! $hide_featured_image && $featured_image ) ? [ 
+										'image'        => ( ! $hide_featured_image && $featured_image ) ? [
 											'id' => $featured_image,
 										] : '',
 										'link'         => $permalink,
@@ -480,7 +480,7 @@ function init( $block = [] ) {
 									get_component( $post_type == 'product' ? 'card-product' : 'card-featured', $grid_card_params );
 
 								} else {
-									$listing_card_params = [ 
+									$listing_card_params = [
 										'classes'                   => [ 'mb-6', "item-number-{$item_number}" ],
 										'post_type'                 => $post_type,
 										'content_type'              => ! $hide_type_taxonomy ? get_related_content_type_term( $post_id ) : '',
@@ -488,7 +488,7 @@ function init( $block = [] ) {
 										'excerpt'                   => ! $hide_excerpt ? $excerpt : '',
 										'date'                      => $date,
 										'featured_image'            => ! $hide_featured_image ? $featured_image : '',
-										'link'                      => [ 
+										'link'                      => [
 											'url'    => $permalink,
 											'text'   => 'Read more',
 											'target' => '_self',
@@ -517,7 +517,7 @@ function init( $block = [] ) {
 								echo '</div>';
 							}
 
-							the_wicket_pagination( [ 
+							the_wicket_pagination( [
 								'total' => $query->max_num_pages,
 							] );
 							?>

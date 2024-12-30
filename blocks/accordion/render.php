@@ -1,6 +1,6 @@
 <?php
 /**
- * Wicket Accordion
+ * Wicket Accordion.
  *
  **/
 

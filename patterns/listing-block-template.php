@@ -3,9 +3,8 @@
  * Title: A block template for listings
  * Slug: wicket/listing-block-template
  * Inserter: true
- * Categories: wicket
+ * Categories: wicket.
  */
-
 ?>
 <!-- wp:wicket/banner {"name":"wicket/banner","data":{"banner_title":"Title of Listing Page","_banner_title":"field_6595533eeaf64","banner_intro":"Intro - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nis","_banner_intro":"field_65955dccef545","banner_show_breadcrumbs":"1","_banner_show_breadcrumbs":"field_65955521c253b","banner_show_share":"1","_banner_show_share":"field_65955e997d768","banner_background_style":"light","_banner_background_style":"field_659e9f52f673c","banner_text_alignment":"left","_banner_text_alignment":"field_6595748b1c0dc","banner_image":"no-image","_banner_image":"field_65aa70754a630","banner_call_to_action_title":"","_banner_call_to_action_title":"field_659823f974c22","banner_call_to_action_description":"","_banner_call_to_action_description":"field_6598240674c23","banner_call_to_action_links":"","_banner_call_to_action_links":"field_6598245774c25","banner_call_to_action":"","_banner_call_to_action":"field_659823d874c21"},"align":"full","mode":"preview","alignText":"left","lock":{"move":true,"remove":true}} /-->
 

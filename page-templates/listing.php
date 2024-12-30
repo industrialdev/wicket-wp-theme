@@ -1,8 +1,7 @@
 <?php
 /**
- * Template Name: Listing Page
+ * Template Name: Listing Page.
  */
-
 get_header();
 
 if (have_posts()) :

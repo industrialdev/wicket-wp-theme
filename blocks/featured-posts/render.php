@@ -1,6 +1,6 @@
 <?php
 /**
- * Wicket Featured posts block
+ * Wicket Featured posts block.
  *
  **/
 

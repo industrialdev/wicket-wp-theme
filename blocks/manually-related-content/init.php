@@ -1,6 +1,6 @@
 <?php
 /**
- * Wicket Manually Related Content Block
+ * Wicket Manually Related Content Block.
  *
  **/
 
@@ -16,34 +16,35 @@ namespace Wicket\Blocks\Wicket_Manually_Related_Content;
 function init($block = [])
 {
 
-    $attrs                    = get_block_wrapper_attributes();
-    $title                    = get_field('manually_related_content_title');
-    $posts                    = get_field('manually_related_content_posts');
-    $layout_style             = get_field('manually_related_content_layout_style');
-    $column_count             = get_field('manually_related_content_column_count');
-    $buttons_equal_width      = get_field('manually_related_content_make_buttons_same_width');
-    $rounded_corners          = get_field('manually_related_content_rounded_corners');
-    $posts_wrapper_classes    = [
+    $attrs = get_block_wrapper_attributes();
+    $title = get_field('manually_related_content_title');
+    $posts = get_field('manually_related_content_posts');
+    $layout_style = get_field('manually_related_content_layout_style');
+    $column_count = get_field('manually_related_content_column_count');
+    $buttons_equal_width = get_field('manually_related_content_make_buttons_same_width');
+    $rounded_corners = get_field('manually_related_content_rounded_corners');
+    $posts_wrapper_classes = [
         'grid',
         'grid-cols-1',
         'items-start',
         'xl:px-0',
     ];
-    $posts_wrapper_classes[]  = defined('WICKET_WP_THEME_V2') ? 'px-[--space-200]' : 'px-4';
-    $posts_wrapper_classes[]  = defined('WICKET_WP_THEME_V2') ? 'gap-[--space-150]' : 'gap-3';
-    $placeholder_styles       = '';
+    $posts_wrapper_classes[] = defined('WICKET_WP_THEME_V2') ? 'px-[--space-200]' : 'px-4';
+    $posts_wrapper_classes[] = defined('WICKET_WP_THEME_V2') ? 'gap-[--space-150]' : 'gap-3';
+    $placeholder_styles = '';
     $button_same_width_params = '';
     if (is_admin()) {
         $placeholder_styles = 'style="min-height: 40px;border: 1px solid var(--wp--preset--color--light);"';
     }
 
-    if (! $posts) {
+    if (!$posts) {
         $output = '<div ' . $placeholder_styles . '>';
         if (is_admin()) {
-            $output .= "<p>" . __('Use the Block controls on the right to add manually related content.', 'wicket') . "</p>";
+            $output .= '<p>' . __('Use the Block controls on the right to add manually related content.', 'wicket') . '</p>';
         }
         $output .= '</div>';
         echo $output;
+
         return;
     }
 
@@ -58,7 +59,7 @@ function init($block = [])
     echo '<div ' . $attrs . ' ' . $placeholder_styles . '>';
 
     if (is_admin() && empty($posts) && empty($title)) {
-        echo "<p>" . __('Use the Block controls on the right to add manually related content.', 'wicket') . "</p>";
+        echo '<p>' . __('Use the Block controls on the right to add manually related content.', 'wicket') . '</p>';
     }
 
     if ($title) {
@@ -91,19 +92,19 @@ function init($block = [])
 	>';
     foreach ($posts as $post) {
         $content_type = $post['content_type'];
-        $link         = $post['link'];
-        $document     = $post['document'];
-        $title_text   = ! empty($post['display_text']) ? $post['display_text'] : '';
+        $link = $post['link'];
+        $document = $post['document'];
+        $title_text = !empty($post['display_text']) ? $post['display_text'] : '';
         if (empty($title_text) && isset($post['link']['title'])) {
             $title_text = $post['link']['title'];
         }
-        $body_text          = $post['body_text']; //
+        $body_text = $post['body_text']; //
         $cta_label_override = $post['cta_label_override']; //
-        $icon_type          = $post['icon_type']; //
-        $icon_img           = $post['icon'];
+        $icon_type = $post['icon_type']; //
+        $icon_img = $post['icon'];
 
         get_component('card-related', [
-            'classes'            => [ 'man-related-content-card' ],
+            'classes'            => ['man-related-content-card'],
             'content_type'       => $content_type,
             'link'               => $link,
             'document'           => $document,

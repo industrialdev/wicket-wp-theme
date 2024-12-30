@@ -1,6 +1,6 @@
 <?php
 /**
- * Wicket Icon Grid
+ * Wicket Icon Grid.
  *
  **/
 
