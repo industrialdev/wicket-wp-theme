@@ -107,7 +107,7 @@ function init( $block = [] ) {
 	}
 
 	$tax_query = [
-		'relation' => 'AND',
+		'relation' => 'OR',
 	];
 
 	/* Add news type taxonomy to tax query if it is set */
@@ -248,6 +248,8 @@ function init( $block = [] ) {
 		$taxonomy_filters = array_merge( $taxonomy_filters, $additional_filters );
 	}
 
+	$has_filters = false;
+
 	/* Add custom taxonomy filters to tax query if they are set */
 	if ( is_array( $taxonomy_filters ) ) {
 		foreach ( $taxonomy_filters as $taxonomy ) {
@@ -258,8 +260,13 @@ function init( $block = [] ) {
 					'operator' => 'IN',
 					'terms'    => $_GET[ $taxonomy['slug'] ],
 				];
-				array_push( $tax_query, $taxonomy_args );
+
+				$has_filters = true;
 			}
+		}
+
+		if ( $has_filters ) {
+			$tax_query = [ $taxonomy_args ];
 		}
 	}
 
@@ -278,6 +285,9 @@ function init( $block = [] ) {
 	if ( $post_type == 'product' ) {
 		$listing_layout = 'grid';
 	}
+
+    /* Add custom hook for adding extra values to $tax_query */
+    do_action( 'wicket_listing_block_before_query', $tax_query );
 
 	?>
 
