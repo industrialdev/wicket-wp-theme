@@ -286,8 +286,8 @@ function init( $block = [] ) {
 		$listing_layout = 'grid';
 	}
 
-    /* Add custom hook for adding extra values to $tax_query */
-    do_action( 'wicket_listing_block_before_query', $tax_query );
+	/* Add custom filter for adding extra values to $tax_query */
+	$tax_query = apply_filters( 'wicket_listing_block_before_query', $tax_query );
 
 	?>
 
