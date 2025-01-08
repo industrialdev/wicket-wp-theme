@@ -24,6 +24,7 @@
                 "attachment": "Media",
                 "tribe_event_series": "Series",
                 "product": "Products",
+                "my-account": "Account Centre",
                 "wicket_membership": "Memberships",
                 "wicket_mship_config": "Membership Configs",
                 "wicket_mship_tier": "Membership Tiers",
@@ -112,7 +113,7 @@
             "name": "listing_event_categories",
             "aria-label": "",
             "type": "taxonomy",
-            "instructions": "Select the news types you would like to appear in this listing.",
+            "instructions": "Select the event categories you would like to appear in this listing.",
             "required": 0,
             "conditional_logic": [
                 [
@@ -135,6 +136,42 @@
             "load_terms": 0,
             "return_format": "object",
             "field_type": "checkbox",
+            "allow_in_bindings": 1,
+            "bidirectional": 0,
+            "multiple": 0,
+            "allow_null": 0,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_675166e24d3cf",
+            "label": "Product Categories",
+            "name": "listing_product_categories",
+            "aria-label": "",
+            "type": "taxonomy",
+            "instructions": "Select the product categories you would like to appear in this listing.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_65c2245631b3e",
+                        "operator": "==",
+                        "value": "product"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "listing__select-post-type",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "taxonomy": "product_cat",
+            "add_term": 1,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "object",
+            "field_type": "checkbox",
+            "allow_in_bindings": 1,
             "bidirectional": 0,
             "multiple": 0,
             "allow_null": 0,
@@ -173,6 +210,52 @@
             "multiple": 0,
             "allow_null": 0,
             "bidirectional_target": []
+        },
+        {
+            "key": "field_67727460a5358",
+            "label": "Additional Taxonomies -",
+            "name": "listing_additional_taxonomies",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "Select the resource types you would like to appear in this listing.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_65c2245631b3e",
+                        "operator": "==",
+                        "value": "resources"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "listing__select-post-type",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "clone": [
+                "group_677278f9a9652"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 1,
+            "prefix_name": 0,
+            "choices": {
+                "0": "-- Select Taxonomy --",
+                "category": "Categories",
+                "post_tag": "Tags",
+                "post_format": "Formats",
+                "product_cat": "Product categories",
+                "product_tag": "Product tags",
+                "product_shipping_class": "Product shipping classes",
+                "tribe_events_cat": "Event Categories",
+                "news_type": "News Type",
+                "resource_type": "Resource Type",
+                "topics": "Topics",
+                "tec_organizer_category": "Organizer Categories",
+                "tec_venue_category": "Venue Categories"
+            }
         },
         {
             "key": "field_65f44e1216152",
@@ -320,6 +403,7 @@
                     "return_format": "value",
                     "multiple": 0,
                     "allow_null": 0,
+                    "allow_in_bindings": 1,
                     "ui": 0,
                     "ajax": 0,
                     "placeholder": "",
@@ -357,6 +441,7 @@
                     "return_format": "value",
                     "multiple": 0,
                     "allow_null": 0,
+                    "allow_in_bindings": 1,
                     "ui": 0,
                     "ajax": 0,
                     "placeholder": "",
@@ -394,6 +479,7 @@
                     "return_format": "value",
                     "multiple": 0,
                     "allow_null": 0,
+                    "allow_in_bindings": 1,
                     "ui": 0,
                     "ajax": 0,
                     "placeholder": "",
@@ -430,6 +516,7 @@
                     "return_format": "value",
                     "multiple": 0,
                     "allow_null": 0,
+                    "allow_in_bindings": 1,
                     "ui": 0,
                     "ajax": 0,
                     "placeholder": "",
@@ -467,6 +554,7 @@
                     "return_format": "value",
                     "multiple": 0,
                     "allow_null": 0,
+                    "allow_in_bindings": 1,
                     "ui": 0,
                     "ajax": 0,
                     "placeholder": "",
@@ -497,6 +585,86 @@
             ]
         },
         {
+            "key": "field_67727a74ff7f0",
+            "label": "Additional Taxonomy Filters",
+            "name": "listing_additional_taxonomy_filters",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Select the taxonomies you would like to use as filters on the page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Row",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_67727a74ff7f7",
+                    "label": "Additional Taxonomy",
+                    "name": "slug",
+                    "aria-label": "",
+                    "type": "clone",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_65c2245631b3e",
+                                "operator": "==",
+                                "value": "0"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 1,
+                    "clone": [
+                        "group_6602a771ea991"
+                    ],
+                    "display": "seamless",
+                    "layout": "block",
+                    "prefix_label": 0,
+                    "prefix_name": 0,
+                    "parent_repeater": "field_67727a74ff7f0"
+                },
+                {
+                    "key": "field_67727a74ff7f8",
+                    "label": "Tooltip",
+                    "name": "tooltip",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 2,
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 1,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_67727a74ff7f0"
+                }
+            ]
+        },
+        {
             "key": "field_66d1fc5356ca0",
             "label": "Exclude From Results",
             "name": "listing_exclude_from_results",
@@ -517,9 +685,10 @@
             "return_format": "object",
             "multiple": 1,
             "allow_null": 0,
+            "allow_in_bindings": 1,
             "bidirectional": 0,
-            "ui": 1,
-            "bidirectional_target": []
+            "bidirectional_target": "",
+            "ui": 1
         },
         {
             "key": "field_65f184f1e967c",
@@ -538,6 +707,7 @@
             "wpml_cf_preferences": 1,
             "message": "",
             "default_value": 0,
+            "allow_in_bindings": 1,
             "ui_on_text": "",
             "ui_off_text": "",
             "ui": 1
@@ -559,6 +729,7 @@
             "wpml_cf_preferences": 1,
             "message": "",
             "default_value": 0,
+            "allow_in_bindings": 1,
             "ui_on_text": "",
             "ui_off_text": "",
             "ui": 1
@@ -580,6 +751,7 @@
             "wpml_cf_preferences": 1,
             "message": "",
             "default_value": 0,
+            "allow_in_bindings": 1,
             "ui_on_text": "",
             "ui_off_text": "",
             "ui": 1
@@ -601,6 +773,7 @@
             "wpml_cf_preferences": 1,
             "message": "",
             "default_value": 0,
+            "allow_in_bindings": 1,
             "ui_on_text": "",
             "ui_off_text": "",
             "ui": 1
@@ -622,6 +795,7 @@
             "wpml_cf_preferences": 1,
             "message": "",
             "default_value": 0,
+            "allow_in_bindings": 1,
             "ui_on_text": "",
             "ui_off_text": "",
             "ui": 1
@@ -643,6 +817,7 @@
             "wpml_cf_preferences": 1,
             "message": "",
             "default_value": 0,
+            "allow_in_bindings": 1,
             "ui_on_text": "",
             "ui_off_text": "",
             "ui": 1
@@ -664,6 +839,7 @@
             "wpml_cf_preferences": 1,
             "message": "",
             "default_value": 0,
+            "allow_in_bindings": 1,
             "ui_on_text": "",
             "ui_off_text": "",
             "ui": 1
@@ -685,6 +861,7 @@
             "wpml_cf_preferences": 1,
             "message": "",
             "default_value": 0,
+            "allow_in_bindings": 1,
             "ui_on_text": "",
             "ui_off_text": "",
             "ui": 1
@@ -706,6 +883,7 @@
             "wpml_cf_preferences": 2,
             "default_value": "",
             "maxlength": "",
+            "allow_in_bindings": 1,
             "placeholder": "",
             "prepend": "",
             "append": ""
@@ -727,6 +905,7 @@
             "wpml_cf_preferences": 2,
             "default_value": "",
             "maxlength": "",
+            "allow_in_bindings": 1,
             "placeholder": "",
             "prepend": "",
             "append": ""
@@ -751,5 +930,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "translation",
-    "modified": 1725979173
+    "modified": 1735557966
 }

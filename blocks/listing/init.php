@@ -21,9 +21,12 @@ function init( $block = [] ) {
 	$resource_types            = $block['resource_types'] ?? get_field( 'listing_resource_type' );
 	$topics_types              = $block['topics_types'] ?? get_field( 'listing_topic' );
 	$event_categories          = $block['event_categories'] ?? get_field( 'listing_event_categories' );
+	$product_categories        = $block['product_categories'] ?? get_field( 'listing_product_categories' );
+	$additional_taxonomies     = $block['additional_taxonomies'] ?? get_field( 'listing_additional_taxonomies' );
 	$posts_per_page            = $block['posts_per_page'] ?? get_field( 'listing_posts_per_page' );
 	$listing_layout            = get_field( 'listing_layout' ) ?? 'list';
 	$taxonomy_filters          = $block['taxonomy_filters'] ?? get_field( 'listing_taxonomy_filters' );
+	$additional_filters        = $block['additional_taxonomy_filters'] ?? get_field( 'listing_additional_taxonomy_filters' );
 	$exclude_from_results      = $block['exclude_from_results'] ?? get_field( 'listing_exclude_from_results' );
 	$hide_search               = $block['hide_search'] ?? get_field( 'listing_hide_search' );
 	$hide_date_filter          = $block['hide_search'] ?? get_field( 'listing_hide_date_filter' );
@@ -36,6 +39,7 @@ function init( $block = [] ) {
 	$listing_download_label    = get_field( 'listing_download_label' ) ?? __( 'Download', 'wicket' );
 	$listing_link_label        = get_field( 'listing_link_label' ) ?? __( 'View Page', 'wicket' );
 	$date_format               = apply_filters( 'wicket_general_date_format', 'F j, Y' );
+	$pre_filter_categories     = [];
 
 	$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
@@ -55,6 +59,16 @@ function init( $block = [] ) {
 		case 'date-desc':
 			$orderby = 'date';
 			$order = 'DESC';
+			break;
+	}
+
+	/* Pre-filter the taxonomy filters based on the post type */
+	switch ( $post_type ) {
+		case 'tribe_events':
+			$pre_filter_categories = $event_categories;
+			break;
+		case 'product':
+			$pre_filter_categories = $product_categories;
 			break;
 	}
 
@@ -93,7 +107,7 @@ function init( $block = [] ) {
 	}
 
 	$tax_query = [
-		'relation' => 'AND',
+		'relation' => 'OR',
 	];
 
 	/* Add news type taxonomy to tax query if it is set */
@@ -161,10 +175,45 @@ function init( $block = [] ) {
 		array_push( $tax_query, $taxonomy_args );
 	}
 
-	/* Add WooCommerce product attributes */
-	if ( class_exists( 'WooCommerce' ) ) {
-		$attributes = wc_get_attribute_taxonomies();
+	/* Add product_cat taxonomy to tax query if it is set */
+	if ( ! empty( $product_categories ) && ! isset( $_GET['product_cat'] ) ) {
+		$terms = [];
+		foreach ( $product_categories as $term ) {
+			array_push( $terms, $term->slug );
+		}
 
+		$taxonomy_args = [
+			'taxonomy' => 'product_cat',
+			'field'    => 'slug',
+			'operator' => 'IN',
+			'terms'    => $terms,
+		];
+
+		array_push( $tax_query, $taxonomy_args );
+	}
+
+	/* Add additional taxonomies to tax query if they are set */
+	if ( ! empty( $additional_taxonomies ) ) {
+		$taxonomies = $additional_taxonomies['taxonomy_terms'];
+		$terms      = [];
+		foreach ( $taxonomies as $taxonomy ) {
+			$term    = get_term( $taxonomy );
+			$terms[] = $term->slug;
+		}
+
+		$taxonomy_args = [
+			'taxonomy' => $term->taxonomy,
+			'field'    => 'slug',
+			'operator' => 'IN',
+			'terms'    => $terms,
+		];
+
+		array_push( $tax_query, $taxonomy_args );
+	}
+
+	/* Add WooCommerce product attributes to filters if post type is product */
+	if ( class_exists( 'WooCommerce' ) && $post_type == 'product' ) {
+		$attributes = wc_get_attribute_taxonomies();
 		foreach ( $attributes as $attribute ) {
 			$taxonomy_filters[] = [
 				'slug' => 'pa_' . $attribute->attribute_name,
@@ -172,6 +221,34 @@ function init( $block = [] ) {
 			];
 		}
 	}
+
+
+	/* Add additional taxonomy filters to tax query if they are set */
+	if ( is_array( $additional_filters ) ) {
+		foreach ( $additional_filters as $filter ) {
+			if ( isset( $_GET[ $filter['taxonomy'] ] ) ) {
+				$taxonomy_args = [
+					'taxonomy' => $filter['taxonomy'],
+					'field'    => 'slug',
+					'operator' => 'IN',
+					'terms'    => $_GET[ $filter['taxonomy'] ],
+				];
+				array_push( $tax_query, $taxonomy_args );
+			}
+		}
+
+		// Change 'taxonmy' key to 'slug' in $additional_filters array
+		$additional_filters = array_map( function ($filter) {
+			$filter['slug'] = $filter['taxonomy'];
+			unset( $filter['taxonomy'] );
+			return $filter;
+		}, $additional_filters );
+
+		// Merge $additional_filters with $taxonomy_filters
+		$taxonomy_filters = array_merge( $taxonomy_filters, $additional_filters );
+	}
+
+	$has_filters = false;
 
 	/* Add custom taxonomy filters to tax query if they are set */
 	if ( is_array( $taxonomy_filters ) ) {
@@ -183,27 +260,46 @@ function init( $block = [] ) {
 					'operator' => 'IN',
 					'terms'    => $_GET[ $taxonomy['slug'] ],
 				];
-				array_push( $tax_query, $taxonomy_args );
+
+				$has_filters = true;
 			}
+		}
+
+		if ( $has_filters ) {
+			$tax_query = [ $taxonomy_args ];
 		}
 	}
 
-	$search_form_bg_color       = apply_filters( 'wicket_listing_search_form_bg_color', 'bg-dark-010' );
-	$listing_container_bg_color = apply_filters( 'wicket_listing_container_bg_color', 'bg-light-010' );
+	$default_search_form_bg_color       = '';
+	$default_listing_container_bg_color = '';
+
+	if ( ! defined( 'WICKET_WP_THEME_V2' ) ) {
+		$default_search_form_bg_color       = 'bg-dark-010';
+		$default_listing_container_bg_color = 'bg-light-010';
+	}
+
+	$search_form_bg_color       = apply_filters( 'wicket_listing_search_form_bg_color', $default_search_form_bg_color );
+	$listing_container_bg_color = apply_filters( 'wicket_listing_container_bg_color', $default_listing_container_bg_color );
 
 	/* Set listing layout to grid if post type is products */
 	if ( $post_type == 'product' ) {
 		$listing_layout = 'grid';
 	}
 
+    /* Add custom hook for adding extra values to $tax_query */
+    do_action( 'wicket_listing_block_before_query', $tax_query );
+
 	?>
 
 	<form action="" <?php echo $attrs ?> class="block-wicket-listing">
 
 		<?php if ( ! $hide_search ) : ?>
-			<div class="block-wicket-listing__search-form <?php echo $search_form_bg_color ?> px-4 py-5 lg:px-0">
+			<div
+				class="block-wicket-listing__search-form <?php echo $search_form_bg_color ?> <?php echo defined( 'WICKET_WP_THEME_V2' ) ? '' : 'px-4 py-5 lg:px-0' ?>">
 				<div class="container">
-					<?php get_component( 'search-form' ); ?>
+					<?php get_component( 'search-form', [
+						'button_reversed' => defined( 'WICKET_WP_THEME_V2' ) ? true : false,
+					] ); ?>
 				</div>
 			</div>
 		<?php endif; ?>
@@ -221,10 +317,10 @@ function init( $block = [] ) {
 						class="block-wicket-listing__filters basis-1/4 bg-white relative after:content-[''] after:absolute after:top-0 after:bottom-0 after:right-full after:bg-white after:w-[30vw] before:block lg:before:hidden before:content-[''] before:absolute before:top-0 before:bottom-0 before:left-full before:bg-white before:w-[30vw]">
 						<?php
 						get_component( 'filter-form', [
-							'taxonomies'       => $taxonomy_filters,
-							'hide_date_filter' => $hide_date_filter,
-						] )
-							?>
+							'taxonomies'            => $taxonomy_filters,
+							'hide_date_filter'      => $hide_date_filter,
+							'pre_filter_categories' => $pre_filter_categories,
+						] ); ?>
 					</div>
 				<?php endif; ?>
 
@@ -253,28 +349,30 @@ function init( $block = [] ) {
 						];
 					}
 
-					$args['meta_query'] = array(
-						array(
+					$args['meta_query'] = [
+						[
 							'relation' => 'OR',
-							array(
+							[
 								'key'     => 'hide_on_listings',
 								'value'   => '0',
 								'compare' => '=',
-							),
-							array(
+							],
+							[
 								'key'     => 'hide_on_listings',
 								'compare' => 'NOT EXISTS',
-							),
-						),
-					);
+							],
+						],
+					];
 
 					$query       = new \WP_Query( $args );
 					$posts       = $query->posts;
 					$total_posts = $query->found_posts;
 					?>
 
-					<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-7 px-4 lg:px-0">
-						<div class="font-bold">
+					<div
+						class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-7 px-4 lg:px-0">
+						<div
+							class="<?php echo defined( 'WICKET_WP_THEME_V2' ) ? 'block-wicket-listing__total' : 'font-bold' ?>">
 							<?php
 							if ( $total_posts === 0 ) {
 								echo '0' . __( ' Results', 'wicket' );
@@ -288,7 +386,8 @@ function init( $block = [] ) {
 							}
 							?>
 						</div>
-						<div class="flex items-center gap-3">
+						<div
+							class="<?php echo defined( 'WICKET_WP_THEME_V2' ) ? 'block-wicket-listing__sort-by' : 'flex items-center gap-3' ?>">
 							<label for="sort-by">
 								<?php echo __( 'Sort by', 'wicket' ); ?>
 							</label>
@@ -340,6 +439,8 @@ function init( $block = [] ) {
 								echo '<div class="grid gap-10 grid-cols-1 lg:gap-4 lg:grid-cols-3 mb-6">';
 							}
 
+							$item_number = 1;
+
 							while ( $query->have_posts() ) :
 								$query->the_post();
 								$post_id = get_the_ID();
@@ -371,7 +472,7 @@ function init( $block = [] ) {
 
 								if ( $listing_layout === 'grid' ) {
 									$grid_card_params = [
-										'classes'      => [ 'p-4' ],
+										'classes'      => defined( 'WICKET_WP_THEME_V2' ) ? [] : [ 'p-4' ],
 										'post_type'    => $post_type,
 										'post_id'      => $post_id,
 										'content_type' => ! $hide_type_taxonomy ? get_related_content_type_term( $post_id ) : '',
@@ -390,7 +491,7 @@ function init( $block = [] ) {
 
 								} else {
 									$listing_card_params = [
-										'classes'                   => [ 'mb-6' ],
+										'classes'                   => [ 'mb-6', "item-number-{$item_number}" ],
 										'post_type'                 => $post_type,
 										'content_type'              => ! $hide_type_taxonomy ? get_related_content_type_term( $post_id ) : '',
 										'title'                     => $title,
@@ -416,6 +517,7 @@ function init( $block = [] ) {
 									get_component( 'card-listing', $listing_card_params );
 								}
 
+								$item_number++;
 								do_action( 'wicket_listing_block_after_card', $post_id );
 
 
@@ -430,18 +532,17 @@ function init( $block = [] ) {
 							] );
 							?>
 						</div>
-						<?php
-					else : ?>
+					<?php else : ?>
 						<div class="p-10">
-							<h2 class="text-center font-bold text-heading-md mb-6">
+							<h2
+								class="<?php echo defined( 'WICKET_WP_THEME_V2' ) ? 'block-wicket-listing__no-results' : 'text-center font-bold text-heading-md mb-6' ?>">
 								<?php echo __( 'No results found.', 'wicket' ) ?>
 							</h2>
 							<div class="text-center">
 								<?php echo apply_filters( 'wicket_listing_block_no_results_message', __( 'Try adjusting your search or filter to find what you are looking for.', 'wicket' ) ); ?>
 							</div>
 						</div>
-						<?php
-					endif; ?>
+					<?php endif; ?>
 				</div>
 			</div>
 		</div>
