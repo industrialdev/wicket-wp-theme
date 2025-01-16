@@ -1,5 +1,5 @@
 {
-  "name": "wicket/icon-grid",
+  "name": "wicket/icongrid",
   "title": "Icon Grid",
   "description": "A Wicket block for icon grid",
   "style": "block-wicket-icon-grid",
