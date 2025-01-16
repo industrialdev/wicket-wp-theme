@@ -31,6 +31,7 @@ $wicket_includes = [
 	'redirections.php',
 	'search.php',
 	'api-rate-limiting.php',
+	'remove-tec-attendee-field-uniqueness.php',
 ];
 
 if ( is_array( $wicket_includes ) ) {
