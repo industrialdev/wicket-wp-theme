@@ -1,15 +1,23 @@
 <?php
 
 // No direct access
-if (!defined('ABSPATH')) {
-    exit;
-}
+defined('ABSPATH') || exit;
+
+define('WICKET_THEME_PATH', get_template_directory());
+define('WICKET_THEME_URL', get_template_directory_uri());
+define('WICKET_CHILD_THEME_PATH', get_stylesheet_directory());
+define('WICKET_CHILD_THEME_URL', get_stylesheet_directory_uri());
+define('WICKET_UPLOADS_PATH', wp_get_upload_dir()['basedir'] . '/wicket-theme/');
+define('WICKET_UPLOADS_URL', wp_get_upload_dir()['baseurl'] . '/wicket-theme/');
+define('WICKET_THEME_PREFIX', 'wicket_theme_');
 
 /**
  * Wicket Includes.
  */
 $wicket_includes = [
     'config.php',
+    'helpers.php',
+    'styling-scripts.php',
     'remote-media-proxy.php',
     'constants.php',
     'acf.php',
@@ -24,7 +32,6 @@ $wicket_includes = [
     'private_content_redirect.php',
     'woocommerce.php',
     'switch_to_user_wicket_sync.php',
-    'helpers.php',
     'woocommerce_max_webhook_delivery_failures.php',
     'wpml_translator_override.php',
     'breadcrumbs.php',
