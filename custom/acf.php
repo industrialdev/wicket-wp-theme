@@ -114,7 +114,6 @@ function wicket_acf_load_taxonomies_field_choices($field)
 add_filter('acf/load_field/key=field_6602a771ef4a9', 'wicket_acf_load_taxonomies_field_choices');
 add_filter('acf/load_field/key=field_67727460a5358', 'wicket_acf_load_taxonomies_field_choices');
 
-
 // Add ACF field for selecting taxonomy terms
 function wicket_acf_load_taxonomy_terms_field_choices($field)
 {
