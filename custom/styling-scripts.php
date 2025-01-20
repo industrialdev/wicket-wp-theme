@@ -76,19 +76,6 @@ function wicket_styling_enqueue_theme_variables()
 add_action('wp_enqueue_scripts', 'wicket_styling_enqueue_theme_variables');
 
 /**
- * Add CSS variables to the admin head.
- *
- * @return void
- */
-function wicket_styling_add_css_variables()
-{
-    echo '<style type="text/css">';
-    echo wicket_get_customizations_inline_css();
-    echo '</style>';
-}
-add_action('admin_head', 'wicket_styling_add_css_variables');
-
-/**
  * Get customizations inline css.
  * Uses transient caching for 12 hours to improve performance.
  *
@@ -149,17 +136,36 @@ function wicket_add_theme_assets()
     wicket_enqueue_style('font-awesome-brands', '/font-awesome/css/brands.css');
     wicket_enqueue_style('font-awesome-solid', '/font-awesome/css/solid.css');
     wicket_enqueue_style('font-awesome-regular', '/font-awesome/css/regular.css');
-    wicket_enqueue_style('theme', '/assets/styles/min/wicket.min.css');
 
-    wp_add_inline_style('theme', wicket_get_customizations_inline_css());
+    // Only if WP ENVIRONMENT is not development or local
+    if (!in_array(wp_get_environment_type(), ['development', 'local'])) {
+        // Check if the CSS file exists
+        if (!file_exists(WICKET_UPLOADS_PATH . 'css/theme-variables.css')) {
+            // Can we create the file?
+            if (is_writable(WICKET_UPLOADS_PATH . 'css/')) {
+                // Generate the CSS file
+                wicket_styling_cache_theme_variables();
+            }
+        }
 
-    wicket_enqueue_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js', true);
+        // Enqueue our cached CSS in the uploads folder
+        wp_enqueue_style('wicket-theme-variables', WICKET_UPLOADS_URL . 'css/theme-variables.css');
+    }
+
+    wicket_enqueue_style('wicket-theme', '/assets/styles/min/wicket.min.css');
+
+    // Only if WP ENVIRONMENT is development or local
+    if (in_array(wp_get_environment_type(), ['development', 'local'])) {
+        wp_add_inline_style('wicket-theme', wicket_get_customizations_inline_css());
+    }
+
+    //wicket_enqueue_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js', true); // 3.7.1 is being enqueued by WP
     wicket_enqueue_script('wicket', '/assets/scripts/min/wicket.min.js', false, ['jquery'], false, true);
 
-    // Conditional Bootstrap enqueue:
+    // Conditional Bootstrap enqueue
     if (isset($_GET['bootstrap'])) {
-        wicket_enqueue_style('boostrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css', true);
-        wicket_enqueue_script('boostrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js', true);
+        wicket_enqueue_style('boostrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css', true);
+        wicket_enqueue_script('boostrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js', true);
     }
 }
 add_action('wp_enqueue_scripts', 'wicket_add_theme_assets');
@@ -173,6 +179,17 @@ function wicket_admin_styles()
 {
     wp_enqueue_style('admin-styles', get_template_directory_uri() . '/assets/styles/min/admin.min.css');
     wicket_enqueue_script('wicket-admin-script', '/assets/scripts/min/wicket-wp-admin.min.js');
+
+    // Only if WP ENVIRONMENT is development or local
+    if (in_array(wp_get_environment_type(), ['development', 'local'])) {
+        wp_add_inline_style('admin-styles', wicket_get_customizations_inline_css());
+    }
+
+    // Only if WP ENVIRONMENT is not development or local
+    if (!in_array(wp_get_environment_type(), ['development', 'local'])) {
+        // Enqueue our cached CSS in the uploads folder
+        wp_enqueue_style('wicket-theme-variables', WICKET_UPLOADS_URL . 'css/theme-variables.css');
+    }
 }
 add_action('admin_enqueue_scripts', 'wicket_admin_styles');
 
