@@ -102,6 +102,19 @@ function wicket_acf_load_taxonomies_field_choices($field)
     $field['choices'] = [];
     $taxonomies = get_taxonomies(['public' => true], 'objects');
 
+    // Add WooCommerce product attributes
+    if (class_exists('WooCommerce')) {
+        $attributes = wc_get_attribute_taxonomies();
+        if (is_array($attributes)) {
+            foreach ($attributes as $attribute) {
+                $taxonomies[] = (object) [
+                    'name' => 'pa_' . $attribute->attribute_name,
+                    'label' => $attribute->attribute_label,
+                ];
+            }
+        }
+    }
+
     if (is_array($taxonomies)) {
         $field['choices'][0] = __('-- Select Taxonomy --', 'wicket');
         foreach ($taxonomies as $taxonomy) {
@@ -114,13 +127,11 @@ function wicket_acf_load_taxonomies_field_choices($field)
 add_filter('acf/load_field/key=field_6602a771ef4a9', 'wicket_acf_load_taxonomies_field_choices');
 add_filter('acf/load_field/key=field_67727460a5358', 'wicket_acf_load_taxonomies_field_choices');
 
-
 // Add ACF field for selecting taxonomy terms
 function wicket_acf_load_taxonomy_terms_field_choices($field)
 {
     $field['choices'] = [];
     $taxonomies = get_taxonomies(['public' => true], 'objects');
-
     if (is_array($taxonomies)) {
         $field['choices']['0'] = __('-- Select Taxonomy Term --', 'wicket');
         foreach ($taxonomies as $taxonomy) {
