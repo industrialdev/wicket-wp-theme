@@ -31,10 +31,38 @@ function wicket_styling_cache_theme_variables()
 {
     global $wp_filesystem;
 
-    $css = wicket_get_customizations_inline_css();
+    $wicket_css_variables = wicket_get_customizations_inline_css();
 
-    if (empty($css)) {
+    if (empty($wicket_css_variables)) {
         return;
+    }
+
+    // Format CSS variables for better readability
+    $wicket_css_variables = preg_replace('/;/', ";\n", $wicket_css_variables); // Add newline after ;
+    $wicket_css_variables = preg_replace('/:root\s*{/', "$0\n", $wicket_css_variables); // Add newline after :root {
+    $wicket_css_variables = preg_replace('/^--/m', '  --', $wicket_css_variables); // Add proper indentation only to CSS variables (lines starting with --)
+
+    // Get WP CSS variables
+    $wp_css_variables = wp_get_global_stylesheet(['variables']);
+
+    // Format and append the variables to the CSS
+    if (!empty($wp_css_variables)) {
+        $wp_css_variables = preg_replace('/;/', ";\n", $wp_css_variables);
+        $wp_css_variables = preg_replace('/:root\s*{/', "$0\n", $wp_css_variables);
+        $wp_css_variables = preg_replace('/^--/m', '  --', $wp_css_variables);
+
+        $wicket_css_variables = $wicket_css_variables . PHP_EOL . PHP_EOL . $wp_css_variables;
+    }
+
+    $sizesPXtoREM = wicket_sizesPXtoREM();
+
+    // Format and append the variables to the CSS
+    if (!empty($sizesPXtoREM)) {
+        //$sizesPXtoREM = preg_replace('/;/', ";\n", $sizesPXtoREM);
+        //$sizesPXtoREM = preg_replace('/:root\s*{/', "$0\n", $sizesPXtoREM);
+        //$sizesPXtoREM = preg_replace('/^--/m', '  --', $sizesPXtoREM);
+
+        $wicket_css_variables = $wicket_css_variables . PHP_EOL . PHP_EOL . $sizesPXtoREM;
     }
 
     // Use WP_Filesystem API to write the file to our theme folder
@@ -48,8 +76,28 @@ function wicket_styling_cache_theme_variables()
 
     $wp_filesystem->put_contents(
         WICKET_UPLOADS_PATH . 'css/theme-variables.css',
-        $css
+        $wicket_css_variables
     );
+}
+
+/**
+ * Generate CSS variables for sizes in PX to REM.
+ *
+ * @return string
+ */
+function wicket_sizesPXtoREM()
+{
+    $css = ":root {\n";
+
+    // Generate from 1px to 100px
+    for ($px = 1; $px <= 100; $px++) {
+        $rem = number_format($px / 16, 4);
+        $css .= "  --size-{$px}px: {$rem}rem;\n";
+    }
+
+    $css .= '}';
+
+    return $css;
 }
 
 /**
