@@ -10,15 +10,6 @@ if (defined('ICL_LANGUAGE_CODE')) {
 <html <?php language_attributes(); ?> class="no-js no-svg">
 
 <head>
-    <title>
-        <?php if (is_front_page()): ?>
-            <?php wp_title(''); ?>
-        <?php elseif (is_404()) : ?>
-            404 - <?php echo get_bloginfo('name'); ?>
-        <?php else: ?>
-            <?php wp_title(''); ?>
-        <?php endif; ?>
-    </title>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="http://gmpg.org/xfn/11">
