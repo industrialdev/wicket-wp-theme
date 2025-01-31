@@ -240,13 +240,11 @@ function scriptsTask() {
     .pipe(plumber({ errorHandler: onError }))
     .pipe(webpack({}))
     .pipe(concat(`${wicketPaths.script}.js`))
-    .pipe(insert.wrap('(function($){\n\n', '\n\n})(jQuery);'))
-    .pipe(gulp.dest(`${wicketPaths.src}${wicketPaths.assets}/scripts/mingul`));
 }
 
 function minScripts() {
   return gulp
-    .src(`${wicketPaths.src}${wicketPaths.assets}/scripts/mingul/${wicketPaths.script}.js`)
+    .src(`${wicketPaths.src}${wicketPaths.assets}/scripts/${wicketPaths.script}.js`)
     .pipe(plumber({ errorHandler: onError }))
     .pipe(rename({ suffix: '.min' }))
     .pipe(uglify())
@@ -258,8 +256,6 @@ function scriptsTaskAdmin() {
     .src(adminJsFiles)
     .pipe(plumber({ errorHandler: onError }))
     .pipe(concat(`${wicketPaths.script}-wp-admin.js`))
-    .pipe(insert.wrap('(function($){\n\n', '\n\n})(jQuery);'))
-    .pipe(gulp.dest(`${wicketPaths.src}${wicketPaths.assets}/scripts/mingul`));
 }
 
 function minScriptsAdmin() {
@@ -303,6 +299,7 @@ function watchTask() {
 
   const jsLocations = [
     `${wicketPaths.src}${wicketPaths.assets}/scripts/*.js`,
+    `${wicketPaths.src}${wicketPaths.assets}/scripts/wp-admin/*.js`,
     `${wicketPaths.src}${wicketPaths.assets}/scripts/components/*.js`,
   ];
 

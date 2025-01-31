@@ -151,40 +151,8 @@ function wicket_add_theme_assets() {
 
 	wicket_enqueue_script( 'jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js', True );
 	wicket_enqueue_script( 'wicket', '/assets/scripts/min/wicket.min.js', False, [ 'jquery' ], False, True );
-
-	// Conditional Bootstrap enqueue:
-	if ( isset( $_GET['bootstrap'] ) ) {
-		wicket_enqueue_style( 'boostrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css', true );
-		wicket_enqueue_script( 'boostrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js', true );
-	}
 }
 add_action( 'wp_enqueue_scripts', 'wicket_add_theme_assets' );
-
-/* Gutenberg scripts and styles */
-function wicket_gutenberg_scripts() {
-	$array_dependencies = array( 'wp-blocks', 'wp-dom-ready' );
-	$screen             = get_current_screen();
-
-	switch ( $screen->base ) {
-		case 'post':
-			$array_dependencies[] = 'wp-edit-post';
-			break;
-		case 'widgets':
-			$array_dependencies[] = 'wp-edit-widgets';
-			break;
-		case 'site-editor':
-			$array_dependencies[] = 'wp-edit-site';
-			break;
-	}
-
-	wp_enqueue_script( 'theme-editor',
-		get_theme_file_uri( '/assets/scripts/wp-admin/editor.js' ),
-		$array_dependencies,
-		filemtime( get_theme_file_path( '/assets/scripts/wp-admin/editor.js' ) ),
-		TRUE
-	);
-}
-add_action( 'enqueue_block_editor_assets', 'wicket_gutenberg_scripts' );
 
 /* Admin scripts and styles */
 function wicket_admin_styles() {
