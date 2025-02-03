@@ -6,7 +6,7 @@ defined('ABSPATH') || exit;
 /**
  * For use with wp private content plus plugin
  * Appends the page to the url on redirect for where
- * the user was trying to go
+ * the user was trying to go.
  *
  * Filters applied:
  * - wp-private-content-plus\classes\class-wppcp-private-posts-pages.php:183 (single post)
@@ -23,7 +23,6 @@ function wicket_private_content_redirect($url)
     $lang = defined('ICL_LANGUAGE_CODE') ? ICL_LANGUAGE_CODE : 'en';
 
     $url .= '?referrer=' . $_SERVER['REQUEST_URI'];
-
 
     if ($lang == 'fr') {
         return '/fr' . $url;

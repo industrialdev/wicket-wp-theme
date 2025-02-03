@@ -193,6 +193,6 @@ function wicket_add_theme_classes($classes)
 
 add_filter('body_class', 'wicket_add_theme_classes');
 
-add_action( 'after_setup_theme', function() {
-    add_theme_support( 'title-tag' );
+add_action('after_setup_theme', function () {
+    add_theme_support('title-tag');
 });
