@@ -304,7 +304,7 @@ function init($block = [])
 			<div class="flex flex-col lg:flex-row gap-4">
 				<?php if (!empty($taxonomy_filters)) : ?>
 					<div
-						class="block-wicket-listing__filters basis-1/4 bg-white relative after:content-[''] after:absolute after:top-0 after:bottom-0 after:right-full after:bg-white after:w-[30vw] before:block lg:before:hidden before:content-[''] before:absolute before:top-0 before:bottom-0 before:left-full before:bg-white before:w-[30vw]">
+						class="block-wicket-listing__filters basis-1/4 relative after:content-[''] after:absolute after:top-0 after:bottom-0 after:right-full after:w-[30vw] before:block lg:before:hidden before:content-[''] before:absolute before:top-0 before:bottom-0 before:left-full before:w-[30vw]">
 						<?php
                     get_component('filter-form', [
                         'taxonomies'            => $taxonomy_filters,
