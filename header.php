@@ -60,7 +60,22 @@ if (defined('ICL_LANGUAGE_CODE')) {
     // Set PHP variables needed for secondary nav
     $logo = get_field('site_logo', 'options');
     $logo_url = $logo['url'] ?? get_template_directory_uri() . '/assets/images/logo-' . $lang . '.svg' ?? '';
-    $bam_path = $lang == 'fr' ? '/fr/create-account' : '/create-account';
+    $create_account_path = $lang == 'fr' ? '/fr/create-account' : '/create-account';
+
+    $display_bam_link = get_field( 'display_bam_link', 'options' ) ?? true;
+    $bam_button_style = get_field( 'bam_button_style', 'options' ) ?? 'primary';
+    $bam_link_array = get_field( 'bam_link', 'options' );
+
+    // Set "Become a Member" link
+    $bam_url = $create_account_path;
+    $bam_label = __('Become a member', 'wicket');
+    $bam_target_attr = '_self';
+
+    if( is_array( $bam_link_array ) ) {
+        $bam_url = $bam_link_array['url'];
+        $bam_label = $bam_link_array['title'];
+        $bam_target_attr = $bam_link_array['target'];
+    }
 
     $acc_index_url = get_post_type_archive_link('my-account');
     if ($acc_index_url) {
@@ -187,20 +202,23 @@ if (defined('ICL_LANGUAGE_CODE')) {
                         get_component('button', [
                             'variant'   => 'primary',
                             'a_tag'     => true,
-                            'link'      => $bam_path,
+                            'link'      => $create_account_path,
                             'classes'   => ['create-account-button', 'hidden', 'md:inline-flex'],
                             'label'     => __('Create Account', 'wicket'),
                             'atts'      => ['x-show="! searchOpen"', 'x-cloak'],
                         ]);
                     } elseif ($nav_state == 'logged_in_user') {
-                        get_component('button', [
-                            'variant'     => 'primary',
-                            'a_tag'     => true,
-                            'link'      => $bam_path,
-                            'classes'     => ['become-a-member-button', 'mr-4'],
-                            'label'     => __('Become a member', 'wicket'),
-                            'atts'      => [' x-bind:class=" searchOpen ? \'hidden md:inline-flex lg:hidden\' : \'hidden md:inline-flex\' " '],
-                        ]);
+                        if ( $display_bam_link ) {
+                            get_component('button', [
+                                'variant'     => $bam_button_style,
+                                'a_tag'       => true,
+                                'link'        => $bam_url,
+                                'classes'     => ['become-a-member-button', 'mr-4'],
+                                'label'       => $bam_label,
+                                'link_target' => $bam_target_attr,
+                                'atts'        => [' x-bind:class=" searchOpen ? \'hidden md:inline-flex lg:hidden\' : \'hidden md:inline-flex\' " '],
+                            ]);
+                        }
                         get_component('button', [
                             'variant'     => 'secondary',
                             'a_tag'     => true,
@@ -472,18 +490,21 @@ if (defined('ICL_LANGUAGE_CODE')) {
                     get_component('button', [
                         'variant'     => 'primary',
                         'a_tag'     => true,
-                        'link'      => $bam_path,
+                        'link'      => $create_account_path,
                         'classes'     => ['create-account-button-mobile', 'w-full', 'mb-3', 'justify-center', 'md:hidden'],
                         'label'     => __('Create Account', 'wicket'),
                     ]);
                 } elseif ($nav_state == 'logged_in_user') {
-                    get_component('button', [
-                        'variant'     => 'primary',
-                        'a_tag'     => true,
-                        'link'      => $bam_path,
-                        'classes'     => ['become-a-member-button-mobile', 'w-full', 'mb-3', 'justify-center', 'md:hidden'],
-                        'label'     => __('Become a member', 'wicket'),
-                    ]);
+                    if ( $display_bam_link ) {
+                        get_component('button', [
+                            'variant'     => $bam_button_style,
+                            'a_tag'       => true,
+                            'link'        => $bam_url,
+                            'link_target' => $bam_target_attr,
+                            'classes'     => ['become-a-member-button-mobile', 'w-full', 'mb-3', 'justify-center', 'md:hidden'],
+                            'label'       => $bam_label,
+                        ]);
+                    }
                     get_component('button', [
                         'variant'     => 'secondary',
                         'a_tag'     => true,
