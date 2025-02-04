@@ -36,16 +36,16 @@ if (defined('ICL_LANGUAGE_CODE')) {
         sizes="512x512">
 
     <!-- Font Family -->
-<?php
+    <?php
     $theme_ff_group = get_field('theme-font-family', 'option') ?: [];
-if (!empty($theme_ff_group['head-font-html-code'])) {
-    echo $theme_ff_group['head-font-html-code'];
-}
+    if (!empty($theme_ff_group['head-font-html-code'])) {
+        echo $theme_ff_group['head-font-html-code'];
+    }
 
-wp_head();
+    wp_head();
 
-the_field('tracking_codes_in_head', 'options');
-?>
+    the_field('tracking_codes_in_head', 'options');
+    ?>
 </head>
 
 <body <?php body_class(); ?>>
@@ -59,65 +59,65 @@ the_field('tracking_codes_in_head', 'options');
     <?php
     // Set PHP variables needed for secondary nav
     $logo = get_field('site_logo', 'options');
-$logo_url = $logo['url'] ?? get_template_directory_uri() . '/assets/images/logo-' . $lang . '.svg' ?? '';
-$bam_path = $lang == 'fr' ? '/fr/create-account' : '/create-account';
+    $logo_url = $logo['url'] ?? get_template_directory_uri() . '/assets/images/logo-' . $lang . '.svg' ?? '';
+    $bam_path = $lang == 'fr' ? '/fr/create-account' : '/create-account';
 
-$acc_index_url = get_post_type_archive_link('my-account');
-if ($acc_index_url) {
-    $account_center_landing = $acc_index_url;
-    $acc_index_url = $acc_index_url . $locale;
-} else {
-    $account_center_slug_locale = get_field('ac_localization', 'option');
-    if (empty($account_center_slug_locale['value'])) {
-        $account_center_slug_locale['value'] = 'account-center';
+    $acc_index_url = get_post_type_archive_link('my-account');
+    if ($acc_index_url) {
+        $account_center_landing = $acc_index_url;
+        $acc_index_url = $acc_index_url . $locale;
+    } else {
+        $account_center_slug_locale = get_field('ac_localization', 'option');
+        if (empty($account_center_slug_locale['value'])) {
+            $account_center_slug_locale['value'] = 'account-center';
+        }
+        $account_center_landing = $lang == 'fr' ? '/fr/mon-compte' : '/' . $account_center_slug_locale['value'];
+
+        $acc_index_url = $account_center_landing . $locale;
     }
-    $account_center_landing = $lang == 'fr' ? '/fr/mon-compte' : '/' . $account_center_slug_locale['value'];
+    $referrer = isset($_GET['referrer']) ? wicket_get_site_root_url() . $_GET['referrer'] . $locale : $acc_index_url;
 
-    $acc_index_url = $account_center_landing . $locale;
-}
-$referrer = isset($_GET['referrer']) ? wicket_get_site_root_url() . $_GET['referrer'] . $locale : $acc_index_url;
+    $cart_path = $lang == 'fr' ? '/fr/cart' : '/cart';
+    $nav_state = 'logged_out'; // Will be one of logged_out, logged_in_user, logged_in_member
+    if (is_user_logged_in()) {
+        $nav_state = 'logged_in_user';
 
-$cart_path = $lang == 'fr' ? '/fr/cart' : '/cart';
-$nav_state = 'logged_out'; // Will be one of logged_out, logged_in_user, logged_in_member
-if (is_user_logged_in()) {
-    $nav_state = 'logged_in_user';
+        $user = wp_get_current_user();
+        if (in_array('member', (array) $user->roles)) {
+            $nav_state = 'logged_in_member';
+        }
 
-    $user = wp_get_current_user();
-    if (in_array('member', (array) $user->roles)) {
-        $nav_state = 'logged_in_member';
+        if (in_array('administrator', (array) $user->roles)) {
+            $nav_state = 'logged_in_member';
+        }
     }
 
-    if (in_array('administrator', (array) $user->roles)) {
-        $nav_state = 'logged_in_member';
+    // Grab Menus
+    $theme_locations = get_nav_menu_locations();
+    if (isset($theme_locations['header-utility'])) {
+        $utility_nav_items = wp_get_nav_menu_items($theme_locations['header-utility']);
+    } else {
+        $utility_nav_items = [];
     }
-}
+    if (isset($theme_locations['header-secondary'])) {
+        $secondary_nav_items = wp_get_nav_menu_items($theme_locations['header-secondary']);
+    } else {
+        $secondary_nav_items = [];
+    }
+    if (isset($theme_locations['header'])) {
+        $primary_nav_items = wp_get_nav_menu_items($theme_locations['header']);
+    } else {
+        $primary_nav_items = [];
+    }
+    // Create better primary nav array
+    $primary_nav_items_structured = wicket_generate_structured_menu($primary_nav_items);
 
-// Grab Menus
-$theme_locations = get_nav_menu_locations();
-if (isset($theme_locations['header-utility'])) {
-    $utility_nav_items = wp_get_nav_menu_items($theme_locations['header-utility']);
-} else {
-    $utility_nav_items = [];
-}
-if (isset($theme_locations['header-secondary'])) {
-    $secondary_nav_items = wp_get_nav_menu_items($theme_locations['header-secondary']);
-} else {
-    $secondary_nav_items = [];
-}
-if (isset($theme_locations['header'])) {
-    $primary_nav_items = wp_get_nav_menu_items($theme_locations['header']);
-} else {
-    $primary_nav_items = [];
-}
-// Create better primary nav array
-$primary_nav_items_structured = wicket_generate_structured_menu($primary_nav_items);
-
-// Data formatted for Alpine
-$show_search = get_field('secondary_nav_search_enabled', 'options') ? 'true' : 'false';
-$show_cart = get_field('secondary_nav_cart_enabled', 'options') ? 'true' : 'false';
-$show_utility = !empty($utility_nav_items) ? 'true' : 'false';
-$sub_menu_dropdowns = get_field('mobile_menu_sub_menu_dropdowns', 'options') ? 'true' : 'false';
-?>
+    // Data formatted for Alpine
+    $show_search = get_field('secondary_nav_search_enabled', 'options') ? 'true' : 'false';
+    $show_cart = get_field('secondary_nav_cart_enabled', 'options') ? 'true' : 'false';
+    $show_utility = !empty($utility_nav_items) ? 'true' : 'false';
+    $sub_menu_dropdowns = get_field('mobile_menu_sub_menu_dropdowns', 'options') ? 'true' : 'false';
+    ?>
     <header x-data="{
             searchOpen:     false,
             showSearch:     <?php echo $show_search; ?>,
@@ -130,18 +130,18 @@ $sub_menu_dropdowns = get_field('mobile_menu_sub_menu_dropdowns', 'options') ? '
         <div x-show="showUtilityNav" x-cloak class="utility-nav">
             <div class="container utility-nav__wrap">
                 <?php
-            $utility_loop_index = 0;
-foreach ($utility_nav_items as $utility_nav_item) {
-    $target = $utility_nav_item->target ?? '';
-    get_component('link', [
-        'text'     => $utility_nav_item->title,
-        'classes'  => ['utility-nav__link'],
-        'target'   => $target,
-        'url'      => $utility_nav_item->url,
-    ]);
-    $utility_loop_index++;
-}
-?>
+                $utility_loop_index = 0;
+                foreach ($utility_nav_items as $utility_nav_item) {
+                    $target = $utility_nav_item->target ?? '';
+                    get_component('link', [
+                        'text'     => $utility_nav_item->title,
+                        'classes'  => ['utility-nav__link'],
+                        'target'   => $target,
+                        'url'      => $utility_nav_item->url,
+                    ]);
+                    $utility_loop_index++;
+                }
+                ?>
             </div>
         </div> <!-- End Utility Nav -->
 
@@ -150,19 +150,19 @@ foreach ($utility_nav_items as $utility_nav_item) {
             <div class="container flex items-center justify-between relative ">
                 <!-- Left-aligned hamburger menu button that only shows on Base/SM breakpoints -->
                 <?php
-get_component('button', [
-    'variant'     => 'ghost',
-    'classes'     => ['left-hamburger-button'],
-    'label'       => '',
-    'prefix_icon' => 'fa-solid fa-bars',
-    'atts'        => [
-        'x-cloak',
-        ':class = "mobileMenuOpen ? \'open\' : \'\'"',
-        'x-on:click="mobileMenuOpen = ! mobileMenuOpen; if(mobileMenuOpen){$dispatch(\'close-mobile-search\')};"',
-        'x-on:close-mobile-menu.window="mobileMenuOpen = false"',
-    ],
-])
-?>
+                get_component('button', [
+                    'variant'     => 'ghost',
+                    'classes'     => ['left-hamburger-button'],
+                    'label'       => '',
+                    'prefix_icon' => 'fa-solid fa-bars',
+                    'atts'        => [
+                        'x-cloak',
+                        ':class = "mobileMenuOpen ? \'open\' : \'\'"',
+                        'x-on:click="mobileMenuOpen = ! mobileMenuOpen; if(mobileMenuOpen){$dispatch(\'close-mobile-search\')};"',
+                        'x-on:close-mobile-menu.window="mobileMenuOpen = false"',
+                    ],
+                ])
+                ?>
 
                 <!-- Logo -->
                 <a href="/" class="logo w-60"><img
@@ -172,64 +172,64 @@ get_component('button', [
                 <div class="right-panel flex justify-between align-center font-bold"
                     x-bind:class=" searchOpen ? 'lg:flex-grow' : '' ">
                     <?php
-    foreach ($secondary_nav_items as $secondary_nav_item) {
-        $target = $secondary_nav_item->target ?? '';
-        get_component('link', [
-            'text'     => $secondary_nav_item->title,
-            'target'   => $target,
-            'url'      => $secondary_nav_item->url,
-            'atts'     => ['x-show="! searchOpen"', 'x-cloak'],
-        ]);
-    }
-?>
+                    foreach ($secondary_nav_items as $secondary_nav_item) {
+                        $target = $secondary_nav_item->target ?? '';
+                        get_component('link', [
+                            'text'     => $secondary_nav_item->title,
+                            'target'   => $target,
+                            'url'      => $secondary_nav_item->url,
+                            'atts'     => ['x-show="! searchOpen"', 'x-cloak'],
+                        ]);
+                    }
+                    ?>
                     <?php
-if ($nav_state == 'logged_out') {
-    get_component('button', [
-        'variant'   => 'primary',
-        'a_tag'     => true,
-        'link'      => $bam_path,
-        'classes'   => ['create-account-button', 'hidden', 'md:inline-flex'],
-        'label'     => __('Create Account', 'wicket'),
-        'atts'      => ['x-show="! searchOpen"', 'x-cloak'],
-    ]);
-} elseif ($nav_state == 'logged_in_user') {
-    get_component('button', [
-        'variant'     => 'primary',
-        'a_tag'     => true,
-        'link'      => $bam_path,
-        'classes'     => ['become-a-member-button', 'mr-4'],
-        'label'     => __('Become a member', 'wicket'),
-        'atts'      => [' x-bind:class=" searchOpen ? \'hidden md:inline-flex lg:hidden\' : \'hidden md:inline-flex\' " '],
-    ]);
-    get_component('button', [
-        'variant'     => 'secondary',
-        'a_tag'     => true,
-        'link'      => $account_center_landing,
-        'classes'     => ['my-account-button', 'hidden', 'lg:inline-flex'],
-        'label'     => __('My Account', 'wicket'),
-        'atts'      => ['x-show="! searchOpen"', 'x-cloak'],
-    ]);
-} elseif ($nav_state == 'logged_in_member') {
-    get_component('button', [
-        'variant'     => 'secondary',
-        'a_tag'     => true,
-        'link'      => $account_center_landing,
-        'classes'     => ['member-portal-button', 'hidden', 'md:inline-flex'],
-        'label'     => __('Member Portal', 'wicket'),
-        'atts'      => ['x-show="! searchOpen"', 'x-cloak'],
-    ]);
-}
-?>
+                    if ($nav_state == 'logged_out') {
+                        get_component('button', [
+                            'variant'   => 'primary',
+                            'a_tag'     => true,
+                            'link'      => $bam_path,
+                            'classes'   => ['create-account-button', 'hidden', 'md:inline-flex'],
+                            'label'     => __('Create Account', 'wicket'),
+                            'atts'      => ['x-show="! searchOpen"', 'x-cloak'],
+                        ]);
+                    } elseif ($nav_state == 'logged_in_user') {
+                        get_component('button', [
+                            'variant'     => 'primary',
+                            'a_tag'     => true,
+                            'link'      => $bam_path,
+                            'classes'     => ['become-a-member-button', 'mr-4'],
+                            'label'     => __('Become a member', 'wicket'),
+                            'atts'      => [' x-bind:class=" searchOpen ? \'hidden md:inline-flex lg:hidden\' : \'hidden md:inline-flex\' " '],
+                        ]);
+                        get_component('button', [
+                            'variant'     => 'secondary',
+                            'a_tag'     => true,
+                            'link'      => $account_center_landing,
+                            'classes'     => ['my-account-button', 'hidden', 'lg:inline-flex'],
+                            'label'     => __('My Account', 'wicket'),
+                            'atts'      => ['x-show="! searchOpen"', 'x-cloak'],
+                        ]);
+                    } elseif ($nav_state == 'logged_in_member') {
+                        get_component('button', [
+                            'variant'     => 'secondary',
+                            'a_tag'     => true,
+                            'link'      => $account_center_landing,
+                            'classes'     => ['member-portal-button', 'hidden', 'md:inline-flex'],
+                            'label'     => __('Member Portal', 'wicket'),
+                            'atts'      => ['x-show="! searchOpen"', 'x-cloak'],
+                        ]);
+                    }
+                    ?>
                     <?php if ($nav_state == 'logged_out'): ?>
                         <?php
-    get_component('button', [
-        'variant'  => 'ghost',
-        'a_tag'    => true,
-        'label'    => __('Login', 'wicket'),
-        'classes'  => ['login-button', 'mx-4', 'items-center', 'hidden', 'lg:inline-flex'],
-        'link'     => get_option('wp_cassify_base_url') . 'login?service=' . $referrer,
-        'atts'     => ['x-show="! searchOpen"', 'x-cloak'],
-    ]);
+                        get_component('button', [
+                            'variant'  => 'ghost',
+                            'a_tag'    => true,
+                            'label'    => __('Login', 'wicket'),
+                            'classes'  => ['login-button', 'mx-4', 'items-center', 'hidden', 'lg:inline-flex'],
+                            'link'     => get_option('wp_cassify_base_url') . 'login?service=' . $referrer,
+                            'atts'     => ['x-show="! searchOpen"', 'x-cloak'],
+                        ]);
                         ?>
                     <?php else: ?>
                         <?php
@@ -271,16 +271,16 @@ if ($nav_state == 'logged_out') {
                                 'icon'    => 'fa-solid fa-magnifying-glass',
                                 'text'    => '',
                             ]);
-?>
+                            ?>
                         </span>
                         <span x-show="searchOpen" x-cloak>
                             <?php
-get_component('icon', [
-    'classes' => [],
-    'icon'    => 'fa-solid fa-x',
-    'text'    => '',
-]);
-?>
+                            get_component('icon', [
+                                'classes' => [],
+                                'icon'    => 'fa-solid fa-x',
+                                'text'    => '',
+                            ]);
+                            ?>
                         </span>
                     </button>
                     <!-- End search button states -->
@@ -304,21 +304,21 @@ get_component('icon', [
                         x-on:close-mobile-menu.window="mobileMenuOpen = false" class="right-hamburger-button">
                         <span x-show="! mobileMenuOpen" x-cloak>
                             <?php
-get_component('icon', [
-    'classes' => ['text-x-large', 'lg:text-large', 'px-2'],
-    'icon'    => 'fa-solid fa-bars',
-    'text'    => '',
-]);
-?>
+                            get_component('icon', [
+                                'classes' => ['text-x-large', 'lg:text-large', 'px-2'],
+                                'icon'    => 'fa-solid fa-bars',
+                                'text'    => '',
+                            ]);
+                            ?>
                         </span>
                         <span x-show="mobileMenuOpen" x-cloak>
                             <?php
-get_component('icon', [
-    'classes' => ['text-x-large', 'lg:text-large', 'bg-dark-040', 'rounded-base', 'px-2', 'py-0'],
-    'icon'    => 'fa-solid fa-x',
-    'text'    => '',
-]);
-?>
+                            get_component('icon', [
+                                'classes' => ['text-x-large', 'lg:text-large', 'bg-dark-040', 'rounded-base', 'px-2', 'py-0'],
+                                'icon'    => 'fa-solid fa-x',
+                                'text'    => '',
+                            ]);
+                            ?>
                         </span>
                     </button> <!-- End hamburger button -->
                 </div>
@@ -328,37 +328,37 @@ get_component('icon', [
         <!-- Main Nav -->
         <nav x-ref="main-nav" class="main-nav">
             <ul class="container w-full gap-4 flex relative <?php if (count($primary_nav_items_structured) > 4) {
-                echo 'justify-between';
-            } else {
-                echo 'justify-evenly';
-            } ?>">
+                                                                echo 'justify-between';
+                                                            } else {
+                                                                echo 'justify-evenly';
+                                                            } ?>">
                 <?php
                 foreach ($primary_nav_items_structured as $primary_nav_item):
                     $is_primary_nav_item_last_item = ($primary_nav_item == end($primary_nav_items_structured)) ? true : false;
                     // If this is a single menu item link
                     if ($primary_nav_item['child_count'] == 0):
-                        ?>
+                ?>
                         <li class="main-nav__single-menu-item">
                             <?php
-                                    $target = $primary_nav_item['target'] ?? '';
-                        get_component('link', [
-                            'text'     => $primary_nav_item['title'],
-                            'classes'  => ['!items-baseline'],
-                            'target'   => $target,
-                            'url'    => $primary_nav_item['url'],
-                        ]);
-                        ?>
+                            $target = $primary_nav_item['target'] ?? '';
+                            get_component('link', [
+                                'text'     => $primary_nav_item['title'],
+                                'classes'  => ['!items-baseline'],
+                                'target'   => $target,
+                                'url'    => $primary_nav_item['url'],
+                            ]);
+                            ?>
                         </li>
 
                     <?php
-                        // If this menu item only has immediate children AND has item count <= 8
+                    // If this menu item only has immediate children AND has item count <= 8
                     elseif ($primary_nav_item['child_count'] > 0 && $primary_nav_item['child_count'] <= 8 && $primary_nav_item['grand_child_count'] == 0):
-                        ?>
+                    ?>
                         <!-- Start Nav Item -->
                         <li class="main-nav__dropdown-menu-item" :class="navDropdownOpen ? 'open' : ''"
                             x-data="{ navDropdownOpen: false }"
                             x-on:click="navDropdownOpen = ! navDropdownOpen; $dispatch('close-nav-dropdowns')" <?php // If the sending element isn't this element, close dropdown
-                                                                                                                    ?>
+                                                                                                                ?>
                             x-on:close-nav-dropdowns.window="
 					if( $event.target !== $el ) {navDropdownOpen = false}">
                             <span><?php echo $primary_nav_item['title']; ?></span><i
@@ -367,40 +367,40 @@ get_component('icon', [
                             <ul x-show="navDropdownOpen" x-cloak x-transition
                                 class="nav-dropdown <?php echo $is_primary_nav_item_last_item ? 'last' : '' ?>">
                                 <?php
-                                    $child_loop_index = 0;
-                        foreach ($primary_nav_item['children'] as $child):
-                            // If this is the last element in the list
-                            $is_last_element = $child_loop_index == (count($primary_nav_item['children']) - 1);
-                            ?>
+                                $child_loop_index = 0;
+                                foreach ($primary_nav_item['children'] as $child):
+                                    // If this is the last element in the list
+                                    $is_last_element = $child_loop_index == (count($primary_nav_item['children']) - 1);
+                                ?>
                                     <li class="<?php if (!$is_last_element) {
-                                        echo 'mb-4';
-                                    } ?>">
+                                                    echo 'mb-4';
+                                                } ?>">
                                         <?php
                                         $target = $child['target'] ?? '';
-                            get_component('link', [
-                                'text'     => $child['title'],
-                                'classes'  => [],
-                                'target'   => $target,
-                                'url'    => $child['url'],
-                            ]);
-                            ?>
+                                        get_component('link', [
+                                            'text'     => $child['title'],
+                                            'classes'  => [],
+                                            'target'   => $target,
+                                            'url'    => $child['url'],
+                                        ]);
+                                        ?>
                                     </li>
                                 <?php
                                     $child_loop_index++;
-                        endforeach; ?>
+                                endforeach; ?>
                             </ul>
                         </li> <!-- End Nav Item -->
 
 
                     <?php
-                        // MEGA MENU If this menu item has grand children OR has more than 8 items
+                    // MEGA MENU If this menu item has grand children OR has more than 8 items
                     elseif ($primary_nav_item['child_count'] > 8 || $primary_nav_item['grand_child_count'] > 0):
-                        ?>
+                    ?>
                         <!-- Start Nav Item -->
                         <li class="main-nav__mega-menu-item" x-data="{ navDropdownOpen: false }"
                             :class="navDropdownOpen ? 'open' : ''"
                             x-on:click="navDropdownOpen = ! navDropdownOpen; $dispatch('close-nav-dropdowns')" <?php // If the sending element isn't this element, close dropdown
-                                                                                                                    ?>
+                                                                                                                ?>
                             x-on:close-nav-dropdowns.window="
 					if( $event.target !== $el ) {navDropdownOpen = false}">
                             <span><?php echo $primary_nav_item['title']; ?></span><i
@@ -408,13 +408,13 @@ get_component('icon', [
 
                             <div x-show="navDropdownOpen" x-cloak x-transition class="nav-mega-dropdown container">
                                 <?php
-                                    foreach ($primary_nav_item['children'] as $child):
-                                        // Just print these as a header if there are no children
-                                        if ($child['child_count'] == 0):
-                                            ?>
+                                foreach ($primary_nav_item['children'] as $child):
+                                    // Just print these as a header if there are no children
+                                    if ($child['child_count'] == 0):
+                                ?>
                                         <div class="w-1/4">
                                             <?php
-                                                        $target = $child['target'] ?? '';
+                                            $target = $child['target'] ?? '';
                                             get_component('link', [
                                                 'text'     => $child['title'],
                                                 'classes'  => ['desktop-mega-menu-heading-item'],
@@ -427,25 +427,25 @@ get_component('icon', [
                                         <div class="w-1/4">
                                             <?php
                                             $target = $child['target'] ?? '';
-                                        get_component('link', [
-                                            'text'     => $child['title'],
-                                            'classes'  => ['desktop-mega-menu-heading-item'],
-                                            'target'   => $target,
-                                            'url'    => $child['url'],
-                                        ]);
-                                        ?>
+                                            get_component('link', [
+                                                'text'     => $child['title'],
+                                                'classes'  => ['desktop-mega-menu-heading-item'],
+                                                'target'   => $target,
+                                                'url'    => $child['url'],
+                                            ]);
+                                            ?>
                                             <ul>
                                                 <?php foreach ($child['children'] as $grand_child): ?>
                                                     <li class="mb-4">
                                                         <?php
-                                                    $target = $grand_child['target'] ?? '';
-                                                    get_component('link', [
-                                                        'text'     => $grand_child['title'],
-                                                        'classes'  => [],
-                                                        'target'   => $target,
-                                                        'url'    => $grand_child['url'],
-                                                    ]);
-                                                    ?>
+                                                        $target = $grand_child['target'] ?? '';
+                                                        get_component('link', [
+                                                            'text'     => $grand_child['title'],
+                                                            'classes'  => [],
+                                                            'target'   => $target,
+                                                            'url'    => $grand_child['url'],
+                                                        ]);
+                                                        ?>
                                                     </li>
                                                 <?php endforeach; ?>
                                             </ul>
@@ -457,7 +457,7 @@ get_component('icon', [
                 <?php
                     endif;
                 endforeach; // End main nav looping
-?>
+                ?>
 
             </ul>
         </nav> <!-- End main nav -->
@@ -467,88 +467,88 @@ get_component('icon', [
             class="w-full bg-[--bg-white] font-bold">
             <div class="pt-3 pb-2 px-3 text-center">
                 <?php
-// Conditional Account Buttons
-if ($nav_state == 'logged_out') {
-    get_component('button', [
-        'variant'     => 'primary',
-        'a_tag'     => true,
-        'link'      => $bam_path,
-        'classes'     => ['create-account-button-mobile', 'w-full', 'mb-3', 'justify-center', 'md:hidden'],
-        'label'     => __('Create Account', 'wicket'),
-    ]);
-} elseif ($nav_state == 'logged_in_user') {
-    get_component('button', [
-        'variant'     => 'primary',
-        'a_tag'     => true,
-        'link'      => $bam_path,
-        'classes'     => ['become-a-member-button-mobile', 'w-full', 'mb-3', 'justify-center', 'md:hidden'],
-        'label'     => __('Become a member', 'wicket'),
-    ]);
-    get_component('button', [
-        'variant'     => 'secondary',
-        'a_tag'     => true,
-        'link'      => $account_center_landing,
-        'classes'     => ['my-account-button-mobile', 'w-full', 'mb-3', 'justify-center'],
-        'label'     => __('My Account', 'wicket'),
-    ]);
-} elseif ($nav_state == 'logged_in_member') {
-    get_component('button', [
-        'variant'     => 'secondary',
-        'a_tag'     => true,
-        'link'      => $account_center_landing,
-        'classes'     => ['member-portal-button-mobile', 'w-full', 'mb-3', 'justify-center'],
-        'label'     => __('Member Portal', 'wicket'),
-    ]);
-}
-?>
+                // Conditional Account Buttons
+                if ($nav_state == 'logged_out') {
+                    get_component('button', [
+                        'variant'     => 'primary',
+                        'a_tag'     => true,
+                        'link'      => $bam_path,
+                        'classes'     => ['create-account-button-mobile', 'w-full', 'mb-3', 'justify-center', 'md:hidden'],
+                        'label'     => __('Create Account', 'wicket'),
+                    ]);
+                } elseif ($nav_state == 'logged_in_user') {
+                    get_component('button', [
+                        'variant'     => 'primary',
+                        'a_tag'     => true,
+                        'link'      => $bam_path,
+                        'classes'     => ['become-a-member-button-mobile', 'w-full', 'mb-3', 'justify-center', 'md:hidden'],
+                        'label'     => __('Become a member', 'wicket'),
+                    ]);
+                    get_component('button', [
+                        'variant'     => 'secondary',
+                        'a_tag'     => true,
+                        'link'      => $account_center_landing,
+                        'classes'     => ['my-account-button-mobile', 'w-full', 'mb-3', 'justify-center'],
+                        'label'     => __('My Account', 'wicket'),
+                    ]);
+                } elseif ($nav_state == 'logged_in_member') {
+                    get_component('button', [
+                        'variant'     => 'secondary',
+                        'a_tag'     => true,
+                        'link'      => $account_center_landing,
+                        'classes'     => ['member-portal-button-mobile', 'w-full', 'mb-3', 'justify-center'],
+                        'label'     => __('Member Portal', 'wicket'),
+                    ]);
+                }
+                ?>
                 <?php
-// Conditional login/logout buttons
-if ($nav_state == 'logged_out') {
-    get_component('button', [
-        'label'     => __('Login', 'wicket'),
-        'variant'   => 'ghost',
-        'a_tag'     => true,
-        'classes'   => ['login-button-mobile', 'mb-2', 'w-full', 'justify-center'],
-        'link'       => get_option('wp_cassify_base_url') . 'login?service=' . $referrer,
-    ]);
-} else {
-    get_component('button', [
-        'label'     => __('Logout', 'wicket'),
-        'variant'  => 'ghost',
-        'a_tag'    => true,
-        'classes'  => ['logout-button-mobile', 'mb-2', 'w-full', 'justify-center'],
-        'link'      => wp_logout_url(),
-    ]);
-}
-?>
+                // Conditional login/logout buttons
+                if ($nav_state == 'logged_out') {
+                    get_component('button', [
+                        'label'     => __('Login', 'wicket'),
+                        'variant'   => 'ghost',
+                        'a_tag'     => true,
+                        'classes'   => ['login-button-mobile', 'mb-2', 'w-full', 'justify-center'],
+                        'link'       => get_option('wp_cassify_base_url') . 'login?service=' . $referrer,
+                    ]);
+                } else {
+                    get_component('button', [
+                        'label'     => __('Logout', 'wicket'),
+                        'variant'  => 'ghost',
+                        'a_tag'    => true,
+                        'classes'  => ['logout-button-mobile', 'mb-2', 'w-full', 'justify-center'],
+                        'link'      => wp_logout_url(),
+                    ]);
+                }
+                ?>
             </div> <!-- End items above main nav items and utility nav -->
 
             <div class="main-nav-mobile">
                 <?php
-// Loop main nav items
-foreach ($primary_nav_items_structured as $primary_nav_item):
-    // If this is a single menu item link
-    if ($primary_nav_item['child_count'] == 0):
-        ?>
+                // Loop main nav items
+                foreach ($primary_nav_items_structured as $primary_nav_item):
+                    // If this is a single menu item link
+                    if ($primary_nav_item['child_count'] == 0):
+                ?>
                         <?php
-                $target = $primary_nav_item['target'] ?? '';
-        get_component('link', [
-            'text'     => $primary_nav_item['title'],
-            'classes'  => ['single-nav-item-mobile'],
-            'target'   => $target,
-            'url'    => $primary_nav_item['url'],
-        ]);
-        ?>
+                        $target = $primary_nav_item['target'] ?? '';
+                        get_component('link', [
+                            'text'     => $primary_nav_item['title'],
+                            'classes'  => ['single-nav-item-mobile'],
+                            'target'   => $target,
+                            'url'    => $primary_nav_item['url'],
+                        ]);
+                        ?>
 
                     <?php
-        // If this menu item only has immediate children AND has item count <= 8
-    elseif ($primary_nav_item['child_count'] > 0 && $primary_nav_item['child_count'] <= 8 && $primary_nav_item['grand_child_count'] == 0):
-        ?>
+                    // If this menu item only has immediate children AND has item count <= 8
+                    elseif ($primary_nav_item['child_count'] > 0 && $primary_nav_item['child_count'] <= 8 && $primary_nav_item['grand_child_count'] == 0):
+                    ?>
                         <!-- Start Nav Item -->
                         <div class="nav-parent-item-mobile" :class="navDropdownOpen ? 'open' : ''"
                             x-data="{ navDropdownOpen: false }"
                             x-on:click="navDropdownOpen = ! navDropdownOpen; $dispatch('close-nav-dropdowns')" <?php // If the sending element isn't this element, close dropdown
-                                                                                                    ?>
+                                                                                                                ?>
                             x-on:close-nav-dropdowns.window="
 					if( $event.target !== $el ) {navDropdownOpen = false}">
                             <div class="nav-parent-item-mobile-wrap" x-bind:class=" navDropdownOpen ? 'open' : '' ">
@@ -559,40 +559,40 @@ foreach ($primary_nav_items_structured as $primary_nav_item):
 
                             <ul x-show="navDropdownOpen" x-cloak x-transition class="nav-dropdown-mobile block w-full p-3">
                                 <?php
-                    $child_loop_index = 0;
-        foreach ($primary_nav_item['children'] as $child):
-            // If this is the last element in the list
-            $is_last_element = $child_loop_index == (count($primary_nav_item['children']) - 1);
-            ?>
+                                $child_loop_index = 0;
+                                foreach ($primary_nav_item['children'] as $child):
+                                    // If this is the last element in the list
+                                    $is_last_element = $child_loop_index == (count($primary_nav_item['children']) - 1);
+                                ?>
                                     <li class="<?php if (!$is_last_element) {
-                                        echo 'mb-4';
-                                    } ?>">
+                                                    echo 'mb-4';
+                                                } ?>">
                                         <?php
                                         $target = $child['target'] ?? '';
-            get_component('link', [
-                'text'     => $child['title'],
-                'classes'  => [],
-                'target'   => $target,
-                'url'    => $child['url'],
-            ]);
-            ?>
+                                        get_component('link', [
+                                            'text'     => $child['title'],
+                                            'classes'  => [],
+                                            'target'   => $target,
+                                            'url'    => $child['url'],
+                                        ]);
+                                        ?>
                                     </li>
                                 <?php
                                     $child_loop_index++;
-        endforeach; ?>
+                                endforeach; ?>
                             </ul>
                         </div> <!-- End Nav Item -->
 
 
                     <?php
-        // MEGA MENU If this menu item has grand children OR has more than 8 items
-    elseif ($primary_nav_item['child_count'] > 8 || $primary_nav_item['grand_child_count'] > 0):
-        ?>
+                    // MEGA MENU If this menu item has grand children OR has more than 8 items
+                    elseif ($primary_nav_item['child_count'] > 8 || $primary_nav_item['grand_child_count'] > 0):
+                    ?>
 
                         <!-- Start Nav Item -->
                         <div class="nav-mega-parent-item-mobile" x-data="{ navDropdownOpen: false }"
                             x-on:click="navDropdownOpen = ! navDropdownOpen; $dispatch('close-nav-dropdowns')" <?php // If the sending element isn't this element, close dropdown
-                                                                                                    ?>
+                                                                                                                ?>
                             x-on:close-nav-dropdowns.window="
 					if( $event.target !== $el ) {navDropdownOpen = false}">
                             <div class="nav-mega-parent-item-mobile-wrap" x-bind:class=" navDropdownOpen ? 'open' : '' ">
@@ -604,26 +604,26 @@ foreach ($primary_nav_items_structured as $primary_nav_item):
                             <ul x-show="navDropdownOpen" x-cloak x-transition
                                 class="nav-dropdown-mobile block w-full bg-[--bg-white]">
                                 <?php
-                    foreach ($primary_nav_item['children'] as $child):
-                        // Just print these as a header if there are no children
-                        if ($child['child_count'] == 0):
+                                foreach ($primary_nav_item['children'] as $child):
+                                    // Just print these as a header if there are no children
+                                    if ($child['child_count'] == 0):
 
-                            $target = $child['target'] ?? '';
-                            get_component('link', [
-                                'text'     => $child['title'],
-                                'classes'  => ['block', 'p-3', 'border-dark-060', 'font-bold', 'border-b-medium', 'border-dark-100'],
-                                'target'   => $target,
-                                'url'      => $child['url'],
-                            ]);
-                            ?>
+                                        $target = $child['target'] ?? '';
+                                        get_component('link', [
+                                            'text'     => $child['title'],
+                                            'classes'  => ['block', 'p-3', 'border-dark-060', 'font-bold', 'border-b-medium', 'border-dark-100'],
+                                            'target'   => $target,
+                                            'url'      => $child['url'],
+                                        ]);
+                                ?>
 
                                     <?php else: ?>
                                         <div class="flex flex-col w-full relative hover:cursor-pointer"
                                             x-data="{ subNavDropdownOpen: false }" <?php // Note: .stop prevents this click event from propagating/bubbling up to the parent dropdown; see https://alpinejs.dev/directives/on#stop
-                                                                                ?>
+                                                                                    ?>
                                             x-on:click.stop="if(mobileMenuMegaSubDropdowns) {subNavDropdownOpen = ! subNavDropdownOpen;} $dispatch('close-sub-nav-dropdowns')"
                                             <?php // If the sending element isn't this element, close dropdown
-                                        ?>
+                                            ?>
                                             x-on:close-sub-nav-dropdowns.window="if( $event.target !== $el ) {subNavDropdownOpen = false}">
                                             <div class="mobile-mega-menu-heading-item" x-bind:class=" subNavDropdownOpen ? '' : '' ">
                                                 <span><?php echo $child['title']; ?></span>
@@ -636,52 +636,52 @@ foreach ($primary_nav_items_structured as $primary_nav_item):
                                             <ul x-show="subNavDropdownOpen || !mobileMenuMegaSubDropdowns" x-cloak x-transition
                                                 class="block w-full p-3">
                                                 <?php
-                                            $child_loop_index = 0;
-                                        foreach ($child['children'] as $grand_child):
-                                            // If this is the last element in the list
-                                            $is_last_element = $child_loop_index == (count($child['children']) - 1);
-                                            ?>
+                                                $child_loop_index = 0;
+                                                foreach ($child['children'] as $grand_child):
+                                                    // If this is the last element in the list
+                                                    $is_last_element = $child_loop_index == (count($child['children']) - 1);
+                                                ?>
                                                     <li class="<?php if (!$is_last_element) {
-                                                        echo 'mb-4';
-                                                    } ?>">
+                                                                    echo 'mb-4';
+                                                                } ?>">
                                                         <?php
                                                         $target = $grand_child['target'] ?? '';
-                                            get_component('link', [
-                                                'text'     => $grand_child['title'],
-                                                'classes'  => [],
-                                                'target'   => $target,
-                                                'url'    => $grand_child['url'],
-                                            ]);
-                                            ?>
+                                                        get_component('link', [
+                                                            'text'     => $grand_child['title'],
+                                                            'classes'  => [],
+                                                            'target'   => $target,
+                                                            'url'    => $grand_child['url'],
+                                                        ]);
+                                                        ?>
                                                     </li>
                                                 <?php
                                                     $child_loop_index++;
-                                        endforeach; ?>
+                                                endforeach; ?>
                                             </ul>
                                         </div>
                                 <?php endif;
-                    endforeach; ?>
+                                endforeach; ?>
                             </ul>
                         </div> <!-- End Nav Item -->
                 <?php
                     endif;
-endforeach; // End main nav looping
-?>
+                endforeach; // End main nav looping
+                ?>
             </div>
 
             <div class="secondary-nav-mobile">
                 <?php
-// Secondary Nav Items
-foreach ($secondary_nav_items as $secondary_nav_item) {
-    $target = $secondary_nav_item->target ?? '';
-    get_component('link', [
-        'text'     => $secondary_nav_item->title,
-        'classes'  => ['secondary-nav-item-mobile', 'block', 'mb-2'],
-        'target'   => $target,
-        'url'    => $secondary_nav_item->url,
-    ]);
-}
-?>
+                // Secondary Nav Items
+                foreach ($secondary_nav_items as $secondary_nav_item) {
+                    $target = $secondary_nav_item->target ?? '';
+                    get_component('link', [
+                        'text'     => $secondary_nav_item->title,
+                        'classes'  => ['secondary-nav-item-mobile', 'block', 'mb-2'],
+                        'target'   => $target,
+                        'url'    => $secondary_nav_item->url,
+                    ]);
+                }
+                ?>
 
                 <div class="secondary-nav-item-mobile-wpml">
                     <?php do_action('wpml_language_switcher'); ?>
@@ -691,17 +691,17 @@ foreach ($secondary_nav_items as $secondary_nav_item) {
             <?php if (!empty($utility_nav_items)): ?>
                 <div class="utility-nav-mobile">
                     <?php
-    // Utility Nav Items
-    foreach ($utility_nav_items as $utility_nav_item) {
-        $target = $utility_nav_item->target ?? '';
-        get_component('link', [
-            'text'     => $utility_nav_item->title,
-            'classes'  => ['utility-nav-mobile__item'],
-            'target'   => $target,
-            'url'    => $utility_nav_item->url,
-        ]);
-    }
-                ?>
+                    // Utility Nav Items
+                    foreach ($utility_nav_items as $utility_nav_item) {
+                        $target = $utility_nav_item->target ?? '';
+                        get_component('link', [
+                            'text'     => $utility_nav_item->title,
+                            'classes'  => ['utility-nav-mobile__item'],
+                            'target'   => $target,
+                            'url'    => $utility_nav_item->url,
+                        ]);
+                    }
+                    ?>
                 </div>
             <?php endif; ?>
 
@@ -731,11 +731,11 @@ foreach ($secondary_nav_items as $secondary_nav_item) {
     /* Conditionally-rendered helpers: */
 
     $wicket_helpers_current_user = wp_get_current_user();
-$wicket_is_administrator = false;
-if (in_array('administrator', (array) $wicket_helpers_current_user->roles)) {
-    $wicket_is_administrator = true;
-}
-?>
+    $wicket_is_administrator = false;
+    if (in_array('administrator', (array) $wicket_helpers_current_user->roles)) {
+        $wicket_is_administrator = true;
+    }
+    ?>
 
     <?php if (isset($_GET['wp-info']) && $wicket_is_administrator): ?>
         <div class="fixed block bottom-0 left-0 bg-[--bg-white] border text-dark-100 p-2">
@@ -743,15 +743,15 @@ if (in_array('administrator', (array) $wicket_helpers_current_user->roles)) {
                 <?php echo get_post_type(); ?>
             </div>
             <?php
-        $wicket_helper_current_template = get_page_template_slug();
-        if (empty($wicket_helper_current_template)) {
-            $wicket_helper_current_template = 'Default';
-        }
-        ?>
+            $wicket_helper_current_template = get_page_template_slug();
+            if (empty($wicket_helper_current_template)) {
+                $wicket_helper_current_template = 'Default';
+            }
+            ?>
             <div><strong>Current template:</strong>
                 <?php echo $wicket_helper_current_template; ?>
             </div>
         </div>
     <?php endif; ?>
 
-<?php do_action('wicket_header_end'); ?>
+    <?php do_action('wicket_header_end'); ?>
