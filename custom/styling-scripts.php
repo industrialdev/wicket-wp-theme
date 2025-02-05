@@ -15,7 +15,7 @@ function wicket_styling_acf_save_post($post_id, $menu_slug)
 
     // Generate the CSS file, for IDE auto-completion
     // And maybe enqueue it? Not sure if that mess with the live preview of styles
-    wicket_styling_cache_theme_variables();
+    wicket_styling_theme_variables();
 
     // Clear the cache
     delete_transient(WICKET_THEME_PREFIX . 'css_customizations');
@@ -23,11 +23,13 @@ function wicket_styling_acf_save_post($post_id, $menu_slug)
 add_action('acf/options_page/save', 'wicket_styling_acf_save_post', 10, 2);
 
 /**
- * Generate the CSS file from ACF options.
+ * Generate (or return) the CSS file from ACF options.
  *
- * @return void
+ * @param string $mode Whether to write the CSS file, or return its contents for enqueuing. Default is 'write'. Can be set to 'return'.
+ *
+ * @return string|void
  */
-function wicket_styling_cache_theme_variables()
+function wicket_styling_theme_variables($mode = 'write')
 {
     global $wp_filesystem;
 
@@ -63,6 +65,16 @@ function wicket_styling_cache_theme_variables()
         //$sizesPXtoREM = preg_replace('/^--/m', '  --', $sizesPXtoREM);
 
         $wicket_css_variables = $wicket_css_variables . PHP_EOL . PHP_EOL . $sizesPXtoREM;
+    }
+
+    if ($mode == 'return') {
+        // Minify our CSS for inline render
+        $wicket_css_variables = str_replace(["\r\n", "\r", "\n", "\t"], '', $wicket_css_variables);
+
+        // Remove extra spaces
+        $wicket_css_variables = preg_replace('/\s+/', ' ', $wicket_css_variables);
+
+        return $wicket_css_variables;
     }
 
     // Use WP_Filesystem API to write the file to our theme folder
@@ -169,7 +181,7 @@ function wicket_add_theme_assets()
             // Can we create the file?
             if (is_writable(WICKET_UPLOADS_PATH . 'css/')) {
                 // Generate the CSS file
-                wicket_styling_cache_theme_variables();
+                wicket_styling_theme_variables();
             }
 
             // In this page load, we don't have the theme variables file yet, so we need to enqueue the inline CSS
@@ -184,7 +196,7 @@ function wicket_add_theme_assets()
 
     // Only if WP ENVIRONMENT is development or local
     if (in_array(wp_get_environment_type(), ['development', 'local', 'staging'])) {
-        wp_add_inline_style('wicket-theme', wicket_get_customizations_inline_css());
+        wp_add_inline_style('wicket-theme', wicket_styling_theme_variables('return'));
     }
 
     //wicket_enqueue_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js', true); // 3.7.1 is being enqueued by WP
