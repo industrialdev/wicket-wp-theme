@@ -1,7 +1,7 @@
 /*!
- * Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com
+ * Font Awesome Pro 6.7.2 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license (Commercial License)
- * Copyright 2023 Fonticons, Inc.
+ * Copyright 2024 Fonticons, Inc.
  */
 @import "_variables.less";
 
@@ -26,33 +26,33 @@
   letter-spacing: normal;
 }
 
-.fad:before,
-.@{fa-css-prefix}-duotone:before {
+.fad::before,
+.@{fa-css-prefix}-duotone::before {
   position: absolute;
   color: ~'var(--@{fa-css-prefix}-primary-color, inherit)';
   opacity: @fa-primary-opacity;
   opacity: ~'var(--@{fa-css-prefix}-primary-opacity, @{fa-primary-opacity})';
 }
 
-.fad:after,
-.@{fa-css-prefix}-duotone:after {
+.fad::after,
+.@{fa-css-prefix}-duotone::after {
   color: ~'var(--@{fa-css-prefix}-secondary-color, inherit)';
   opacity: @fa-secondary-opacity;
   opacity: ~'var(--@{fa-css-prefix}-secondary-opacity, @{fa-secondary-opacity})';
 }
 
-.@{fa-css-prefix}-swap-opacity .fad:before,
-.@{fa-css-prefix}-swap-opacity .@{fa-css-prefix}-duotone:before,
-.fad.@{fa-css-prefix}-swap-opacity:before,
-.@{fa-css-prefix}-duotone.@{fa-css-prefix}-swap-opacity:before {
+.@{fa-css-prefix}-swap-opacity .fad::before,
+.@{fa-css-prefix}-swap-opacity .@{fa-css-prefix}-duotone::before,
+.fad.@{fa-css-prefix}-swap-opacity::before,
+.@{fa-css-prefix}-duotone.@{fa-css-prefix}-swap-opacity::before {
   opacity: @fa-secondary-opacity;
   opacity: ~'var(--@{fa-css-prefix}-secondary-opacity, @{fa-secondary-opacity})';
 }
 
-.@{fa-css-prefix}-swap-opacity .fad:after,
-.@{fa-css-prefix}-swap-opacity .@{fa-css-prefix}-duotone:after,
-.fad.@{fa-css-prefix}-swap-opacity:after,
-.@{fa-css-prefix}-duotone.@{fa-css-prefix}-swap-opacity:after {
+.@{fa-css-prefix}-swap-opacity .fad::after,
+.@{fa-css-prefix}-swap-opacity .@{fa-css-prefix}-duotone::after,
+.fad.@{fa-css-prefix}-swap-opacity::after,
+.@{fa-css-prefix}-duotone.@{fa-css-prefix}-swap-opacity::after {
   opacity: @fa-primary-opacity;
   opacity: ~'var(--@{fa-css-prefix}-primary-opacity, @{fa-primary-opacity})';
 }
