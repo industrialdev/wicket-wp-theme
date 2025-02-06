@@ -168,7 +168,6 @@ function wicket_get_customizations_inline_css()
  */
 function wicket_add_theme_assets()
 {
-    // wicket_enqueue_style( 'fontawesome', '/assets/fonts/FontAwesome/web-fonts-with-css/css/fontawesome-all.min.css' );
     wicket_enqueue_style('font-awesome', '/font-awesome/css/fontawesome.css');
     wicket_enqueue_style('font-awesome-brands', '/font-awesome/css/brands.css');
     wicket_enqueue_style('font-awesome-solid', '/font-awesome/css/solid.css');
@@ -199,14 +198,8 @@ function wicket_add_theme_assets()
         wp_add_inline_style('wicket-theme', wicket_styling_theme_variables('return'));
     }
 
-    //wicket_enqueue_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js', true); // 3.7.1 is being enqueued by WP
     wicket_enqueue_script('wicket', '/assets/scripts/min/wicket.min.js', false, ['jquery'], false, true);
 
-    // Conditional Bootstrap enqueue
-    if (isset($_GET['bootstrap'])) {
-        wicket_enqueue_style('boostrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css', true);
-        wicket_enqueue_script('boostrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js', true);
-    }
 }
 add_action('wp_enqueue_scripts', 'wicket_add_theme_assets');
 
