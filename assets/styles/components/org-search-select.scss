@@ -16,6 +16,7 @@
 
     &--selected {
       @apply border-[length:--border-md] border-[--highlight-dark];
+      border-style: solid;
     }
   }
 
