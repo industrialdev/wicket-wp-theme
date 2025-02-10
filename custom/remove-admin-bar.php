@@ -8,7 +8,7 @@ function wicket_should_show_admin_bar()
 {
     $curr_user = wp_get_current_user();
     $is_admin = false;
-    if (in_array('administrator', (array) $curr_user->roles) || in_array('wordpress_admin', (array) $curr_user->roles)) {
+    if (in_array('administrator', (array) $curr_user->roles) || in_array('wordpress_admin', (array) $curr_user->roles) || in_array('Wordpress_Admin', (array) $curr_user->roles)) {
         $is_admin = true;
     }
 
