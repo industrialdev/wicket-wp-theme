@@ -1091,6 +1091,9 @@ video {
 .grid {
   display: grid;
 }
+.contents {
+  display: contents;
+}
 .hidden {
   display: none;
 }
@@ -96476,12 +96479,6 @@ form p.wicket-form-help-text.utility-nav,
   width: 30vw;
 }
 
-.before\:bg-white::before {
-  content: var(--tw-content);
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
-}
-
 .before\:content-\[\'\'\]::before {
   --tw-content: '';
   content: var(--tw-content);
@@ -96510,12 +96507,6 @@ form p.wicket-form-help-text.utility-nav,
 .after\:w-\[30vw\]::after {
   content: var(--tw-content);
   width: 30vw;
-}
-
-.after\:bg-white::after {
-  content: var(--tw-content);
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
 .after\:content-\[\'\'\]::after {
