@@ -18,6 +18,7 @@ function init($block = [])
     $icon_type = get_field('icon_type');
     $accordion_type = get_field('accordion_type');
     $separate_title_body = get_field('separate_title_body');
+    $heading_level = get_field('heading_level');
 
     echo '<div ' . $attrs . '>';
     get_component('accordion', [
@@ -25,6 +26,7 @@ function init($block = [])
         'icon-type'             => $icon_type,
         'accordion-type'        => $accordion_type,
         'separate-title-body'   => $separate_title_body,
+        'heading-level'         => $heading_level,
     ]);
     echo '</div>';
 
