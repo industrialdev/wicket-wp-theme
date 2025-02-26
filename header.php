@@ -459,7 +459,7 @@ get_component('icon', [
                                                     $target = $grand_child['target'] ?? '';
                                                     get_component('link', [
                                                         'text'     => $grand_child['title'],
-                                                        'classes'  => $child['classes'],
+                                                        'classes'  => $grand_child['classes'],
                                                         'target'   => $target,
                                                         'url'    => $grand_child['url'],
                                                     ]);
