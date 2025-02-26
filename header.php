@@ -397,7 +397,7 @@ get_component('icon', [
                                         $target = $child['target'] ?? '';
                             get_component('link', [
                                 'text'     => $child['title'],
-                                'classes'  => [],
+                                'classes'  => $child['classes'],
                                 'target'   => $target,
                                 'url'    => $child['url'],
                             ]);
@@ -459,7 +459,7 @@ get_component('icon', [
                                                     $target = $grand_child['target'] ?? '';
                                                     get_component('link', [
                                                         'text'     => $grand_child['title'],
-                                                        'classes'  => [],
+                                                        'classes'  => $child['classes'],
                                                         'target'   => $target,
                                                         'url'    => $grand_child['url'],
                                                     ]);
@@ -592,7 +592,7 @@ foreach ($primary_nav_items_structured as $primary_nav_item):
                                         $target = $child['target'] ?? '';
             get_component('link', [
                 'text'     => $child['title'],
-                'classes'  => [],
+                'classes'  => $child['classes'],
                 'target'   => $target,
                 'url'    => $child['url'],
             ]);
