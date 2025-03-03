@@ -1,0 +1,11 @@
+/* TinyMCE Editor Styles */
+
+.mce-content-body {
+  ul {
+    @apply list-disc list-inside;
+  }
+
+  ol {
+    @apply list-decimal list-inside;
+  }
+}

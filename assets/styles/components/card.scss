@@ -1,6 +1,6 @@
 .component-card {
   @apply p-[--space-200] min-h-full bg-[--bg-card] rounded-[--card-corner-radius] border-[--border-card] border-b-[length:--border-card-size] gap-[--space-200] relative flex flex-col @2xl:flex-row @2xl:items-center gap-[--space-200];
-  filter: drop-shadow( var(--elevation-4) );
+  filter: drop-shadow(var(--elevation-4));
 
   &__container {
     @apply flex flex-col gap-[--space-200];
@@ -26,7 +26,16 @@
     @apply italic;
   }
 
-  &__excerpt {}
+  &__excerpt {
+    ul {
+      @apply list-disc list-inside;
+    }
 
-  &__subtitle {}
+    ol {
+      @apply list-decimal list-inside;
+    }
+  }
+
+  &__subtitle {
+  }
 }

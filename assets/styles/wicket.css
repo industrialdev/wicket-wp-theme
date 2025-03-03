@@ -89857,6 +89857,14 @@ a:where(:not(.wp-element-button)):active {
 .component-sidebar-contextual-nav__accordion .accordion-item__body {
   margin-top: var(--space-100);
 }
+.accordion-item__body ul {
+  list-style-position: inside;
+  list-style-type: disc;
+}
+.accordion-item__body ol {
+  list-style-position: inside;
+  list-style-type: decimal;
+}
 .accordion-item__title {
   font-size: var(--body-md-font-size);
   font-family: var(--body-md-font-family);
@@ -90432,6 +90440,14 @@ a:where(:not(.wp-element-button)):active {
 }
 .component-card__subtitle {
   font-style: italic;
+}
+.component-card__excerpt ul {
+  list-style-position: inside;
+  list-style-type: disc;
+}
+.component-card__excerpt ol {
+  list-style-position: inside;
+  list-style-type: decimal;
 }
 .component-card-call-out {
   width: 100%;
@@ -95307,6 +95323,16 @@ form p.wicket-form-help-text.woocommerce-shop ul.products li.product .wp-block-p
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
+}
+
+/* TinyMCE Editor Styles */
+.mce-content-body ul {
+  list-style-position: inside;
+  list-style-type: disc;
+}
+.mce-content-body ol {
+  list-style-position: inside;
+  list-style-type: decimal;
 }
 
 /* THEME STRUCTURE
