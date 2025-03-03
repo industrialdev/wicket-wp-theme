@@ -738,10 +738,10 @@ foreach ($secondary_nav_items as $secondary_nav_item) {
                     value="<?php the_search_query(); ?>"
                     placeholder="<?php _e('Search by Keyword', 'wicket'); ?>" />
                 <?php get_component('button', [
-                'variant'     => 'primary',
-                'type'      => 'submit',
-                'label'     => __('Search', 'wicket'),
-                'classes'     => ['ml-2', 'border-0'],
+                    'variant'     => 'primary',
+                    'type'      => 'submit',
+                    'label'     => __('Search', 'wicket'),
+                    'classes'     => ['ml-2', 'border-0'],
                 ]) ?>
             </form>
         </div>
