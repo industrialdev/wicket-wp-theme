@@ -15,7 +15,7 @@ if (have_posts()) :
             echo '</div>';
         }
         ?>
-		<main>
+		<main id="main-content">
 			<?php the_content(); ?>
 		</main>
 

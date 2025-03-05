@@ -26,11 +26,8 @@
 
 #main-content {
   // Case: First level blocks are core blocks add mobile inline padding
-  &
-    > *:is(.wp-block-heading, .wp-block-paragraph, .wp-block-columns):not(
-      .alignfull
-    ) {
-    padding-inline: 1rem;
+    & > *:is(.wp-block-heading, .wp-block-paragraph, .wp-block-columns, .wp-block-group):not(.alignfull) {
+    padding-inline: var(--space-200);
 
     @include media-breakpoint-down('1024px') {
       padding-inline: 0;

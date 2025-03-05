@@ -92735,11 +92735,11 @@ form p.wicket-form-help-text.component-tooltip-content,
   max-width: 100% !important;
 }
 
-#main-content > *:is(.wp-block-heading, .wp-block-paragraph, .wp-block-columns):not(.alignfull) {
-  padding-inline: 1rem;
+#main-content > *:is(.wp-block-heading, .wp-block-paragraph, .wp-block-columns, .wp-block-group):not(.alignfull) {
+  padding-inline: var(--space-200);
 }
 @media (min-width: 1024px) {
-  #main-content > *:is(.wp-block-heading, .wp-block-paragraph, .wp-block-columns):not(.alignfull) {
+  #main-content > *:is(.wp-block-heading, .wp-block-paragraph, .wp-block-columns, .wp-block-group):not(.alignfull) {
     padding-inline: 0;
   }
 }
@@ -95378,6 +95378,9 @@ form p.wicket-form-help-text.site-header .right-hamburger-button,
 }
 .site-header .left-hamburger-button.open i.fa-bars::before {
   content: "X";
+}
+.site-header .nav-dropdown-mobile {
+  background-color: var(--dropdown-mega-bg);
 }
 .site-header .right-hamburger-close-button {
   margin-right: 2.5rem;

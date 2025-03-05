@@ -16,6 +16,10 @@
     }
   }
 
+  .nav-dropdown-mobile {
+    @apply bg-[--dropdown-mega-bg];
+  }
+
   .right-hamburger-close-button {
     @apply inline-flex md:hidden mr-10 items-center;
   }
