@@ -17,11 +17,28 @@
     }
 
     ul {
-      @apply list-disc list-inside;
+      li {
+        @apply flex gap-2;
+
+        &:before {
+          @apply min-w-4;
+          content: "\2022";
+        }
+      }
     }
 
     ol {
-      @apply list-decimal list-inside;
+      counter-reset: list-item;
+
+      li {
+        @apply flex gap-2;
+        counter-increment: list-item;
+
+        &:before {
+          @apply min-w-4;
+          content: counter(list-item) ".";
+        }
+      }
     }
   }
 
