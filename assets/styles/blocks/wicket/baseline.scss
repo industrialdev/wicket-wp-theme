@@ -26,11 +26,18 @@
 
 #main-content {
   // Case: First level blocks are core blocks add mobile inline padding
-    & > *:is(.wp-block-heading, .wp-block-paragraph, .wp-block-columns, .wp-block-group):not(.alignfull) {
-    padding-inline: var(--space-200);
+  & > *:is(.wp-block-heading, .wp-block-paragraph, .wp-block-columns, .wp-block-group, .wp-block-table, .wp-block-gravityforms):not(.alignfull) {
 
-    @include media-breakpoint-down('1024px') {
-      padding-inline: 0;
+    @media (max-width: 767px) {
+      margin-inline: var(--space-200);
+      width: auto;
+    }
+  }
+
+  & > *:is(.wp-block-heading, .wp-block-paragraph, .wp-block-columns, .wp-block-group, .wp-block-table, .wp-block-gravityforms):is(.alignfull) {
+
+    @media (max-width: 767px) {
+      padding-inline: var(--space-200);
     }
   }
 }

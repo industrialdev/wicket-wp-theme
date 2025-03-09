@@ -92768,12 +92768,13 @@ form p.wicket-form-help-text.component-tooltip-content,
   max-width: 100% !important;
 }
 
-#main-content > *:is(.wp-block-heading, .wp-block-paragraph, .wp-block-columns, .wp-block-group):not(.alignfull) {
-  padding-inline: var(--space-200);
-}
-@media (min-width: 1024px) {
-  #main-content > *:is(.wp-block-heading, .wp-block-paragraph, .wp-block-columns, .wp-block-group):not(.alignfull) {
-    padding-inline: 0;
+@media (max-width: 767px) {
+  #main-content > *:is(.wp-block-heading, .wp-block-paragraph, .wp-block-columns, .wp-block-group, .wp-block-table, .wp-block-gravityforms):not(.alignfull) {
+    margin-inline: var(--space-200);
+    width: auto;
+  }
+  #main-content > *:is(.wp-block-heading, .wp-block-paragraph, .wp-block-columns, .wp-block-group, .wp-block-table, .wp-block-gravityforms):is(.alignfull) {
+    padding-inline: var(--space-200);
   }
 }
 
