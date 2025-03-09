@@ -430,7 +430,7 @@ get_component('icon', [
                                         // Just print these as a header if there are no children
                                         if ($child['child_count'] == 0):
                                             ?>
-                                        <div class="w-1/4">
+                                        <div>
                                             <?php
                                                         $target = $child['target'] ?? '';
                                             get_component('link', [
@@ -442,7 +442,7 @@ get_component('icon', [
                                             ?>
                                         </div>
                                     <?php else: ?>
-                                        <div class="w-1/4">
+                                        <div>
                                             <?php
                                             $target = $child['target'] ?? '';
                                         get_component('link', [

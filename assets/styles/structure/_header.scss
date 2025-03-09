@@ -36,7 +36,7 @@
       @apply static;
 
       .nav-mega-dropdown {
-        @apply absolute z-20 flex gap-2 left-0 mt-4 w-full bg-[--dropdown-mega-bg] p-3 lg:p-7 flex-wrap rounded-b-[--dropdown-mega-corner-radius];
+        @apply absolute z-20 grid grid-cols-4 gap-2 left-0 mt-4 w-full bg-[--dropdown-mega-bg] p-3 lg:p-7 flex-wrap rounded-b-[--dropdown-mega-corner-radius];
         filter: drop-shadow( var(--elevation-4) );
       }
     }
