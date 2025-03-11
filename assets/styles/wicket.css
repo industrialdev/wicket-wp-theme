@@ -92766,7 +92766,7 @@ form p.wicket-form-help-text.component-tooltip-content,
 }
 
 @media (max-width: 767px) {
-  #main-content > *:is(.wp-block-heading, .wp-block-paragraph, .wp-block-columns, .wp-block-group, .wp-block-table, .wp-block-gravityforms):not(.alignfull) {
+  #main-content > *:is(.wp-block-heading, .wp-block-paragraph, .wp-block-columns, .wp-block-group, .wp-block-table, .wp-block-gravityforms, .wp-block-wicket-call-out-card):not(.alignfull) {
     margin-inline: var(--space-200);
     width: auto;
   }
@@ -94027,6 +94027,13 @@ form.woocommerce-checkout .woocommerce-checkout-payment #place_order .component-
   -webkit-transform: translatey(-50%);
   transform: translatey(-50%);
   background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzMiIHZpZXdCb3g9IjAgMCAzMiAzMyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgaWQ9IjMyL3Rvb2x0aXAiPgo8cGF0aCBpZD0iJiMyMzk7JiMxMjk7JiMxNTQ7IiBkPSJNMTYgMC41QzI0LjgxMjUgMC41IDMyIDcuNjg3NSAzMiAxNi41QzMyIDI1LjM3NSAyNC44MTI1IDMyLjUgMTYgMzIuNUM3LjEyNSAzMi41IDAgMjUuMzc1IDAgMTYuNUMwIDcuNjg3NSA3LjEyNSAwLjUgMTYgMC41Wk0xNiAyOS41QzIzLjEyNSAyOS41IDI5IDIzLjY4NzUgMjkgMTYuNUMyOSA5LjM3NSAyMy4xMjUgMy41IDE2IDMuNUM4LjgxMjUgMy41IDMgOS4zNzUgMyAxNi41QzMgMjMuNjg3NSA4LjgxMjUgMjkuNSAxNiAyOS41Wk0xOC41IDIxLjVDMTkuMzEyNSAyMS41IDIwIDIyLjE4NzUgMjAgMjNDMjAgMjMuODc1IDE5LjMxMjUgMjQuNSAxOC41IDI0LjVIMTMuNUMxMi42MjUgMjQuNSAxMiAyMy44NzUgMTIgMjNDMTIgMjIuMTg3NSAxMi42MjUgMjEuNSAxMy41IDIxLjVIMTQuNVYxNy41SDE0QzEzLjEyNSAxNy41IDEyLjUgMTYuODc1IDEyLjUgMTZDMTIuNSAxNS4xODc1IDEzLjEyNSAxNC41IDE0IDE0LjVIMTZDMTYuODEyNSAxNC41IDE3LjUgMTUuMTg3NSAxNy41IDE2VjIxLjVIMTguNVpNMTYgMTIuNUMxNC44NzUgMTIuNSAxNCAxMS42MjUgMTQgMTAuNUMxNCA5LjQzNzUgMTQuODc1IDguNSAxNiA4LjVDMTcuMDYyNSA4LjUgMTggOS40Mzc1IDE4IDEwLjVDMTggMTEuNjI1IDE3LjA2MjUgMTIuNSAxNiAxMi41WiIgZmlsbD0iI0ExQTFBMSIvPgo8L2c+Cjwvc3ZnPgo=");
+}
+@media (max-width: 767px) {
+  .woocommerce-info,
+  .woocommerce-message,
+  .woocommerce-error {
+    margin-inline: var(--space-200);
+  }
 }
 
 .woocommerce-info{

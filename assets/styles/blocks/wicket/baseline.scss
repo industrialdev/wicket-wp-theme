@@ -26,7 +26,7 @@
 
 #main-content {
   // Case: First level blocks are core blocks add mobile inline padding
-  & > *:is(.wp-block-heading, .wp-block-paragraph, .wp-block-columns, .wp-block-group, .wp-block-table, .wp-block-gravityforms):not(.alignfull) {
+  & > *:is(.wp-block-heading, .wp-block-paragraph, .wp-block-columns, .wp-block-group, .wp-block-table, .wp-block-gravityforms, .wp-block-wicket-call-out-card):not(.alignfull) {
 
     @media (max-width: 767px) {
       margin-inline: var(--space-200);
