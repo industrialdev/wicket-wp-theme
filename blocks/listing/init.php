@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Wicket Listing Block.
  *
@@ -278,45 +279,43 @@ function init($block = [])
 
     /* Add custom filter for adding extra values to $tax_query */
     $tax_query = apply_filters('wicket_listing_block_before_query', $tax_query);
-
     ?>
+    <form action="" <?php echo $attrs ?> class="block-wicket-listing">
 
-	<form action="" <?php echo $attrs ?> class="block-wicket-listing">
+        <?php if (!$hide_search) : ?>
+            <div
+                class="block-wicket-listing__search-form <?php echo $search_form_bg_color ?> <?php echo defined('WICKET_WP_THEME_V2') ? '' : 'px-4 py-5 lg:px-0' ?>">
+                <div class="container">
+                    <?php get_component('search-form', [
+                            'button_reversed' => defined('WICKET_WP_THEME_V2') ? true : false,
+                        ]); ?>
+                </div>
+            </div>
+        <?php endif; ?>
 
-		<?php if (!$hide_search) : ?>
-			<div
-				class="block-wicket-listing__search-form <?php echo $search_form_bg_color ?> <?php echo defined('WICKET_WP_THEME_V2') ? '' : 'px-4 py-5 lg:px-0' ?>">
-				<div class="container">
-					<?php get_component('search-form', [
-					    'button_reversed' => defined('WICKET_WP_THEME_V2') ? true : false,
-					]); ?>
-				</div>
-			</div>
-		<?php endif; ?>
-
-		<?php
-        echo '<div class="block-wicket-listing__container ' . $listing_container_bg_color . ' overflow-x-hidden">';
+        <?php
+            echo '<div class="block-wicket-listing__container ' . $listing_container_bg_color . ' overflow-x-hidden">';
     if (is_admin() && !$post_type) {
         echo '<p>' . __('Use the Block controls in edit mode or on the right to configure listing.', 'wicket') . '</p>';
     } ?>
 
-		<div class="container">
-			<div class="flex flex-col lg:flex-row gap-4">
-				<?php if (!empty($taxonomy_filters)) : ?>
-					<div
-						class="block-wicket-listing__filters basis-1/4 relative after:content-[''] after:absolute after:top-0 after:bottom-0 after:right-full after:w-[30vw] before:block lg:before:hidden before:content-[''] before:absolute before:top-0 before:bottom-0 before:left-full before:w-[30vw]">
-						<?php
+        <div class="container">
+            <div class="flex flex-col lg:flex-row gap-4">
+                <?php if (!empty($taxonomy_filters)) : ?>
+                    <div
+                        class="block-wicket-listing__filters basis-1/4 relative after:content-[''] after:absolute after:top-0 after:bottom-0 after:right-full after:w-[30vw] before:block lg:before:hidden before:content-[''] before:absolute before:top-0 before:bottom-0 before:left-full before:w-[30vw]">
+                        <?php
                     get_component('filter-form', [
                         'taxonomies'            => $taxonomy_filters,
                         'hide_date_filter'      => $hide_date_filter,
                         'pre_filter_categories' => $pre_filter_categories,
                     ]); ?>
-					</div>
-				<?php endif; ?>
+                    </div>
+                <?php endif; ?>
 
-				<div
-					class="block-wicket-listing__entries <?php echo !empty($taxonomy_filters) ? 'basis-3/4' : 'basis-full' ?> pt-4 lg:pt-10">
-					<?php
+                <div
+                    class="block-wicket-listing__entries <?php echo !empty($taxonomy_filters) ? 'basis-3/4' : 'basis-full' ?> pt-4 lg:pt-10">
+                    <?php
                 $args = [
                     'post_type'      => $post_type,
                     'posts_per_page' => $posts_per_page,
@@ -357,73 +356,73 @@ function init($block = [])
     $query = new \WP_Query($args);
     $posts = $query->posts;
     $total_posts = $query->found_posts;
+    $total_pages = $query->max_num_pages;
     ?>
 
-					<div
-						class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-7 px-4 lg:px-0">
-						<div
-							class="<?php echo defined('WICKET_WP_THEME_V2') ? 'block-wicket-listing__total' : 'font-bold' ?>">
-							<?php
+                    <div
+                        class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-7 px-4 lg:px-0">
+                        <div
+                            class="<?php echo defined('WICKET_WP_THEME_V2') ? 'block-wicket-listing__total' : 'font-bold' ?>">
+                            <?php
             if ($total_posts === 0) {
                 echo '0' . __(' Results', 'wicket');
             } else {
                 echo sprintf(
-                    __('%1$d-%2$d of %3$d Results', 'wicket'),
+                    __('Page %1$d of %2$d (%3$d Results)', 'wicket'),
                     $paged,
-                    count($posts),
+                    $total_pages,
                     $total_posts
                 );
             }
     ?>
-						</div>
-						<div
-							class="<?php echo defined('WICKET_WP_THEME_V2') ? 'block-wicket-listing__sort-by' : 'flex items-center gap-3' ?>">
-							<label for="sort-by">
-								<?php echo __('Sort by', 'wicket'); ?>
-							</label>
-							<select name="sort-by" id="sort-by" class="min-w-[260px]" onchange="this.form.submit()">
-								<?php
+                        </div>
+                        <div
+                            class="<?php echo defined('WICKET_WP_THEME_V2') ? 'block-wicket-listing__sort-by' : 'flex items-center gap-3' ?>">
+                            <label for="sort-by">
+                                <?php echo __('Sort by', 'wicket'); ?>
+                            </label>
+                            <select name="sort-by" id="sort-by" class="min-w-[260px]" onchange="this.form.submit()">
+                                <?php
         $date_desc_label = __('Date (newest-oldest)', 'industrial');
     $date_asc_label = __('Date (oldest-newest)', 'industrial');
     $alpha_asc_label = __('Alphabetical (a-z)', 'industrial');
     $alpha_desc_label = __('Alphabetical (z-a)', 'industrial');
     if (isset($_GET['sort-by'])) : ?>
-									<option value="date-desc" <?php if ($_GET['sort-by'] == 'date-desc') : ?>selected<?php endif; ?>>
-										<?php echo $date_desc_label; ?>
-									</option>
-									<option value="date-asc" <?php if ($_GET['sort-by'] == 'date-asc') : ?>selected<?php endif; ?>>
-										<?php echo $date_asc_label; ?>
-									</option>
-									<option value="alpha-asc" <?php if ($_GET['sort-by'] == 'alpha-asc') : ?>selected<?php endif; ?>>
-										<?php echo $alpha_asc_label; ?>
-									</option>
-									<option value="alpha-desc" <?php if ($_GET['sort-by'] == 'alpha-desc') : ?>selected<?php endif; ?>>
-										<?php echo $alpha_desc_label; ?>
-									</option>
-									<?php
-    else : ?>
-									<option value="date-desc" <?php if ($default_order_by == 'date-desc') : ?>selected<?php endif; ?>>
-										<?php echo $date_desc_label; ?>
-									</option>
-									<option value="date-asc" <?php if ($default_order_by == 'date-asc') : ?>selected<?php endif; ?>>
-										<?php echo $date_asc_label; ?>
-									</option>
-									<option value="alpha-asc" <?php if ($default_order_by == 'alpha-asc') : ?>selected<?php endif; ?>>
-										<?php echo $alpha_asc_label; ?>
-									</option>
-									<option value="alpha-desc" <?php if ($default_order_by == 'alpha-desc') : ?>selected<?php endif; ?>>
-										<?php echo $alpha_desc_label; ?>
-									</option>
-									<?php
+                                    <option value="date-desc" <?php if ($_GET['sort-by'] == 'date-desc') : ?>selected<?php endif; ?>>
+                                        <?php echo $date_desc_label; ?>
+                                    </option>
+                                    <option value="date-asc" <?php if ($_GET['sort-by'] == 'date-asc') : ?>selected<?php endif; ?>>
+                                        <?php echo $date_asc_label; ?>
+                                    </option>
+                                    <option value="alpha-asc" <?php if ($_GET['sort-by'] == 'alpha-asc') : ?>selected<?php endif; ?>>
+                                        <?php echo $alpha_asc_label; ?>
+                                    </option>
+                                    <option value="alpha-desc" <?php if ($_GET['sort-by'] == 'alpha-desc') : ?>selected<?php endif; ?>>
+                                        <?php echo $alpha_desc_label; ?>
+                                    </option>
+                                <?php else : ?>
+                                    <option value="date-desc" <?php if ($default_order_by == 'date-desc') : ?>selected<?php endif; ?>>
+                                        <?php echo $date_desc_label; ?>
+                                    </option>
+                                    <option value="date-asc" <?php if ($default_order_by == 'date-asc') : ?>selected<?php endif; ?>>
+                                        <?php echo $date_asc_label; ?>
+                                    </option>
+                                    <option value="alpha-asc" <?php if ($default_order_by == 'alpha-asc') : ?>selected<?php endif; ?>>
+                                        <?php echo $alpha_asc_label; ?>
+                                    </option>
+                                    <option value="alpha-desc" <?php if ($default_order_by == 'alpha-desc') : ?>selected<?php endif; ?>>
+                                        <?php echo $alpha_desc_label; ?>
+                                    </option>
+                                <?php
     endif; ?>
-							</select>
-						</div>
-					</div>
+                            </select>
+                        </div>
+                    </div>
 
-					<?php
+                    <?php
                     if ($query->have_posts()) : ?>
-						<div class="pb-24 px-4 lg:px-0">
-							<?php
+                        <div class="pb-24 px-4 lg:px-0">
+                            <?php
 
                             if ($listing_layout === 'grid') {
                                 echo '<div class="grid gap-10 grid-cols-1 lg:gap-4 lg:grid-cols-3 mb-6">';
@@ -477,7 +476,6 @@ function init($block = [])
                                 ];
 
                                 get_component($post_type == 'product' ? 'card-product' : 'card-featured', $grid_card_params);
-
                             } else {
                                 $listing_card_params = [
                                     'classes'                   => ['mb-6', "item-number-{$item_number}"],
@@ -519,23 +517,22 @@ function init($block = [])
         'total' => $query->max_num_pages,
     ]);
     ?>
-						</div>
-					<?php else : ?>
-						<div class="p-10">
-							<h2
-								class="<?php echo defined('WICKET_WP_THEME_V2') ? 'block-wicket-listing__no-results' : 'text-center font-bold text-heading-md mb-6' ?>">
-								<?php echo __('No results found.', 'wicket') ?>
-							</h2>
-							<div class="text-center">
-								<?php echo apply_filters('wicket_listing_block_no_results_message', __('Try adjusting your search or filter to find what you are looking for.', 'wicket')); ?>
-							</div>
-						</div>
-					<?php endif; ?>
-				</div>
-			</div>
-		</div>
+                        </div>
+                    <?php else : ?>
+                        <div class="p-10">
+                            <h2
+                                class="<?php echo defined('WICKET_WP_THEME_V2') ? 'block-wicket-listing__no-results' : 'text-center font-bold text-heading-md mb-6' ?>">
+                                <?php echo __('No results found.', 'wicket') ?>
+                            </h2>
+                            <div class="text-center">
+                                <?php echo apply_filters('wicket_listing_block_no_results_message', __('Try adjusting your search or filter to find what you are looking for.', 'wicket')); ?>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
 
-		<?php echo '</div>';
+    <?php echo '</div>';
     echo '</form>';
-
 }
