@@ -38,11 +38,11 @@ if (!function_exists('wicket_breadcrumb')) {
             false
         );
         $url = get_permalink();
-        if (str_contains($url, 'resource')) {
+        if (str_contains($url, '/resource/')) {
             $crumbs[] = '<span class="font-bold">' . __('Resources', 'wicket') . '</span>';
-        } elseif (str_contains($url, 'news')) {
+        } elseif (str_contains($url, '/news/')) {
             $crumbs[] = '<span class="font-bold">' . __('News', 'wicket') . '</span>';
-        } elseif (str_contains($url, 'event')) {
+        } elseif (str_contains($url, '/event/')) {
             $crumbs[] = '<span class="font-bold">' . __('Events', 'wicket') . '</span>';
         } elseif (is_page() || is_single()) {
             // Standard page
