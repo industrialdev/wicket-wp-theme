@@ -74,6 +74,10 @@ if (!function_exists('wicket_breadcrumb')) {
             $crumbs[] = '<strong>' . __('Search Results for:', 'wicket') . '"<em>' . get_search_query() . '</em>"</strong>';
         }
 
+        foreach ($crumbs as $i=>$crumb) {
+			$crumbs[$i] = wp_trim_words($crumb, 5, '...');
+		}
+
         echo implode($separator, $crumbs);
     }
 }
