@@ -60,22 +60,47 @@ the_field('tracking_codes_in_head', 'options');
 // Set PHP variables needed for secondary nav
 $logo = get_field('site_logo', 'options');
 $logo_url = $logo['url'] ?? get_template_directory_uri() . '/assets/images/logo-' . $lang . '.svg' ?? '';
-$create_account_path = $lang == 'fr' ? '/fr/create-account' : '/create-account';
+$default_account_path = $lang == 'fr' ? '/fr/create-account' : '/create-account';
 
+/**
+ ** Set "Become a Member" link
+ */
 $display_bam_link = get_field('display_bam_link', 'options') ?? true;
 $bam_button_style = get_field('bam_button_style', 'options') ?? 'primary';
 $bam_link_array = get_field('bam_link', 'options');
 
-// Set "Become a Member" link
-$bam_url = $create_account_path;
+$bam_url = $default_account_path;
 $bam_label = __('Become a member', 'wicket');
 $bam_target_attr = '_self';
 
-if(is_array($bam_link_array)) {
+if (is_array($bam_link_array)) {
     $bam_url = $bam_link_array['url'];
     $bam_label = $bam_link_array['title'];
     $bam_target_attr = $bam_link_array['target'];
 }
+/**
+ ** END "Become a Member" link
+ */
+
+/**
+ ** Set "Create Account" link
+ */
+$display_create_account_link = get_field('display_create_account_link', 'options') ?? true;
+$create_account_button_style = get_field('create_account_button_style', 'options') ?? 'primary';
+$create_account_link_array = get_field('create_account_link', 'options');
+
+$create_account_url = $default_account_path;
+$create_account_label = __('Create Account', 'wicket');
+$create_account_target_attr = '_self';
+
+if (is_array($create_account_link_array)) {
+    $create_account_url = $create_account_link_array['url'];
+    $create_account_label = $create_account_link_array['title'];
+    $create_account_target_attr = $create_account_link_array['target'];
+}
+/**
+ ** END "Create Account" link
+ */
 
 $acc_index_url = get_post_type_archive_link('my-account');
 if ($acc_index_url) {
@@ -199,14 +224,17 @@ get_component('button', [
 ?>
                     <?php
 if ($nav_state == 'logged_out') {
-    get_component('button', [
-        'variant'   => 'primary',
-        'a_tag'     => true,
-        'link'      => $create_account_path,
-        'classes'   => ['create-account-button', 'hidden', 'md:inline-flex'],
-        'label'     => __('Create Account', 'wicket'),
-        'atts'      => ['x-show="! searchOpen"', 'x-cloak'],
-    ]);
+    if ($display_create_account_link) {
+        get_component('button', [
+            'variant'     => $create_account_button_style,
+            'a_tag'       => true,
+            'link_target' => $create_account_target_attr,
+            'link'        => $create_account_url,
+            'classes'     => ['create-account-button', 'hidden', 'md:inline-flex'],
+            'label'       => $create_account_label,
+            'atts'        => ['x-show="! searchOpen"', 'x-cloak'],
+        ]);
+    }
 } elseif ($nav_state == 'logged_in_user') {
     if ($display_bam_link) {
         get_component('button', [
@@ -487,13 +515,16 @@ get_component('icon', [
                 <?php
 // Conditional Account Buttons
 if ($nav_state == 'logged_out') {
-    get_component('button', [
-        'variant'     => 'primary',
-        'a_tag'     => true,
-        'link'      => $create_account_path,
-        'classes'     => ['create-account-button-mobile', 'w-full', 'mb-3', 'justify-center', 'md:hidden'],
-        'label'     => __('Create Account', 'wicket'),
-    ]);
+    if ($display_create_account_link) {
+        get_component('button', [
+            'variant'     => $create_account_button_style,
+            'a_tag'       => true,
+            'link'        => $create_account_url,
+            'link_target' => $create_account_target_attr,
+            'classes'     => ['create-account-button-mobile', 'w-full', 'mb-3', 'justify-center', 'md:hidden'],
+            'label'       => $create_account_label,
+        ]);
+    }
 } elseif ($nav_state == 'logged_in_user') {
     if ($display_bam_link) {
         get_component('button', [
