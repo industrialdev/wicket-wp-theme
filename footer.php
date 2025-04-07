@@ -23,13 +23,16 @@ if (!empty($newsletter['title'])) : ?>
 					</div>
 
 					<?php if (!empty($newsletter['link'])) {
+
+                        $newsletter_link_title = empty($newsletter['link']['title']) ? __('Subscribe to our newsletter', 'wicket') : $newsletter['link']['title'];
+
 					    get_component('button', [
 					        'variant'     => 'primary',
 					        'link'        => $newsletter['link']['url'],
 					        'link_target' => $newsletter['link']['target'],
 					        'a_tag'       => true,
 					        'reversed'    => true,
-					        'label'       => __('Subscribe to our newsletter', 'wicket'),
+					        'label'       => $newsletter_link_title,
 					        'prefix_icon' => 'fa-regular fa-envelope',
 					        'suffix_icon' => '',
 					        'classes'     => ['newsletter-button'],
@@ -176,13 +179,15 @@ if (!empty($newsletter['title'])) : ?>
 							                }
 
 							                if ($newsletter_page) {
+                                                $newsletter_page_link_title = empty($newsletter_page['link']['title']) ? __('Subscribe to our newsletter', 'wicket') : $newsletter_page['link']['title'];
+
 							                    get_component('button', [
 							                        'variant'     => 'secondary',
 							                        'link'        => $newsletter_page['url'],
 							                        'link_target' => $newsletter_page['target'],
 							                        'a_tag'       => true,
 							                        'reversed'    => false,
-							                        'label'       => __('Subscribe to our newsletter', 'wicket'),
+							                        'label'       => $newsletter_page_link_title,
 							                        'prefix_icon' => 'fa-regular fa-envelope',
 							                        'suffix_icon' => '',
 							                        'classes'     => ['newsletter-button'],
