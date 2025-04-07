@@ -63,7 +63,7 @@ if (!function_exists('wicket_breadcrumb')) {
                             'reversed' => $reversed,
                             'default_link_style' => true,
                             'url'     => get_permalink($ancestor),
-                            'text'    => get_the_title($ancestor),
+                            'text'    => wp_trim_words(get_the_title($ancestor), 5, '...'),
                         ],
                         false
                     );
@@ -73,10 +73,6 @@ if (!function_exists('wicket_breadcrumb')) {
         } elseif (is_search()) {
             $crumbs[] = '<strong>' . __('Search Results for:', 'wicket') . '"<em>' . get_search_query() . '</em>"</strong>';
         }
-
-        foreach ($crumbs as $i=>$crumb) {
-			$crumbs[$i] = wp_trim_words($crumb, 5, '...');
-		}
 
         echo implode($separator, $crumbs);
     }
