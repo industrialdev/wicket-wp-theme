@@ -93385,6 +93385,7 @@ li img {
 }
 
 .wp-block-image img{
+  display: inline-block;
   border-radius: var(--image-corner-radius);
 }
 
