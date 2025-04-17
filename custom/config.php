@@ -196,3 +196,21 @@ add_filter('body_class', 'wicket_add_theme_classes');
 add_action('after_setup_theme', function () {
     add_theme_support('title-tag');
 });
+
+/**
+ * Flush cache if certain ACF options pages are saved/updated.
+ */
+add_action('acf/options_page/save', 'wicket_check_acf_option_fields_and_clear_breeze_cache', 10, 2);
+
+function wicket_check_acf_option_fields_and_clear_breeze_cache($post_id, $menu_slug) {
+
+    // Clear cache if the menu slug matches one of the specified slugs
+    $menu_slugs = [
+        'acf-options-header',
+        'acf-options-footer'
+    ];
+
+    if (in_array($menu_slug, $menu_slugs) && has_action('breeze_clear_all_cache')) {
+        do_action('breeze_clear_all_cache');
+    }
+}
