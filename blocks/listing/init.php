@@ -287,8 +287,8 @@ function init($block = [])
                 class="block-wicket-listing__search-form <?php echo $search_form_bg_color ?> <?php echo defined('WICKET_WP_THEME_V2') ? '' : 'px-4 py-5 lg:px-0' ?>">
                 <div class="container">
                     <?php get_component('search-form', [
-                            'button_reversed' => defined('WICKET_WP_THEME_V2') ? true : false,
-                        ]); ?>
+                        'button_reversed' => defined('WICKET_WP_THEME_V2') ? true : false,
+                    ]); ?>
                 </div>
             </div>
         <?php endif; ?>

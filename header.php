@@ -63,7 +63,7 @@ $logo_url = $logo['url'] ?? get_template_directory_uri() . '/assets/images/logo-
 $default_account_path = $lang == 'fr' ? '/fr/create-account' : '/create-account';
 
 /**
- ** Set "Become a Member" link
+ ** Set "Become a Member" link.
  */
 $display_bam_link = get_field('display_bam_link', 'options') ?? true;
 $bam_button_style = get_field('bam_button_style', 'options') ?? 'primary';
@@ -79,11 +79,11 @@ if (is_array($bam_link_array)) {
     $bam_target_attr = $bam_link_array['target'];
 }
 /**
- ** END "Become a Member" link
+ ** END "Become a Member" link.
  */
 
 /**
- ** Set "Create Account" link
+ ** Set "Create Account" link.
  */
 $display_create_account_link = get_field('display_create_account_link', 'options') ?? true;
 $create_account_button_style = get_field('create_account_button_style', 'options') ?? 'primary';
@@ -99,9 +99,8 @@ if (is_array($create_account_link_array)) {
     $create_account_target_attr = $create_account_link_array['target'];
 }
 /**
- ** END "Create Account" link
+ ** END "Create Account" link.
  */
-
 $acc_index_url = get_post_type_archive_link('my-account');
 if ($acc_index_url) {
     $account_center_landing = $acc_index_url;

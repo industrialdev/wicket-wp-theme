@@ -6,5 +6,10 @@
     & > div {
       @apply min-h-full;
     }
+
+    /* Case: Full height */
+    &.wp-block-wicket-card-is-full-height {
+      @apply grid;
+    }
   }
 }

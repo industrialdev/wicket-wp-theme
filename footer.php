@@ -24,7 +24,7 @@ if (!empty($newsletter['title'])) : ?>
 
 					<?php if (!empty($newsletter['link'])) {
 
-                        $newsletter_link_title = empty($newsletter['link']['title']) ? __('Subscribe to our newsletter', 'wicket') : $newsletter['link']['title'];
+					    $newsletter_link_title = empty($newsletter['link']['title']) ? __('Subscribe to our newsletter', 'wicket') : $newsletter['link']['title'];
 
 					    get_component('button', [
 					        'variant'     => 'primary',
@@ -179,7 +179,7 @@ if (!empty($newsletter['title'])) : ?>
 							                }
 
 							                if ($newsletter_page) {
-                                                $newsletter_page_link_title = empty($newsletter_page['link']['title']) ? __('Subscribe to our newsletter', 'wicket') : $newsletter_page['link']['title'];
+							                    $newsletter_page_link_title = empty($newsletter_page['link']['title']) ? __('Subscribe to our newsletter', 'wicket') : $newsletter_page['link']['title'];
 
 							                    get_component('button', [
 							                        'variant'     => 'secondary',

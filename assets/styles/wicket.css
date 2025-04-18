@@ -93028,9 +93028,13 @@ form p.wicket-form-help-text.component-tooltip-content,
 
 :where(.wp-block-column) .wp-block-wicket-card{
   min-height: 100%;
+  /* Case: Full height */
 }
 :where(.wp-block-column) .wp-block-wicket-card .component-card, :where(.wp-block-column) .wp-block-wicket-card > div{
   min-height: 100%;
+}
+:where(.wp-block-column) .wp-block-wicket-card.wp-block-wicket-card-is-full-height{
+  display: grid;
 }
 
 .block-wicket-author{
