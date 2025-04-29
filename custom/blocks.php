@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ACF Blocks.
  *
@@ -51,6 +52,7 @@ function load_acf_blocks()
         }
     }
 }
+
 function load_child_acf_blocks()
 {
     $blocks = get_child_blocks();
@@ -102,14 +104,34 @@ add_filter('acf/settings/load_json', 'load_child_acf_blocks_field_group');
  */
 function get_blocks()
 {
-    $blocks = scandir(get_template_directory() . '/blocks/');
+    $blocks_path = get_template_directory() . '/blocks/';
+    $blocks = is_dir($blocks_path) ? scandir($blocks_path) : false;
+
+    // If scandir failed or the directory doesn't exist, default to an empty array
+    if ($blocks === false) {
+        $blocks = [];
+    }
+
     $blocks = array_values(array_diff($blocks, ['..', '.', '.DS_Store', '_base-block']));
 
     return $blocks;
 }
+
+/**
+ * Get Child Blocks from child theme.
+ *
+ * @return array
+ */
 function get_child_blocks()
 {
-    $child_blocks = scandir(get_stylesheet_directory() . '/blocks/');
+    $child_blocks_path = get_stylesheet_directory() . '/blocks/';
+    $child_blocks = is_dir($child_blocks_path) ? scandir($child_blocks_path) : false;
+
+    // If scandir failed or the directory doesn't exist, default to an empty array
+    if ($child_blocks === false) {
+        $child_blocks = [];
+    }
+
     $child_blocks = array_values(array_diff($child_blocks, ['..', '.', '.DS_Store', '_base-block']));
 
     return $child_blocks;
@@ -117,6 +139,11 @@ function get_child_blocks()
 
 /**
  * Adjusting Core Blocks.
+ *
+ * @param  string $block_content
+ * @param  array $block
+ *
+ * @return string
  */
 function wicket_core_block_wrappers($block_content, $block)
 {
@@ -148,7 +175,6 @@ function wicket_core_block_wrappers($block_content, $block)
 
     return $block_content;
 }
-
 add_filter('render_block', 'wicket_core_block_wrappers', 10, 2);
 
 /**
@@ -178,7 +204,8 @@ function register_post_template()
                         'top'    => '1.5rem',
                         'bottom' => '0',
                     ],
-                ]],
+                ]
+            ],
         ]],
         ['core/post-terms', [
             'term' => 'post_tag',
@@ -192,12 +219,20 @@ function register_post_template()
             ],
         ]],
     ];
+
     $post_type_object = get_post_type_object('post');
     $post_type_object->template = $template;
 }
 add_action('init', 'register_post_template');
 
-// Activate the Block editor on specific post types
+/**
+ * Activate the Block editor on specific post types.
+ *
+ * @param  bool $can_edit
+ * @param  string $post_type
+ *
+ * @return bool
+ */
 function wicket_activate_block_editor_post_types($can_edit, $post_type)
 {
     if ($post_type == 'product' || $post_type == 'tribe_events') {
@@ -206,5 +241,4 @@ function wicket_activate_block_editor_post_types($can_edit, $post_type)
 
     return $can_edit;
 }
-
 add_filter('use_block_editor_for_post_type', 'wicket_activate_block_editor_post_types', 10, 2);
