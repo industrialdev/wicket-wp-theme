@@ -222,73 +222,97 @@ function add_woocommerce_block_theme_classes($classes)
 }
 
 /**
- * Assigns the 'member' role to users who purchase products in the 'membership' category
- * 
+ * Assigns the 'member' role to users who purchase products in the 'membership' category.
+ *
  * @param int $order_id The ID of the order that was completed
  * @return void
  */
-function wicket_add_member_role_on_membership_purchase($order_id, $posted_data, $order) {
+function wicket_add_member_role_on_membership_purchase($order_id, $posted_data, $order)
+{
     $debug_mode = false;
-    
+
     if ($debug_mode) {
-        wicket_write_log("Starting membership role check for order ID: " . $order_id);
+        wicket_write_log('Starting membership role check for order ID: ' . $order_id);
     }
 
     //$order = wc_get_order($order_id);
     if (!$order) {
-        if ($debug_mode) wicket_write_log("Order not found for ID: " . $order_id);
+        if ($debug_mode) {
+            wicket_write_log('Order not found for ID: ' . $order_id);
+        }
+
         return;
     }
 
     // Get the user ID from the order
     $user_id = $order->get_user_id();
     if (!$user_id) {
-        if ($debug_mode) wicket_write_log("No user ID found for order");
+        if ($debug_mode) {
+            wicket_write_log('No user ID found for order');
+        }
+
         return;
     }
 
     // Get the user object
     $user = get_user_by('id', $user_id);
     if (!$user) {
-        if ($debug_mode) wicket_write_log("User not found for ID: " . $user_id);
+        if ($debug_mode) {
+            wicket_write_log('User not found for ID: ' . $user_id);
+        }
+
         return;
     }
 
     // If user already has member role, no need to proceed
     if (in_array('member', (array) $user->roles)) {
-        if ($debug_mode) wicket_write_log("User already has member role");
+        if ($debug_mode) {
+            wicket_write_log('User already has member role');
+        }
+
         return;
     }
 
-    if ($debug_mode) wicket_write_log("Checking order items for membership products");
+    if ($debug_mode) {
+        wicket_write_log('Checking order items for membership products');
+    }
 
     // Check each item in the order
     foreach ($order->get_items() as $item) {
         $product = $item->get_product();
         if (!$product) {
-            if ($debug_mode) wicket_write_log("Product not found for order item");
+            if ($debug_mode) {
+                wicket_write_log('Product not found for order item');
+            }
             continue;
         }
 
         // Get product categories
         $terms = get_the_terms($product->get_id(), 'product_cat');
         if (!$terms || is_wp_error($terms)) {
-            if ($debug_mode) wicket_write_log("No categories found for product ID: " . $product->get_id());
+            if ($debug_mode) {
+                wicket_write_log('No categories found for product ID: ' . $product->get_id());
+            }
             continue;
         }
 
         // Check if any of the product's categories is 'membership'
         foreach ($terms as $term) {
             if ($term->slug === 'membership') {
-                if ($debug_mode) wicket_write_log("Membership product found - adding member role to user ID: " . $user_id);
+                if ($debug_mode) {
+                    wicket_write_log('Membership product found - adding member role to user ID: ' . $user_id);
+                }
                 // Add the member role to the user
                 $user->add_role('member');
+
                 return; // Exit after adding the role once
             }
         }
     }
 
-    if ($debug_mode) wicket_write_log("No membership products found in order - role not added");
+    if ($debug_mode) {
+        wicket_write_log('No membership products found in order - role not added');
+    }
 }
 add_action('woocommerce_checkout_order_processed', 'wicket_add_member_role_on_membership_purchase', 10, 3);
 
@@ -297,10 +321,11 @@ add_action('woocommerce_checkout_order_processed', 'wicket_add_member_role_on_me
  *
  * @param WP_User $user The current WP_User object.
  */
-function display_user_roles_on_profile($user) {
+function display_user_roles_on_profile($user)
+{
     // Get the user's roles
     $roles = $user->roles;
-    
+
     // Get global WP_Roles object
     global $wp_roles;
 
@@ -312,7 +337,7 @@ function display_user_roles_on_profile($user) {
     echo '<td>';
     echo '<ul>';
     foreach ($roles as $role) {
-        $role_name = isset($wp_roles->role_names[$role]) ? $wp_roles->role_names[$role] : $role;
+        $role_name = $wp_roles->role_names[$role] ?? $role;
         echo '<li>' . esc_html($role_name) . ' | ' . esc_html($role) . '</li>';
     }
     echo '</ul>';

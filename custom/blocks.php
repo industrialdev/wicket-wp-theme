@@ -204,7 +204,7 @@ function register_post_template()
                         'top'    => '1.5rem',
                         'bottom' => '0',
                     ],
-                ]
+                ],
             ],
         ]],
         ['core/post-terms', [
