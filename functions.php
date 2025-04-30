@@ -40,6 +40,7 @@ $wicket_includes = [
     'redirections.php',
     'search.php',
     'api-rate-limiting.php',
+    'force_gd_image_library.php',
 ];
 
 if (is_array($wicket_includes)) {
