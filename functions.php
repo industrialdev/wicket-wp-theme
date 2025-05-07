@@ -41,6 +41,7 @@ $wicket_includes = [
     'search.php',
     'api-rate-limiting.php',
     'force_gd_image_library.php',
+    'job-manager.php',
 ];
 
 if (is_array($wicket_includes)) {
