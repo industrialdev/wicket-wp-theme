@@ -57,3 +57,17 @@ form.woocommerce-checkout {
     display: none !important;
   }
 }
+
+.wicket__pre-populate-address {
+  @apply flex flex-col gap-7 mb-7;
+
+  .wicket__address-form {
+    .form__label {
+      @apply mr-3;
+    }
+
+    .button {
+      @apply mt-2;
+    }
+  }
+}
