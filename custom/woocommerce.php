@@ -349,3 +349,24 @@ function display_user_roles_on_profile($user)
 // Hook the function to both profile screens
 add_action('show_user_profile', 'display_user_roles_on_profile');
 add_action('edit_user_profile', 'display_user_roles_on_profile');
+
+/**
+ * Display the cart count in the header.
+ */
+function woocommerce_header_add_to_cart_fragment($fragments)
+{
+    global $woocommerce;
+
+    ob_start();
+
+    ?>
+	<span class="cart-customlocation absolute top-[5px] right-[5px] bg-[--text-button-label] rounded-full text-white text-sm w-5 h-5 flex text-xs items-center justify-center no-underline">
+		<?php echo $woocommerce->cart->cart_contents_count; ?>
+	</span>
+	<?php
+    $fragments['span.cart-customlocation'] = ob_get_clean();
+
+    return $fragments;
+}
+
+add_filter('woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment');
