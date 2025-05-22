@@ -94631,6 +94631,27 @@ form p.wicket-form-help-text.woocommerce-shop ul.products li.product .button.add
   display: inline-flex;
 }
 
+.woocommerce #order_review {
+  max-width: var(--wp--style--global--content-size) !important;
+  margin-inline: auto;
+}
+.woocommerce #order_review .woocommerce-terms-and-conditions-wrapper {
+  margin-bottom: var(--space-400);
+}
+.woocommerce #payment #place_order {
+  border-width: var(--border-interactive-md);
+  border-color: rgba(0, 0, 0, 0);
+  background-color: var(--bg-interactive);
+  color: var(--text-button-label-reversed);
+}
+.woocommerce #payment #place_order:hover {
+  border-color: var(--border-interactive);
+  background-color: rgba(0, 0, 0, 0);
+  color: var(--text-button-label);
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+}
+
 /* BLOCKS
 ------------------------------------------------------------------------------*/
 .wc-block-featured-product{
