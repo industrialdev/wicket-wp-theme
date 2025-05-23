@@ -42,6 +42,7 @@ $wicket_includes = [
     'api-rate-limiting.php',
     'force_gd_image_library.php',
     'job-manager.php',
+    'hide_health_status.php',
 ];
 
 if (is_array($wicket_includes)) {
