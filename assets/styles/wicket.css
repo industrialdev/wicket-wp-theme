@@ -93675,9 +93675,44 @@ li img {
   padding: 2rem 0;
   /* Notices Wrapper */
 }
-.woocommerce > * {
-  max-width: var(--wp--style--global--content-size) !important;
-  margin-inline: auto;
+.woocommerce > *{
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 640px){
+  .woocommerce > *{
+    max-width: 640px;
+  }
+}
+@media (min-width: 768px){
+  .woocommerce > *{
+    max-width: 768px;
+  }
+}
+@media (min-width: 1024px){
+  .woocommerce > *{
+    max-width: 1024px;
+  }
+}
+@media (min-width: 1280px){
+  .woocommerce > *{
+    max-width: 1280px;
+  }
+}
+@media (min-width: 1536px){
+  .woocommerce > *{
+    max-width: 1536px;
+    max-width: var(--wp--style--global--content-size);
+  }
+}
+@media (min-width: var(--wp--style--global--content-size)) {
+  .woocommerce > * {
+    max-width: var(--wp--style--global--content-size);
+  }
+}
+.woocommerce .woocommerce-notice {
+  margin-bottom: var(--space-150);
 }
 .woocommerce .woocommerce-notices-wrapper {
   font-size: var(--heading-sm-font-size);
@@ -94643,10 +94678,6 @@ form p.wicket-form-help-text.woocommerce-shop ul.products li.product .button.add
   display: inline-flex;
 }
 
-.woocommerce #order_review {
-  max-width: var(--wp--style--global--content-size) !important;
-  margin-inline: auto;
-}
 .woocommerce #order_review .woocommerce-terms-and-conditions-wrapper {
   margin-bottom: var(--space-400);
 }

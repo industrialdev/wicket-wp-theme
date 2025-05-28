@@ -93,18 +93,18 @@ defined('ABSPATH') || exit;
 
 				<?php wc_get_template('checkout/order-received.php', ['order' => false]); ?>
 
-				<?php
-                $acc_index_url = get_post_type_archive_link('my-account');
-			    get_component('button', [
-			        'variant' => 'primary',
-			        'a_tag'   => true,
-			        'link'    => $acc_index_url,
-			        'label'   => __('Go to Member Portal', 'wicket'),
-			    ]);
-
-			    ?>
-
 			<?php endif; ?>
+
+			<?php
+            $acc_index_url = get_post_type_archive_link('my-account');
+get_component('button', [
+    'variant' => 'primary',
+    'a_tag'   => true,
+    'link'    => $acc_index_url,
+    'label'   => __('Go to Member Portal', 'wicket'),
+]);
+
+?>
 		</div>
 	</div>
 </div>

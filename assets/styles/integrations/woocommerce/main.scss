@@ -2,8 +2,11 @@
   padding: 2rem 0;
 
   & > * {
-    max-width: var(--wp--style--global--content-size) !important;
-    margin-inline: auto;
+    @apply container;
+  }
+
+  .woocommerce-notice {
+    margin-bottom: var(--space-150);
   }
 
   /* Notices Wrapper */
