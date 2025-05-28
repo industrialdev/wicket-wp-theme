@@ -1,3 +1,13 @@
 .woocommerce {
   padding: 2rem 0;
+
+  & > * {
+    max-width: var(--wp--style--global--content-size) !important;
+    margin-inline: auto;
+  }
+
+  /* Notices Wrapper */
+  .woocommerce-notices-wrapper {
+    font-size: var(--heading-sm-font-size);
+  }
 }
