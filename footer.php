@@ -49,7 +49,7 @@ if (!empty($newsletter['title'])) : ?>
 		    ?>
 			<div class="grid gap-4 grid-cols-1 lg:grid-cols-<?php echo $column_count ?>">
 				<?php
-		            $col_number = 1;
+		        $col_number = 1;
 		    ?>
 				<?php while (have_rows('footer_columns', 'option')) :
 				    the_row();
@@ -66,29 +66,25 @@ if (!empty($newsletter['title'])) : ?>
 				        }
 				    }
 				    ?>
-					<div
-						class="footer-column col-num-<?php echo $col_number; ?> <?php echo $is_menu_column ? 'is-menu-column' : '' ?>" 
+					<div class="footer-column col-num-<?php echo $col_number; ?> <?php echo $is_menu_column ? 'is-menu-column' : '' ?>"
 						x-data="{
 							windowWidth: window.innerWidth,
 							isOpen : false,
-						}"
-						x-on:resize.window="windowWidth= window.innerWidth">
+						}" x-on:resize.window="windowWidth= window.innerWidth">
 						<?php if ($section_title) { ?>
 							<?php if ($is_menu_column) : ?>
-								<button type="button" class="section-title-button"
-									x-on:click="isOpen = !isOpen">
+								<button type="button" class="section-title-button" x-on:click="isOpen = !isOpen">
 									<?php echo $section_title ?>
 									<i class="fa-solid fa-caret-down" :class="!isOpen || 'rotate-180'"></i>
 								</button>
-							<?php else : ?>
 								<div class="section-title font-bold lg:hidden">
 									<?php echo $section_title ?>
 								</div>
+							<?php else : ?>
+                                <div class="section-title">
+                                    <?php echo $section_title ?>
+                                </div>
 							<?php endif; ?>
-
-							<div class="section-title">
-								<?php echo $section_title ?>
-							</div>
 
 							<div class="footer-section w-full" id="<?php echo $section_id ?>" <?php if ($is_menu_column) : ?>x-show="windowWidth < 1024 ? isOpen : true" <?php endif; ?>>
 							<?php } ?>
