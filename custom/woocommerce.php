@@ -1,5 +1,9 @@
 <?php
 
+if (!class_exists('WooCommerce')) {
+    return;
+}
+
 // Remove Product Permalink on Order Table after checkout
 add_filter('woocommerce_order_item_permalink', '__return_false');
 
