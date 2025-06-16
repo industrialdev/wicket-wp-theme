@@ -324,7 +324,11 @@ get_component('icon', [
 
 					<div class="relative flex">
 						<span class="cart-customlocation absolute top-[5px] right-[5px] bg-[--text-button-label] rounded-full text-white text-sm w-5 h-5 flex text-xs items-center justify-center no-underline">
-							<?php echo WC()->cart->get_cart_contents_count() ?>
+							<?php
+                            if(class_exists('WooCommerce')) {
+                                echo WC()->cart->get_cart_contents_count();
+                            }
+                            ?>
 						</span>
 						<?php get_component('button', [
 						    'variant'     => 'ghost',
