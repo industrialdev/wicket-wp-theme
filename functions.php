@@ -23,6 +23,7 @@ $wicket_includes = [
     'acf.php',
     'blocks.php',
     'menus.php',
+    'logger.php',
     'pagination.php',
     'widgets.php',
     'dates.php',
