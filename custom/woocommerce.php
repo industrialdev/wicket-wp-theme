@@ -103,7 +103,7 @@ add_action('wc_memberships_for_teams_team_created', 'alter_teams_data');
  */
 function webroom_add_multiple_products_to_cart($url = false)
 {
-    // Make sure WC is installed, and add-to-cart qauery arg exists, and contains at least one comma.
+    // Make sure WC is installed, and add-to-cart query arg exists, and contains at least one comma.
     if (!class_exists('WC_Form_Handler') || empty($_REQUEST['add-to-cart']) || false === strpos($_REQUEST['add-to-cart'], ',')) {
         return;
     }
@@ -161,6 +161,34 @@ function webroom_add_multiple_products_to_cart($url = false)
 
 // Fire before the WC_Form_Handler::add_to_cart_action callback.
 add_action('wp_loaded', 'webroom_add_multiple_products_to_cart', 15);
+
+// -------------------------------------------------------------------------------------
+// Add multiple coupons to cart
+// Supports native woocommerce coupon (coupon-code) as well as smart coupons (wt_coupon)
+// ex: https://yourstore.com/cart/?coupon-code=SAVE10,FREESHIP
+// or  https://yourstore.com/cart/?wt_coupon=SAVE10,FREESHIP
+// -------------------------------------------------------------------------------------
+add_action('template_redirect', function() {
+  if (!is_cart() && !is_checkout()) return;
+
+  // Support both ?coupon-code=... and ?wt_coupon=...
+  $query_keys = ['coupon-code', 'wt_coupon'];
+  $applied = WC()->cart->get_applied_coupons();
+
+  foreach ($query_keys as $key) {
+    if (!isset($_GET[$key])) continue;
+
+    // Support comma-separated coupons
+    $coupons = explode(',', sanitize_text_field($_GET[$key]));
+
+    foreach ($coupons as $code) {
+      $code = trim($code);
+      if ($code && !in_array($code, $applied)) {
+        WC()->cart->apply_coupon($code);
+      }
+    }
+  }
+});
 
 /**
  * Invoke class private method.
