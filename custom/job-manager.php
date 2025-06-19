@@ -7,6 +7,10 @@
 add_filter('job_manager_should_run_shortcode_action_handler', function ($should_run) {
     global $post;
 
+    if (!is_a($post, 'WP_Post')) {
+        return $should_run;
+    }
+
     return has_shortcode($post->post_content, 'job_dashboard');
 }, 10, 1);
 

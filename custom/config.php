@@ -30,6 +30,8 @@ add_filter('send_email_change_email', '__return_false');
  */
 function wicket_setup()
 {
+
+
     /*
      * Let WordPress manage the document title.
      * By adding theme support, we declare that this theme does not use a
@@ -55,14 +57,7 @@ function wicket_setup()
 
     add_image_size('sassqutch-thumbnail-avatar', 100, 100, true);
 
-    register_nav_menus([
-        'header-utility'   => __('Header Utility Menu', 'wicket'),
-        'header-secondary' => __('Header Secondary Menu', 'wicket'),
-        'header'           => __('Header Menu', 'wicket'),
-        'social'           => __('Social Menu', 'wicket'),
-        'footer'           => __('Secondary Footer Menu', 'wicket'),
-        'footer-utility'   => __('Footer Utility Menu', 'wicket'),
-    ]);
+    // Nav menus are registered on the 'init' hook in wicket_register_nav_menus().
 
     /*
      * Switch default core markup for search form, comment form, and comments
@@ -105,6 +100,24 @@ function wicket_setup()
 
 }
 add_action('after_setup_theme', 'wicket_setup');
+
+/**
+ * Register navigation menus.
+ *
+ * @return void
+ */
+function wicket_register_nav_menus()
+{
+    register_nav_menus([
+        'header-utility'   => __('Header Utility Menu', 'wicket'),
+        'header-secondary' => __('Header Secondary Menu', 'wicket'),
+        'header'           => __('Header Menu', 'wicket'),
+        'social'           => __('Social Menu', 'wicket'),
+        'footer'           => __('Secondary Footer Menu', 'wicket'),
+        'footer-utility'   => __('Footer Utility Menu', 'wicket'),
+    ]);
+}
+add_action('init', 'wicket_register_nav_menus');
 
 /**
  * Outputs the language toggle.

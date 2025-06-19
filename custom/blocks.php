@@ -20,15 +20,18 @@ remove_theme_support('core-block-patterns');
 /*
  * Create Wicket pattern categories
  */
-if (function_exists('register_block_pattern_category')) {
-    register_block_pattern_category(
-        'wicket',
-        [
-            'label'       => __('Wicket', 'wicket'),
-            'description' => __('Custom pre-made patterns', 'wicket'),
-        ]
-    );
+function wicket_register_block_pattern_category() {
+    if (function_exists('register_block_pattern_category')) {
+        register_block_pattern_category(
+            'wicket',
+            [
+                'label'       => __('Wicket', 'wicket'),
+                'description' => __('Custom pre-made patterns', 'wicket'),
+            ]
+        );
+    }
 }
+add_action( 'init', 'wicket_register_block_pattern_category' );
 
 /**
  * Load ACF Blocks.
