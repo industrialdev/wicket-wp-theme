@@ -1,17 +1,17 @@
-/* VARIABLES
-------------------------------------------------------------------------------*/
-@import 'variables/typography';
-
 /* HELPERS
 ------------------------------------------------------------------------------*/
+@import 'helpers/reset';
 @import 'helpers/mixins';
 
-/* TAILWIND
+/* TAILWIND CSS
 ------------------------------------------------------------------------------*/
-@import 'helpers/reset';
 @import 'node_modules/tailwindcss/base';
 @import 'node_modules/tailwindcss/components';
 @import 'node_modules/tailwindcss/utilities';
+
+/* VARIABLES
+------------------------------------------------------------------------------*/
+@import 'variables/typography';
 
 /* THEME BASELINE STYLES
 ------------------------------------------------------------------------------*/
