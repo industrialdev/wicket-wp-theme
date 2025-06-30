@@ -1,8 +1,8 @@
 @mixin add-external-icon {
   &:after {
     display: inline-block;
-    content: '\f35d';
-    font-family: var(--fa-style-family, 'Font Awesome 6 Pro');
+    content: "\f35d";
+    font-family: var(--fa-style-family, "Font Awesome 6 Pro");
     font-weight: inherit;
     margin-left: 4px;
     font-size: 90%;
@@ -16,14 +16,18 @@
 }
 
 // Create container adjustment mixin rules
+
 @mixin container-adjustments {
-  @media (min-width: 1536px) {
-    max-width: var(--wp--style--global--content-size) !important;
-  }
-  @media (min-width: var(--wp--style--global--content-size)) {
-    max-width: var(--wp--style--global--content-size) !important;
+  main {
+    @media (min-width: 1536px) {
+      max-width: var(--wp--style--global--content-size) !important;
+    }
+    @media (min-width: var(--wp--style--global--content-size)) {
+      max-width: var(--wp--style--global--content-size) !important;
+    }
   }
 }
+
 // Make the combined Tailwind and adjusted container rules available via mixin, if needed
 @mixin the-container {
   @apply container;
@@ -34,21 +38,23 @@
   @apply bg-[--state-info-secondary-light] rounded-[--alerts-corner-radius] border-l-[length:--border-alert] border-[--state-info-secondary] border-t-0 text-body-md p-[--space-250] pl-[4rem] text-[--text-content];
 
   &:before {
-    content: '';
+    content: "";
     font-size: 135%;
     width: 32px;
     height: 32px;
     top: 50%;
     left: 15px;
     transform: translatey(-50%);
-    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzMiIHZpZXdCb3g9IjAgMCAzMiAzMyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgaWQ9IjMyL3Rvb2x0aXAiPgo8cGF0aCBpZD0iJiMyMzk7JiMxMjk7JiMxNTQ7IiBkPSJNMTYgMC41QzI0LjgxMjUgMC41IDMyIDcuNjg3NSAzMiAxNi41QzMyIDI1LjM3NSAyNC44MTI1IDMyLjUgMTYgMzIuNUM3LjEyNSAzMi41IDAgMjUuMzc1IDAgMTYuNUMwIDcuNjg3NSA3LjEyNSAwLjUgMTYgMC41Wk0xNiAyOS41QzIzLjEyNSAyOS41IDI5IDIzLjY4NzUgMjkgMTYuNUMyOSA5LjM3NSAyMy4xMjUgMy41IDE2IDMuNUM4LjgxMjUgMy41IDMgOS4zNzUgMyAxNi41QzMgMjMuNjg3NSA4LjgxMjUgMjkuNSAxNiAyOS41Wk0xOC41IDIxLjVDMTkuMzEyNSAyMS41IDIwIDIyLjE4NzUgMjAgMjNDMjAgMjMuODc1IDE5LjMxMjUgMjQuNSAxOC41IDI0LjVIMTMuNUMxMi42MjUgMjQuNSAxMiAyMy44NzUgMTIgMjNDMTIgMjIuMTg3NSAxMi42MjUgMjEuNSAxMy41IDIxLjVIMTQuNVYxNy41SDE0QzEzLjEyNSAxNy41IDEyLjUgMTYuODc1IDEyLjUgMTZDMTIuNSAxNS4xODc1IDEzLjEyNSAxNC41IDE0IDE0LjVIMTZDMTYuODEyNSAxNC41IDE3LjUgMTUuMTg3NSAxNy41IDE2VjIxLjVIMTguNVpNMTYgMTIuNUMxNC44NzUgMTIuNSAxNCAxMS42MjUgMTQgMTAuNUMxNCA5LjQzNzUgMTQuODc1IDguNSAxNiA4LjVDMTcuMDYyNSA4LjUgMTggOS40Mzc1IDE4IDEwLjVDMTggMTEuNjI1IDE3LjA2MjUgMTIuNSAxNiAxMi41WiIgZmlsbD0iI0ExQTFBMSIvPgo8L2c+Cjwvc3ZnPgo=');
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzMiIHZpZXdCb3g9IjAgMCAzMiAzMyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgaWQ9IjMyL3Rvb2x0aXAiPgo8cGF0aCBpZD0iJiMyMzk7JiMxMjk7JiMxNTQ7IiBkPSJNMTYgMC41QzI0LjgxMjUgMC41IDMyIDcuNjg3NSAzMiAxNi41QzMyIDI1LjM3NSAyNC44MTI1IDMyLjUgMTYgMzIuNUM3LjEyNSAzMi41IDAgMjUuMzc1IDAgMTYuNUMwIDcuNjg3NSA3LjEyNSAwLjUgMTYgMC41Wk0xNiAyOS41QzIzLjEyNSAyOS41IDI5IDIzLjY4NzUgMjkgMTYuNUMyOSA5LjM3NSAyMy4xMjUgMy41IDE2IDMuNUM4LjgxMjUgMy41IDMgOS4zNzUgMyAxNi41QzMgMjMuNjg3NSA4LjgxMjUgMjkuNSAxNiAyOS41Wk0xOC41IDIxLjVDMTkuMzEyNSAyMS41IDIwIDIyLjE4NzUgMjAgMjNDMjAgMjMuODc1IDE5LjMxMjUgMjQuNSAxOC41IDI0LjVIMTMuNUMxMi42MjUgMjQuNSAxMiAyMy44NzUgMTIgMjNDMTIgMjIuMTg3NSAxMi42MjUgMjEuNSAxMy41IDIxLjVIMTQuNVYxNy41SDE0QzEzLjEyNSAxNy41IDEyLjUgMTYuODc1IDEyLjUgMTZDMTIuNSAxNS4xODc1IDEzLjEyNSAxNC41IDE0IDE0LjVIMTZDMTYuODEyNSAxNC41IDE3LjUgMTUuMTg3NSAxNy41IDE2VjIxLjVIMTguNVpNMTYgMTIuNUMxNC44NzUgMTIuNSAxNCAxMS42MjUgMTQgMTAuNUMxNCA5LjQzNzUgMTQuODc1IDguNSAxNiA4LjVDMTcuMDYyNSA4LjUgMTggOS40Mzc1IDE4IDEwLjVDMTggMTEuNjI1IDE3LjA2MjUgMTIuNSAxNiAxMi41WiIgZmlsbD0iI0ExQTFBMSIvPgo8L2c+Cjwvc3ZnPgo=");
   }
 }
 
 @mixin primary-menu-item-styles {
   @apply font-normal text-[--nav-main-label] block p-[--space-150] relative bg-[--nav-main-bg] lg:rounded-t-[--main-menu-highlight-radius] border-t-[length:--border-sm] lg:border-t-0 lg:border-b-[length:--border-md] border-[--nav-main-border] lg:border-transparent;
 
-  &:hover, &:active, &:focus {
+  &:hover,
+  &:active,
+  &:focus {
     @apply cursor-pointer;
 
     > span {
@@ -56,16 +62,20 @@
     }
   }
 
-  &:active, &.open {
+  &:active,
+  &.open {
     @apply border-b-[length:--border-lg];
 
     // prevent jumping when larger border is added
     @media screen and (min-width: 992px) {
-      margin-bottom: calc( (var(--border-lg) - var(--border-md)) * -1 );
+      margin-bottom: calc((var(--border-lg) - var(--border-md)) * -1);
     }
   }
 
-  &:hover, &:focus, &:active, &.open {
+  &:hover,
+  &:focus,
+  &:active,
+  &.open {
     @apply bg-[--nav-main-highlight] border-[--nav-main-border-interactive];
   }
 

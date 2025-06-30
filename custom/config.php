@@ -31,7 +31,6 @@ add_filter('send_email_change_email', '__return_false');
 function wicket_setup()
 {
 
-
     /*
      * Let WordPress manage the document title.
      * By adding theme support, we declare that this theme does not use a

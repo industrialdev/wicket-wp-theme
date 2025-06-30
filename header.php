@@ -328,7 +328,7 @@ get_component('icon', [
                             if(class_exists('WooCommerce')) {
                                 echo WC()->cart->get_cart_contents_count();
                             }
-                            ?>
+?>
 						</span>
 						<?php get_component('button', [
 						    'variant'     => 'ghost',
@@ -430,7 +430,7 @@ get_component('icon', [
 			                ?>
 									</li>
 									<?php
-                                    $child_loop_index++;
+			                        $child_loop_index++;
 			            endforeach; ?>
 							</ul>
 						</li> <!-- End Nav Item -->
@@ -701,7 +701,7 @@ foreach ($primary_nav_items_structured as $primary_nav_item) :
 									        ?>
 													</li>
 													<?php
-                                                    $child_loop_index++;
+									                $child_loop_index++;
 									    endforeach; ?>
 											</ul>
 										</div>

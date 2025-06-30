@@ -1,84 +1,89 @@
-.site-header {
+header {
+  max-width: 100% !important;
 
-  .right-hamburger-button {
-    @apply hidden md:inline-flex lg:hidden ml-4 items-center;
-  }
-
-  .left-hamburger-button {
-    @apply inline-flex md:hidden mr-10 items-center;
-
-    &.open {
-      i.fa-bars {
-        &::before {
-          content: "\58";
-        }
-      }
-    }
-  }
-
-  .nav-dropdown-mobile {
-    @apply bg-[--dropdown-mega-bg];
-  }
-
-  .right-hamburger-close-button {
-    @apply inline-flex md:hidden mr-10 items-center;
-  }
-
-  .main-nav {
-    @apply w-full hidden lg:flex border-t-[--nav-main-border] border-b-[--nav-main-border] border-t-[length:--border-main-nav-top] border-b-[length:--border-main-nav-bottom] bg-[--nav-main-bg];
-
-    &__dropdown-menu-item,
-    &__mega-menu-item {
-      @include primary-menu-item-styles;
+  .site-header {
+    .right-hamburger-button {
+      @apply hidden md:inline-flex lg:hidden ml-4 items-center;
     }
 
-    &__mega-menu-item {
-      @apply static;
+    .left-hamburger-button {
+      @apply inline-flex md:hidden mr-10 items-center;
 
-      .nav-mega-dropdown {
-        @apply absolute z-20 grid grid-cols-4 gap-2 left-0 mt-4 w-full bg-[--dropdown-mega-bg] p-3 lg:p-7 flex-wrap rounded-b-[--dropdown-mega-corner-radius];
-        filter: drop-shadow( var(--elevation-4) );
-      }
-    }
-
-    &__dropdown-menu-item {
-      .nav-dropdown {
-        @apply absolute z-20 mt-4 w-56 bg-[--dropdown-mega-bg] p-3 lg:p-7 shadow-lg left-0 rounded-b-[--dropdown-mega-corner-radius];
-
-        &.last {
-          @apply right-0 left-auto;
-        }
-      }
-    }
-  }
-
-  .main-nav-mobile {
-
-    // Mobile Main Menu > Mega Menu Heading Item
-    .mobile-mega-menu-heading-item {
-      @apply block w-full p-3 text-[--dropdown-mega-heading-link] font-bold;
-    }
-
-    .nav-parent-item-mobile-wrap,
-    .nav-mega-parent-item-mobile-wrap {
-      @include primary-menu-item-styles;
-      @apply inline-flex justify-between items-center w-full;
-
-      &:hover, &:active, &:focus, &.open {
-        > span {
-          @apply underline;
+      &.open {
+        i.fa-bars {
+          &::before {
+            content: "\58";
+          }
         }
       }
     }
 
-    .nav-mega-parent-item-mobile,
-    .nav-parent-item-mobile {
-      @apply flex flex-col w-full;
+    .nav-dropdown-mobile {
+      @apply bg-[--dropdown-mega-bg];
+    }
+
+    .right-hamburger-close-button {
+      @apply inline-flex md:hidden mr-10 items-center;
+    }
+
+    .main-nav {
+      @apply w-full hidden lg:flex border-t-[--nav-main-border] border-b-[--nav-main-border] border-t-[length:--border-main-nav-top] border-b-[length:--border-main-nav-bottom] bg-[--nav-main-bg];
+
+      &__dropdown-menu-item,
+      &__mega-menu-item {
+        @include primary-menu-item-styles;
+      }
+
+      &__mega-menu-item {
+        @apply static;
+
+        .nav-mega-dropdown {
+          @apply absolute z-20 grid grid-cols-4 gap-2 left-0 mt-4 w-full bg-[--dropdown-mega-bg] p-3 lg:p-7 flex-wrap rounded-b-[--dropdown-mega-corner-radius];
+          filter: drop-shadow(var(--elevation-4));
+        }
+      }
+
+      &__dropdown-menu-item {
+        .nav-dropdown {
+          @apply absolute z-20 mt-4 w-56 bg-[--dropdown-mega-bg] p-3 lg:p-7 shadow-lg left-0 rounded-b-[--dropdown-mega-corner-radius];
+
+          &.last {
+            @apply right-0 left-auto;
+          }
+        }
+      }
+    }
+
+    .main-nav-mobile {
+      // Mobile Main Menu > Mega Menu Heading Item
+      .mobile-mega-menu-heading-item {
+        @apply block w-full p-3 text-[--dropdown-mega-heading-link] font-bold;
+      }
+
+      .nav-parent-item-mobile-wrap,
+      .nav-mega-parent-item-mobile-wrap {
+        @include primary-menu-item-styles;
+        @apply inline-flex justify-between items-center w-full;
+
+        &:hover,
+        &:active,
+        &:focus,
+        &.open {
+          > span {
+            @apply underline;
+          }
+        }
+      }
+
+      .nav-mega-parent-item-mobile,
+      .nav-parent-item-mobile {
+        @apply flex flex-col w-full;
+      }
     }
   }
-}
 
-.search-toggle-button {
-  @apply text-button-label-md rounded-[--interactive-corner-radius-md] p-[--space-200] no-underline;
-  @include button-ghost;
+  .search-toggle-button {
+    @apply text-button-label-md rounded-[--interactive-corner-radius-md] p-[--space-200] no-underline;
+    @include button-ghost;
+  }
 }

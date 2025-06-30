@@ -1,20 +1,22 @@
 @mixin job_manager_container {
-  @apply container;
+  main {
+    @apply container;
 
-  @media (min-width: 1536px) {
-    & {
-      max-width: var(--wp--style--global--content-size) !important;
+    @media (min-width: 1536px) {
+      & {
+        max-width: var(--wp--style--global--content-size) !important;
+      }
     }
-  }
-  @media (min-width: var(--wp--style--global--content-size)) {
-    & {
-      max-width: var(--wp--style--global--content-size) !important;
+    @media (min-width: var(--wp--style--global--content-size)) {
+      & {
+        max-width: var(--wp--style--global--content-size) !important;
+      }
     }
-  }
 
-  @media (max-width: 767px) {
-    & {
-      @apply px-[--space-200];
+    @media (max-width: 767px) {
+      & {
+        @apply px-[--space-200];
+      }
     }
   }
 }
@@ -23,11 +25,9 @@
   @apply bg-[--bg-interactive] border-[length:--border-interactive-md] border-transparent text-[--text-button-label-reversed] hover:bg-transparent hover:border-[--border-interactive] hover:text-[--text-button-label] hover:underline focus:bg-[--highlight-light] focus:border-[--border-interactive] focus:text-[--text-button-label] focus:underline active:bg-[--highlight-light] active:border-transparent active:text-[--text-button-label];
 }
 
-
 div.job_listings {
   ul.job_listings {
     li.job_listing {
-
       a div.position {
         @apply p-0;
       }
@@ -44,12 +44,12 @@ div.job_listings {
   @apply pb-10;
 
   .company {
-
     .company_header {
       @apply float-left;
     }
 
-    .name, .tagline {
+    .name,
+    .tagline {
       @apply m-0;
     }
 
@@ -59,14 +59,12 @@ div.job_listings {
   }
 
   .application {
-
     .application_button {
       @include button-primary;
     }
   }
 
   .meta {
-
     li {
       @apply text-[--text-content] text-body-md;
     }
@@ -108,7 +106,6 @@ div.job_listings {
 }
 
 .wicket-job-listing-head {
-
   .text-heading-sm {
     @apply mb-2;
   }
@@ -164,27 +161,44 @@ div.job_listings {
 //   @apply border-[--border-light];
 // }
 
-.job-manager .job-type,.job-types .job-type,.job_listing .job-type {
+.job-manager .job-type,
+.job-types .job-type,
+.job_listing .job-type {
   @apply text-[--text-accent] #{!important};
 }
 
-.rp4wp-related-job_listing>ul li.job_listing,
-.rp4wp-related-job_listing>ul li.no_job_listings_found,
+.rp4wp-related-job_listing > ul li.job_listing,
+.rp4wp-related-job_listing > ul li.no_job_listings_found,
 ul.job_listings li.job_listing,
 ul.job_listings li.no_job_listings_found,
-.rp4wp-related-job_listing>ul, ul.job_listings {
+.rp4wp-related-job_listing > ul,
+ul.job_listings {
   @apply border-[--border-light];
 }
 
-.rp4wp-related-job_listing>ul li.job_listing a div.position .company, .rp4wp-related-job_listing>ul li.no_job_listings_found a div.position .company, ul.job_listings li.job_listing a div.position .company, ul.job_listings li.no_job_listings_found a div.position .company {
+.rp4wp-related-job_listing > ul li.job_listing a div.position .company,
+.rp4wp-related-job_listing
+  > ul
+  li.no_job_listings_found
+  a
+  div.position
+  .company,
+ul.job_listings li.job_listing a div.position .company,
+ul.job_listings li.no_job_listings_found a div.position .company {
   @apply text-[--text-content-secondary] text-body-md;
 }
 
-.rp4wp-related-job_listing>ul li.job_listing a div.location, .rp4wp-related-job_listing>ul li.no_job_listings_found a div.location, ul.job_listings li.job_listing a div.location, ul.job_listings li.no_job_listings_found a div.location {
+.rp4wp-related-job_listing > ul li.job_listing a div.location,
+.rp4wp-related-job_listing > ul li.no_job_listings_found a div.location,
+ul.job_listings li.job_listing a div.location,
+ul.job_listings li.no_job_listings_found a div.location {
   @apply text-[--text-content-secondary] text-body-md;
 }
 
-.rp4wp-related-job_listing>ul li.job_listing a .meta, .rp4wp-related-job_listing>ul li.no_job_listings_found a .meta, ul.job_listings li.job_listing a .meta, ul.job_listings li.no_job_listings_found a .meta {
+.rp4wp-related-job_listing > ul li.job_listing a .meta,
+.rp4wp-related-job_listing > ul li.no_job_listings_found a .meta,
+ul.job_listings li.job_listing a .meta,
+ul.job_listings li.no_job_listings_found a .meta {
   @apply text-[--text-content-secondary] text-body-md;
 }
 
@@ -193,7 +207,8 @@ ul.job_listings li.no_job_listings_found,
     @apply mb-2;
   }
 
-  ul, ol {
+  ul,
+  ol {
     @apply block mb-4 pl-10;
   }
 
@@ -215,7 +230,6 @@ ul.job_listings li.no_job_listings_found,
 }
 
 .job_listing_packages_title {
-
   h2 {
     @apply text-heading-2xl;
     @apply leading-[--heading-2xl-line-height] font-[--heading-2xl-font-weight-sm] md:font-[--heading-2xl-font-weight-md] font-[family-name:var(--heading-2xl-font-family)];

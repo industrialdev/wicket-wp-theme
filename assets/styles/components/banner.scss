@@ -1,3 +1,7 @@
+.wp-block-wicket-banner {
+  max-width: 100% !important
+}
+
 .component-banner {
   @apply py-8 px-4 relative rounded-[--banner-radius] overflow-hidden;
 
@@ -46,9 +50,9 @@
     }
 
     .component-banner__post-type {
-      @apply text-[--text-accent];  
+      @apply text-[--text-accent];
     }
-    
+
     .component-banner__hr {
       @apply border-[--border-accent];
     }
@@ -69,7 +73,7 @@
     .component-banner__post-type {
       @apply text-[--text-accent-reversed];
     }
-    
+
     .component-banner__hr {
       @apply border-[--border-accent];
     }

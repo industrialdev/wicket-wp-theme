@@ -30,3 +30,7 @@ a:where(:not(.wp-element-button)) {
 
 /* AlpineJS Helpers */
 [x-cloak] { display: none !important; }
+
+#wpadminbar {
+  max-width: 100% !important;
+}

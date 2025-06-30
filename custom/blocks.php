@@ -20,7 +20,8 @@ remove_theme_support('core-block-patterns');
 /*
  * Create Wicket pattern categories
  */
-function wicket_register_block_pattern_category() {
+function wicket_register_block_pattern_category()
+{
     if (function_exists('register_block_pattern_category')) {
         register_block_pattern_category(
             'wicket',
@@ -31,7 +32,7 @@ function wicket_register_block_pattern_category() {
         );
     }
 }
-add_action( 'init', 'wicket_register_block_pattern_category' );
+add_action('init', 'wicket_register_block_pattern_category');
 
 /**
  * Load ACF Blocks.

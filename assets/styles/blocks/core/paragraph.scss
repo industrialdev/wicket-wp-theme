@@ -1,16 +1,18 @@
-.wp-block-paragraph > p {
-  margin-bottom: 0.5rem; // In addition to the 1rem for all Blocks in baseline.scss
-  
-  &.alignfull {
-    max-width: 100%;
-  }
+main {
+  .wp-block-paragraph > p {
+    margin-bottom: 0.5rem; // In addition to the 1rem for all Blocks in baseline.scss
 
-  /* Case: Paragraphs in the single post */
-  .single-post & {
-    padding-inline: 1rem;
-    @include media-breakpoint-down('1024px') {
-      max-width: 75%;
-      padding-inline: 0;
+    &.alignfull {
+      max-width: 100%;
+    }
+
+    /* Case: Paragraphs in the single post */
+    .single-post & {
+      padding-inline: 1rem;
+      @include media-breakpoint-down("1024px") {
+        max-width: 75%;
+        padding-inline: 0;
+      }
     }
   }
 }

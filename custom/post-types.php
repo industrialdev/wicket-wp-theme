@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Register Custom Post Types
+ * Register Custom Post Types.
  */
 function wicket_register_post_types()
 {
@@ -98,8 +98,8 @@ function wicket_register_post_types()
 
     foreach ($post_types as $key => $pt) {
         $singular = $pt['singular'];
-        $plural   = $pt['plural'];
-        $args     = $pt['args'];
+        $plural = $pt['plural'];
+        $args = $pt['args'];
 
         $labels = [
             'name'               => _x($singular, 'post type general name', 'wicket'),

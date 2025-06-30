@@ -1,30 +1,32 @@
 /* Setting the max-width of the content area for all blocks */
-*[class*='wp-block'] {
-  //@apply container;
-  @include the-container;
-
-  &:not(.wp-block-heading) {
-    margin-bottom: 1rem;
-  }
-
-  // Disable margin-bottom for nested blocks
+main {
   *[class*='wp-block'] {
-    margin-bottom: 0;
-  }
+    //@apply container;
+    @include the-container;
 
-  @media (min-width: 1536px) {
-    max-width: var(--wp--style--global--content-size);
-  }
-  @media (min-width: var(--wp--style--global--content-size)) {
-    max-width: var(--wp--style--global--content-size);
-  }
+    &:not(.wp-block-heading) {
+      margin-bottom: 1rem;
+    }
 
-  &.alignfull {
-    max-width: 100% !important;
+    // Disable margin-bottom for nested blocks
+    *[class*='wp-block'] {
+      margin-bottom: 0;
+    }
+
+    @media (min-width: 1536px) {
+      max-width: var(--wp--style--global--content-size);
+    }
+    @media (min-width: var(--wp--style--global--content-size)) {
+      max-width: var(--wp--style--global--content-size);
+    }
+
+    &.alignfull {
+      max-width: 100% !important;
+    }
   }
 }
 
-#main-content {
+main {
   // Case: First level blocks are core blocks add mobile inline padding
   & > *:is(.wp-block-heading, .wp-block-paragraph, .wp-block-columns, .wp-block-group, .wp-block-table, .wp-block-gravityforms, .wp-block-wicket-call-out-card):not(.alignfull) {
 
