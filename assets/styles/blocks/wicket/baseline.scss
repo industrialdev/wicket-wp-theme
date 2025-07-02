@@ -13,10 +13,7 @@ main {
       margin-bottom: 0;
     }
 
-    @media (min-width: 1536px) {
-      max-width: var(--wp--style--global--content-size);
-    }
-    @media (min-width: var(--wp--style--global--content-size)) {
+        @media (min-width: $wicket-breakpoint-xl) {
       max-width: var(--wp--style--global--content-size);
     }
 
@@ -30,7 +27,7 @@ main {
   // Case: First level blocks are core blocks add mobile inline padding
   & > *:is(.wp-block-heading, .wp-block-paragraph, .wp-block-columns, .wp-block-group, .wp-block-table, .wp-block-gravityforms, .wp-block-wicket-call-out-card):not(.alignfull) {
 
-    @media (max-width: 767px) {
+    @media (max-width: $wicket-breakpoint-sm) {
       margin-inline: var(--space-200);
       width: auto;
     }
@@ -38,7 +35,7 @@ main {
 
   & > *:is(.wp-block-heading, .wp-block-paragraph, .wp-block-columns, .wp-block-group, .wp-block-table, .wp-block-gravityforms):is(.alignfull) {
 
-    @media (max-width: 767px) {
+    @media (max-width: $wicket-breakpoint-sm) {
       padding-inline: var(--space-200);
     }
   }

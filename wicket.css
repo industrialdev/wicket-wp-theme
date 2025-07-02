@@ -1,4 +1,305 @@
 @charset "UTF-8";
+/* GLOBAL VARIABLES
+------------------------------------------------------------------------------*/
+:root {
+  --wicket-breakpoint-xl: 1536px;
+  --wicket-breakpoint-lg-max: 1023px;
+  --wicket-breakpoint-lg: 992px;
+  --wicket-breakpoint-md: 768px;
+  --wicket-breakpoint-sm: 576px;
+  --heading-3xl-font-size: clamp(2.5rem, 5vw, 3.25rem);
+  --heading-3xl-line-height: clamp(3rem, 5vw, 3.75rem);
+  --heading-3xl-font-weight-md: 700;
+  --heading-3xl-font-weight-sm: 700;
+  --heading-3xl-font-family: var(--font-family-name);
+  --heading-2xl-font-size: clamp(2.25rem, 5vw, 2.75rem);
+  --heading-2xl-line-height: clamp(2.75rem, 5vw, 3.25rem);
+  --heading-2xl-font-weight-md: 400;
+  --heading-2xl-font-weight-sm: 400;
+  --heading-2xl-font-family: var(--font-family-name);
+  --heading-xl-font-size: clamp(2rem, 5vw, 2.25rem);
+  --heading-xl-line-height: clamp(2.5rem, 5vw, 2.75rem);
+  --heading-xl-font-weight-md: 700;
+  --heading-xl-font-weight-sm: 700;
+  --heading-xl-font-family: var(--font-family-name);
+  --heading-lg-font-size: clamp(1.75rem, 5vw, 2rem);
+  --heading-lg-line-height: clamp(2.25rem, 5vw, 2.5rem);
+  --heading-lg-font-weight-md: 400;
+  --heading-lg-font-weight-sm: 400;
+  --heading-lg-font-family: var(--font-family-name);
+  --heading-md-font-size: clamp(1.5rem, 5vw, 1.75rem);
+  --heading-md-line-height: clamp(2rem, 5vw, 2.25rem);
+  --heading-md-font-weight-md: 700;
+  --heading-md-font-weight-sm: 700;
+  --heading-md-font-family: var(--font-family-name);
+  --heading-sm-font-size: clamp(1.25rem, 5vw, 1.5rem);
+  --heading-sm-line-height: clamp(1.75rem, 5vw, 2rem);
+  --heading-sm-font-weight-md: 700;
+  --heading-sm-font-weight-sm: 700;
+  --heading-sm-font-family: var(--font-family-name);
+  --heading-xs-font-size: clamp(1.125rem, 5vw, 1.25rem);
+  --heading-xs-line-height: clamp(1.625rem, 5vw, 1.75rem);
+  --heading-xs-font-weight-md: 700;
+  --heading-xs-font-weight-sm: 700;
+  --heading-xs-font-family: var(--font-family-name);
+  /* body-lg */
+  --body-lg-font-size: 1.25rem;
+  --body-lg-line-height: 1.75rem;
+  --body-lg-font-weight: 400;
+  --body-lg-font-family: var(--font-family-name);
+  /* body-md */
+  --body-md-font-size: 1rem;
+  --body-md-line-height: 1.5rem;
+  --body-md-font-weight: 400;
+  --body-md-font-family: var(--font-family-name);
+  /* body-sm */
+  --body-sm-font-size: 0.875rem;
+  --body-sm-line-height: 1.375rem;
+  --body-sm-font-weight: 400;
+  --body-sm-font-family: var(--font-family-name);
+  /* quote */
+  --quote-font-size: 1.5rem;
+  --quote-line-height: 2.25rem;
+  --quote-font-weight: 400;
+  --quote-font-family: var(--font-family-name);
+  /* placeholder */
+  --placeholder-font-size: 1rem;
+  --placeholder-line-height: 1.5rem;
+  --placeholder-font-weight: 400;
+  --placeholder-font-family: var(--font-family-name);
+  /* caption */
+  --caption-font-size: 0.875rem;
+  --caption-line-height: 1.375rem;
+  --caption-font-weight: 400;
+  --caption-font-family: var(--font-family-name);
+  /* button-label-lg */
+  --button-label-lg-font-size: 1.25rem;
+  --button-label-lg-line-height: 1.75rem;
+  --button-label-lg-font-weight: 700;
+  --button-label-lg-font-family: var(--font-family-name);
+  /* button-label-md */
+  --button-label-md-font-size: 1rem;
+  --button-label-md-line-height: 1.5rem;
+  --button-label-md-font-weight: 700;
+  --button-label-md-font-family: var(--font-family-name);
+  /* button-label-sm */
+  --button-label-sm-font-size: 0.875rem;
+  --button-label-sm-line-height: 1.375rem;
+  --button-label-sm-font-weight: 700;
+  --button-label-sm-font-family: var(--font-family-name);
+  /* form-label */
+  --form-label-font-size: 1rem;
+  --form-label-line-height: 1.5rem;
+  --form-label-font-weight: 700;
+  --form-label-font-family: var(--font-family-name);
+  /* date-label-md */
+  --date-label-md-font-size: 1rem;
+  --date-label-md-line-height: 1.5rem;
+  --date-label-md-font-weight: 400;
+  --date-label-md-font-family: var(--font-family-name);
+  /* date-label-sm */
+  --date-label-sm-font-size: 0.875rem;
+  --date-label-sm-line-height: 1.375rem;
+  --date-label-sm-font-weight: 400;
+  --date-label-sm-font-family: var(--font-family-name);
+  /* label-lg */
+  --label-lg-font-size: 1.25rem;
+  --label-lg-line-height: 1.75rem;
+  --label-lg-font-weight: 700;
+  --label-lg-font-family: var(--font-family-name);
+  /* label-md */
+  --label-md-font-size: 1rem;
+  --label-md-line-height: 1.5rem;
+  --label-md-font-weight: 700;
+  --label-md-font-family: var(--font-family-name);
+  /* label-sm */
+  --label-sm-font-size: 0.875rem;
+  --label-sm-line-height: 1.375rem;
+  --label-sm-font-weight: 700;
+  --label-sm-font-family: var(--font-family-name);
+}
+
+.text-heading-3xl{
+  font-family: var(--heading-3xl-font-family);
+  font-weight: var(--heading-3xl-font-weight-sm);
+  line-height: var(--heading-3xl-line-height);
+}
+
+@media (min-width: 768px){
+  .text-heading-3xl{
+    font-weight: var(--heading-3xl-font-weight-md);
+  }
+}
+
+.text-heading-2xl{
+  font-family: var(--heading-2xl-font-family);
+  font-weight: var(--heading-2xl-font-weight-sm);
+  line-height: var(--heading-2xl-line-height);
+}
+
+@media (min-width: 768px){
+  .text-heading-2xl{
+    font-weight: var(--heading-2xl-font-weight-md);
+  }
+}
+
+.text-heading-xl{
+  font-family: var(--heading-xl-font-family);
+  font-weight: var(--heading-xl-font-weight-sm);
+  line-height: var(--heading-xl-line-height);
+}
+
+@media (min-width: 768px){
+  .text-heading-xl{
+    font-weight: var(--heading-xl-font-weight-md);
+  }
+}
+
+.text-heading-lg{
+  font-family: var(--heading-lg-font-family);
+  font-weight: var(--heading-lg-font-weight-sm);
+  line-height: var(--heading-lg-line-height);
+}
+
+@media (min-width: 768px){
+  .text-heading-lg{
+    font-weight: var(--heading-lg-font-weight-md);
+  }
+}
+
+.text-heading-md{
+  font-family: var(--heading-md-font-family);
+  font-weight: var(--heading-md-font-weight-sm);
+  line-height: var(--heading-md-line-height);
+}
+
+@media (min-width: 768px){
+  .text-heading-md{
+    font-weight: var(--heading-md-font-weight-md);
+  }
+}
+
+.text-heading-sm{
+  font-family: var(--heading-sm-font-family);
+  font-weight: var(--heading-sm-font-weight-sm);
+  line-height: var(--heading-sm-line-height);
+}
+
+@media (min-width: 768px){
+  .text-heading-sm{
+    font-weight: var(--heading-sm-font-weight-md);
+  }
+}
+
+.text-heading-xs{
+  font-family: var(--heading-xs-font-family);
+  font-weight: var(--heading-xs-font-weight-sm);
+  line-height: var(--heading-xs-line-height);
+}
+
+@media (min-width: 768px){
+  .text-heading-xs{
+    font-weight: var(--heading-xs-font-weight-md);
+  }
+}
+
+.text-body-lg{
+  font-family: var(--body-lg-font-family);
+  font-weight: var(--body-lg-font-weight);
+  line-height: var(--body-lg-line-height);
+}
+
+.text-body-md{
+  font-family: var(--body-md-font-family);
+  font-weight: var(--body-md-font-weight);
+  line-height: var(--body-md-line-height);
+}
+
+.text-body-sm{
+  font-family: var(--body-sm-font-family);
+  font-weight: var(--body-sm-font-weight);
+  line-height: var(--body-sm-line-height);
+}
+
+.text-quote{
+  font-family: var(--quote-font-family);
+  font-weight: var(--quote-font-weight);
+  font-style: italic;
+  line-height: var(--quote-line-height);
+}
+
+.text-placeholder{
+  font-family: var(--placeholder-font-family);
+  font-weight: var(--placeholder-font-weight);
+  font-style: italic;
+  line-height: var(--placeholder-line-height);
+}
+
+.text-caption{
+  font-family: var(--caption-font-family);
+  font-weight: var(--caption-font-weight);
+  line-height: var(--caption-line-height);
+}
+
+.text-button-label-lg{
+  font-family: var(--button-label-lg-font-family);
+  font-weight: var(--button-label-lg-font-weight);
+  line-height: var(--button-label-lg-line-height);
+}
+
+.text-button-label-md{
+  font-family: var(--button-label-md-font-family);
+  font-weight: var(--button-label-md-font-weight);
+  line-height: var(--button-label-md-line-height);
+}
+
+.text-button-label-sm{
+  font-family: var(--button-label-sm-font-family);
+  font-weight: var(--button-label-sm-font-weight);
+  line-height: var(--button-label-sm-line-height);
+}
+
+.text-form-label{
+  font-family: var(--form-label-font-family);
+  font-weight: var(--form-label-font-weight);
+  line-height: var(--form-label-line-height);
+}
+
+.text-date-label-md{
+  font-family: var(--date-label-md-font-family);
+  font-weight: var(--date-label-md-font-weight);
+  font-style: italic;
+  line-height: var(--date-label-md-line-height);
+}
+
+.text-date-label-sm{
+  font-family: var(--date-label-sm-font-family);
+  font-weight: var(--date-label-sm-font-weight);
+  font-style: italic;
+  line-height: var(--date-label-sm-line-height);
+}
+
+.text-label-lg{
+  font-family: var(--label-lg-font-family);
+  font-weight: var(--label-lg-font-weight);
+  text-transform: uppercase;
+  line-height: var(--label-lg-line-height);
+}
+
+.text-label-md{
+  font-family: var(--label-md-font-family);
+  font-weight: var(--label-md-font-weight);
+  text-transform: uppercase;
+  line-height: var(--label-md-line-height);
+}
+
+.text-label-sm{
+  font-family: var(--label-sm-font-family);
+  font-weight: var(--label-sm-font-weight);
+  text-transform: uppercase;
+  line-height: var(--label-sm-line-height);
+}
+
 /* HELPERS
 ------------------------------------------------------------------------------*/
 /* Copied from Tailwind Preflight (https://tailwindcss.com/docs/preflight) and modified to not affect WP styles for headings, lists, etc. */
@@ -89513,302 +89814,6 @@ video {
 .\@container{
   container-type: inline-size;
 }
-/* VARIABLES
-------------------------------------------------------------------------------*/
-:root {
-  --heading-3xl-font-size: clamp(2.5rem, 5vw, 3.25rem);
-  --heading-3xl-line-height: clamp(3rem, 5vw, 3.75rem);
-  --heading-3xl-font-weight-md: 700;
-  --heading-3xl-font-weight-sm: 700;
-  --heading-3xl-font-family: var(--font-family-name);
-  --heading-2xl-font-size: clamp(2.25rem, 5vw, 2.75rem);
-  --heading-2xl-line-height: clamp(2.75rem, 5vw, 3.25rem);
-  --heading-2xl-font-weight-md: 400;
-  --heading-2xl-font-weight-sm: 400;
-  --heading-2xl-font-family: var(--font-family-name);
-  --heading-xl-font-size: clamp(2rem, 5vw, 2.25rem);
-  --heading-xl-line-height: clamp(2.5rem, 5vw, 2.75rem);
-  --heading-xl-font-weight-md: 700;
-  --heading-xl-font-weight-sm: 700;
-  --heading-xl-font-family: var(--font-family-name);
-  --heading-lg-font-size: clamp(1.75rem, 5vw, 2rem);
-  --heading-lg-line-height: clamp(2.25rem, 5vw, 2.5rem);
-  --heading-lg-font-weight-md: 400;
-  --heading-lg-font-weight-sm: 400;
-  --heading-lg-font-family: var(--font-family-name);
-  --heading-md-font-size: clamp(1.5rem, 5vw, 1.75rem);
-  --heading-md-line-height: clamp(2rem, 5vw, 2.25rem);
-  --heading-md-font-weight-md: 700;
-  --heading-md-font-weight-sm: 700;
-  --heading-md-font-family: var(--font-family-name);
-  --heading-sm-font-size: clamp(1.25rem, 5vw, 1.5rem);
-  --heading-sm-line-height: clamp(1.75rem, 5vw, 2rem);
-  --heading-sm-font-weight-md: 700;
-  --heading-sm-font-weight-sm: 700;
-  --heading-sm-font-family: var(--font-family-name);
-  --heading-xs-font-size: clamp(1.125rem, 5vw, 1.25rem);
-  --heading-xs-line-height: clamp(1.625rem, 5vw, 1.75rem);
-  --heading-xs-font-weight-md: 700;
-  --heading-xs-font-weight-sm: 700;
-  --heading-xs-font-family: var(--font-family-name);
-  /* body-lg */
-  --body-lg-font-size: 1.25rem;
-  --body-lg-line-height: 1.75rem;
-  --body-lg-font-weight: 400;
-  --body-lg-font-family: var(--font-family-name);
-  /* body-md */
-  --body-md-font-size: 1rem;
-  --body-md-line-height: 1.5rem;
-  --body-md-font-weight: 400;
-  --body-md-font-family: var(--font-family-name);
-  /* body-sm */
-  --body-sm-font-size: 0.875rem;
-  --body-sm-line-height: 1.375rem;
-  --body-sm-font-weight: 400;
-  --body-sm-font-family: var(--font-family-name);
-  /* quote */
-  --quote-font-size: 1.5rem;
-  --quote-line-height: 2.25rem;
-  --quote-font-weight: 400;
-  --quote-font-family: var(--font-family-name);
-  /* placeholder */
-  --placeholder-font-size: 1rem;
-  --placeholder-line-height: 1.5rem;
-  --placeholder-font-weight: 400;
-  --placeholder-font-family: var(--font-family-name);
-  /* caption */
-  --caption-font-size: 0.875rem;
-  --caption-line-height: 1.375rem;
-  --caption-font-weight: 400;
-  --caption-font-family: var(--font-family-name);
-  /* button-label-lg */
-  --button-label-lg-font-size: 1.25rem;
-  --button-label-lg-line-height: 1.75rem;
-  --button-label-lg-font-weight: 700;
-  --button-label-lg-font-family: var(--font-family-name);
-  /* button-label-md */
-  --button-label-md-font-size: 1rem;
-  --button-label-md-line-height: 1.5rem;
-  --button-label-md-font-weight: 700;
-  --button-label-md-font-family: var(--font-family-name);
-  /* button-label-sm */
-  --button-label-sm-font-size: 0.875rem;
-  --button-label-sm-line-height: 1.375rem;
-  --button-label-sm-font-weight: 700;
-  --button-label-sm-font-family: var(--font-family-name);
-  /* form-label */
-  --form-label-font-size: 1rem;
-  --form-label-line-height: 1.5rem;
-  --form-label-font-weight: 700;
-  --form-label-font-family: var(--font-family-name);
-  /* date-label-md */
-  --date-label-md-font-size: 1rem;
-  --date-label-md-line-height: 1.5rem;
-  --date-label-md-font-weight: 400;
-  --date-label-md-font-family: var(--font-family-name);
-  /* date-label-sm */
-  --date-label-sm-font-size: 0.875rem;
-  --date-label-sm-line-height: 1.375rem;
-  --date-label-sm-font-weight: 400;
-  --date-label-sm-font-family: var(--font-family-name);
-  /* label-lg */
-  --label-lg-font-size: 1.25rem;
-  --label-lg-line-height: 1.75rem;
-  --label-lg-font-weight: 700;
-  --label-lg-font-family: var(--font-family-name);
-  /* label-md */
-  --label-md-font-size: 1rem;
-  --label-md-line-height: 1.5rem;
-  --label-md-font-weight: 700;
-  --label-md-font-family: var(--font-family-name);
-  /* label-sm */
-  --label-sm-font-size: 0.875rem;
-  --label-sm-line-height: 1.375rem;
-  --label-sm-font-weight: 700;
-  --label-sm-font-family: var(--font-family-name);
-}
-
-.text-heading-3xl{
-  font-family: var(--heading-3xl-font-family);
-  font-weight: var(--heading-3xl-font-weight-sm);
-  line-height: var(--heading-3xl-line-height);
-}
-
-@media (min-width: 768px){
-  .text-heading-3xl{
-    font-weight: var(--heading-3xl-font-weight-md);
-  }
-}
-
-.text-heading-2xl{
-  font-family: var(--heading-2xl-font-family);
-  font-weight: var(--heading-2xl-font-weight-sm);
-  line-height: var(--heading-2xl-line-height);
-}
-
-@media (min-width: 768px){
-  .text-heading-2xl{
-    font-weight: var(--heading-2xl-font-weight-md);
-  }
-}
-
-.text-heading-xl{
-  font-family: var(--heading-xl-font-family);
-  font-weight: var(--heading-xl-font-weight-sm);
-  line-height: var(--heading-xl-line-height);
-}
-
-@media (min-width: 768px){
-  .text-heading-xl{
-    font-weight: var(--heading-xl-font-weight-md);
-  }
-}
-
-.text-heading-lg{
-  font-family: var(--heading-lg-font-family);
-  font-weight: var(--heading-lg-font-weight-sm);
-  line-height: var(--heading-lg-line-height);
-}
-
-@media (min-width: 768px){
-  .text-heading-lg{
-    font-weight: var(--heading-lg-font-weight-md);
-  }
-}
-
-.text-heading-md{
-  font-family: var(--heading-md-font-family);
-  font-weight: var(--heading-md-font-weight-sm);
-  line-height: var(--heading-md-line-height);
-}
-
-@media (min-width: 768px){
-  .text-heading-md{
-    font-weight: var(--heading-md-font-weight-md);
-  }
-}
-
-.text-heading-sm{
-  font-family: var(--heading-sm-font-family);
-  font-weight: var(--heading-sm-font-weight-sm);
-  line-height: var(--heading-sm-line-height);
-}
-
-@media (min-width: 768px){
-  .text-heading-sm{
-    font-weight: var(--heading-sm-font-weight-md);
-  }
-}
-
-.text-heading-xs{
-  font-family: var(--heading-xs-font-family);
-  font-weight: var(--heading-xs-font-weight-sm);
-  line-height: var(--heading-xs-line-height);
-}
-
-@media (min-width: 768px){
-  .text-heading-xs{
-    font-weight: var(--heading-xs-font-weight-md);
-  }
-}
-
-.text-body-lg{
-  font-family: var(--body-lg-font-family);
-  font-weight: var(--body-lg-font-weight);
-  line-height: var(--body-lg-line-height);
-}
-
-.text-body-md{
-  font-family: var(--body-md-font-family);
-  font-weight: var(--body-md-font-weight);
-  line-height: var(--body-md-line-height);
-}
-
-.text-body-sm{
-  font-family: var(--body-sm-font-family);
-  font-weight: var(--body-sm-font-weight);
-  line-height: var(--body-sm-line-height);
-}
-
-.text-quote{
-  font-family: var(--quote-font-family);
-  font-weight: var(--quote-font-weight);
-  font-style: italic;
-  line-height: var(--quote-line-height);
-}
-
-.text-placeholder{
-  font-family: var(--placeholder-font-family);
-  font-weight: var(--placeholder-font-weight);
-  font-style: italic;
-  line-height: var(--placeholder-line-height);
-}
-
-.text-caption{
-  font-family: var(--caption-font-family);
-  font-weight: var(--caption-font-weight);
-  line-height: var(--caption-line-height);
-}
-
-.text-button-label-lg{
-  font-family: var(--button-label-lg-font-family);
-  font-weight: var(--button-label-lg-font-weight);
-  line-height: var(--button-label-lg-line-height);
-}
-
-.text-button-label-md{
-  font-family: var(--button-label-md-font-family);
-  font-weight: var(--button-label-md-font-weight);
-  line-height: var(--button-label-md-line-height);
-}
-
-.text-button-label-sm{
-  font-family: var(--button-label-sm-font-family);
-  font-weight: var(--button-label-sm-font-weight);
-  line-height: var(--button-label-sm-line-height);
-}
-
-.text-form-label{
-  font-family: var(--form-label-font-family);
-  font-weight: var(--form-label-font-weight);
-  line-height: var(--form-label-line-height);
-}
-
-.text-date-label-md{
-  font-family: var(--date-label-md-font-family);
-  font-weight: var(--date-label-md-font-weight);
-  font-style: italic;
-  line-height: var(--date-label-md-line-height);
-}
-
-.text-date-label-sm{
-  font-family: var(--date-label-sm-font-family);
-  font-weight: var(--date-label-sm-font-weight);
-  font-style: italic;
-  line-height: var(--date-label-sm-line-height);
-}
-
-.text-label-lg{
-  font-family: var(--label-lg-font-family);
-  font-weight: var(--label-lg-font-weight);
-  text-transform: uppercase;
-  line-height: var(--label-lg-line-height);
-}
-
-.text-label-md{
-  font-family: var(--label-md-font-family);
-  font-weight: var(--label-md-font-weight);
-  text-transform: uppercase;
-  line-height: var(--label-md-line-height);
-}
-
-.text-label-sm{
-  font-family: var(--label-sm-font-family);
-  font-weight: var(--label-sm-font-weight);
-  text-transform: uppercase;
-  line-height: var(--label-sm-line-height);
-}
-
 /* THEME BASELINE STYLES
 ------------------------------------------------------------------------------*/
 body{
@@ -89852,11 +89857,6 @@ a:where(:not(.wp-element-button)):active{
 }
 
 @media (min-width: 1536px) {
-  .container main {
-    max-width: var(--wp--style--global--content-size) !important;
-  }
-}
-@media (min-width: var(--wp--style--global--content-size)) {
   .container main {
     max-width: var(--wp--style--global--content-size) !important;
   }
@@ -90569,11 +90569,6 @@ a:where(:not(.wp-element-button)):active{
   line-height: var(--body-md-line-height);
 }
 @media (min-width: 1536px) {
-  .component-card-call-out main {
-    max-width: var(--wp--style--global--content-size);
-  }
-}
-@media (min-width: var(--wp--style--global--content-size)) {
   .component-card-call-out main {
     max-width: var(--wp--style--global--content-size);
   }
@@ -92804,21 +92799,6 @@ main *[class*=wp-block]{
     max-width: 1536px;
   }
   main *[class*=wp-block] main {
-    max-width: var(--wp--style--global--content-size);
-  }
-}
-@media (min-width: var(--wp--style--global--content-size)) {
-  main *[class*=wp-block] main {
-    max-width: var(--wp--style--global--content-size);
-  }
-}
-@media (min-width: 1536px) {
-  main *[class*=wp-block] main {
-    max-width: var(--wp--style--global--content-size) !important;
-  }
-}
-@media (min-width: var(--wp--style--global--content-size)) {
-  main *[class*=wp-block] main {
     max-width: var(--wp--style--global--content-size) !important;
   }
 }
@@ -92833,16 +92813,11 @@ main *[class*=wp-block] *[class*=wp-block] {
     max-width: var(--wp--style--global--content-size);
   }
 }
-@media (min-width: var(--wp--style--global--content-size)) {
-  main *[class*=wp-block] {
-    max-width: var(--wp--style--global--content-size);
-  }
-}
 main *[class*=wp-block].alignfull {
   max-width: 100% !important;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 576px) {
   main > *:is(.wp-block-heading, .wp-block-paragraph, .wp-block-columns, .wp-block-group, .wp-block-table, .wp-block-gravityforms, .wp-block-wicket-call-out-card):not(.alignfull) {
     margin-inline: var(--space-200);
     width: auto;
@@ -93284,7 +93259,7 @@ li img {
     display: none;
   }
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 576px) {
   .block-wicket-listing__filters {
     margin-left: calc(var(--bs-gutter-x) * 0.5 * -1);
     margin-right: calc(var(--bs-gutter-x) * 0.5 * -1);
@@ -93561,51 +93536,6 @@ main .wp-block-columns:has(.wp-block-column .wp-block-wicket-sidebar-contextual-
 .tribe-events-pg-template .tribe-related-events main,
 .tribe-events-pg-template .tribe-link-view-attendee main,
 .tribe-events-pg-template .tribe-common main {
-    max-width: var(--wp--style--global--content-size);
-  }
-}
-@media (min-width: var(--wp--style--global--content-size)) {
-  #tribe-events-pg-template .tribe-events-back main, #tribe-events-pg-template .tribe-events-single-event-title main,
-#tribe-events-pg-template #tribe-events-footer main, #tribe-events-pg-template .tribe-block main, #tribe-events-pg-template .tribe-events-schedule main,
-#tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map) main,
-#tribe-events-pg-template .tribe-related-events main,
-#tribe-events-pg-template .tribe-link-view-attendee main,
-#tribe-events-pg-template .tribe-common main, .tribe-events-pg-template .tribe-events-back main, .tribe-events-pg-template .tribe-events-single-event-title main,
-.tribe-events-pg-template #tribe-events-footer main, .tribe-events-pg-template .tribe-block main, .tribe-events-pg-template .tribe-events-schedule main,
-.tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map) main,
-.tribe-events-pg-template .tribe-related-events main,
-.tribe-events-pg-template .tribe-link-view-attendee main,
-.tribe-events-pg-template .tribe-common main {
-    max-width: var(--wp--style--global--content-size);
-  }
-}
-@media (min-width: 1536px) {
-  #tribe-events-pg-template .tribe-events-back main, #tribe-events-pg-template .tribe-events-single-event-title main,
-  #tribe-events-pg-template #tribe-events-footer main, #tribe-events-pg-template .tribe-block main, #tribe-events-pg-template .tribe-events-schedule main,
-  #tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map) main,
-  #tribe-events-pg-template .tribe-related-events main,
-  #tribe-events-pg-template .tribe-link-view-attendee main,
-  #tribe-events-pg-template .tribe-common main, .tribe-events-pg-template .tribe-events-back main, .tribe-events-pg-template .tribe-events-single-event-title main,
-  .tribe-events-pg-template #tribe-events-footer main, .tribe-events-pg-template .tribe-block main, .tribe-events-pg-template .tribe-events-schedule main,
-  .tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map) main,
-  .tribe-events-pg-template .tribe-related-events main,
-  .tribe-events-pg-template .tribe-link-view-attendee main,
-  .tribe-events-pg-template .tribe-common main {
-    max-width: var(--wp--style--global--content-size) !important;
-  }
-}
-@media (min-width: var(--wp--style--global--content-size)) {
-  #tribe-events-pg-template .tribe-events-back main, #tribe-events-pg-template .tribe-events-single-event-title main,
-  #tribe-events-pg-template #tribe-events-footer main, #tribe-events-pg-template .tribe-block main, #tribe-events-pg-template .tribe-events-schedule main,
-  #tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map) main,
-  #tribe-events-pg-template .tribe-related-events main,
-  #tribe-events-pg-template .tribe-link-view-attendee main,
-  #tribe-events-pg-template .tribe-common main, .tribe-events-pg-template .tribe-events-back main, .tribe-events-pg-template .tribe-events-single-event-title main,
-  .tribe-events-pg-template #tribe-events-footer main, .tribe-events-pg-template .tribe-block main, .tribe-events-pg-template .tribe-events-schedule main,
-  .tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map) main,
-  .tribe-events-pg-template .tribe-related-events main,
-  .tribe-events-pg-template .tribe-link-view-attendee main,
-  .tribe-events-pg-template .tribe-common main {
     max-width: var(--wp--style--global--content-size) !important;
   }
 }
@@ -93655,22 +93585,6 @@ main .wp-block-columns:has(.wp-block-column .wp-block-wicket-sidebar-contextual-
     max-width: 1536px;
   }
   .single-tribe_events #tribe-events-content.tribe-blocks-editor .tribe-events-event-meta main {
-    max-width: var(--wp--style--global--content-size);
-  }
-}
-
-@media (min-width: var(--wp--style--global--content-size)) {
-  .single-tribe_events #tribe-events-content.tribe-blocks-editor .tribe-events-event-meta main {
-    max-width: var(--wp--style--global--content-size);
-  }
-}
-@media (min-width: 1536px) {
-  .single-tribe_events #tribe-events-content.tribe-blocks-editor .tribe-events-event-meta main {
-    max-width: var(--wp--style--global--content-size) !important;
-  }
-}
-@media (min-width: var(--wp--style--global--content-size)) {
-  .single-tribe_events #tribe-events-content.tribe-blocks-editor .tribe-events-event-meta main {
     max-width: var(--wp--style--global--content-size) !important;
   }
 }
@@ -93719,11 +93633,6 @@ main .wp-block-columns:has(.wp-block-column .wp-block-wicket-sidebar-contextual-
   .woocommerce > *{
     max-width: 1536px;
   }
-  .woocommerce > * main {
-    max-width: var(--wp--style--global--content-size);
-  }
-}
-@media (min-width: var(--wp--style--global--content-size)) {
   .woocommerce > * main {
     max-width: var(--wp--style--global--content-size);
   }
@@ -94468,21 +94377,10 @@ form.woocommerce-checkout .variation-TeamName {
   }
 }
 
-@media (min-width: var(--wp--style--global--content-size)) {
-  .woocommerce-shop .woocommerce.columns-4 main {
-    max-width: var(--wp--style--global--content-size);
-  }
-}
-
 .woocommerce-shop .woocommerce.columns-4 {
   padding: 1rem 0;
 }
 @media (min-width: 1536px) {
-  .woocommerce-shop .woocommerce.columns-4 main {
-    max-width: var(--wp--style--global--content-size) !important;
-  }
-}
-@media (min-width: var(--wp--style--global--content-size)) {
   .woocommerce-shop .woocommerce.columns-4 main {
     max-width: var(--wp--style--global--content-size) !important;
   }
@@ -95607,23 +95505,11 @@ div.job_listings ul.job_listings li.job_listing .company_logo{
   .single_job_listing main main {
     max-width: var(--wp--style--global--content-size);
   }
-}
-@media (min-width: var(--wp--style--global--content-size)) {
-  .single_job_listing main main {
-    max-width: var(--wp--style--global--content-size);
-  }
-}
-@media (min-width: 1536px) {
   .single_job_listing main {
     max-width: var(--wp--style--global--content-size) !important;
   }
 }
-@media (min-width: var(--wp--style--global--content-size)) {
-  .single_job_listing main {
-    max-width: var(--wp--style--global--content-size) !important;
-  }
-}
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .single_job_listing main{
     padding-left: var(--space-200);
     padding-right: var(--space-200);
@@ -95947,28 +95833,9 @@ header {
 }
 header .site-header .right-hamburger-button{
   margin-left: 1rem;
-  display: none;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
-form header.wicket-form-help-text .site-header .right-hamburger-button,
-form pheader.wicket-form-help-text .site-header .right-hamburger-button,
-.form header.wicket-form-help-text .site-header .right-hamburger-button,
-.form pheader.wicket-form-help-text .site-header .right-hamburger-button {
-  display: none;
-}
-@media (min-width: 768px){
-  header .site-header .right-hamburger-button{
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-  }
-}
-@media (min-width: 1024px){
-  header .site-header .right-hamburger-button{
-    display: none;
-  }
 }
 header .site-header .left-hamburger-button{
   margin-right: 2.5rem;
@@ -96249,6 +96116,23 @@ header .search-toggle-button:active{
   color: var(--text-button-label);
 }
 
+@media (min-width: 768px) {
+  header .right-hamburger-button {
+    display: none !important;
+  }
+}
+@media (max-width: calc(768px - 1px)) {
+  header .right-hamburger-button {
+    display: -webkit-inline-box !important;
+    display: -ms-inline-flexbox !important;
+    display: inline-flex !important;
+  }
+}
+@media (max-width: 1023px) {
+  header nav.main-nav {
+    display: none !important;
+  }
+}
 main {
   max-width: 100% !important;
 }

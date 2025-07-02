@@ -3,7 +3,7 @@ header {
 
   .site-header {
     .right-hamburger-button {
-      @apply hidden md:inline-flex lg:hidden ml-4 items-center;
+      @apply ml-4 items-center;
     }
 
     .left-hamburger-button {
@@ -55,6 +55,7 @@ header {
     }
 
     .main-nav-mobile {
+
       // Mobile Main Menu > Mega Menu Heading Item
       .mobile-mega-menu-heading-item {
         @apply block w-full p-3 text-[--dropdown-mega-heading-link] font-bold;
@@ -69,7 +70,7 @@ header {
         &:active,
         &:focus,
         &.open {
-          > span {
+          >span {
             @apply underline;
           }
         }
@@ -85,5 +86,23 @@ header {
   .search-toggle-button {
     @apply text-button-label-md rounded-[--interactive-corner-radius-md] p-[--space-200] no-underline;
     @include button-ghost;
+  }
+}
+
+@media (min-width: $wicket-breakpoint-md) {
+  header .right-hamburger-button {
+    display: none !important;
+  }
+}
+
+@media (max-width: calc(#{$wicket-breakpoint-md} - 1px)) {
+  header .right-hamburger-button {
+    display: inline-flex !important;
+  }
+}
+
+@media (max-width: $wicket-breakpoint-lg-max) {
+  header nav.main-nav {
+    display: none !important;
   }
 }

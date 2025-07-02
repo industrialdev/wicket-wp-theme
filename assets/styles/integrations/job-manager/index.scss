@@ -2,18 +2,13 @@
   main {
     @apply container;
 
-    @media (min-width: 1536px) {
-      & {
-        max-width: var(--wp--style--global--content-size) !important;
-      }
-    }
-    @media (min-width: var(--wp--style--global--content-size)) {
+    @media (min-width: $wicket-breakpoint-xl) {
       & {
         max-width: var(--wp--style--global--content-size) !important;
       }
     }
 
-    @media (max-width: 767px) {
+        @media (max-width: $wicket-breakpoint-md) {
       & {
         @apply px-[--space-200];
       }

@@ -15,7 +15,7 @@
   &__filters {
     @apply basis-1/4 bg-[--bg-white] relative after:content-[''] after:absolute after:top-0 after:bottom-0 after:right-full after:bg-[--bg-white] after:w-[30vw] before:block lg:before:hidden before:content-[''] before:absolute before:top-0 before:bottom-0 before:left-full before:bg-[--bg-white] before:w-[30vw];
 
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: $wicket-breakpoint-sm) {
       margin-left: calc( calc(var(--bs-gutter-x) * .5) * -1 );
       margin-right: calc( calc(var(--bs-gutter-x) * .5) * -1 );
 

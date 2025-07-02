@@ -19,10 +19,7 @@
 
 @mixin container-adjustments {
   main {
-    @media (min-width: 1536px) {
-      max-width: var(--wp--style--global--content-size) !important;
-    }
-    @media (min-width: var(--wp--style--global--content-size)) {
+    @media (min-width: $wicket-breakpoint-xl) {
       max-width: var(--wp--style--global--content-size) !important;
     }
   }
@@ -67,7 +64,7 @@
     @apply border-b-[length:--border-lg];
 
     // prevent jumping when larger border is added
-    @media screen and (min-width: 992px) {
+    @media screen and (min-width: $wicket-breakpoint-lg) {
       margin-bottom: calc((var(--border-lg) - var(--border-md)) * -1);
     }
   }
