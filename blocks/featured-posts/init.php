@@ -14,6 +14,7 @@ function init($block = [])
 
     $attrs = get_block_wrapper_attributes();
     $title = get_field('featured_posts_title');
+    $title_color = get_field('featured_posts_title_color');
     $posts = get_field('featured_posts_posts');
     $hide_excerpt = get_field('featured_posts_hide_excerpt');
     $hide_date = get_field('featured_posts_hide_date');
@@ -43,6 +44,7 @@ function init($block = [])
     }
     get_component('featured-posts', [
         'title'               => $title,
+        'title_color'         => $title_color,
         'posts'               => $posts,
         'hide_excerpt'        => $hide_excerpt,
         'hide_date'           => $hide_date,

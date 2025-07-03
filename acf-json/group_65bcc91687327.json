@@ -24,6 +24,26 @@
             "append": ""
         },
         {
+            "key": "field_68665fae6f84e",
+            "label": "Title color",
+            "name": "featured_posts_title_color",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "default_value": "",
+            "enable_opacity": 0,
+            "return_format": "string",
+            "allow_in_bindings": 1
+        },
+        {
             "key": "field_65bcc9168d765",
             "label": "Posts",
             "name": "featured_posts_posts",
@@ -211,5 +231,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "translation",
-    "modified": 1718357017
+    "modified": 1751540321
 }
