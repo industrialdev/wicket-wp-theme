@@ -108,7 +108,8 @@ header {
   }
 
   // Main navigation list - only show on desktop (1024px+)
-  .main-nav__list {
+  .main-nav__list,
+  nav.main-nav ul {
     display: none;
 
     @media screen and (min-width: $wicket-breakpoint-lg) {

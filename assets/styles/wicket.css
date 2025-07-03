@@ -96623,11 +96623,13 @@ header .right-hamburger-button {
     display: inline-flex;
   }
 }
-header .main-nav__list {
+header .main-nav__list,
+header nav.main-nav ul {
   display: none;
 }
 @media screen and (min-width: 992px) {
-  header .main-nav__list {
+  header .main-nav__list,
+  header nav.main-nav ul {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
