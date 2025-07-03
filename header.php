@@ -379,7 +379,7 @@ if (class_exists('WooCommerce')) {
 
         <!-- Main Nav Desktop -->
         <nav x-ref="main-nav" class="main-nav">
-            <ul class="container w-full gap-4 flex relative <?php if (count($primary_nav_items_structured) > 4) {
+            <ul class="main-nav__list container w-full gap-4 hidden lg:flex relative <?php if (count($primary_nav_items_structured) > 4) {
                 echo 'justify-between';
             } else {
                 echo 'justify-evenly';
