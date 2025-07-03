@@ -185,7 +185,11 @@ foreach ($utility_nav_items as $utility_nav_item) {
                 <?php
 get_component('button', [
     'variant'     => 'ghost',
-    'classes'     => ['left-hamburger-button'],
+    'button_aria' => [
+        'label' => 'Open Menu',
+    ],
+    'classes'     => ['left-hamburger-button', 'inline-flex', 'md:hidden'],
+    'id'          => 'left-hamburger-button',
     'label'       => '',
     'prefix_icon' => 'fa-solid fa-bars',
     'atts'        => [
@@ -331,12 +335,12 @@ if (class_exists('WooCommerce')) {
 ?>
                         </span>
                         <?php get_component('button', [
-'variant'     => 'ghost',
-'link'        => $cart_path,
-'a_tag'       => true,
-'label'       => '',
-'prefix_icon' => 'fa-regular fa-cart-shopping',
-'atts'        => ['x-show="showCart"'],
+                            'variant'     => 'ghost',
+                            'link'        => $cart_path,
+                            'a_tag'       => true,
+                            'label'       => '',
+                            'prefix_icon' => 'fa-regular fa-cart-shopping',
+                            'atts'        => ['x-show="showCart"'],
                         ]) ?>
                     </div>
 
@@ -345,33 +349,35 @@ if (class_exists('WooCommerce')) {
                     </div>
 
                     <!-- Right-aligned hamburger menu button that only shows on MD breakpoint or below -->
-                    <button
-                        x-on:click="mobileMenuOpen = ! mobileMenuOpen; if(mobileMenuOpen){$dispatch('close-mobile-search')};"
-                        x-on:close-mobile-menu.window="mobileMenuOpen = false" class="right-hamburger-button">
-                        <span x-show="! mobileMenuOpen" x-cloak>
-                            <?php
-get_component('icon', [
-    'classes' => ['text-x-large', 'lg:text-large', 'px-2'],
-    'icon'    => 'fa-solid fa-bars',
-    'text'    => '',
-]);
+                    <div class="relative">
+                        <button
+                            x-on:click="mobileMenuOpen = ! mobileMenuOpen; if(mobileMenuOpen){$dispatch('close-mobile-search')};"
+                            x-on:close-mobile-menu.window="mobileMenuOpen = false" class="right-hamburger-button hidden md:inline-flex lg:hidden">
+                            <span x-show="! mobileMenuOpen" x-cloak>
+                                <?php
+                                get_component('icon', [
+                                    'classes' => ['text-x-large', 'lg:text-large', 'px-2'],
+                                    'icon'    => 'fa-solid fa-bars',
+                                    'text'    => '',
+                                ]);
 ?>
-                        </span>
-                        <span x-show="mobileMenuOpen" x-cloak>
-                            <?php
-get_component('icon', [
-    'classes' => ['text-x-large', 'lg:text-large', 'bg-dark-040', 'rounded-base', 'px-2', 'py-0'],
-    'icon'    => 'fa-solid fa-x',
-    'text'    => '',
-]);
+                            </span>
+                            <span x-show="mobileMenuOpen" x-cloak>
+                                <?php
+                                get_component('icon', [
+                                    'classes' => ['text-x-large', 'lg:text-large', 'bg-dark-040', 'rounded-base', 'px-2', 'py-0'],
+                                    'icon'    => 'fa-solid fa-x',
+                                    'text'    => '',
+                                ]);
 ?>
-                        </span>
-                    </button> <!-- End hamburger button -->
+                            </span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div> <!-- End secondary nav -->
 
-        <!-- Main Nav -->
+        <!-- Main Nav Desktop -->
         <nav x-ref="main-nav" class="main-nav">
             <ul class="container w-full gap-4 flex relative <?php if (count($primary_nav_items_structured) > 4) {
                 echo 'justify-between';
@@ -506,7 +512,7 @@ get_component('icon', [
 
         <!-- Mobile Menu -->
         <div x-show="mobileMenuOpen" x-cloak x-transition x-anchor.bottom-start="$refs.secondary-nav"
-            class="w-full bg-[--bg-white] font-bold">
+            class="mobile-menu-container w-full bg-[--bg-white] font-bold">
             <div class="pt-3 pb-2 px-3 text-center">
                 <?php
 // Conditional Account Buttons
@@ -761,10 +767,10 @@ foreach ($secondary_nav_items as $secondary_nav_item) {
                 <input class="w-full" type="text" name="s" id="search" value="<?php the_search_query(); ?>"
                     placeholder="<?php _e('Search by Keyword', 'wicket'); ?>" />
                 <?php get_component('button', [
-                'variant' => 'primary',
-                'type'    => 'submit',
-                'label'   => __('Search', 'wicket'),
-                'classes' => ['ml-2', 'border-0'],
+                    'variant' => 'primary',
+                    'type'    => 'submit',
+                    'label'   => __('Search', 'wicket'),
+                    'classes' => ['ml-2', 'border-0'],
                 ]) ?>
             </form>
         </div>

@@ -1,13 +1,12 @@
 header {
   max-width: 100% !important;
 
-  .site-header {
     .right-hamburger-button {
       @apply ml-4 items-center;
     }
 
     .left-hamburger-button {
-      @apply inline-flex md:hidden mr-10 items-center;
+      @apply mr-10 items-center;
 
       &.open {
         i.fa-bars {
@@ -27,7 +26,7 @@ header {
     }
 
     .main-nav {
-      @apply w-full hidden lg:flex border-t-[--nav-main-border] border-b-[--nav-main-border] border-t-[length:--border-main-nav-top] border-b-[length:--border-main-nav-bottom] bg-[--nav-main-bg];
+      @apply w-full lg:flex border-t-[--nav-main-border] border-b-[--nav-main-border] border-t-[length:--border-main-nav-top] border-b-[length:--border-main-nav-bottom] bg-[--nav-main-bg];
 
       &__dropdown-menu-item,
       &__mega-menu-item {
@@ -81,28 +80,10 @@ header {
         @apply flex flex-col w-full;
       }
     }
-  }
+
 
   .search-toggle-button {
     @apply text-button-label-md rounded-[--interactive-corner-radius-md] p-[--space-200] no-underline;
     @include button-ghost;
-  }
-}
-
-@media (min-width: $wicket-breakpoint-md) {
-  header .right-hamburger-button {
-    display: none !important;
-  }
-}
-
-@media (max-width: calc(#{$wicket-breakpoint-md} - 1px)) {
-  header .right-hamburger-button {
-    display: inline-flex !important;
-  }
-}
-
-@media (max-width: $wicket-breakpoint-lg-max) {
-  header nav.main-nav {
-    display: none !important;
   }
 }
