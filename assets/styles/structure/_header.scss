@@ -86,4 +86,34 @@ header {
     @apply text-button-label-md rounded-[--interactive-corner-radius-md] p-[--space-200] no-underline;
     @include button-ghost;
   }
+
+  // Responsive fallbacks for backwards compatibility with themes that don't use Tailwind classes
+
+  // Left hamburger button - only show on mobile (up to 767px)
+  .left-hamburger-button {
+    display: inline-flex;
+
+    @media screen and (min-width: $wicket-breakpoint-md) {
+      display: none;
+    }
+  }
+
+  // Right hamburger button - only show on tablets (768px to 1023px)
+  .right-hamburger-button {
+    display: none;
+
+    @media screen and (min-width: $wicket-breakpoint-md) and (max-width: $wicket-breakpoint-lg-max) {
+      display: inline-flex;
+    }
+  }
+
+  // Main navigation list - only show on desktop (1024px+)
+  .main-nav__list {
+    display: none;
+
+    @media screen and (min-width: $wicket-breakpoint-lg) {
+      display: flex;
+    }
+  }
 }
+
