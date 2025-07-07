@@ -241,25 +241,20 @@ function init($block = [])
 
     $has_filters = false;
 
-    /* Add custom taxonomy filters to tax query if they are set */
-    if (is_array($taxonomy_filters)) {
-        foreach ($taxonomy_filters as $taxonomy) {
-            if (isset($_GET[$taxonomy['slug']])) {
-                $taxonomy_args = [
+	/* Add custom taxonomy filters to tax query if they are set */
+	if ( is_array( $taxonomy_filters ) ) {
+		foreach ( $taxonomy_filters as $taxonomy ) {
+			if ( isset( $_GET[ $taxonomy['slug'] ] ) ) {
+                $taxonomy_args = [ 
                     'taxonomy' => $taxonomy['slug'],
                     'field'    => 'slug',
                     'operator' => 'IN',
-                    'terms'    => $_GET[$taxonomy['slug']],
+                    'terms'    => $_GET[ $taxonomy['slug'] ],
                 ];
-
-                $has_filters = true;
-            }
-        }
-
-        if ($has_filters) {
-            $tax_query = [$taxonomy_args];
-        }
-    }
+                array_push( $tax_query, $taxonomy_args );
+			}
+		}
+	}
 
     $default_search_form_bg_color = '';
     $default_listing_container_bg_color = '';
