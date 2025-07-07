@@ -32,7 +32,6 @@ $wicket_includes = [
     'curl_timeout.php',
     'private_content_redirect.php',
     'woocommerce.php',
-    'switch_to_user_wicket_sync.php',
     'woocommerce_max_webhook_delivery_failures.php',
     'wpml_translator_override.php',
     'breadcrumbs.php',
