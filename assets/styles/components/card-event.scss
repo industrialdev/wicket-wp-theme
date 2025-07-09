@@ -16,6 +16,10 @@
     .cols-1 & {
       @apply text-heading-md;
     }
+
+    .component-tag {
+      transform: translateY(-3px);
+    }
   }
 
   &__image-wrapper {
@@ -55,7 +59,9 @@
 
   &__excerpt {}
 
-  &__ticket-price {}
+  &__price-regular {
+    @apply line-through text-[--text-disabled] text-body-sm mr-1;
+  }
 
   &__cta {}
 
