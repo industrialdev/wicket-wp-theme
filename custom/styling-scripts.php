@@ -211,7 +211,33 @@ add_action('wp_enqueue_scripts', 'wicket_add_theme_assets');
 function wicket_admin_styles()
 {
     wp_enqueue_style('admin-styles', get_template_directory_uri() . '/assets/styles/min/admin.min.css');
-    wicket_enqueue_script('wicket-admin-script', '/assets/scripts/min/wicket-wp-admin.min.js');
+
+    // Only enqueue admin script with dependencies on block editor screens
+    $screen = get_current_screen();
+    if ($screen && (in_array($screen->base, ['post', 'widgets', 'site-editor']) || $screen->is_block_editor)) {
+        $dependencies = ['wp-blocks', 'wp-dom-ready'];
+
+        // Add specific dependencies based on the screen
+        switch ($screen->base) {
+            case 'post':
+                $dependencies[] = 'wp-edit-post';
+                break;
+            case 'widgets':
+                $dependencies[] = 'wp-edit-widgets';
+                break;
+            case 'site-editor':
+                $dependencies[] = 'wp-edit-site';
+                break;
+        }
+
+        wp_enqueue_script(
+            'wicket-admin-script',
+            get_template_directory_uri() . '/assets/scripts/min/wicket-wp-admin.min.js',
+            $dependencies,
+            filemtime(get_template_directory() . '/assets/scripts/min/wicket-wp-admin.min.js'),
+            true
+        );
+    }
 
     // Only if WP ENVIRONMENT is development or local
     if (in_array(wp_get_environment_type(), ['development', 'local', 'staging'])) {

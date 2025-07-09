@@ -2,7 +2,10 @@
 
 wp.domReady(() => {
 
-  wp.blocks.unregisterBlockStyle('core/button', ['outline', 'squared', 'fill'])
+  // Unregister individual button styles
+  wp.blocks.unregisterBlockStyle('core/button', 'outline')
+  wp.blocks.unregisterBlockStyle('core/button', 'squared')
+  wp.blocks.unregisterBlockStyle('core/button', 'fill')
 
   wp.blocks.registerBlockStyle('core/button', [
     {
