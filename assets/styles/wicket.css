@@ -95932,46 +95932,59 @@ div.job_listings ul.job_listings li.job_listing .company_logo{
 }
 
 .single_job_listing{
-  padding-bottom: 2.5rem;
-}
-.single_job_listing main{
   width: 100%;
   margin-right: auto;
   margin-left: auto;
 }
+
 @media (min-width: 640px){
-  .single_job_listing main{
+  .single_job_listing{
     max-width: 640px;
   }
 }
+
 @media (min-width: 768px){
-  .single_job_listing main{
+  .single_job_listing{
     max-width: 768px;
   }
 }
+
 @media (min-width: 1024px){
-  .single_job_listing main{
+  .single_job_listing{
     max-width: 1024px;
   }
 }
+
 @media (min-width: 1280px){
-  .single_job_listing main{
+  .single_job_listing{
     max-width: 1280px;
   }
 }
+
 @media (min-width: 1536px){
-  .single_job_listing main{
+  .single_job_listing{
     max-width: 1536px;
   }
-  .single_job_listing main main {
+  .single_job_listing main {
     max-width: var(--wp--style--global--content-size);
   }
-  .single_job_listing main {
+}
+
+.single_job_listing{
+  padding-bottom: 2.5rem;
+}
+@media (min-width: 1536px) {
+  .single_job_listing {
     max-width: var(--wp--style--global--content-size) !important;
   }
 }
-@media (max-width: 768px) {
-  .single_job_listing main{
+@media (min-width: var(--wp--style--global--content-size)) {
+  .single_job_listing {
+    max-width: var(--wp--style--global--content-size) !important;
+  }
+}
+@media (max-width: 767px) {
+  .single_job_listing{
     padding-left: var(--space-200);
     padding-right: var(--space-200);
   }
