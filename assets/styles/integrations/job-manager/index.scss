@@ -1,17 +1,20 @@
 @mixin job_manager_container {
-  main {
-    @apply container;
+  @apply container;
 
-    @media (min-width: $wicket-breakpoint-xl) {
-      & {
-        max-width: var(--wp--style--global--content-size) !important;
-      }
+  @media (min-width: 1536px) {
+    & {
+      max-width: var(--wp--style--global--content-size) !important;
     }
+  }
+  @media (min-width: var(--wp--style--global--content-size)) {
+    & {
+      max-width: var(--wp--style--global--content-size) !important;
+    }
+  }
 
-        @media (max-width: $wicket-breakpoint-md) {
-      & {
-        @apply px-[--space-200];
-      }
+  @media (max-width: 767px) {
+    & {
+      @apply px-[--space-200];
     }
   }
 }
