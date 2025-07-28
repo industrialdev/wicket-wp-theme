@@ -168,10 +168,16 @@ function wicket_get_customizations_inline_css()
  */
 function wicket_add_theme_assets()
 {
-    wicket_enqueue_style('font-awesome', '/font-awesome/css/fontawesome.css');
-    wicket_enqueue_style('font-awesome-brands', '/font-awesome/css/brands.css');
-    wicket_enqueue_style('font-awesome-solid', '/font-awesome/css/solid.css');
-    wicket_enqueue_style('font-awesome-regular', '/font-awesome/css/regular.css');
+    if (!wp_style_is('font-awesome', 'enqueued')) {
+        wicket_enqueue_style('font-awesome', '/font-awesome/css/fontawesome.css');
+        wicket_enqueue_style('font-awesome-brands', '/font-awesome/css/brands.css');
+        wicket_enqueue_style('font-awesome-solid', '/font-awesome/css/solid.css');
+        wicket_enqueue_style('font-awesome-regular', '/font-awesome/css/regular.css');
+    }
+
+    if (!wp_style_is('material-icons', 'enqueued')) {
+        wp_enqueue_style('material-icons', 'https://fonts.googleapis.com/icon?family=Material+Icons');
+    }
 
     // Only if WP ENVIRONMENT is production
     if (in_array(wp_get_environment_type(), ['production'])) {
