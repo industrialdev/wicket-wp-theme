@@ -91,29 +91,30 @@ header {
 
   // Left hamburger button - only show on mobile (up to 767px)
   .left-hamburger-button {
-    display: inline-flex;
+    @apply inline-flex;
 
     @media screen and (min-width: $wicket-breakpoint-md) {
-      display: none;
+      @apply hidden;
     }
   }
 
   // Right hamburger button - only show on tablets (768px to 1023px)
   .right-hamburger-button {
-    display: none;
+    @apply hidden;
+
 
     @media screen and (min-width: $wicket-breakpoint-md) and (max-width: $wicket-breakpoint-lg-max) {
-      display: inline-flex;
+      @apply inline-flex;
     }
   }
 
   // Main navigation list - only show on desktop (1024px+)
   .main-nav__list,
-  nav.main-nav ul {
-    display: none;
+  nav.main-nav > ul {
+    @apply hidden;
 
     @media screen and (min-width: $wicket-breakpoint-lg) {
-      display: flex;
+      @apply flex;
     }
   }
 }
