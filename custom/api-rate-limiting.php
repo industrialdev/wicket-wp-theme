@@ -76,7 +76,7 @@ function wptarl_rest_api_init(WP_REST_Server $wp_rest_server)
     $is_client_rate_limited = false;
     $transient_key = null;
 
-    if (str_contains($request_uri, 'wicket') || $_SERVER['HTTP_SEC_FETCH_SITE'] == 'same-origin') {
+    if (str_contains($request_uri, 'wicket') || str_contains($request_uri, 'tribe') || $_SERVER['HTTP_SEC_FETCH_SITE'] == 'same-origin') {
         // We don't want to rate-limit our own custom endpoints, so we'll do
         // nothing here.
     } elseif (empty($client_ip = wptarl_client_ip())) {
