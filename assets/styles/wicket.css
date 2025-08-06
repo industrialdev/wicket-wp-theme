@@ -93358,13 +93358,17 @@ main .wp-block-columns:has(.wp-block-column .wp-block-wicket-sidebar-contextual-
   padding: 0;
 }
 #tribe-events-pg-template .tribe-events-back, #tribe-events-pg-template .tribe-events-single-event-title,
-#tribe-events-pg-template #tribe-events-footer, #tribe-events-pg-template .tribe-block, #tribe-events-pg-template .tribe-events-schedule, #tribe-events-pg-template .tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map),
+#tribe-events-pg-template #tribe-events-footer, #tribe-events-pg-template .tribe-block, #tribe-events-pg-template .tribe-events-schedule,
+#tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map),
 #tribe-events-pg-template .tribe-related-events,
 #tribe-events-pg-template .tribe-link-view-attendee,
+#tribe-events-pg-template .tribe-events-single,
 #tribe-events-pg-template .tribe-common, .tribe-events-pg-template .tribe-events-back, .tribe-events-pg-template .tribe-events-single-event-title,
-.tribe-events-pg-template #tribe-events-footer, .tribe-events-pg-template .tribe-block, .tribe-events-pg-template .tribe-events-schedule, .tribe-events-pg-template .tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map),
+.tribe-events-pg-template #tribe-events-footer, .tribe-events-pg-template .tribe-block, .tribe-events-pg-template .tribe-events-schedule,
+.tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map),
 .tribe-events-pg-template .tribe-related-events,
 .tribe-events-pg-template .tribe-link-view-attendee,
+.tribe-events-pg-template .tribe-events-single,
 .tribe-events-pg-template .tribe-common{
   width: 100%;
   margin-right: auto;
@@ -93372,76 +93376,100 @@ main .wp-block-columns:has(.wp-block-column .wp-block-wicket-sidebar-contextual-
 }
 @media (min-width: 640px){
   #tribe-events-pg-template .tribe-events-back, #tribe-events-pg-template .tribe-events-single-event-title,
-#tribe-events-pg-template #tribe-events-footer, #tribe-events-pg-template .tribe-block, #tribe-events-pg-template .tribe-events-schedule, #tribe-events-pg-template .tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map),
+#tribe-events-pg-template #tribe-events-footer, #tribe-events-pg-template .tribe-block, #tribe-events-pg-template .tribe-events-schedule,
+#tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map),
 #tribe-events-pg-template .tribe-related-events,
 #tribe-events-pg-template .tribe-link-view-attendee,
+#tribe-events-pg-template .tribe-events-single,
 #tribe-events-pg-template .tribe-common, .tribe-events-pg-template .tribe-events-back, .tribe-events-pg-template .tribe-events-single-event-title,
-.tribe-events-pg-template #tribe-events-footer, .tribe-events-pg-template .tribe-block, .tribe-events-pg-template .tribe-events-schedule, .tribe-events-pg-template .tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map),
+.tribe-events-pg-template #tribe-events-footer, .tribe-events-pg-template .tribe-block, .tribe-events-pg-template .tribe-events-schedule,
+.tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map),
 .tribe-events-pg-template .tribe-related-events,
 .tribe-events-pg-template .tribe-link-view-attendee,
+.tribe-events-pg-template .tribe-events-single,
 .tribe-events-pg-template .tribe-common{
     max-width: 640px;
   }
 }
 @media (min-width: 768px){
   #tribe-events-pg-template .tribe-events-back, #tribe-events-pg-template .tribe-events-single-event-title,
-#tribe-events-pg-template #tribe-events-footer, #tribe-events-pg-template .tribe-block, #tribe-events-pg-template .tribe-events-schedule, #tribe-events-pg-template .tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map),
+#tribe-events-pg-template #tribe-events-footer, #tribe-events-pg-template .tribe-block, #tribe-events-pg-template .tribe-events-schedule,
+#tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map),
 #tribe-events-pg-template .tribe-related-events,
 #tribe-events-pg-template .tribe-link-view-attendee,
+#tribe-events-pg-template .tribe-events-single,
 #tribe-events-pg-template .tribe-common, .tribe-events-pg-template .tribe-events-back, .tribe-events-pg-template .tribe-events-single-event-title,
-.tribe-events-pg-template #tribe-events-footer, .tribe-events-pg-template .tribe-block, .tribe-events-pg-template .tribe-events-schedule, .tribe-events-pg-template .tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map),
+.tribe-events-pg-template #tribe-events-footer, .tribe-events-pg-template .tribe-block, .tribe-events-pg-template .tribe-events-schedule,
+.tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map),
 .tribe-events-pg-template .tribe-related-events,
 .tribe-events-pg-template .tribe-link-view-attendee,
+.tribe-events-pg-template .tribe-events-single,
 .tribe-events-pg-template .tribe-common{
     max-width: 768px;
   }
 }
 @media (min-width: 1024px){
   #tribe-events-pg-template .tribe-events-back, #tribe-events-pg-template .tribe-events-single-event-title,
-#tribe-events-pg-template #tribe-events-footer, #tribe-events-pg-template .tribe-block, #tribe-events-pg-template .tribe-events-schedule, #tribe-events-pg-template .tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map),
+#tribe-events-pg-template #tribe-events-footer, #tribe-events-pg-template .tribe-block, #tribe-events-pg-template .tribe-events-schedule,
+#tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map),
 #tribe-events-pg-template .tribe-related-events,
 #tribe-events-pg-template .tribe-link-view-attendee,
+#tribe-events-pg-template .tribe-events-single,
 #tribe-events-pg-template .tribe-common, .tribe-events-pg-template .tribe-events-back, .tribe-events-pg-template .tribe-events-single-event-title,
-.tribe-events-pg-template #tribe-events-footer, .tribe-events-pg-template .tribe-block, .tribe-events-pg-template .tribe-events-schedule, .tribe-events-pg-template .tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map),
+.tribe-events-pg-template #tribe-events-footer, .tribe-events-pg-template .tribe-block, .tribe-events-pg-template .tribe-events-schedule,
+.tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map),
 .tribe-events-pg-template .tribe-related-events,
 .tribe-events-pg-template .tribe-link-view-attendee,
+.tribe-events-pg-template .tribe-events-single,
 .tribe-events-pg-template .tribe-common{
     max-width: 1024px;
   }
 }
 @media (min-width: 1280px){
   #tribe-events-pg-template .tribe-events-back, #tribe-events-pg-template .tribe-events-single-event-title,
-#tribe-events-pg-template #tribe-events-footer, #tribe-events-pg-template .tribe-block, #tribe-events-pg-template .tribe-events-schedule, #tribe-events-pg-template .tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map),
+#tribe-events-pg-template #tribe-events-footer, #tribe-events-pg-template .tribe-block, #tribe-events-pg-template .tribe-events-schedule,
+#tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map),
 #tribe-events-pg-template .tribe-related-events,
 #tribe-events-pg-template .tribe-link-view-attendee,
+#tribe-events-pg-template .tribe-events-single,
 #tribe-events-pg-template .tribe-common, .tribe-events-pg-template .tribe-events-back, .tribe-events-pg-template .tribe-events-single-event-title,
-.tribe-events-pg-template #tribe-events-footer, .tribe-events-pg-template .tribe-block, .tribe-events-pg-template .tribe-events-schedule, .tribe-events-pg-template .tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map),
+.tribe-events-pg-template #tribe-events-footer, .tribe-events-pg-template .tribe-block, .tribe-events-pg-template .tribe-events-schedule,
+.tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map),
 .tribe-events-pg-template .tribe-related-events,
 .tribe-events-pg-template .tribe-link-view-attendee,
+.tribe-events-pg-template .tribe-events-single,
 .tribe-events-pg-template .tribe-common{
     max-width: 1280px;
   }
 }
 @media (min-width: 1536px){
   #tribe-events-pg-template .tribe-events-back, #tribe-events-pg-template .tribe-events-single-event-title,
-#tribe-events-pg-template #tribe-events-footer, #tribe-events-pg-template .tribe-block, #tribe-events-pg-template .tribe-events-schedule, #tribe-events-pg-template .tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map),
+#tribe-events-pg-template #tribe-events-footer, #tribe-events-pg-template .tribe-block, #tribe-events-pg-template .tribe-events-schedule,
+#tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map),
 #tribe-events-pg-template .tribe-related-events,
 #tribe-events-pg-template .tribe-link-view-attendee,
+#tribe-events-pg-template .tribe-events-single,
 #tribe-events-pg-template .tribe-common, .tribe-events-pg-template .tribe-events-back, .tribe-events-pg-template .tribe-events-single-event-title,
-.tribe-events-pg-template #tribe-events-footer, .tribe-events-pg-template .tribe-block, .tribe-events-pg-template .tribe-events-schedule, .tribe-events-pg-template .tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map),
+.tribe-events-pg-template #tribe-events-footer, .tribe-events-pg-template .tribe-block, .tribe-events-pg-template .tribe-events-schedule,
+.tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map),
 .tribe-events-pg-template .tribe-related-events,
 .tribe-events-pg-template .tribe-link-view-attendee,
+.tribe-events-pg-template .tribe-events-single,
 .tribe-events-pg-template .tribe-common{
     max-width: 1536px;
   }
   #tribe-events-pg-template .tribe-events-back main, #tribe-events-pg-template .tribe-events-single-event-title main,
-#tribe-events-pg-template #tribe-events-footer main, #tribe-events-pg-template .tribe-block main, #tribe-events-pg-template .tribe-events-schedule main, #tribe-events-pg-template .tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map) main,
+#tribe-events-pg-template #tribe-events-footer main, #tribe-events-pg-template .tribe-block main, #tribe-events-pg-template .tribe-events-schedule main,
+#tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map) main,
 #tribe-events-pg-template .tribe-related-events main,
 #tribe-events-pg-template .tribe-link-view-attendee main,
+#tribe-events-pg-template .tribe-events-single main,
 #tribe-events-pg-template .tribe-common main, .tribe-events-pg-template .tribe-events-back main, .tribe-events-pg-template .tribe-events-single-event-title main,
-.tribe-events-pg-template #tribe-events-footer main, .tribe-events-pg-template .tribe-block main, .tribe-events-pg-template .tribe-events-schedule main, .tribe-events-pg-template .tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map) main,
+.tribe-events-pg-template #tribe-events-footer main, .tribe-events-pg-template .tribe-block main, .tribe-events-pg-template .tribe-events-schedule main,
+.tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map) main,
 .tribe-events-pg-template .tribe-related-events main,
 .tribe-events-pg-template .tribe-link-view-attendee main,
+.tribe-events-pg-template .tribe-events-single main,
 .tribe-events-pg-template .tribe-common main {
     max-width: var(--wp--style--global--content-size) !important;
   }
