@@ -6,7 +6,8 @@
   #tribe-events-footer, .tribe-block, .tribe-events-schedule,
   *[class*='tribe-block__']:not(.tribe-block__venue__meta):not(.tribe-block__venue__map), // Exclude venue meta and map blocks
   .tribe-related-events,
-  .tribe-link-view-attendee,
+  .tribe-link-view-attendee, 
+  .tribe-events-single,
   .tribe-common {
     //@apply container;
     @include the-container;
@@ -24,7 +25,7 @@
 
   // Hiding event title and breadcrumbs since we add it with our Banner block
   .tribe-events-single-event-title, .tribe-events-back {
-    display: none;
+    display: none; 
   }
 }
 
