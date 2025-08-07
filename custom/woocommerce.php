@@ -14,24 +14,6 @@ add_filter('woocommerce_cart_item_permalink', '__return_false');
 add_filter('wc_add_to_cart_message_html', '__return_false');
 
 /**
- * Remove built-in react since it's messing with the wicket widgets.
- */
-function wicket_remove_scripts()
-{
-    global $wp_scripts;
-
-    if (!(is_cart() || is_checkout())) {
-        wp_dequeue_script('react');
-        wp_deregister_script('react');
-        wp_dequeue_script('react-dom');
-        wp_deregister_script('react-dom');
-        // wp_dequeue_script( 'wc-add-to-cart' );
-        // 	wp_deregister_script( 'wc-add-to-cart' );
-    }
-}
-add_action('wp_enqueue_scripts', 'wicket_remove_scripts', 100);
-
-/**
  * Fires after a team has been created.
  * This action hook is similar to `wc_memberships_for_teams_team_saved`
  * but doesn't fire when teams are manually created from admin.
