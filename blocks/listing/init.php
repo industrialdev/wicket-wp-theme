@@ -352,6 +352,8 @@ function init($block = [])
     $posts = $query->posts;
     $total_posts = $query->found_posts;
     $total_pages = $query->max_num_pages;
+
+    do_action('wicket_listing_block_before_posts_render', $query, $posts, $total_posts, $total_pages);
     ?>
 
                     <div
