@@ -30,6 +30,12 @@ const WPTARL_NEVER_RATE_LIMITED_IPS = [
     '3.105.252.6',
     '54.79.191.214',
     '3.24.148.13',
+    // the next 5 are for metorik, the previous ones are/were for tray.io
+    '23.239.31.17',
+   ' 45.33.123.9',
+    '45.33.116.36',
+    '96.126.113.196',
+    '173.255.205.248'
 ];
 /**
  * Check multiple $_SERVER elements to find the remote client's IP address.
