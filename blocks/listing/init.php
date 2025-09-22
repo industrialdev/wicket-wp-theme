@@ -236,7 +236,12 @@ function init($block = [])
         }, $additional_filters);
 
         // Merge $additional_filters with $taxonomy_filters
-        $taxonomy_filters = array_merge($taxonomy_filters, $additional_filters);
+        // It's possible for taxonomy_filters to not be set, which ends up returning a false, breaking this merge.
+        if ($taxonomy_filters === false) {
+            $taxonomy_filters = $additional_filters;
+        } else {
+            $taxonomy_filters = array_merge($taxonomy_filters, $additional_filters);
+        }
     }
 
     $has_filters = false;
