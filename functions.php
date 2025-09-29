@@ -37,6 +37,7 @@ $wicket_includes = [
     'breadcrumbs.php',
     'post-types.php',
     'taxonomies.php',
+    'gravity_forms.php',
     'redirections.php',
     'search.php',
     'api-rate-limiting.php',
