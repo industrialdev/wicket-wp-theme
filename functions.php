@@ -3,23 +3,15 @@
 // No direct access
 defined('ABSPATH') || exit;
 
-define('WICKET_THEME_PATH', get_template_directory());
-define('WICKET_THEME_URL', get_template_directory_uri());
-define('WICKET_CHILD_THEME_PATH', get_stylesheet_directory());
-define('WICKET_CHILD_THEME_URL', get_stylesheet_directory_uri());
-define('WICKET_UPLOADS_PATH', wp_get_upload_dir()['basedir'] . '/wicket-theme/');
-define('WICKET_UPLOADS_URL', wp_get_upload_dir()['baseurl'] . '/wicket-theme/');
-define('WICKET_THEME_PREFIX', 'wicket_theme_');
-
 /**
  * Wicket Includes.
  */
 $wicket_includes = [
+    'constants.php',
     'config.php',
     'helpers.php',
     'styling-scripts.php',
     'remote-media-proxy.php',
-    'constants.php',
     'acf.php',
     'blocks.php',
     'menus.php',
