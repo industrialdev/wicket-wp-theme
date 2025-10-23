@@ -13,7 +13,7 @@ if (is_post_type_archive()) {
     $title = single_term_title();
 } elseif (is_search()) {
     $title = 'Search results for: ' . get_search_query();
-} elseif (is_singuler()) {
+} elseif (is_singular()) {
     $title = get_the_title();
 }
 ?>
