@@ -326,7 +326,7 @@ get_component('icon', [
                     </button>
                     <!-- End search button states -->
 
-                    <div class="relative flex">
+                    <div class="relative flex" x-show="showCart">
                         <span class="cart-customlocation absolute top-[5px] right-[5px] bg-[--text-button-label] rounded-full text-white text-sm w-5 h-5 flex text-xs items-center justify-center no-underline">
                             <?php
 if (class_exists('WooCommerce')) {
@@ -340,7 +340,6 @@ if (class_exists('WooCommerce')) {
                             'a_tag'       => true,
                             'label'       => '',
                             'prefix_icon' => 'fa-regular fa-cart-shopping',
-                            'atts'        => ['x-show="showCart"'],
                         ]) ?>
                     </div>
 
