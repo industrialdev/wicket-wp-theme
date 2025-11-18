@@ -1,7 +1,9 @@
+@use '../../helpers/mixins';
+
 .woocommerce-info,
 .woocommerce-message,
 .woocommerce-error {
-  @include wc-alert;
+  @include mixins.wc-alert;
 
   @media (max-width: 767px) {
     margin-inline: var(--space-200);

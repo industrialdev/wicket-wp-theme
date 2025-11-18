@@ -1,7 +1,9 @@
+@use '../../helpers/mixins';
+
 .woocommerce-shop {
   .woocommerce.columns-4 {
-    @include the-container;
     padding: 1rem 0;
+    @include mixins.the-container;
   }
 
   ul.products {
@@ -41,7 +43,7 @@
         }
     
         &.product_type_external {
-          @include add-external-icon;
+          @include mixins.add-external-icon;
         }
     
         .add_to_cart_button__text-added {

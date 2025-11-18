@@ -1,3 +1,5 @@
+@use '../helpers/mixins';
+
 .component-link {
   @apply font-bold inline-flex items-center focus:shadow-focus gap-[--space-100];
 
@@ -90,7 +92,7 @@
   // Main Menu > Single Item
   .main-nav__single-menu-item &,
   &.single-nav-item-mobile {
-    @include primary-menu-item-styles;
+    @include mixins.primary-menu-item-styles;
   }
 
   // Desktop Main Menu > Mega Menu Item & Dropdown Menu Item
@@ -111,7 +113,7 @@
 
   // Mobile Main Menu > Single Item
   &.single-nav-item-mobile {
-    @include primary-menu-item-styles;
+    @include mixins.primary-menu-item-styles;
     @apply flex flex-col w-full items-start;
   }
 }

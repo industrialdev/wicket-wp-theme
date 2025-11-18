@@ -1,4 +1,4 @@
-@import 'helpers/mixins';
+@use 'helpers/mixins';
 
 body {
   @apply text-body-md text-[--text-content] bg-[--bg-body];
@@ -25,7 +25,7 @@ a:where(:not(.wp-element-button)) {
 
 // Extend tailwind container
 .container {
-  @include container-adjustments;
+  @include mixins.container-adjustments;
 }
 
 /* AlpineJS Helpers */

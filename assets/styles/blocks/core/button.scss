@@ -1,3 +1,5 @@
+@use '../../helpers/mixins';
+
 /* -------------------------------------------------------------------------
  * CORE BUTTON BLOCK
  * ------------------------------------------------------------------------- */
@@ -29,14 +31,14 @@
     gap: var(--wp--preset--spacing--100);
 
     &[target="_blank"] {
-      @include add-external-icon;
+      @include mixins.add-external-icon;
     }
   }
 
   /* Default (Primary) button */
   &:not([class*="is-style"]) {
     .wp-block-button__link.wp-element-button {
-      @include button-primary;
+      @include mixins.button-primary;
 
       &:hover {
         img {
@@ -49,7 +51,7 @@
   /* Default (Primary) button */
   &.is-style-default {
     .wp-block-button__link.wp-element-button {
-      @include button-primary;
+      @include mixins.button-primary;
 
       &:hover {
         img {
@@ -62,7 +64,7 @@
   /* Default (Primary) reversed button */
   &.is-style-primary_reversed {
     .wp-block-button__link.wp-element-button {
-      @include button-primary-rev;
+      @include mixins.button-primary-rev;
 
       &:hover {
         img {
@@ -75,7 +77,7 @@
   /* Secondary button */
   &.is-style-secondary {
     .wp-block-button__link.wp-element-button {
-      @include button-secondary;
+      @include mixins.button-secondary;
 
       &:hover {
         img {
@@ -88,7 +90,7 @@
   /* Secondary Reversed button */
   &.is-style-secondary_reversed {
     .wp-block-button__link.wp-element-button {
-      @include button-secondary-rev;
+      @include mixins.button-secondary-rev;
 
       &:hover {
         img {
@@ -101,7 +103,7 @@
   /* Ghost button */
   &.is-style-ghost {
     .wp-block-button__link.wp-element-button {
-      @include button-ghost;
+      @include mixins.button-ghost;
 
       &:hover {
         img {
@@ -114,7 +116,7 @@
   /* Ghost button reversed */
   &.is-style-ghost_reversed {
     .wp-block-button__link.wp-element-button {
-      @include button-ghost-rev;
+      @include mixins.button-ghost-rev;
 
       &:hover {
         img {

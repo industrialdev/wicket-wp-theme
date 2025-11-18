@@ -1,6 +1,8 @@
+@use '../helpers/mixins';
+
 // Primary
 .button {
-  @include button-base;
+  @include mixins.button-base;
 
   &--sm {
     @apply text-button-label-sm rounded-[--interactive-corner-radius-md] p-[--space-150];
@@ -20,58 +22,58 @@
 
   // Primary
   &--primary:not(.button--reversed) {
-    @include button-primary;
+    @include mixins.button-primary;
   }
 
   // Secondary
   &--secondary:not(.button--reversed) {
-    @include button-secondary;
+    @include mixins.button-secondary;
   }
 
   // Ghost
   &--ghost:not(.button--reversed) {
-    @include button-ghost;
+    @include mixins.button-ghost;
   }
 
   // Primary Reversed
   &--primary.button--reversed {
-    @include button-primary-rev;
+    @include mixins.button-primary-rev;
   }
 
   // Secondary Reversed
   &--secondary.button--reversed {
-    @include button-secondary-rev;
+    @include mixins.button-secondary-rev;
   }
 
   // Ghost Reversed
   &--ghost.button--reversed {
-    @include button-ghost-rev;
+    @include mixins.button-ghost-rev;
   }
 
   // Disabled States
   &--primary.button--disabled {
-    @include button-primary-disabled;
+    @include mixins.button-primary-disabled;
   }
 
   &--secondary.button--disabled {
-    @include button-secondary-disabled;
+    @include mixins.button-secondary-disabled;
   }
 
   &--ghost.button--disabled {
-    @include button-ghost-disabled;
+    @include mixins.button-ghost-disabled;
   }
 
   // Disabled States Reversed
   &--primary.button--disabled.button--reversed {
-    @include button-primary-rev-disabled;
+    @include mixins.button-primary-rev-disabled;
   }
 
   &--secondary.button--disabled.button--reversed {
-    @include button-secondary-rev-disabled;
+    @include mixins.button-secondary-rev-disabled;
   }
 
   &--ghost.button--disabled.button--reversed {
-    @include button-ghost-rev-disabled;
+    @include mixins.button-ghost-rev-disabled;
   }
 
   // If social link component is used

@@ -1,3 +1,5 @@
+@use '../variables/global';
+
 @mixin add-external-icon {
   &:after {
     display: inline-block;
@@ -19,7 +21,7 @@
 
 @mixin container-adjustments {
   main {
-    @media (min-width: $wicket-breakpoint-xl) {
+    @media (min-width: global.$wicket-breakpoint-xl) {
       max-width: var(--wp--style--global--content-size) !important;
     }
   }
@@ -64,7 +66,7 @@
     @apply border-b-[length:--border-lg];
 
     // prevent jumping when larger border is added
-    @media screen and (min-width: $wicket-breakpoint-lg) {
+    @media screen and (min-width: global.$wicket-breakpoint-lg) {
       margin-bottom: calc((var(--border-lg) - var(--border-md)) * -1);
     }
   }

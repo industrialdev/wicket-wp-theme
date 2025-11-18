@@ -1,0 +1,20 @@
+{
+  "assets/scripts/wicket-admin.js": {
+    "file": "assets/wicketadmin-Zselwa9P.js",
+    "name": "wicketadmin",
+    "src": "assets/scripts/wicket-admin.js",
+    "isEntry": true,
+    "css": [
+      "assets/wicketadmin-B9sTlPxE.css"
+    ]
+  },
+  "assets/scripts/wicket.js": {
+    "file": "assets/wicket-C8Ud_KMs.js",
+    "name": "wicket",
+    "src": "assets/scripts/wicket.js",
+    "isEntry": true,
+    "css": [
+      "assets/wicket-DS5zxIu3.css"
+    ]
+  }
+}

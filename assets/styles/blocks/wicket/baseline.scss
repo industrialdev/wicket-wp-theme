@@ -1,8 +1,11 @@
+@use '../../helpers/mixins';
+@use '../../variables/global';
+
 /* Setting the max-width of the content area for all blocks */
 main {
   *[class*='wp-block'] {
     //@apply container;
-    @include the-container;
+    @include mixins.the-container;
 
     &:not(.wp-block-heading) {
       margin-bottom: 1rem;
@@ -13,7 +16,7 @@ main {
       margin-bottom: 0;
     }
 
-        @media (min-width: $wicket-breakpoint-xl) {
+    @media (min-width: global.$wicket-breakpoint-xl) {
       max-width: var(--wp--style--global--content-size);
     }
 
@@ -27,7 +30,7 @@ main {
   // Case: First level blocks are core blocks add mobile inline padding
   & > *:is(.wp-block-heading, .wp-block-paragraph, .wp-block-columns, .wp-block-group, .wp-block-table, .wp-block-gravityforms, .wp-block-wicket-call-out-card):not(.alignfull) {
 
-    @media (max-width: $wicket-breakpoint-sm) {
+    @media (max-width: global.$wicket-breakpoint-sm) {
       margin-inline: var(--space-200);
       width: auto;
     }
@@ -35,7 +38,7 @@ main {
 
   & > *:is(.wp-block-heading, .wp-block-paragraph, .wp-block-columns, .wp-block-group, .wp-block-table, .wp-block-gravityforms):is(.alignfull) {
 
-    @media (max-width: $wicket-breakpoint-sm) {
+    @media (max-width: global.$wicket-breakpoint-sm) {
       padding-inline: var(--space-200);
     }
   }

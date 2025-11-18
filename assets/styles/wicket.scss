@@ -1,93 +1,47 @@
 /* GLOBAL VARIABLES
 ------------------------------------------------------------------------------*/
-@import 'variables/global';
+@use 'variables/global';
 /* HELPERS
 ------------------------------------------------------------------------------*/
-@import 'helpers/reset';
-@import 'helpers/mixins';
+@use 'helpers/reset';
+@use 'helpers/mixins';
 
 /* TAILWIND CSS
 ------------------------------------------------------------------------------*/
-@import 'node_modules/tailwindcss/base';
-@import 'node_modules/tailwindcss/components';
-@import 'node_modules/tailwindcss/utilities';
+@use 'tailwindcss/base';
+@use 'tailwindcss/components' as twComponents; // We should rarely need to reference this directly
+@use 'tailwindcss/utilities';
 
 /* THEME BASELINE STYLES
 ------------------------------------------------------------------------------*/
-@import 'baseline';
+@use 'baseline';
 
 /* COMPONENTS STYLES
 ------------------------------------------------------------------------------*/
-@import 'components/accordion';
-@import 'components/author';
-@import 'components/banner';
-@import 'components/breadcrumbs';
-@import 'components/button';
-@import 'components/card';
-@import 'components/card-call-out';
-@import 'components/card-contact';
-@import 'components/card-event';
-@import 'components/card-featured';
-@import 'components/card-listing';
-@import 'components/card-product';
-@import 'components/card-related';
-@import 'components/featured-posts';
-@import 'components/filter-form';
-@import 'components/icon';
-@import 'components/icon-grid';
-@import 'components/image';
-@import 'components/link';
-@import 'components/org-search-select';
-@import 'components/search-form';
-@import 'components/sidebar-contextual-nav';
-@import 'components/social-sharing';
-@import 'components/social-links';
-@import 'components/related-events';
-@import 'components/related-posts';
-@import 'components/pagination';
-@import 'components/tag';
-@import 'components/tabs';
-@import 'components/tooltip';
+// We use components/index to aggregate all component styles, so we can use modern @use. This avoids us needing to define each component individually here and we can now instead use `components.button-base` etc in other files. https://sass-lang.com/documentation/at-rules/use/#choosing-a-namespace
+@use 'components/index' as components;
 
 /* BLOCKS
 ------------------------------------------------------------------------------*/
-@import 'blocks/wicket/baseline';
-@import 'blocks/core/button';
-@import 'blocks/wicket/card';
-@import 'blocks/wicket/author';
-@import 'blocks/core/heading';
-@import 'blocks/core/list';
-@import 'blocks/wicket/listing';
-@import 'blocks/core/cover';
-@import 'blocks/core/paragraph';
-@import 'blocks/core/post-terms';
-@import 'blocks/core/pullquote';
-@import 'blocks/core/quote';
-@import 'blocks/core/table';
-@import 'blocks/core/columns';
-@import 'blocks/core/post-terms-topics';
-@import 'blocks/core/image';
+@use 'blocks/core/index' as coreBlocks;
+@use 'blocks/wicket/index' as wicketBlocks;
 
 /* INTEGRATIONS
 ------------------------------------------------------------------------------*/
-@import 'integrations/the-events-calendar';
-@import 'integrations/wpml';
-@import 'integrations/woocommerce';
-@import 'integrations/acf';
-@import 'integrations/job-manager';
+@use 'integrations/index' as integrations;
 
 /* THEME STRUCTURE
 ------------------------------------------------------------------------------*/
-@import "structure/header";
-@import 'structure/navigation';
-@import 'structure/page';
-@import 'structure/forms';
-@import 'structure/newsletter';
-@import 'structure/not-found';
-@import 'structure/footer-nav-menu';
-@import 'structure/secondary-nav';
-@import 'structure/search-page';
-@import 'structure/search-bar-mobile';
-@import 'structure/footer';
-@import 'structure/main-footer-section';
-@import 'structure/utility-nav';
+@use "structure/header";
+@use 'structure/navigation';
+@use 'structure/page';
+@use 'structure/forms';
+@use 'structure/newsletter';
+@use 'structure/not-found';
+@use 'structure/footer-nav-menu';
+@use 'structure/secondary-nav';
+@use 'structure/search-page';
+@use 'structure/search-bar-mobile';
+@use 'structure/footer';
+@use 'structure/main-footer-section';
+@use 'structure/utility-nav';

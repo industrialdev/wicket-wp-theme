@@ -67,7 +67,7 @@ function wicket_styling_theme_variables($mode = 'write')
         $wicket_css_variables = $wicket_css_variables . PHP_EOL . PHP_EOL . $sizesPXtoREM;
     }
 
-    if ($mode == 'return') {
+    if ($mode == 'return') {        
         // Minify our CSS for inline render
         $wicket_css_variables = str_replace(["\r\n", "\r", "\n", "\t"], '', $wicket_css_variables);
 
@@ -168,6 +168,9 @@ function wicket_get_customizations_inline_css()
  */
 function wicket_add_theme_assets()
 {
+    /**
+     * External Libraries CSS
+     */
     if (!wp_style_is('font-awesome', 'enqueued')) {
         wicket_enqueue_style('font-awesome', '/font-awesome/css/fontawesome.css');
         wicket_enqueue_style('font-awesome-brands', '/font-awesome/css/brands.css');
@@ -179,33 +182,15 @@ function wicket_add_theme_assets()
         wp_enqueue_style('material-icons', 'https://fonts.googleapis.com/icon?family=Material+Icons');
     }
 
-    // Only if WP ENVIRONMENT is production
-    if (in_array(wp_get_environment_type(), ['production'])) {
-        // Check if the CSS file exists
-        if (!file_exists(WICKET_UPLOADS_PATH . 'css/theme-variables.css')) {
-            // Can we create the file?
-            if (is_writable(WICKET_UPLOADS_PATH . 'css/')) {
-                // Generate the CSS file
-                wicket_styling_theme_variables();
-            }
+    // We need to add the filter to set script type module, for better modern support, and HMR
+    add_filter('script_loader_tag', 'wicket_set_script_type_module', 10, 3);
 
-            // In this page load, we don't have the theme variables file yet, so we need to enqueue the inline CSS
-            wp_add_inline_style('wicket-theme', wicket_get_customizations_inline_css());
-        } else {
-            // Enqueue our cached CSS in the uploads folder
-            wp_enqueue_style('wicket-theme-variables', WICKET_UPLOADS_URL . 'css/theme-variables.css', [], filemtime(WICKET_UPLOADS_PATH . 'css/theme-variables.css'));
-        }
+    // We only use HMR if we are in development or local environment, AND VITE_STRATEGY is true, otherwise we fall back to production files
+    if (in_array(wp_get_environment_type(), ['development', 'local']) && env('VITE_HMR') == 'true') {
+        wicket_public_hmr_enqueue();
+    } else { // All other environments (staging, production, and also development/local if VITE_HMR is not true)
+        wicket_public_prod_enqueue();
     }
-
-    wicket_enqueue_style('wicket-theme', '/assets/styles/min/wicket.min.css');
-
-    // Only if WP ENVIRONMENT is development or local
-    if (in_array(wp_get_environment_type(), ['development', 'local', 'staging'])) {
-        wp_add_inline_style('wicket-theme', wicket_styling_theme_variables('return'));
-    }
-
-    wicket_enqueue_script('wicket', '/assets/scripts/min/wicket.min.js', false, ['jquery'], false, true);
-
 }
 add_action('wp_enqueue_scripts', 'wicket_add_theme_assets');
 
@@ -216,11 +201,9 @@ add_action('wp_enqueue_scripts', 'wicket_add_theme_assets');
  */
 function wicket_admin_styles()
 {
-    wp_enqueue_style('admin-styles', get_template_directory_uri() . '/assets/styles/min/admin.min.css');
-
-    // Only enqueue admin script with dependencies on block editor screens
     $screen = get_current_screen();
     if ($screen && (in_array($screen->base, ['post', 'widgets', 'site-editor']) || $screen->is_block_editor)) {
+
         $dependencies = ['wp-blocks', 'wp-dom-ready'];
 
         // Add specific dependencies based on the screen
@@ -236,25 +219,15 @@ function wicket_admin_styles()
                 break;
         }
 
-        wp_enqueue_script(
-            'wicket-admin-script',
-            get_template_directory_uri() . '/assets/scripts/min/wicket-wp-admin.min.js',
-            $dependencies,
-            filemtime(get_template_directory() . '/assets/scripts/min/wicket-wp-admin.min.js'),
-            true
-        );
-    }
+        // We need to add the filter to set script type module, for better modern support, and HMR
+        add_filter('script_loader_tag', 'wicket_set_script_type_module', 10, 3);
 
-    // Only if WP ENVIRONMENT is development or local
-    if (in_array(wp_get_environment_type(), ['development', 'local', 'staging'])) {
-        wp_add_inline_style('admin-styles', wicket_get_customizations_inline_css());
-    }
-
-    // Only if WP ENVIRONMENT is not development or local
-    if (!in_array(wp_get_environment_type(), ['development', 'local', 'staging'])) {
-        // Enqueue our cached CSS in the uploads folder
-        wp_enqueue_style('wicket-theme-variables', WICKET_UPLOADS_URL . 'css/theme-variables.css');
-    }
+        if (in_array(wp_get_environment_type(), ['development', 'local']) && env('VITE_HMR') == 'true') {
+            wicket_admin_hmr_enqueue($dependencies);
+        } else {
+            wicket_admin_prod_enqueue($dependencies);
+        }
+    }   
 }
 add_action('admin_enqueue_scripts', 'wicket_admin_styles');
 
@@ -300,3 +273,166 @@ function wicket_gutenberg_scripts()
     );
 }
 add_action('enqueue_block_editor_assets', 'wicket_gutenberg_scripts');
+
+
+
+/**
+ * Get the theme asset URL from the manifest file.
+ *
+ * @param string $entry The entry name in the manifest.
+ *
+ * @return string|null The asset URL or null if not found.
+ */
+function theme_asset_url_from_manifest($entry)
+{
+    $manifest_path = get_theme_file_path('dist/.vite/manifest.json');
+
+    if (! file_exists($manifest_path)) {
+        return null;
+    }
+
+    $manifest = json_decode(file_get_contents($manifest_path), true);
+
+    if (! isset($manifest[$entry])) {
+        return null;
+    }
+    
+    return $manifest[$entry];
+}
+
+
+/**
+ * Add type="module" to the wicket script tag.
+ *
+ * @param string $tag   The <script> tag for the enqueued script.
+ * @param string $handle The script's registered handle.
+ * @param string $src   The script's source URL.
+ * @return string Modified <script> tag with type="module" for wicket.
+ */
+function wicket_set_script_type_module($tag, $handle, $src) {
+    if ($handle === 'wicket' || $handle === 'wicketadmin') {
+        return '<script type="module" src="' . esc_url($src) . '"></script>';
+    }
+    return $tag;
+}
+
+/**
+ * Enqueue HMR theme assets.
+ *
+ * @return void
+ */
+function wicket_public_hmr_enqueue() {
+    $vite_dev_server = 'http://127.0.0.1:5173';
+
+    // Vite Will handle loading the css via JS import
+    wp_enqueue_script(
+        'wicket',
+        $vite_dev_server . '/assets/scripts/wicket.js',
+        false,
+        ['jquery'],
+        true
+    );
+
+    // We need to register an empty style handle to attach inline styles later
+    wp_register_style('wicket-theme', false);
+    wp_enqueue_style('wicket-theme');
+    wp_add_inline_style('wicket-theme', wicket_styling_theme_variables('return'));
+}
+
+/**
+ * Enqueue production theme assets.
+ *
+ * @return void
+ */
+function wicket_public_prod_enqueue() {
+    /**
+     * Wicket JS and CSS from Vite manifest
+     * We need to load the manifest to get the correct hashed file names
+     */
+    $entry = theme_asset_url_from_manifest('assets/scripts/wicket.js');
+
+    if (! $entry) {
+        return;
+    }
+
+    // Vite CSS
+    if (!empty($entry['css'])) {
+        foreach ($entry['css'] as $css_file) {
+            wp_enqueue_style('wicket-theme', get_theme_file_uri('dist/' . $css_file), [], null);
+        }
+    }
+
+    // Vite JS
+    wp_enqueue_script('wicket', get_theme_file_uri('dist/' . $entry['file']), false, ['jquery'], true);
+
+    // Theme Variables
+    // Only if WP ENVIRONMENT is production
+    if (in_array(wp_get_environment_type(), ['production'])) {
+        // Check if the CSS file exists
+        if (!file_exists(WICKET_UPLOADS_PATH . 'css/theme-variables.css')) {
+            // Can we create the file?
+            if (is_writable(WICKET_UPLOADS_PATH . 'css/')) {
+                // Generate the CSS file
+                wicket_styling_theme_variables();
+            }
+
+            // In this page load, we don't have the theme variables file yet, so we need to enqueue the inline CSS
+            wp_add_inline_style('wicket-theme', wicket_get_customizations_inline_css());
+        } else {
+            // Enqueue our cached CSS in the uploads folder
+            wp_enqueue_style('wicket-theme-variables', WICKET_UPLOADS_URL . 'css/theme-variables.css', [], filemtime(WICKET_UPLOADS_PATH . 'css/theme-variables.css'));
+        }
+    } else {
+        wp_add_inline_style('wicket-theme', wicket_styling_theme_variables('return'));
+    }
+}
+
+/**
+ * Enqueue HMR admin assets.
+ *
+ * @param array $dependencies Array of script dependencies.
+ *
+ * @return void
+ */
+function wicket_admin_hmr_enqueue($dependencies = []) {
+    $vite_dev_server = 'http://127.0.0.1:5173';
+
+    // Vite Will handle loading the css via JS import
+    wp_enqueue_script(
+        'wicket',
+        $vite_dev_server . '/assets/scripts/wicket-admin.js',
+        false,
+        $dependencies,
+        true
+    );
+
+    // We need to register an empty style handle to attach inline styles later
+    wp_register_style('admin-styles', false);
+    wp_enqueue_style('admin-styles');
+    wp_add_inline_style('admin-styles', wicket_get_customizations_inline_css());
+}
+
+/**
+ * Enqueue production admin assets.
+ *
+ * @param array $dependencies Array of script dependencies.
+ *
+ * @return void
+ */
+function wicket_admin_prod_enqueue($dependencies = []) {
+    $entry = theme_asset_url_from_manifest('assets/scripts/wicket-admin.js');
+    if (! $entry) {
+        return;
+    }
+
+    // Vite CSS
+    if (!empty($entry['css'])) {
+        foreach ($entry['css'] as $css_file) {
+            wp_enqueue_style('admin-styles', get_theme_file_uri('dist/' . $css_file), [], null);
+        }
+    }
+
+    // Vite JS
+    wp_enqueue_script('wicket-admin-script', get_theme_file_uri('dist/' . $entry['file']), false,  $dependencies, true); 
+    wp_enqueue_style('wicket-theme-variables', WICKET_UPLOADS_URL . 'css/theme-variables.css');
+}

@@ -1,3 +1,5 @@
+@use '../../helpers/mixins';
+
 .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) #respond input#submit,
 .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) a.button,
 .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) button.button,
@@ -6,7 +8,7 @@
 :where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce a.button,
 :where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce button.button,
 :where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce input.button {
-  @include button-base;
+  @include mixins.button-base;
 }
 
 .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) #respond input#submit.alt,
@@ -17,13 +19,13 @@
 :where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce a.button.alt,
 :where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce button.button.alt,
 :where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce input.button.alt {
-  @include button-primary;
+  @include mixins.button-primary;
 }
 
 
 form.woocommerce-checkout .woocommerce-checkout-payment #place_order {
-  @include button-base;
-  @include button-primary;
+  @include mixins.button-base;
+  @include mixins.button-primary;
   width: 100%;
   margin-top: 2rem;
 }

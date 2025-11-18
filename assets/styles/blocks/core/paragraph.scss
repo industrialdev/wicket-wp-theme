@@ -1,3 +1,5 @@
+@use '../../helpers/mixins';
+
 main {
   .wp-block-paragraph > p {
     margin-bottom: 0.5rem; // In addition to the 1rem for all Blocks in baseline.scss
@@ -9,7 +11,7 @@ main {
     /* Case: Paragraphs in the single post */
     .single-post & {
       padding-inline: 1rem;
-      @include media-breakpoint-down("1024px") {
+      @include mixins.media-breakpoint-down("1024px") {
         max-width: 75%;
         padding-inline: 0;
       }

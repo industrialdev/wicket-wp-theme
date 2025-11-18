@@ -1,3 +1,6 @@
+@use '../helpers/mixins';
+@use '../variables/global';
+
 header {
   max-width: 100% !important;
 
@@ -30,7 +33,7 @@ header {
 
       &__dropdown-menu-item,
       &__mega-menu-item {
-        @include primary-menu-item-styles;
+        @include mixins.primary-menu-item-styles;
       }
 
       &__mega-menu-item {
@@ -62,7 +65,7 @@ header {
 
       .nav-parent-item-mobile-wrap,
       .nav-mega-parent-item-mobile-wrap {
-        @include primary-menu-item-styles;
+        @include mixins.primary-menu-item-styles;
         @apply inline-flex justify-between items-center w-full;
 
         &:hover,
@@ -84,7 +87,7 @@ header {
 
   .search-toggle-button {
     @apply text-button-label-md rounded-[--interactive-corner-radius-md] p-[--space-200] no-underline;
-    @include button-ghost;
+    @include mixins.button-ghost;
   }
 
   // Responsive fallbacks for backwards compatibility with themes that don't use Tailwind classes
@@ -93,7 +96,7 @@ header {
   .left-hamburger-button {
     @apply inline-flex;
 
-    @media screen and (min-width: $wicket-breakpoint-md) {
+    @media screen and (min-width: global.$wicket-breakpoint-md) {
       @apply hidden;
     }
   }
@@ -103,7 +106,7 @@ header {
     @apply hidden;
 
 
-    @media screen and (min-width: $wicket-breakpoint-md) and (max-width: $wicket-breakpoint-lg-max) {
+    @media screen and (min-width: global.$wicket-breakpoint-md) and (max-width: global.$wicket-breakpoint-lg-max) {
       @apply inline-flex;
     }
   }
@@ -113,7 +116,7 @@ header {
   nav.main-nav > ul {
     @apply hidden;
 
-    @media screen and (min-width: $wicket-breakpoint-lg) {
+    @media screen and (min-width: global.$wicket-breakpoint-lg) {
       @apply flex;
     }
   }
