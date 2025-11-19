@@ -1,16 +1,16 @@
 /* GLOBAL VARIABLES
 ------------------------------------------------------------------------------*/
 @use 'variables/global';
+
 /* HELPERS
 ------------------------------------------------------------------------------*/
 @use 'helpers/reset';
 @use 'helpers/mixins';
 
-/* TAILWIND CSS
+/* TAILWIND CSS (v4 via plain CSS file)
 ------------------------------------------------------------------------------*/
-@use 'tailwindcss/base';
-@use 'tailwindcss/components' as twComponents; // We should rarely need to reference this directly
-@use 'tailwindcss/utilities';
+/* This pulls in all the compiled Tailwind CSS (theme + utilities, no preflight). */
+@use 'tailwind.css';
 
 /* THEME BASELINE STYLES
 ------------------------------------------------------------------------------*/

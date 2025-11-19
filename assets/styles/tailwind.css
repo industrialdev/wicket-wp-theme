@@ -1,0 +1,30 @@
+/* JS config */
+@config "../../tailwind.config.js";
+
+/* Define layers so we can skip base/preflight */
+@layer theme, components, utilities;
+
+/* Import just theme + utilities (no preflight/base) */
+@import "tailwindcss/theme" layer(theme);
+@import "tailwindcss/utilities" layer(utilities);
+
+/* Tell Tailwind where to scan – this replaces `content: [...]` in v4 */
+@source "../wicket-wp-theme/blocks/**/*.{php,js}";
+@source "../wicket-wp-theme/components/**/*.{php,js}";
+@source "../wicket-wp-theme/*.php";
+
+@source "../../blocks/**/*.{php,js}";
+@source "../../components/**/*.{php,js}";
+@source "../../custom/**/*.php";
+@source "../../job_manager/**/*.php";
+@source "../../page-templates/**/*.php";
+@source "../../templates-wicket/**/*.php";
+@source "../../partials/**/*.php";
+@source "../../assets/scripts/**/*.js";
+@source "../../woocommerce/**/*.php";
+@source "../../*.php";
+@source "../../../plugins/wicket-wp-base-plugin/includes/components/**/*.php";
+
+/* Optional: safelist file, if you create one
+   (put common dynamic classes here, one per line) */
+@source "../tailwind-safelist.txt";

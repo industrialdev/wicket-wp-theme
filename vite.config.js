@@ -23,9 +23,13 @@
 
 
 import { resolve } from "path";
+import tailwindcss from "@tailwindcss/vite";
 
 export default {
     root: __dirname, // project root
+    plugins: [
+        tailwindcss(), // Tailwind v4 Vite plugin
+    ],
     build: {
         outDir: "dist", // output directory for built CSS
         sourcemap: true,
@@ -41,7 +45,6 @@ export default {
     },
     css: {
         preprocessorOptions: {},
-        postcss: "./postcss.config.js",
     },
     server: {
         // Vite dev server
