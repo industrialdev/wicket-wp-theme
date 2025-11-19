@@ -32,7 +32,7 @@ export default {
     ],
     build: {
         outDir: "dist", // output directory for built CSS
-        sourcemap: true,
+        sourcemap: false, // This would generate JS sourcemaps for production builds
         emptyOutDir: true,
         manifest: true, // we can parse this manifest to enqueue files in WordPress
         cssMinify: true,
@@ -44,6 +44,7 @@ export default {
         },
     },
     css: {
+        devSourcemap: true,
         preprocessorOptions: {},
         postcss: "./postcss.config.js",
     },
