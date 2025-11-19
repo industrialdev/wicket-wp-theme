@@ -119,7 +119,7 @@
 
 // Disabled States
 @mixin button-primary-disabled {
-  @apply bg-[--bg-disabled]! pointer-events-none! text-(--text-disabled)! border-transparent!;
+  @apply bg-(--bg-disabled)! pointer-events-none! text-(--text-disabled)! border-transparent!;
 }
 
 @mixin button-secondary-disabled {
