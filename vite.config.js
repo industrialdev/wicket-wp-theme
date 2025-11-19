@@ -45,6 +45,7 @@ export default {
     },
     css: {
         preprocessorOptions: {},
+        postcss: "./postcss.config.js",
     },
     server: {
         // Vite dev server

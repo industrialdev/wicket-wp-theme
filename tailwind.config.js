@@ -50,22 +50,6 @@ const lineHeight = customThemeJsonSettings['line-height']
  */
 
 module.exports = {
-  content: [
-    '../wicket-wp-theme/blocks/**/*.{php,js}',
-    '../wicket-wp-theme/components/**/*.{php,js}',
-    '../wicket-wp-theme/*.php',
-    './custom/**/*.php',
-    './blocks/**/*.{php,js}',
-    './components/**/*.{php,js}',
-    './job_manager/**/*.php',
-    '../../plugins/wicket-wp-base-plugin/includes/components/**/*.php',
-    './page-templates/**/*.php',
-    './templates-wicket/**/*.php',
-    './partials/**/*.php',
-    './assets/scripts/**/*.js',
-    './*.php',
-    './woocommerce/**/*.php',
-  ],
   theme: {
     extend: {
       boxShadow: boxShadow,
@@ -82,29 +66,4 @@ module.exports = {
     fontFamily: fontFamily,
     letterSpacing: letterSpacing,
   },
-  // plugins: [require('@tailwindcss/container-queries')],
-  // corePlugins: {
-  //   preflight: false,
-  // },
-  // safelist: [
-  //   'lg:grid-cols-6',
-  //   'lg:grid-cols-5',
-  //   'lg:grid-cols-4',
-  //   'lg:grid-cols-3',
-  //   'lg:grid-cols-2',
-  //   'aspect-[3/2]',
-  //   'border',
-  //   'rounded',
-  //   {pattern: /(grid-cols|grid-rows)-./},
-  //   {pattern: /(opacity)-./},
-  //   // Adding styles to safelist for usage on Blocks in Editor:
-  //   {pattern: /(rounded)-./},
-  //   {pattern: /(shadow)-./},
-  //   {pattern: /(drop-shadow)-./},
-  //   {pattern: /(gradient)-./},
-  //   {pattern: /(from)-./},
-  //   {pattern: /(via)-./},
-  //   {pattern: /(to)-./},
-  //   {pattern: /(blend)-./},
-  // ],
 }
