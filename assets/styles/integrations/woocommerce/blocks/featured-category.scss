@@ -10,7 +10,7 @@
   }
 
   .background-dim__overlay {
-    @apply bg-[--bg-image-overlay] #{!important};
+    @apply bg-[--bg-image-overlay]!;
 
     &::before {
       opacity: 1 !important;

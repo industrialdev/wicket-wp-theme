@@ -46,7 +46,7 @@
       }
 
       .button {
-        @apply button--primary;
+        @include mixins.button-primary;
         border: var(--border-interactive-md) solid var(--border-interactive);
     
         &:hover {

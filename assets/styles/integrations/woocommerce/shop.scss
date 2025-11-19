@@ -27,7 +27,7 @@
       filter: drop-shadow( var(--elevation-4) );
 
       @media screen and (max-width: 767px) {
-        @apply w-full #{!important};
+        @apply w-full!;
       }
 
       a.component-link {
@@ -35,7 +35,7 @@
       }
 
       .button {
-        @apply button--primary;
+        @include mixins.button-primary;
         border: var(--border-interactive-md) solid var(--border-interactive);
     
         &:hover {
@@ -65,7 +65,7 @@
         }
     
         &.button--disabled {
-          @apply bg-[--bg-disabled] text-[--text-disabled] border-transparent #{!important};
+          @apply bg-[--bg-disabled]! text-[--text-disabled]! border-transparent!;
         }
       }
 

@@ -1,8 +1,8 @@
 .accordion-item {
-  @apply hover:cursor-pointer text-body-md p-[--space-150] border-[--border-light] mb-2;
+  @apply hover:cursor-pointer text-body-md p-(--space-150) border-(--border-light) mb-2;
 
   .component-sidebar-contextual-nav__accordion & {
-    @apply p-[--space-100] mb-0;
+    @apply p-(--space-100) mb-0;
   }
 
   &:last-child {
@@ -10,10 +10,10 @@
   }
 
   &__body {
-    @apply mt-[--space-250] pr-12;
+    @apply mt-(--space-250) pr-12;
 
     .component-sidebar-contextual-nav__accordion & {
-      @apply mt-[--space-100];
+      @apply mt-(--space-100);
     }
 
     ul {
@@ -46,33 +46,33 @@
     @apply text-body-md;
 
     a {
-      @apply text-[--text-content] no-underline;
+      @apply text-(--text-content) no-underline;
 
       .component-sidebar-contextual-nav__accordion & {
-        @apply text-[--nav-contextual-link-lvl-1] font-bold hover:underline;
+        @apply text-(--nav-contextual-link-lvl-1) font-bold hover:underline;
       }
     }
   }
 
   &__icon {
-    @apply ml-4 text-[--interactive];
+    @apply ml-4 text-(--interactive);
 
     .open & {
-      @apply text-[--highlight-dark];
+      @apply text-(--highlight-dark);
     }
   }
 
   &.open {
-    @apply border-[--highlight-dark] bg-[--highlight-light];
+    @apply border-(--highlight-dark) bg-(--highlight-light);
 
     .component-sidebar-contextual-nav__accordion & {
-      @apply bg-transparent border-[--border-light];
+      @apply bg-transparent border-(--border-light);
     }
   }
 
   // List accordion
   &--list {
-    @apply border-t-[length:--border-sm] border-b-[length:--border-sm];
+    @apply border-t-(length:--border-sm) border-b-(length:--border-sm);
 
     .component-sidebar-contextual-nav__accordion & {
       @apply border-t-0;
@@ -83,16 +83,16 @@
     }
 
     &.open {
-      @apply border-b-[length:--border-lg];
+      @apply border-b-(length:--border-lg);
 
       .component-sidebar-contextual-nav__accordion & {
-        @apply border-b-[length:--border-sm];
+        @apply border-b-(length:--border-sm);
       }
     }
   }
 
   // Card accordion
   &--card {
-    @apply border-[length:--border-sm] rounded-[--interactive-corner-radius-md];
+    @apply border-(length:--border-sm) rounded-(--interactive-corner-radius-md);
   }
 }

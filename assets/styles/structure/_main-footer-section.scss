@@ -3,7 +3,7 @@
 
   &__phone-link, &__email-link {
     @apply block;
-    @apply text-[--nav-footer-text-interactive] #{!important};
+    @apply text-[--nav-footer-text-interactive]!;
   }
 
   &__email-link {

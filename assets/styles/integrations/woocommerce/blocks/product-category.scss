@@ -1,7 +1,9 @@
+@use '../../../helpers/mixins';
+
 .wp-block-product-category.wc-block-grid {
   .wc-block-grid__product {
     @apply bg-[--bg-card] rounded-[--card-corner-radius] border-0 border-b-[length:--border-listing-card] border-[--border-card];
-    @apply p-[--space-200] #{!important};
+    @apply p-[--space-200]!;
     filter: drop-shadow( var(--elevation-4) );
   }
 
@@ -36,7 +38,9 @@
     @apply mb-0;
 
     .wp-block-button__link {
-      @apply button button--primary w-auto;
+      @include mixins.button-base;
+      @include mixins.button-primary;
+      @apply w-auto;
     }
   }
 }

@@ -21,17 +21,17 @@
 // We use components/index to aggregate all component styles, so we can use modern @use. This avoids us needing to define each component individually here and we can now instead use `components.button-base` etc in other files. https://sass-lang.com/documentation/at-rules/use/#choosing-a-namespace
 @use 'components/index' as components;
 
-/* BLOCKS
-------------------------------------------------------------------------------*/
+// /* BLOCKS
+// ------------------------------------------------------------------------------*/
 @use 'blocks/core/index' as coreBlocks;
 @use 'blocks/wicket/index' as wicketBlocks;
 
-/* INTEGRATIONS
-------------------------------------------------------------------------------*/
+// /* INTEGRATIONS
+// ------------------------------------------------------------------------------*/
 @use 'integrations/index' as integrations;
 
-/* THEME STRUCTURE
-------------------------------------------------------------------------------*/
+// /* THEME STRUCTURE
+// ------------------------------------------------------------------------------*/
 @use "structure/header";
 @use 'structure/navigation';
 @use 'structure/page';

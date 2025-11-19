@@ -68,7 +68,7 @@ div.job_listings {
     }
 
     .job-type {
-      @apply bg-[--bg-label-2] text-[--text-label-2] text-[14px] #{!important};
+      @apply bg-[--bg-label-2]! text-[--text-label-2]! text-[14px]!;
     }
   }
 
@@ -162,7 +162,7 @@ div.job_listings {
 .job-manager .job-type,
 .job-types .job-type,
 .job_listing .job-type {
-  @apply text-[--text-accent] #{!important};
+  @apply text-[--text-accent]!;
 }
 
 .rp4wp-related-job_listing > ul li.job_listing,
