@@ -1,9 +1,15 @@
 .secondary-nav {
-  @apply w-full px-2 xl:px-0 py-3 border-b-[--nav-main-border] border-[length:--border-main-nav-bottom] lg:border-b-0;
+  @apply w-full px-2 xl:px-0 py-3
+         border-b-(--nav-main-border)
+         border-(length:--border-main-nav-bottom)
+         lg:border-b-0;
 
   .wpml-ls-legacy-list-horizontal {
     a {
-      @apply text-[--nav-secondary-label] text-[1rem] leading-[1.5rem] hover:underline;
+      @apply text-(--nav-secondary-label)
+             text-[1rem]
+             leading-[1.5rem]
+             hover:underline;
     }
   }
 }
@@ -23,7 +29,14 @@
     }
 
     a {
-      @apply px-[--space-200] px-2 block py-2 text-[--nav-secondary-label] text-[1rem] leading-[1.5rem] hover:underline;
+      @apply px-(--space-200)
+             px-2
+             block
+             py-2
+             text-(--nav-secondary-label)
+             text-[1rem]
+             leading-[1.5rem]
+             hover:underline;
     }
   }
 }

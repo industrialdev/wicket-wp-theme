@@ -1,17 +1,22 @@
 .main-footer-section {
-  @apply py-[--space-250] md:py-[--space-250] px-[--space-200] md:px-[--space-300] lg:px-0;
+  @apply py-(--space-250)
+         md:py-(--space-250)
+         px-(--space-200)
+         md:px-(--space-300)
+         lg:px-0;
 
-  &__phone-link, &__email-link {
+  &__phone-link,
+  &__email-link {
     @apply block;
-    @apply text-[--nav-footer-text-interactive]!;
+    @apply text-(--nav-footer-text-interactive)!;
   }
 
   &__email-link {
-    @apply mb-[--space-150];
+    @apply mb-(--space-150);
   }
 
   .footer-column {
-    @apply gap-[--space-250] flex flex-col items-start;
+    @apply gap-(--space-250) flex flex-col items-start;
 
     // no need to use flex for a single column
     &.col-num-1 {
@@ -19,14 +24,14 @@
     }
 
     &.is-menu-column {
-      @apply gap-[--space-150];
+      @apply gap-(--space-150);
     }
 
     .text {
-      @apply text-[--nav-footer-text-content];
+      @apply text-(--nav-footer-text-content);
 
       a {
-        @apply text-[--nav-footer-text-interactive] underline hover:no-underline;
+        @apply text-(--nav-footer-text-interactive) underline hover:no-underline;
       }
     }
 
@@ -34,7 +39,9 @@
   }
 
   .footer-column-border {
-    @apply border-b-[length:--border-sm] border-[--nav-footer-border] lg:hidden;
+    @apply border-b-(length:--border-sm)
+           border-(--nav-footer-border)
+           lg:hidden;
   }
 
   .section-title {
@@ -47,31 +54,39 @@
 
   .section-title,
   .section-title-button {
-    @apply font-bold text-[--nav-footer-title];
+    @apply font-bold text-(--nav-footer-title);
   }
 
   .footer-col-menu {
-    @apply text-[--nav-footer-sublink];
+    @apply text-(--nav-footer-sublink);
 
     > ul {
-
       > li {
         > a {
-          @apply mb-[--space-150] inline-flex text-[--nav-footer-sublink] no-underline hover:underline;
+          @apply mb-(--space-150)
+                 inline-flex
+                 text-(--nav-footer-sublink)
+                 no-underline
+                 hover:underline;
         }
       }
     }
   }
 
   .footer-bottom-text {
-    @apply text-body-sm text-[--nav-footer-text-content] flex justify-center;
+    @apply text-body-sm
+           text-(--nav-footer-text-content)
+           flex justify-center;
 
     .utility-menu {
-      @apply flex gap-2 items-center border-l border-[--nav-footer-text-content] pl-2 ml-2;
+      @apply flex gap-2 items-center
+             border-l
+             border-(--nav-footer-text-content)
+             pl-2 ml-2;
 
       li {
         a {
-          @apply underline text-[--nav-footer-text-interactive];
+          @apply underline text-(--nav-footer-text-interactive);
 
           &:hover {
             @apply no-underline;
@@ -82,6 +97,6 @@
   }
 
   .social-links-section {
-    @apply py-[--space-400] flex justify-center;
+    @apply py-(--space-400) flex justify-center;
   }
 }

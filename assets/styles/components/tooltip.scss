@@ -1,5 +1,5 @@
 .component-tooltip {
-  @apply text-[--interactive] text-base;
+  @apply text-(--interactive) text-base;
 
   .icon-hover {
     @apply hidden hover:inline;
@@ -16,10 +16,19 @@
   }
   
   &-content {
-    @apply bg-[--text-content] p-[--space-100] text-[--text-content-reversed] rounded-[--label-corner-radius] absolute z-10 hidden min-w-40 text-left pl-4;
+    @apply bg-(--text-content)
+           p-(--space-100)
+           text-(--text-content-reversed)
+           rounded-(--label-corner-radius)
+           absolute
+           z-10
+           hidden
+           min-w-40
+           text-left
+           pl-4;
 
     svg {
-      @apply text-[--text-content];
+      @apply text-(--text-content);
     }
   }
 }

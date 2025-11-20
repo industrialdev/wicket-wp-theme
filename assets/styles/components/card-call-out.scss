@@ -1,19 +1,19 @@
 .component-card-call-out {
-  @apply container p-[--space-250] rounded-[--card-accent-corner-radius] text-body-md;
+  @apply container p-(--space-250) rounded-(--card-accent-corner-radius) text-body-md;
 
   &__title {
-    @apply text-heading-sm mb-[--space-250];
+    @apply text-heading-sm mb-(--space-250);
   }
 
   &__links {
-    @apply flex flex-col md:flex-row gap-[--space-150];
+    @apply flex flex-col md:flex-row gap-(--space-150);
   }
 
   &--primary {
-    @apply bg-[--bg-callout-1];
+    @apply bg-(--bg-callout-1);
   }
   
   &--secondary {
-    @apply bg-[--bg-callout-2];
+    @apply bg-(--bg-callout-2);
   }
 }

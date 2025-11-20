@@ -5,17 +5,21 @@
   }
 
   .wp-element-caption {
-    @apply text-body-sm text-[--text-content];
+    @apply text-body-sm text-(--text-content);
   }
 
   td {
-    @apply border-[length:--border-sm] text-body-md;
+    @apply border-(length:--border-sm) text-body-md;
   }
 
   thead {
     tr {
       th {
-        @apply bg-[--table-header-bg] border-[--table-header-bg] text-[--table-header-label] border-[length:--border-sm] font-bold;
+        @apply bg-(--table-header-bg)
+               border-(--table-header-bg)
+               text-(--table-header-label)
+               border-(length:--border-sm)
+               font-bold;
       }
     }
   }
@@ -23,12 +27,14 @@
   tbody {
     tr {
       td {
-        @apply bg-[--table-row] border-[--table-row-border] text-[--text-content];
+        @apply bg-(--table-row)
+               border-(--table-row-border)
+               text-(--text-content);
       }
 
       &:nth-child(even) {
         td {
-          @apply bg-[--table-row-alternate];
+          @apply bg-(--table-row-alternate);
         }
       }
     }
@@ -39,7 +45,10 @@
 
     tr {
       td {
-        @apply bg-[--table-footer-bg]  border-[--table-footer-bg] text-[--table-footer-label] font-bold;
+        @apply bg-(--table-footer-bg)
+               border-(--table-footer-bg)
+               text-(--table-footer-label)
+               font-bold;
       }
     }
   }

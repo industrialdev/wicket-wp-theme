@@ -2,7 +2,7 @@
   div.product {
     div.images {
       img {
-        @apply rounded-[--image-corner-radius];
+        @apply rounded-(--image-corner-radius);
       }
     }
     .woocommerce-product-gallery__wrapper {

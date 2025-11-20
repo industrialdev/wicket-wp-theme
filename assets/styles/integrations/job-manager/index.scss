@@ -14,13 +14,27 @@
 
   @media (max-width: 767px) {
     & {
-      @apply px-[--space-200];
+      @apply px-(--space-200);
     }
   }
 }
 
 @mixin button-primary {
-  @apply bg-[--bg-interactive] border-[length:--border-interactive-md] border-transparent text-[--text-button-label-reversed] hover:bg-transparent hover:border-[--border-interactive] hover:text-[--text-button-label] hover:underline focus:bg-[--highlight-light] focus:border-[--border-interactive] focus:text-[--text-button-label] focus:underline active:bg-[--highlight-light] active:border-transparent active:text-[--text-button-label];
+  @apply bg-(--bg-interactive)
+         border-(length:--border-interactive-md)
+         border-transparent
+         text-(--text-button-label-reversed)
+         hover:bg-transparent
+         hover:border-(--border-interactive)
+         hover:text-(--text-button-label)
+         hover:underline
+         focus:bg-(--highlight-light)
+         focus:border-(--border-interactive)
+         focus:text-(--text-button-label)
+         focus:underline
+         active:bg-(--highlight-light)
+         active:border-transparent
+         active:text-(--text-button-label);
 }
 
 div.job_listings {
@@ -31,7 +45,7 @@ div.job_listings {
       }
 
       .company_logo {
-        @apply static h-auto w-auto max-w-[100px] border border-[--border-light];
+        @apply static h-auto w-auto max-w-[100px] border border-(--border-light);
       }
     }
   }
@@ -64,23 +78,23 @@ div.job_listings {
 
   .meta {
     li {
-      @apply text-[--text-content] text-body-md;
+      @apply text-(--text-content) text-body-md;
     }
 
     .job-type {
-      @apply bg-[--bg-label-2]! text-[--text-label-2]! text-[14px]!;
+      @apply bg-(--bg-label-2)! text-(--text-label-2)! text-[14px]!;
     }
   }
 
   .company {
-    @apply border-[--border-light] border-x-0 shadow-none px-0 py-3;
+    @apply border-(--border-light) border-x-0 shadow-none px-0 py-3;
 
     img {
-      @apply left-0 border border-[--border-light];
+      @apply left-0 border border-(--border-light);
     }
 
     .tagline {
-      @apply text-body-md text-[--text-content] not-italic;
+      @apply text-body-md text-(--text-content) not-italic;
     }
 
     .name {
@@ -109,7 +123,7 @@ div.job_listings {
   }
 
   > hr {
-    @apply mb-8 border-[--border-light];
+    @apply mb-8 border-(--border-light);
   }
 
   .text-heading-2xl {
@@ -122,15 +136,15 @@ div.job_listings {
     @apply bg-transparent;
 
     .showing_jobs {
-      @apply bg-transparent border-[--border-light];
+      @apply bg-transparent border-(--border-light);
     }
 
     .select2-container--default .select2-selection--multiple,
     .el-input__inner {
-      @apply bg-transparent border-[--border-input-default];
+      @apply bg-transparent border-(--border-input-default);
 
-      &:placeholder {
-        @apply text-[--text-content-secondary];
+      &::placeholder {
+        @apply text-(--text-content-secondary);
       }
     }
 
@@ -143,12 +157,12 @@ div.job_listings {
     }
 
     .el-select .el-input .el-select__caret {
-      @apply text-[--text-content-secondary];
+      @apply text-(--text-content-secondary);
     }
   }
 
   ul.job_listings li.job_listing a div.position h3 {
-    @apply text-[--text-content] text-heading-xs;
+    @apply text-(--text-content) text-heading-xs;
   }
 }
 
@@ -162,7 +176,7 @@ div.job_listings {
 .job-manager .job-type,
 .job-types .job-type,
 .job_listing .job-type {
-  @apply text-[--text-accent]!;
+  @apply text-(--text-accent)!;
 }
 
 .rp4wp-related-job_listing > ul li.job_listing,
@@ -171,7 +185,7 @@ ul.job_listings li.job_listing,
 ul.job_listings li.no_job_listings_found,
 .rp4wp-related-job_listing > ul,
 ul.job_listings {
-  @apply border-[--border-light];
+  @apply border-(--border-light);
 }
 
 .rp4wp-related-job_listing > ul li.job_listing a div.position .company,
@@ -183,21 +197,21 @@ ul.job_listings {
   .company,
 ul.job_listings li.job_listing a div.position .company,
 ul.job_listings li.no_job_listings_found a div.position .company {
-  @apply text-[--text-content-secondary] text-body-md;
+  @apply text-(--text-content-secondary) text-body-md;
 }
 
 .rp4wp-related-job_listing > ul li.job_listing a div.location,
 .rp4wp-related-job_listing > ul li.no_job_listings_found a div.location,
 ul.job_listings li.job_listing a div.location,
 ul.job_listings li.no_job_listings_found a div.location {
-  @apply text-[--text-content-secondary] text-body-md;
+  @apply text-(--text-content-secondary) text-body-md;
 }
 
 .rp4wp-related-job_listing > ul li.job_listing a .meta,
 .rp4wp-related-job_listing > ul li.no_job_listings_found a .meta,
 ul.job_listings li.job_listing a .meta,
 ul.job_listings li.no_job_listings_found a .meta {
-  @apply text-[--text-content-secondary] text-body-md;
+  @apply text-(--text-content-secondary) text-body-md;
 }
 
 .single_job_listing .job_description {
@@ -230,14 +244,20 @@ ul.job_listings li.no_job_listings_found a .meta {
 .job_listing_packages_title {
   h2 {
     @apply text-heading-2xl;
-    @apply leading-[--heading-2xl-line-height] font-[--heading-2xl-font-weight-sm] md:font-[--heading-2xl-font-weight-md] font-[family-name:var(--heading-2xl-font-family)];
+    @apply leading-(--heading-2xl-line-height)
+           font-(--heading-2xl-font-weight-sm)
+           md:font-(--heading-2xl-font-weight-md)
+           font-(family-name:--heading-2xl-font-family);
   }
 }
 
 .job-manager-form {
   h2 {
     @apply text-heading-xl mb-7;
-    @apply leading-[--heading-xl-line-height] font-[--heading-xl-font-weight-sm] md:font-[--heading-xl-font-weight-md] font-[family-name:var(--heading-xl-font-family)];
+    @apply leading-(--heading-xl-line-height)
+           font-(--heading-xl-font-weight-sm)
+           md:font-(--heading-xl-font-weight-md)
+           font-(family-name:--heading-xl-font-family);
   }
 }
 
@@ -245,7 +265,10 @@ ul.job_listings li.no_job_listings_found a .meta {
   .job_listing_preview_title {
     h2 {
       @apply text-heading-2xl;
-      @apply leading-[--heading-2xl-line-height] font-[--heading-2xl-font-weight-sm] md:font-[--heading-2xl-font-weight-md] font-[family-name:var(--heading-2xl-font-family)];
+      @apply leading-(--heading-2xl-line-height)
+             font-(--heading-2xl-font-weight-sm)
+             md:font-(--heading-2xl-font-weight-md)
+             font-(family-name:--heading-2xl-font-family);
     }
   }
 }

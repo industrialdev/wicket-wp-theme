@@ -3,7 +3,7 @@
 }
 
 .component-banner {
-  @apply py-8 px-4 relative rounded-[--banner-radius] overflow-hidden;
+  @apply py-8 px-4 relative rounded-(--banner-radius) overflow-hidden;
 
   &__post-type {
     @apply text-label-md;
@@ -22,64 +22,65 @@
   }
 
   .cta-card {
-    @apply flex-1 p-[--space-300] basis-full w-full lg:basis-3/12 rounded-[--card-accent-corner-radius];
+    @apply flex-1 p-(--space-300) basis-full w-full lg:basis-3/12 rounded-(--card-accent-corner-radius);
 
     &__title {
-      @apply text-heading-sm mb-[--space-250];
+      @apply text-heading-sm mb-(--space-250);
     }
 
     &__body {
-      @apply mb-[--space-300] text-body-md;
+      @apply mb-(--space-300) text-body-md;
     }
 
     &__links {
-      @apply flex flex-col gap-[--space-150];
+      @apply flex flex-col gap-(--space-150);
     }
   }
 
   &__hr {
-    @apply border-t-[length:--border-lg] w-[54px] m-auto;
+    @apply border-t-(length:--border-lg) w-[54px] m-auto;
   }
 
   // Light variant
   &--light {
-    @apply border-b-[length:--border-banner-bottom] border-[--border-light] bg-[--bg-light];
+    @apply border-b-(length:--border-banner-bottom) border-(--border-light) bg-(--bg-light);
 
     .cta-card {
-      @apply bg-[--bg-light-alternate];
+      @apply bg-(--bg-light-alternate);
     }
 
     .component-banner__post-type {
-      @apply text-[--text-accent];
+      @apply text-(--text-accent);
     }
 
     .component-banner__hr {
-      @apply border-[--border-accent];
+      @apply border-(--border-accent);
     }
 
     .component-banner__date {
-      @apply text-[--text-content-secondary];
+      @apply text-(--text-content-secondary);
     }
   }
 
   // Reversed variant + Image
-  &--reversed, &--image {
-    @apply bg-[--bg-dark] text-[--text-content-reversed];
+  &--reversed,
+  &--image {
+    @apply bg-(--bg-dark) text-(--text-content-reversed);
 
     .cta-card {
-      @apply bg-[--bg-dark-alternate];
+      @apply bg-(--bg-dark-alternate);
     }
 
     .component-banner__post-type {
-      @apply text-[--text-accent-reversed];
+      @apply text-(--text-accent-reversed);
     }
 
     .component-banner__hr {
-      @apply border-[--border-accent];
+      @apply border-(--border-accent);
     }
 
     .component-banner__date {
-      @apply text-[--text-content-secondary-reversed];
+      @apply text-(--text-content-secondary-reversed);
     }
   }
 }

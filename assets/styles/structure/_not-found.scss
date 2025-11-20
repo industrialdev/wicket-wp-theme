@@ -1,15 +1,15 @@
 .page-not-found {
-  @apply text-center py-[--space-400];
+  @apply text-center py-(--space-400);
 
   &__title {
-    @apply text-heading-3xl mb-[--space-200];
+    @apply text-heading-3xl mb-(--space-200);
   }
   
   &__subtitle {
-    @apply text-heading-sm mb-[--space-600];
+    @apply text-heading-sm mb-(--space-600);
   }
   
   &__content {
-    @apply text-body-lg mb-[--space-600];
+    @apply text-body-lg mb-(--space-600);
   }
 }

@@ -1,8 +1,8 @@
 .component-related-posts {
-  @apply px-[--space-200] lg:px-0;
+  @apply px-(--space-200) lg:px-0;
 
   &__top-wrap {
-    @apply mb-[--space-600] flex gap-[--space-200] items-center;
+    @apply mb-(--space-600) flex gap-(--space-200) items-center;
   }
 
   &__title {
@@ -10,6 +10,6 @@
   }
 
   &__view-all {
-    @apply border-l border-[--border-light] px-[--space-200];
+    @apply border-l border-(--border-light) px-(--space-200);
   }
 }

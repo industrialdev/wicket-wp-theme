@@ -1,17 +1,30 @@
 .component-card-event {
-  @apply bg-[--bg-card] rounded-[--card-corner-radius] gap-[--space-200] relative flex items-start flex-col lg:flex-row justify-between p-[--space-200] border-b-[length:--border-dynamic-card] border-[--border-card] min-h-full;
-  filter: drop-shadow( var(--elevation-4) );
+  @apply bg-(--bg-card)
+         rounded-(--card-corner-radius)
+         gap-(--space-200)
+         relative
+         flex
+         items-start
+         flex-col
+         lg:flex-row
+         justify-between
+         p-(--space-200)
+         border-b-(length:--border-dynamic-card)
+         border-(--border-card)
+         min-h-full;
+  filter: drop-shadow(var(--elevation-4));
 
   &--no-drop-shadow {
     filter: none;
   }
 
-  &.cols-3, &.cols-4 {
+  &.cols-3,
+  &.cols-4 {
     @apply lg:flex-col;
   }
 
   &__title {
-    @apply block text-heading-xs no-underline hover:underline text-[--text-content];
+    @apply block text-heading-xs no-underline hover:underline text-(--text-content);
 
     .cols-1 & {
       @apply text-heading-md;
@@ -27,9 +40,22 @@
   }
 
   &__date-indicator {
-    @apply bg-[--bg-accent-dark] text-[--text-content-reversed] text-center uppercase flex flex-row lg:flex-col shrink-0 justify-center items-center lg:w-[70px] lg:h-[70px] rounded-[--label-corner-radius] px-2 py-3 gap-2 lg:gap-0 text-body-lg font-bold;
+    @apply bg-(--bg-accent-dark)
+           text-(--text-content-reversed)
+           text-center
+           uppercase
+           flex flex-row lg:flex-col
+           shrink-0
+           justify-center items-center
+           lg:w-[70px] lg:h-[70px]
+           rounded-(--label-corner-radius)
+           px-2 py-3
+           gap-2 lg:gap-0
+           text-body-lg
+           font-bold;
 
-    .cols-3 &, .cols-4 & {
+    .cols-3 &,
+    .cols-4 & {
       @apply lg:flex-row lg:gap-1 lg:w-auto lg:h-auto;
     }
   }
@@ -43,12 +69,12 @@
   }
 
   &__content-wrapper {
-    @apply flex flex-col grow items-start gap-[--space-300] flex-1;
+    @apply flex flex-col grow items-start gap-(--space-300) flex-1;
   }
 
   &__content-type {
-    @apply text-[--text-accent] uppercase text-label-md;
-    margin-bottom: calc( var(--space-100) * -1 );
+    @apply text-(--text-accent) uppercase text-label-md;
+    margin-bottom: calc(var(--space-100) * -1);
   }
 
   &__date {
@@ -60,13 +86,13 @@
   &__excerpt {}
 
   &__price-regular {
-    @apply line-through text-[--text-disabled] text-body-sm mr-1;
+    @apply line-through text-(--text-disabled) text-body-sm mr-1;
   }
 
   &__cta {}
 
   .card__topics {
-    @apply flex flex-wrap gap-[--space-075];
+    @apply flex flex-wrap gap-(--space-075);
 
     > * {
       @apply inline-block pointer-events-none;

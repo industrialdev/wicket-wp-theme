@@ -1,32 +1,31 @@
 .component-featured-posts {
-  @apply px-[--space-200] lg:px-0;
+  @apply px-(--space-200) lg:px-0;
 
   &__hr {
-    @apply my-[--space-200] border-t-[length:--border-sm] border-[--border-light];
+    @apply my-(--space-200) border-t-(length:--border-sm) border-(--border-light);
   }
 
   &__title {
     @apply text-heading-sm;
 
     .component-featured-posts--primary-secondary-level & {
-      @apply mb-[--space-300];
+      @apply mb-(--space-300);
     }
 
     .component-featured-posts--one-level & {
-      @apply mb-[--space-500];
+      @apply mb-(--space-500);
     }
   }
 
   &__primary-secondary-level-row {
-    @apply flex flex-col gap-[--space-500] lg:gap-[--space-200] lg:flex-row;
+    @apply flex flex-col gap-(--space-500) lg:gap-(--space-200) lg:flex-row;
   }
 
   &__one-level-row {
-    @apply gap-[--space-200];
+    @apply gap-(--space-200);
   }
 
-  &--primary-secondary-level {
-  }
+  &--primary-secondary-level {}
 
   &--one-level {}
 }

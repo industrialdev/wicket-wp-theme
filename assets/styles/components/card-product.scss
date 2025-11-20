@@ -1,15 +1,31 @@
 @use '../helpers/mixins';
 
 .component-card-product {
-  @apply bg-(--bg-card) rounded-(--card-corner-radius) border-b-(length:--border-listing-card) border-(--border-card) p-(--space-200) gap-(--space-200) relative flex flex-col items-center h-full;
-  filter: drop-shadow( var(--elevation-4) );
+  @apply bg-(--bg-card)
+         rounded-(--card-corner-radius)
+         border-b-(length:--border-listing-card)
+         border-(--border-card)
+         p-(--space-200)
+         gap-(--space-200)
+         relative
+         flex flex-col items-center h-full;
+
+  filter: drop-shadow(var(--elevation-4));
 
   img[class*="attachment-"] {
     @apply rounded-(--image-corner-radius) mb-(--space-050);
   }
 
   .onsale {
-    @apply bg-(--bg-label-2) rounded-(--label-corner-radius) text-(--text-label-2) text-label-md p-(--space-150) absolute top-[12px] left-[12px] uppercase;
+    @apply bg-(--bg-label-2)
+           rounded-(--label-corner-radius)
+           text-(--text-label-2)
+           text-label-md
+           p-(--space-150)
+           absolute
+           top-[12px]
+           left-[12px]
+           uppercase;
   }
 
   .price {
@@ -26,7 +42,6 @@
   }
 
   .button {
-    // @apply button--primary;
     border: var(--border-interactive-md) solid var(--border-interactive);
 
     &:hover {

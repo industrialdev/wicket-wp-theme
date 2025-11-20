@@ -1,5 +1,5 @@
 .wp-block-image {
   img {
-    @apply rounded-[--image-corner-radius] inline-block;
+    @apply rounded-(--image-corner-radius) inline-block;
   }
 }

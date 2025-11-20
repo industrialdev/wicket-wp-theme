@@ -1,6 +1,13 @@
 .component-card-listing {
-  @apply bg-[--bg-card] rounded-[--card-corner-radius] border-l-[length:--border-listing-card] border-[--border-card] p-[--space-200] gap-[--space-200] relative flex flex-col md:flex-row;
-  filter: drop-shadow( var(--elevation-4) );
+  @apply bg-(--bg-card)
+         rounded-(--card-corner-radius)
+         border-l-(length:--border-listing-card)
+         border-(--border-card)
+         p-(--space-200)
+         gap-(--space-200)
+         relative
+         flex flex-col md:flex-row;
+  filter: drop-shadow(var(--elevation-4));
 
   &--member-only {
     &:not(.item-number-1) {
@@ -9,7 +16,7 @@
   }
 
   .card__topics {
-    @apply flex flex-wrap gap-[--space-075];
+    @apply flex flex-wrap gap-(--space-075);
 
     > * {
       @apply inline-block pointer-events-none;
@@ -29,11 +36,11 @@
   }
 
   &__file-icon {
-    @apply flex items-center justify-center h-full px-8 py-4 rounded-[--image-corner-radius] bg-[--bg-accent-light] text-[32px] text-[--text-accent];
+    @apply flex items-center justify-center h-full px-8 py-4 rounded-(--image-corner-radius) bg-(--bg-accent-light) text-[32px] text-(--text-accent);
   }
 
   &__content-type {
-    @apply text-label-md text-[--text-accent] mb-[--space-200];
+    @apply text-label-md text-(--text-accent) mb-(--space-200);
   }
 
   &__member-only {
@@ -41,7 +48,7 @@
   }
 
   &__title {
-    @apply text-heading-xs mb-[--space-200] inline-block text-[--text-content] no-underline;
+    @apply text-heading-xs mb-(--space-200) inline-block text-(--text-content) no-underline;
 
     &:hover {
       @apply underline;
@@ -49,11 +56,10 @@
   }
 
   &__excerpt {
-    @apply text-body-md mb-[--space-200];
+    @apply text-body-md mb-(--space-200);
   }
 
   &__date {
-    @apply text-date-label-md text-[--text-content-secondary] mb-[--space-200];
+    @apply text-date-label-md text-(--text-content-secondary) mb-(--space-200);
   }
-
 }

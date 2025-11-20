@@ -1,4 +1,5 @@
 @use '../../helpers/mixins';
+
 .woocommerce {
   & > .single-product {
     padding-top: 1rem;
@@ -15,7 +16,15 @@
     }
 
     .onsale {
-      @apply bg-[--bg-label-2] rounded-[--label-corner-radius] text-[--text-label-2] text-label-md p-[--space-150] absolute top-[12px] left-[12px] uppercase;
+      @apply bg-(--bg-label-2)
+             rounded-(--label-corner-radius)
+             text-(--text-label-2)
+             text-label-md
+             p-(--space-150)
+             absolute
+             top-[12px]
+             left-[12px]
+             uppercase;
     }  
 
     /* Quantity */
@@ -35,7 +44,7 @@
       @apply font-bold italic mb-4;
 
       &.out-of-stock {
-        @apply text-[--state-error];
+        @apply text-(--state-error);
       }
     }
 

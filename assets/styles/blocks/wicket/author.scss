@@ -1,8 +1,8 @@
 .block-wicket-author {
-  @apply flex flex-col gap-[--space-500];
+  @apply flex flex-col gap-(--space-500);
 
   &__top-wrap {
-    @apply flex items-center gap-[--space-250];
+    @apply flex items-center gap-(--space-250);
   }
 
   &__title {
@@ -10,6 +10,6 @@
   }
 
   &__border {
-    @apply border-[length:--border-sm] border-t border-[--border-light] inline-flex flex-auto;
+    @apply border-(length:--border-sm) border-t border-(--border-light) inline-flex flex-auto;
   }
 }

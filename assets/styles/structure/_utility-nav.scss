@@ -1,5 +1,5 @@
 .utility-nav {
-  @apply w-full bg-[--nav-utility-bg] hidden lg:block;
+  @apply w-full bg-(--nav-utility-bg) hidden lg:block;
 
   &__wrap {
     @apply flex items-end justify-end gap-4 flex-row;
@@ -7,5 +7,5 @@
 }
 
 .utility-nav-mobile {
-  @apply bg-[--nav-utility-bg] px-3 py-2 pb-3;
+  @apply bg-(--nav-utility-bg) px-3 py-2 pb-3;
 }

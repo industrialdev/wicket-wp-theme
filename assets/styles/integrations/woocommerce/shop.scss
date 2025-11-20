@@ -23,8 +23,19 @@
     }
 
     li.product {
-      @apply bg-[--bg-card] rounded-[--card-corner-radius] border-b-[length:--border-listing-card] border-[--border-card] p-[--space-200] gap-[--space-200] relative flex flex-col items-center h-full w-full m-0;
-      filter: drop-shadow( var(--elevation-4) );
+      @apply bg-(--bg-card)
+             rounded-(--card-corner-radius)
+             border-b-(length:--border-listing-card)
+             border-(--border-card)
+             p-(--space-200)
+             gap-(--space-200)
+             relative
+             flex flex-col
+             items-center
+             h-full
+             w-full
+             m-0;
+      filter: drop-shadow(var(--elevation-4));
 
       @media screen and (max-width: 767px) {
         @apply w-full!;
@@ -65,16 +76,25 @@
         }
     
         &.button--disabled {
-          @apply bg-[--bg-disabled]! text-[--text-disabled]! border-transparent!;
+          @apply bg-(--bg-disabled)! text-(--text-disabled)! border-transparent!;
         }
       }
 
       a img {
-        @apply rounded-[--image-corner-radius] mb-[--space-050];
+        @apply rounded-(--image-corner-radius) mb-(--space-050);
       }
 
       .onsale {
-        @apply bg-[--bg-label-2] rounded-[--label-corner-radius] text-[--text-label-2] text-label-md p-[--space-150] absolute top-[12px] left-[12px] uppercase right-auto;
+        @apply bg-(--bg-label-2)
+               rounded-(--label-corner-radius)
+               text-(--text-label-2)
+               text-label-md
+               p-(--space-150)
+               absolute
+               top-[12px]
+               left-[12px]
+               uppercase
+               right-auto;
       }
 
       .woocommerce-loop-product__title {

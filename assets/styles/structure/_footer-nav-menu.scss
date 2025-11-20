@@ -1,12 +1,14 @@
 .footer-nav-menu {
-  @apply py-[--space-400] border-t-[length:--border-footer-divider] border-[--nav-footer-border];
+  @apply py-(--space-400)
+         border-t-(length:--border-footer-divider)
+         border-(--nav-footer-border);
 
   &__items {
-    @apply flex flex-col md:flex-row gap-[--space-400] font-bold md:justify-center;
+    @apply flex flex-col md:flex-row gap-(--space-400) font-bold md:justify-center;
 
     li {
       a {
-        @apply text-[--nav-footer-sublink] no-underline hover:underline;
+        @apply text-(--nav-footer-sublink) no-underline hover:underline;
       }
     }
   }

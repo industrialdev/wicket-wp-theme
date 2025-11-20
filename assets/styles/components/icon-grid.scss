@@ -12,10 +12,19 @@
   }
 
   &__item-link {
-    @apply rounded-[--card-corner-radius] bg-[--bg-card] flex items-center gap-[--space-150] p-[--space-150] border-[length:--border-interactive-sm] border-transparent text-[--text-content] no-underline min-h-full;
+    @apply rounded-(--card-corner-radius)
+           bg-(--bg-card)
+           flex items-center
+           gap-(--space-150)
+           p-(--space-150)
+           border-(length:--border-interactive-sm)
+           border-transparent
+           text-(--text-content)
+           no-underline
+           min-h-full;
 
     .component-icon-grid--use_drop_shadows & {
-      filter: drop-shadow( var(--elevation-4) );
+      filter: drop-shadow(var(--elevation-4));
     }
 
     &:hover {
@@ -23,15 +32,15 @@
     }
 
     &:focus {
-      @apply border-[--interactive];
+      @apply border-(--interactive);
     }
   }
 
   &__item-icon {
-    @apply text-[--interactive];
+    @apply text-(--interactive);
   }
 
   &__item-arrow-icon {
-    @apply ml-auto text-heading-xs text-[--interactive];
+    @apply ml-auto text-heading-xs text-(--interactive);
   }
 }

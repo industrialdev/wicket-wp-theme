@@ -1,20 +1,19 @@
 .wc-block-featured-category {
-  @apply rounded-[--card-corner-radius] px-[--space-250];
+  @apply rounded-(--card-corner-radius) px-(--space-250);
 
   &__title {
-    @apply text-heading-md text-[--text-content-reversed];
+    @apply text-heading-md text-(--text-content-reversed);
   }
 
   &__description {
-    @apply mb-[--space-500];
+    @apply mb-(--space-500);
   }
 
   .background-dim__overlay {
-    @apply bg-[--bg-image-overlay]!;
+    @apply bg-(--bg-image-overlay)!;
 
     &::before {
       opacity: 1 !important;
     }
   }
-
 }

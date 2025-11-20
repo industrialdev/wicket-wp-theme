@@ -1,24 +1,23 @@
 .component-breadcrumbs {
-  @apply flex items-center gap-[--space-100] text-[--highlight-dark];
+  @apply flex items-center gap-(--space-100) text-(--highlight-dark);
 
   .component-link {
     @apply font-normal;
   }
 
   .component-icon {
-    @apply text-[--interactive];
+    @apply text-(--interactive);
   }
 
   &.reversed {
-    @apply text-[--text-content-reversed];
+    @apply text-(--text-content-reversed);
 
     strong {
-      @apply text-[--highlight-light];
+      @apply text-(--highlight-light);
     }
 
     .component-icon {
-      @apply text-[--interactive-reversed];
+      @apply text-(--interactive-reversed);
     }
   }
-
 }

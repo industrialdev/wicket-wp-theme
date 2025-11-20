@@ -1,74 +1,80 @@
 .component-org-search-select {
   &__current-orgs-title {
-    @apply my-[--space-250] text-heading-md;
+    @apply my-(--space-250) text-heading-md;
   }
 
   .current-org-listing-right {
-    @apply flex gap-[--space-150] items-start;
+    @apply flex gap-(--space-150) items-start;
   }
 
   &__search-orgs-title {
-    @apply text-heading-md mb-[--space-400];
+    @apply text-heading-md mb-(--space-400);
   }
 
   &__card {
-    @apply bg-[--bg-light-neutral] rounded-[--card-accent-corner-radius] p-[--space-250] border-[length:--border-sm] border-[--border-light] mb-[--space-250] flex justify-between gap-[--space-200];
+    @apply bg-(--bg-light-neutral)
+           rounded-(--card-accent-corner-radius)
+           p-(--space-250)
+           border-(length:--border-sm)
+           border-(--border-light)
+           mb-(--space-250)
+           flex justify-between
+           gap-(--space-200);
 
     &--selected {
-      @apply border-[length:--border-md] border-[--highlight-dark];
+      @apply border-(length:--border-md) border-(--highlight-dark);
       border-style: solid;
     }
   }
 
   &__matching-orgs-title {
-    @apply text-heading-xs mb-[--space-250] mt-[--space-400];
+    @apply text-heading-xs mb-(--space-250) mt-(--space-400);
   }
 
   &__card-top-header {
-    @apply flex mb-[--space-250] items-center;
+    @apply flex mb-(--space-250) items-center;
   }
 
   &__org-description {
-    @apply mb-[--space-250] text-body-sm;
+    @apply mb-(--space-250) text-body-sm;
   }
 
   &__org-type {
-    @apply text-label-md mb-[--space-100];
+    @apply text-label-md mb-(--space-100);
   }
 
   &__org-name {
-    @apply text-heading-sm mr-[--space-200];
+    @apply text-heading-sm mr-(--space-200);
   }
 
   &__active-membership-label,
   &__inactive-membership-label {
-    @apply text-body-sm flex gap-[--space-100] items-center;
+    @apply text-body-sm flex gap-(--space-100) items-center;
 
     // indicator
     i {
-      @apply text-[12px] text-[--status-active];
+      @apply text-[12px] text-(--status-active);
     }
   }
 
   &__inactive-membership-label {
     i {
-      @apply text-[--status-inactive];
+      @apply text-(--status-inactive);
     }
   }
 
   &__org-parent-name {}
 
   .orgss-results {
-    @apply rounded-[--card-accent-corner-radius];
-
+    @apply rounded-(--card-accent-corner-radius);
 
     &--has-results {
-      @apply p-[--space-200] border-[length:--border-sm] border-[--border-light];
+      @apply p-(--space-200) border-(length:--border-sm) border-(--border-light);
     }
   }
 
   &__matching-org-item {
-    @apply flex justify-between items-center pr-[--space-200] py-[--space-200] border-b-[length:--border-sm] border-[--border-light];
+    @apply flex justify-between items-center pr-(--space-200) py-(--space-200) border-b-(length:--border-sm) border-(--border-light);
   }
 
   &__matching-org-title {
@@ -76,7 +82,7 @@
   }
 
   &__no-results {
-    @apply flex justify-center items-center w-full p-[--space-200] bg-[--state-info-secondary-light] rounded-[--card-accent-corner-radius] border-[length:--border-sm] border-[--state-info-secondary-light] text-body-lg;
+    @apply flex justify-center items-center w-full p-(--space-200) bg-(--state-info-secondary-light) rounded-(--card-accent-corner-radius) border-(length:--border-sm) border-(--state-info-secondary-light) text-body-lg;
   }
 
   &__search-container {
@@ -84,11 +90,15 @@
   }
 
   .orgss-create-org-form {
-    @apply mt-[--space-400] flex flex-col bg-[--bg-light-neutral] rounded-[--card-accent-corner-radius] p-[--space-400];
+    @apply mt-(--space-400)
+           flex flex-col
+           bg-(--bg-light-neutral)
+           rounded-(--card-accent-corner-radius)
+           p-(--space-400);
   }
 
   &__cant-find-org-title {
-    @apply text-heading-xs mb-[--space-300];
+    @apply text-heading-xs mb-(--space-300);
   }
 }
 

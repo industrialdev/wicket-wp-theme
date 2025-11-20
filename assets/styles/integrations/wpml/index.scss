@@ -6,6 +6,6 @@
   align-content: center;
 
   .secondary-nav & {
-    @apply text-[--nav-secondary-label];
+    @apply text-(--nav-secondary-label);
   }
 }

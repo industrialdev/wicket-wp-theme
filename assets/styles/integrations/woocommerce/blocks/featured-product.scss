@@ -1,20 +1,21 @@
 .wc-block-featured-product {
-  @apply rounded-[--card-corner-radius];
-  @apply p-[--space-200]!;
+  @apply rounded-(--card-corner-radius);
+  @apply p-(--space-200)!;
 
   &__title {
-    @apply text-heading-md text-[--text-content-reversed];
+    @apply text-heading-md text-(--text-content-reversed);
   }
 
-  &__description, &__price {
-    @apply text-body-lg text-[--text-content-reversed];
+  &__description,
+  &__price {
+    @apply text-body-lg text-(--text-content-reversed);
   }
 
   &__price {
     @apply font-bold;
 
     del {
-      @apply text-[--text-content-secondary-reversed];
+      @apply text-(--text-content-secondary-reversed);
     }
 
     ins {
@@ -30,9 +31,10 @@
   }
 
   .background-dim__overlay {
-    @apply bg-[--bg-image-overlay]!;
+    @apply bg-(--bg-image-overlay)!;
 
-    &::after, &::before {
+    &::after,
+    &::before {
       opacity: 1 !important;
     }
   }

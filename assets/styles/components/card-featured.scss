@@ -1,9 +1,18 @@
 .component-card-featured {
-  @apply bg-[--bg-card] rounded-[--card-corner-radius] border-b-[length:--border-featured-card] border-[--border-card] p-[--space-200] flex flex-col gap-[--space-200] relative min-h-full;
-  filter: drop-shadow( var(--elevation-4) );
+  @apply bg-(--bg-card)
+         rounded-(--card-corner-radius)
+         border-b-(length:--border-featured-card)
+         border-(--border-card)
+         p-(--space-200)
+         flex flex-col
+         gap-(--space-200)
+         relative
+         min-h-full;
+
+  filter: drop-shadow(var(--elevation-4));
 
   .component-related-posts & {
-    @apply border-b-[length:--border-dynamic-card];
+    @apply border-b-(length:--border-dynamic-card);
   }
 
   .component-featured-posts__primary-secondary-level-col-2 & {
@@ -11,7 +20,7 @@
   }
 
   &__title {
-    @apply text-heading-sm text-[--text-content] no-underline;
+    @apply text-heading-sm text-(--text-content) no-underline;
 
     &:hover {
       @apply underline;
@@ -28,11 +37,11 @@
   }
 
   &__content-wrapper {
-    @apply flex flex-col grow items-start gap-[--space-200];
+    @apply flex flex-col grow items-start gap-(--space-200);
   }
 
   &__content-type {
-    @apply text-label-md text-[--text-accent];
+    @apply text-label-md text-(--text-accent);
   }
 
   &__excerpt {
@@ -40,7 +49,7 @@
   }
 
   &__date {
-    @apply text-date-label-md text-[--text-content-secondary];
+    @apply text-date-label-md text-(--text-content-secondary);
   }
 
   &--image-position-top {}

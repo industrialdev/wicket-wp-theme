@@ -1,5 +1,5 @@
 .wp-block-pullquote {
-  @apply border-t-[length:--border-sm] border-b-[length:--border-sm] border-[--border-dark] text-[--text-content] py-[--space-300];
+  @apply border-t-(length:--border-sm) border-b-(length:--border-sm) border-(--border-dark) text-(--text-content) py-(--space-300);
 
   cite {
     margin-top: 20px;

@@ -1,11 +1,11 @@
 .component-author {
-  @apply flex flex-col md:flex-row gap-[--space-300];
+  @apply flex flex-col md:flex-row gap-(--space-300);
 
   &__avatar {
     @apply flex-[0_1_72px] min-w-[72px] md:flex-[0_1_120px] md:min-w-[120px];
 
     img {
-      @apply max-w-[72px] md:max-w-[120px] rounded-[--image-corner-radius];
+      @apply max-w-[72px] md:max-w-[120px] rounded-(--image-corner-radius);
     }
   }
 
@@ -15,7 +15,7 @@
   }
 
   &__info {
-    @apply flex flex-col gap-[--space-300];
+    @apply flex flex-col gap-(--space-300);
   }
 
   &__bio {

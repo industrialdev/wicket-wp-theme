@@ -1,12 +1,21 @@
 .component-card-related {
-  @apply p-[--space-200] min-h-full bg-[--bg-card] rounded-[--card-corner-radius] border border-[--border-light] border-[length:--border-sm] flex gap-[--space-200] justify-between;
+  @apply p-(--space-200)
+         min-h-full
+         bg-(--bg-card)
+         rounded-(--card-corner-radius)
+         border
+         border-(--border-light)
+         border-(length:--border-sm)
+         flex
+         gap-(--space-200)
+         justify-between;
 
   &--rounded {
     @apply rounded-xl;
   }
 
   .top-aligned-content {
-    @apply flex flex-col gap-[--space-200];
+    @apply flex flex-col gap-(--space-200);
   }
 
   &__title {
@@ -18,6 +27,6 @@
   }
 
   &__icon {
-    @apply text-[--text-accent];
+    @apply text-(--text-accent);
   }
 }

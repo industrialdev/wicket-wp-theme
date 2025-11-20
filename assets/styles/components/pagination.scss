@@ -1,19 +1,26 @@
 .wicket-pagination {
-  @apply flex justify-center gap-[--space-050] flex-wrap md:flex-nowrap;
+  @apply flex justify-center gap-(--space-050) flex-wrap md:flex-nowrap;
 
   .page-numbers {
-    @apply p-[--space-200] text-[--text-button-label] text-body-md rounded-[--interactive-corner-radius-md] no-underline;
-    @apply font-bold; // to override text-body-md font weight
+    @apply p-(--space-200)
+           text-(--text-button-label)
+           text-body-md
+           rounded-(--interactive-corner-radius-md)
+           no-underline;
+    @apply font-bold; // override text-body-md font weight
 
-    &:hover, &:focus {
-      @apply underline bg-[--bg-interactive] text-[--text-button-label-reversed];
+    &:hover,
+    &:focus {
+      @apply underline bg-(--bg-interactive) text-(--text-button-label-reversed);
     }
 
-    &.current, &:active {
-      @apply bg-[--highlight-dark] text-[--text-button-label-reversed];
+    &.current,
+    &:active {
+      @apply bg-(--highlight-dark) text-(--text-button-label-reversed);
     }
 
-    &.prev, &.next {
+    &.prev,
+    &.next {
       @apply text-center order-first md:order-none;
 
       @media screen and (max-width: 767px) {
@@ -24,7 +31,8 @@
 
   &:has(.prev):has(.next) {
     .page-numbers {
-      &.prev, &.next {
+      &.prev,
+      &.next {
         @media screen and (max-width: 767px) {
           flex: 0 0 calc(50% - var(--space-050));
         }

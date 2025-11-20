@@ -13,7 +13,13 @@ form,
   input,
   select:not([class^="react-datepicker"]),
   textarea {
-    @apply rounded-[--input-fields-corner-radius-md] border-[length:--border-interactive-sm] border-[--border-input-default] placeholder:text-[--text-content-secondary] text-body-md p-[--space-200] bg-[--bg-white];
+    @apply rounded-(--input-fields-corner-radius-md)
+           border-(length:--border-interactive-sm)
+           border-(--border-input-default)
+           placeholder:text-(--text-content-secondary)
+           text-body-md
+           p-(--space-200)
+           bg-(--bg-white);
 
     padding: var(--space-075);
 
@@ -27,13 +33,13 @@ form,
     }
 
     &:disabled {
-      @apply border-[--border-disabled] text-[--text-disabled];
+      @apply border-(--border-disabled) text-(--text-disabled);
       // border: 1px solid var(--light-020, #d3d4d6);
       // color: var(--light-020, #d3d4d6);
     }
 
     &.error {
-      @apply border-[--state-error];
+      @apply border-(--state-error);
       // <!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
       // TODO: make the SVG <g> below use $error-color
       background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><g stroke-linecap="round" stroke-width="4" stroke="%23DC3545" fill="%23DC3545"><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c-13.3 0-24 10.7-24 24V264c0 13.3 10.7 24 24 24s24-10.7 24-24V152c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/></g></svg>');
@@ -44,7 +50,7 @@ form,
     }
 
     &.success {
-      @apply border-[--state-success];
+      @apply border-(--state-success);
       // <!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
       // TODO: make the SVG <g> below use var(--state-success, #198754)
       background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><g stroke-linecap="round" stroke-width="4" stroke="%23198754" fill="%23198754"><path d="M256 32a224 224 0 1 1 0 448 224 224 0 1 1 0-448zm0 480A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM363.3 203.3L374.6 192 352 169.4l-11.3 11.3L224 297.4l-52.7-52.7L160 233.4 137.4 256l11.3 11.3 64 64L224 342.6l11.3-11.3 128-128z"/></g></svg>');
@@ -63,7 +69,7 @@ form,
     &[type='checkbox'] {
       margin: 3px;
       // TODO: Align this with central colors variable
-      @apply accent-[--highlight-dark];
+      @apply accent-(--highlight-dark);
 
       &:focus {
         // TODO: Align this with central colors variable
@@ -112,13 +118,14 @@ form,
     }
   }
 
-  label, .label {
-    @apply text-form-label mb-[--space-050];
+  label,
+  .label {
+    @apply text-form-label mb-(--space-050);
 
     &.required {
       &:after {
         content: '*';
-        @apply text-[--state-error] ml-[2px];
+        @apply text-(--state-error) ml-[2px];
       }
     }
 
@@ -130,14 +137,14 @@ form,
   .wicket-form-help-text,
   p.wicket-form-help-text {
     margin: 5px 0px 0px;
-    @apply text-body-sm text-[--text-content-secondary];
+    @apply text-body-sm text-(--text-content-secondary);
 
     &.forCheckOrRadio {
       margin: 0px 20px 0px;
     }
 
     &.error {
-      @apply text-[--state-error];
+      @apply text-(--state-error);
     }
 
     &.hidden {
