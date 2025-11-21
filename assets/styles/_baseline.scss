@@ -1,7 +1,7 @@
 @use 'helpers/mixins';
 
 body {
-  @apply text-body-md text-[--text-content] bg-[--bg-body];
+  @apply text-body-md text-(--text-content) bg-(--bg-body);
 }
 
 h1,
