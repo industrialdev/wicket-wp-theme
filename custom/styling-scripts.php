@@ -186,9 +186,9 @@ function wicket_add_theme_assets()
     add_filter('script_loader_tag', 'wicket_set_script_type_module', 10, 3);
 
     // We only use HMR if we are in development or local environment, AND VITE_STRATEGY is true, otherwise we fall back to production files
-    if (in_array(wp_get_environment_type(), ['development', 'local']) && env('VITE_HMR') == 'true') {
+    if (in_array(wp_get_environment_type(), ['development', 'local']) && env('VITE_HMR_PARENT_THEME') == 'true') {
         wicket_public_hmr_enqueue();
-    } else { // All other environments (staging, production, and also development/local if VITE_HMR is not true)
+    } else { // All other environments (staging, production, and also development/local if VITE_HMR_PARENT_THEME is not true)
         wicket_public_prod_enqueue();
     }
 }
@@ -222,7 +222,7 @@ function wicket_admin_styles()
         // We need to add the filter to set script type module, for better modern support, and HMR
         add_filter('script_loader_tag', 'wicket_set_script_type_module', 10, 3);
 
-        if (in_array(wp_get_environment_type(), ['development', 'local']) && env('VITE_HMR') == 'true') {
+        if (in_array(wp_get_environment_type(), ['development', 'local']) && env('VITE_HMR_PARENT_THEME') == 'true') {
             wicket_admin_hmr_enqueue($dependencies);
         } else {
             wicket_admin_prod_enqueue($dependencies);
