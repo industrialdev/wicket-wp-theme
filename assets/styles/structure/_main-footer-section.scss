@@ -13,10 +13,10 @@
   .footer-column {
     @apply gap-[--space-250] flex flex-col items-start;
 
-    // no need to use flex for a single column
-    &.col-num-1 {
-      @apply block;
-    }
+    // // no need to use flex for a single column
+    // &.col-num-1 {
+    //   @apply block;
+    // }
 
     &.is-menu-column {
       @apply gap-[--space-150];

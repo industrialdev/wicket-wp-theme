@@ -1134,9 +1134,6 @@ video {
 .w-10{
   width: 2.5rem;
 }
-.w-10\/12{
-  width: 83.333333%;
-}
 .w-14{
   width: 3.5rem;
 }
@@ -97399,9 +97396,6 @@ footer .footer-section{
   -ms-flex-align: start;
   align-items: flex-start;
   gap: var(--space-250);
-}
-.main-footer-section .footer-column.col-num-1{
-  display: block;
 }
 .main-footer-section .footer-column.is-menu-column{
   gap: var(--space-150);
