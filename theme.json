@@ -295,8 +295,8 @@
         "focus": "0px 0px 1px 2px #0997FF"
       },
       "layout": {
-        "content": "1320px",
-        "wide": "1320px",
+        "content": "1536px",
+        "wide": "1536px",
         "sidebar": "322px"
       },
       "letter-spacing": {
