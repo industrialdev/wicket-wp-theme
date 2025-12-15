@@ -68,9 +68,17 @@
   }
 
   &__matching-org-item {
-    @apply flex justify-between items-center pr-[--space-200] py-[--space-200] border-b-[length:--border-sm] border-[--border-light];
+    @apply flex justify-between items-center pr-[--space-200] py-[--space-200] border-b-[length:--border-sm] border-[--border-light] gap-[--space-200];
+
+    > * {
+      @apply flex-1;
+    }
   }
 
+  &__matching-org-action {
+    @apply text-right;
+  }
+  
   &__matching-org-title {
     @apply text-heading-xs;
   }

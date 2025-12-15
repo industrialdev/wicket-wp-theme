@@ -92650,11 +92650,21 @@ form p.wicket-form-help-text.secondary-nav .component-link,
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  gap: var(--space-200);
   border-bottom-width: var(--border-sm);
   border-color: var(--border-light);
   padding-top: var(--space-200);
   padding-bottom: var(--space-200);
   padding-right: var(--space-200);
+}
+.component-org-search-select__matching-org-item > *{
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 0%;
+  -ms-flex: 1 1 0%;
+  flex: 1 1 0%;
+}
+.component-org-search-select__matching-org-action{
+  text-align: right;
 }
 .component-org-search-select__matching-org-title{
   font-size: var(--heading-xs-font-size);
