@@ -128,6 +128,17 @@ function wicket_get_customizations_inline_css()
         $customized_fields = acf_get_fields('group_66f2d49c4ce0d');
         $css = ':root {';
 
+        // Add custom colours to CSS variables
+        $custom_colours = get_field('wicket_custom_colours', 'option');
+        if (!empty($custom_colours) && is_array($custom_colours)) {
+            $index = 0;
+            foreach ($custom_colours as $colour) {
+                $css .= '--custom-colour-' . $index . ': ' . $colour['colour'] . ';';
+
+                $index++;
+            }
+        }
+
         if (!empty($customized_fields)) {
             foreach ($customized_fields as $field) {
                 if (isset($field['sub_fields'])) {

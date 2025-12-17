@@ -13,6 +13,56 @@
       "link": false,
       "palette": [
         {
+          "slug": "custom-colour-0",
+          "color": "var(--custom-colour-0)",
+          "name": "custom-colour-0"
+        },
+        {
+          "slug": "custom-colour-1",
+          "color": "var(--custom-colour-1)",
+          "name": "custom-colour-1"
+        },
+        {
+          "slug": "custom-colour-2",
+          "color": "var(--custom-colour-2)",
+          "name": "custom-colour-2"
+        },
+        {
+          "slug": "custom-colour-3",
+          "color": "var(--custom-colour-3)",
+          "name": "custom-colour-3"
+        },
+        {
+          "slug": "custom-colour-4",
+          "color": "var(--custom-colour-4)",
+          "name": "custom-colour-4"
+        },
+        {
+          "slug": "custom-colour-5",
+          "color": "var(--custom-colour-5)",
+          "name": "custom-colour-5"
+        },
+        {
+          "slug": "custom-colour-6",
+          "color": "var(--custom-colour-6)",
+          "name": "custom-colour-6"
+        },
+        {
+          "slug": "custom-colour-7",
+          "color": "var(--custom-colour-7)",
+          "name": "custom-colour-7"
+        },
+        {
+          "slug": "custom-colour-8",
+          "color": "var(--custom-colour-8)",
+          "name": "custom-colour-8"
+        },
+        {
+          "slug": "custom-colour-9",
+          "color": "var(--custom-colour-9)",
+          "name": "custom-colour-9"
+        },
+        {
           "slug": "text-content",
           "color": "var(--text-content)",
           "name": "text-content"
