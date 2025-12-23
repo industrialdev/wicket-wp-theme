@@ -676,13 +676,23 @@ foreach ($primary_nav_items_structured as $primary_nav_item) :
                                             <?php // If the sending element isn't this element, close dropdown
                                         ?>
                                             x-on:close-sub-nav-dropdowns.window="if( $event.target !== $el ) {subNavDropdownOpen = false}">
-                                            <div class="mobile-mega-menu-heading-item" x-bind:class=" subNavDropdownOpen ? '' : '' ">
-                                                <span><?php echo $child['title']; ?></span>
-                                                <i x-show="! subNavDropdownOpen && mobileMenuMegaSubDropdowns" x-cloak
-                                                    class="fa-solid fa-caret-down"></i>
-                                                <i x-show="subNavDropdownOpen && mobileMenuMegaSubDropdowns" x-cloak
-                                                    class="fa-solid fa-caret-up"></i>
-                                            </div>
+                                            <?php if ($sub_menu_dropdowns === 'true') : ?>
+                                                <div class="mobile-mega-menu-heading-item" x-bind:class=" subNavDropdownOpen ? '' : '' ">
+                                                    <span><?php echo $child['title']; ?></span>
+                                                    <i x-show="! subNavDropdownOpen && mobileMenuMegaSubDropdowns" x-cloak
+                                                        class="fa-solid fa-caret-down"></i>
+                                                    <i x-show="subNavDropdownOpen && mobileMenuMegaSubDropdowns" x-cloak
+                                                        class="fa-solid fa-caret-up"></i>
+                                                </div>
+                                            <?php else: ?>
+                                                <a href="<?php echo $child['url']; ?>" title="<?php echo $child['title']; ?>" class="mobile-mega-menu-heading-item" x-bind:class=" subNavDropdownOpen ? '' : '' ">
+                                                    <span><?php echo $child['title']; ?></span>
+                                                    <i x-show="! subNavDropdownOpen && mobileMenuMegaSubDropdowns" x-cloak
+                                                        class="fa-solid fa-caret-down"></i>
+                                                    <i x-show="subNavDropdownOpen && mobileMenuMegaSubDropdowns" x-cloak
+                                                        class="fa-solid fa-caret-up"></i>
+                                                </a>
+                                            <?php endif; ?>
 
                                             <ul x-show="subNavDropdownOpen || !mobileMenuMegaSubDropdowns" x-cloak x-transition
                                                 class="block w-full p-3">
