@@ -359,6 +359,102 @@
             "ui": 0,
             "ajax": 0,
             "placeholder": ""
+        },
+        {
+            "key": "field_695cd2c5d6168",
+            "label": "Member Portal",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_695cd302d616b",
+            "label": "Button Style",
+            "name": "member_portal_button_style",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "choices": {
+                "primary": "Primary",
+                "secondary": "Secondary",
+                "ghost": "Ghost"
+            },
+            "default_value": "secondary",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_695cd2dcd6169",
+            "label": "Login\/Logout",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_695cd32bd616c",
+            "label": "Button Style",
+            "name": "login_logout_button_style",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "choices": {
+                "primary": "Primary",
+                "secondary": "Secondary",
+                "ghost": "Ghost"
+            },
+            "default_value": "ghost",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
         }
     ],
     "location": [
@@ -380,5 +476,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "advanced",
-    "modified": 1743674491
+    "modified": 1767691479
 }

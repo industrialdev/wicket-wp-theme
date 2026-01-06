@@ -57,6 +57,16 @@ $logo_url = $logo['url'] ?? get_template_directory_uri() . '/assets/images/logo-
 $default_account_path = $lang == 'fr' ? '/fr/create-account' : '/create-account';
 
 /**
+ ** "Member Portal" link.
+ */
+$member_portal_button_style = get_field('member_portal_button_style', 'options') ?? 'secondary';
+
+/**
+ ** "Login/Logout" link.
+ */
+$login_logout_button_style = get_field('login_logout_button_style', 'options') ?? 'ghost';
+
+/**
  ** Set "Become a Member" link.
  */
 $display_bam_link = get_field('display_bam_link', 'options') ?? true;
@@ -253,7 +263,7 @@ if ($nav_state == 'logged_out') {
     ]);
 } elseif ($nav_state == 'logged_in_member') {
     get_component('button', [
-        'variant' => 'secondary',
+        'variant' => $member_portal_button_style,
         'a_tag'   => true,
         'link'    => $account_center_landing,
         'classes' => ['member-portal-button', 'hidden', 'md:inline-flex'],
@@ -265,7 +275,7 @@ if ($nav_state == 'logged_out') {
                     <?php if ($nav_state == 'logged_out') : ?>
                         <?php
     get_component('button', [
-        'variant' => 'ghost',
+        'variant' => $login_logout_button_style,
         'a_tag'   => true,
         'label'   => __('Login', 'wicket'),
         'classes' => ['login-button', 'mx-4', 'items-center', 'hidden', 'lg:inline-flex'],
@@ -276,7 +286,7 @@ if ($nav_state == 'logged_out') {
                     <?php else : ?>
                         <?php
                         get_component('button', [
-                            'variant' => 'ghost',
+                            'variant' => $login_logout_button_style,
                             'a_tag'   => true,
                             'label'   => __('Logout', 'wicket'),
                             'classes' => ['logout-button', 'mx-4', 'items-center', 'hidden', 'lg:inline-flex'],
@@ -546,7 +556,7 @@ if ($nav_state == 'logged_out') {
     ]);
 } elseif ($nav_state == 'logged_in_member') {
     get_component('button', [
-        'variant' => 'secondary',
+        'variant' => $member_portal_button_style,
         'a_tag'   => true,
         'link'    => $account_center_landing,
         'classes' => ['member-portal-button-mobile', 'w-full', 'mb-3', 'justify-center'],
@@ -559,7 +569,7 @@ if ($nav_state == 'logged_out') {
 if ($nav_state == 'logged_out') {
     get_component('button', [
         'label'   => __('Login', 'wicket'),
-        'variant' => 'ghost',
+        'variant' => $login_logout_button_style,
         'a_tag'   => true,
         'classes' => ['login-button-mobile', 'mb-2', 'w-full', 'justify-center'],
         'link'    => get_option('wp_cassify_base_url') . 'login?service=' . $referrer,
@@ -567,7 +577,7 @@ if ($nav_state == 'logged_out') {
 } else {
     get_component('button', [
         'label'   => __('Logout', 'wicket'),
-        'variant' => 'ghost',
+        'variant' => $login_logout_button_style,
         'a_tag'   => true,
         'classes' => ['logout-button-mobile', 'mb-2', 'w-full', 'justify-center'],
         'link'    => wp_logout_url(),
