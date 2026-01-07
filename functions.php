@@ -36,6 +36,7 @@ $wicket_includes = [
     'force_gd_image_library.php',
     'job-manager.php',
     'hide_health_status.php',
+    'role_based_pricing_wc.php',
 ];
 
 if (is_array($wicket_includes)) {
