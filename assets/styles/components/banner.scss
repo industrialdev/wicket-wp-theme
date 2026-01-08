@@ -81,6 +81,10 @@
     .component-banner__date {
       @apply text-[--text-content-secondary-reversed];
     }
+
+    .component-link--reversed {
+      @apply text-[--interactive-reversed];
+    }
   }
 }
 

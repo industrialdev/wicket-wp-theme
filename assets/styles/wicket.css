@@ -90387,6 +90387,9 @@ a:where(:not(.wp-element-button)):active{
 .component-banner--reversed .component-banner__date, .component-banner--image .component-banner__date{
   color: var(--text-content-secondary-reversed);
 }
+.component-banner--reversed .component-link--reversed, .component-banner--image .component-link--reversed{
+  color: var(--interactive-reversed);
+}
 
 .alignfull.wp-block-wicket-banner > .component-banner{
   -webkit-border-radius: 0px;
