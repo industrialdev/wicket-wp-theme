@@ -90371,8 +90371,13 @@ a:where(:not(.wp-element-button)):active{
 .component-banner--light .component-banner__date{
   color: var(--text-content-secondary);
 }
-.component-banner--reversed, .component-banner--image{
+.component-banner--reversed{
   background-color: var(--bg-dark);
+}
+.component-banner--image{
+  background-color: var(--bg-image-overlay);
+}
+.component-banner--reversed, .component-banner--image{
   color: var(--text-content-reversed);
 }
 .component-banner--reversed .cta-card, .component-banner--image .cta-card{

@@ -62,9 +62,17 @@
     }
   }
 
+  &--reversed {
+    @apply bg-[--bg-dark];
+  }
+
+  &--image {
+    @apply bg-[--bg-image-overlay];
+  }
+
   // Reversed variant + Image
   &--reversed, &--image {
-    @apply bg-[--bg-dark] text-[--text-content-reversed];
+    @apply text-[--text-content-reversed];
 
     .cta-card {
       @apply bg-[--bg-dark-alternate];
