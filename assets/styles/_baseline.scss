@@ -34,3 +34,9 @@ a:where(:not(.wp-element-button)) {
 #wpadminbar {
   max-width: 100% !important;
 }
+
+/* Accessibility helper */
+.webaim-hidden {
+  @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0 #{!important};
+  clip: rect(0, 0, 0, 0);
+}

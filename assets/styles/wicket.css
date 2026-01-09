@@ -90059,6 +90059,19 @@ a:where(:not(.wp-element-button)):active{
   max-width: 100% !important;
 }
 
+/* Accessibility helper */
+.webaim-hidden{
+  position: absolute !important;
+  margin: -1px !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  border-width: 0px !important;
+  padding: 0px !important;
+  clip: rect(0, 0, 0, 0);
+}
+
 /* COMPONENTS STYLES
 ------------------------------------------------------------------------------*/
 .accordion-item{
