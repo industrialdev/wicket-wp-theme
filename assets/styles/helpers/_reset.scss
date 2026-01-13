@@ -45,7 +45,7 @@ html,
 1. Remove the margin in all browsers.
 2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
 */
-body {
+body:not(.mce-content-body) {
   margin: 0; /* 1 */
   line-height: inherit; /* 2 */
 }
@@ -262,9 +262,9 @@ fieldset {
 legend {
   padding: 0;
 }
-ol,
-ul,
-menu {
+ol:not(.mce-content-body ol),
+ul:not(.mce-content-body ul),
+menu:not(.mce-content-body menu) {
   list-style: none;
   margin: 0;
   padding: 0;
