@@ -1626,6 +1626,12 @@ video {
 .whitespace-nowrap{
   white-space: nowrap;
 }
+.whitespace-pre-wrap{
+  white-space: pre-wrap;
+}
+.break-words{
+  overflow-wrap: break-word;
+}
 .rounded{
   -webkit-border-radius: 0.25rem;
   border-radius: 0.25rem;
@@ -2261,6 +2267,9 @@ video {
 .border-\[--state-error\]{
   border-color: var(--state-error);
 }
+.border-\[var\(--state-error\2c \#B42318\)\]{
+  border-color: var(--state-error,#B42318);
+}
 .border-opacity-0{
   --tw-border-opacity: 0;
 }
@@ -2337,6 +2346,9 @@ video {
 .bg-\[var\(--highlight-light\)\]{
   background-color: var(--highlight-light);
 }
+.bg-\[var\(--state-error-light\2c \#FEF3F2\)\]{
+  background-color: var(--state-error-light,#FEF3F2);
+}
 .bg-black{
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
@@ -2348,6 +2360,9 @@ video {
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+}
+.bg-white\/80{
+  background-color: rgb(255 255 255 / 0.8);
 }
 .bg-opacity-0{
   --tw-bg-opacity: 0;
@@ -67490,6 +67505,9 @@ video {
 .text-center{
   text-align: center;
 }
+.text-\[13px\]{
+  font-size: 13px;
+}
 .text-\[18px\]{
   font-size: 18px;
 }
@@ -67633,6 +67651,9 @@ video {
 }
 .text-\[--state-error\]{
   color: var(--state-error);
+}
+.text-\[var\(--interactive\2c \#0044C1\)\]{
+  color: var(--interactive,#0044C1);
 }
 .text-white{
   --tw-text-opacity: 1;
@@ -96706,6 +96727,8 @@ header.wicket-form-help-text nav.main-nav > ul {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 

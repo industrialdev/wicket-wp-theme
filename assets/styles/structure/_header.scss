@@ -115,6 +115,8 @@ header {
 
     @media screen and (min-width: $wicket-breakpoint-lg) {
       @apply flex;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 }
