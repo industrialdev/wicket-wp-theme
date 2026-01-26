@@ -23,10 +23,10 @@ function init($block = [])
     echo '<div ' . $attrs . '>';
     get_component('accordion', [
         'items'                 => $items,
-        'icon-type'             => $icon_type,
-        'accordion-type'        => $accordion_type,
-        'separate-title-body'   => $separate_title_body,
-        'heading-level'         => $heading_level,
+        'icon_type'             => $icon_type,
+        'accordion_type'        => $accordion_type,
+        'separate_title_body'   => $separate_title_body,
+        'heading_level'         => $heading_level,
     ]);
     echo '</div>';
 
