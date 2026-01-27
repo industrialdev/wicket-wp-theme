@@ -90121,31 +90121,21 @@ a:where(:not(.wp-element-button)):active{
 .component-sidebar-contextual-nav__accordion .accordion-item__body{
   margin-top: var(--space-100);
 }
-.accordion-item__body ul li{
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 0.5rem;
+.accordion-item__body ul:not(.mce-content-body ul){
+  list-style-type: disc;
+  -webkit-padding-start: 2.5rem;
+  padding-inline-start: 2.5rem;
 }
-.accordion-item__body ul li:before{
-  min-width: 1rem;
-  content: "•";
+.accordion-item__body ul:not(.mce-content-body ul) li{
+  margin-bottom: 0.5rem;
 }
-.accordion-item__body ol {
-  counter-reset: list-item;
+.accordion-item__body ol:not(.mce-content-body ol){
+  list-style-type: decimal;
+  -webkit-padding-start: 2.5rem;
+  padding-inline-start: 2.5rem;
 }
-.accordion-item__body ol li{
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 0.5rem;
-  counter-increment: list-item;
-}
-.accordion-item__body ol li:before{
-  min-width: 1rem;
-  content: counter(list-item) ".";
+.accordion-item__body ol:not(.mce-content-body ol) li{
+  margin-bottom: 0.5rem;
 }
 .accordion-item__title{
   font-size: var(--body-md-font-size);

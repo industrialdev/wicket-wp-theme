@@ -16,28 +16,19 @@
       @apply mt-[--space-100];
     }
 
-    ul {
-      li {
-        @apply flex gap-2;
+    ul:not(.mce-content-body ul) {
+      @apply list-disc ps-10;
 
-        &:before {
-          @apply min-w-4;
-          content: "\2022";
-        }
+      li {
+        @apply mb-2;
       }
     }
 
-    ol {
-      counter-reset: list-item;
+    ol:not(.mce-content-body ol) {
+      @apply list-decimal ps-10;
 
       li {
-        @apply flex gap-2;
-        counter-increment: list-item;
-
-        &:before {
-          @apply min-w-4;
-          content: counter(list-item) ".";
-        }
+        @apply mb-2;
       }
     }
   }
