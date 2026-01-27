@@ -16,7 +16,7 @@
       @apply mt-[--space-100];
     }
 
-    ul:not(.mce-content-body ul) {
+    ul {
       @apply list-disc ps-10;
 
       li {
@@ -24,7 +24,7 @@
       }
     }
 
-    ol:not(.mce-content-body ol) {
+    ol {
       @apply list-decimal ps-10;
 
       li {

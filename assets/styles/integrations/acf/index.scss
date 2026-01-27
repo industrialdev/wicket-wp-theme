@@ -1,6 +1,8 @@
 /* TinyMCE Editor Styles */
 
 .mce-content-body {
+  @apply p-5;
+
   ul {
     @apply list-disc list-inside;
   }

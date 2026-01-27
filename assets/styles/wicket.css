@@ -349,7 +349,7 @@ html,
 1. Remove the margin in all browsers.
 2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
 */
-body:not(.mce-content-body) {
+body {
   margin: 0; /* 1 */
   line-height: inherit; /* 2 */
 }
@@ -588,9 +588,7 @@ legend {
   padding: 0;
 }
 
-ol:not(.mce-content-body ol),
-ul:not(.mce-content-body ul),
-menu:not(.mce-content-body menu) {
+ol, ul, menu {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -90121,20 +90119,20 @@ a:where(:not(.wp-element-button)):active{
 .component-sidebar-contextual-nav__accordion .accordion-item__body{
   margin-top: var(--space-100);
 }
-.accordion-item__body ul:not(.mce-content-body ul){
+.accordion-item__body ul{
   list-style-type: disc;
   -webkit-padding-start: 2.5rem;
   padding-inline-start: 2.5rem;
 }
-.accordion-item__body ul:not(.mce-content-body ul) li{
+.accordion-item__body ul li{
   margin-bottom: 0.5rem;
 }
-.accordion-item__body ol:not(.mce-content-body ol){
+.accordion-item__body ol{
   list-style-type: decimal;
   -webkit-padding-start: 2.5rem;
   padding-inline-start: 2.5rem;
 }
-.accordion-item__body ol:not(.mce-content-body ol) li{
+.accordion-item__body ol li{
   margin-bottom: 0.5rem;
 }
 .accordion-item__title{
@@ -95969,6 +95967,9 @@ form p.wicket-form-help-text.woocommerce-shop ul.products li.product .wp-block-p
 }
 
 /* TinyMCE Editor Styles */
+.mce-content-body{
+  padding: 1.25rem;
+}
 .mce-content-body ul{
   list-style-position: inside;
   list-style-type: disc;
@@ -96717,8 +96718,6 @@ header.wicket-form-help-text nav.main-nav > ul {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 
