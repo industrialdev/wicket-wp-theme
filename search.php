@@ -6,6 +6,7 @@
 //wicket_write_log($options_group, true);
 
 $show_search_bar = $options_group['show_search_bar'] ?? true;
+$search_term = get_search_query();
 
 // Filter configs
 $show_filter_bar = $options_group['show_filter_bar'] ?? true;
@@ -78,7 +79,7 @@ $page_count = ceil($total_posts / $posts_per_page);
           * Ensure we're staying on the search page when filters are applied.
           */
   ?>
-  <input type="hidden" name="s" value="<?php echo $search_term; ?>" />
+  <input type="hidden" name="s" value="<?php echo esc_attr($search_term); ?>" />
 
   <div class="px-4 py-5 lg:px-0">
       <div class="container max-w-screen-lg mx-auto">
