@@ -462,13 +462,51 @@ function init($block = [])
                             }
 
                             if ($listing_layout === 'grid') {
+                                $excerpt_content = !$hide_excerpt ? $excerpt : '';
+
+                                // Append helper/download buttons into excerpt content for grid cards
+                                if ((!$hide_helper_link && $helper_link) || (!$hide_attachment && $document_attachment_url)) {
+                                    ob_start();
+
+                                    echo '<div class="component-card-featured__excerpt-actions wicket-listing-grid-actions flex gap-3 mt-3">';
+
+                                    if (!$hide_helper_link && $helper_link) {
+                                        get_component('button', [
+                                            'variant' => 'primary',
+                                            'label'              => $helper_link['title'],
+                                            'suffix_icon'        => $helper_link['target'] === '_blank' ? 'fa fa-external-link-alt' : '',
+                                            'a_tag'              => true,
+                                            'link'               => $helper_link['url'],
+                                            'link_target'        => $helper_link['target'],
+                                            'screen_reader_text' => $helper_link['target'] === '_blank' ? __('(opens in new tab)', 'wicket') : '',
+                                            'classes' => ['btn-helper', 'text-sm'],
+                                        ]);
+                                    }
+
+                                    if (!$hide_attachment && $document_attachment_url) {
+                                        get_component('button', [
+                                            'variant' => 'secondary',
+                                            'label'   => $listing_download_label == '' ? __('Download', 'wicket') : $listing_download_label,
+                                            'a_tag'   => true,
+                                            'suffix_icon' => 'fa-solid fa-arrow-down-to-bracket',
+                                            'link'    => $document_attachment_url,
+                                            'classes' => ['btn-download', 'text-sm'],
+                                        ]);
+                                    }
+
+                                    echo '</div>';
+
+                                    $excerpt_actions = ob_get_clean();
+                                    $excerpt_content .= $excerpt_actions;
+                                }
+
                                 $grid_card_params = [
                                     'classes'      => defined('WICKET_WP_THEME_V2') ? [] : ['p-4'],
                                     'post_type'    => $post_type,
                                     'post_id'      => $post_id,
                                     'content_type' => !$hide_type_taxonomy ? get_related_content_type_term($post_id) : '',
                                     'title'        => $title,
-                                    'excerpt'      => !$hide_excerpt ? $excerpt : '',
+                                    'excerpt'      => $excerpt_content,
                                     'date'         => !$hide_date ? $date : '',
                                     'image'        => (!$hide_featured_image && $featured_image) ? [
                                         'id' => $featured_image,
