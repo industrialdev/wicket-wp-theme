@@ -22,19 +22,20 @@
                 "post": "Posts",
                 "page": "Pages",
                 "attachment": "Media",
-                "tribe_event_series": "Series",
+                "job_listing": "Jobs",
+                "give_forms": "Donation Forms",
+                "blog": "Blogs",
                 "product": "Products",
-                "my-account": "Account Centre",
-                "wicket_membership": "Memberships",
-                "wicket_mship_config": "Membership Configs",
-                "wicket_mship_tier": "Membership Tiers",
+                "csp_rules": "Role Based Pricing Rules",
                 "tribe_venue": "Venues",
                 "tribe_organizer": "Organizers",
                 "tribe_events": "Events",
+                "my-account": "Account Centre",
                 "wppcp_group": "Groups",
                 "wppcp_fproduct_tabs": "Woo Product Tabs",
                 "news": "News",
-                "resources": "Resources"
+                "resources": "Resources",
+                "tribe_event_series": "Series"
             },
             "default_value": false,
             "return_format": "value",
@@ -42,7 +43,9 @@
             "allow_null": 0,
             "ui": 0,
             "ajax": 0,
-            "placeholder": ""
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
         },
         {
             "key": "field_66e0531e69062",
@@ -71,7 +74,9 @@
             "allow_null": 0,
             "ui": 0,
             "ajax": 0,
-            "placeholder": ""
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
         },
         {
             "key": "field_65f44ddd16151",
@@ -246,6 +251,9 @@
                 "category": "Categories",
                 "post_tag": "Tags",
                 "post_format": "Formats",
+                "blog-type": "Blog Types",
+                "discipline": "Disciplines",
+                "product_brand": "Brands",
                 "product_cat": "Product categories",
                 "product_tag": "Product tags",
                 "product_shipping_class": "Product shipping classes",
@@ -346,7 +354,9 @@
             "allow_null": 0,
             "ui": 0,
             "ajax": 0,
-            "placeholder": ""
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
         },
         {
             "key": "field_65c6205a6e855",
@@ -407,7 +417,9 @@
                     "ui": 0,
                     "ajax": 0,
                     "placeholder": "",
-                    "parent_repeater": "field_65c6205a6e855"
+                    "parent_repeater": "field_65c6205a6e855",
+                    "create_options": 0,
+                    "save_options": 0
                 },
                 {
                     "key": "field_65f1a2ed778c5",
@@ -445,7 +457,9 @@
                     "ui": 0,
                     "ajax": 0,
                     "placeholder": "",
-                    "parent_repeater": "field_65c6205a6e855"
+                    "parent_repeater": "field_65c6205a6e855",
+                    "create_options": 0,
+                    "save_options": 0
                 },
                 {
                     "key": "field_65f1a30e778c6",
@@ -483,7 +497,9 @@
                     "ui": 0,
                     "ajax": 0,
                     "placeholder": "",
-                    "parent_repeater": "field_65c6205a6e855"
+                    "parent_repeater": "field_65c6205a6e855",
+                    "create_options": 0,
+                    "save_options": 0
                 },
                 {
                     "key": "field_6613ea3e34a16",
@@ -520,7 +536,9 @@
                     "ui": 0,
                     "ajax": 0,
                     "placeholder": "",
-                    "parent_repeater": "field_65c6205a6e855"
+                    "parent_repeater": "field_65c6205a6e855",
+                    "create_options": 0,
+                    "save_options": 0
                 },
                 {
                     "key": "field_66926319275aa",
@@ -558,7 +576,9 @@
                     "ui": 0,
                     "ajax": 0,
                     "placeholder": "",
-                    "parent_repeater": "field_65c6205a6e855"
+                    "parent_repeater": "field_65c6205a6e855",
+                    "create_options": 0,
+                    "save_options": 0
                 },
                 {
                     "key": "field_65c6207a6e857",
@@ -867,6 +887,27 @@
             "ui": 1
         },
         {
+            "key": "field_698a28f45944a",
+            "label": "Hide Date",
+            "name": "listing_hide_date",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 1,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
             "key": "field_66b9de7f6b97c",
             "label": "Download Label",
             "name": "listing_download_label",
@@ -929,6 +970,6 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "acfml_field_group_mode": "translation",
-    "modified": 1735557966
+    "display_title": "",
+    "modified": 1770665095
 }

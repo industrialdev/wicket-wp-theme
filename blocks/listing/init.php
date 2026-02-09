@@ -41,6 +41,7 @@ function init($block = [])
     $listing_download_label = get_field('listing_download_label') ?? __('Download', 'wicket');
     $listing_link_label = get_field('listing_link_label') ?? __('View Page', 'wicket');
     $date_format = apply_filters('wicket_general_date_format', 'F j, Y');
+    $hide_date = $block['hide_date'] ?? get_field('listing_hide_date');
     $pre_filter_categories = [];
 
     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -468,7 +469,7 @@ function init($block = [])
                                     'content_type' => !$hide_type_taxonomy ? get_related_content_type_term($post_id) : '',
                                     'title'        => $title,
                                     'excerpt'      => !$hide_excerpt ? $excerpt : '',
-                                    'date'         => $date,
+                                    'date'         => !$hide_date ? $date : '',
                                     'image'        => (!$hide_featured_image && $featured_image) ? [
                                         'id' => $featured_image,
                                     ] : '',
@@ -485,7 +486,7 @@ function init($block = [])
                                     'content_type'              => !$hide_type_taxonomy ? get_related_content_type_term($post_id) : '',
                                     'title'                     => $title,
                                     'excerpt'                   => !$hide_excerpt ? $excerpt : '',
-                                    'date'                      => $date,
+                                    'date'                      => !$hide_date ? $date : '',
                                     'featured_image'            => !$hide_featured_image ? $featured_image : '',
                                     'link'                      => [
                                         'url'    => $permalink,
