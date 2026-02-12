@@ -4,17 +4,16 @@
 # Ensure .git/hooks directory exists
 mkdir -p ".git/hooks"
 
-# Create symbolic links for all hooks
-for hook in pre-commit; do
-    # Force remove existing hook if it exists
-    rm -f ".git/hooks/$hook"
+# Install pre-commit hook (from .ci/hooks)
+if [ -f ".ci/hooks/pre-commit" ]; then
+    ln -sf "../.ci/hooks/pre-commit" ".git/hooks/pre-commit"
+    chmod +x "../.ci/hooks/pre-commit"
+fi
 
-    # Create symbolic link (relative from .git/hooks to .ci/hooks)
-    ln -sf "../.ci/hooks/$hook" ".git/hooks/$hook"
-
-    # Make the hook executable
-    touch ".ci/hooks/$hook"
-    chmod +x ".ci/hooks/$hook"
-done
+# Install pre-push hook (from .ci)
+if [ -f ".ci/pre-push" ]; then
+    cp ".ci/pre-push" ".git/hooks/pre-push"
+    chmod +x ".git/hooks/pre-push"
+fi
 
 echo "Git hooks installed successfully!"

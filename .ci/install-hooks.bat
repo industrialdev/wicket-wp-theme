@@ -5,20 +5,14 @@ setlocal
 :: Ensure directories exist
 if not exist ".git\hooks" mkdir ".git\hooks"
 
-:: Create symbolic links for all hooks
-for %%h in (pre-commit) do (
-    :: Remove existing hook if it exists
-    if exist ".git\hooks\%%h" del ".git\hooks\%%h"
+:: Install pre-commit hook (copy, no symlinks on Windows)
+if exist ".ci\hooks\pre-commit" (
+    copy /Y ".ci\hooks\pre-commit" ".git\hooks\pre-commit" > nul
+)
 
-    :: Create symbolic link (requires admin privileges)
-    mklink ".git\hooks\%%h" ".ci\hooks\%%h" > nul 2>&1
-
-    if errorlevel 1 (
-        echo Failed to create symbolic link for %%h. Please run as administrator.
-    ) else (
-        :: Create empty hook file if it doesn't exist
-        if not exist ".ci\hooks\%%h" type nul > ".ci\hooks\%%h"
-    )
+:: Install pre-push hook
+if exist ".ci\pre-push" (
+    copy /Y ".ci\pre-push" ".git\hooks\pre-push" > nul
 )
 
 echo Git hooks installed successfully!
