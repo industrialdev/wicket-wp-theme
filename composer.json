@@ -43,7 +43,7 @@
     "post-update-cmd": [
       "@cs:fix"
     ],
-    "test": "pest",
+    "test": "[ -x vendor/bin/pest ] || composer install && ./vendor/bin/pest",
     "test:unit": "pest --testsuite unit",
     "test:coverage": "pest --coverage-html coverage",
     "test:browser": "WICKET_BROWSER_BASE_URL=https://localhost ./vendor/bin/pest --testsuite browser",
