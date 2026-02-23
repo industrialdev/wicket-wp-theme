@@ -394,6 +394,35 @@
                             "min": "",
                             "max": ""
                         },
+                        "layout_699c32c1c2d4f": {
+                            "key": "layout_699c32c1c2d4f",
+                            "name": "social_links",
+                            "label": "Social Links",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_699c32c1c2d50",
+                                    "label": "Social Links",
+                                    "name": "",
+                                    "aria-label": "",
+                                    "type": "message",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "wpml_cf_preferences": 3,
+                                    "message": "This will automatically pull in the social media links",
+                                    "new_lines": "wpautop",
+                                    "esc_html": 0
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
+                        },
                         "layout_651ad58b7bbeb": {
                             "key": "layout_651ad58b7bbeb",
                             "name": "menu",
@@ -566,5 +595,5 @@
     "show_in_rest": 0,
     "display_title": "",
     "acfml_field_group_mode": "advanced",
-    "modified": 1771843832
+    "modified": 1771844895
 }

@@ -162,6 +162,10 @@ if (!empty($newsletter['title'])) : ?>
 							            elseif (get_row_layout() == 'social_sharing') {
 							                get_component('social-sharing', ['reversed' => false]);
 							            }
+							            // Social Links layout.
+							            elseif (get_row_layout() == 'social_links') {
+							                get_component('social-links', ['reversed' => false]);
+							            }
 
 							            // Embed layout.
 							            elseif (get_row_layout() == 'embed') {
