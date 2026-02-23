@@ -93101,6 +93101,7 @@ form p.wicket-form-help-text.secondary-nav .component-link,
   }
 }
 .component-tag:has(.fa-lock){
+  text-wrap: nowrap;
   font-weight: 700;
 }
 .component-tag:has(.fa-lock) .component-icon{
