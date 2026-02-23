@@ -4,6 +4,7 @@
 
   &--no-drop-shadow {
     filter: none;
+    @apply border-0;
   }
 
   &.cols-3, &.cols-4 {
