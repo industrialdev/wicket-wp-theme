@@ -93753,6 +93753,10 @@ li img {
   }
 }
 
+.wp-block-cover:not(.alignfull){
+  -webkit-border-radius: var(--card-corner-radius);
+  border-radius: var(--card-corner-radius);
+}
 .wp-block-cover *[class*=wp-block]:not(.wp-block-cover__inner-container){
   max-width: none !important;
 }

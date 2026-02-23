@@ -1,4 +1,7 @@
 .wp-block-cover {
+  &:not(.alignfull) {
+    @apply rounded-[--card-corner-radius];
+  }
 
   *[class*=wp-block]:not(.wp-block-cover__inner-container) {
     @apply max-w-none #{!important};
