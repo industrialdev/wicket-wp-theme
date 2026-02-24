@@ -96851,6 +96851,48 @@ main {
   font-weight: 500;
 }
 
+.wicket-form .wicket-form-input-wrapper {
+  position: relative;
+}
+.wicket-form .wicket-form-input-wrapper > * {
+  width: 100%;
+}
+.wicket-form .wicket-form-input-wrapper:has(> .error)::after, .wicket-form .wicket-form-input-wrapper:has(> .success)::after {
+  content: "";
+  background-image: none;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 15px;
+  mask-size: 15px;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.wicket-form .wicket-form-input-wrapper:has(> select.error)::after, .wicket-form .wicket-form-input-wrapper:has(> select.success)::after, .wicket-form .wicket-form-input-wrapper:has(> input[type=date].error)::after, .wicket-form .wicket-form-input-wrapper:has(> input[type=date].success)::after {
+  right: 35px;
+}
+.wicket-form .wicket-form-input-wrapper:has(> .error) > input, .wicket-form .wicket-form-input-wrapper:has(> .error) select, .wicket-form .wicket-form-input-wrapper:has(> .error) textarea{
+  border-color: var(--state-error);
+}
+.wicket-form .wicket-form-input-wrapper:has(> .error)::after {
+  background-color: var(--state-error);
+  -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><g stroke-linecap="round" stroke-width="4" stroke="%23DC3545" fill="%23DC3545"><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c-13.3 0-24 10.7-24 24V264c0 13.3 10.7 24 24 24s24-10.7 24-24V152c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/></g></svg>');
+  mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><g stroke-linecap="round" stroke-width="4" stroke="%23DC3545" fill="%23DC3545"><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c-13.3 0-24 10.7-24 24V264c0 13.3 10.7 24 24 24s24-10.7 24-24V152c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/></g></svg>');
+}
+.wicket-form .wicket-form-input-wrapper:has(> .success) > input, .wicket-form .wicket-form-input-wrapper:has(> .success) select, .wicket-form .wicket-form-input-wrapper:has(> .success) textarea{
+  border-color: var(--state-success);
+}
+.wicket-form .wicket-form-input-wrapper:has(> .success)::after {
+  background-color: var(--state-success);
+  -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><g stroke-linecap="round" stroke-width="4" stroke="%23198754" fill="%23198754"><path d="M256 32a224 224 0 1 1 0 448 224 224 0 1 1 0-448zm0 480A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM363.3 203.3L374.6 192 352 169.4l-11.3 11.3L224 297.4l-52.7-52.7L160 233.4 137.4 256l11.3 11.3 64 64L224 342.6l11.3-11.3 128-128z"/></g></svg>');
+  mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><g stroke-linecap="round" stroke-width="4" stroke="%23198754" fill="%23198754"><path d="M256 32a224 224 0 1 1 0 448 224 224 0 1 1 0-448zm0 480A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM363.3 203.3L374.6 192 352 169.4l-11.3 11.3L224 297.4l-52.7-52.7L160 233.4 137.4 256l11.3 11.3 64 64L224 342.6l11.3-11.3 128-128z"/></g></svg>');
+}
+
 form input,
 form select:not([class^=react-datepicker]),
 form textarea,
@@ -96966,35 +97008,31 @@ form textarea:disabled,
   border-color: var(--border-disabled);
   color: var(--text-disabled);
 }
-form input.error,
-form select:not([class^=react-datepicker]).error,
-form textarea.error,
-.form input.error,
-.form select:not([class^=react-datepicker]).error,
-.form textarea.error{
-  border-color: var(--state-error);
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><g stroke-linecap="round" stroke-width="4" stroke="%23DC3545" fill="%23DC3545"><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c-13.3 0-24 10.7-24 24V264c0 13.3 10.7 24 24 24s24-10.7 24-24V152c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/></g></svg>');
-  background-repeat: no-repeat;
-  background-position: right 10px center;
-  -webkit-background-size: 15px 15px;
-  background-size: 15px;
-}
-form input.success,
-form select:not([class^=react-datepicker]).success,
-form textarea.success,
-.form input.success,
-.form select:not([class^=react-datepicker]).success,
-.form textarea.success{
-  border-color: var(--state-success);
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><g stroke-linecap="round" stroke-width="4" stroke="%23198754" fill="%23198754"><path d="M256 32a224 224 0 1 1 0 448 224 224 0 1 1 0-448zm0 480A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM363.3 203.3L374.6 192 352 169.4l-11.3 11.3L224 297.4l-52.7-52.7L160 233.4 137.4 256l11.3 11.3 64 64L224 342.6l11.3-11.3 128-128z"/></g></svg>');
-  background-repeat: no-repeat;
-  background-position: right 10px center;
-  -webkit-background-size: 15px 15px;
-  background-size: 15px;
-}
 form input[type=search],
 .form input[type=search] {
   -webkit-appearance: none;
+}
+form input[type=date]::-webkit-calendar-picker-indicator,
+.form input[type=date]::-webkit-calendar-picker-indicator {
+  background-image: none;
+  background-color: var(--text-content-secondary);
+  -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M152 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H64C28.7 64 0 92.7 0 128v16 48V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V192 144 128c0-35.3-28.7-64-64-64H344V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H152V24zM48 192H400V448c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V192z"/></svg>');
+  mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M152 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H64C28.7 64 0 92.7 0 128v16 48V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V192 144 128c0-35.3-28.7-64-64-64H344V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H152V24zM48 192H400V448c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V192z"/></svg>');
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+form input[type=date].error::-webkit-calendar-picker-indicator,
+.form input[type=date].error::-webkit-calendar-picker-indicator {
+  background-color: var(--state-error);
+}
+form input[type=date].success::-webkit-calendar-picker-indicator,
+.form input[type=date].success::-webkit-calendar-picker-indicator {
+  background-color: var(--state-success);
 }
 form input[type=radio], form input[type=checkbox],
 .form input[type=radio],
@@ -97018,6 +97056,59 @@ form input[type=radio]:disabled + label, form input[type=checkbox]:disabled + la
 .form input[type=checkbox]:disabled + label {
   color: var(--light-020, #d3d4d6);
 }
+form input[type=submit],
+form button[type=submit],
+.form input[type=submit],
+.form button[type=submit]{
+  -webkit-border-radius: var(--interactive-corner-radius-md);
+  border-radius: var(--interactive-corner-radius-md);
+  border-style: solid;
+  padding: var(--space-200);
+  font-size: var(--button-label-md-font-size);
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+  font-family: var(--button-label-md-font-family);
+  font-weight: var(--button-label-md-font-weight);
+  line-height: var(--button-label-md-line-height);
+  border-width: var(--border-interactive-md);
+  border-color: transparent;
+  background-color: var(--bg-interactive);
+  color: var(--text-button-label-reversed);
+}
+form input[type=submit]:hover,
+form button[type=submit]:hover,
+.form input[type=submit]:hover,
+.form button[type=submit]:hover{
+  border-color: var(--border-interactive);
+  background-color: transparent;
+  color: var(--text-button-label);
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+}
+form input[type=submit]:focus,
+form button[type=submit]:focus,
+.form input[type=submit]:focus,
+.form button[type=submit]:focus{
+  border-color: var(--border-interactive);
+  background-color: var(--highlight-light);
+  color: var(--text-button-label);
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+}
+form input[type=submit]:active,
+form button[type=submit]:active,
+.form input[type=submit]:active,
+.form button[type=submit]:active{
+  border-color: transparent;
+  background-color: var(--highlight-light);
+  color: var(--text-button-label);
+}
+form input[type=submit] .component-icon,
+form button[type=submit] .component-icon,
+.form input[type=submit] .component-icon,
+.form button[type=submit] .component-icon{
+  font-size: 16px;
+}
 form select:not([class^=react-datepicker]):not([multiple]),
 .form select:not([class^=react-datepicker]):not([multiple]) {
   -webkit-appearance: none;
@@ -97028,22 +97119,6 @@ form select:not([class^=react-datepicker]):not([multiple]),
   background-position: right 10px center;
   -webkit-background-size: 15px 15px;
   background-size: 15px;
-}
-form select:not([class^=react-datepicker]).error,
-.form select:not([class^=react-datepicker]).error {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><g stroke-linecap="round" stroke-width="4" stroke="%23DC3545" fill="%23DC3545"><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c-13.3 0-24 10.7-24 24V264c0 13.3 10.7 24 24 24s24-10.7 24-24V152c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/></g></svg>'), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M241 337c-9.4 9.4-24.6 9.4-33.9 0L47 177c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l143 143L367 143c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9L241 337z"/></svg>');
-  background-position: right 30px center, right 10px center;
-  background-repeat: no-repeat, no-repeat;
-  -webkit-background-size: 15px, 15px;
-  background-size: 15px, 15px;
-}
-form select:not([class^=react-datepicker]).success,
-.form select:not([class^=react-datepicker]).success {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><g stroke-linecap="round" stroke-width="4" stroke="%23198754" fill="%23198754"><path d="M256 32a224 224 0 1 1 0 448 224 224 0 1 1 0-448zm0 480A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM363.3 203.3L374.6 192 352 169.4l-11.3 11.3L224 297.4l-52.7-52.7L160 233.4 137.4 256l11.3 11.3 64 64L224 342.6l11.3-11.3 128-128z"/></g></svg>'), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M241 337c-9.4 9.4-24.6 9.4-33.9 0L47 177c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l143 143L367 143c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9L241 337z"/></svg>');
-  background-position: right 30px center, right 10px center;
-  background-repeat: no-repeat, no-repeat;
-  -webkit-background-size: 15px, 15px;
-  background-size: 15px, 15px;
 }
 form label, form .label,
 .form label,
