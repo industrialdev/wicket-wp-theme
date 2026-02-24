@@ -96028,6 +96028,63 @@ form p.wicket-form-help-text.woocommerce-shop ul.products li.product .wp-block-p
   display: inline-flex;
 }
 
+.wc-block-product{
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: var(--space-200);
+  -webkit-border-radius: var(--card-corner-radius);
+  border-radius: var(--card-corner-radius);
+  border-bottom-width: var(--border-card-size);
+  border-color: var(--border-card);
+  background-color: var(--bg-card);
+  padding: var(--space-200);
+}
+
+@container (min-width: 42rem){
+  .wc-block-product{
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+.wc-block-product {
+  -webkit-filter: drop-shadow(var(--elevation-4));
+  filter: drop-shadow(var(--elevation-4));
+}
+.wc-block-product .wp-block-post-title{
+  display: block;
+}
+.wc-block-product .wp-block-post-title.has-medium-font-size{
+  font-size: var(--heading-xs-font-size) !important;
+  font-family: var(--heading-xs-font-family);
+  font-weight: var(--heading-xs-font-weight-sm);
+  line-height: var(--heading-xs-line-height);
+}
+@media (min-width: 768px){
+  .wc-block-product .wp-block-post-title.has-medium-font-size{
+    font-weight: var(--heading-xs-font-weight-md);
+  }
+}
+.wc-block-product .wp-block-post-title a{
+  color: var(--text-content);
+}
+
 /* TinyMCE Editor Styles */
 .mce-content-body{
   padding: 1.25rem;
