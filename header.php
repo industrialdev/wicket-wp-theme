@@ -189,7 +189,7 @@ foreach ($utility_nav_items as $utility_nav_item) {
         </div> <!-- End Utility Nav -->
 
         <!-- Secondary Nav (Logo, login button, language switcher, etc.) -->
-        <div x-ref="secondary-nav" class="secondary-nav">
+        <div x-ref="secondary-nav" class="secondary-nav <?php echo $show_search === 'true' ? 'has-search' : '' ?> <?php echo $show_cart === 'true' ? 'has-cart' : '' ?>">
             <div class="container flex items-center justify-between relative">
                 <!-- Left-aligned hamburger menu button that only shows on Base/SM breakpoints -->
                 <?php
@@ -212,7 +212,7 @@ get_component('button', [
 ?>
 
                 <!-- Logo -->
-                <a href="/" class="logo w-60"><img src="<?php echo $logo_url; ?>" /></a>
+                <a href="/" class="logo w-52 md:w-60"><img src="<?php echo $logo_url; ?>" /></a>
 
                 <!-- Right panel -->
                 <div class="right-panel flex justify-between align-center font-bold"

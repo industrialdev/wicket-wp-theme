@@ -6,6 +6,12 @@
       @apply text-[--nav-secondary-label] text-[1rem] leading-[1.5rem] hover:underline;
     }
   }
+
+  &:not(.has-search.has-cart) {
+    .logo {
+      @apply absolute md:static left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0;
+    }
+  }
 }
 
 .secondary-nav-mobile {

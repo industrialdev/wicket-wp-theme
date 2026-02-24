@@ -1150,11 +1150,11 @@ video {
 .w-5\/12{
   width: 41.666667%;
 }
+.w-52{
+  width: 13rem;
+}
 .w-6{
   width: 1.5rem;
-}
-.w-60{
-  width: 15rem;
 }
 .w-full{
   width: 100%;
@@ -97262,6 +97262,24 @@ form.wicket-form .wicket-form-field-wrapper,
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
+.secondary-nav:not(.has-search.has-cart) .logo{
+  position: absolute;
+  left: 50%;
+  --tw-translate-x: -50%;
+  -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  -ms-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+@media (min-width: 768px){
+  .secondary-nav:not(.has-search.has-cart) .logo{
+    position: static;
+    left: auto;
+    --tw-translate-x: 0px;
+    -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    -ms-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+}
 
 .secondary-nav-mobile{
   display: -webkit-box;
@@ -97948,6 +97966,9 @@ form p.wicket-form-help-text.utility-nav,
   }
   .md\:w-1\/2{
     width: 50%;
+  }
+  .md\:w-60{
+    width: 15rem;
   }
   .md\:basis-\[200px\]{
     -webkit-flex-basis: 200px;
