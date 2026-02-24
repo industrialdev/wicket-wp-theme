@@ -94088,6 +94088,7 @@ main .wp-block-columns:has(.wp-block-column .wp-block-wicket-sidebar-contextual-
 
 .woocommerce {
   /* Notices Wrapper */
+  /* Hide CTA's on empty states */
 }
 .woocommerce > *{
   width: 100%;
@@ -94127,6 +94128,23 @@ main .wp-block-columns:has(.wp-block-column .wp-block-wicket-sidebar-contextual-
 }
 .woocommerce .woocommerce-notices-wrapper {
   font-size: var(--heading-sm-font-size);
+}
+.woocommerce .return-to-shop .wc-backward,
+.woocommerce .woocommerce-info .wc-forward{
+  display: none;
+}
+form .wicket-form-help-text.woocommerce .return-to-shop .wc-backward,
+form p.wicket-form-help-text.woocommerce .return-to-shop .wc-backward,
+.form .wicket-form-help-text.woocommerce .return-to-shop .wc-backward,
+.form p.wicket-form-help-text.woocommerce .return-to-shop .wc-backward,form .wicket-form-help-text
+.woocommerce .woocommerce-info .wc-forward,
+form p.wicket-form-help-text
+.woocommerce .woocommerce-info .wc-forward,
+.form .wicket-form-help-text
+.woocommerce .woocommerce-info .wc-forward,
+.form p.wicket-form-help-text
+.woocommerce .woocommerce-info .wc-forward {
+  display: none;
 }
 
 .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) #respond input#submit,

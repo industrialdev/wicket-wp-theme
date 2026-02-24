@@ -12,4 +12,10 @@
   .woocommerce-notices-wrapper {
     font-size: var(--heading-sm-font-size);
   }
+
+  /* Hide CTA's on empty states */
+  .return-to-shop .wc-backward,
+  .woocommerce-info .wc-forward {
+    @apply hidden;
+  }
 }
