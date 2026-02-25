@@ -35,7 +35,7 @@
                 "class": "",
                 "id": ""
             },
-            "wpml_cf_preferences": 0,
+            "wpml_cf_preferences": 1,
             "layout": "table",
             "pagination": 0,
             "min": 0,
@@ -58,7 +58,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "wpml_cf_preferences": 0,
+                    "wpml_cf_preferences": 1,
                     "default_value": "",
                     "enable_opacity": 0,
                     "return_format": "string",
