@@ -418,7 +418,13 @@ if (class_exists('WooCommerce')) {
                         <!-- Start Nav Item -->
                         <li class="main-nav__dropdown-menu-item" :class="navDropdownOpen ? 'open' : ''"
                             x-data="{ navDropdownOpen: false }"
-                            x-on:click="navDropdownOpen = ! navDropdownOpen; $dispatch('close-nav-dropdowns')" <?php // If the sending element isn't this element, close dropdown
+                            tabindex="0"
+                            role="button"
+                            :aria-expanded="navDropdownOpen"
+                            aria-haspopup="true"
+                            x-on:click="navDropdownOpen = ! navDropdownOpen; $dispatch('close-nav-dropdowns')"
+                            x-on:keydown.enter.prevent="navDropdownOpen = ! navDropdownOpen; $dispatch('close-nav-dropdowns')"
+                            x-on:keydown.space.prevent="navDropdownOpen = ! navDropdownOpen; $dispatch('close-nav-dropdowns')" <?php // If the sending element isn't this element, close dropdown
                                                                                                                     ?> x-on:close-nav-dropdowns.window="
 					if( $event.target !== $el ) {navDropdownOpen = false}">
                             <span><?php echo $primary_nav_item['title']; ?></span><i class="fa-solid fa-caret-down ml-2"></i>
@@ -458,7 +464,13 @@ if (class_exists('WooCommerce')) {
                         <!-- Start Nav Item -->
                         <li class="main-nav__mega-menu-item" x-data="{ navDropdownOpen: false }"
                             :class="navDropdownOpen ? 'open' : ''"
-                            x-on:click="navDropdownOpen = ! navDropdownOpen; $dispatch('close-nav-dropdowns')" <?php // If the sending element isn't this element, close dropdown
+                            tabindex="0"
+                            role="button"
+                            :aria-expanded="navDropdownOpen"
+                            aria-haspopup="true"
+                            x-on:click="navDropdownOpen = ! navDropdownOpen; $dispatch('close-nav-dropdowns')"
+                            x-on:keydown.enter.prevent="navDropdownOpen = ! navDropdownOpen; $dispatch('close-nav-dropdowns')"
+                            x-on:keydown.space.prevent="navDropdownOpen = ! navDropdownOpen; $dispatch('close-nav-dropdowns')" <?php // If the sending element isn't this element, close dropdown
                                                                                                                     ?> x-on:close-nav-dropdowns.window="
 					if( $event.target !== $el ) {navDropdownOpen = false}">
                             <span><?php echo $primary_nav_item['title']; ?></span><i class="fa-solid fa-caret-down ml-2"></i>
