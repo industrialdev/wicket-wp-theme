@@ -13,7 +13,7 @@ main {
       margin-bottom: 0;
     }
 
-        @media (min-width: $wicket-breakpoint-xl) {
+    @media (min-width: $wicket-breakpoint-xl) {
       max-width: var(--wp--style--global--content-size);
     }
 

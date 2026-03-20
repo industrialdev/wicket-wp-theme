@@ -26,6 +26,23 @@ a:where(:not(.wp-element-button)) {
 // Extend tailwind container
 .container {
   @include container-adjustments;
+
+  // Add horizontal padding on specific breakpoints to prevent content from touching the edges of the viewport
+  @media (min-width: $wicket-breakpoint-xl) and (max-width: ($wicket-breakpoint-xl + 20px)) {
+    @apply px-3;
+  }
+
+  @media (min-width: 1280px) and (max-width: 1300px) {
+    @apply px-3;
+  }
+  
+  @media (min-width: 1024px) and (max-width: 1044px) {
+    @apply px-3;
+  }
+
+  @media (min-width: 768px) and (max-width: 788px) {
+    @apply px-3;
+  }
 }
 
 /* AlpineJS Helpers */

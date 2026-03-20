@@ -90071,6 +90071,30 @@ a:where(:not(.wp-element-button)):active{
     max-width: var(--wp--style--global--content-size) !important;
   }
 }
+@media (min-width: 1536px) and (max-width: 1556px) {
+  .container{
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+@media (min-width: 1280px) and (max-width: 1300px) {
+  .container{
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1044px) {
+  .container{
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 788px) {
+  .container{
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
 
 /* AlpineJS Helpers */
 [x-cloak] {
@@ -90829,6 +90853,30 @@ a:where(:not(.wp-element-button)):active{
 @media (min-width: 1536px) {
   .component-card-call-out main {
     max-width: var(--wp--style--global--content-size);
+  }
+}
+@media (min-width: 1536px) and (max-width: 1556px) {
+  .component-card-call-out{
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+@media (min-width: 1280px) and (max-width: 1300px) {
+  .component-card-call-out{
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1044px) {
+  .component-card-call-out{
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 788px) {
+  .component-card-call-out{
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
   }
 }
 .component-card-call-out__title{
@@ -93245,6 +93293,35 @@ main *[class*=wp-block]{
     max-width: 1536px;
   }
   main *[class*=wp-block] main {
+    max-width: var(--wp--style--global--content-size);
+  }
+}
+@media (min-width: 1536px) and (max-width: 1556px) {
+  main *[class*=wp-block]{
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+@media (min-width: 1280px) and (max-width: 1300px) {
+  main *[class*=wp-block]{
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1044px) {
+  main *[class*=wp-block]{
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 788px) {
+  main *[class*=wp-block]{
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+@media (min-width: 1536px) {
+  main *[class*=wp-block] main {
     max-width: var(--wp--style--global--content-size) !important;
   }
 }
@@ -94020,6 +94097,95 @@ main .wp-block-columns:has(.wp-block-column .wp-block-wicket-sidebar-contextual-
 .tribe-events-pg-template .tribe-link-view-attendee main,
 .tribe-events-pg-template .tribe-events-single main,
 .tribe-events-pg-template .tribe-common main {
+    max-width: var(--wp--style--global--content-size);
+  }
+}
+@media (min-width: 1536px) and (max-width: 1556px) {
+  #tribe-events-pg-template .tribe-events-back, #tribe-events-pg-template .tribe-events-single-event-title,
+#tribe-events-pg-template #tribe-events-footer, #tribe-events-pg-template .tribe-block, #tribe-events-pg-template .tribe-events-schedule,
+#tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map),
+#tribe-events-pg-template .tribe-related-events,
+#tribe-events-pg-template .tribe-link-view-attendee,
+#tribe-events-pg-template .tribe-events-single,
+#tribe-events-pg-template .tribe-common, .tribe-events-pg-template .tribe-events-back, .tribe-events-pg-template .tribe-events-single-event-title,
+.tribe-events-pg-template #tribe-events-footer, .tribe-events-pg-template .tribe-block, .tribe-events-pg-template .tribe-events-schedule,
+.tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map),
+.tribe-events-pg-template .tribe-related-events,
+.tribe-events-pg-template .tribe-link-view-attendee,
+.tribe-events-pg-template .tribe-events-single,
+.tribe-events-pg-template .tribe-common{
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+@media (min-width: 1280px) and (max-width: 1300px) {
+  #tribe-events-pg-template .tribe-events-back, #tribe-events-pg-template .tribe-events-single-event-title,
+#tribe-events-pg-template #tribe-events-footer, #tribe-events-pg-template .tribe-block, #tribe-events-pg-template .tribe-events-schedule,
+#tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map),
+#tribe-events-pg-template .tribe-related-events,
+#tribe-events-pg-template .tribe-link-view-attendee,
+#tribe-events-pg-template .tribe-events-single,
+#tribe-events-pg-template .tribe-common, .tribe-events-pg-template .tribe-events-back, .tribe-events-pg-template .tribe-events-single-event-title,
+.tribe-events-pg-template #tribe-events-footer, .tribe-events-pg-template .tribe-block, .tribe-events-pg-template .tribe-events-schedule,
+.tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map),
+.tribe-events-pg-template .tribe-related-events,
+.tribe-events-pg-template .tribe-link-view-attendee,
+.tribe-events-pg-template .tribe-events-single,
+.tribe-events-pg-template .tribe-common{
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1044px) {
+  #tribe-events-pg-template .tribe-events-back, #tribe-events-pg-template .tribe-events-single-event-title,
+#tribe-events-pg-template #tribe-events-footer, #tribe-events-pg-template .tribe-block, #tribe-events-pg-template .tribe-events-schedule,
+#tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map),
+#tribe-events-pg-template .tribe-related-events,
+#tribe-events-pg-template .tribe-link-view-attendee,
+#tribe-events-pg-template .tribe-events-single,
+#tribe-events-pg-template .tribe-common, .tribe-events-pg-template .tribe-events-back, .tribe-events-pg-template .tribe-events-single-event-title,
+.tribe-events-pg-template #tribe-events-footer, .tribe-events-pg-template .tribe-block, .tribe-events-pg-template .tribe-events-schedule,
+.tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map),
+.tribe-events-pg-template .tribe-related-events,
+.tribe-events-pg-template .tribe-link-view-attendee,
+.tribe-events-pg-template .tribe-events-single,
+.tribe-events-pg-template .tribe-common{
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 788px) {
+  #tribe-events-pg-template .tribe-events-back, #tribe-events-pg-template .tribe-events-single-event-title,
+#tribe-events-pg-template #tribe-events-footer, #tribe-events-pg-template .tribe-block, #tribe-events-pg-template .tribe-events-schedule,
+#tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map),
+#tribe-events-pg-template .tribe-related-events,
+#tribe-events-pg-template .tribe-link-view-attendee,
+#tribe-events-pg-template .tribe-events-single,
+#tribe-events-pg-template .tribe-common, .tribe-events-pg-template .tribe-events-back, .tribe-events-pg-template .tribe-events-single-event-title,
+.tribe-events-pg-template #tribe-events-footer, .tribe-events-pg-template .tribe-block, .tribe-events-pg-template .tribe-events-schedule,
+.tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map),
+.tribe-events-pg-template .tribe-related-events,
+.tribe-events-pg-template .tribe-link-view-attendee,
+.tribe-events-pg-template .tribe-events-single,
+.tribe-events-pg-template .tribe-common{
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+@media (min-width: 1536px) {
+  #tribe-events-pg-template .tribe-events-back main, #tribe-events-pg-template .tribe-events-single-event-title main,
+  #tribe-events-pg-template #tribe-events-footer main, #tribe-events-pg-template .tribe-block main, #tribe-events-pg-template .tribe-events-schedule main,
+  #tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map) main,
+  #tribe-events-pg-template .tribe-related-events main,
+  #tribe-events-pg-template .tribe-link-view-attendee main,
+  #tribe-events-pg-template .tribe-events-single main,
+  #tribe-events-pg-template .tribe-common main, .tribe-events-pg-template .tribe-events-back main, .tribe-events-pg-template .tribe-events-single-event-title main,
+  .tribe-events-pg-template #tribe-events-footer main, .tribe-events-pg-template .tribe-block main, .tribe-events-pg-template .tribe-events-schedule main,
+  .tribe-events-pg-template *[class*=tribe-block__]:not(.tribe-block__venue__meta):not(.tribe-block__venue__map) main,
+  .tribe-events-pg-template .tribe-related-events main,
+  .tribe-events-pg-template .tribe-link-view-attendee main,
+  .tribe-events-pg-template .tribe-events-single main,
+  .tribe-events-pg-template .tribe-common main {
     max-width: var(--wp--style--global--content-size) !important;
   }
 }
@@ -94068,6 +94234,39 @@ main .wp-block-columns:has(.wp-block-column .wp-block-wicket-sidebar-contextual-
   .single-tribe_events #tribe-events-content.tribe-blocks-editor .tribe-events-event-meta{
     max-width: 1536px;
   }
+  .single-tribe_events #tribe-events-content.tribe-blocks-editor .tribe-events-event-meta main {
+    max-width: var(--wp--style--global--content-size);
+  }
+}
+
+@media (min-width: 1536px) and (max-width: 1556px) {
+  .single-tribe_events #tribe-events-content.tribe-blocks-editor .tribe-events-event-meta{
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1300px) {
+  .single-tribe_events #tribe-events-content.tribe-blocks-editor .tribe-events-event-meta{
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1044px) {
+  .single-tribe_events #tribe-events-content.tribe-blocks-editor .tribe-events-event-meta{
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 788px) {
+  .single-tribe_events #tribe-events-content.tribe-blocks-editor .tribe-events-event-meta{
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+@media (min-width: 1536px) {
   .single-tribe_events #tribe-events-content.tribe-blocks-editor .tribe-events-event-meta main {
     max-width: var(--wp--style--global--content-size) !important;
   }
@@ -94121,6 +94320,30 @@ main .wp-block-columns:has(.wp-block-column .wp-block-wicket-sidebar-contextual-
   }
   .woocommerce > * main {
     max-width: var(--wp--style--global--content-size);
+  }
+}
+@media (min-width: 1536px) and (max-width: 1556px) {
+  .woocommerce > *{
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+@media (min-width: 1280px) and (max-width: 1300px) {
+  .woocommerce > *{
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1044px) {
+  .woocommerce > *{
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 788px) {
+  .woocommerce > *{
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
   }
 }
 .woocommerce .woocommerce-notice {
@@ -94936,6 +95159,34 @@ form.woocommerce-checkout .variation-TeamName {
   }
   .woocommerce-shop .woocommerce.columns-4 main {
     max-width: var(--wp--style--global--content-size);
+  }
+}
+
+@media (min-width: 1536px) and (max-width: 1556px) {
+  .woocommerce-shop .woocommerce.columns-4{
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1300px) {
+  .woocommerce-shop .woocommerce.columns-4{
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1044px) {
+  .woocommerce-shop .woocommerce.columns-4{
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 788px) {
+  .woocommerce-shop .woocommerce.columns-4{
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
   }
 }
 
@@ -96146,6 +96397,34 @@ div.job_listings ul.job_listings li.job_listing .company_logo{
   }
   .single_job_listing main {
     max-width: var(--wp--style--global--content-size);
+  }
+}
+
+@media (min-width: 1536px) and (max-width: 1556px) {
+  .single_job_listing{
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1300px) {
+  .single_job_listing{
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1044px) {
+  .single_job_listing{
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 788px) {
+  .single_job_listing{
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
   }
 }
 
