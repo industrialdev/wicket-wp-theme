@@ -35,6 +35,7 @@ const fontSize = theme.settings.typography.fontSizes.reduce(
 
 const customThemeJsonSettings = theme.settings.custom
 const boxShadow = customThemeJsonSettings['box-shadow']
+const borderRadius = customThemeJsonSettings['border-radius']
 const layout = customThemeJsonSettings.layout
 const letterSpacing = customThemeJsonSettings['letter-spacing']
 const lineHeight = customThemeJsonSettings['line-height']
@@ -69,6 +70,7 @@ module.exports = {
   theme: {
     extend: {
       boxShadow: boxShadow,
+      borderRadius: borderRadius,
       width: layout,
       lineHeight: lineHeight,
       aspectRatio: {
@@ -99,6 +101,7 @@ module.exports = {
     {pattern: /(opacity)-./},
     // Adding styles to safelist for usage on Blocks in Editor:
     {pattern: /(rounded)-./},
+    {pattern: /rounded-(t|r|b|l|tl|tr|br|bl)-.+/},
     {pattern: /(shadow)-./},
     {pattern: /(drop-shadow)-./},
     {pattern: /(gradient)-./},
