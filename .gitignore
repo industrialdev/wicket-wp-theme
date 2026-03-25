@@ -7,7 +7,12 @@
 debug.log
 .php-cs-fixer.cache
 .php-cs-fixer.cache
+# Yarn PnP and cache artifacts
+.pnp.cjs
+.pnp.loader.mjs
+.yarn/releases/
 .yarn/install-state.gz
+.yarn/unplugged/
 
 # Dependency directories
 node_modules
