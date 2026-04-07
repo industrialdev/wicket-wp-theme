@@ -3,7 +3,7 @@
     @apply rounded-[--card-corner-radius];
   }
 
-  *[class*=wp-block]:not(.wp-block-cover__inner-container) {
+  *[class*=wp-block]:not(.wp-block-cover__inner-container):not(.wp-block-post-title) {
     @apply max-w-none #{!important};
   }
 
