@@ -94540,7 +94540,7 @@ li img {
   -webkit-border-radius: var(--card-corner-radius);
   border-radius: var(--card-corner-radius);
 }
-.wp-block-cover *[class*=wp-block]:not(.wp-block-cover__inner-container){
+.wp-block-cover *[class*=wp-block]:not(.wp-block-cover__inner-container):not(.wp-block-post-title){
   max-width: none !important;
 }
 .wp-block-cover .wp-block-paragraph > p{
@@ -95827,7 +95827,8 @@ form.woocommerce-checkout .variation-TeamName {
   border: none;
 }
 
-.woocommerce-shop .woocommerce.columns-4{
+.woocommerce-shop .woocommerce.columns-4 {
+  padding: 1rem 0;
   width: 100%;
   margin-right: auto;
   margin-left: auto;
@@ -95892,10 +95893,6 @@ form.woocommerce-checkout .variation-TeamName {
     padding-left: 0.75rem;
     padding-right: 0.75rem;
   }
-}
-
-.woocommerce-shop .woocommerce.columns-4 {
-  padding: 1rem 0;
 }
 @media (min-width: 1536px) {
   .woocommerce-shop .woocommerce.columns-4 main {

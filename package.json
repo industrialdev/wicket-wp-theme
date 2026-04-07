@@ -1,4 +1,12 @@
 {
+  "scripts": {
+    "build": "gulp build",
+    "watch": "gulp watch",
+    "serve": "gulp serve",
+    "sass": "gulp sass",
+    "scripts": "gulp scripts",
+    "images": "gulp images"
+  },
   "devDependencies": {
     "@tailwindcss/container-queries": "^0.1.1",
     "browser-sync": "^3.0.2",

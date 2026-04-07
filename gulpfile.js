@@ -35,6 +35,7 @@ function sassTask() {
     .pipe(sass({
       outputStyle: 'expanded',
       includePaths: ['node_modules'],
+      silenceDeprecations: ['legacy-js-api', 'import', 'mixed-decls'],
     }))
     .on('error', onError)
     .pipe(postcss([tailwindcss]))
@@ -60,6 +61,7 @@ function minSass() {
     .pipe(sourcemaps.init())
     .pipe(sass({
       outputStyle: 'compressed',
+      silenceDeprecations: ['legacy-js-api', 'import', 'mixed-decls'],
     }))
     .on('error', onError)
     .pipe(autoprefixer({
@@ -107,7 +109,7 @@ function scriptsTask() {
   return gulp.src(srcPath + assetPath + '/scripts/' + '*.js')
     .pipe(gulpIgnore.exclude(adminScripts))
     .pipe(plumber())
-    .pipe(webpack({}))
+    .pipe(webpack({ mode: 'production' }))
     .pipe(concat(scriptName + '.js'))
     .pipe(insert.wrap('(function($){\n\n', '\n\n})(jQuery);'))
     .on('error', onError)

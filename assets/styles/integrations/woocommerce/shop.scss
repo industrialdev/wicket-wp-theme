@@ -1,7 +1,7 @@
 .woocommerce-shop {
   .woocommerce.columns-4 {
-    @include the-container;
     padding: 1rem 0;
+    @include the-container;
   }
 
   ul.products {
