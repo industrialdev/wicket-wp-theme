@@ -1,5 +1,9 @@
 # Wicket WordPress Theme
 
+## Documentation
+
+For complete documentation, see **[docs/index.md](docs/index.md)**.
+
 ## Dev Environment Setup Notes
 * Clone repo
 * Run `yarn` to install node dependencies
