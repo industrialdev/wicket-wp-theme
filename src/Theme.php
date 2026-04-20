@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace WicketTheme;
 
 /**
- * Theme utility class
+ * Theme utility class.
  */
 class Theme
 {

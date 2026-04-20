@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 use WicketTheme\Theme;
 
 /**
- * Theme class tests
+ * Theme class tests.
  */
 class ThemeTest extends TestCase
 {
