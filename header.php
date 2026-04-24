@@ -60,6 +60,11 @@ $default_account_path = $lang == 'fr' ? '/fr/create-account' : '/create-account'
  ** "Member Portal" link.
  */
 $member_portal_button_style = get_field('member_portal_button_style', 'options') ?? 'secondary';
+$member_portal_button_label = apply_filters(
+    'wicket_member_portal_button_label',
+    __('Member Portal', 'wicket'),
+    $nav_state
+);
 
 /**
  ** "Login/Logout" link.
@@ -267,7 +272,7 @@ if ($nav_state == 'logged_out') {
         'a_tag'   => true,
         'link'    => $account_center_landing,
         'classes' => ['member-portal-button', 'hidden', 'md:inline-flex'],
-        'label'   => __('Member Portal', 'wicket'),
+        'label'   => $member_portal_button_label,
         'atts'    => ['x-show="! searchOpen"', 'x-cloak'],
     ]);
 }
@@ -572,7 +577,7 @@ if ($nav_state == 'logged_out') {
         'a_tag'   => true,
         'link'    => $account_center_landing,
         'classes' => ['member-portal-button-mobile', 'w-full', 'mb-3', 'justify-center'],
-        'label'   => __('Member Portal', 'wicket'),
+        'label'   => $member_portal_button_label,
     ]);
 }
 ?>
