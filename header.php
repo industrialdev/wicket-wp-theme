@@ -57,6 +57,23 @@ $logo_url = $logo['url'] ?? get_template_directory_uri() . '/assets/images/logo-
 $default_account_path = $lang == 'fr' ? '/fr/create-account' : '/create-account';
 
 /**
+ * User state for knowing which kind of user is logged in (or not).
+ */
+$nav_state = 'logged_out'; // logged_out, logged_in_user, logged_in_member
+if (is_user_logged_in()) {
+    $nav_state = 'logged_in_user';
+
+    $user = wp_get_current_user();
+    if (in_array('member', (array) $user->roles)) {
+        $nav_state = 'logged_in_member';
+    }
+
+    if (in_array('administrator', (array) $user->roles)) {
+        $nav_state = 'logged_in_member';
+    }
+}
+
+/**
  ** "Member Portal" link.
  */
 $member_portal_button_style = get_field('member_portal_button_style', 'options') ?? 'secondary';
@@ -126,19 +143,6 @@ if ($acc_index_url) {
 $referrer = isset($_GET['referrer']) ? wicket_get_site_root_url() . $_GET['referrer'] . $locale : $acc_index_url;
 
 $cart_path = $lang == 'fr' ? '/fr/cart' : '/cart';
-$nav_state = 'logged_out'; // Will be one of logged_out, logged_in_user, logged_in_member
-if (is_user_logged_in()) {
-    $nav_state = 'logged_in_user';
-
-    $user = wp_get_current_user();
-    if (in_array('member', (array) $user->roles)) {
-        $nav_state = 'logged_in_member';
-    }
-
-    if (in_array('administrator', (array) $user->roles)) {
-        $nav_state = 'logged_in_member';
-    }
-}
 
 // Grab Menus
 $theme_locations = get_nav_menu_locations();
