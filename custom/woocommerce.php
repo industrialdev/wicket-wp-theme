@@ -10,6 +10,9 @@ add_filter('woocommerce_order_item_permalink', '__return_false');
 // Remove product link in cart item list
 add_filter('woocommerce_cart_item_permalink', '__return_false');
 
+// Remove ability for users to resubscibe to expired subscriptions
+add_filter( 'wcs_can_user_resubscribe_to_subscription', '__return_false');
+
 // when redirected to a checkout disable the "X added to cart, continue shopping?" message
 add_filter('wc_add_to_cart_message_html', '__return_false');
 
