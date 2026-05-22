@@ -102,6 +102,7 @@ get_component('button', [
     'a_tag'   => true,
     'link'    => $acc_index_url,
     'label'   => __('Go to Member Portal', 'wicket'),
+    'classes' => ['!mb-8'],
 ]);
 
 ?>

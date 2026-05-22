@@ -8,6 +8,17 @@
   font-weight: 500;
 }
 
+// Gravity Forms page-break navigation + submit buttons use the theme's
+// secondary (outlined) variant rather than the GF default look.
+.gform_wrapper {
+  .gform_previous_button,
+  .gform_next_button,
+  .gform_button {
+    @include button-base;
+    @include button-secondary;
+  }
+}
+
 .wicket-form {
   .wicket-form-input-wrapper {
     position: relative;

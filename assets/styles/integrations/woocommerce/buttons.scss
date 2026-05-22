@@ -27,3 +27,17 @@ form.woocommerce-checkout .woocommerce-checkout-payment #place_order {
   width: 100%;
   margin-top: 2rem;
 }
+
+// Ensure the theme button component's primary variant wins inside WC
+// containers. WC's default `.woocommerce a.button` (0,2,1) outranks the
+// component's `.button--primary:not(.button--reversed)` (0,2,0) and would
+// otherwise repaint our primary CTAs (e.g. the "Go to Member Portal" link
+// on the order-received page) with WC's gray-pill defaults.
+// Attribute-selector form sidesteps Tailwind's @apply circular-dep guard
+// that fires whenever `.button--primary` appears in a selector that uses
+// the button-primary mixin (which @applies Tailwind utilities).
+.woocommerce a[class~="button--primary"]:not([class~="button--reversed"]),
+.woocommerce button[class~="button--primary"]:not([class~="button--reversed"]),
+.woocommerce input[class~="button--primary"]:not([class~="button--reversed"]) {
+  @include button-primary;
+}
