@@ -96498,6 +96498,51 @@ form p.wicket-form-help-text.woocommerce-shop ul.products li.product .wp-block-p
   display: -ms-inline-flexbox;
   display: inline-flex;
 }
+.gform_wrapper .gform_previous_button.wp-block-product-category.wc-block-grid .wc-block-grid__product-add-to-cart.wp-block-button .wp-block-button__link,
+.gform_wrapper .gform_next_button.wp-block-product-category.wc-block-grid .wc-block-grid__product-add-to-cart.wp-block-button .wp-block-button__link,
+.gform_wrapper .gform_button.wp-block-product-category.wc-block-grid .wc-block-grid__product-add-to-cart.wp-block-button .wp-block-button__link{
+  -webkit-border-radius: var(--interactive-corner-radius-md);
+  border-radius: var(--interactive-corner-radius-md);
+  border-style: solid;
+  padding: var(--space-200);
+  font-size: var(--button-label-md-font-size);
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+  font-family: var(--button-label-md-font-family);
+  font-weight: var(--button-label-md-font-weight);
+  line-height: var(--button-label-md-line-height);
+  border-width: var(--border-interactive-md) !important;
+  border-color: var(--border-interactive) !important;
+  background-color: transparent !important;
+  color: var(--text-button-label) !important;
+}
+.gform_wrapper .gform_previous_button.wp-block-product-category.wc-block-grid .wc-block-grid__product-add-to-cart.wp-block-button .wp-block-button__link .component-icon,
+.gform_wrapper .gform_next_button.wp-block-product-category.wc-block-grid .wc-block-grid__product-add-to-cart.wp-block-button .wp-block-button__link .component-icon,
+.gform_wrapper .gform_button.wp-block-product-category.wc-block-grid .wc-block-grid__product-add-to-cart.wp-block-button .wp-block-button__link .component-icon{
+  font-size: 16px;
+}
+.gform_wrapper .gform_previous_button.wp-block-product-category.wc-block-grid .wc-block-grid__product-add-to-cart.wp-block-button .wp-block-button__link:hover,
+.gform_wrapper .gform_next_button.wp-block-product-category.wc-block-grid .wc-block-grid__product-add-to-cart.wp-block-button .wp-block-button__link:hover,
+.gform_wrapper .gform_button.wp-block-product-category.wc-block-grid .wc-block-grid__product-add-to-cart.wp-block-button .wp-block-button__link:hover{
+  background-color: var(--bg-interactive) !important;
+  color: var(--text-button-label-reversed) !important;
+  -webkit-text-decoration-line: underline !important;
+  text-decoration-line: underline !important;
+}
+.gform_wrapper .gform_previous_button.wp-block-product-category.wc-block-grid .wc-block-grid__product-add-to-cart.wp-block-button .wp-block-button__link:focus,
+.gform_wrapper .gform_next_button.wp-block-product-category.wc-block-grid .wc-block-grid__product-add-to-cart.wp-block-button .wp-block-button__link:focus,
+.gform_wrapper .gform_button.wp-block-product-category.wc-block-grid .wc-block-grid__product-add-to-cart.wp-block-button .wp-block-button__link:focus{
+  background-color: var(--highlight-dark) !important;
+  color: var(--text-button-label-reversed) !important;
+  -webkit-text-decoration-line: underline !important;
+  text-decoration-line: underline !important;
+}
+.gform_wrapper .gform_previous_button.wp-block-product-category.wc-block-grid .wc-block-grid__product-add-to-cart.wp-block-button .wp-block-button__link:active,
+.gform_wrapper .gform_next_button.wp-block-product-category.wc-block-grid .wc-block-grid__product-add-to-cart.wp-block-button .wp-block-button__link:active,
+.gform_wrapper .gform_button.wp-block-product-category.wc-block-grid .wc-block-grid__product-add-to-cart.wp-block-button .wp-block-button__link:active{
+  background-color: var(--highlight-dark) !important;
+  color: var(--text-button-label-reversed) !important;
+}
 
 .wc-block-product{
   position: relative;
@@ -97350,9 +97395,9 @@ main {
   font-weight: 500;
 }
 
-.gform_wrapper .gform_previous_button,
-.gform_wrapper .gform_next_button,
-.gform_wrapper .gform_button{
+.gform_wrapper .gform_previous_button.button,
+.gform_wrapper .gform_next_button.button,
+.gform_wrapper .gform_button.button{
   -webkit-border-radius: var(--interactive-corner-radius-md);
   border-radius: var(--interactive-corner-radius-md);
   border-style: solid;
@@ -97363,40 +97408,37 @@ main {
   font-family: var(--button-label-md-font-family);
   font-weight: var(--button-label-md-font-weight);
   line-height: var(--button-label-md-line-height);
-  border-width: var(--border-interactive-md);
-  border-color: var(--border-interactive);
-  background-color: transparent;
-  color: var(--text-button-label);
+  border-width: var(--border-interactive-md) !important;
+  border-color: var(--border-interactive) !important;
+  background-color: transparent !important;
+  color: var(--text-button-label) !important;
 }
-
-.gform_wrapper .gform_previous_button:hover,
-.gform_wrapper .gform_next_button:hover,
-.gform_wrapper .gform_button:hover{
-  background-color: var(--bg-interactive);
-  color: var(--text-button-label-reversed);
-  -webkit-text-decoration-line: underline;
-  text-decoration-line: underline;
-}
-
-.gform_wrapper .gform_previous_button:focus,
-.gform_wrapper .gform_next_button:focus,
-.gform_wrapper .gform_button:focus{
-  background-color: var(--highlight-dark);
-  color: var(--text-button-label-reversed);
-  -webkit-text-decoration-line: underline;
-  text-decoration-line: underline;
-}
-
-.gform_wrapper .gform_previous_button:active,
-.gform_wrapper .gform_next_button:active,
-.gform_wrapper .gform_button:active{
-  background-color: var(--highlight-dark);
-  color: var(--text-button-label-reversed);
-}
-.gform_wrapper .gform_previous_button .component-icon,
-.gform_wrapper .gform_next_button .component-icon,
-.gform_wrapper .gform_button .component-icon{
+.gform_wrapper .gform_previous_button.button .component-icon,
+.gform_wrapper .gform_next_button.button .component-icon,
+.gform_wrapper .gform_button.button .component-icon{
   font-size: 16px;
+}
+.gform_wrapper .gform_previous_button.button:hover,
+.gform_wrapper .gform_next_button.button:hover,
+.gform_wrapper .gform_button.button:hover{
+  background-color: var(--bg-interactive) !important;
+  color: var(--text-button-label-reversed) !important;
+  -webkit-text-decoration-line: underline !important;
+  text-decoration-line: underline !important;
+}
+.gform_wrapper .gform_previous_button.button:focus,
+.gform_wrapper .gform_next_button.button:focus,
+.gform_wrapper .gform_button.button:focus{
+  background-color: var(--highlight-dark) !important;
+  color: var(--text-button-label-reversed) !important;
+  -webkit-text-decoration-line: underline !important;
+  text-decoration-line: underline !important;
+}
+.gform_wrapper .gform_previous_button.button:active,
+.gform_wrapper .gform_next_button.button:active,
+.gform_wrapper .gform_button.button:active{
+  background-color: var(--highlight-dark) !important;
+  color: var(--text-button-label-reversed) !important;
 }
 
 .wicket-form .wicket-form-input-wrapper {

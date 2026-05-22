@@ -9,13 +9,30 @@
 }
 
 // Gravity Forms page-break navigation + submit buttons use the theme's
-// secondary (outlined) variant rather than the GF default look.
+// secondary (outlined) variant rather than the GF default look. GF's
+// theme framework injects `.gform-theme-button--secondary` on Previous
+// and targets it at specificity ~(0,5,2), which would otherwise win.
+// Force-override via `!important` (SCSS `#{!important}` pattern used
+// elsewhere in this theme's mixins) — we're explicitly opting these
+// buttons out of GF's framework styling.
 .gform_wrapper {
-  .gform_previous_button,
-  .gform_next_button,
-  .gform_button {
+  .gform_previous_button.button,
+  .gform_next_button.button,
+  .gform_button.button {
     @include button-base;
-    @include button-secondary;
+    @apply bg-transparent border-[--border-interactive] border-[length:--border-interactive-md] text-[--text-button-label] #{!important};
+
+    &:hover {
+      @apply bg-[--bg-interactive] text-[--text-button-label-reversed] underline #{!important};
+    }
+
+    &:focus {
+      @apply bg-[--highlight-dark] text-[--text-button-label-reversed] underline #{!important};
+    }
+
+    &:active {
+      @apply bg-[--highlight-dark] text-[--text-button-label-reversed] #{!important};
+    }
   }
 }
 
