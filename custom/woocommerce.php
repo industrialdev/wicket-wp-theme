@@ -85,6 +85,11 @@ add_action('wc_memberships_for_teams_team_created', 'alter_teams_data');
  * Example: https://www.example.com/cart/?add-to-cart=12345,43453
  * Example 2: https://www.example.com/cart/?add-to-cart=12345&quantity=3
  * Credit: https://www.webroomtech.com/woocommerce-add-multiple-products-to-cart-via-url/.
+ *
+ * Note: product references are resolved to numeric IDs upstream by
+ * webroom_normalize_skus_in_add_to_cart() (wp_loaded priority 5), so SKUs work
+ * here too. Any other add-to-cart handler running at the same priority (e.g. the
+ * Account Centre plugin) also benefits from that normalisation.
  */
 function webroom_add_multiple_products_to_cart($url = false)
 {
@@ -146,6 +151,75 @@ function webroom_add_multiple_products_to_cart($url = false)
 
 // Fire before the WC_Form_Handler::add_to_cart_action callback.
 add_action('wp_loaded', 'webroom_add_multiple_products_to_cart', 15);
+
+/**
+ * Resolve a product reference (numeric ID or SKU) to a numeric product ID.
+ *
+ * Numeric references pass through unchanged (back-compat with the existing
+ * ?add-to-cart=123,456 behaviour); non-numeric references are looked up as SKUs.
+ * Returns 0 when the reference cannot be resolved.
+ *
+ * @param string $ref Product ID or SKU.
+ *
+ * @return int
+ */
+function webroom_resolve_product_ref($ref)
+{
+    $ref = trim((string) $ref);
+    if ('' === $ref) {
+        return 0;
+    }
+
+    return is_numeric($ref) ? absint($ref) : (int) wc_get_product_id_by_sku($ref);
+}
+
+/**
+ * Normalise SKUs in the ?add-to-cart= parameter to numeric product IDs, before any
+ * add-to-cart handler runs.
+ *
+ * Every add-to-cart handler in play — WooCommerce's native single-product handler,
+ * this theme's webroom_add_multiple_products_to_cart(), and any plugin handler such
+ * as the Account Centre's wicket_ac_maybe_add_multiple_products_to_cart() — only
+ * understands numeric product IDs; a SKU is absint()'d to 0 and silently dropped.
+ * Rather than teaching each handler about SKUs (a plugin handler may run first and
+ * still win), we resolve every comma-separated token (numeric ID or SKU, with an
+ * optional <ref>:<qty> quantity) to a numeric ID here and rewrite the request.
+ * Downstream handlers then receive plain IDs and work unchanged, for both single
+ * and comma-separated SKU URLs.
+ *
+ * Runs at priority 5 so it precedes every add-to-cart handler (theme/plugin at 15,
+ * native WooCommerce at 20).
+ */
+function webroom_normalize_skus_in_add_to_cart()
+{
+    if (!class_exists('WooCommerce') || empty($_REQUEST['add-to-cart']) || !is_scalar($_REQUEST['add-to-cart'])) {
+        return;
+    }
+
+    $tokens = explode(',', (string) $_REQUEST['add-to-cart']);
+    $normalised = [];
+
+    foreach ($tokens as $token) {
+        // Preserve any curie-notation quantity suffix (<ref>:<qty>).
+        $parts = explode(':', $token, 2);
+        $product_id = webroom_resolve_product_ref($parts[0]);
+
+        if ($product_id <= 0) {
+            // Unknown SKU/ID: leave the original token untouched.
+            $normalised[] = $token;
+            continue;
+        }
+
+        $normalised[] = (isset($parts[1]) && $parts[1] !== '')
+            ? $product_id . ':' . $parts[1]
+            : (string) $product_id;
+    }
+
+    $value = implode(',', $normalised);
+    $_REQUEST['add-to-cart'] = $value;
+    $_GET['add-to-cart'] = $value;
+}
+add_action('wp_loaded', 'webroom_normalize_skus_in_add_to_cart', 5);
 
 // -------------------------------------------------------------------------------------
 // Add multiple coupons to cart
