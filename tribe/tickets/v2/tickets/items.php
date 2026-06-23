@@ -56,40 +56,53 @@ foreach ($tickets_on_sale as $key => $ticket) {
 
     $has_shared_cap = $handler->has_shared_capacity($ticket);
 
-    // test whether to display this specific ticket based on the wppcp settings on the ticket product, same way we protect pages
-    $visibility = get_post_meta($ticket->ID, '_wppcp_post_page_visibility', true);
-    $visibility_roles = get_post_meta($ticket->ID, '_wppcp_post_page_roles', true);
-    $can_see_this = false;
-    $message = '';
+    /*
+     * Decide whether the current user may see this specific ticket, based on the
+     * WP Private Content Plus restriction settings stored on the ticket's WooCommerce
+     * product. This mirrors the plugin's own protection_status() logic
+     * (plugins/wp-private-content-plus/classes/class-wppcp-private-posts-pages.php) so a
+     * restricted ticket is hidden entirely: no row and no message. Each ticket is
+     * evaluated independently, so an event can mix restricted and unrestricted tickets.
+     */
+    $visibility       = get_post_meta($ticket->ID, '_wppcp_post_page_visibility', true);
+    $visibility_roles = (array) get_post_meta($ticket->ID, '_wppcp_post_page_roles', true);
+    $allowed_users    = (array) get_post_meta($ticket->ID, '_wppcp_post_page_allowed_users', true);
 
-    if ($visibility == '' || $visibility == 'none' || $visibility == 'all' || $visibility == 'guest') {
-        $can_see_this = true;
+    switch ($visibility) {
+        case 'guest':
+            // Only logged-out visitors.
+            $can_see_this = !is_user_logged_in();
+            break;
+
+        case 'member':
+            // Any logged-in user.
+            $can_see_this = is_user_logged_in();
+            break;
+
+        case 'role':
+            // Logged-in users holding at least one of the allowed roles.
+            $can_see_this = is_user_logged_in()
+                && (bool) array_intersect($visibility_roles, (array) wp_get_current_user()->roles);
+            break;
+
+        case 'users':
+            // Logged-in users explicitly listed by ID.
+            $can_see_this = is_user_logged_in()
+                && in_array(get_current_user_id(), array_map('intval', $allowed_users), true);
+            break;
+
+        case '':
+        case 'none':
+        case 'all':
+        default:
+            // No restriction (or an unrecognised setting): visible to everyone.
+            $can_see_this = true;
+            break;
     }
 
-    if ($visibility == 'member' && !is_user_logged_in()) {
-        $message = 'You must be logged in to purchase this ticket';
-    }
-
-    if ($visibility == 'role') {
-        $message = 'You do not have the correct permissions to see this ticket';
-        $user = wp_get_current_user();
-        foreach ($visibility_roles as $role) {
-            if (in_array($role, $user->roles)) {
-                $can_see_this = true;
-                $message = '';
-            }
-        }
-    }
-
-    // check to see if the global ticket setting "Require users to log in before they purchase tickets" is checked
-    // from plugins/event-tickets/src/Tickets/Commerce/Module.php:308
-    $requirements = (array) tribe_get_option('ticket-authentication-requirements', []);
-    $requirements = in_array('event-tickets_all', $requirements, true);
-
-    // override above stuff if the global ticket setting is checked
-    if ($requirements) {
-        $message = '';
-        $can_see_this = true;
+    // Restricted ticket the current user cannot access: skip it entirely (no row, no message).
+    if (!$can_see_this) {
+        continue;
     }
 
     // check to see if there is a discount being added by the 'Role Based Pricing for WooCommerce' plugin
@@ -99,25 +112,19 @@ foreach ($tickets_on_sale as $key => $ticket) {
         $ticket->price = $new_price != false ? $new_price : $ticket->price;
     }
 
-    if ($can_see_this) {
-        $this->template(
-            'v2/tickets/item',
-            [
-                'ticket'              => $ticket,
-                'key'                 => $key,
-                'data_available'      => 0 === $handler->get_ticket_max_purchase($ticket->ID) ? 'false' : 'true',
-                'has_shared_cap'      => $has_shared_cap,
-                'data_has_shared_cap' => $has_shared_cap ? 'true' : 'false',
-                'currency_symbol'     => $currency->get_currency_symbol($ticket->ID, true),
-                'show_unlimited'      => (bool) $show_unlimited,
-                'available_count'     => $available_count,
-                'is_unlimited'        => -1 === $available_count,
-                'max_at_a_time'       => $handler->get_ticket_max_purchase($ticket->ID),
-            ]
-        );
-    }
-    // if there's a message, display it. This would be if the logic above is being utilized and that global setting isn't being used
-    if ($message && !$requirements) {
-        echo "<p>$message</p>";
-    }
+    $this->template(
+        'v2/tickets/item',
+        [
+            'ticket'              => $ticket,
+            'key'                 => $key,
+            'data_available'      => 0 === $handler->get_ticket_max_purchase($ticket->ID) ? 'false' : 'true',
+            'has_shared_cap'      => $has_shared_cap,
+            'data_has_shared_cap' => $has_shared_cap ? 'true' : 'false',
+            'currency_symbol'     => $currency->get_currency_symbol($ticket->ID, true),
+            'show_unlimited'      => (bool) $show_unlimited,
+            'available_count'     => $available_count,
+            'is_unlimited'        => -1 === $available_count,
+            'max_at_a_time'       => $handler->get_ticket_max_purchase($ticket->ID),
+        ]
+    );
 }
