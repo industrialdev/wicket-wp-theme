@@ -57,5 +57,4 @@ The inline CSS is cached in a transient (`{WICKET_THEME_PREFIX}css_customization
 
 ## Documentation Links
 
-- [Styling & Assets](engineering/styling-assets.md) — How CSS/JS are enqueued and generated
-- [Customize Colors and Fonts](../guides/customize-colors-fonts.md) — Step-by-step guide for implementers
+- [Customize Colors and Fonts](./customize-colors-fonts.md) — Step-by-step guide for implementers
