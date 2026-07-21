@@ -78,6 +78,27 @@ function wptarl_client_ip()
  */
 function wptarl_rest_api_init(WP_REST_Server $wp_rest_server)
 {
+    /**
+     * Master on/off switch for the API rate-limiter.
+     *
+     * Child themes can disable the limiter entirely when a site needs it off,
+     * for example a headless / decoupled storefront whose front-end makes many
+     * legitimate Store API calls per second and does its own throttling:
+     *
+     *     // In the child theme's functions.php
+     *     add_filter('wptarl_enabled', '__return_false');
+     *
+     * This is a deliberate, site-wide feature toggle: it short-circuits before
+     * any client-IP detection or transient bookkeeping runs. If you only need
+     * to exempt specific callers rather than turn the whole limiter off, leave
+     * this enabled and use the finer-grained filters below instead
+     * (wptarl_is_client_rate_limited, wptarl_rate_limited_ips,
+     * wptarl_seconds_between_api_calls).
+     */
+    if (!apply_filters('wptarl_enabled', true)) {
+        return;
+    }
+
     $request_uri = $_SERVER['REQUEST_URI'];
     $is_client_rate_limited = false;
     $transient_key = null;
