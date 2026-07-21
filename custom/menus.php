@@ -111,6 +111,8 @@ function wicket_get_all_parent_and_child_pages($post_id, $post_type = 'page')
         'post_status' => 'published',
         'post_type'   => $post_type,
         'post_parent' => $topmost_parent_id,
+        'orderby'     => 'menu_order',
+        'order'       => 'ASC',
     ], 'ARRAY_N');
     foreach ($post_children as $child_id => $child_data) {
         $children_ids_to_add[$child_id] = [];
@@ -131,6 +133,8 @@ function wicket_get_all_parent_and_child_pages($post_id, $post_type = 'page')
             'post_status' => 'published',
             'post_type'   => $post_type,
             'post_parent' => $sibling_id,
+            'orderby'     => 'menu_order',
+            'order'       => 'ASC',
         ], 'ARRAY_N');
         $sibling_children_to_add = [];
         foreach ($sibling_children as $sibling_child_id => $sibling_child_data) {
@@ -151,6 +155,8 @@ function wicket_get_all_parent_and_child_pages($post_id, $post_type = 'page')
                 'post_status' => 'published',
                 'post_type'   => $post_type,
                 'post_parent' => $sibling_2_id,
+                'orderby'     => 'menu_order',
+                'order'       => 'ASC',
             ], 'ARRAY_N');
             $sibling_children_to_add = [];
             foreach ($sibling_2_children as $sibling_child_id => $sibling_child_data) {
@@ -171,6 +177,8 @@ function wicket_get_all_parent_and_child_pages($post_id, $post_type = 'page')
                     'post_status' => 'published',
                     'post_type'   => $post_type,
                     'post_parent' => $sibling_3_id,
+                    'orderby'     => 'menu_order',
+                    'order'       => 'ASC',
                 ], 'ARRAY_N');
                 $sibling_children_to_add = [];
                 foreach ($sibling_3_children as $sibling_child_id => $sibling_child_data) {
@@ -191,6 +199,8 @@ function wicket_get_all_parent_and_child_pages($post_id, $post_type = 'page')
                         'post_status' => 'published',
                         'post_type'   => $post_type,
                         'post_parent' => $sibling_4_id,
+                        'orderby'     => 'menu_order',
+                        'order'       => 'ASC',
                     ], 'ARRAY_N');
                     $sibling_children_to_add = [];
                     foreach ($sibling_4_children as $sibling_child_id => $sibling_child_data) {
@@ -211,6 +221,8 @@ function wicket_get_all_parent_and_child_pages($post_id, $post_type = 'page')
                             'post_status' => 'published',
                             'post_type'   => $post_type,
                             'post_parent' => $sibling_5_id,
+                            'orderby'     => 'menu_order',
+                            'order'       => 'ASC',
                         ], 'ARRAY_N');
                         $sibling_children_to_add = [];
                         foreach ($sibling_5_children as $sibling_child_id => $sibling_child_data) {
