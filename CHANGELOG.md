@@ -5,6 +5,17 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 <!-- new releases inserted below this line -->
 
+## [2.1.36] - 2026-07-21
+
+### Documentation
+- add automated release process to AGENTS.md #norelease
+- self-contained release automation reference #norelease
+- add release automation reference #norelease
+
+### Other
+- Add wptarl_enabled filter to toggle the API rate-limiter
+
+
 ## [2.1.35] - 2026-07-09
 
 ### Added
