@@ -5,6 +5,12 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 <!-- new releases inserted below this line -->
 
+## [2.1.37] - 2026-07-21
+
+### Added
+- Sort page family tree by menu_order instead of publish date
+
+
 ## [2.1.36] - 2026-07-21
 
 ### Documentation
