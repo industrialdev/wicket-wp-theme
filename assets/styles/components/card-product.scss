@@ -35,24 +35,6 @@
       @include add-external-icon;
     }
 
-    .add_to_cart_button__text-added {
-      @apply hidden;
-    }
-
-    .add_to_cart_button__text {
-      @apply block;
-    }
-
-    &.added {
-      .add_to_cart_button__text-added {
-        @apply block;
-      }
-
-      .add_to_cart_button__text {
-        @apply hidden;
-      }
-    }
-
     &.button--disabled {
       @apply bg-[--bg-disabled] text-[--text-disabled] border-transparent #{!important};
     }
