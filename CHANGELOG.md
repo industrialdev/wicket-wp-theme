@@ -5,6 +5,12 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 <!-- new releases inserted below this line -->
 
+## [2.1.38] - 2026-07-27
+
+### Fixed
+- hide duplicate add-to-cart text on all WC archives
+
+
 ## [2.1.37] - 2026-07-21
 
 ### Added
