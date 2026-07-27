@@ -1,3 +1,30 @@
+// WooCommerce loop add-to-cart: the "Added to cart" confirmation span is
+// rendered in markup alongside the "Add to cart" text (see
+// woocommerce/loop/add-to-cart.php). Hide it until WooCommerce JS adds .added
+// to the button. Anchored on .add_to_cart_button (not on a page body class) so
+// it applies on every archive (shop, product category/tag, related, search),
+// not only .woocommerce-shop / .component-card-product.
+// Ref: https://industrialagency.slack.com/archives/C04C38RJU7R/p1784907857968179
+.add_to_cart_button {
+  .add_to_cart_button__text-added {
+    @apply hidden;
+  }
+
+  .add_to_cart_button__text {
+    @apply block;
+  }
+
+  &.added {
+    .add_to_cart_button__text-added {
+      @apply block;
+    }
+
+    .add_to_cart_button__text {
+      @apply hidden;
+    }
+  }
+}
+
 .woocommerce-shop {
   .woocommerce.columns-4 {
     padding: 1rem 0;
@@ -42,24 +69,6 @@
     
         &.product_type_external {
           @include add-external-icon;
-        }
-    
-        .add_to_cart_button__text-added {
-          @apply hidden;
-        }
-    
-        .add_to_cart_button__text {
-          @apply block;
-        }
-    
-        &.added {
-          .add_to_cart_button__text-added {
-            @apply block;
-          }
-    
-          .add_to_cart_button__text {
-            @apply hidden;
-          }
         }
     
         &.button--disabled {
