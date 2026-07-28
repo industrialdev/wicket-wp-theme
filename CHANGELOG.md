@@ -5,6 +5,12 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 <!-- new releases inserted below this line -->
 
+## [2.1.39] - 2026-07-28
+
+### Fixed
+- add gap between My Account orders table action buttons
+
+
 ## [2.1.38] - 2026-07-27
 
 ### Fixed
