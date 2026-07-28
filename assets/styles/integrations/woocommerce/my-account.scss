@@ -1,0 +1,10 @@
+// My Account > Orders table: action links ("View", "Invoice", etc.) render as
+// adjacent `<a class="button">` siblings with no wrapper. WC core zeroes
+// `.button` margin and ships no gap rule for this cell, so the buttons sit
+// flush against each other with no visual separation.
+.woocommerce-orders-table__cell-order-actions,
+table.my_account_orders td.order-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-050);
+}
