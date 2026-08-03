@@ -1,5 +1,18 @@
 <?php
 
+// Prevent WordPress from rewriting ?paged=N to /page/N/ on singular Pages.
+// The Wicket listing block renders a custom WP_Query on Pages; pretty
+// /page/N/ URLs 404 there because WP treats them as singular nextpage
+// pagination. The listing block emits query-string pagination links, and
+// this filter keeps those URLs intact instead of redirecting them to a 404.
+add_filter('redirect_canonical', function ($redirect_url) {
+    if (is_singular() && ! is_home() && (int) get_query_var('paged') > 1) {
+        return false;
+    }
+
+    return $redirect_url;
+});
+
 if (!function_exists('wicket_paginate_links')) {
 
     function wicket_paginate_links($args = [])

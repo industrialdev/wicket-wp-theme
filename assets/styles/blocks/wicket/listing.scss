@@ -37,4 +37,10 @@
   &__no-results {
     @apply text-center text-heading-md mb-6;
   }
+
+  // Listing grid (Card view): let each card shrink so long titles/tokens
+  // don't blow the grid out past the container width.
+  &__entries .grid > * {
+    min-width: 0;
+  }
 }
