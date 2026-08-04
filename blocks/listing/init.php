@@ -428,7 +428,7 @@ function init($block = [])
                             <?php
 
                             if ($listing_layout === 'grid') {
-                                echo '<div class="grid gap-10 grid-cols-1 lg:gap-4 lg:grid-cols-3 mb-6">';
+                                echo '<div class="grid gap-10 grid-cols-1 lg:gap-x-4 lg:gap-y-12 lg:grid-cols-3 mb-6">';
                             }
 
                         $item_number = 1;
@@ -511,6 +511,7 @@ function init($block = [])
                                     'image'        => (!$hide_featured_image && $featured_image) ? [
                                         'id' => $featured_image,
                                     ] : '',
+                                    'image_aspect_ratio' => '',
                                     'link'         => $permalink,
                                     'member_only'  => $member_only,
                                     'topics'       => $topics,
@@ -554,9 +555,19 @@ function init($block = [])
         echo '</div>';
     }
 
-    the_wicket_pagination([
+    $pagination_args = [
         'total' => $query->max_num_pages,
-    ]);
+    ];
+
+    // When the listing block renders on a singular Page (not an archive),
+    // pretty /page/N/ URLs resolve to a 404 because WordPress treats them
+    // as singular nextpage pagination. Fall back to query-string pagination.
+    if (is_singular() && ! is_home()) {
+        $pagination_args['base'] = add_query_arg('paged', '%#%');
+        $pagination_args['format'] = '';
+    }
+
+    the_wicket_pagination($pagination_args);
     ?>
                         </div>
                     <?php else : ?>
