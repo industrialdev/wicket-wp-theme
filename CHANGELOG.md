@@ -5,6 +5,12 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 <!-- new releases inserted below this line -->
 
+## [2.1.40] - 2026-08-04
+
+### Fixed
+- listing card view image ratio, title wrap, member tag, blurred-fill frame, pagination 404
+
+
 ## [2.1.39] - 2026-07-28
 
 ### Fixed
