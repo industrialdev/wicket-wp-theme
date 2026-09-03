@@ -35,3 +35,39 @@
     }
   }
 }
+
+// Line-height must track the *applied* font-size preset, not the HTML tag,
+// so it stays correct when an editor overrides the Typography "Size" control.
+// Note: WP kebab-cases preset slugs, so heading-3xl/heading-2xl slugs generate
+// has-heading-3-xl-* / has-heading-2-xl-* classes.
+.wp-block-heading {
+  &.has-heading-3-xl-font-size { line-height: var(--heading-3xl-line-height); }
+  &.has-heading-2-xl-font-size { line-height: var(--heading-2xl-line-height); }
+  &.has-heading-xl-font-size   { line-height: var(--heading-xl-line-height); }
+  &.has-heading-lg-font-size   { line-height: var(--heading-lg-line-height); }
+  &.has-heading-md-font-size   { line-height: var(--heading-md-line-height); }
+  &.has-heading-sm-font-size   { line-height: var(--heading-sm-line-height); }
+  &.has-heading-xs-font-size   { line-height: var(--heading-xs-line-height); }
+
+  &.has-body-lg-font-size         { line-height: var(--body-lg-line-height); }
+  &.has-body-md-font-size         { line-height: var(--body-md-line-height); }
+  &.has-body-sm-font-size         { line-height: var(--body-sm-line-height); }
+  &.has-quote-font-size           { line-height: var(--quote-line-height); }
+  &.has-placeholder-font-size     { line-height: var(--placeholder-line-height); }
+  &.has-caption-font-size         { line-height: var(--caption-line-height); }
+  &.has-button-label-lg-font-size { line-height: var(--button-label-lg-line-height); }
+  &.has-button-label-md-font-size { line-height: var(--button-label-md-line-height); }
+  &.has-button-label-sm-font-size { line-height: var(--button-label-sm-line-height); }
+  &.has-form-label-font-size      { line-height: var(--form-label-line-height); }
+  &.has-date-label-md-font-size   { line-height: var(--date-label-md-line-height); }
+  &.has-date-label-sm-font-size   { line-height: var(--date-label-sm-line-height); }
+  &.has-label-lg-font-size        { line-height: var(--label-lg-line-height); }
+  &.has-label-md-font-size        { line-height: var(--label-md-line-height); }
+  &.has-label-sm-font-size        { line-height: var(--label-sm-line-height); }
+
+  // WP core default presets have no dedicated tokens; mapped to the nearest scale.
+  &.has-small-font-size   { line-height: var(--body-sm-line-height); }
+  &.has-medium-font-size  { line-height: var(--body-md-line-height); }
+  &.has-large-font-size   { line-height: var(--heading-xl-line-height); }
+  &.has-x-large-font-size { line-height: var(--heading-2xl-line-height); }
+}
