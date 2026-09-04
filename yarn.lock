@@ -451,19 +451,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/reactivity@npm:~3.1.1":
-  version: 3.1.5
-  resolution: "@vue/reactivity@npm:3.1.5"
+"@vue/reactivity@npm:~3.5.40":
+  version: 3.5.42
+  resolution: "@vue/reactivity@npm:3.5.42"
   dependencies:
-    "@vue/shared": "npm:3.1.5"
-  checksum: 10c0/1c38aeb73725b3825bea793194334b232388236f0b06b04471508a77cb55d71841e3eb2f345ab6812c76569918aa8f019e4cdf59ec9cefbab7625bb2bc26eb58
+    "@vue/shared": "npm:3.5.42"
+  checksum: 10c0/05cfa78438ab140d0b7dca46b73eedbcd507858435328d99a7dcfc2da619cd03be23184fa3618bc7fc716b02eee79c9795b938ca1764201e21695e61d6a7e86a
   languageName: node
   linkType: hard
 
-"@vue/shared@npm:3.1.5":
-  version: 3.1.5
-  resolution: "@vue/shared@npm:3.1.5"
-  checksum: 10c0/197aa5bdd370177d26ca7a178bb3d3d2332cee2c8e67000bd2bb91b1ffc571d5489fab3a65f38a32e941dc8182d1cd6c6af6e294bb9ea13e01eafdde475319ea
+"@vue/shared@npm:3.5.42":
+  version: 3.5.42
+  resolution: "@vue/shared@npm:3.5.42"
+  checksum: 10c0/9926d037d7956d1ca50b4bf20497c4663dd37e6bafa117be5df49d3929c8ec4ffc0ee5d3983805e86cdea5f8f9f7c1f3a0cbeb8f956e1812909635198f21a048
   languageName: node
   linkType: hard
 
@@ -763,12 +763,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"alpinejs@npm:^3.13.2":
-  version: 3.14.9
-  resolution: "alpinejs@npm:3.14.9"
+"alpinejs@npm:^3.17.1":
+  version: 3.17.1
+  resolution: "alpinejs@npm:3.17.1"
   dependencies:
-    "@vue/reactivity": "npm:~3.1.1"
-  checksum: 10c0/6fef55b68b63557459851382279b44a69701b37be7e46d7147f87d26acda1edd1246ed96e5ffcf31cc52e7c57a3acf3af2abe2e5190038d3d5f2f387ff24da21
+    "@vue/reactivity": "npm:~3.5.40"
+  checksum: 10c0/763157967c6c81e571c30c3950341c127ac909a1f196a92a40f97c2e1f4d916a956e5428e90a4e13aa2a10c1de107dc3dd29374d07e2ea6c7db3b5241f391b81
   languageName: node
   linkType: hard
 
@@ -9219,7 +9219,7 @@ __metadata:
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
     "@tailwindcss/container-queries": "npm:^0.1.1"
-    alpinejs: "npm:^3.13.2"
+    alpinejs: "npm:^3.17.1"
     browser-sync: "npm:^3.0.2"
     color: "npm:^4.2.3"
     dotenv: "npm:^4.0.0"
