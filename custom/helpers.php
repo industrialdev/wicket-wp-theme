@@ -345,3 +345,32 @@ function empty_content($str)
 {
     return trim(str_replace('&nbsp;', '', strip_tags($str))) == '';
 }
+
+/**
+ * Check if a post is restricted by the WPP Private Content plugin.
+ *
+ * @param int $post_id
+ *
+ * @return bool, true if the post is restricted, false otherwise
+ */
+function wicket_wppcp_is_post_restricted( $post_id ) {
+    global $wppcp;
+
+    if ( ! isset( $wppcp->private_posts_pages ) ) {
+        return false; // plugin not active/installed — don't restrict content
+    }
+
+    // Keep admin bypass consistent with the plugin's own behavior
+    if ( current_user_can( 'manage_options' ) || current_user_can( 'wppcp_manage_options' ) ) {
+        return false;
+    }
+
+    $status = $wppcp->private_posts_pages->protection_status( $post_id );
+
+    // 'none' = no per-post restriction; fall back to the site-wide rule
+    if ( trim( (string) $status ) === 'none' ) {
+        $status = $wppcp->private_posts_pages->global_protection_status( $post_id );
+    }
+
+    return ! $status;
+}

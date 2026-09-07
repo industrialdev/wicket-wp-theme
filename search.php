@@ -178,6 +178,7 @@ $page_count = ceil($total_posts / $posts_per_page);
                 $pub_date = get_the_date('M d, Y', $post_id);
                 $featured_image = get_post_thumbnail_id($post_id);
                 $member_only = is_member_only($post_id);
+                $is_restricted = wicket_wppcp_is_post_restricted($post_id);
 
                 $card_params = [
                     'classes'           => ['mb-6'],
@@ -195,6 +196,7 @@ $page_count = ceil($total_posts / $posts_per_page);
                     ],
                     'link_type'         => 'title',
                     'member_only'       => $member_only,
+                    'is_restricted'     => $is_restricted,
                 ];
 
                 get_component('card-listing', $card_params);

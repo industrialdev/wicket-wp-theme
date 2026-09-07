@@ -36,10 +36,6 @@
     @apply text-label-md text-[--text-accent] mb-[--space-200];
   }
 
-  &__member-only {
-    @apply absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2;
-  }
-
   &__title {
     @apply text-heading-xs mb-[--space-200] inline-block text-[--text-content] no-underline;
 

@@ -47,6 +47,7 @@ function init($block = [])
         $featured_image = get_post_thumbnail_id($post_id);
         $permalink = get_the_permalink($post_id);
         $member_only = is_member_only($post_id);
+        $is_restricted = wicket_wppcp_is_post_restricted($post_id);
         $topics = get_the_terms($post_id, 'listing-type');
 
         $card_params = [
@@ -63,6 +64,7 @@ function init($block = [])
                 'target' => '_self',
             ],
             'member_only'    => $member_only,
+            'is_restricted'  => $is_restricted,
             'topics'         => (!$hide_tags && $topics) ? $topics : '',
         ];
 
