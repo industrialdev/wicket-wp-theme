@@ -644,37 +644,37 @@
       "h1": {
         "typography": {
           "fontSize": "var(--heading-3xl-font-size)",
-          "lineHeight": "clamp(3rem, 3vw + 1rem, 3.75rem)"
+          "lineHeight": "var(--heading-3xl-line-height)"
         }
       },
       "h2": {
         "typography": {
           "fontSize": "var(--heading-2xl-font-size)",
-          "lineHeight": "clamp(2.5rem, 3vw + 1rem, 3.25rem)"
+          "lineHeight": "var(--heading-2xl-line-height)"
         }
       },
       "h3": {
         "typography": {
           "fontSize": "var(--heading-xl-font-size)",
-          "lineHeight": "clamp(2rem, 2vw + 1rem, 2.25rem)"
+          "lineHeight": "var(--heading-xl-line-height)"
         }
       },
       "h4": {
         "typography": {
           "fontSize": "var(--heading-lg-font-size)",
-          "lineHeight": "clamp(2.25rem, 3vw + 1rem, 2.5rem)"
+          "lineHeight": "var(--heading-lg-line-height)"
         }
       },
       "h5": {
         "typography": {
           "fontSize": "var(--heading-md-font-size)",
-          "lineHeight": "clamp(2rem, 2vw + 1rem, 2.25rem)"
+          "lineHeight": "var(--heading-md-line-height)"
         }
       },
       "h6": {
         "typography": {
           "fontSize": "var(--heading-sm-font-size)",
-          "lineHeight": "clamp(1.625rem, 1.5vw + 1rem, 1.75rem)"
+          "lineHeight": "var(--heading-sm-line-height)"
         }
       }
     },
