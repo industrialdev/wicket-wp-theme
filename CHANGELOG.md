@@ -5,6 +5,12 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 <!-- new releases inserted below this line -->
 
+## [2.1.42] - 2026-09-07
+
+### Fixed
+- heading line-height now scales with selected font-size preset
+
+
 ## [2.1.41] - 2026-09-07
 
 ### Documentation
