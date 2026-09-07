@@ -5,6 +5,16 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 <!-- new releases inserted below this line -->
 
+## [2.1.41] - 2026-09-07
+
+### Documentation
+- add PR description template #norelease
+
+### Other
+- update alpinejs to ver 3.17.1
+- WooCommerce mobile spacing issues sorted on single product page template
+
+
 ## [2.1.40] - 2026-08-04
 
 ### Fixed
