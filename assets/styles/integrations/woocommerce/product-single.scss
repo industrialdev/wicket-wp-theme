@@ -1,6 +1,7 @@
 .woocommerce {
   & > .single-product {
     padding-top: 1rem;
+    padding-inline: var(--space-200);
   }
 
   .single-product__container {
