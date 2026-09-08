@@ -5,6 +5,15 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 <!-- new releases inserted below this line -->
 
+## [2.1.43] - 2026-09-08
+
+### Other
+- Helper misses WPPCP's master switch fix
+- Add docs to the "wicket_wppcp_is_post_restricted" helper
+- card-listing.scss: no &--restricted offset
+- Show the "restricted" badge in the specific components
+
+
 ## [2.1.42] - 2026-09-07
 
 ### Fixed
