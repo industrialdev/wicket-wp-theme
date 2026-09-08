@@ -92136,7 +92136,7 @@ a:where(:not(.wp-element-button)):active{
   -webkit-filter: drop-shadow(var(--elevation-4));
   filter: drop-shadow(var(--elevation-4));
 }
-.component-card-listing--member-only:not(.item-number-1){
+.component-card-listing--member-only:not(.item-number-1), .component-card-listing--restricted:not(.item-number-1){
   margin-top: 2.5rem;
   padding-top: 1.75rem;
 }
