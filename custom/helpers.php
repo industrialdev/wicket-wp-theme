@@ -367,6 +367,11 @@ function wicket_wppcp_is_post_restricted( $post_id ) {
         return false; // plugin not active/installed — don't restrict content
     }
 
+    $wppcp_options = get_option( 'wppcp_options' );
+    if ( empty( $wppcp_options['general']['private_content_module_status'] ) ) {
+        return false; // master switch off — the plugin restricts nothing
+    }
+
     // Keep admin bypass consistent with the plugin's own behavior
     if ( current_user_can( 'manage_options' ) || current_user_can( 'wppcp_manage_options' ) ) {
         return false;
