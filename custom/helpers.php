@@ -347,7 +347,14 @@ function empty_content($str)
 }
 
 /**
- * Check if a post is restricted by the WPP Private Content plugin.
+ * Returns true if the current user/guest CANNOT view the post
+ * (based on the WPP Private Content plugin's restrictions).
+ * 
+ * NOTE: Result varies per logged-in user for posts with 'role' or 'users'
+ * visibility (guests always get a consistent result — restricted). Do not
+ * render this behind a full-page/edge cache without confirming logged-in
+ * requests bypass that cache, or two different logged-in users can be
+ * served each other's cached badge.
  *
  * @param int $post_id
  *
