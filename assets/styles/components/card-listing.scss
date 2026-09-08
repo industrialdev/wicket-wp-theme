@@ -2,7 +2,8 @@
   @apply bg-[--bg-card] rounded-[--card-corner-radius] border-l-[length:--border-listing-card] border-[--border-card] p-[--space-200] gap-[--space-200] relative flex flex-col md:flex-row;
   filter: drop-shadow( var(--elevation-4) );
 
-  &--member-only {
+  &--member-only,
+  &--restricted {
     &:not(.item-number-1) {
       @apply mt-10 pt-7;
     }    
@@ -34,10 +35,6 @@
 
   &__content-type {
     @apply text-label-md text-[--text-accent] mb-[--space-200];
-  }
-
-  &__member-only {
-    @apply absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2;
   }
 
   &__title {

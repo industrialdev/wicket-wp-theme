@@ -451,6 +451,7 @@ function init($block = [])
                             $featured_image = get_post_thumbnail_id($post_id);
                             $permalink = get_the_permalink($post_id);
                             $member_only = is_member_only($post_id);
+                            $is_restricted = wicket_wppcp_is_post_restricted($post_id);
                             $related_topic_type = get_related_topic_type(get_post_type($post_id));
                             $topics = get_the_terms($post_id, $related_topic_type);
                             $document_attachment = get_field_from_block($post_id, 'wicket/banner', 'banner_download_file');
@@ -514,6 +515,7 @@ function init($block = [])
                                     'image_aspect_ratio' => '',
                                     'link'         => $permalink,
                                     'member_only'  => $member_only,
+                                    'is_restricted' => $is_restricted,
                                     'topics'       => $topics,
                                 ];
 
@@ -533,6 +535,7 @@ function init($block = [])
                                         'target' => '_self',
                                     ],
                                     'member_only'               => $member_only,
+                                    'is_restricted'             => $is_restricted,
                                     'topics'                    => $topics,
                                     'document'                  => !$hide_attachment ? $document_attachment_url : '',
                                     'download_label'            => $listing_download_label == '' ? __('Download', 'wicket') : $listing_download_label,

@@ -40,6 +40,7 @@
 			            'target' => '_self',
 			        ],
 			        'member_only'    => is_member_only(get_the_ID()),
+			        'is_restricted'  => wicket_wppcp_is_post_restricted(get_the_ID()),
 			        'topics'         => $topics,
 			    ]);
 			    ?>

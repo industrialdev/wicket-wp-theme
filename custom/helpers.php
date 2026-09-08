@@ -345,3 +345,44 @@ function empty_content($str)
 {
     return trim(str_replace('&nbsp;', '', strip_tags($str))) == '';
 }
+
+/**
+ * Returns true if the current user/guest CANNOT view the post
+ * (based on the WPP Private Content plugin's restrictions).
+ * 
+ * NOTE: Result varies per logged-in user for posts with 'role' or 'users'
+ * visibility (guests always get a consistent result — restricted). Do not
+ * render this behind a full-page/edge cache without confirming logged-in
+ * requests bypass that cache, or two different logged-in users can be
+ * served each other's cached badge.
+ *
+ * @param int $post_id
+ *
+ * @return bool, true if the post is restricted, false otherwise
+ */
+function wicket_wppcp_is_post_restricted( $post_id ) {
+    global $wppcp;
+
+    if ( ! isset( $wppcp->private_posts_pages ) ) {
+        return false; // plugin not active/installed — don't restrict content
+    }
+
+    $wppcp_options = get_option( 'wppcp_options' );
+    if ( empty( $wppcp_options['general']['private_content_module_status'] ) ) {
+        return false; // master switch off — the plugin restricts nothing
+    }
+
+    // Keep admin bypass consistent with the plugin's own behavior
+    if ( current_user_can( 'manage_options' ) || current_user_can( 'wppcp_manage_options' ) ) {
+        return false;
+    }
+
+    $status = $wppcp->private_posts_pages->protection_status( $post_id );
+
+    // 'none' = no per-post restriction; fall back to the site-wide rule
+    if ( trim( (string) $status ) === 'none' ) {
+        $status = $wppcp->private_posts_pages->global_protection_status( $post_id );
+    }
+
+    return ! $status;
+}

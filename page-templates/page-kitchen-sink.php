@@ -46,6 +46,8 @@ if (have_posts()) :
                         'card-event.php',
                         'tooltip.php',
                         'social-links.php',
+                        'modal.php',
+                        'modal-trigger.php',
                     ];
 
 				    // If the current file is in the excluded files array, skip it
@@ -929,6 +931,7 @@ if (have_posts()) :
             'hide_event_format_location' => false,
             'hide_start_date_indicator'  => false,
             'member_only'                => false,
+            'is_restricted'              => true,
             'cta'                        => 'primary',
             'cta_label'                  => 'Label',
             'remove_drop_shadow'         => false,
@@ -1139,6 +1142,7 @@ if (have_posts()) :
 					        'show_share' => true,
 					        'show_date' => true,
 					        'member_only' => true,
+					        'is_restricted' => true,
 					        'text_alignment' => 'left',
 					        'image' => 'featured-image',
 					        'custom_image' => null,
@@ -1213,55 +1217,30 @@ if (have_posts()) :
 
 				<section class="py-8">
 					<h2 class="text-heading-lg mb-3">Listing Card</h2>
+
 					<?php
-                    $args = [
-					    'post_type'      => 'post',
-					    'posts_per_page' => 2,
-					    'orderby'        => 'date',
-					    'order'          => 'DESC',
-                    ];
-
-        $query = new WP_Query($args);
-
-        if ($query->have_posts()) {
-            $index = 1;
-            while ($query->have_posts()) {
-                $query->the_post();
-
-                $post_type = get_post_type_object(get_post_type());
-                $title = get_the_title();
-                $excerpt = get_the_excerpt();
-                $post_date = get_the_date('F j, Y');
-                $featured_image = get_post_thumbnail_id();
-                $member_only = is_member_only(get_the_ID());
-
-                get_component('card-listing', [
-                    'classes'        => ['mb-6'],
-                    'content_type'   => 'Lorem Ipsum',
-                    'title'          => $title,
-                    'excerpt'        => $excerpt,
-                    'date'           => $post_date,
-                    'featured_image' => $featured_image,
-                    'topics'         => get_terms(),
-                    'link'           => [
-                        'url'    => get_permalink(),
-                        'text'   => 'Go somewhere',
-                        'target' => '_self',
-                    ],
-                    'helper_link' => [
-                        'url'    => '#',
-                        'title'   => 'Helper Link',
-                        'target' => '_self',
-                    ],
-                    'document' => '#',
-                    'member_only'    => true,
-                ]);
-
-                $index++;
-            }
-            wp_reset_postdata();
-        }
-
+						get_component('card-listing', [
+								'classes'        => ['mb-6'],
+								'content_type'   => 'Lorem Ipsum',
+								'title'          => 'Lorem Ipsum',
+								'excerpt'        => 'Lorem Ipsum',
+								'date'           => 'January 1, 2024',
+								'featured_image' => '',
+								'topics'         => ['Topic 1', 'Topic 2', 'Topic 3'],
+								'link'           => [
+										'url'    => '#',
+										'text'   => 'Go somewhere',
+										'target' => '_self',
+								],
+								'helper_link' => [
+										'url'    => '#',
+										'title'   => 'Helper Link',
+										'target' => '_self',
+								],
+								'document' => '#',
+								'member_only'    => true,
+								'is_restricted'  => true,
+						]);
         ?>
 				</section>
 
