@@ -187,7 +187,7 @@ foreach ($utility_nav_items as $utility_nav_item) {
     $target = $utility_nav_item->target ?? '';
     get_component('link', [
         'text'    => $utility_nav_item->title,
-        'classes' => ['utility-nav__link'],
+        'classes' => ['utility-nav__link component-link--sm'],
         'target'  => $target,
         'url'     => $utility_nav_item->url,
     ]);
