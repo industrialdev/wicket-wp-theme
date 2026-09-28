@@ -21,7 +21,7 @@ defined('ABSPATH') || exit;
 <div class="woocommerce-order">
 	<div class="border-b border-t mb-8  ">
 		<div class="container">
-			<h1 class="text-heading-3xl font-bold py-4"><?php echo __('Order Summary', 'wicket') ?></h1>
+			<h1 class="text-heading-3xl font-bold py-4"><?php echo __('Order Summary', 'wicket-theme') ?></h1>
 		</div>
 	</div>
 	<div class="container">
@@ -101,7 +101,7 @@ get_component('button', [
     'variant' => 'primary',
     'a_tag'   => true,
     'link'    => $acc_index_url,
-    'label'   => __('Go to Member Portal', 'wicket'),
+    'label'   => __('Go to Member Portal', 'wicket-theme'),
     'classes' => ['!mb-8'],
 ]);
 

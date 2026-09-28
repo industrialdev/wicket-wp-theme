@@ -22,7 +22,7 @@ $display_publish_date = get_field('display_publish_date');
         }
         if ($display_publish_date) {
             echo '<div class="wp-block-published-date">';
-            echo "<p class='mt-3 mb-4'><strong>" . __('Published:', 'wicket') . ' ' . get_the_date('d-m-Y') . '</strong></p>';
+            echo "<p class='mt-3 mb-4'><strong>" . __('Published:', 'wicket-theme') . ' ' . get_the_date('d-m-Y') . '</strong></p>';
             echo '</div>';
         }
         ?>

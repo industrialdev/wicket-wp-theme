@@ -29,7 +29,7 @@ if (!function_exists('wicket_breadcrumb')) {
                 'default_link_style' => true,
                 'reversed'   => $reversed,
                 'url'        => get_home_url(),
-                'text'       => __('Home', 'wicket'),
+                'text'       => __('Home', 'wicket-theme'),
                 'icon_start' => [
                     'icon' => 'fa-regular fa-house',
                 ],
@@ -39,11 +39,11 @@ if (!function_exists('wicket_breadcrumb')) {
         );
         $url = get_permalink();
         if (str_contains($url, '/resource/')) {
-            $crumbs[] = '<span class="font-bold">' . __('Resources', 'wicket') . '</span>';
+            $crumbs[] = '<span class="font-bold">' . __('Resources', 'wicket-theme') . '</span>';
         } elseif (str_contains($url, '/news/')) {
-            $crumbs[] = '<span class="font-bold">' . __('News', 'wicket') . '</span>';
+            $crumbs[] = '<span class="font-bold">' . __('News', 'wicket-theme') . '</span>';
         } elseif (str_contains($url, '/event/')) {
-            $crumbs[] = '<span class="font-bold">' . __('Events', 'wicket') . '</span>';
+            $crumbs[] = '<span class="font-bold">' . __('Events', 'wicket-theme') . '</span>';
         } elseif (is_page() || is_single()) {
             // Standard page
             if ($post->post_parent) {
@@ -71,7 +71,7 @@ if (!function_exists('wicket_breadcrumb')) {
             }
             $crumbs[] = '<strong>' . get_the_title() . '</strong>';
         } elseif (is_search()) {
-            $crumbs[] = '<strong>' . __('Search Results for:', 'wicket') . '"<em>' . get_search_query() . '</em>"</strong>';
+            $crumbs[] = '<strong>' . __('Search Results for:', 'wicket-theme') . '"<em>' . get_search_query() . '</em>"</strong>';
         }
 
         echo implode($separator, $crumbs);

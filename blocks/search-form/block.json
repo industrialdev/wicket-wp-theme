@@ -1,5 +1,6 @@
 {
   "name": "wicket/search-form",
+  "textdomain": "wicket-theme",
   "title": "Search Form",
   "description": "A Wicket block for search form",
   "style": "block-wicket-search-form",

@@ -30,6 +30,12 @@ add_filter('send_email_change_email', '__return_false');
  */
 function wicket_setup()
 {
+    /*
+     * Make the theme available for translation.
+     * Loads wp-content/languages/themes/wicket-theme-{locale}.mo first, then
+     * falls back to the theme's own languages/ directory.
+     */
+    load_theme_textdomain('wicket-theme', get_template_directory() . '/languages');
 
     /*
      * Let WordPress manage the document title.
@@ -108,12 +114,12 @@ add_action('after_setup_theme', 'wicket_setup');
 function wicket_register_nav_menus()
 {
     register_nav_menus([
-        'header-utility'   => __('Header Utility Menu', 'wicket'),
-        'header-secondary' => __('Header Secondary Menu', 'wicket'),
-        'header'           => __('Header Menu', 'wicket'),
-        'social'           => __('Social Menu', 'wicket'),
-        'footer'           => __('Secondary Footer Menu', 'wicket'),
-        'footer-utility'   => __('Footer Utility Menu', 'wicket'),
+        'header-utility'   => __('Header Utility Menu', 'wicket-theme'),
+        'header-secondary' => __('Header Secondary Menu', 'wicket-theme'),
+        'header'           => __('Header Menu', 'wicket-theme'),
+        'social'           => __('Social Menu', 'wicket-theme'),
+        'footer'           => __('Secondary Footer Menu', 'wicket-theme'),
+        'footer-utility'   => __('Footer Utility Menu', 'wicket-theme'),
     ]);
 }
 add_action('init', 'wicket_register_nav_menus');

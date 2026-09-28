@@ -1,5 +1,6 @@
 {
   "name": "wicket/accordion",
+  "textdomain": "wicket-theme",
   "title": "Accordion",
   "description": "A Wicket block for an accordion",
   "style": "block-wicket-accordion",

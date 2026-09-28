@@ -23,7 +23,7 @@ $login_link = '';
 if (!is_user_logged_in()) {
     ob_start();
     get_component('link', [
-        'text'     => __('Login to Purchase', 'woocommerce'),
+        'text'     => __('Login to Purchase', 'wicket-theme'),
         'default_link_style' => true,
         'target'   => '_blank',
         'url'      => get_login_url(),
@@ -42,7 +42,7 @@ echo apply_filters(
         esc_attr($args['quantity'] ?? 1),
         esc_attr($args['class'] ?? 'button'),
         isset($args['attributes']) ? wc_implode_html_attributes($args['attributes']) : '',
-        '<span class="add_to_cart_button__text">' . esc_html($product->add_to_cart_text()) . '</span>' . '<span class="add_to_cart_button__text-added">' . __('Added to cart') . ' <i class="fa-solid fa-check"></i></span>',
+        '<span class="add_to_cart_button__text">' . esc_html($product->add_to_cart_text()) . '</span>' . '<span class="add_to_cart_button__text-added">' . esc_html__('Added to cart', 'wicket-theme') . ' <i class="fa-solid fa-check"></i></span>',
         $login_link
     ),
     $product,

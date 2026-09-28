@@ -1,5 +1,6 @@
 {
   "name": "wicket/banner",
+  "textdomain": "wicket-theme",
   "title": "Banner",
   "description": "A Wicket block for banner",
   "style": "block-wicket-banner",

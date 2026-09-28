@@ -26,7 +26,7 @@ function init($block = [])
     if (!$posts) {
         $output = '<div ' . $placeholder_styles . '>';
         if (is_admin()) {
-            $output .= '<p>' . __('Use the Block controls in edit mode or on the right to add posts.', 'wicket') . '</p>';
+            $output .= '<p>' . __('Use the Block controls in edit mode or on the right to add posts.', 'wicket-theme') . '</p>';
         }
         $output .= '</div>';
         echo $output;
@@ -36,7 +36,7 @@ function init($block = [])
 
     echo '<div ' . $attrs . ' ' . $placeholder_styles . '>';
     if (is_admin() && empty($posts)) {
-        echo '<p>' . __('Use the Block controls in edit mode or on the right to add posts.', 'wicket') . '</p>';
+        echo '<p>' . __('Use the Block controls in edit mode or on the right to add posts.', 'wicket-theme') . '</p>';
     }
     foreach ($posts as $post) {
         $post_id = $post->ID;
@@ -59,8 +59,8 @@ function init($block = [])
             'featured_image' => !$hide_featured_image ? $featured_image : '',
             'link'           => [
                 'url'    => $permalink,
-                'text'   => 'Read more',
-                'title'  => 'Read more',
+                'text'   => __('Read more', 'wicket-theme'),
+                'title'  => __('Read more', 'wicket-theme'),
                 'target' => '_self',
             ],
             'member_only'    => $member_only,

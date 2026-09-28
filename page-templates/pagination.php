@@ -4,8 +4,8 @@ $defaults = [
     'classes'    => [],
     'current'    => 1,
     'total'      => 1,
-    'prev_text'  => 'Previous',
-    'next_text'  => 'Next',
+    'prev_text'  => __('Previous', 'wicket-theme'),
+    'next_text'  => __('Next', 'wicket-theme'),
     'prev_icon'  => [
         'classes' => ['pagination-icon'],
         'icon'    => 'fa fa-arrow-left', // Replace with desired Font Awesome classes
@@ -75,7 +75,7 @@ $classes[] = 'pagination';
 
 	<?php else : ?>
 
-		<p>No pagination needed.</p>
+		<p><?php esc_html_e('No pagination needed.', 'wicket-theme'); ?></p>
 
 	<?php endif; ?>
 

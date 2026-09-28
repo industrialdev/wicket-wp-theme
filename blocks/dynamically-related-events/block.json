@@ -1,5 +1,6 @@
 {
   "name": "wicket/dynamically-related-events",
+  "textdomain": "wicket-theme",
   "title": "Dynamically Related Events",
   "description": "A Wicket block for dynamically related events.",
   "style": "block-wicket-dynamically-related-events",

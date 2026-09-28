@@ -1,5 +1,6 @@
 {
   "name": "wicket/dynamically-related-content",
+  "textdomain": "wicket-theme",
   "title": "Dynamically Related Content",
   "description": "A Wicket block for dynamically related content.",
   "style": "block-wicket-dynamically-related-content",

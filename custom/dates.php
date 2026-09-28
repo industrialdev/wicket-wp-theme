@@ -53,7 +53,7 @@ function fr_event_date($fr_start_unix, $fr_end_unix)
         $timezone = ' ' . get_field('timezone');
     }
     if ($fr_end_unix) {
-        $date = date_i18n('j F Y', $fr_start_unix) . ' ' . __('à', 'sassquatch') . ' ' . date_i18n('j F Y', $fr_end_unix);
+        $date = date_i18n('j F Y', $fr_start_unix) . ' ' . __('à', 'wicket-theme') . ' ' . date_i18n('j F Y', $fr_end_unix);
     } else {
         $date = date_i18n('j F Y', $fr_start_unix);
     }

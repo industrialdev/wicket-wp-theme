@@ -1,5 +1,6 @@
 {
   "name": "wicket/listing",
+  "textdomain": "wicket-theme",
   "title": "Listing",
   "description": "A Wicket block for listing",
   "style": "block-wicket-listing",

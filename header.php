@@ -47,7 +47,7 @@ the_field('tracking_codes_in_head', 'options');
     <?php echo get_field('tracking_codes_right_after_body', 'options'); ?>
     <a class="transition left-0 bg-primary text-primary-content absolute p-3 m-3 -translate-y-32 z-10 bg-[--bg-white] focus:translate-y-0"
         href="#main-content">
-        <?php echo __('Skip to main content', 'wicket'); ?>
+        <?php echo __('Skip to main content', 'wicket-theme'); ?>
     </a>
 
     <?php
@@ -79,7 +79,7 @@ if (is_user_logged_in()) {
 $member_portal_button_style = get_field('member_portal_button_style', 'options') ?? 'secondary';
 $member_portal_button_label = apply_filters(
     'wicket_member_portal_button_label',
-    __('Member Portal', 'wicket'),
+    __('Member Portal', 'wicket-theme'),
     $nav_state
 );
 
@@ -96,7 +96,7 @@ $bam_button_style = get_field('bam_button_style', 'options') ?? 'primary';
 $bam_link_array = get_field('bam_link', 'options');
 
 $bam_url = $default_account_path;
-$bam_label = __('Become a member', 'wicket');
+$bam_label = __('Become a member', 'wicket-theme');
 $bam_target_attr = '_self';
 
 if (is_array($bam_link_array)) {
@@ -116,7 +116,7 @@ $create_account_button_style = get_field('create_account_button_style', 'options
 $create_account_link_array = get_field('create_account_link', 'options');
 
 $create_account_url = $default_account_path;
-$create_account_label = __('Create Account', 'wicket');
+$create_account_label = __('Create Account', 'wicket-theme');
 $create_account_target_attr = '_self';
 
 if (is_array($create_account_link_array)) {
@@ -205,7 +205,7 @@ foreach ($utility_nav_items as $utility_nav_item) {
 get_component('button', [
     'variant'     => 'ghost',
     'button_aria' => [
-        'label' => 'Open Menu',
+        'label' => __('Open Menu', 'wicket-theme'),
     ],
     'classes'     => ['left-hamburger-button', 'inline-flex', 'md:hidden'],
     'id'          => 'left-hamburger-button',
@@ -267,7 +267,7 @@ if ($nav_state == 'logged_out') {
         'a_tag'   => true,
         'link'    => $account_center_landing,
         'classes' => ['my-account-button', 'hidden', 'lg:inline-flex'],
-        'label'   => __('My Account', 'wicket'),
+        'label'   => __('My Account', 'wicket-theme'),
         'atts'    => ['x-show="! searchOpen"', 'x-cloak'],
     ]);
 } elseif ($nav_state == 'logged_in_member') {
@@ -286,7 +286,7 @@ if ($nav_state == 'logged_out') {
     get_component('button', [
         'variant' => $login_logout_button_style,
         'a_tag'   => true,
-        'label'   => __('Login', 'wicket'),
+        'label'   => __('Login', 'wicket-theme'),
         'classes' => ['login-button', 'mx-4', 'items-center', 'hidden', 'lg:inline-flex'],
         'link'    => get_option('wp_cassify_base_url') . 'login?service=' . $referrer,
         'atts'    => ['x-show="! searchOpen"', 'x-cloak'],
@@ -297,7 +297,7 @@ if ($nav_state == 'logged_out') {
                         get_component('button', [
                             'variant' => $login_logout_button_style,
                             'a_tag'   => true,
-                            'label'   => __('Logout', 'wicket'),
+                            'label'   => __('Logout', 'wicket-theme'),
                             'classes' => ['logout-button', 'mx-4', 'items-center', 'hidden', 'lg:inline-flex'],
                             'link'    => wp_logout_url(),
                             'atts'    => ['x-show="! searchOpen"', 'x-cloak'],
@@ -307,14 +307,14 @@ if ($nav_state == 'logged_out') {
                     <!-- Start search field -->
                     <div x-show="searchOpen" x-cloak class="hidden lg:block flex-grow px-2 ml-20">
                         <form class="flex" action="/" method="get">
-                            <label for="search" class="hidden"><?php _e('Search the website', 'wicket'); ?></label>
+                            <label for="search" class="hidden"><?php _e('Search the website', 'wicket-theme'); ?></label>
                             <input class="w-full p-1" type="text" name="s" id="search"
                                 value="<?php the_search_query(); ?>"
-                                placeholder="<?php _e('Search by Keyword', 'wicket'); ?>" />
+                                placeholder="<?php _e('Search by Keyword', 'wicket-theme'); ?>" />
                             <?php get_component('button', [
                                 'variant' => 'primary',
                                 'type'    => 'submit',
-                                'label'   => __('Search', 'wicket'),
+                                'label'   => __('Search', 'wicket-theme'),
                                 'classes' => ['search-submit-button', 'ml-2', 'border-0'],
                             ]) ?>
                         </form>
@@ -573,7 +573,7 @@ if ($nav_state == 'logged_out') {
         'a_tag'   => true,
         'link'    => $account_center_landing,
         'classes' => ['my-account-button-mobile', 'w-full', 'mb-3', 'justify-center'],
-        'label'   => __('My Account', 'wicket'),
+        'label'   => __('My Account', 'wicket-theme'),
     ]);
 } elseif ($nav_state == 'logged_in_member') {
     get_component('button', [
@@ -589,7 +589,7 @@ if ($nav_state == 'logged_out') {
 // Conditional login/logout buttons
 if ($nav_state == 'logged_out') {
     get_component('button', [
-        'label'   => __('Login', 'wicket'),
+        'label'   => __('Login', 'wicket-theme'),
         'variant' => $login_logout_button_style,
         'a_tag'   => true,
         'classes' => ['login-button-mobile', 'mb-2', 'w-full', 'justify-center'],
@@ -597,7 +597,7 @@ if ($nav_state == 'logged_out') {
     ]);
 } else {
     get_component('button', [
-        'label'   => __('Logout', 'wicket'),
+        'label'   => __('Logout', 'wicket-theme'),
         'variant' => $login_logout_button_style,
         'a_tag'   => true,
         'classes' => ['logout-button-mobile', 'mb-2', 'w-full', 'justify-center'],
@@ -803,13 +803,13 @@ foreach ($secondary_nav_items as $secondary_nav_item) {
         <div x-show="searchOpen" x-cloak x-transition x-anchor.bottom-start="$refs.secondary-nav"
             class="search-bar-mobile">
             <form class="flex" action="/" method="get">
-                <label for="search" class="hidden"><?php _e('Search the website', 'wicket'); ?></label>
+                <label for="search" class="hidden"><?php _e('Search the website', 'wicket-theme'); ?></label>
                 <input class="w-full" type="text" name="s" id="search" value="<?php the_search_query(); ?>"
-                    placeholder="<?php _e('Search by Keyword', 'wicket'); ?>" />
+                    placeholder="<?php _e('Search by Keyword', 'wicket-theme'); ?>" />
                 <?php get_component('button', [
                     'variant' => 'primary',
                     'type'    => 'submit',
-                    'label'   => __('Search', 'wicket'),
+                    'label'   => __('Search', 'wicket-theme'),
                     'classes' => ['ml-2', 'border-0'],
                 ]) ?>
             </form>

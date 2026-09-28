@@ -1,5 +1,6 @@
 {
   "name": "wicket/author",
+  "textdomain": "wicket-theme",
   "title": "Author",
   "description": "A Wicket block for author",
   "style": "block-wicket-author",

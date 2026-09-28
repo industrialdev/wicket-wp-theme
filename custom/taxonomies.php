@@ -7,7 +7,7 @@ add_action('init', function () {
         'news_type',
         ['news'],
         [
-            'label'             => __('News Type'),
+            'label'             => __('News Type', 'wicket-theme'),
             'rewrite'           => ['slug' => 'news-type'],
             'show_admin_column' => true,
             'hierarchical'      => true,
@@ -20,7 +20,7 @@ add_action('init', function () {
         'resource_type',
         ['resources'],
         [
-            'label'             => __('Resource Type'),
+            'label'             => __('Resource Type', 'wicket-theme'),
             'rewrite'           => ['slug' => 'resource-type'],
             'show_admin_column' => true,
             'hierarchical'      => true,
@@ -33,7 +33,7 @@ add_action('init', function () {
         'topics',
         ['news', 'resources'],
         [
-            'label'             => __('Topics'),
+            'label'             => __('Topics', 'wicket-theme'),
             'rewrite'           => ['slug' => 'topics'],
             'show_admin_column' => true,
             'hierarchical'      => true,

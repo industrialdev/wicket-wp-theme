@@ -1,5 +1,6 @@
 {
   "name": "wicket/featured-posts",
+  "textdomain": "wicket-theme",
   "title": "Featured Posts",
   "description": "A Wicket block for featured posts",
   "style": "block-wicket-featured-posts",

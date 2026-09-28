@@ -26,8 +26,8 @@ function wicket_register_block_pattern_category()
         register_block_pattern_category(
             'wicket',
             [
-                'label'       => __('Wicket', 'wicket'),
-                'description' => __('Custom pre-made patterns', 'wicket'),
+                'label'       => __('Wicket', 'wicket-theme'),
+                'description' => __('Custom pre-made patterns', 'wicket-theme'),
             ]
         );
     }

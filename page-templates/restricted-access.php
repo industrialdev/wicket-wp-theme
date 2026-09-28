@@ -29,13 +29,13 @@
 
 					<?php get_component('link', [
 					    'variant' => 'primary',
-					    'text'    => __('Login', 'wicket'),
+					    'text'    => __('Login', 'wicket-theme'),
 					    'url'    => get_option('wp_cassify_base_url') . 'login?service=' . $referrer,
 					]) ?>
 
 					<?php get_component('link', [
 					    'variant' => 'secondary',
-					    'text'    => __('Create an Account', 'wicket'),
+					    'text'    => __('Create an Account', 'wicket-theme'),
 					    'url'    => '/create-account',
 					]) ?>
 
