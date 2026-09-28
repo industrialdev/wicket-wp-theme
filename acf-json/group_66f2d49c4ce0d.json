@@ -3053,7 +3053,7 @@
             "name": "drop-shadows",
             "aria-label": "",
             "type": "group",
-            "instructions": "Format: X_position Y_position Blur Color",
+            "instructions": "Format: X_position Y_position Blur Colour",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
