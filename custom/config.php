@@ -106,6 +106,28 @@ function wicket_setup()
 }
 add_action('after_setup_theme', 'wicket_setup');
 
+/*
+ * 'wicket-theme' is the default domain. If a string has no 'wicket-theme'
+ * translation, fall back to the legacy 'wicket' domain, so existing Loco and
+ * WPML translations on legacy sites keep working. New sites translate under
+ * 'wicket-theme' only.
+ */
+add_filter('gettext_wicket-theme', function ($translation, $text) {
+    return $translation === $text ? translate($text, 'wicket') : $translation;
+}, 10, 2);
+
+add_filter('gettext_with_context_wicket-theme', function ($translation, $text, $context) {
+    return $translation === $text ? translate_with_gettext_context($text, $context, 'wicket') : $translation;
+}, 10, 3);
+
+add_filter('ngettext_wicket-theme', function ($translation, $single, $plural, $number) {
+    return $translation === ($number == 1 ? $single : $plural) ? _n($single, $plural, $number, 'wicket') : $translation;
+}, 10, 4);
+
+add_filter('ngettext_with_context_wicket-theme', function ($translation, $single, $plural, $number, $context) {
+    return $translation === ($number == 1 ? $single : $plural) ? _nx($single, $plural, $number, $context, 'wicket') : $translation;
+}, 10, 5);
+
 /**
  * Register navigation menus.
  *
