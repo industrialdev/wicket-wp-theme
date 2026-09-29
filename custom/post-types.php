@@ -113,7 +113,7 @@ function wicket_register_post_types()
             'singular_name'      => $singular_label,
             'menu_name'          => $plural_label,
             'name_admin_bar'     => $singular_label,
-            'add_new'            => __('Add New', 'wicket-theme'),
+            'add_new'            => _x('Add New', 'post type label', 'wicket-theme'),
             /* translators: %s: post type singular name. */
             'add_new_item'       => sprintf(_x('Add New %s', 'post type label', 'wicket-theme'), $singular_label),
             /* translators: %s: post type singular name. */
@@ -131,7 +131,7 @@ function wicket_register_post_types()
             /* translators: %s: post type plural name. */
             'not_found'          => sprintf(_x('No %s found.', 'post type label', 'wicket-theme'), $plural_label),
             /* translators: %s: post type plural name. */
-            'not_found_in_trash' => sprintf(_x('No %s found in Trash.', 'post type label', 'wicket-theme'), $plural_label),
+            'not_found_in_trash' => sprintf(__('No %s found in Trash.', 'wicket-theme'), $plural_label),
         ];
 
         $rewrite = [

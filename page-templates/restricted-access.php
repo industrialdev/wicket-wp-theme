@@ -30,13 +30,13 @@
 					<?php get_component('link', [
 					    'variant' => 'primary',
 					    /* translators: Button label: log in to the site. */
-					    'text'    => __('Login', 'wicket-theme'),
+					    'text'    => _x('Login', 'button label', 'wicket-theme'),
 					    'url'    => get_option('wp_cassify_base_url') . 'login?service=' . $referrer,
 					]) ?>
 
 					<?php get_component('link', [
 					    'variant' => 'secondary',
-					    'text'    => __('Create an Account', 'wicket-theme'),
+					    'text'    => _x('Create an Account', 'button label', 'wicket-theme'),
 					    'url'    => '/create-account',
 					]) ?>
 

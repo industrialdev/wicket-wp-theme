@@ -207,7 +207,7 @@ if (have_posts()) :
 					<h2 class="text-heading-lg mb-3">Link</h2>
 					<div class="mb-6">
 						<?php get_component('link', [
-						    'text'    => __('Link Label', 'wicket-theme'),
+						    'text'    => _x('Link Label', 'button label', 'wicket-theme'),
 						    'url'    => get_home_url(),
 						]) ?>
 					</div>
@@ -219,7 +219,7 @@ if (have_posts()) :
 						        'default_link_style' => true,
 						        'size' => 'sm',
 						        'url'        => get_home_url(),
-						        'text'       => __('Home', 'wicket-theme'),
+						        'text'       => _x('Home', 'button label', 'wicket-theme'),
 						        'icon_start' => [
 						            'icon' => 'fa-regular fa-house',
 						        ],
@@ -235,7 +235,7 @@ if (have_posts()) :
 						        'default_link_style' => true,
 						        'size' => 'md',
 						        'url'        => get_home_url(),
-						        'text'       => __('Home', 'wicket-theme'),
+						        'text'       => _x('Home', 'button label', 'wicket-theme'),
 						        'icon_start' => [
 						            'icon' => 'fa-regular fa-house',
 						        ],
@@ -251,7 +251,7 @@ if (have_posts()) :
 						        'default_link_style' => true,
 						        'size' => 'lg',
 						        'url'        => get_home_url(),
-						        'text'       => __('Home', 'wicket-theme'),
+						        'text'       => _x('Home', 'button label', 'wicket-theme'),
 						        'icon_start' => [
 						            'icon' => 'fa-regular fa-house',
 						        ],
@@ -267,7 +267,7 @@ if (have_posts()) :
 						        'reversed' => true,
 						        'default_link_style' => false,
 						        'url'        => get_home_url(),
-						        'text'       => __('Home', 'wicket-theme'),
+						        'text'       => _x('Home', 'button label', 'wicket-theme'),
 						        'icon_start' => [
 						            'icon' => 'fa-regular fa-house',
 						        ],
@@ -283,7 +283,7 @@ if (have_posts()) :
 						        'reversed' => true,
 						        'default_link_style' => true,
 						        'url'        => get_home_url(),
-						        'text'       => __('Home', 'wicket-theme'),
+						        'text'       => _x('Home', 'button label', 'wicket-theme'),
 						        'icon_start' => [
 						            'icon' => 'fa-regular fa-house',
 						        ],
@@ -466,7 +466,7 @@ if (have_posts()) :
 						<?php get_component('button', [
 						    'variant'     => 'primary',
 						    'size'        => 'lg',
-						    'label'       => __('Primary large', 'wicket-theme'),
+						    'label'       => _x('Primary large', 'button label', 'wicket-theme'),
 						    'prefix_icon' => 'fa fa-calendar-alt',
 						    'suffix_icon' => 'fa fa-external-link-alt',
 						]) ?>
@@ -475,7 +475,7 @@ if (have_posts()) :
 						<?php get_component('button', [
 						    'variant'     => 'primary',
 						    'size'        => 'lg',
-						    'label'       => __('Primary large disabled', 'wicket-theme'),
+						    'label'       => _x('Primary large disabled', 'button label', 'wicket-theme'),
 						    'prefix_icon' => 'fa fa-calendar-alt',
 						    'suffix_icon' => 'fa fa-external-link-alt',
 						    'disabled'    => true,
@@ -484,7 +484,7 @@ if (have_posts()) :
 					<div class="mb-3">
 						<?php get_component('button', [
 						    'variant'     => 'primary',
-						    'label'       => __('Primary default', 'wicket-theme'),
+						    'label'       => _x('Primary default', 'button label', 'wicket-theme'),
 						    'prefix_icon' => 'fa fa-calendar-alt',
 						    'suffix_icon' => 'fa fa-external-link-alt',
 						]) ?>
@@ -493,7 +493,7 @@ if (have_posts()) :
 						<?php get_component('button', [
 						    'variant'     => 'primary',
 						    'size'        => 'sm',
-						    'label'       => __('Primary small', 'wicket-theme'),
+						    'label'       => _x('Primary small', 'button label', 'wicket-theme'),
 						    'prefix_icon' => 'fa fa-calendar-alt',
 						    'suffix_icon' => 'fa fa-external-link-alt',
 						]) ?>
@@ -506,7 +506,7 @@ if (have_posts()) :
 						<?php get_component('button', [
 						    'variant'     => 'secondary',
 						    'size'        => 'lg',
-						    'label'       => __('Secondary large', 'wicket-theme'),
+						    'label'       => _x('Secondary large', 'button label', 'wicket-theme'),
 						    'prefix_icon' => 'fa fa-calendar-alt',
 						    'suffix_icon' => 'fa fa-external-link-alt',
 						]) ?>
@@ -515,7 +515,7 @@ if (have_posts()) :
 						<?php get_component('button', [
 						    'variant'     => 'secondary',
 						    'size'        => 'lg',
-						    'label'       => __('Secondary large disabled', 'wicket-theme'),
+						    'label'       => _x('Secondary large disabled', 'button label', 'wicket-theme'),
 						    'prefix_icon' => 'fa fa-calendar-alt',
 						    'suffix_icon' => 'fa fa-external-link-alt',
 						    'disabled'    => true,
@@ -524,7 +524,7 @@ if (have_posts()) :
 					<div class="mb-3">
 						<?php get_component('button', [
 						    'variant'     => 'secondary',
-						    'label'       => __('Secondary default', 'wicket-theme'),
+						    'label'       => _x('Secondary default', 'button label', 'wicket-theme'),
 						    'prefix_icon' => 'fa fa-calendar-alt',
 						    'suffix_icon' => 'fa fa-external-link-alt',
 						]) ?>
@@ -533,7 +533,7 @@ if (have_posts()) :
 						<?php get_component('button', [
 						    'variant'     => 'secondary',
 						    'size'        => 'sm',
-						    'label'       => __('Secondary small', 'wicket-theme'),
+						    'label'       => _x('Secondary small', 'button label', 'wicket-theme'),
 						    'prefix_icon' => 'fa fa-calendar-alt',
 						    'suffix_icon' => 'fa fa-external-link-alt',
 						]) ?>
@@ -546,7 +546,7 @@ if (have_posts()) :
 						<?php get_component('button', [
 						    'variant'     => 'ghost',
 						    'size'        => 'lg',
-						    'label'       => __('Ghost large', 'wicket-theme'),
+						    'label'       => _x('Ghost large', 'button label', 'wicket-theme'),
 						    'prefix_icon' => 'fa fa-calendar-alt',
 						    'suffix_icon' => 'fa fa-external-link-alt',
 						]) ?>
@@ -555,7 +555,7 @@ if (have_posts()) :
 						<?php get_component('button', [
 						    'variant'     => 'ghost',
 						    'size'        => 'lg',
-						    'label'       => __('Ghost large disabled', 'wicket-theme'),
+						    'label'       => _x('Ghost large disabled', 'button label', 'wicket-theme'),
 						    'prefix_icon' => 'fa fa-calendar-alt',
 						    'suffix_icon' => 'fa fa-external-link-alt',
 						    'disabled'    => true,
@@ -564,7 +564,7 @@ if (have_posts()) :
 					<div class="mb-3">
 						<?php get_component('button', [
 						    'variant'     => 'ghost',
-						    'label'       => __('Ghost default', 'wicket-theme'),
+						    'label'       => _x('Ghost default', 'button label', 'wicket-theme'),
 						    'prefix_icon' => 'fa fa-calendar-alt',
 						    'suffix_icon' => 'fa fa-external-link-alt',
 						]) ?>
@@ -573,7 +573,7 @@ if (have_posts()) :
 						<?php get_component('button', [
 						    'variant'     => 'ghost',
 						    'size'        => 'sm',
-						    'label'       => __('Ghost small', 'wicket-theme'),
+						    'label'       => _x('Ghost small', 'button label', 'wicket-theme'),
 						    'prefix_icon' => 'fa fa-calendar-alt',
 						    'suffix_icon' => 'fa fa-external-link-alt',
 						]) ?>
@@ -587,7 +587,7 @@ if (have_posts()) :
 							<?php get_component('button', [
 							    'variant'     => 'primary',
 							    'size'        => 'lg',
-							    'label'       => __('Primary large', 'wicket-theme'),
+							    'label'       => _x('Primary large', 'button label', 'wicket-theme'),
 							    'prefix_icon' => 'fa fa-calendar-alt',
 							    'suffix_icon' => 'fa fa-external-link-alt',
 							    'reversed'    => true,
@@ -597,7 +597,7 @@ if (have_posts()) :
 							<?php get_component('button', [
 							    'variant'     => 'primary',
 							    'size'        => 'lg',
-							    'label'       => __('Primary large disabled', 'wicket-theme'),
+							    'label'       => _x('Primary large disabled', 'button label', 'wicket-theme'),
 							    'prefix_icon' => 'fa fa-calendar-alt',
 							    'suffix_icon' => 'fa fa-external-link-alt',
 							    'reversed'    => true,
@@ -607,7 +607,7 @@ if (have_posts()) :
 						<div class="mb-3">
 							<?php get_component('button', [
 							    'variant'     => 'primary',
-							    'label'       => __('Primary default', 'wicket-theme'),
+							    'label'       => _x('Primary default', 'button label', 'wicket-theme'),
 							    'prefix_icon' => 'fa fa-calendar-alt',
 							    'suffix_icon' => 'fa fa-external-link-alt',
 							    'reversed'    => true,
@@ -617,7 +617,7 @@ if (have_posts()) :
 							<?php get_component('button', [
 							    'variant'     => 'primary',
 							    'size'        => 'sm',
-							    'label'       => __('Primary small', 'wicket-theme'),
+							    'label'       => _x('Primary small', 'button label', 'wicket-theme'),
 							    'prefix_icon' => 'fa fa-calendar-alt',
 							    'suffix_icon' => 'fa fa-external-link-alt',
 							    'reversed'    => true,
@@ -629,7 +629,7 @@ if (have_posts()) :
 							<?php get_component('button', [
 							    'variant'     => 'secondary',
 							    'size'        => 'lg',
-							    'label'       => __('Secondary large', 'wicket-theme'),
+							    'label'       => _x('Secondary large', 'button label', 'wicket-theme'),
 							    'prefix_icon' => 'fa fa-calendar-alt',
 							    'suffix_icon' => 'fa fa-external-link-alt',
 							    'reversed'    => true,
@@ -639,7 +639,7 @@ if (have_posts()) :
 							<?php get_component('button', [
 							    'variant'     => 'secondary',
 							    'size'        => 'lg',
-							    'label'       => __('Secondary large disabled', 'wicket-theme'),
+							    'label'       => _x('Secondary large disabled', 'button label', 'wicket-theme'),
 							    'prefix_icon' => 'fa fa-calendar-alt',
 							    'suffix_icon' => 'fa fa-external-link-alt',
 							    'reversed'    => true,
@@ -649,7 +649,7 @@ if (have_posts()) :
 						<div class="mb-3">
 							<?php get_component('button', [
 							    'variant'     => 'secondary',
-							    'label'       => __('Secondary default', 'wicket-theme'),
+							    'label'       => _x('Secondary default', 'button label', 'wicket-theme'),
 							    'prefix_icon' => 'fa fa-calendar-alt',
 							    'suffix_icon' => 'fa fa-external-link-alt',
 							    'reversed'    => true,
@@ -659,7 +659,7 @@ if (have_posts()) :
 							<?php get_component('button', [
 							    'variant'     => 'secondary',
 							    'size'        => 'sm',
-							    'label'       => __('Secondary small', 'wicket-theme'),
+							    'label'       => _x('Secondary small', 'button label', 'wicket-theme'),
 							    'prefix_icon' => 'fa fa-calendar-alt',
 							    'suffix_icon' => 'fa fa-external-link-alt',
 							    'reversed'    => true,
@@ -671,7 +671,7 @@ if (have_posts()) :
 							<?php get_component('button', [
 							    'variant'     => 'ghost',
 							    'size'        => 'lg',
-							    'label'       => __('Ghost large', 'wicket-theme'),
+							    'label'       => _x('Ghost large', 'button label', 'wicket-theme'),
 							    'prefix_icon' => 'fa fa-calendar-alt',
 							    'suffix_icon' => 'fa fa-external-link-alt',
 							    'reversed'    => true,
@@ -681,7 +681,7 @@ if (have_posts()) :
 							<?php get_component('button', [
 							    'variant'     => 'ghost',
 							    'size'        => 'lg',
-							    'label'       => __('Ghost large disabled', 'wicket-theme'),
+							    'label'       => _x('Ghost large disabled', 'button label', 'wicket-theme'),
 							    'prefix_icon' => 'fa fa-calendar-alt',
 							    'suffix_icon' => 'fa fa-external-link-alt',
 							    'reversed'    => true,
@@ -691,7 +691,7 @@ if (have_posts()) :
 						<div class="mb-3">
 							<?php get_component('button', [
 							    'variant'     => 'ghost',
-							    'label'       => __('Ghost default', 'wicket-theme'),
+							    'label'       => _x('Ghost default', 'button label', 'wicket-theme'),
 							    'prefix_icon' => 'fa fa-calendar-alt',
 							    'suffix_icon' => 'fa fa-external-link-alt',
 							    'reversed'    => true,
@@ -701,7 +701,7 @@ if (have_posts()) :
 							<?php get_component('button', [
 							    'variant'     => 'ghost',
 							    'size'        => 'sm',
-							    'label'       => __('Ghost small', 'wicket-theme'),
+							    'label'       => _x('Ghost small', 'button label', 'wicket-theme'),
 							    'prefix_icon' => 'fa fa-calendar-alt',
 							    'suffix_icon' => 'fa fa-external-link-alt',
 							    'reversed'    => true,
@@ -753,25 +753,25 @@ if (have_posts()) :
 					<h2 class="text-heading-lg mb-3">Tooltip</h2>
 					<div class="mb-6">
 						<?php get_component('tooltip', [
-						    'content'  => __('Tooltip content', 'wicket-theme'),
+						    'content'  => _x('Tooltip content', 'tooltip', 'wicket-theme'),
 						    'position' => 'right',
 						]); ?>
 					</div>
 					<div class="mb-6">
 						<?php get_component('tooltip', [
-						    'content'  => __('Tooltip content', 'wicket-theme'),
+						    'content'  => _x('Tooltip content', 'tooltip', 'wicket-theme'),
 						    'position' => 'left',
 						]); ?>
 					</div>
 					<div class="mb-6">
 						<?php get_component('tooltip', [
-						    'content'  => __('Tooltip content', 'wicket-theme'),
+						    'content'  => _x('Tooltip content', 'tooltip', 'wicket-theme'),
 						    'position' => 'top',
 						]); ?>
 					</div>
 					<div class="mb-6">
 						<?php get_component('tooltip', [
-						    'content'  => __('Tooltip content', 'wicket-theme'),
+						    'content'  => _x('Tooltip content', 'tooltip', 'wicket-theme'),
 						    'position' => 'bottom',
 						]); ?>
 					</div>
@@ -789,20 +789,20 @@ if (have_posts()) :
 					<div class="mb-6">
 						<div class="mb-4">
 							<?php get_component('tag', [
-							    'label' => __('Members Only', 'wicket-theme'),
+							    'label' => _x('Members Only', 'status', 'wicket-theme'),
 							    'icon'  => 'fa-regular fa-lock',
 							]); ?>
 						</div>
 						<div class="mb-4">
 							<?php get_component('tag', [
-							    'label' => __('', 'wicket-theme'),
+							    'label' => '',
 							    'icon'  => 'fa-regular fa-lock',
 							]); ?>
 						</div>
 
 						<div class="mb-4">
 							<?php get_component('tag', [
-							    'label' => __('Topic tag', 'wicket-theme'),
+							    'label' => _x('Topic tag', 'status', 'wicket-theme'),
 							    'link'  => 'https://wicket.io/',
 							    'icon'  => '',
 							]); ?>
@@ -811,14 +811,14 @@ if (have_posts()) :
 						<div class="bg-black p-5">
 							<div class="mb-4">
 								<?php get_component('tag', [
-								    'label'    => __('Members Only', 'wicket-theme'),
+								    'label'    => _x('Members Only', 'status', 'wicket-theme'),
 								    'icon'     => 'fa-regular fa-lock',
 								    'reversed' => true,
 								]); ?>
 							</div>
 							<div>
 								<?php get_component('tag', [
-								    'label'    => __('', 'wicket-theme'),
+								    'label'    => '',
 								    'icon'     => 'fa-regular fa-lock',
 								    'reversed' => true,
 								]); ?>

@@ -36,7 +36,7 @@
 			        'featured_image' => get_post_thumbnail_id(),
 			        'link'           => [
 			            'url'    => get_the_permalink(),
-			            'text'   => _x('Read more', 'post card link label', 'wicket-theme'),
+			            'text'   => _x('Read more', 'button label', 'wicket-theme'),
 			            'target' => '_self',
 			        ],
 			        'member_only'    => is_member_only(get_the_ID()),

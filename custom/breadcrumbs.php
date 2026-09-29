@@ -30,7 +30,7 @@ if (!function_exists('wicket_breadcrumb')) {
                 'reversed'   => $reversed,
                 'url'        => get_home_url(),
                 /* translators: Breadcrumb link to the home page. */
-                'text'       => __('Home', 'wicket-theme'),
+                'text'       => _x('Home', 'label', 'wicket-theme'),
                 'icon_start' => [
                     'icon' => 'fa-regular fa-house',
                 ],
@@ -41,13 +41,13 @@ if (!function_exists('wicket_breadcrumb')) {
         $url = get_permalink();
         if (str_contains($url, '/resource/')) {
             /* translators: Breadcrumb label for the resources section. */
-            $crumbs[] = '<span class="font-bold">' . __('Resources', 'wicket-theme') . '</span>';
+            $crumbs[] = '<span class="font-bold">' . _x('Resources', 'label', 'wicket-theme') . '</span>';
         } elseif (str_contains($url, '/news/')) {
             /* translators: Breadcrumb label for the news section. */
-            $crumbs[] = '<span class="font-bold">' . __('News', 'wicket-theme') . '</span>';
+            $crumbs[] = '<span class="font-bold">' . _x('News', 'label', 'wicket-theme') . '</span>';
         } elseif (str_contains($url, '/event/')) {
             /* translators: Breadcrumb label for the events section. */
-            $crumbs[] = '<span class="font-bold">' . __('Events', 'wicket-theme') . '</span>';
+            $crumbs[] = '<span class="font-bold">' . _x('Events', 'label', 'wicket-theme') . '</span>';
         } elseif (is_page() || is_single()) {
             // Standard page
             if ($post->post_parent) {
@@ -76,7 +76,7 @@ if (!function_exists('wicket_breadcrumb')) {
             $crumbs[] = '<strong>' . get_the_title() . '</strong>';
         } elseif (is_search()) {
             /* translators: %s: search term wrapped in markup. */
-            $crumbs[] = '<strong>' . sprintf(esc_html_x('Search Results for: “%s”', 'breadcrumb', 'wicket-theme'), '<em>' . esc_html(get_search_query()) . '</em>') . '</strong>';
+            $crumbs[] = '<strong>' . sprintf(esc_html_x('Search Results for: “%s”', 'label', 'wicket-theme'), '<em>' . esc_html(get_search_query()) . '</em>') . '</strong>';
         }
 
         echo implode($separator, $crumbs);

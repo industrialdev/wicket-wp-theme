@@ -23,7 +23,7 @@ $display_publish_date = get_field('display_publish_date');
         if ($display_publish_date) {
             echo '<div class="wp-block-published-date">';
             /* translators: %s: publish date. */
-            echo "<p class='mt-3 mb-4'><strong>" . esc_html(sprintf(_x('Published: %s', 'page publish date', 'wicket-theme'), get_the_date())) . '</strong></p>';
+            echo "<p class='mt-3 mb-4'><strong>" . esc_html(sprintf(_x('Published: %s', 'label', 'wicket-theme'), get_the_date())) . '</strong></p>';
             echo '</div>';
         }
         ?>

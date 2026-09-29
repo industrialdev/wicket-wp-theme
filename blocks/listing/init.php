@@ -39,9 +39,9 @@ function init($block = [])
     $hide_helper_link = $block['hide_helper_link'] ?? get_field('listing_hide_helper_link');
     $hide_document_format_icon = $block['hide_document_format_icon'] ?? get_field('listing_hide_document_format_icon');
     /* translators: Default button label: download the file. */
-    $listing_download_label = get_field('listing_download_label') ?? __('Download', 'wicket-theme');
+    $listing_download_label = get_field('listing_download_label') ?? _x('Download', 'button label', 'wicket-theme');
     /* translators: Default button label: open the listed page. */
-    $listing_link_label = get_field('listing_link_label') ?? __('View Page', 'wicket-theme');
+    $listing_link_label = get_field('listing_link_label') ?? _x('View Page', 'button label', 'wicket-theme');
     $date_format = apply_filters('wicket_general_date_format', 'F j, Y');
     $hide_date = $block['hide_date'] ?? get_field('listing_hide_date');
     $pre_filter_categories = [];
@@ -371,11 +371,11 @@ function init($block = [])
                             <?php
             if ($total_posts === 0) {
                 /* translators: %d: number of results. */
-                echo esc_html(sprintf(_nx('%d Result', '%d Results', 0, 'listing result count', 'wicket-theme'), 0));
+                echo esc_html(sprintf(_nx('%d Result', '%d Results', 0, 'count label', 'wicket-theme'), 0));
             } else {
                 echo sprintf(
                     /* translators: 1: current page, 2: total pages, 3: total results. */
-                    __('Page %1$d of %2$d (%3$d Results)', 'wicket-theme'),
+                    _x('Page %1$d of %2$d (%3$d Results)', 'count label', 'wicket-theme'),
                     $paged,
                     $total_pages,
                     $total_posts
@@ -386,14 +386,14 @@ function init($block = [])
                         <div
                             class="<?php echo defined('WICKET_WP_THEME_V2') ? 'block-wicket-listing__sort-by' : 'flex items-center gap-3' ?>">
                             <label for="sort-by">
-                                <?php echo __('Sort by', 'wicket-theme'); ?>
+                                <?php echo _x('Sort by', 'label', 'wicket-theme'); ?>
                             </label>
                             <select name="sort-by" id="sort-by" class="min-w-[260px]" onchange="this.form.submit()">
                                 <?php
-        $date_desc_label = _x('Date (newest-oldest)', 'listing sort option', 'wicket-theme');
-    $date_asc_label = _x('Date (oldest-newest)', 'listing sort option', 'wicket-theme');
-    $alpha_asc_label = _x('Alphabetical (a-z)', 'listing sort option', 'wicket-theme');
-    $alpha_desc_label = _x('Alphabetical (z-a)', 'listing sort option', 'wicket-theme');
+        $date_desc_label = _x('Date (newest-oldest)', 'label', 'wicket-theme');
+    $date_asc_label = _x('Date (oldest-newest)', 'label', 'wicket-theme');
+    $alpha_asc_label = _x('Alphabetical (a-z)', 'label', 'wicket-theme');
+    $alpha_desc_label = _x('Alphabetical (z-a)', 'label', 'wicket-theme');
     if (isset($_GET['sort-by'])) : ?>
                                     <option value="date-desc" <?php if ($_GET['sort-by'] == 'date-desc') : ?>selected<?php endif; ?>>
                                         <?php echo $date_desc_label; ?>
@@ -491,7 +491,7 @@ function init($block = [])
                                     if (!$hide_attachment && $document_attachment_url) {
                                         get_component('button', [
                                             'variant' => 'secondary',
-                                            'label'   => $listing_download_label == '' ? __('Download', 'wicket-theme') : $listing_download_label,
+                                            'label'   => $listing_download_label == '' ? _x('Download', 'button label', 'wicket-theme') : $listing_download_label,
                                             'a_tag'   => true,
                                             'suffix_icon' => 'fa-solid fa-arrow-down-to-bracket',
                                             'link'    => $document_attachment_url,
@@ -535,14 +535,14 @@ function init($block = [])
                                     'featured_image'            => !$hide_featured_image ? $featured_image : '',
                                     'link'                      => [
                                         'url'    => $permalink,
-                                        'text'   => _x('Read more', 'post card link label', 'wicket-theme'),
+                                        'text'   => _x('Read more', 'button label', 'wicket-theme'),
                                         'target' => '_self',
                                     ],
                                     'member_only'               => $member_only,
                                     'is_restricted'             => $is_restricted,
                                     'topics'                    => $topics,
                                     'document'                  => !$hide_attachment ? $document_attachment_url : '',
-                                    'download_label'            => $listing_download_label == '' ? __('Download', 'wicket-theme') : $listing_download_label,
+                                    'download_label'            => $listing_download_label == '' ? _x('Download', 'button label', 'wicket-theme') : $listing_download_label,
                                     'link_label'                => $listing_link_label,
                                     'helper_link'               => !$hide_helper_link ? $helper_link : '',
                                     'hide_document_format_icon' => $hide_document_format_icon,
@@ -581,7 +581,7 @@ function init($block = [])
                         <div class="p-10">
                             <h2
                                 class="<?php echo defined('WICKET_WP_THEME_V2') ? 'block-wicket-listing__no-results' : 'text-center font-bold text-heading-md mb-6' ?>">
-                                <?php echo __('No results found.', 'wicket-theme') ?>
+                                <?php echo _x('No results found.', 'message', 'wicket-theme') ?>
                             </h2>
                             <div class="text-center">
                                 <?php echo apply_filters('wicket_listing_block_no_results_message', __('Try adjusting your search or filter to find what you are looking for.', 'wicket-theme')); ?>

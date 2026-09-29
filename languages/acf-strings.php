@@ -10,1574 +10,1550 @@ defined('ABSPATH') || exit;
 return;
 
 /* translators: ACF field group: Block - Author. */
-_x('Add Author', 'admin field button label', 'wicket-theme');
+_x('Add Author', 'button label', 'wicket-theme');
 
 /* translators: ACF field group: Footer Settings. */
-_x('Add Column', 'admin field button label', 'wicket-theme');
+_x('Add Column', 'button label', 'wicket-theme');
 
 /* translators: ACF field group: Footer Settings. */
-_x('Add Content', 'admin field button label', 'wicket-theme');
+_x('Add Content', 'button label', 'wicket-theme');
 
 /* translators: ACF field group: Block - Manually Related Content. */
-_x('Add Item', 'admin field button label', 'wicket-theme');
+_x('Add Item', 'button label', 'wicket-theme');
 
 /* translators: ACF field group: Block - Banner, Block - Call Out Card, Block - Icon Grid, Block - Accordion, Block - Listing, Block - Dynamically Related Content, Theme Styling Options, Block - Dynamically Related Events. */
-_x('Add Row', 'admin field button label', 'wicket-theme');
+_x('Add Row', 'button label', 'wicket-theme');
 
 /* translators: ACF field group: Global Settings. */
-_x('Add Social Media', 'admin field button label', 'wicket-theme');
+_x('Add Social Media', 'button label', 'wicket-theme');
 
 /* translators: ACF field group: Block - Tabs. */
-_x('Add Tab Item', 'admin field button label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Accordion. */
-_x('Determines if this accordion item will be open by default on page load. Only one item should have this checked.', 'admin field instructions', 'wicket-theme');
-
-/* translators: ACF field group: Global Search Settings. */
-_x('Enter a comma separated list of the post IDs you want to exclude from the filters area of the search page. For example: "12,58,4". See the <a target="_blank" href="/app/themes/wicket-wp-theme/custom/wp_terms_cheat_sheet.php">cheat sheet</a> for available post IDs on this site (must be an admin).', 'admin field instructions', 'wicket-theme');
-
-/* translators: ACF field group: Global Search Settings. */
-_x('Enter a comma separated list of the post types you want displayed in the filters area of the search page. For example: "news,resources". See the <a target="_blank" href="/app/themes/wicket-wp-theme/custom/wp_terms_cheat_sheet.php#post_types">cheat sheet</a> for available post types on this site (must be an admin).', 'admin field instructions', 'wicket-theme');
-
-/* translators: ACF field group: Global Search Settings. */
-_x('Enter a comma separated list of the post types you want to exclude from the filters area of the search page. For example: "post,page". See the <a target="_blank" href="/app/themes/wicket-wp-theme/custom/wp_terms_cheat_sheet.php">cheat sheet</a> for available post types on this site (must be an admin).', 'admin field instructions', 'wicket-theme');
-
-/* translators: ACF field group: Global Search Settings. */
-_x('Enter a comma separated list of the taxonomies you want displayed in the filters area of the search page. For example: "category,product_type,nav_menu". See the <a target="_blank" href="/app/themes/wicket-wp-theme/custom/wp_terms_cheat_sheet.php">cheat sheet</a> for available taxonomy slugs on this site (must be an admin).', 'admin field instructions', 'wicket-theme');
+_x('Add Tab Item', 'button label', 'wicket-theme');
 
 /* translators: ACF field group: Theme Styling Options. */
-_x('Format: X_position Y_position Blur Colour', 'admin field instructions', 'wicket-theme');
+_x('px', 'field affix', 'wicket-theme');
+
+/* translators: ACF field group: Block - Icon Grid. */
+_x('E.g. "fa-solid fa-circle"', 'field placeholder', 'wicket-theme');
+
+/* translators: ACF field group: Global Search Settings. */
+__('E.g. 12,58,4', 'wicket-theme');
+
+/* translators: ACF field group: Header Settings. */
+_x('E.g. <!-- Google Tag Manager (noscript) -->   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PBZBHM"   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>   <!-- End Google Tag Manager (noscript) -->', 'field placeholder', 'wicket-theme');
+
+/* translators: ACF field group: Header Settings. */
+__('E.g. <!-- Google Tag Manager --> <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({\'gtm.start\': new Date().getTime(),event:\'gtm.js\'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!=\'dataLayer\'?\'&l=\'+l:\'\';j.async=true;j.src= \'https://www.googletagmanager.com/gtm.js?id=\'+i+dl;f.parentNode.insertBefore(j,f); })(window,document,\'script\',\'dataLayer\',\'GTM-PBZBHM\');</script> <!-- End Google Tag Manager -->', 'wicket-theme');
+
+/* translators: ACF field group: Global Search Settings. */
+__('E.g. category,product_type,nav_menu', 'wicket-theme');
 
 /* translators: ACF field group: Global Settings. */
-_x('Grab the desired FontAwesome icon classes from https://fontawesome.com/icons', 'admin field instructions', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('How many posts you would like to display per page.', 'admin field instructions', 'wicket-theme');
-
-/* translators: ACF field group: Block - Manually Related Content. */
-_x('If \'document\' type is set and this field is left empty, the document title will be used here.', 'admin field instructions', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('If left blank label will be marked as ‘Download’', 'admin field instructions', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('If left blank label will be marked as ‘View Page’', 'admin field instructions', 'wicket-theme');
-
-/* translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events. */
-_x('If title is not provided, default title will be "Related [Post_Type]"', 'admin field instructions', 'wicket-theme');
-
-/* translators: ACF field group: Footer Settings. */
-_x('Newsletter section that appears on top of the footer.', 'admin field instructions', 'wicket-theme');
-
-/* translators: ACF field group: Block - Banner. */
-_x('Only available in single post pages.', 'admin field instructions', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Select the event categories you would like to appear in this listing.', 'admin field instructions', 'wicket-theme');
-
-/* translators: ACF field group: Block - Accordion. */
-_x('Select the heading level for the accordion titles.', 'admin field instructions', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Select the news types you would like to appear in this listing.', 'admin field instructions', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Select the post types you would like to appear in this listing.', 'admin field instructions', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Select the posts or pages you would like to exclude from results.', 'admin field instructions', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Select the product categories you would like to appear in this listing.', 'admin field instructions', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Select the resource types you would like to appear in this listing.', 'admin field instructions', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Select the taxonomies you would like to use as filters on the page.', 'admin field instructions', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Select the topics you would like to appear in this listing.', 'admin field instructions', 'wicket-theme');
-
-/* translators: ACF field group: Block - Accordion. */
-_x('This allows the body text to \'float\' below the accordion pill.', 'admin field instructions', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Use this to add custom fonts from CDN, for example:
-&lt;link rel="stylesheet" href="https://use.typekit.net/bot2tyc.css"&gt;', 'admin field instructions', 'wicket-theme');
-
-/* translators: ACF field group: Block - Manually Related Content. */
-_x('You can override the default document / link icon by using this field.', 'admin field instructions', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('e.g. "Montserrat,sans-serif" or "proxima-nova-condensed,sans-serif"', 'admin field instructions', 'wicket-theme');
-
-/* translators: ACF field group: Header Settings. */
-_x('AC Localization', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Accordion. */
-_x('Accordion Items', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Accordion. */
-_x('Accordion Type', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Additional Taxonomies -', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Additional Taxonomy', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Additional Taxonomy Filters', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Alerts Corner Radius', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Author. */
-_x('Author', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Author. */
-_x('Authors', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Banner. */
-_x('Back Link', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Background Accent Dark', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Background Accent Light', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Background Callout 1', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Background Callout 2', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Background Card', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Background Dark', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Background Dark Alternate', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Background Disabled', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Banner. */
-_x('Background Image', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Background Image Overlay', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Background Interactive', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Background Interactive Reversed', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Background Label', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Background Label 2', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Background Light', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Background Light Alternate', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Background Light Neutral', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Banner. */
-_x('Background Style', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Background Tag', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Background White', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Banner Radius', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Header Settings. */
-_x('Become a Member', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Body Background', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Accordion, Block - Tabs. */
-_x('Body Content', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Manually Related Content. */
-_x('Body Text', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Border', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Border Accent', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Border Alert', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Border Banner Bottom', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Border Call Out', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Border Card', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Border Dark', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Border Disabled', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Border Dynamic Card', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Border Featured Card', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Border Footer Divider', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Border Footer Social', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Border Footer Top', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Border Input Default', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Border Interactive', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Border Interactive Large', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Border Interactive Medium', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Border Interactive Reversed', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Border Interactive Small', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Border Large', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Border Light', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Border Listing Card', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Border Main Nav Bottom', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Border Main Nav Top', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Border Medium', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Border Small', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Border Tag', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Border Weights', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Border White', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Borders', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Header Settings, Block - Banner, Shared - Button Style. */
-_x('Button Style', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Accordion, Block - Tabs. */
-_x('Button/Link Style', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Manually Related Content. */
-_x('CTA Button Label Override', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events. */
-_x('CTA Options', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Card. */
-_x('CTA Style', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Accordion, Block - Tabs. */
-_x('Call To Action', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Banner. */
-_x('Call to Action', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Card Accent Corner Radius', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Card Corner Radius', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Dynamically Related Events. */
-_x('Card Display', 'admin field label', 'wicket-theme');
+_x('E.g. fa-brands fa-youtube', 'field placeholder', 'wicket-theme');
 
 /* translators: ACF field group: Global Search Settings. */
-_x('Card Options', 'admin field label', 'wicket-theme');
+_x('E.g. news,resources', 'field placeholder', 'wicket-theme');
 
 /* translators: ACF field group: Global Search Settings. */
-_x('Card: Show Content Type Tags', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Global Search Settings. */
-_x('Card: Show Excerpt', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Global Search Settings. */
-_x('Card: Show Featured Image', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Global Search Settings. */
-_x('Card: Show Published Date', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Colour', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Colours', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Manually Related Content, Block - Featured Posts, Block - Dynamically Related Content, Block - Dynamically Related Events. */
-_x('Column Count', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Footer Settings. */
-_x('Content', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Manually Related Content. */
-_x('Content Type', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Contextual Nav', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Footer Settings. */
-_x('Copyright', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Corner Radius', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Header Settings. */
-_x('Create Account', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Custom Colours', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Banner. */
-_x('Custom Image', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Global Settings. */
-_x('Custom/Other Link', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Default Sort By', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Default font-family name', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Footer Settings, Block - Banner, Block - Call Out Card, Block - Contact Card. */
-_x('Description', 'admin field label', 'wicket-theme');
+_x('E.g. post,page', 'field placeholder', 'wicket-theme');
 
 /* translators: ACF field group: Standard Page Settings. */
-_x('Developer Settings', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Standard Page Settings. */
-_x('Display Breadcrumb', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Standard Page Settings. */
-_x('Display Publish Date', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Standard Page Settings. */
-_x('Display Settings', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Manually Related Content. */
-_x('Document', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Banner. */
-_x('Download Button Label', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Banner. */
-_x('Download Button Style', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Download Label', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Banner. */
-_x('Downloadable File', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Drop Shadow', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Drop Shadows', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Dropdown Mega Background', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Dropdown Mega Background Highlight', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Dropdown Mega Corner Radius', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Dropdown Mega Heading Link', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Dropdown Mega Link', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Elevation 12', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Elevation 4', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Elevation 8', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Footer Settings, Block - Contact Card. */
-_x('Email', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Footer Settings. */
-_x('Embed', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Event Categories', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Dynamically Related Events. */
-_x('Event Format', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Events Taxonomy', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Card. */
-_x('Excerpt', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Exclude From Results', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Global Search Settings. */
-_x('Excluded Post IDs', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Global Search Settings. */
-_x('Excluded Post Types', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Global Settings. */
-_x('Facebook Link', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Font Family', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Icon Grid. */
-_x('Font-Awesome Icon Code', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Global Settings. */
-_x('FontAwesome Icon Class(es)', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Footer', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Footer Settings. */
-_x('Footer Columns', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Footer Navigation', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Card. */
-_x('Full Height', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Header Settings. */
-_x('General', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Global Background Colours', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Global Text Colours', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Head Font HTML Code', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Header', 'admin field label', 'wicket-theme');
+_x('e.g. homepage-template', 'field placeholder', 'wicket-theme');
 
 /* translators: ACF field group: Block - Accordion. */
-_x('Heading Level', 'admin field label', 'wicket-theme');
+__('Determines if this accordion item will be open by default on page load. Only one item should have this checked.', 'wicket-theme');
 
-/* translators: ACF field group: Block - Banner. */
-_x('Helper Link', 'admin field label', 'wicket-theme');
+/* translators: ACF field group: Global Search Settings. */
+__('Enter a comma separated list of the post IDs you want to exclude from the filters area of the search page. For example: "12,58,4". See the <a target="_blank" href="/app/themes/wicket-wp-theme/custom/wp_terms_cheat_sheet.php">cheat sheet</a> for available post IDs on this site (must be an admin).', 'wicket-theme');
 
-/* translators: ACF field group: Block - Banner. */
-_x('Helper Link Button Style', 'admin field label', 'wicket-theme');
+/* translators: ACF field group: Global Search Settings. */
+__('Enter a comma separated list of the post types you want displayed in the filters area of the search page. For example: "news,resources". See the <a target="_blank" href="/app/themes/wicket-wp-theme/custom/wp_terms_cheat_sheet.php#post_types">cheat sheet</a> for available post types on this site (must be an admin).', 'wicket-theme');
 
-/* translators: ACF field group: Block - Author. */
-_x('Hide Bio', 'admin field label', 'wicket-theme');
+/* translators: ACF field group: Global Search Settings. */
+__('Enter a comma separated list of the post types you want to exclude from the filters area of the search page. For example: "post,page". See the <a target="_blank" href="/app/themes/wicket-wp-theme/custom/wp_terms_cheat_sheet.php">cheat sheet</a> for available post types on this site (must be an admin).', 'wicket-theme');
 
-/* translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events. */
-_x('Hide Block Title', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Featured Posts, Block - Dynamically Related Content. */
-_x('Hide Content Type', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Post List, Block - Featured Posts, Block - Listing, Block - Dynamically Related Content, Block - Dynamically Related Events. */
-_x('Hide Date', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Hide Date Filter', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Hide Document Attachment', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Hide Document Format Icon', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Dynamically Related Events. */
-_x('Hide Event Category', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Dynamically Related Events. */
-_x('Hide Event Format/Location', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Post List, Block - Featured Posts, Block - Listing, Block - Dynamically Related Content, Block - Dynamically Related Events. */
-_x('Hide Excerpt', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Post List, Block - Featured Posts, Block - Listing, Block - Dynamically Related Content, Block - Dynamically Related Events. */
-_x('Hide Featured Image', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Hide Helper Link', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Dynamically Related Events. */
-_x('Hide Price', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Author. */
-_x('Hide Profile Image', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Hide Search', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Dynamically Related Events. */
-_x('Hide Start Date Indicator', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Post List. */
-_x('Hide Tags', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Hide Type Taxonomy', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Additional Settings. */
-_x('Hide on listings', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Footer Settings. */
-_x('Hide social links', 'admin field label', 'wicket-theme');
+/* translators: ACF field group: Global Search Settings. */
+__('Enter a comma separated list of the taxonomies you want displayed in the filters area of the search page. For example: "category,product_type,nav_menu". See the <a target="_blank" href="/app/themes/wicket-wp-theme/custom/wp_terms_cheat_sheet.php">cheat sheet</a> for available taxonomy slugs on this site (must be an admin).', 'wicket-theme');
 
 /* translators: ACF field group: Theme Styling Options. */
-_x('Highlight Dark', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Highlight Light', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events. */
-_x('Highlight featured post(s)', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Manually Related Content. */
-_x('Icon', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Icon Grid. */
-_x('Icon Drop Shadows', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Icon Grid. */
-_x('Icon Grid Icons', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Icon Grid. */
-_x('Icon Grid Title', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Icon Grid. */
-_x('Icon Image', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Icon Grid. */
-_x('Icon Link URL', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Icon Grid. */
-_x('Icon Text', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Manually Related Content, Block - Accordion, Block - Sidebar/Contextual Nav. */
-_x('Icon Type', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Footer Settings, Block - Banner, Block - Card. */
-_x('Image', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Image Corner Radius', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Informational States', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Input Fields Corner Radius Medium', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Input Fields Corner Radius Small', 'admin field label', 'wicket-theme');
+__('Format: X_position Y_position Blur Colour', 'wicket-theme');
 
 /* translators: ACF field group: Global Settings. */
-_x('Instagram Link', 'admin field label', 'wicket-theme');
+__('Grab the desired FontAwesome icon classes from https://fontawesome.com/icons', 'wicket-theme');
 
-/* translators: ACF field group: Theme Styling Options. */
-_x('Interactive', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Interactive Corner Radius Large', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Interactive Corner Radius Medium', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Interactive Reversed', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Banner. */
-_x('Intro', 'admin field label', 'wicket-theme');
+/* translators: ACF field group: Block - Listing. */
+__('How many posts you would like to display per page.', 'wicket-theme');
 
 /* translators: ACF field group: Block - Manually Related Content. */
-_x('Items', 'admin field label', 'wicket-theme');
+__('If \'document\' type is set and this field is left empty, the document title will be used here.', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing. */
+__('If left blank label will be marked as ‘Download’', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing. */
+__('If left blank label will be marked as ‘View Page’', 'wicket-theme');
 
 /* translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events. */
-_x('Label', 'admin field label', 'wicket-theme');
+__('If title is not provided, default title will be "Related [Post_Type]"', 'wicket-theme');
 
-/* translators: ACF field group: Theme Styling Options. */
-_x('Label Corner Radius', 'admin field label', 'wicket-theme');
+/* translators: ACF field group: Footer Settings. */
+__('Newsletter section that appears on top of the footer.', 'wicket-theme');
+
+/* translators: ACF field group: Block - Banner. */
+__('Only available in single post pages.', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing. */
+__('Select the event categories you would like to appear in this listing.', 'wicket-theme');
 
 /* translators: ACF field group: Block - Accordion. */
-_x('Label/Title', 'admin field label', 'wicket-theme');
+__('Select the heading level for the accordion titles.', 'wicket-theme');
 
 /* translators: ACF field group: Block - Listing. */
-_x('Layout', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Manually Related Content. */
-_x('Layout Style', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Footer Settings, Header Settings, Block - Banner, Block - Call Out Card, Block - Card. */
-_x('Link', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Accordion, Block - Tabs. */
-_x('Link & Label', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Manually Related Content. */
-_x('Link & Link Label', 'admin field label', 'wicket-theme');
+__('Select the news types you would like to appear in this listing.', 'wicket-theme');
 
 /* translators: ACF field group: Block - Listing. */
-_x('Link Label', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Footer Settings. */
-_x('Link Reversed Style', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Footer Settings. */
-_x('Link Size', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Footer Settings, Block - Call Out Card. */
-_x('Link Style', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Global Settings. */
-_x('LinkedIn Link', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Banner, Block - Call Out Card. */
-_x('Links', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Header Settings. */
-_x('Login/Logout', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Main Menu Highlight Radius', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Main Navigation', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Manually Related Content. */
-_x('Make Buttons Same Width', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events. */
-_x('Maximum Number of Posts', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Header Settings. */
-_x('Member Portal', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Footer Settings. */
-_x('Menu', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Miscellaneous', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Header Settings. */
-_x('Mobile Menu: Use Sub-Menu Dropdowns', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Modal Background Overlay', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Nav Contextual Link Level 1', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Nav Contextual Sublink', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Nav Contextual Title', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Nav Footer Background', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Nav Footer Border', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Nav Footer Border Top', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Nav Footer Newsletter Background', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Nav Footer Newsletter Text Content', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Nav Footer Social Background', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Nav Footer Social Border Hover', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Nav Footer Social Text', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Nav Footer Social Text Hover', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Nav Footer Sublink', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Nav Footer Text Content', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Nav Footer Text Interactive', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Nav Footer Title', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Nav Links Highlight Radius', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Nav Main Background', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Nav Main Border', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Nav Main Border Interactive', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Nav Main Highlight', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Nav Main Label', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Nav Secondary Label', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Nav Utility Background', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Nav Utility Background Highlight', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Nav Utility Label', 'admin field label', 'wicket-theme');
+__('Select the post types you would like to appear in this listing.', 'wicket-theme');
 
 /* translators: ACF field group: Block - Listing. */
-_x('News Taxonomy', 'admin field label', 'wicket-theme');
+__('Select the posts or pages you would like to exclude from results.', 'wicket-theme');
 
 /* translators: ACF field group: Block - Listing. */
-_x('News Type', 'admin field label', 'wicket-theme');
+__('Select the product categories you would like to appear in this listing.', 'wicket-theme');
 
-/* translators: ACF field group: Footer Settings. */
-_x('Newsletter', 'admin field label', 'wicket-theme');
+/* translators: ACF field group: Block - Listing. */
+__('Select the resource types you would like to appear in this listing.', 'wicket-theme');
 
-/* translators: ACF field group: Footer Settings. */
-_x('Newsletter Page', 'admin field label', 'wicket-theme');
+/* translators: ACF field group: Block - Listing. */
+__('Select the taxonomies you would like to use as filters on the page.', 'wicket-theme');
 
-/* translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events. */
-_x('Number of featured post(s)', 'admin field label', 'wicket-theme');
+/* translators: ACF field group: Block - Listing. */
+__('Select the topics you would like to appear in this listing.', 'wicket-theme');
 
 /* translators: ACF field group: Block - Accordion. */
-_x('Open By Default', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Global Search Settings. */
-_x('Page Options', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Standard Page Settings. */
-_x('Page Wrapper Class', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Contact Card. */
-_x('Phone', 'admin field label', 'wicket-theme');
+__('This allows the body text to \'float\' below the accordion pill.', 'wicket-theme');
 
 /* translators: ACF field group: Footer Settings. */
-_x('Phone Number', 'admin field label', 'wicket-theme');
+__('This will automatically pull in the social media links', 'wicket-theme');
 
-/* translators: ACF field group: Block - Search Form. */
-_x('Placeholder', 'admin field label', 'wicket-theme');
+/* translators: ACF field group: Footer Settings. */
+__('This will automatically pull in the social media sharing links', 'wicket-theme');
 
-/* translators: ACF field group: Block - Listing. */
-_x('Post Taxonomy', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing, Block - Dynamically Related Content, Shared - Post Type. */
-_x('Post Type', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Global Search Settings. */
-_x('Post Type Filters', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Post List, Block - Featured Posts. */
-_x('Posts', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing, Global Search Settings. */
-_x('Posts Per Page', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Product Categories', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Products Taxonomy', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events. */
-_x('Relation', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Dynamically Related Events. */
-_x('Remove Drop shadow', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Resource Taxonomy', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Resource Type', 'admin field label', 'wicket-theme');
+/* translators: ACF field group: Theme Styling Options. */
+__('Use this to add custom fonts from CDN, for example:
+&lt;link rel="stylesheet" href="https://use.typekit.net/bot2tyc.css"&gt;', 'wicket-theme');
 
 /* translators: ACF field group: Block - Manually Related Content. */
-_x('Rounded Corners', 'admin field label', 'wicket-theme');
+__('You can override the default document / link icon by using this field.', 'wicket-theme');
 
-/* translators: ACF field group: Development Settings. */
-_x('Save ACF JSON To', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Global Search Settings. */
-_x('Search Listing Page', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Header Settings. */
-_x('Secondary Nav Cart Enabled', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Header Settings. */
-_x('Secondary Nav Search Enabled', 'admin field label', 'wicket-theme');
+/* translators: ACF field group: Theme Styling Options. */
+__('e.g. "Montserrat,sans-serif" or "proxima-nova-condensed,sans-serif"', 'wicket-theme');
 
 /* translators: ACF field group: Footer Settings. */
-_x('Section Title', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Accordion. */
-_x('Separate Item Body From Title', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events. */
-_x('Set Custom View All Link?', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Icon Grid. */
-_x('Show Arrow', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Header Settings. */
-_x('Show Button', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events. */
-_x('Show CTA', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Global Search Settings. */
-_x('Show Filter Bar', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Global Search Settings. */
-_x('Show Filter By Published Date', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Global Search Settings. */
-_x('Show Search Bar', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Dynamically Related Events. */
-_x('Show Tags', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events. */
-_x('Show View All Link', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Banner. */
-_x('Show breadcrumbs', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Banner. */
-_x('Show date', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Banner. */
-_x('Show post type', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Banner. */
-_x('Show share links', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Global Settings. */
-_x('Site Logo', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Footer Settings. */
-_x('Social Links', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Global Settings. */
-_x('Social Media Links', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Social Media Radius', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Footer Settings. */
-_x('Social Sharing', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Space 0', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Space 025', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Space 050', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Space 075', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Space 100', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Space 1000', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Space 150', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Space 200', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Space 250', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Space 300', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Space 400', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Space 500', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Space 600', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Space 800', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Spacing', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('State Error', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('State Error Light', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('State Info Primary', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('State Info Primary Light', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('State Info Secondary', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('State Info Secondary Light', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('State Success', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('State Success Light', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('State Warning', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('State Warning Light', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('States', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Status Active', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Status Inactive', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Call Out Card, Block - Contact Card, Block - Featured Posts, Block - Dynamically Related Content, Block - Dynamically Related Events. */
-_x('Style', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Card. */
-_x('Subtitle', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Tabs. */
-_x('Tab Items', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Table', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Table Footer Background', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Table Footer Label', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Table Header Background', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Table Header Label', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Table Row', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Table Row Alternate', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Table Row Border', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Tag Corner Radius', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Dynamically Related Events. */
-_x('Tag Taxonomy', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events. */
-_x('Taxonomies', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Shared - Taxonomy. */
-_x('Taxonomy', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing, Global Search Settings. */
-_x('Taxonomy Filters', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Dynamically Related Content, Shared - Taxonomy Term, Block - Dynamically Related Events. */
-_x('Taxonomy Term', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events, Shared - Taxonomy Terms. */
-_x('Taxonomy Terms', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Footer Settings. */
-_x('Text', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Text Accent', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Text Accent Reversed', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Banner. */
-_x('Text Alignment', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Text Button Label', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Text Button Label Reversed', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Text Content', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Text Content Reversed', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Text Content Secondary', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Text Content Secondary Reversed', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Text Disabled', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Text Label 1', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Text Label 2', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Text Tag', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Footer Settings, Block - Banner, Block - Call Out Card, Block - Contact Card, Block - Card, Block - Manually Related Content, Block - Featured Posts, Block - Dynamically Related Content, Block - Author, Block - Tabs, Block - Dynamically Related Events. */
-_x('Title', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Accordion. */
-_x('Title Is A Link', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Accordion. */
-_x('Title Link', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Manually Related Content. */
-_x('Title Text', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Featured Posts. */
-_x('Title colour', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Tooltip', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Topic', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Header Settings. */
-_x('Tracking Codes Right After < body >', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Header Settings. */
-_x('Tracking Codes in < head >', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Typography', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Icon Grid. */
-_x('Use Font-Awesome Icon Codes', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Theme Styling Options. */
-_x('Utility Nav', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events. */
-_x('View All Link', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Global Settings. */
-_x('X Link', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Global Settings. */
-_x('Youtube Link', 'admin field label', 'wicket-theme');
-
-/* translators: ACF field group: Footer Settings. */
-_x('This will automatically pull in the social media links', 'admin field message', 'wicket-theme');
-
-/* translators: ACF field group: Footer Settings. */
-_x('This will automatically pull in the social media sharing links', 'admin field message', 'wicket-theme');
-
-/* translators: ACF field group: Footer Settings. */
-_x('-- Select Menu --', 'admin field option', 'wicket-theme');
+_x('-- Select Menu --', 'label', 'wicket-theme');
 
 /* translators: ACF field group: Block - Listing, Shared - Post Type. */
-_x('-- Select Post Type --', 'admin field option', 'wicket-theme');
+_x('-- Select Post Type --', 'label', 'wicket-theme');
 
 /* translators: ACF field group: Block - Listing, Shared - Taxonomy. */
-_x('-- Select Taxonomy --', 'admin field option', 'wicket-theme');
+_x('-- Select Taxonomy --', 'label', 'wicket-theme');
 
 /* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
-_x('-- Select Taxonomy Term --', 'admin field option', 'wicket-theme');
+_x('-- Select Taxonomy Term --', 'label', 'wicket-theme');
 
 /* translators: ACF field group: Block - Manually Related Content. */
-_x('1', 'admin field option', 'wicket-theme');
+_x('1', 'label', 'wicket-theme');
 
 /* translators: ACF field group: Block - Manually Related Content. */
-_x('2', 'admin field option', 'wicket-theme');
+_x('2', 'label', 'wicket-theme');
 
 /* translators: ACF field group: Block - Manually Related Content. */
-_x('3', 'admin field option', 'wicket-theme');
+_x('3', 'label', 'wicket-theme');
 
 /* translators: ACF field group: Block - Manually Related Content. */
-_x('4', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events. */
-_x('AND', 'admin field option', 'wicket-theme');
+_x('4', 'label', 'wicket-theme');
 
 /* translators: ACF field group: Header Settings. */
-_x('Account Center', 'admin field option', 'wicket-theme');
+_x('AC Localization', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events. */
+_x('AND', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Accordion. */
+_x('Accordion Items', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Accordion. */
+_x('Accordion Type', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Header Settings. */
+_x('Account Center', 'label', 'wicket-theme');
 
 /* translators: ACF field group: Header Settings, Block - Listing. */
-_x('Account Centre', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Dynamically Related Events. */
-_x('All', 'admin field option', 'wicket-theme');
+_x('Account Centre', 'label', 'wicket-theme');
 
 /* translators: ACF field group: Block - Listing. */
-_x('Alphabetical (a-z)', 'admin field option', 'wicket-theme');
+_x('Additional Taxonomies -', 'label', 'wicket-theme');
 
 /* translators: ACF field group: Block - Listing. */
-_x('Alphabetical (z-a)', 'admin field option', 'wicket-theme');
+_x('Additional Taxonomy', 'label', 'wicket-theme');
 
 /* translators: ACF field group: Block - Listing. */
-_x('Blog Types', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Blogs', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Brands', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Card. */
-_x('Button', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Manually Related Content. */
-_x('Card', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Accordion. */
-_x('Card View', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Sidebar/Contextual Nav. */
-_x('Carets', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing, Shared - Taxonomy. */
-_x('Categories', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
-_x('Categories -> Blogs', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
-_x('Categories -> Case Studies', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
-_x('Categories -> Interviews', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
-_x('Categories -> News', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
-_x('Categories -> Resources', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
-_x('Categories -> Stories', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
-_x('Categories -> Uncategorized', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Banner. */
-_x('Centre', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Accordion, Block - Sidebar/Contextual Nav. */
-_x('Chevrons', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Development Settings. */
-_x('Child/Active Theme', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Manually Related Content. */
-_x('Custom Icon (Upload)', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Banner. */
-_x('Custom image', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Date (newest-oldest)', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Date (oldest-newest)', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Manually Related Content. */
-_x('Default Icon', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Disciplines', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Manually Related Content. */
-_x('Document', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Donation Forms', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Event Categories', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
-_x('Event Categories -> Summer Events', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
-_x('Event Categories -> Winter Events', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Events', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Banner. */
-_x('Featured image', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Footer Settings. */
-_x('Footer Column 1', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Footer Settings. */
-_x('Footer Column 2', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Footer Settings. */
-_x('Footer Column 3', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Footer Settings. */
-_x('Footer Column 4', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Footer Settings. */
-_x('Footer Column 5', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Footer Settings. */
-_x('Footer Menu', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing, Shared - Taxonomy. */
-_x('Formats', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Footer Settings, Header Settings, Block - Banner, Block - Call Out Card, Block - Accordion, Shared - Button Style. */
-_x('Ghost', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Grid view', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing, Shared - Post Type. */
-_x('Groups', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Accordion. */
-_x('H1', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Accordion. */
-_x('H2', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Accordion. */
-_x('H3', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Accordion. */
-_x('H4', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Accordion. */
-_x('H5', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Accordion. */
-_x('H6', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Dynamically Related Events. */
-_x('Hybrid', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Banner. */
-_x('Image', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Jobs', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Banner. */
-_x('Left', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Banner. */
-_x('Light', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Card, Block - Manually Related Content, Block - Accordion. */
-_x('Link', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Manually Related Content. */
-_x('List', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Accordion. */
-_x('List View', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('List view', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Footer Settings. */
-_x('Main Menu', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing, Shared - Post Type. */
-_x('Media', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing, Shared - Post Type. */
-_x('News', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing, Shared - Taxonomy. */
-_x('News Type', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
-_x('News Type -> Economy', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
-_x('News Type -> Finance', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
-_x('News Type -> Markets', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Banner. */
-_x('No image', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events. */
-_x('OR', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Featured Posts. */
-_x('One Level', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Organizer Categories', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Organizers', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing, Shared - Post Type. */
-_x('Pages', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Development Settings. */
-_x('Parent Theme', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Accordion, Block - Sidebar/Contextual Nav. */
-_x('Plus/Minus', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing, Shared - Post Type. */
-_x('Posts', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Footer Settings, Header Settings, Block - Banner, Block - Call Out Card, Block - Contact Card, Block - Accordion, Shared - Button Style. */
-_x('Primary', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Featured Posts. */
-_x('Primary + Secondary Level', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Product Categories', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Product Tags', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing, Shared - Taxonomy. */
-_x('Product categories', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
-_x('Product categories -> Advertising', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
-_x('Product categories -> Cards', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
-_x('Product categories -> Directories', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
-_x('Product categories -> Learning', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
-_x('Product categories -> Mailing List Services', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
-_x('Product categories -> Publications', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
-_x('Product categories -> Uncategorized', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing, Shared - Taxonomy. */
-_x('Product shipping classes', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing, Shared - Taxonomy. */
-_x('Product tags', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing, Shared - Post Type. */
-_x('Products', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing, Shared - Taxonomy. */
-_x('Resource Type', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing, Shared - Post Type. */
-_x('Resources', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Banner. */
-_x('Reversed', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Role Based Pricing Rules', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Footer Settings, Header Settings, Block - Banner, Block - Call Out Card, Block - Contact Card, Block - Accordion, Shared - Button Style. */
-_x('Secondary', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Series', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing, Shared - Taxonomy. */
-_x('Tags', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
-_x('Tags -> Content', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
-_x('Tags -> Featured', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
-_x('Tags -> Fun', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
-_x('Tags -> Happiness', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
-_x('Tags -> Important', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
-_x('Tags -> Must read', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
-_x('Tags -> Topic', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing, Shared - Taxonomy. */
-_x('Topics', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
-_x('Topics -> Must Read', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Venue Categories', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing. */
-_x('Venues', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Dynamically Related Events. */
-_x('Virtual', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Listing, Shared - Post Type. */
-_x('Woo Product Tabs', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Footer Settings. */
-_x('lg', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Footer Settings. */
-_x('md', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Footer Settings. */
-_x('sm', 'admin field option', 'wicket-theme');
-
-/* translators: ACF field group: Block - Icon Grid. */
-_x('E.g. "fa-solid fa-circle"', 'admin field placeholder', 'wicket-theme');
-
-/* translators: ACF field group: Global Search Settings. */
-_x('E.g. 12,58,4', 'admin field placeholder', 'wicket-theme');
-
-/* translators: ACF field group: Header Settings. */
-_x('E.g. <!-- Google Tag Manager (noscript) -->   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PBZBHM"   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>   <!-- End Google Tag Manager (noscript) -->', 'admin field placeholder', 'wicket-theme');
-
-/* translators: ACF field group: Header Settings. */
-_x('E.g. <!-- Google Tag Manager --> <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({\'gtm.start\': new Date().getTime(),event:\'gtm.js\'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!=\'dataLayer\'?\'&l=\'+l:\'\';j.async=true;j.src= \'https://www.googletagmanager.com/gtm.js?id=\'+i+dl;f.parentNode.insertBefore(j,f); })(window,document,\'script\',\'dataLayer\',\'GTM-PBZBHM\');</script> <!-- End Google Tag Manager -->', 'admin field placeholder', 'wicket-theme');
-
-/* translators: ACF field group: Global Search Settings. */
-_x('E.g. category,product_type,nav_menu', 'admin field placeholder', 'wicket-theme');
-
-/* translators: ACF field group: Global Settings. */
-_x('E.g. fa-brands fa-youtube', 'admin field placeholder', 'wicket-theme');
-
-/* translators: ACF field group: Global Search Settings. */
-_x('E.g. news,resources', 'admin field placeholder', 'wicket-theme');
-
-/* translators: ACF field group: Global Search Settings. */
-_x('E.g. post,page', 'admin field placeholder', 'wicket-theme');
-
-/* translators: ACF field group: Standard Page Settings. */
-_x('e.g. homepage-template', 'admin field placeholder', 'wicket-theme');
+_x('Additional Taxonomy Filters', 'label', 'wicket-theme');
 
 /* translators: ACF field group: Theme Styling Options. */
-_x('px', 'admin field prepend', 'wicket-theme');
+_x('Alerts Corner Radius', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Dynamically Related Events. */
+_x('All', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing. */
+_x('Alphabetical (a-z)', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing. */
+_x('Alphabetical (z-a)', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Author. */
+_x('Author', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Author. */
+_x('Authors', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Banner. */
+_x('Back Link', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Background Accent Dark', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Background Accent Light', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Background Callout 1', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Background Callout 2', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Background Card', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Background Dark', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Background Dark Alternate', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Background Disabled', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Banner. */
+_x('Background Image', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Background Image Overlay', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Background Interactive', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Background Interactive Reversed', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Background Label', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Background Label 2', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Background Light', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Background Light Alternate', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Background Light Neutral', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Banner. */
+_x('Background Style', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Background Tag', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Background White', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Banner Radius', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Header Settings. */
+_x('Become a Member', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing. */
+_x('Blog Types', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing. */
+_x('Blogs', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Body Background', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Accordion, Block - Tabs. */
+_x('Body Content', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Manually Related Content. */
+_x('Body Text', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Border', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Border Accent', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Border Alert', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Border Banner Bottom', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Border Call Out', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Border Card', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Border Dark', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Border Disabled', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Border Dynamic Card', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Border Featured Card', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Border Footer Divider', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Border Footer Social', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Border Footer Top', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Border Input Default', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Border Interactive', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Border Interactive Large', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Border Interactive Medium', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Border Interactive Reversed', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Border Interactive Small', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Border Large', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Border Light', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Border Listing Card', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+__('Border Main Nav Bottom', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+__('Border Main Nav Top', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Border Medium', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Border Small', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Border Tag', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Border Weights', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Border White', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Borders', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing. */
+_x('Brands', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Card. */
+_x('Button', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Header Settings, Block - Banner, Shared - Button Style. */
+_x('Button Style', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Accordion, Block - Tabs. */
+_x('Button/Link Style', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Manually Related Content. */
+__('CTA Button Label Override', 'wicket-theme');
+
+/* translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events. */
+_x('CTA Options', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Card. */
+_x('CTA Style', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Accordion, Block - Tabs. */
+_x('Call To Action', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Banner. */
+_x('Call to Action', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Manually Related Content. */
+_x('Card', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+__('Card Accent Corner Radius', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Card Corner Radius', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Dynamically Related Events. */
+_x('Card Display', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Global Search Settings. */
+_x('Card Options', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Accordion. */
+_x('Card View', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Global Search Settings. */
+__('Card: Show Content Type Tags', 'wicket-theme');
+
+/* translators: ACF field group: Global Search Settings. */
+_x('Card: Show Excerpt', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Global Search Settings. */
+__('Card: Show Featured Image', 'wicket-theme');
+
+/* translators: ACF field group: Global Search Settings. */
+__('Card: Show Published Date', 'wicket-theme');
+
+/* translators: ACF field group: Block - Sidebar/Contextual Nav. */
+_x('Carets', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing, Shared - Taxonomy. */
+_x('Categories', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
+_x('Categories -> Blogs', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
+_x('Categories -> Case Studies', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
+_x('Categories -> Interviews', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
+_x('Categories -> News', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
+_x('Categories -> Resources', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
+_x('Categories -> Stories', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
+_x('Categories -> Uncategorized', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Banner. */
+_x('Centre', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Accordion, Block - Sidebar/Contextual Nav. */
+_x('Chevrons', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Development Settings. */
+_x('Child/Active Theme', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Colour', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Colours', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Manually Related Content, Block - Featured Posts, Block - Dynamically Related Content, Block - Dynamically Related Events. */
+_x('Column Count', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Footer Settings. */
+_x('Content', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Manually Related Content. */
+_x('Content Type', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Contextual Nav', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Footer Settings. */
+_x('Copyright', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Corner Radius', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Header Settings. */
+_x('Create Account', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Custom Colours', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Manually Related Content. */
+_x('Custom Icon (Upload)', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Banner. */
+_x('Custom Image', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Banner. */
+_x('Custom image', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Global Settings. */
+_x('Custom/Other Link', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing. */
+_x('Date (newest-oldest)', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing. */
+_x('Date (oldest-newest)', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Manually Related Content. */
+_x('Default Icon', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing. */
+_x('Default Sort By', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Default font-family name', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Footer Settings, Block - Banner, Block - Call Out Card, Block - Contact Card. */
+_x('Description', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Standard Page Settings. */
+_x('Developer Settings', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing. */
+_x('Disciplines', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Standard Page Settings. */
+_x('Display Breadcrumb', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Standard Page Settings. */
+_x('Display Publish Date', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Standard Page Settings. */
+_x('Display Settings', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Manually Related Content. */
+_x('Document', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing. */
+_x('Donation Forms', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Banner. */
+_x('Download Button Label', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Banner. */
+_x('Download Button Style', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing. */
+_x('Download Label', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Banner. */
+_x('Downloadable File', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Drop Shadow', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Drop Shadows', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Dropdown Mega Background', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+__('Dropdown Mega Background Highlight', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+__('Dropdown Mega Corner Radius', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+__('Dropdown Mega Heading Link', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Dropdown Mega Link', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Elevation 12', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Elevation 4', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Elevation 8', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Footer Settings, Block - Contact Card. */
+_x('Email', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Footer Settings. */
+_x('Embed', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing. */
+_x('Event Categories', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
+__('Event Categories -> Summer Events', 'wicket-theme');
+
+/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
+__('Event Categories -> Winter Events', 'wicket-theme');
+
+/* translators: ACF field group: Block - Dynamically Related Events. */
+_x('Event Format', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing. */
+_x('Events', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing. */
+_x('Events Taxonomy', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Card. */
+_x('Excerpt', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing. */
+_x('Exclude From Results', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Global Search Settings. */
+_x('Excluded Post IDs', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Global Search Settings. */
+_x('Excluded Post Types', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Global Settings. */
+_x('Facebook Link', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Banner. */
+_x('Featured image', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Font Family', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Icon Grid. */
+_x('Font-Awesome Icon Code', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Global Settings. */
+__('FontAwesome Icon Class(es)', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Footer', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Footer Settings. */
+_x('Footer Column 1', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Footer Settings. */
+_x('Footer Column 2', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Footer Settings. */
+_x('Footer Column 3', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Footer Settings. */
+_x('Footer Column 4', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Footer Settings. */
+_x('Footer Column 5', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Footer Settings. */
+_x('Footer Columns', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Footer Settings. */
+_x('Footer Menu', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Footer Navigation', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing, Shared - Taxonomy. */
+_x('Formats', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Card. */
+_x('Full Height', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Header Settings. */
+_x('General', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Footer Settings, Header Settings, Block - Banner, Block - Call Out Card, Block - Accordion, Shared - Button Style. */
+_x('Ghost', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Global Background Colours', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Global Text Colours', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing. */
+_x('Grid view', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing, Shared - Post Type. */
+_x('Groups', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Accordion. */
+_x('H1', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Accordion. */
+_x('H2', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Accordion. */
+_x('H3', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Accordion. */
+_x('H4', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Accordion. */
+_x('H5', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Accordion. */
+_x('H6', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+__('Head Font HTML Code', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Header', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Accordion. */
+_x('Heading Level', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Banner. */
+_x('Helper Link', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Banner. */
+__('Helper Link Button Style', 'wicket-theme');
+
+/* translators: ACF field group: Block - Author. */
+_x('Hide Bio', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events. */
+_x('Hide Block Title', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Featured Posts, Block - Dynamically Related Content. */
+_x('Hide Content Type', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Post List, Block - Featured Posts, Block - Listing, Block - Dynamically Related Content, Block - Dynamically Related Events. */
+_x('Hide Date', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing. */
+_x('Hide Date Filter', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing. */
+_x('Hide Document Attachment', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing. */
+__('Hide Document Format Icon', 'wicket-theme');
+
+/* translators: ACF field group: Block - Dynamically Related Events. */
+_x('Hide Event Category', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Dynamically Related Events. */
+__('Hide Event Format/Location', 'wicket-theme');
+
+/* translators: ACF field group: Block - Post List, Block - Featured Posts, Block - Listing, Block - Dynamically Related Content, Block - Dynamically Related Events. */
+_x('Hide Excerpt', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Post List, Block - Featured Posts, Block - Listing, Block - Dynamically Related Content, Block - Dynamically Related Events. */
+_x('Hide Featured Image', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing. */
+_x('Hide Helper Link', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Dynamically Related Events. */
+_x('Hide Price', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Author. */
+_x('Hide Profile Image', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing. */
+_x('Hide Search', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Dynamically Related Events. */
+__('Hide Start Date Indicator', 'wicket-theme');
+
+/* translators: ACF field group: Block - Post List. */
+_x('Hide Tags', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing. */
+_x('Hide Type Taxonomy', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Additional Settings. */
+_x('Hide on listings', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Footer Settings. */
+_x('Hide social links', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Highlight Dark', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Highlight Light', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events. */
+__('Highlight featured post(s)', 'wicket-theme');
+
+/* translators: ACF field group: Block - Dynamically Related Events. */
+_x('Hybrid', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Manually Related Content. */
+_x('Icon', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Icon Grid. */
+_x('Icon Drop Shadows', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Icon Grid. */
+_x('Icon Grid Icons', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Icon Grid. */
+_x('Icon Grid Title', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Icon Grid. */
+_x('Icon Image', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Icon Grid. */
+_x('Icon Link URL', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Icon Grid. */
+_x('Icon Text', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Manually Related Content, Block - Accordion, Block - Sidebar/Contextual Nav. */
+_x('Icon Type', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Footer Settings, Block - Banner, Block - Card. */
+_x('Image', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Image Corner Radius', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Informational States', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+__('Input Fields Corner Radius Medium', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+__('Input Fields Corner Radius Small', 'wicket-theme');
+
+/* translators: ACF field group: Global Settings. */
+_x('Instagram Link', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Interactive', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+__('Interactive Corner Radius Large', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+__('Interactive Corner Radius Medium', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Interactive Reversed', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Banner. */
+_x('Intro', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Manually Related Content. */
+_x('Items', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing. */
+_x('Jobs', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events. */
+_x('Label', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Label Corner Radius', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Accordion. */
+_x('Label/Title', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing. */
+_x('Layout', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Manually Related Content. */
+_x('Layout Style', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Banner. */
+_x('Left', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Banner. */
+_x('Light', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Footer Settings, Header Settings, Block - Banner, Block - Call Out Card, Block - Card, Block - Manually Related Content, Block - Accordion. */
+_x('Link', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Accordion, Block - Tabs. */
+_x('Link & Label', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Manually Related Content. */
+_x('Link & Link Label', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing. */
+_x('Link Label', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Footer Settings. */
+_x('Link Reversed Style', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Footer Settings. */
+_x('Link Size', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Footer Settings, Block - Call Out Card. */
+_x('Link Style', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Global Settings. */
+_x('LinkedIn Link', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Banner, Block - Call Out Card. */
+_x('Links', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Manually Related Content. */
+_x('List', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Accordion. */
+_x('List View', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing. */
+_x('List view', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Header Settings. */
+_x('Login/Logout', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Footer Settings. */
+_x('Main Menu', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+__('Main Menu Highlight Radius', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Main Navigation', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Manually Related Content. */
+__('Make Buttons Same Width', 'wicket-theme');
+
+/* translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events. */
+__('Maximum Number of Posts', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing, Shared - Post Type. */
+_x('Media', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Header Settings. */
+_x('Member Portal', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Footer Settings. */
+_x('Menu', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Miscellaneous', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Header Settings. */
+__('Mobile Menu: Use Sub-Menu Dropdowns', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Modal Background Overlay', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+__('Nav Contextual Link Level 1', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Nav Contextual Sublink', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Nav Contextual Title', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Nav Footer Background', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Nav Footer Border', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+__('Nav Footer Border Top', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+__('Nav Footer Newsletter Background', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+__('Nav Footer Newsletter Text Content', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+__('Nav Footer Social Background', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+__('Nav Footer Social Border Hover', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+__('Nav Footer Social Text', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+__('Nav Footer Social Text Hover', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Nav Footer Sublink', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+__('Nav Footer Text Content', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+__('Nav Footer Text Interactive', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Nav Footer Title', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+__('Nav Links Highlight Radius', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Nav Main Background', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Nav Main Border', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+__('Nav Main Border Interactive', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Nav Main Highlight', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Nav Main Label', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Nav Secondary Label', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Nav Utility Background', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+__('Nav Utility Background Highlight', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Nav Utility Label', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing, Shared - Post Type. */
+_x('News', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing. */
+_x('News Taxonomy', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing, Shared - Taxonomy. */
+_x('News Type', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
+_x('News Type -> Economy', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
+_x('News Type -> Finance', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
+_x('News Type -> Markets', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Footer Settings. */
+_x('Newsletter', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Footer Settings. */
+_x('Newsletter Page', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Banner. */
+_x('No image', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events. */
+__('Number of featured post(s)', 'wicket-theme');
+
+/* translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events. */
+_x('OR', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Featured Posts. */
+_x('One Level', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Accordion. */
+_x('Open By Default', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing. */
+_x('Organizer Categories', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing. */
+_x('Organizers', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Global Search Settings. */
+_x('Page Options', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Standard Page Settings. */
+_x('Page Wrapper Class', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing, Shared - Post Type. */
+_x('Pages', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Development Settings. */
+_x('Parent Theme', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Contact Card. */
+_x('Phone', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Footer Settings. */
+_x('Phone Number', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Search Form. */
+_x('Placeholder', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Accordion, Block - Sidebar/Contextual Nav. */
+_x('Plus/Minus', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing. */
+_x('Post Taxonomy', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing, Block - Dynamically Related Content, Shared - Post Type. */
+_x('Post Type', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Global Search Settings. */
+_x('Post Type Filters', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Post List, Block - Featured Posts, Block - Listing, Shared - Post Type. */
+_x('Posts', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing, Global Search Settings. */
+_x('Posts Per Page', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Footer Settings, Header Settings, Block - Banner, Block - Call Out Card, Block - Contact Card, Block - Accordion, Shared - Button Style. */
+_x('Primary', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Featured Posts. */
+_x('Primary + Secondary Level', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing. */
+_x('Product Categories', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing. */
+_x('Product Tags', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing, Shared - Taxonomy. */
+_x('Product categories', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
+_x('Product categories -> Advertising', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
+_x('Product categories -> Cards', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
+_x('Product categories -> Directories', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
+_x('Product categories -> Learning', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
+__('Product categories -> Mailing List Services', 'wicket-theme');
+
+/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
+_x('Product categories -> Publications', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
+_x('Product categories -> Uncategorized', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing, Shared - Taxonomy. */
+_x('Product shipping classes', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing, Shared - Taxonomy. */
+_x('Product tags', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing, Shared - Post Type. */
+_x('Products', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing. */
+_x('Products Taxonomy', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events. */
+_x('Relation', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Dynamically Related Events. */
+_x('Remove Drop shadow', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing. */
+_x('Resource Taxonomy', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing, Shared - Taxonomy. */
+_x('Resource Type', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing, Shared - Post Type. */
+_x('Resources', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Banner. */
+_x('Reversed', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing. */
+__('Role Based Pricing Rules', 'wicket-theme');
+
+/* translators: ACF field group: Block - Manually Related Content. */
+_x('Rounded Corners', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Development Settings. */
+__('Save ACF JSON To', 'wicket-theme');
+
+/* translators: ACF field group: Global Search Settings. */
+_x('Search Listing Page', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Footer Settings, Header Settings, Block - Banner, Block - Call Out Card, Block - Contact Card, Block - Accordion, Shared - Button Style. */
+_x('Secondary', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Header Settings. */
+__('Secondary Nav Cart Enabled', 'wicket-theme');
+
+/* translators: ACF field group: Header Settings. */
+__('Secondary Nav Search Enabled', 'wicket-theme');
+
+/* translators: ACF field group: Footer Settings. */
+_x('Section Title', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Accordion. */
+__('Separate Item Body From Title', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing. */
+_x('Series', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events. */
+__('Set Custom View All Link?', 'wicket-theme');
+
+/* translators: ACF field group: Block - Icon Grid. */
+_x('Show Arrow', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Header Settings. */
+_x('Show Button', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events. */
+_x('Show CTA', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Global Search Settings. */
+_x('Show Filter Bar', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Global Search Settings. */
+__('Show Filter By Published Date', 'wicket-theme');
+
+/* translators: ACF field group: Global Search Settings. */
+_x('Show Search Bar', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Dynamically Related Events. */
+_x('Show Tags', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events. */
+__('Show View All Link', 'wicket-theme');
+
+/* translators: ACF field group: Block - Banner. */
+_x('Show breadcrumbs', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Banner. */
+_x('Show date', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Banner. */
+_x('Show post type', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Banner. */
+_x('Show share links', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Global Settings. */
+_x('Site Logo', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Footer Settings. */
+_x('Social Links', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Global Settings. */
+_x('Social Media Links', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Social Media Radius', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Footer Settings. */
+_x('Social Sharing', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Space 0', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Space 025', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Space 050', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Space 075', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Space 100', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Space 1000', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Space 150', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Space 200', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Space 250', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Space 300', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Space 400', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Space 500', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Space 600', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Space 800', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Spacing', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('State Error', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('State Error Light', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('State Info Primary', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+__('State Info Primary Light', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('State Info Secondary', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+__('State Info Secondary Light', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('State Success', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('State Success Light', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('State Warning', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('State Warning Light', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('States', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Status Active', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Status Inactive', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Call Out Card, Block - Contact Card, Block - Featured Posts, Block - Dynamically Related Content, Block - Dynamically Related Events. */
+_x('Style', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Card. */
+_x('Subtitle', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Tabs. */
+_x('Tab Items', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Table', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Table Footer Background', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Table Footer Label', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Table Header Background', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Table Header Label', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Table Row', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Table Row Alternate', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Table Row Border', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Tag Corner Radius', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Dynamically Related Events. */
+_x('Tag Taxonomy', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing, Shared - Taxonomy. */
+_x('Tags', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
+_x('Tags -> Content', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
+_x('Tags -> Featured', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
+_x('Tags -> Fun', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
+_x('Tags -> Happiness', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
+_x('Tags -> Important', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
+_x('Tags -> Must read', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
+_x('Tags -> Topic', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events. */
+_x('Taxonomies', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Shared - Taxonomy. */
+_x('Taxonomy', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing, Global Search Settings. */
+_x('Taxonomy Filters', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Dynamically Related Content, Shared - Taxonomy Term, Block - Dynamically Related Events. */
+_x('Taxonomy Term', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events, Shared - Taxonomy Terms. */
+_x('Taxonomy Terms', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Footer Settings. */
+_x('Text', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Text Accent', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Text Accent Reversed', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Banner. */
+_x('Text Alignment', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Text Button Label', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+__('Text Button Label Reversed', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Text Content', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Text Content Reversed', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Text Content Secondary', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+__('Text Content Secondary Reversed', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Text Disabled', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Text Label 1', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Text Label 2', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Text Tag', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Footer Settings, Block - Banner, Block - Call Out Card, Block - Contact Card, Block - Card, Block - Manually Related Content, Block - Featured Posts, Block - Dynamically Related Content, Block - Author, Block - Tabs, Block - Dynamically Related Events. */
+_x('Title', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Accordion. */
+__('Title Is A Link', 'wicket-theme');
+
+/* translators: ACF field group: Block - Accordion. */
+_x('Title Link', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Manually Related Content. */
+_x('Title Text', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Featured Posts. */
+_x('Title colour', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing. */
+_x('Tooltip', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing. */
+_x('Topic', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing, Shared - Taxonomy. */
+_x('Topics', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms. */
+_x('Topics -> Must Read', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Header Settings. */
+__('Tracking Codes Right After < body >', 'wicket-theme');
+
+/* translators: ACF field group: Header Settings. */
+_x('Tracking Codes in < head >', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Typography', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Icon Grid. */
+__('Use Font-Awesome Icon Codes', 'wicket-theme');
+
+/* translators: ACF field group: Theme Styling Options. */
+_x('Utility Nav', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing. */
+_x('Venue Categories', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing. */
+_x('Venues', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events. */
+_x('View All Link', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Dynamically Related Events. */
+_x('Virtual', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Block - Listing, Shared - Post Type. */
+_x('Woo Product Tabs', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Global Settings. */
+_x('X Link', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Global Settings. */
+_x('Youtube Link', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Footer Settings. */
+_x('lg', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Footer Settings. */
+_x('md', 'label', 'wicket-theme');
+
+/* translators: ACF field group: Footer Settings. */
+_x('sm', 'label', 'wicket-theme');

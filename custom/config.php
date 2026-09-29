@@ -136,12 +136,12 @@ add_filter('ngettext_with_context_wicket-theme', function ($translation, $single
 function wicket_register_nav_menus()
 {
     register_nav_menus([
-        'header-utility'   => __('Header Utility Menu', 'wicket-theme'),
-        'header-secondary' => __('Header Secondary Menu', 'wicket-theme'),
-        'header'           => __('Header Menu', 'wicket-theme'),
-        'social'           => __('Social Menu', 'wicket-theme'),
-        'footer'           => __('Secondary Footer Menu', 'wicket-theme'),
-        'footer-utility'   => __('Footer Utility Menu', 'wicket-theme'),
+        'header-utility'   => _x('Header Utility Menu', 'menu location', 'wicket-theme'),
+        'header-secondary' => _x('Header Secondary Menu', 'menu location', 'wicket-theme'),
+        'header'           => _x('Header Menu', 'menu location', 'wicket-theme'),
+        'social'           => _x('Social Menu', 'menu location', 'wicket-theme'),
+        'footer'           => _x('Secondary Footer Menu', 'menu location', 'wicket-theme'),
+        'footer-utility'   => _x('Footer Utility Menu', 'menu location', 'wicket-theme'),
     ]);
 }
 add_action('init', 'wicket_register_nav_menus');
