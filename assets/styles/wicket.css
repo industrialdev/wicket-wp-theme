@@ -90561,11 +90561,6 @@ video {
 .ring-opacity-95{
   --tw-ring-opacity: 0.95;
 }
-.blur{
-  --tw-blur: blur(8px);
-  -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-}
 .drop-shadow-2xl{
   --tw-drop-shadow: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
   -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
@@ -91761,15 +91756,18 @@ a:where(:not(.wp-element-button)):active{
   text-decoration-line: underline;
 }
 .cols-1 .component-card-event__title{
-  font-size: var(--heading-md-font-size);
-  font-family: var(--heading-md-font-family);
-  font-weight: var(--heading-md-font-weight-sm);
-  line-height: var(--heading-md-line-height);
+  font-size: var(--heading-sm-font-size);
+  font-family: var(--heading-sm-font-family);
+  font-weight: var(--heading-sm-font-weight-sm);
+  line-height: var(--heading-sm-line-height);
 }
 @media (min-width: 768px){
   .cols-1 .component-card-event__title{
-    font-weight: var(--heading-md-font-weight-md);
+    font-weight: var(--heading-sm-font-weight-md);
   }
+}
+.wicket-job-listing-head .cols-1 .component-card-event__title{
+  margin-bottom: 0.5rem;
 }
 .component-card-event__title .component-tag {
   -webkit-transform: translateY(-3px);
