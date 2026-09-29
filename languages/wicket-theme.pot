@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-09-29T19:13:48+00:00\n"
+"POT-Creation-Date: 2026-09-29T19:56:48+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: wicket-theme\n"
@@ -372,6 +372,10 @@ msgid "Search by Keyword"
 msgstr ""
 
 msgid "Search"
+msgstr ""
+
+msgctxt "button label"
+msgid "Go home"
 msgstr ""
 
 #. translators: ACF field group: Block - Author.
@@ -3058,6 +3062,10 @@ msgid "Members Only"
 msgstr ""
 
 msgid "Topic tag"
+msgstr ""
+
+msgctxt "pagination notice"
+msgid "No pagination needed."
 msgstr ""
 
 msgid "Create an Account"

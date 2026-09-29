@@ -77,7 +77,7 @@ $classes[] = 'pagination';
 
 	<?php else : ?>
 
-		<p><?php esc_html_ex('No pagination needed.', 'pagination notice', 'wicket-theme'); ?></p>
+		<p><?php echo esc_html_x('No pagination needed.', 'pagination notice', 'wicket-theme'); ?></p>
 
 	<?php endif; ?>
 

@@ -58,7 +58,7 @@
 				<?php echo $notFound; ?>
 			</h2>
 			<p><i class="fal fa-map-marked-alt fa-9x" aria-hidden="true"></i></p>
-			<p><a href="/" class="button button--primary"><?php esc_html_ex('Go home', 'button label', 'wicket-theme'); ?></a></p>
+			<p><a href="/" class="button button--primary"><?php echo esc_html_x('Go home', 'button label', 'wicket-theme'); ?></a></p>
 		<?php endif; ?>
 	</div>
 </main>
