@@ -1,0 +1,3675 @@
+# Canadian French (fr_CA) translation of Wicket Theme.
+# Copyright (C) 2026 Wicket Inc.
+# This file is distributed under the same license as the Wicket Theme package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Wicket 2.1.43\n"
+"Report-Msgid-Bugs-To: https://wicket.io\n"
+"POT-Creation-Date: 2026-09-29T19:13:48+00:00\n"
+"PO-Revision-Date: 2026-09-29 19:13+0000\n"
+"Last-Translator: Wicket Inc.\n"
+"Language-Team: French (Canada)\n"
+"Language: fr_CA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Domain: wicket-theme\n"
+
+#. Theme Name of the theme
+#. Author of the theme
+msgid "Wicket"
+msgstr "Wicket"
+
+#. Theme URI of the theme
+msgid "\"wicket.io\""
+msgstr "\"wicket.io\""
+
+#. Description of the theme
+msgid "Wicket Web parent theme."
+msgstr "Thème parent Wicket Web."
+
+msgid "Page not found"
+msgstr "Page introuvable"
+
+msgid "The page you're looking for cannot be found."
+msgstr "La page que vous cherchez est introuvable."
+
+msgid "Go back to the Homepage"
+msgstr "Retourner à la page d'accueil"
+
+msgid "Use the Block controls in edit mode or on the right to add featured posts."
+msgstr "Utilisez les contrôles du bloc en mode édition ou à droite pour ajouter des publications en vedette."
+
+#. translators: Default button label: download the file.
+msgid "Download"
+msgstr "Télécharger"
+
+#. translators: Default button label: open the listed page.
+msgid "View Page"
+msgstr "Voir la page"
+
+msgid "Use the Block controls in edit mode or on the right to configure listing."
+msgstr "Utilisez les contrôles du bloc en mode édition ou à droite pour configurer la liste."
+
+#. translators: %d: number of results.
+#, php-format
+msgctxt "listing result count"
+msgid "%d Result"
+msgid_plural "%d Results"
+msgstr[0] "%d résultat"
+msgstr[1] "%d résultats"
+
+#. translators: 1: current page, 2: total pages, 3: total results.
+#, php-format
+msgid "Page %1$d of %2$d (%3$d Results)"
+msgstr "Page %1$d sur %2$d (%3$d résultats)"
+
+msgid "Sort by"
+msgstr "Trier par"
+
+msgctxt "listing sort option"
+msgid "Date (newest-oldest)"
+msgstr "Date (du plus récent au plus ancien)"
+
+msgctxt "listing sort option"
+msgid "Date (oldest-newest)"
+msgstr "Date (du plus ancien au plus récent)"
+
+msgctxt "listing sort option"
+msgid "Alphabetical (a-z)"
+msgstr "Ordre alphabétique (a-z)"
+
+msgctxt "listing sort option"
+msgid "Alphabetical (z-a)"
+msgstr "Ordre alphabétique (z-a)"
+
+msgid "(opens in new tab)"
+msgstr "(s'ouvre dans un nouvel onglet)"
+
+msgctxt "post card link label"
+msgid "Read more"
+msgstr "Lire la suite"
+
+msgid "No results found."
+msgstr "Aucun résultat trouvé."
+
+msgid "Try adjusting your search or filter to find what you are looking for."
+msgstr "Essayez de modifier votre recherche ou vos filtres pour trouver ce que vous cherchez."
+
+msgid "Use the Block controls on the right to add manually related content."
+msgstr "Utilisez les contrôles du bloc à droite pour ajouter manuellement du contenu connexe."
+
+msgid "Use the Block controls in edit mode or on the right to add posts."
+msgstr "Utilisez les contrôles du bloc en mode édition ou à droite pour ajouter des publications."
+
+#. translators: Admin page title for the theme options.
+msgid "Options"
+msgstr "Options"
+
+msgid "Global Settings"
+msgstr "Paramètres globaux"
+
+#. translators: Admin submenu title: global theme settings.
+msgid "Global"
+msgstr "Global"
+
+msgid "Header Settings"
+msgstr "Paramètres de l'en-tête"
+
+#. translators: Admin submenu title: site header settings.
+msgid "Header"
+msgstr "En-tête"
+
+msgid "Footer Settings"
+msgstr "Paramètres du pied de page"
+
+#. translators: Admin submenu title: site footer settings.
+msgid "Footer"
+msgstr "Pied de page"
+
+msgid "Global Search Settings"
+msgstr "Paramètres de la recherche globale"
+
+msgid "Global Search"
+msgstr "Recherche globale"
+
+msgid "Theme Styling"
+msgstr "Style du thème"
+
+msgid "-- Select Menu --"
+msgstr "-- Sélectionner un menu --"
+
+msgid "-- Select Post Type --"
+msgstr "-- Sélectionner un type de publication --"
+
+msgid "-- Select Taxonomy --"
+msgstr "-- Sélectionner une taxonomie --"
+
+msgid "-- Select Taxonomy Term --"
+msgstr "-- Sélectionner un terme de taxonomie --"
+
+msgctxt "featured image alt text"
+msgid "Featured Image"
+msgstr "Image mise en avant"
+
+msgctxt "block style name"
+msgid "Large Text"
+msgstr "Grand texte"
+
+msgctxt "block style name"
+msgid "Button"
+msgstr "Bouton"
+
+msgid "Custom pre-made patterns"
+msgstr "Compositions personnalisées prêtes à l'emploi"
+
+#. translators: Breadcrumb link to the home page.
+msgid "Home"
+msgstr "Accueil"
+
+#. translators: Breadcrumb label for the resources section.
+msgid "Resources"
+msgstr "Ressources"
+
+#. translators: Breadcrumb label for the news section.
+msgid "News"
+msgstr "Nouvelles"
+
+#. translators: Breadcrumb label for the events section.
+msgid "Events"
+msgstr "Événements"
+
+#. translators: %s: search term wrapped in markup.
+#, php-format
+msgctxt "breadcrumb"
+msgid "Search Results for: “%s”"
+msgstr "Résultats de recherche pour « %s »"
+
+msgid "Header Utility Menu"
+msgstr "Menu utilitaire de l'en-tête"
+
+msgid "Header Secondary Menu"
+msgstr "Menu secondaire de l'en-tête"
+
+msgid "Header Menu"
+msgstr "Menu de l'en-tête"
+
+msgid "Social Menu"
+msgstr "Menu des réseaux sociaux"
+
+msgid "Secondary Footer Menu"
+msgstr "Menu secondaire du pied de page"
+
+msgid "Footer Utility Menu"
+msgstr "Menu utilitaire du pied de page"
+
+#. translators: Separator between two dates in French date ranges; keep as à.
+msgctxt "date range separator"
+msgid "à"
+msgstr "à"
+
+msgctxt "admin permission error"
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Vous n'avez pas les autorisations nécessaires pour accéder à cette page."
+
+msgctxt "plugin action link"
+msgid "Settings"
+msgstr "Paramètres"
+
+#. translators: Button label: go back to the job listings.
+msgid "Back"
+msgstr "Retour"
+
+#. translators: Heading on a job posting.
+msgid "Job opportunity"
+msgstr "Offre d'emploi"
+
+#. translators: Pagination link: next page.
+msgid "Next"
+msgstr "Suivant"
+
+#. translators: Pagination link: previous page.
+msgid "Previous"
+msgstr "Précédent"
+
+msgid "Pagination"
+msgstr "Pagination"
+
+msgctxt "post type singular name"
+msgid "News"
+msgstr "Nouvelle"
+
+msgctxt "post type general name"
+msgid "News"
+msgstr "Nouvelles"
+
+msgctxt "post type singular name"
+msgid "Resources"
+msgstr "Ressource"
+
+msgctxt "post type general name"
+msgid "Resources"
+msgstr "Ressources"
+
+msgid "Add New"
+msgstr "Ajouter"
+
+#. translators: %s: post type singular name.
+#, php-format
+msgctxt "post type label"
+msgid "Add New %s"
+msgstr "Ajouter : %s"
+
+#. translators: %s: post type singular name.
+#, php-format
+msgctxt "post type label"
+msgid "New %s"
+msgstr "Créer : %s"
+
+#. translators: %s: post type singular name.
+#, php-format
+msgctxt "post type label"
+msgid "Edit %s"
+msgstr "Modifier : %s"
+
+#. translators: %s: post type singular name.
+#, php-format
+msgctxt "post type label"
+msgid "View %s"
+msgstr "Voir : %s"
+
+#. translators: %s: post type plural name.
+#, php-format
+msgctxt "post type label"
+msgid "All %s"
+msgstr "Tout afficher : %s"
+
+#. translators: %s: post type plural name.
+#, php-format
+msgctxt "post type label"
+msgid "Search %s"
+msgstr "Rechercher : %s"
+
+#. translators: %s: post type plural name.
+#, php-format
+msgctxt "post type label"
+msgid "Parent %s:"
+msgstr "Élément parent (%s) :"
+
+#. translators: %s: post type plural name.
+#, php-format
+msgctxt "post type label"
+msgid "No %s found."
+msgstr "Aucun résultat trouvé (%s)."
+
+#. translators: %s: post type plural name.
+#, php-format
+msgctxt "post type label"
+msgid "No %s found in Trash."
+msgstr "Aucun résultat trouvé dans la corbeille (%s)."
+
+msgctxt "taxonomy name"
+msgid "News Type"
+msgstr "Type de nouvelle"
+
+msgctxt "taxonomy name"
+msgid "Resource Type"
+msgstr "Type de ressource"
+
+msgctxt "taxonomy name"
+msgid "Topics"
+msgstr "Sujets"
+
+msgctxt "widget area name"
+msgid "Sidebar Widgets"
+msgstr "Widgets de la barre latérale"
+
+msgid "Sidebar widget area."
+msgstr "Zone de widgets de la barre latérale."
+
+msgctxt "user profile section heading"
+msgid "User Roles"
+msgstr "Rôles de l'utilisateur"
+
+msgctxt "user profile field label"
+msgid "Roles"
+msgstr "Rôles"
+
+msgid "Subscribe to our newsletter"
+msgstr "Abonnez-vous à notre infolettre"
+
+msgid "Skip to main content"
+msgstr "Passer au contenu principal"
+
+msgid "Member Portal"
+msgstr "Portail des membres"
+
+msgid "Become a member"
+msgstr "Devenir membre"
+
+msgid "Create Account"
+msgstr "Créer un compte"
+
+msgctxt "mobile menu button label"
+msgid "Open Menu"
+msgstr "Ouvrir le menu"
+
+msgid "My Account"
+msgstr "Mon compte"
+
+#. translators: Header button label: log in to the site.
+#. translators: Button label: log in to the site.
+msgid "Login"
+msgstr "Ouvrir une session"
+
+#. translators: Header menu item: log out of the site.
+msgid "Logout"
+msgstr "Fermer la session"
+
+msgid "Search the website"
+msgstr "Rechercher dans le site Web"
+
+msgid "Search by Keyword"
+msgstr "Rechercher par mot-clé"
+
+msgid "Search"
+msgstr "Rechercher"
+
+#. translators: ACF field group: Block - Author.
+msgctxt "admin field button label"
+msgid "Add Author"
+msgstr "Ajouter un auteur"
+
+#. translators: ACF field group: Footer Settings.
+msgctxt "admin field button label"
+msgid "Add Column"
+msgstr "Ajouter une colonne"
+
+#. translators: ACF field group: Footer Settings.
+msgctxt "admin field button label"
+msgid "Add Content"
+msgstr "Ajouter du contenu"
+
+#. translators: ACF field group: Block - Manually Related Content.
+msgctxt "admin field button label"
+msgid "Add Item"
+msgstr "Ajouter un élément"
+
+#. translators: ACF field group: Block - Banner, Block - Call Out Card, Block - Icon Grid, Block - Accordion, Block - Listing, Block - Dynamically Related Content, Theme Styling Options, Block - Dynamically Related Events.
+msgctxt "admin field button label"
+msgid "Add Row"
+msgstr "Ajouter une ligne"
+
+#. translators: ACF field group: Global Settings.
+msgctxt "admin field button label"
+msgid "Add Social Media"
+msgstr "Ajouter un réseau social"
+
+#. translators: ACF field group: Block - Tabs.
+msgctxt "admin field button label"
+msgid "Add Tab Item"
+msgstr "Ajouter un onglet"
+
+#. translators: ACF field group: Block - Accordion.
+msgctxt "admin field instructions"
+msgid "Determines if this accordion item will be open by default on page load. Only one item should have this checked."
+msgstr "Détermine si cet élément d'accordéon est ouvert par défaut au chargement de la page. Un seul élément devrait avoir cette case cochée."
+
+#. translators: ACF field group: Global Search Settings.
+msgctxt "admin field instructions"
+msgid "Enter a comma separated list of the post IDs you want to exclude from the filters area of the search page. For example: \"12,58,4\". See the <a target=\"_blank\" href=\"/app/themes/wicket-wp-theme/custom/wp_terms_cheat_sheet.php\">cheat sheet</a> for available post IDs on this site (must be an admin)."
+msgstr "Entrez une liste, séparée par des virgules, des ID de publications à exclure de la zone des filtres de la page de recherche. Par exemple : « 12,58,4 ». Consultez l'<a target=\"_blank\" href=\"/app/themes/wicket-wp-theme/custom/wp_terms_cheat_sheet.php\">aide-mémoire</a> pour connaître les ID de publications disponibles sur ce site (accès administrateur requis)."
+
+#. translators: ACF field group: Global Search Settings.
+msgctxt "admin field instructions"
+msgid "Enter a comma separated list of the post types you want displayed in the filters area of the search page. For example: \"news,resources\". See the <a target=\"_blank\" href=\"/app/themes/wicket-wp-theme/custom/wp_terms_cheat_sheet.php#post_types\">cheat sheet</a> for available post types on this site (must be an admin)."
+msgstr "Entrez une liste, séparée par des virgules, des types de publications à afficher dans la zone des filtres de la page de recherche. Par exemple : « news,resources ». Consultez l'<a target=\"_blank\" href=\"/app/themes/wicket-wp-theme/custom/wp_terms_cheat_sheet.php#post_types\">aide-mémoire</a> pour connaître les types de publications disponibles sur ce site (accès administrateur requis)."
+
+#. translators: ACF field group: Global Search Settings.
+msgctxt "admin field instructions"
+msgid "Enter a comma separated list of the post types you want to exclude from the filters area of the search page. For example: \"post,page\". See the <a target=\"_blank\" href=\"/app/themes/wicket-wp-theme/custom/wp_terms_cheat_sheet.php\">cheat sheet</a> for available post types on this site (must be an admin)."
+msgstr "Entrez une liste, séparée par des virgules, des types de publications à exclure de la zone des filtres de la page de recherche. Par exemple : « post,page ». Consultez l'<a target=\"_blank\" href=\"/app/themes/wicket-wp-theme/custom/wp_terms_cheat_sheet.php\">aide-mémoire</a> pour connaître les types de publications disponibles sur ce site (accès administrateur requis)."
+
+#. translators: ACF field group: Global Search Settings.
+msgctxt "admin field instructions"
+msgid "Enter a comma separated list of the taxonomies you want displayed in the filters area of the search page. For example: \"category,product_type,nav_menu\". See the <a target=\"_blank\" href=\"/app/themes/wicket-wp-theme/custom/wp_terms_cheat_sheet.php\">cheat sheet</a> for available taxonomy slugs on this site (must be an admin)."
+msgstr "Entrez une liste, séparée par des virgules, des taxonomies à afficher dans la zone des filtres de la page de recherche. Par exemple : « category,product_type,nav_menu ». Consultez l'<a target=\"_blank\" href=\"/app/themes/wicket-wp-theme/custom/wp_terms_cheat_sheet.php\">aide-mémoire</a> pour connaître les slugs de taxonomies disponibles sur ce site (accès administrateur requis)."
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field instructions"
+msgid "Format: X_position Y_position Blur Colour"
+msgstr "Format : position_X position_Y flou couleur"
+
+#. translators: ACF field group: Global Settings.
+msgctxt "admin field instructions"
+msgid "Grab the desired FontAwesome icon classes from https://fontawesome.com/icons"
+msgstr "Copiez les classes de l'icône FontAwesome souhaitée à partir de https://fontawesome.com/icons"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field instructions"
+msgid "How many posts you would like to display per page."
+msgstr "Nombre de publications à afficher par page."
+
+#. translators: ACF field group: Block - Manually Related Content.
+msgctxt "admin field instructions"
+msgid "If 'document' type is set and this field is left empty, the document title will be used here."
+msgstr "Si le type « document » est défini et que ce champ est vide, le titre du document sera utilisé ici."
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field instructions"
+msgid "If left blank label will be marked as ‘Download’"
+msgstr "Si ce champ est vide, le libellé sera « Télécharger »"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field instructions"
+msgid "If left blank label will be marked as ‘View Page’"
+msgstr "Si ce champ est vide, le libellé sera « Voir la page »"
+
+#. translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events.
+msgctxt "admin field instructions"
+msgid "If title is not provided, default title will be \"Related [Post_Type]\""
+msgstr "Si aucun titre n'est fourni, le titre par défaut sera « Related [Post_Type] »"
+
+#. translators: ACF field group: Footer Settings.
+msgctxt "admin field instructions"
+msgid "Newsletter section that appears on top of the footer."
+msgstr "Section d'infolettre affichée au-dessus du pied de page."
+
+#. translators: ACF field group: Block - Banner.
+msgctxt "admin field instructions"
+msgid "Only available in single post pages."
+msgstr "Disponible seulement sur les pages de publication individuelle."
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field instructions"
+msgid "Select the event categories you would like to appear in this listing."
+msgstr "Sélectionnez les catégories d'événements à afficher dans cette liste."
+
+#. translators: ACF field group: Block - Accordion.
+msgctxt "admin field instructions"
+msgid "Select the heading level for the accordion titles."
+msgstr "Sélectionnez le niveau de titre des titres de l'accordéon."
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field instructions"
+msgid "Select the news types you would like to appear in this listing."
+msgstr "Sélectionnez les types de nouvelles à afficher dans cette liste."
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field instructions"
+msgid "Select the post types you would like to appear in this listing."
+msgstr "Sélectionnez les types de publications à afficher dans cette liste."
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field instructions"
+msgid "Select the posts or pages you would like to exclude from results."
+msgstr "Sélectionnez les publications ou les pages à exclure des résultats."
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field instructions"
+msgid "Select the product categories you would like to appear in this listing."
+msgstr "Sélectionnez les catégories de produits à afficher dans cette liste."
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field instructions"
+msgid "Select the resource types you would like to appear in this listing."
+msgstr "Sélectionnez les types de ressources à afficher dans cette liste."
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field instructions"
+msgid "Select the taxonomies you would like to use as filters on the page."
+msgstr "Sélectionnez les taxonomies à utiliser comme filtres sur la page."
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field instructions"
+msgid "Select the topics you would like to appear in this listing."
+msgstr "Sélectionnez les sujets à afficher dans cette liste."
+
+#. translators: ACF field group: Block - Accordion.
+msgctxt "admin field instructions"
+msgid "This allows the body text to 'float' below the accordion pill."
+msgstr "Permet au corps du texte de « flotter » sous la pastille de l'accordéon."
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field instructions"
+msgid ""
+"Use this to add custom fonts from CDN, for example:\n"
+"&lt;link rel=\"stylesheet\" href=\"https://use.typekit.net/bot2tyc.css\"&gt;"
+msgstr ""
+"Utilisez ce champ pour ajouter des polices personnalisées à partir d'un CDN, par exemple :\n"
+"&lt;link rel=\"stylesheet\" href=\"https://use.typekit.net/bot2tyc.css\"&gt;"
+
+#. translators: ACF field group: Block - Manually Related Content.
+msgctxt "admin field instructions"
+msgid "You can override the default document / link icon by using this field."
+msgstr "Ce champ permet de remplacer l'icône par défaut du document ou du lien."
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field instructions"
+msgid "e.g. \"Montserrat,sans-serif\" or \"proxima-nova-condensed,sans-serif\""
+msgstr "p. ex. « Montserrat,sans-serif » ou « proxima-nova-condensed,sans-serif »"
+
+#. translators: ACF field group: Header Settings.
+msgctxt "admin field label"
+msgid "AC Localization"
+msgstr "Orthographe AC (Centre/Center)"
+
+#. translators: ACF field group: Block - Accordion.
+msgctxt "admin field label"
+msgid "Accordion Items"
+msgstr "Éléments de l'accordéon"
+
+#. translators: ACF field group: Block - Accordion.
+msgctxt "admin field label"
+msgid "Accordion Type"
+msgstr "Type d'accordéon"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field label"
+msgid "Additional Taxonomies -"
+msgstr "Taxonomies supplémentaires -"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field label"
+msgid "Additional Taxonomy"
+msgstr "Taxonomie supplémentaire"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field label"
+msgid "Additional Taxonomy Filters"
+msgstr "Filtres de taxonomies supplémentaires"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Alerts Corner Radius"
+msgstr "Rayon des coins des alertes"
+
+#. translators: ACF field group: Block - Author.
+msgctxt "admin field label"
+msgid "Author"
+msgstr "Auteur"
+
+#. translators: ACF field group: Block - Author.
+msgctxt "admin field label"
+msgid "Authors"
+msgstr "Auteurs"
+
+#. translators: ACF field group: Block - Banner.
+msgctxt "admin field label"
+msgid "Back Link"
+msgstr "Lien de retour"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Background Accent Dark"
+msgstr "Arrière-plan accent foncé"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Background Accent Light"
+msgstr "Arrière-plan accent pâle"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Background Callout 1"
+msgstr "Arrière-plan mise en évidence 1"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Background Callout 2"
+msgstr "Arrière-plan mise en évidence 2"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Background Card"
+msgstr "Arrière-plan carte"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Background Dark"
+msgstr "Arrière-plan foncé"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Background Dark Alternate"
+msgstr "Arrière-plan foncé alternatif"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Background Disabled"
+msgstr "Arrière-plan désactivé"
+
+#. translators: ACF field group: Block - Banner.
+msgctxt "admin field label"
+msgid "Background Image"
+msgstr "Image d'arrière-plan"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Background Image Overlay"
+msgstr "Superposition de l'image d'arrière-plan"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Background Interactive"
+msgstr "Arrière-plan interactif"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Background Interactive Reversed"
+msgstr "Arrière-plan interactif inversé"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Background Label"
+msgstr "Arrière-plan libellé"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Background Label 2"
+msgstr "Arrière-plan libellé 2"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Background Light"
+msgstr "Arrière-plan pâle"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Background Light Alternate"
+msgstr "Arrière-plan pâle alternatif"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Background Light Neutral"
+msgstr "Arrière-plan pâle neutre"
+
+#. translators: ACF field group: Block - Banner.
+msgctxt "admin field label"
+msgid "Background Style"
+msgstr "Style de l'arrière-plan"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Background Tag"
+msgstr "Arrière-plan étiquette"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Background White"
+msgstr "Arrière-plan blanc"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Banner Radius"
+msgstr "Rayon de la bannière"
+
+#. translators: ACF field group: Header Settings.
+msgctxt "admin field label"
+msgid "Become a Member"
+msgstr "Devenir membre"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Body Background"
+msgstr "Arrière-plan du corps"
+
+#. translators: ACF field group: Block - Accordion, Block - Tabs.
+msgctxt "admin field label"
+msgid "Body Content"
+msgstr "Contenu du corps"
+
+#. translators: ACF field group: Block - Manually Related Content.
+msgctxt "admin field label"
+msgid "Body Text"
+msgstr "Texte du corps"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Border"
+msgstr "Bordure"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Border Accent"
+msgstr "Bordure accent"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Border Alert"
+msgstr "Bordure alerte"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Border Banner Bottom"
+msgstr "Bordure inférieure de la bannière"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Border Call Out"
+msgstr "Bordure mise en évidence"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Border Card"
+msgstr "Bordure carte"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Border Dark"
+msgstr "Bordure foncée"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Border Disabled"
+msgstr "Bordure désactivée"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Border Dynamic Card"
+msgstr "Bordure carte dynamique"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Border Featured Card"
+msgstr "Bordure carte en vedette"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Border Footer Divider"
+msgstr "Bordure séparateur du pied de page"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Border Footer Social"
+msgstr "Bordure réseaux sociaux du pied de page"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Border Footer Top"
+msgstr "Bordure supérieure du pied de page"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Border Input Default"
+msgstr "Bordure champ de saisie par défaut"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Border Interactive"
+msgstr "Bordure interactive"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Border Interactive Large"
+msgstr "Bordure interactive grande"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Border Interactive Medium"
+msgstr "Bordure interactive moyenne"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Border Interactive Reversed"
+msgstr "Bordure interactive inversée"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Border Interactive Small"
+msgstr "Bordure interactive petite"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Border Large"
+msgstr "Bordure grande"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Border Light"
+msgstr "Bordure pâle"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Border Listing Card"
+msgstr "Bordure carte de liste"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Border Main Nav Bottom"
+msgstr "Bordure inférieure de la navigation principale"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Border Main Nav Top"
+msgstr "Bordure supérieure de la navigation principale"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Border Medium"
+msgstr "Bordure moyenne"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Border Small"
+msgstr "Bordure petite"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Border Tag"
+msgstr "Bordure étiquette"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Border Weights"
+msgstr "Épaisseurs de bordure"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Border White"
+msgstr "Bordure blanche"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Borders"
+msgstr "Bordures"
+
+#. translators: ACF field group: Header Settings, Block - Banner, Shared - Button Style.
+msgctxt "admin field label"
+msgid "Button Style"
+msgstr "Style du bouton"
+
+#. translators: ACF field group: Block - Accordion, Block - Tabs.
+msgctxt "admin field label"
+msgid "Button/Link Style"
+msgstr "Style du bouton ou du lien"
+
+#. translators: ACF field group: Block - Manually Related Content.
+msgctxt "admin field label"
+msgid "CTA Button Label Override"
+msgstr "Remplacement du libellé du bouton d'appel à l'action"
+
+#. translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events.
+msgctxt "admin field label"
+msgid "CTA Options"
+msgstr "Options de l'appel à l'action"
+
+#. translators: ACF field group: Block - Card.
+msgctxt "admin field label"
+msgid "CTA Style"
+msgstr "Style de l'appel à l'action"
+
+#. translators: ACF field group: Block - Accordion, Block - Tabs.
+msgctxt "admin field label"
+msgid "Call To Action"
+msgstr "Appel à l'action"
+
+#. translators: ACF field group: Block - Banner.
+msgctxt "admin field label"
+msgid "Call to Action"
+msgstr "Appel à l'action"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Card Accent Corner Radius"
+msgstr "Rayon des coins accentués des cartes"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Card Corner Radius"
+msgstr "Rayon des coins des cartes"
+
+#. translators: ACF field group: Block - Dynamically Related Events.
+msgctxt "admin field label"
+msgid "Card Display"
+msgstr "Affichage des cartes"
+
+#. translators: ACF field group: Global Search Settings.
+msgctxt "admin field label"
+msgid "Card Options"
+msgstr "Options des cartes"
+
+#. translators: ACF field group: Global Search Settings.
+msgctxt "admin field label"
+msgid "Card: Show Content Type Tags"
+msgstr "Carte : afficher les étiquettes de type de contenu"
+
+#. translators: ACF field group: Global Search Settings.
+msgctxt "admin field label"
+msgid "Card: Show Excerpt"
+msgstr "Carte : afficher l'extrait"
+
+#. translators: ACF field group: Global Search Settings.
+msgctxt "admin field label"
+msgid "Card: Show Featured Image"
+msgstr "Carte : afficher l'image mise en avant"
+
+#. translators: ACF field group: Global Search Settings.
+msgctxt "admin field label"
+msgid "Card: Show Published Date"
+msgstr "Carte : afficher la date de publication"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Colour"
+msgstr "Couleur"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Colours"
+msgstr "Couleurs"
+
+#. translators: ACF field group: Block - Manually Related Content, Block - Featured Posts, Block - Dynamically Related Content, Block - Dynamically Related Events.
+msgctxt "admin field label"
+msgid "Column Count"
+msgstr "Nombre de colonnes"
+
+#. translators: ACF field group: Footer Settings.
+msgctxt "admin field label"
+msgid "Content"
+msgstr "Contenu"
+
+#. translators: ACF field group: Block - Manually Related Content.
+msgctxt "admin field label"
+msgid "Content Type"
+msgstr "Type de contenu"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Contextual Nav"
+msgstr "Navigation contextuelle"
+
+#. translators: ACF field group: Footer Settings.
+msgctxt "admin field label"
+msgid "Copyright"
+msgstr "Droit d'auteur"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Corner Radius"
+msgstr "Rayon des coins"
+
+#. translators: ACF field group: Header Settings.
+msgctxt "admin field label"
+msgid "Create Account"
+msgstr "Créer un compte"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Custom Colours"
+msgstr "Couleurs personnalisées"
+
+#. translators: ACF field group: Block - Banner.
+msgctxt "admin field label"
+msgid "Custom Image"
+msgstr "Image personnalisée"
+
+#. translators: ACF field group: Global Settings.
+msgctxt "admin field label"
+msgid "Custom/Other Link"
+msgstr "Lien personnalisé/autre"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field label"
+msgid "Default Sort By"
+msgstr "Tri par défaut"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Default font-family name"
+msgstr "Nom de la famille de polices par défaut"
+
+#. translators: ACF field group: Footer Settings, Block - Banner, Block - Call Out Card, Block - Contact Card.
+msgctxt "admin field label"
+msgid "Description"
+msgstr "Description"
+
+#. translators: ACF field group: Standard Page Settings.
+msgctxt "admin field label"
+msgid "Developer Settings"
+msgstr "Paramètres pour les développeurs"
+
+#. translators: ACF field group: Standard Page Settings.
+msgctxt "admin field label"
+msgid "Display Breadcrumb"
+msgstr "Afficher le fil d'Ariane"
+
+#. translators: ACF field group: Standard Page Settings.
+msgctxt "admin field label"
+msgid "Display Publish Date"
+msgstr "Afficher la date de publication"
+
+#. translators: ACF field group: Standard Page Settings.
+msgctxt "admin field label"
+msgid "Display Settings"
+msgstr "Paramètres d'affichage"
+
+#. translators: ACF field group: Block - Manually Related Content.
+msgctxt "admin field label"
+msgid "Document"
+msgstr "Document"
+
+#. translators: ACF field group: Block - Banner.
+msgctxt "admin field label"
+msgid "Download Button Label"
+msgstr "Libellé du bouton de téléchargement"
+
+#. translators: ACF field group: Block - Banner.
+msgctxt "admin field label"
+msgid "Download Button Style"
+msgstr "Style du bouton de téléchargement"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field label"
+msgid "Download Label"
+msgstr "Libellé de téléchargement"
+
+#. translators: ACF field group: Block - Banner.
+msgctxt "admin field label"
+msgid "Downloadable File"
+msgstr "Fichier téléchargeable"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Drop Shadow"
+msgstr "Ombre portée"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Drop Shadows"
+msgstr "Ombres portées"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Dropdown Mega Background"
+msgstr "Arrière-plan du méga-menu déroulant"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Dropdown Mega Background Highlight"
+msgstr "Surbrillance de l'arrière-plan du méga-menu déroulant"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Dropdown Mega Corner Radius"
+msgstr "Rayon des coins du méga-menu déroulant"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Dropdown Mega Heading Link"
+msgstr "Lien de titre du méga-menu déroulant"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Dropdown Mega Link"
+msgstr "Lien du méga-menu déroulant"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Elevation 12"
+msgstr "Élévation 12"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Elevation 4"
+msgstr "Élévation 4"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Elevation 8"
+msgstr "Élévation 8"
+
+#. translators: ACF field group: Footer Settings, Block - Contact Card.
+msgctxt "admin field label"
+msgid "Email"
+msgstr "Courriel"
+
+#. translators: ACF field group: Footer Settings.
+msgctxt "admin field label"
+msgid "Embed"
+msgstr "Intégration"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field label"
+msgid "Event Categories"
+msgstr "Catégories d'événements"
+
+#. translators: ACF field group: Block - Dynamically Related Events.
+msgctxt "admin field label"
+msgid "Event Format"
+msgstr "Format de l'événement"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field label"
+msgid "Events Taxonomy"
+msgstr "Taxonomie des événements"
+
+#. translators: ACF field group: Block - Card.
+msgctxt "admin field label"
+msgid "Excerpt"
+msgstr "Extrait"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field label"
+msgid "Exclude From Results"
+msgstr "Exclure des résultats"
+
+#. translators: ACF field group: Global Search Settings.
+msgctxt "admin field label"
+msgid "Excluded Post IDs"
+msgstr "ID des publications exclues"
+
+#. translators: ACF field group: Global Search Settings.
+msgctxt "admin field label"
+msgid "Excluded Post Types"
+msgstr "Types de publications exclus"
+
+#. translators: ACF field group: Global Settings.
+msgctxt "admin field label"
+msgid "Facebook Link"
+msgstr "Lien Facebook"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Font Family"
+msgstr "Famille de polices"
+
+#. translators: ACF field group: Block - Icon Grid.
+msgctxt "admin field label"
+msgid "Font-Awesome Icon Code"
+msgstr "Code de l'icône Font-Awesome"
+
+#. translators: ACF field group: Global Settings.
+msgctxt "admin field label"
+msgid "FontAwesome Icon Class(es)"
+msgstr "Classe(s) de l'icône FontAwesome"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Footer"
+msgstr "Pied de page"
+
+#. translators: ACF field group: Footer Settings.
+msgctxt "admin field label"
+msgid "Footer Columns"
+msgstr "Colonnes du pied de page"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Footer Navigation"
+msgstr "Navigation du pied de page"
+
+#. translators: ACF field group: Block - Card.
+msgctxt "admin field label"
+msgid "Full Height"
+msgstr "Pleine hauteur"
+
+#. translators: ACF field group: Header Settings.
+msgctxt "admin field label"
+msgid "General"
+msgstr "Général"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Global Background Colours"
+msgstr "Couleurs d'arrière-plan globales"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Global Text Colours"
+msgstr "Couleurs de texte globales"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Head Font HTML Code"
+msgstr "Code HTML des polices dans l'en-tête"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Header"
+msgstr "En-tête"
+
+#. translators: ACF field group: Block - Accordion.
+msgctxt "admin field label"
+msgid "Heading Level"
+msgstr "Niveau de titre"
+
+#. translators: ACF field group: Block - Banner.
+msgctxt "admin field label"
+msgid "Helper Link"
+msgstr "Lien d'aide"
+
+#. translators: ACF field group: Block - Banner.
+msgctxt "admin field label"
+msgid "Helper Link Button Style"
+msgstr "Style du bouton du lien d'aide"
+
+#. translators: ACF field group: Block - Author.
+msgctxt "admin field label"
+msgid "Hide Bio"
+msgstr "Masquer la biographie"
+
+#. translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events.
+msgctxt "admin field label"
+msgid "Hide Block Title"
+msgstr "Masquer le titre du bloc"
+
+#. translators: ACF field group: Block - Featured Posts, Block - Dynamically Related Content.
+msgctxt "admin field label"
+msgid "Hide Content Type"
+msgstr "Masquer le type de contenu"
+
+#. translators: ACF field group: Block - Post List, Block - Featured Posts, Block - Listing, Block - Dynamically Related Content, Block - Dynamically Related Events.
+msgctxt "admin field label"
+msgid "Hide Date"
+msgstr "Masquer la date"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field label"
+msgid "Hide Date Filter"
+msgstr "Masquer le filtre de date"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field label"
+msgid "Hide Document Attachment"
+msgstr "Masquer la pièce jointe du document"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field label"
+msgid "Hide Document Format Icon"
+msgstr "Masquer l'icône du format de document"
+
+#. translators: ACF field group: Block - Dynamically Related Events.
+msgctxt "admin field label"
+msgid "Hide Event Category"
+msgstr "Masquer la catégorie d'événement"
+
+#. translators: ACF field group: Block - Dynamically Related Events.
+msgctxt "admin field label"
+msgid "Hide Event Format/Location"
+msgstr "Masquer le format ou le lieu de l'événement"
+
+#. translators: ACF field group: Block - Post List, Block - Featured Posts, Block - Listing, Block - Dynamically Related Content, Block - Dynamically Related Events.
+msgctxt "admin field label"
+msgid "Hide Excerpt"
+msgstr "Masquer l'extrait"
+
+#. translators: ACF field group: Block - Post List, Block - Featured Posts, Block - Listing, Block - Dynamically Related Content, Block - Dynamically Related Events.
+msgctxt "admin field label"
+msgid "Hide Featured Image"
+msgstr "Masquer l'image mise en avant"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field label"
+msgid "Hide Helper Link"
+msgstr "Masquer le lien d'aide"
+
+#. translators: ACF field group: Block - Dynamically Related Events.
+msgctxt "admin field label"
+msgid "Hide Price"
+msgstr "Masquer le prix"
+
+#. translators: ACF field group: Block - Author.
+msgctxt "admin field label"
+msgid "Hide Profile Image"
+msgstr "Masquer la photo de profil"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field label"
+msgid "Hide Search"
+msgstr "Masquer la recherche"
+
+#. translators: ACF field group: Block - Dynamically Related Events.
+msgctxt "admin field label"
+msgid "Hide Start Date Indicator"
+msgstr "Masquer l'indicateur de date de début"
+
+#. translators: ACF field group: Block - Post List.
+msgctxt "admin field label"
+msgid "Hide Tags"
+msgstr "Masquer les étiquettes"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field label"
+msgid "Hide Type Taxonomy"
+msgstr "Masquer la taxonomie de type"
+
+#. translators: ACF field group: Additional Settings.
+msgctxt "admin field label"
+msgid "Hide on listings"
+msgstr "Masquer dans les listes"
+
+#. translators: ACF field group: Footer Settings.
+msgctxt "admin field label"
+msgid "Hide social links"
+msgstr "Masquer les liens vers les réseaux sociaux"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Highlight Dark"
+msgstr "Surbrillance foncée"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Highlight Light"
+msgstr "Surbrillance pâle"
+
+#. translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events.
+msgctxt "admin field label"
+msgid "Highlight featured post(s)"
+msgstr "Mettre en évidence les publications en vedette"
+
+#. translators: ACF field group: Block - Manually Related Content.
+msgctxt "admin field label"
+msgid "Icon"
+msgstr "Icône"
+
+#. translators: ACF field group: Block - Icon Grid.
+msgctxt "admin field label"
+msgid "Icon Drop Shadows"
+msgstr "Ombres portées des icônes"
+
+#. translators: ACF field group: Block - Icon Grid.
+msgctxt "admin field label"
+msgid "Icon Grid Icons"
+msgstr "Icônes de la grille d'icônes"
+
+#. translators: ACF field group: Block - Icon Grid.
+msgctxt "admin field label"
+msgid "Icon Grid Title"
+msgstr "Titre de la grille d'icônes"
+
+#. translators: ACF field group: Block - Icon Grid.
+msgctxt "admin field label"
+msgid "Icon Image"
+msgstr "Image de l'icône"
+
+#. translators: ACF field group: Block - Icon Grid.
+msgctxt "admin field label"
+msgid "Icon Link URL"
+msgstr "URL du lien de l'icône"
+
+#. translators: ACF field group: Block - Icon Grid.
+msgctxt "admin field label"
+msgid "Icon Text"
+msgstr "Texte de l'icône"
+
+#. translators: ACF field group: Block - Manually Related Content, Block - Accordion, Block - Sidebar/Contextual Nav.
+msgctxt "admin field label"
+msgid "Icon Type"
+msgstr "Type d'icône"
+
+#. translators: ACF field group: Footer Settings, Block - Banner, Block - Card.
+msgctxt "admin field label"
+msgid "Image"
+msgstr "Image"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Image Corner Radius"
+msgstr "Rayon des coins des images"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Informational States"
+msgstr "États informatifs"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Input Fields Corner Radius Medium"
+msgstr "Rayon des coins des champs de saisie moyen"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Input Fields Corner Radius Small"
+msgstr "Rayon des coins des champs de saisie petit"
+
+#. translators: ACF field group: Global Settings.
+msgctxt "admin field label"
+msgid "Instagram Link"
+msgstr "Lien Instagram"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Interactive"
+msgstr "Interactif"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Interactive Corner Radius Large"
+msgstr "Rayon des coins interactifs grand"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Interactive Corner Radius Medium"
+msgstr "Rayon des coins interactifs moyen"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Interactive Reversed"
+msgstr "Interactif inversé"
+
+#. translators: ACF field group: Block - Banner.
+msgctxt "admin field label"
+msgid "Intro"
+msgstr "Introduction"
+
+#. translators: ACF field group: Block - Manually Related Content.
+msgctxt "admin field label"
+msgid "Items"
+msgstr "Éléments"
+
+#. translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events.
+msgctxt "admin field label"
+msgid "Label"
+msgstr "Libellé"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Label Corner Radius"
+msgstr "Rayon des coins des libellés"
+
+#. translators: ACF field group: Block - Accordion.
+msgctxt "admin field label"
+msgid "Label/Title"
+msgstr "Libellé/titre"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field label"
+msgid "Layout"
+msgstr "Mise en page"
+
+#. translators: ACF field group: Block - Manually Related Content.
+msgctxt "admin field label"
+msgid "Layout Style"
+msgstr "Style de mise en page"
+
+#. translators: ACF field group: Footer Settings, Header Settings, Block - Banner, Block - Call Out Card, Block - Card.
+msgctxt "admin field label"
+msgid "Link"
+msgstr "Lien"
+
+#. translators: ACF field group: Block - Accordion, Block - Tabs.
+msgctxt "admin field label"
+msgid "Link & Label"
+msgstr "Lien et libellé"
+
+#. translators: ACF field group: Block - Manually Related Content.
+msgctxt "admin field label"
+msgid "Link & Link Label"
+msgstr "Lien et libellé du lien"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field label"
+msgid "Link Label"
+msgstr "Libellé du lien"
+
+#. translators: ACF field group: Footer Settings.
+msgctxt "admin field label"
+msgid "Link Reversed Style"
+msgstr "Style de lien inversé"
+
+#. translators: ACF field group: Footer Settings.
+msgctxt "admin field label"
+msgid "Link Size"
+msgstr "Taille du lien"
+
+#. translators: ACF field group: Footer Settings, Block - Call Out Card.
+msgctxt "admin field label"
+msgid "Link Style"
+msgstr "Style du lien"
+
+#. translators: ACF field group: Global Settings.
+msgctxt "admin field label"
+msgid "LinkedIn Link"
+msgstr "Lien LinkedIn"
+
+#. translators: ACF field group: Block - Banner, Block - Call Out Card.
+msgctxt "admin field label"
+msgid "Links"
+msgstr "Liens"
+
+#. translators: ACF field group: Header Settings.
+msgctxt "admin field label"
+msgid "Login/Logout"
+msgstr "Ouverture/fermeture de session"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Main Menu Highlight Radius"
+msgstr "Rayon de surbrillance du menu principal"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Main Navigation"
+msgstr "Navigation principale"
+
+#. translators: ACF field group: Block - Manually Related Content.
+msgctxt "admin field label"
+msgid "Make Buttons Same Width"
+msgstr "Boutons de même largeur"
+
+#. translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events.
+msgctxt "admin field label"
+msgid "Maximum Number of Posts"
+msgstr "Nombre maximal de publications"
+
+#. translators: ACF field group: Header Settings.
+msgctxt "admin field label"
+msgid "Member Portal"
+msgstr "Portail des membres"
+
+#. translators: ACF field group: Footer Settings.
+msgctxt "admin field label"
+msgid "Menu"
+msgstr "Menu"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Miscellaneous"
+msgstr "Divers"
+
+#. translators: ACF field group: Header Settings.
+msgctxt "admin field label"
+msgid "Mobile Menu: Use Sub-Menu Dropdowns"
+msgstr "Menu mobile : utiliser des sous-menus déroulants"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Modal Background Overlay"
+msgstr "Superposition de l'arrière-plan des fenêtres modales"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Nav Contextual Link Level 1"
+msgstr "Lien de niveau 1 de la navigation contextuelle"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Nav Contextual Sublink"
+msgstr "Sous-lien de la navigation contextuelle"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Nav Contextual Title"
+msgstr "Titre de la navigation contextuelle"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Nav Footer Background"
+msgstr "Arrière-plan de la navigation du pied de page"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Nav Footer Border"
+msgstr "Bordure de la navigation du pied de page"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Nav Footer Border Top"
+msgstr "Bordure supérieure de la navigation du pied de page"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Nav Footer Newsletter Background"
+msgstr "Arrière-plan de l'infolettre du pied de page"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Nav Footer Newsletter Text Content"
+msgstr "Texte de l'infolettre du pied de page"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Nav Footer Social Background"
+msgstr "Arrière-plan des réseaux sociaux du pied de page"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Nav Footer Social Border Hover"
+msgstr "Bordure au survol des réseaux sociaux du pied de page"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Nav Footer Social Text"
+msgstr "Texte des réseaux sociaux du pied de page"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Nav Footer Social Text Hover"
+msgstr "Texte au survol des réseaux sociaux du pied de page"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Nav Footer Sublink"
+msgstr "Sous-lien de la navigation du pied de page"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Nav Footer Text Content"
+msgstr "Texte de la navigation du pied de page"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Nav Footer Text Interactive"
+msgstr "Texte interactif de la navigation du pied de page"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Nav Footer Title"
+msgstr "Titre de la navigation du pied de page"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Nav Links Highlight Radius"
+msgstr "Rayon de surbrillance des liens de navigation"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Nav Main Background"
+msgstr "Arrière-plan de la navigation principale"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Nav Main Border"
+msgstr "Bordure de la navigation principale"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Nav Main Border Interactive"
+msgstr "Bordure interactive de la navigation principale"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Nav Main Highlight"
+msgstr "Surbrillance de la navigation principale"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Nav Main Label"
+msgstr "Libellé de la navigation principale"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Nav Secondary Label"
+msgstr "Libellé de la navigation secondaire"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Nav Utility Background"
+msgstr "Arrière-plan de la navigation utilitaire"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Nav Utility Background Highlight"
+msgstr "Surbrillance de l'arrière-plan de la navigation utilitaire"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Nav Utility Label"
+msgstr "Libellé de la navigation utilitaire"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field label"
+msgid "News Taxonomy"
+msgstr "Taxonomie des nouvelles"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field label"
+msgid "News Type"
+msgstr "Type de nouvelle"
+
+#. translators: ACF field group: Footer Settings.
+msgctxt "admin field label"
+msgid "Newsletter"
+msgstr "Infolettre"
+
+#. translators: ACF field group: Footer Settings.
+msgctxt "admin field label"
+msgid "Newsletter Page"
+msgstr "Page de l'infolettre"
+
+#. translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events.
+msgctxt "admin field label"
+msgid "Number of featured post(s)"
+msgstr "Nombre de publications en vedette"
+
+#. translators: ACF field group: Block - Accordion.
+msgctxt "admin field label"
+msgid "Open By Default"
+msgstr "Ouvert par défaut"
+
+#. translators: ACF field group: Global Search Settings.
+msgctxt "admin field label"
+msgid "Page Options"
+msgstr "Options de la page"
+
+#. translators: ACF field group: Standard Page Settings.
+msgctxt "admin field label"
+msgid "Page Wrapper Class"
+msgstr "Classe du conteneur de la page"
+
+#. translators: ACF field group: Block - Contact Card.
+msgctxt "admin field label"
+msgid "Phone"
+msgstr "Téléphone"
+
+#. translators: ACF field group: Footer Settings.
+msgctxt "admin field label"
+msgid "Phone Number"
+msgstr "Numéro de téléphone"
+
+#. translators: ACF field group: Block - Search Form.
+msgctxt "admin field label"
+msgid "Placeholder"
+msgstr "Texte indicatif"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field label"
+msgid "Post Taxonomy"
+msgstr "Taxonomie des publications"
+
+#. translators: ACF field group: Block - Listing, Block - Dynamically Related Content, Shared - Post Type.
+msgctxt "admin field label"
+msgid "Post Type"
+msgstr "Type de publication"
+
+#. translators: ACF field group: Global Search Settings.
+msgctxt "admin field label"
+msgid "Post Type Filters"
+msgstr "Filtres par type de publication"
+
+#. translators: ACF field group: Block - Post List, Block - Featured Posts.
+msgctxt "admin field label"
+msgid "Posts"
+msgstr "Publications"
+
+#. translators: ACF field group: Block - Listing, Global Search Settings.
+msgctxt "admin field label"
+msgid "Posts Per Page"
+msgstr "Publications par page"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field label"
+msgid "Product Categories"
+msgstr "Catégories de produits"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field label"
+msgid "Products Taxonomy"
+msgstr "Taxonomie des produits"
+
+#. translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events.
+msgctxt "admin field label"
+msgid "Relation"
+msgstr "Relation"
+
+#. translators: ACF field group: Block - Dynamically Related Events.
+msgctxt "admin field label"
+msgid "Remove Drop shadow"
+msgstr "Retirer l'ombre portée"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field label"
+msgid "Resource Taxonomy"
+msgstr "Taxonomie des ressources"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field label"
+msgid "Resource Type"
+msgstr "Type de ressource"
+
+#. translators: ACF field group: Block - Manually Related Content.
+msgctxt "admin field label"
+msgid "Rounded Corners"
+msgstr "Coins arrondis"
+
+#. translators: ACF field group: Development Settings.
+msgctxt "admin field label"
+msgid "Save ACF JSON To"
+msgstr "Enregistrer le JSON ACF dans"
+
+#. translators: ACF field group: Global Search Settings.
+msgctxt "admin field label"
+msgid "Search Listing Page"
+msgstr "Page de liste des résultats de recherche"
+
+#. translators: ACF field group: Header Settings.
+msgctxt "admin field label"
+msgid "Secondary Nav Cart Enabled"
+msgstr "Panier activé dans la navigation secondaire"
+
+#. translators: ACF field group: Header Settings.
+msgctxt "admin field label"
+msgid "Secondary Nav Search Enabled"
+msgstr "Recherche activée dans la navigation secondaire"
+
+#. translators: ACF field group: Footer Settings.
+msgctxt "admin field label"
+msgid "Section Title"
+msgstr "Titre de la section"
+
+#. translators: ACF field group: Block - Accordion.
+msgctxt "admin field label"
+msgid "Separate Item Body From Title"
+msgstr "Séparer le corps de l'élément du titre"
+
+#. translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events.
+msgctxt "admin field label"
+msgid "Set Custom View All Link?"
+msgstr "Définir un lien « Tout voir » personnalisé ?"
+
+#. translators: ACF field group: Block - Icon Grid.
+msgctxt "admin field label"
+msgid "Show Arrow"
+msgstr "Afficher la flèche"
+
+#. translators: ACF field group: Header Settings.
+msgctxt "admin field label"
+msgid "Show Button"
+msgstr "Afficher le bouton"
+
+#. translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events.
+msgctxt "admin field label"
+msgid "Show CTA"
+msgstr "Afficher l'appel à l'action"
+
+#. translators: ACF field group: Global Search Settings.
+msgctxt "admin field label"
+msgid "Show Filter Bar"
+msgstr "Afficher la barre de filtres"
+
+#. translators: ACF field group: Global Search Settings.
+msgctxt "admin field label"
+msgid "Show Filter By Published Date"
+msgstr "Afficher le filtre par date de publication"
+
+#. translators: ACF field group: Global Search Settings.
+msgctxt "admin field label"
+msgid "Show Search Bar"
+msgstr "Afficher la barre de recherche"
+
+#. translators: ACF field group: Block - Dynamically Related Events.
+msgctxt "admin field label"
+msgid "Show Tags"
+msgstr "Afficher les étiquettes"
+
+#. translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events.
+msgctxt "admin field label"
+msgid "Show View All Link"
+msgstr "Afficher le lien « Tout voir »"
+
+#. translators: ACF field group: Block - Banner.
+msgctxt "admin field label"
+msgid "Show breadcrumbs"
+msgstr "Afficher le fil d'Ariane"
+
+#. translators: ACF field group: Block - Banner.
+msgctxt "admin field label"
+msgid "Show date"
+msgstr "Afficher la date"
+
+#. translators: ACF field group: Block - Banner.
+msgctxt "admin field label"
+msgid "Show post type"
+msgstr "Afficher le type de publication"
+
+#. translators: ACF field group: Block - Banner.
+msgctxt "admin field label"
+msgid "Show share links"
+msgstr "Afficher les liens de partage"
+
+#. translators: ACF field group: Global Settings.
+msgctxt "admin field label"
+msgid "Site Logo"
+msgstr "Logo du site"
+
+#. translators: ACF field group: Footer Settings.
+msgctxt "admin field label"
+msgid "Social Links"
+msgstr "Liens vers les réseaux sociaux"
+
+#. translators: ACF field group: Global Settings.
+msgctxt "admin field label"
+msgid "Social Media Links"
+msgstr "Liens vers les médias sociaux"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Social Media Radius"
+msgstr "Rayon des médias sociaux"
+
+#. translators: ACF field group: Footer Settings.
+msgctxt "admin field label"
+msgid "Social Sharing"
+msgstr "Partage sur les réseaux sociaux"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Space 0"
+msgstr "Espace 0"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Space 025"
+msgstr "Espace 025"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Space 050"
+msgstr "Espace 050"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Space 075"
+msgstr "Espace 075"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Space 100"
+msgstr "Espace 100"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Space 1000"
+msgstr "Espace 1000"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Space 150"
+msgstr "Espace 150"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Space 200"
+msgstr "Espace 200"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Space 250"
+msgstr "Espace 250"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Space 300"
+msgstr "Espace 300"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Space 400"
+msgstr "Espace 400"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Space 500"
+msgstr "Espace 500"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Space 600"
+msgstr "Espace 600"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Space 800"
+msgstr "Espace 800"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Spacing"
+msgstr "Espacement"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "State Error"
+msgstr "État erreur"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "State Error Light"
+msgstr "État erreur pâle"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "State Info Primary"
+msgstr "État information principal"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "State Info Primary Light"
+msgstr "État information principal pâle"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "State Info Secondary"
+msgstr "État information secondaire"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "State Info Secondary Light"
+msgstr "État information secondaire pâle"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "State Success"
+msgstr "État succès"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "State Success Light"
+msgstr "État succès pâle"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "State Warning"
+msgstr "État avertissement"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "State Warning Light"
+msgstr "État avertissement pâle"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "States"
+msgstr "États"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Status Active"
+msgstr "Statut actif"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Status Inactive"
+msgstr "Statut inactif"
+
+#. translators: ACF field group: Block - Call Out Card, Block - Contact Card, Block - Featured Posts, Block - Dynamically Related Content, Block - Dynamically Related Events.
+msgctxt "admin field label"
+msgid "Style"
+msgstr "Style"
+
+#. translators: ACF field group: Block - Card.
+msgctxt "admin field label"
+msgid "Subtitle"
+msgstr "Sous-titre"
+
+#. translators: ACF field group: Block - Tabs.
+msgctxt "admin field label"
+msgid "Tab Items"
+msgstr "Onglets"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Table"
+msgstr "Tableau"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Table Footer Background"
+msgstr "Arrière-plan du pied de tableau"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Table Footer Label"
+msgstr "Libellé du pied de tableau"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Table Header Background"
+msgstr "Arrière-plan de l'en-tête du tableau"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Table Header Label"
+msgstr "Libellé de l'en-tête du tableau"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Table Row"
+msgstr "Ligne du tableau"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Table Row Alternate"
+msgstr "Ligne du tableau alternative"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Table Row Border"
+msgstr "Bordure des lignes du tableau"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Tag Corner Radius"
+msgstr "Rayon des coins des étiquettes"
+
+#. translators: ACF field group: Block - Dynamically Related Events.
+msgctxt "admin field label"
+msgid "Tag Taxonomy"
+msgstr "Taxonomie des étiquettes"
+
+#. translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events.
+msgctxt "admin field label"
+msgid "Taxonomies"
+msgstr "Taxonomies"
+
+#. translators: ACF field group: Shared - Taxonomy.
+msgctxt "admin field label"
+msgid "Taxonomy"
+msgstr "Taxonomie"
+
+#. translators: ACF field group: Block - Listing, Global Search Settings.
+msgctxt "admin field label"
+msgid "Taxonomy Filters"
+msgstr "Filtres de taxonomie"
+
+#. translators: ACF field group: Block - Dynamically Related Content, Shared - Taxonomy Term, Block - Dynamically Related Events.
+msgctxt "admin field label"
+msgid "Taxonomy Term"
+msgstr "Terme de taxonomie"
+
+#. translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events, Shared - Taxonomy Terms.
+msgctxt "admin field label"
+msgid "Taxonomy Terms"
+msgstr "Termes de taxonomie"
+
+#. translators: ACF field group: Footer Settings.
+msgctxt "admin field label"
+msgid "Text"
+msgstr "Texte"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Text Accent"
+msgstr "Texte accent"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Text Accent Reversed"
+msgstr "Texte accent inversé"
+
+#. translators: ACF field group: Block - Banner.
+msgctxt "admin field label"
+msgid "Text Alignment"
+msgstr "Alignement du texte"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Text Button Label"
+msgstr "Texte libellé de bouton"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Text Button Label Reversed"
+msgstr "Texte libellé de bouton inversé"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Text Content"
+msgstr "Texte contenu"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Text Content Reversed"
+msgstr "Texte contenu inversé"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Text Content Secondary"
+msgstr "Texte contenu secondaire"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Text Content Secondary Reversed"
+msgstr "Texte contenu secondaire inversé"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Text Disabled"
+msgstr "Texte désactivé"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Text Label 1"
+msgstr "Texte libellé 1"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Text Label 2"
+msgstr "Texte libellé 2"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Text Tag"
+msgstr "Texte étiquette"
+
+#. translators: ACF field group: Footer Settings, Block - Banner, Block - Call Out Card, Block - Contact Card, Block - Card, Block - Manually Related Content, Block - Featured Posts, Block - Dynamically Related Content, Block - Author, Block - Tabs, Block - Dynamically Related Events.
+msgctxt "admin field label"
+msgid "Title"
+msgstr "Titre"
+
+#. translators: ACF field group: Block - Accordion.
+msgctxt "admin field label"
+msgid "Title Is A Link"
+msgstr "Le titre est un lien"
+
+#. translators: ACF field group: Block - Accordion.
+msgctxt "admin field label"
+msgid "Title Link"
+msgstr "Lien du titre"
+
+#. translators: ACF field group: Block - Manually Related Content.
+msgctxt "admin field label"
+msgid "Title Text"
+msgstr "Texte du titre"
+
+#. translators: ACF field group: Block - Featured Posts.
+msgctxt "admin field label"
+msgid "Title colour"
+msgstr "Couleur du titre"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field label"
+msgid "Tooltip"
+msgstr "Infobulle"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field label"
+msgid "Topic"
+msgstr "Sujet"
+
+#. translators: ACF field group: Header Settings.
+msgctxt "admin field label"
+msgid "Tracking Codes Right After < body >"
+msgstr "Codes de suivi juste après < body >"
+
+#. translators: ACF field group: Header Settings.
+msgctxt "admin field label"
+msgid "Tracking Codes in < head >"
+msgstr "Codes de suivi dans < head >"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Typography"
+msgstr "Typographie"
+
+#. translators: ACF field group: Block - Icon Grid.
+msgctxt "admin field label"
+msgid "Use Font-Awesome Icon Codes"
+msgstr "Utiliser les codes d'icônes Font-Awesome"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field label"
+msgid "Utility Nav"
+msgstr "Navigation utilitaire"
+
+#. translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events.
+msgctxt "admin field label"
+msgid "View All Link"
+msgstr "Lien « Tout voir »"
+
+#. translators: ACF field group: Global Settings.
+msgctxt "admin field label"
+msgid "X Link"
+msgstr "Lien X"
+
+#. translators: ACF field group: Global Settings.
+msgctxt "admin field label"
+msgid "Youtube Link"
+msgstr "Lien YouTube"
+
+#. translators: ACF field group: Footer Settings.
+msgctxt "admin field message"
+msgid "This will automatically pull in the social media links"
+msgstr "Les liens vers les médias sociaux seront récupérés automatiquement"
+
+#. translators: ACF field group: Footer Settings.
+msgctxt "admin field message"
+msgid "This will automatically pull in the social media sharing links"
+msgstr "Les liens de partage sur les médias sociaux seront récupérés automatiquement"
+
+#. translators: ACF field group: Footer Settings.
+msgctxt "admin field option"
+msgid "-- Select Menu --"
+msgstr "-- Sélectionner un menu --"
+
+#. translators: ACF field group: Block - Listing, Shared - Post Type.
+msgctxt "admin field option"
+msgid "-- Select Post Type --"
+msgstr "-- Sélectionner un type de publication --"
+
+#. translators: ACF field group: Block - Listing, Shared - Taxonomy.
+msgctxt "admin field option"
+msgid "-- Select Taxonomy --"
+msgstr "-- Sélectionner une taxonomie --"
+
+#. translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms.
+msgctxt "admin field option"
+msgid "-- Select Taxonomy Term --"
+msgstr "-- Sélectionner un terme de taxonomie --"
+
+#. translators: ACF field group: Block - Manually Related Content.
+msgctxt "admin field option"
+msgid "1"
+msgstr "1"
+
+#. translators: ACF field group: Block - Manually Related Content.
+msgctxt "admin field option"
+msgid "2"
+msgstr "2"
+
+#. translators: ACF field group: Block - Manually Related Content.
+msgctxt "admin field option"
+msgid "3"
+msgstr "3"
+
+#. translators: ACF field group: Block - Manually Related Content.
+msgctxt "admin field option"
+msgid "4"
+msgstr "4"
+
+#. translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events.
+msgctxt "admin field option"
+msgid "AND"
+msgstr "ET"
+
+#. translators: ACF field group: Header Settings.
+msgctxt "admin field option"
+msgid "Account Center"
+msgstr "Account Center"
+
+#. translators: ACF field group: Header Settings, Block - Listing.
+msgctxt "admin field option"
+msgid "Account Centre"
+msgstr "Account Centre"
+
+#. translators: ACF field group: Block - Dynamically Related Events.
+msgctxt "admin field option"
+msgid "All"
+msgstr "Tout"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field option"
+msgid "Alphabetical (a-z)"
+msgstr "Ordre alphabétique (a-z)"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field option"
+msgid "Alphabetical (z-a)"
+msgstr "Ordre alphabétique (z-a)"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field option"
+msgid "Blog Types"
+msgstr "Types de blogues"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field option"
+msgid "Blogs"
+msgstr "Blogues"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field option"
+msgid "Brands"
+msgstr "Marques"
+
+#. translators: ACF field group: Block - Card.
+msgctxt "admin field option"
+msgid "Button"
+msgstr "Bouton"
+
+#. translators: ACF field group: Block - Manually Related Content.
+msgctxt "admin field option"
+msgid "Card"
+msgstr "Carte"
+
+#. translators: ACF field group: Block - Accordion.
+msgctxt "admin field option"
+msgid "Card View"
+msgstr "Vue en cartes"
+
+#. translators: ACF field group: Block - Sidebar/Contextual Nav.
+msgctxt "admin field option"
+msgid "Carets"
+msgstr "Carets"
+
+#. translators: ACF field group: Block - Listing, Shared - Taxonomy.
+msgctxt "admin field option"
+msgid "Categories"
+msgstr "Catégories"
+
+#. translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms.
+msgctxt "admin field option"
+msgid "Categories -> Blogs"
+msgstr "Catégories -> Blogues"
+
+#. translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms.
+msgctxt "admin field option"
+msgid "Categories -> Case Studies"
+msgstr "Catégories -> Études de cas"
+
+#. translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms.
+msgctxt "admin field option"
+msgid "Categories -> Interviews"
+msgstr "Catégories -> Entrevues"
+
+#. translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms.
+msgctxt "admin field option"
+msgid "Categories -> News"
+msgstr "Catégories -> Nouvelles"
+
+#. translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms.
+msgctxt "admin field option"
+msgid "Categories -> Resources"
+msgstr "Catégories -> Ressources"
+
+#. translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms.
+msgctxt "admin field option"
+msgid "Categories -> Stories"
+msgstr "Catégories -> Récits"
+
+#. translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms.
+msgctxt "admin field option"
+msgid "Categories -> Uncategorized"
+msgstr "Catégories -> Non classé"
+
+#. translators: ACF field group: Block - Banner.
+msgctxt "admin field option"
+msgid "Centre"
+msgstr "Centré"
+
+#. translators: ACF field group: Block - Accordion, Block - Sidebar/Contextual Nav.
+msgctxt "admin field option"
+msgid "Chevrons"
+msgstr "Chevrons"
+
+#. translators: ACF field group: Development Settings.
+msgctxt "admin field option"
+msgid "Child/Active Theme"
+msgstr "Thème enfant/actif"
+
+#. translators: ACF field group: Block - Manually Related Content.
+msgctxt "admin field option"
+msgid "Custom Icon (Upload)"
+msgstr "Icône personnalisée (téléversement)"
+
+#. translators: ACF field group: Block - Banner.
+msgctxt "admin field option"
+msgid "Custom image"
+msgstr "Image personnalisée"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field option"
+msgid "Date (newest-oldest)"
+msgstr "Date (du plus récent au plus ancien)"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field option"
+msgid "Date (oldest-newest)"
+msgstr "Date (du plus ancien au plus récent)"
+
+#. translators: ACF field group: Block - Manually Related Content.
+msgctxt "admin field option"
+msgid "Default Icon"
+msgstr "Icône par défaut"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field option"
+msgid "Disciplines"
+msgstr "Disciplines"
+
+#. translators: ACF field group: Block - Manually Related Content.
+msgctxt "admin field option"
+msgid "Document"
+msgstr "Document"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field option"
+msgid "Donation Forms"
+msgstr "Formulaires de don"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field option"
+msgid "Event Categories"
+msgstr "Catégories d'événements"
+
+#. translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms.
+msgctxt "admin field option"
+msgid "Event Categories -> Summer Events"
+msgstr "Catégories d'événements -> Événements d'été"
+
+#. translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms.
+msgctxt "admin field option"
+msgid "Event Categories -> Winter Events"
+msgstr "Catégories d'événements -> Événements d'hiver"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field option"
+msgid "Events"
+msgstr "Événements"
+
+#. translators: ACF field group: Block - Banner.
+msgctxt "admin field option"
+msgid "Featured image"
+msgstr "Image mise en avant"
+
+#. translators: ACF field group: Footer Settings.
+msgctxt "admin field option"
+msgid "Footer Column 1"
+msgstr "Colonne 1 du pied de page"
+
+#. translators: ACF field group: Footer Settings.
+msgctxt "admin field option"
+msgid "Footer Column 2"
+msgstr "Colonne 2 du pied de page"
+
+#. translators: ACF field group: Footer Settings.
+msgctxt "admin field option"
+msgid "Footer Column 3"
+msgstr "Colonne 3 du pied de page"
+
+#. translators: ACF field group: Footer Settings.
+msgctxt "admin field option"
+msgid "Footer Column 4"
+msgstr "Colonne 4 du pied de page"
+
+#. translators: ACF field group: Footer Settings.
+msgctxt "admin field option"
+msgid "Footer Column 5"
+msgstr "Colonne 5 du pied de page"
+
+#. translators: ACF field group: Footer Settings.
+msgctxt "admin field option"
+msgid "Footer Menu"
+msgstr "Menu du pied de page"
+
+#. translators: ACF field group: Block - Listing, Shared - Taxonomy.
+msgctxt "admin field option"
+msgid "Formats"
+msgstr "Formats"
+
+#. translators: ACF field group: Footer Settings, Header Settings, Block - Banner, Block - Call Out Card, Block - Accordion, Shared - Button Style.
+msgctxt "admin field option"
+msgid "Ghost"
+msgstr "Fantôme"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field option"
+msgid "Grid view"
+msgstr "Vue en grille"
+
+#. translators: ACF field group: Block - Listing, Shared - Post Type.
+msgctxt "admin field option"
+msgid "Groups"
+msgstr "Groupes"
+
+#. translators: ACF field group: Block - Accordion.
+msgctxt "admin field option"
+msgid "H1"
+msgstr "H1"
+
+#. translators: ACF field group: Block - Accordion.
+msgctxt "admin field option"
+msgid "H2"
+msgstr "H2"
+
+#. translators: ACF field group: Block - Accordion.
+msgctxt "admin field option"
+msgid "H3"
+msgstr "H3"
+
+#. translators: ACF field group: Block - Accordion.
+msgctxt "admin field option"
+msgid "H4"
+msgstr "H4"
+
+#. translators: ACF field group: Block - Accordion.
+msgctxt "admin field option"
+msgid "H5"
+msgstr "H5"
+
+#. translators: ACF field group: Block - Accordion.
+msgctxt "admin field option"
+msgid "H6"
+msgstr "H6"
+
+#. translators: ACF field group: Block - Dynamically Related Events.
+msgctxt "admin field option"
+msgid "Hybrid"
+msgstr "Hybride"
+
+#. translators: ACF field group: Block - Banner.
+msgctxt "admin field option"
+msgid "Image"
+msgstr "Image"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field option"
+msgid "Jobs"
+msgstr "Offres d'emploi"
+
+#. translators: ACF field group: Block - Banner.
+msgctxt "admin field option"
+msgid "Left"
+msgstr "Gauche"
+
+#. translators: ACF field group: Block - Banner.
+msgctxt "admin field option"
+msgid "Light"
+msgstr "Pâle"
+
+#. translators: ACF field group: Block - Card, Block - Manually Related Content, Block - Accordion.
+msgctxt "admin field option"
+msgid "Link"
+msgstr "Lien"
+
+#. translators: ACF field group: Block - Manually Related Content.
+msgctxt "admin field option"
+msgid "List"
+msgstr "Liste"
+
+#. translators: ACF field group: Block - Accordion.
+msgctxt "admin field option"
+msgid "List View"
+msgstr "Vue en liste"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field option"
+msgid "List view"
+msgstr "Vue en liste"
+
+#. translators: ACF field group: Footer Settings.
+msgctxt "admin field option"
+msgid "Main Menu"
+msgstr "Menu principal"
+
+#. translators: ACF field group: Block - Listing, Shared - Post Type.
+msgctxt "admin field option"
+msgid "Media"
+msgstr "Médias"
+
+#. translators: ACF field group: Block - Listing, Shared - Post Type.
+msgctxt "admin field option"
+msgid "News"
+msgstr "Nouvelles"
+
+#. translators: ACF field group: Block - Listing, Shared - Taxonomy.
+msgctxt "admin field option"
+msgid "News Type"
+msgstr "Type de nouvelle"
+
+#. translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms.
+msgctxt "admin field option"
+msgid "News Type -> Economy"
+msgstr "Type de nouvelle -> Économie"
+
+#. translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms.
+msgctxt "admin field option"
+msgid "News Type -> Finance"
+msgstr "Type de nouvelle -> Finances"
+
+#. translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms.
+msgctxt "admin field option"
+msgid "News Type -> Markets"
+msgstr "Type de nouvelle -> Marchés"
+
+#. translators: ACF field group: Block - Banner.
+msgctxt "admin field option"
+msgid "No image"
+msgstr "Aucune image"
+
+#. translators: ACF field group: Block - Dynamically Related Content, Block - Dynamically Related Events.
+msgctxt "admin field option"
+msgid "OR"
+msgstr "OU"
+
+#. translators: ACF field group: Block - Featured Posts.
+msgctxt "admin field option"
+msgid "One Level"
+msgstr "Un niveau"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field option"
+msgid "Organizer Categories"
+msgstr "Catégories d'organisateurs"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field option"
+msgid "Organizers"
+msgstr "Organisateurs"
+
+#. translators: ACF field group: Block - Listing, Shared - Post Type.
+msgctxt "admin field option"
+msgid "Pages"
+msgstr "Pages"
+
+#. translators: ACF field group: Development Settings.
+msgctxt "admin field option"
+msgid "Parent Theme"
+msgstr "Thème parent"
+
+#. translators: ACF field group: Block - Accordion, Block - Sidebar/Contextual Nav.
+msgctxt "admin field option"
+msgid "Plus/Minus"
+msgstr "Plus/moins"
+
+#. translators: ACF field group: Block - Listing, Shared - Post Type.
+msgctxt "admin field option"
+msgid "Posts"
+msgstr "Publications"
+
+#. translators: ACF field group: Footer Settings, Header Settings, Block - Banner, Block - Call Out Card, Block - Contact Card, Block - Accordion, Shared - Button Style.
+msgctxt "admin field option"
+msgid "Primary"
+msgstr "Principal"
+
+#. translators: ACF field group: Block - Featured Posts.
+msgctxt "admin field option"
+msgid "Primary + Secondary Level"
+msgstr "Niveau principal + secondaire"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field option"
+msgid "Product Categories"
+msgstr "Catégories de produits"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field option"
+msgid "Product Tags"
+msgstr "Étiquettes de produits"
+
+#. translators: ACF field group: Block - Listing, Shared - Taxonomy.
+msgctxt "admin field option"
+msgid "Product categories"
+msgstr "Catégories de produits"
+
+#. translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms.
+msgctxt "admin field option"
+msgid "Product categories -> Advertising"
+msgstr "Catégories de produits -> Publicité"
+
+#. translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms.
+msgctxt "admin field option"
+msgid "Product categories -> Cards"
+msgstr "Catégories de produits -> Cartes"
+
+#. translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms.
+msgctxt "admin field option"
+msgid "Product categories -> Directories"
+msgstr "Catégories de produits -> Répertoires"
+
+#. translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms.
+msgctxt "admin field option"
+msgid "Product categories -> Learning"
+msgstr "Catégories de produits -> Apprentissage"
+
+#. translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms.
+msgctxt "admin field option"
+msgid "Product categories -> Mailing List Services"
+msgstr "Catégories de produits -> Services de listes d'envoi"
+
+#. translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms.
+msgctxt "admin field option"
+msgid "Product categories -> Publications"
+msgstr "Catégories de produits -> Publications"
+
+#. translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms.
+msgctxt "admin field option"
+msgid "Product categories -> Uncategorized"
+msgstr "Catégories de produits -> Non classé"
+
+#. translators: ACF field group: Block - Listing, Shared - Taxonomy.
+msgctxt "admin field option"
+msgid "Product shipping classes"
+msgstr "Classes d'expédition des produits"
+
+#. translators: ACF field group: Block - Listing, Shared - Taxonomy.
+msgctxt "admin field option"
+msgid "Product tags"
+msgstr "Étiquettes de produits"
+
+#. translators: ACF field group: Block - Listing, Shared - Post Type.
+msgctxt "admin field option"
+msgid "Products"
+msgstr "Produits"
+
+#. translators: ACF field group: Block - Listing, Shared - Taxonomy.
+msgctxt "admin field option"
+msgid "Resource Type"
+msgstr "Type de ressource"
+
+#. translators: ACF field group: Block - Listing, Shared - Post Type.
+msgctxt "admin field option"
+msgid "Resources"
+msgstr "Ressources"
+
+#. translators: ACF field group: Block - Banner.
+msgctxt "admin field option"
+msgid "Reversed"
+msgstr "Inversé"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field option"
+msgid "Role Based Pricing Rules"
+msgstr "Règles de prix selon le rôle"
+
+#. translators: ACF field group: Footer Settings, Header Settings, Block - Banner, Block - Call Out Card, Block - Contact Card, Block - Accordion, Shared - Button Style.
+msgctxt "admin field option"
+msgid "Secondary"
+msgstr "Secondaire"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field option"
+msgid "Series"
+msgstr "Séries"
+
+#. translators: ACF field group: Block - Listing, Shared - Taxonomy.
+msgctxt "admin field option"
+msgid "Tags"
+msgstr "Étiquettes"
+
+#. translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms.
+msgctxt "admin field option"
+msgid "Tags -> Content"
+msgstr "Étiquettes -> Contenu"
+
+#. translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms.
+msgctxt "admin field option"
+msgid "Tags -> Featured"
+msgstr "Étiquettes -> En vedette"
+
+#. translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms.
+msgctxt "admin field option"
+msgid "Tags -> Fun"
+msgstr "Étiquettes -> Amusant"
+
+#. translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms.
+msgctxt "admin field option"
+msgid "Tags -> Happiness"
+msgstr "Étiquettes -> Bonheur"
+
+#. translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms.
+msgctxt "admin field option"
+msgid "Tags -> Important"
+msgstr "Étiquettes -> Important"
+
+#. translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms.
+msgctxt "admin field option"
+msgid "Tags -> Must read"
+msgstr "Étiquettes -> À lire"
+
+#. translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms.
+msgctxt "admin field option"
+msgid "Tags -> Topic"
+msgstr "Étiquettes -> Sujet"
+
+#. translators: ACF field group: Block - Listing, Shared - Taxonomy.
+msgctxt "admin field option"
+msgid "Topics"
+msgstr "Sujets"
+
+#. translators: ACF field group: Shared - Taxonomy Term, Shared - Taxonomy Terms.
+msgctxt "admin field option"
+msgid "Topics -> Must Read"
+msgstr "Sujets -> À lire"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field option"
+msgid "Venue Categories"
+msgstr "Catégories de lieux"
+
+#. translators: ACF field group: Block - Listing.
+msgctxt "admin field option"
+msgid "Venues"
+msgstr "Lieux"
+
+#. translators: ACF field group: Block - Dynamically Related Events.
+msgctxt "admin field option"
+msgid "Virtual"
+msgstr "Virtuel"
+
+#. translators: ACF field group: Block - Listing, Shared - Post Type.
+msgctxt "admin field option"
+msgid "Woo Product Tabs"
+msgstr "Onglets de produits Woo"
+
+#. translators: ACF field group: Footer Settings.
+msgctxt "admin field option"
+msgid "lg"
+msgstr "lg"
+
+#. translators: ACF field group: Footer Settings.
+msgctxt "admin field option"
+msgid "md"
+msgstr "md"
+
+#. translators: ACF field group: Footer Settings.
+msgctxt "admin field option"
+msgid "sm"
+msgstr "sm"
+
+#. translators: ACF field group: Block - Icon Grid.
+msgctxt "admin field placeholder"
+msgid "E.g. \"fa-solid fa-circle\""
+msgstr "P. ex. « fa-solid fa-circle »"
+
+#. translators: ACF field group: Global Search Settings.
+msgctxt "admin field placeholder"
+msgid "E.g. 12,58,4"
+msgstr "P. ex. 12,58,4"
+
+#. translators: ACF field group: Header Settings.
+msgctxt "admin field placeholder"
+msgid "E.g. <!-- Google Tag Manager (noscript) -->   <noscript><iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-PBZBHM\"   height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></noscript>   <!-- End Google Tag Manager (noscript) -->"
+msgstr "P. ex. <!-- Google Tag Manager (noscript) -->   <noscript><iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-PBZBHM\"   height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></noscript>   <!-- End Google Tag Manager (noscript) -->"
+
+#. translators: ACF field group: Header Settings.
+msgctxt "admin field placeholder"
+msgid "E.g. <!-- Google Tag Manager --> <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-PBZBHM');</script> <!-- End Google Tag Manager -->"
+msgstr "P. ex. <!-- Google Tag Manager --> <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-PBZBHM');</script> <!-- End Google Tag Manager -->"
+
+#. translators: ACF field group: Global Search Settings.
+msgctxt "admin field placeholder"
+msgid "E.g. category,product_type,nav_menu"
+msgstr "P. ex. category,product_type,nav_menu"
+
+#. translators: ACF field group: Global Settings.
+msgctxt "admin field placeholder"
+msgid "E.g. fa-brands fa-youtube"
+msgstr "P. ex. fa-brands fa-youtube"
+
+#. translators: ACF field group: Global Search Settings.
+msgctxt "admin field placeholder"
+msgid "E.g. news,resources"
+msgstr "P. ex. news,resources"
+
+#. translators: ACF field group: Global Search Settings.
+msgctxt "admin field placeholder"
+msgid "E.g. post,page"
+msgstr "P. ex. post,page"
+
+#. translators: ACF field group: Standard Page Settings.
+msgctxt "admin field placeholder"
+msgid "e.g. homepage-template"
+msgstr "p. ex. homepage-template"
+
+#. translators: ACF field group: Theme Styling Options.
+msgctxt "admin field prepend"
+msgid "px"
+msgstr "px"
+
+#. Template Name of the theme
+msgid "Listing Page."
+msgstr "Page de liste."
+
+#. Template Name of the theme
+msgid "Kitchen Sink Forms Page."
+msgstr "Page de démonstration des formulaires."
+
+#. Template Name of the theme
+msgid "Kitchen Sink WooCommerce Page."
+msgstr "Page de démonstration WooCommerce."
+
+#. Template Name of the theme
+msgid "Kitchen Sink Page."
+msgstr "Page de démonstration."
+
+msgid "Link Label"
+msgstr "Libellé du lien"
+
+msgid "Primary large"
+msgstr "Principal grand"
+
+msgid "Primary large disabled"
+msgstr "Principal grand désactivé"
+
+msgid "Primary default"
+msgstr "Principal par défaut"
+
+msgid "Primary small"
+msgstr "Principal petit"
+
+msgid "Secondary large"
+msgstr "Secondaire grand"
+
+msgid "Secondary large disabled"
+msgstr "Secondaire grand désactivé"
+
+msgid "Secondary default"
+msgstr "Secondaire par défaut"
+
+msgid "Secondary small"
+msgstr "Secondaire petit"
+
+msgid "Ghost large"
+msgstr "Fantôme grand"
+
+msgid "Ghost large disabled"
+msgstr "Fantôme grand désactivé"
+
+msgid "Ghost default"
+msgstr "Fantôme par défaut"
+
+msgid "Ghost small"
+msgstr "Fantôme petit"
+
+msgid "Tooltip content"
+msgstr "Contenu de l'infobulle"
+
+msgid "Members Only"
+msgstr "Réservé aux membres"
+
+msgid "Topic tag"
+msgstr "Étiquette de sujet"
+
+msgid "Create an Account"
+msgstr "Créer un compte"
+
+#. translators: %s: publish date.
+#, php-format
+msgctxt "page publish date"
+msgid "Published: %s"
+msgstr "Publié le : %s"
+
+msgid "Toggle Menu"
+msgstr "Afficher ou masquer le menu"
+
+msgctxt "Pattern title"
+msgid "A block template for listings"
+msgstr "Un modèle de bloc pour les listes"
+
+msgctxt "Pattern title"
+msgid "A block template for page with sidebar"
+msgstr "Un modèle de bloc pour une page avec barre latérale"
+
+msgid "Search Results"
+msgstr "Résultats de recherche"
+
+#. translators: %d: number of search results. The search term follows in the search field below.
+#, php-format
+msgctxt "search results heading"
+msgid "%d Result for:"
+msgid_plural "%d Results for:"
+msgstr[0] "%d résultat pour :"
+msgstr[1] "%d résultats pour :"
+
+msgid "Clear Search"
+msgstr "Effacer la recherche"
+
+#. translators: %s: result count wrapped in markup.
+#, php-format
+msgctxt "search result count"
+msgid "Displaying: %s Result"
+msgid_plural "Displaying: %s Results"
+msgstr[0] "Affichage : %s résultat"
+msgstr[1] "Affichage : %s résultats"
+
+#. translators: 1: result range (e.g. 1-10) wrapped in markup, 2: total number of results.
+#, php-format
+msgctxt "search result count"
+msgid "Displaying: %1$s of %2$d Result"
+msgid_plural "Displaying: %1$s of %2$d Results"
+msgstr[0] "Affichage : %1$s sur %2$d résultat"
+msgstr[1] "Affichage : %1$s sur %2$d résultats"
+
+msgid "Date (Newest - Oldest)"
+msgstr "Date (du plus récent au plus ancien)"
+
+msgid "Date (Oldest - Newest)"
+msgstr "Date (du plus ancien au plus récent)"
+
+msgid "Order Summary"
+msgstr "Résumé de la commande"
+
+msgid "Go to Member Portal"
+msgstr "Aller au portail des membres"
+
+msgctxt "product button label"
+msgid "Log in to Purchase"
+msgstr "Ouvrir une session pour acheter"
+
+msgctxt "product button state"
+msgid "Added to cart"
+msgstr "Ajouté au panier"
+
+msgctxt "block title"
+msgid "Accordion"
+msgstr "Accordéon"
+
+msgctxt "block description"
+msgid "A Wicket block for an accordion"
+msgstr "Un bloc Wicket pour un accordéon"
+
+msgctxt "block title"
+msgid "Author"
+msgstr "Auteur"
+
+msgctxt "block description"
+msgid "A Wicket block for author"
+msgstr "Un bloc Wicket pour l'auteur"
+
+msgctxt "block title"
+msgid "Banner"
+msgstr "Bannière"
+
+msgctxt "block description"
+msgid "A Wicket block for banner"
+msgstr "Un bloc Wicket pour une bannière"
+
+msgctxt "block title"
+msgid "Call Out Card"
+msgstr "Carte de mise en évidence"
+
+msgctxt "block description"
+msgid "A Wicket block for call out card"
+msgstr "Un bloc Wicket pour une carte de mise en évidence"
+
+msgctxt "block title"
+msgid "Card"
+msgstr "Carte"
+
+msgctxt "block description"
+msgid "A Wicket block for card"
+msgstr "Un bloc Wicket pour une carte"
+
+msgctxt "block title"
+msgid "Contact Card"
+msgstr "Carte de personne-ressource"
+
+msgctxt "block description"
+msgid "A Wicket block for contact card"
+msgstr "Un bloc Wicket pour une carte de personne-ressource"
+
+msgctxt "block title"
+msgid "Dynamically Related Content"
+msgstr "Contenu connexe dynamique"
+
+msgctxt "block description"
+msgid "A Wicket block for dynamically related content."
+msgstr "Un bloc Wicket pour du contenu connexe dynamique."
+
+msgctxt "block title"
+msgid "Dynamically Related Events"
+msgstr "Événements connexes dynamiques"
+
+msgctxt "block description"
+msgid "A Wicket block for dynamically related events."
+msgstr "Un bloc Wicket pour des événements connexes dynamiques."
+
+msgctxt "block title"
+msgid "Featured Posts"
+msgstr "Publications en vedette"
+
+msgctxt "block description"
+msgid "A Wicket block for featured posts"
+msgstr "Un bloc Wicket pour des publications en vedette"
+
+msgctxt "block title"
+msgid "Icon Grid"
+msgstr "Grille d'icônes"
+
+msgctxt "block description"
+msgid "A Wicket block for icon grid"
+msgstr "Un bloc Wicket pour une grille d'icônes"
+
+msgctxt "block title"
+msgid "Listing"
+msgstr "Liste"
+
+msgctxt "block description"
+msgid "A Wicket block for listing"
+msgstr "Un bloc Wicket pour une liste"
+
+msgctxt "block title"
+msgid "Manually Related Content"
+msgstr "Contenu connexe manuel"
+
+msgctxt "block description"
+msgid "A Wicket block for manually related content"
+msgstr "Un bloc Wicket pour du contenu connexe choisi manuellement"
+
+msgctxt "block title"
+msgid "Post List"
+msgstr "Liste de publications"
+
+msgctxt "block description"
+msgid "A Wicket block for post list"
+msgstr "Un bloc Wicket pour une liste de publications"
+
+msgctxt "block title"
+msgid "Search Form"
+msgstr "Formulaire de recherche"
+
+msgctxt "block description"
+msgid "A Wicket block for search form"
+msgstr "Un bloc Wicket pour un formulaire de recherche"
+
+msgctxt "block title"
+msgid "Sidebar/Contextual Nav"
+msgstr "Barre latérale/navigation contextuelle"
+
+msgctxt "block description"
+msgid "A Wicket block for a sidebar/contextual nav"
+msgstr "Un bloc Wicket pour une barre latérale ou une navigation contextuelle"
+
+msgctxt "block title"
+msgid "Sidebar"
+msgstr "Barre latérale"
+
+msgctxt "block description"
+msgid "A Wicket block for sidebar widgets."
+msgstr "Un bloc Wicket pour les widgets de la barre latérale."
+
+msgctxt "block title"
+msgid "Tabs"
+msgstr "Onglets"
+
+msgctxt "block description"
+msgid "A Wicket block for tabs"
+msgstr "Un bloc Wicket pour des onglets"
+
+msgctxt "block title"
+msgid "Welcome"
+msgstr "Bienvenue"
+
+msgctxt "block description"
+msgid "A Wicket block for Account Centre"
+msgstr "Un bloc Wicket pour le Centre de compte"
+
+msgctxt "Color name"
+msgid "custom-colour-0"
+msgstr "custom-colour-0"
+
+msgctxt "Color name"
+msgid "custom-colour-1"
+msgstr "custom-colour-1"
+
+msgctxt "Color name"
+msgid "custom-colour-2"
+msgstr "custom-colour-2"
+
+msgctxt "Color name"
+msgid "custom-colour-3"
+msgstr "custom-colour-3"
+
+msgctxt "Color name"
+msgid "custom-colour-4"
+msgstr "custom-colour-4"
+
+msgctxt "Color name"
+msgid "custom-colour-5"
+msgstr "custom-colour-5"
+
+msgctxt "Color name"
+msgid "custom-colour-6"
+msgstr "custom-colour-6"
+
+msgctxt "Color name"
+msgid "custom-colour-7"
+msgstr "custom-colour-7"
+
+msgctxt "Color name"
+msgid "custom-colour-8"
+msgstr "custom-colour-8"
+
+msgctxt "Color name"
+msgid "custom-colour-9"
+msgstr "custom-colour-9"
+
+msgctxt "Color name"
+msgid "text-content"
+msgstr "text-content"
+
+msgctxt "Color name"
+msgid "text-content-reversed"
+msgstr "text-content-reversed"
+
+msgctxt "Color name"
+msgid "text-content-secondary"
+msgstr "text-content-secondary"
+
+msgctxt "Color name"
+msgid "text-content-secondary-reversed"
+msgstr "text-content-secondary-reversed"
+
+msgctxt "Color name"
+msgid "interactive"
+msgstr "interactive"
+
+msgctxt "Color name"
+msgid "interactive-reversed"
+msgstr "interactive-reversed"
+
+msgctxt "Color name"
+msgid "text-disabled"
+msgstr "text-disabled"
+
+msgctxt "Color name"
+msgid "text-button-label"
+msgstr "text-button-label"
+
+msgctxt "Color name"
+msgid "text-button-label-reversed"
+msgstr "text-button-label-reversed"
+
+msgctxt "Color name"
+msgid "text-accent"
+msgstr "text-accent"
+
+msgctxt "Color name"
+msgid "text-accent-reversed"
+msgstr "text-accent-reversed"
+
+msgctxt "Color name"
+msgid "text-label-1"
+msgstr "text-label-1"
+
+msgctxt "Color name"
+msgid "text-label-2"
+msgstr "text-label-2"
+
+msgctxt "Color name"
+msgid "text-tag"
+msgstr "text-tag"
+
+msgctxt "Color name"
+msgid "state-info-primary"
+msgstr "state-info-primary"
+
+msgctxt "Color name"
+msgid "state-info-primary-light"
+msgstr "state-info-primary-light"
+
+msgctxt "Color name"
+msgid "state-info-secondary"
+msgstr "state-info-secondary"
+
+msgctxt "Color name"
+msgid "state-info-secondary-light"
+msgstr "state-info-secondary-light"
+
+msgctxt "Color name"
+msgid "state-warning"
+msgstr "state-warning"
+
+msgctxt "Color name"
+msgid "state-warning-light"
+msgstr "state-warning-light"
+
+msgctxt "Color name"
+msgid "state-error"
+msgstr "state-error"
+
+msgctxt "Color name"
+msgid "state-error-light"
+msgstr "state-error-light"
+
+msgctxt "Color name"
+msgid "state-success"
+msgstr "state-success"
+
+msgctxt "Color name"
+msgid "state-success-light"
+msgstr "state-success-light"
+
+msgctxt "Color name"
+msgid "bg-label"
+msgstr "bg-label"
+
+msgctxt "Color name"
+msgid "bg-label-2"
+msgstr "bg-label-2"
+
+msgctxt "Color name"
+msgid "bg-tag"
+msgstr "bg-tag"
+
+msgctxt "Color name"
+msgid "bg-interactive"
+msgstr "bg-interactive"
+
+msgctxt "Color name"
+msgid "bg-interactive-reversed"
+msgstr "bg-interactive-reversed"
+
+msgctxt "Color name"
+msgid "bg-white"
+msgstr "bg-white"
+
+msgctxt "Color name"
+msgid "bg-card"
+msgstr "bg-card"
+
+msgctxt "Color name"
+msgid "bg-dark"
+msgstr "bg-dark"
+
+msgctxt "Color name"
+msgid "bg-dark-alternate"
+msgstr "bg-dark-alternate"
+
+msgctxt "Color name"
+msgid "bg-light"
+msgstr "bg-light"
+
+msgctxt "Color name"
+msgid "bg-light-alternate"
+msgstr "bg-light-alternate"
+
+msgctxt "Color name"
+msgid "bg-light-neutral"
+msgstr "bg-light-neutral"
+
+msgctxt "Color name"
+msgid "bg-image-overlay"
+msgstr "bg-image-overlay"
+
+msgctxt "Color name"
+msgid "bg-accent-dark"
+msgstr "bg-accent-dark"
+
+msgctxt "Color name"
+msgid "bg-accent-light"
+msgstr "bg-accent-light"
+
+msgctxt "Color name"
+msgid "bg-callout-1"
+msgstr "bg-callout-1"
+
+msgctxt "Color name"
+msgid "bg-callout-2"
+msgstr "bg-callout-2"
+
+msgctxt "Color name"
+msgid "bg-disabled"
+msgstr "bg-disabled"
+
+msgctxt "Color name"
+msgid "border-card"
+msgstr "border-card"
+
+msgctxt "Color name"
+msgid "border-dark"
+msgstr "border-dark"
+
+msgctxt "Color name"
+msgid "border-light"
+msgstr "border-light"
+
+msgctxt "Color name"
+msgid "border-white"
+msgstr "border-white"
+
+msgctxt "Color name"
+msgid "border-accent"
+msgstr "border-accent"
+
+msgctxt "Color name"
+msgid "border-interactive"
+msgstr "border-interactive"
+
+msgctxt "Color name"
+msgid "border-interactive-reversed"
+msgstr "border-interactive-reversed"
+
+msgctxt "Color name"
+msgid "border-tag"
+msgstr "border-tag"
+
+msgctxt "Color name"
+msgid "border-input-default"
+msgstr "border-input-default"
+
+msgctxt "Color name"
+msgid "border-disabled"
+msgstr "border-disabled"
+
+msgctxt "Space size name"
+msgid "25 (2px)"
+msgstr "25 (2px)"
+
+msgctxt "Space size name"
+msgid "50 (4px)"
+msgstr "50 (4px)"
+
+msgctxt "Space size name"
+msgid "75 (6px)"
+msgstr "75 (6px)"
+
+msgctxt "Space size name"
+msgid "100 (8px)"
+msgstr "100 (8px)"
+
+msgctxt "Space size name"
+msgid "150 (12px)"
+msgstr "150 (12px)"
+
+msgctxt "Space size name"
+msgid "200 (16px)"
+msgstr "200 (16px)"
+
+msgctxt "Space size name"
+msgid "250 (20px)"
+msgstr "250 (20px)"
+
+msgctxt "Space size name"
+msgid "300 (24px)"
+msgstr "300 (24px)"
+
+msgctxt "Space size name"
+msgid "400 (32px)"
+msgstr "400 (32px)"
+
+msgctxt "Space size name"
+msgid "500 (40px)"
+msgstr "500 (40px)"
+
+msgctxt "Space size name"
+msgid "600 (48px)"
+msgstr "600 (48px)"
+
+msgctxt "Space size name"
+msgid "800 (64px)"
+msgstr "800 (64px)"
+
+msgctxt "Space size name"
+msgid "1000 (80px)"
+msgstr "1000 (80px)"
+
+msgctxt "Font family name"
+msgid "System Sans Serif"
+msgstr "Sans empattement système"
+
+msgctxt "Font family name"
+msgid "System Serif"
+msgstr "Avec empattement système"
+
+msgctxt "Font size name"
+msgid "Heading 3xl"
+msgstr "Titre 3xl"
+
+msgctxt "Font size name"
+msgid "Heading 2xl"
+msgstr "Titre 2xl"
+
+msgctxt "Font size name"
+msgid "Heading xl"
+msgstr "Titre xl"
+
+msgctxt "Font size name"
+msgid "Heading lg"
+msgstr "Titre lg"
+
+msgctxt "Font size name"
+msgid "Heading md"
+msgstr "Titre md"
+
+msgctxt "Font size name"
+msgid "Heading sm"
+msgstr "Titre sm"
+
+msgctxt "Font size name"
+msgid "Heading xs"
+msgstr "Titre xs"
+
+msgctxt "Font size name"
+msgid "Body lg"
+msgstr "Corps lg"
+
+msgctxt "Font size name"
+msgid "Body md"
+msgstr "Corps md"
+
+msgctxt "Font size name"
+msgid "Body sm"
+msgstr "Corps sm"
+
+msgctxt "Font size name"
+msgid "Quote"
+msgstr "Citation"
+
+msgctxt "Font size name"
+msgid "Placeholder"
+msgstr "Texte indicatif"
+
+msgctxt "Font size name"
+msgid "Caption"
+msgstr "Légende"
+
+msgctxt "Font size name"
+msgid "Button Label lg"
+msgstr "Libellé de bouton lg"
+
+msgctxt "Font size name"
+msgid "Button Label md"
+msgstr "Libellé de bouton md"
+
+msgctxt "Font size name"
+msgid "Button Label sm"
+msgstr "Libellé de bouton sm"
+
+msgctxt "Font size name"
+msgid "Form Label"
+msgstr "Libellé de formulaire"
+
+msgctxt "Font size name"
+msgid "Date Label md"
+msgstr "Libellé de date md"
+
+msgctxt "Font size name"
+msgid "Date Label sm"
+msgstr "Libellé de date sm"
+
+msgctxt "Font size name"
+msgid "Label lg"
+msgstr "Libellé lg"
+
+msgctxt "Font size name"
+msgid "Label md"
+msgstr "Libellé md"
+
+msgctxt "Font size name"
+msgid "Label sm"
+msgstr "Libellé sm"
