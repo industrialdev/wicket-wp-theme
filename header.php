@@ -205,7 +205,7 @@ foreach ($utility_nav_items as $utility_nav_item) {
 get_component('button', [
     'variant'     => 'ghost',
     'button_aria' => [
-        'label' => __('Open Menu', 'wicket-theme'),
+        'label' => _x('Open Menu', 'mobile menu button label', 'wicket-theme'),
     ],
     'classes'     => ['left-hamburger-button', 'inline-flex', 'md:hidden'],
     'id'          => 'left-hamburger-button',
@@ -286,6 +286,7 @@ if ($nav_state == 'logged_out') {
     get_component('button', [
         'variant' => $login_logout_button_style,
         'a_tag'   => true,
+        /* translators: Header button label: log in to the site. */
         'label'   => __('Login', 'wicket-theme'),
         'classes' => ['login-button', 'mx-4', 'items-center', 'hidden', 'lg:inline-flex'],
         'link'    => get_option('wp_cassify_base_url') . 'login?service=' . $referrer,
@@ -297,6 +298,7 @@ if ($nav_state == 'logged_out') {
                         get_component('button', [
                             'variant' => $login_logout_button_style,
                             'a_tag'   => true,
+                            /* translators: Header menu item: log out of the site. */
                             'label'   => __('Logout', 'wicket-theme'),
                             'classes' => ['logout-button', 'mx-4', 'items-center', 'hidden', 'lg:inline-flex'],
                             'link'    => wp_logout_url(),
@@ -589,6 +591,7 @@ if ($nav_state == 'logged_out') {
 // Conditional login/logout buttons
 if ($nav_state == 'logged_out') {
     get_component('button', [
+        /* translators: Header button label: log in to the site. */
         'label'   => __('Login', 'wicket-theme'),
         'variant' => $login_logout_button_style,
         'a_tag'   => true,
@@ -597,6 +600,7 @@ if ($nav_state == 'logged_out') {
     ]);
 } else {
     get_component('button', [
+        /* translators: Header menu item: log out of the site. */
         'label'   => __('Logout', 'wicket-theme'),
         'variant' => $login_logout_button_style,
         'a_tag'   => true,

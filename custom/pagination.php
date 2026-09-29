@@ -30,7 +30,9 @@ if (!function_exists('wicket_paginate_links')) {
                 'total'     => $total_pages,
                 'current'   => $current_page,
                 'type'      => 'array',
+                /* translators: Pagination link: next page. */
                 'next_text' => __('Next', 'wicket-theme') . ' <i class="fa fa-arrow-right ml-[--space-100]" aria-hidden="true"></i>',
+                /* translators: Pagination link: previous page. */
                 'prev_text' => '<i class="fa fa-arrow-left mr-[--space-100]" aria-hidden="true"></i> ' . __('Previous', 'wicket-theme'),
             ]
         );

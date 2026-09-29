@@ -4,7 +4,9 @@ $defaults = [
     'classes'    => [],
     'current'    => 1,
     'total'      => 1,
+    /* translators: Pagination link: previous page. */
     'prev_text'  => __('Previous', 'wicket-theme'),
+    /* translators: Pagination link: next page. */
     'next_text'  => __('Next', 'wicket-theme'),
     'prev_icon'  => [
         'classes' => ['pagination-icon'],
@@ -75,7 +77,7 @@ $classes[] = 'pagination';
 
 	<?php else : ?>
 
-		<p><?php esc_html_e('No pagination needed.', 'wicket-theme'); ?></p>
+		<p><?php esc_html_ex('No pagination needed.', 'pagination notice', 'wicket-theme'); ?></p>
 
 	<?php endif; ?>
 

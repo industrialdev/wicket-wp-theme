@@ -38,7 +38,9 @@ function init($block = [])
     $hide_attachment = $block['hide_attachment'] ?? get_field('listing_hide_attachment');
     $hide_helper_link = $block['hide_helper_link'] ?? get_field('listing_hide_helper_link');
     $hide_document_format_icon = $block['hide_document_format_icon'] ?? get_field('listing_hide_document_format_icon');
+    /* translators: Default button label: download the file. */
     $listing_download_label = get_field('listing_download_label') ?? __('Download', 'wicket-theme');
+    /* translators: Default button label: open the listed page. */
     $listing_link_label = get_field('listing_link_label') ?? __('View Page', 'wicket-theme');
     $date_format = apply_filters('wicket_general_date_format', 'F j, Y');
     $hide_date = $block['hide_date'] ?? get_field('listing_hide_date');
@@ -369,7 +371,7 @@ function init($block = [])
                             <?php
             if ($total_posts === 0) {
                 /* translators: %d: number of results. */
-                echo esc_html(sprintf(__('%d Results', 'wicket-theme'), 0));
+                echo esc_html(sprintf(_nx('%d Result', '%d Results', 0, 'listing result count', 'wicket-theme'), 0));
             } else {
                 echo sprintf(
                     /* translators: 1: current page, 2: total pages, 3: total results. */
@@ -388,10 +390,10 @@ function init($block = [])
                             </label>
                             <select name="sort-by" id="sort-by" class="min-w-[260px]" onchange="this.form.submit()">
                                 <?php
-        $date_desc_label = __('Date (newest-oldest)', 'wicket-theme');
-    $date_asc_label = __('Date (oldest-newest)', 'wicket-theme');
-    $alpha_asc_label = __('Alphabetical (a-z)', 'wicket-theme');
-    $alpha_desc_label = __('Alphabetical (z-a)', 'wicket-theme');
+        $date_desc_label = _x('Date (newest-oldest)', 'listing sort option', 'wicket-theme');
+    $date_asc_label = _x('Date (oldest-newest)', 'listing sort option', 'wicket-theme');
+    $alpha_asc_label = _x('Alphabetical (a-z)', 'listing sort option', 'wicket-theme');
+    $alpha_desc_label = _x('Alphabetical (z-a)', 'listing sort option', 'wicket-theme');
     if (isset($_GET['sort-by'])) : ?>
                                     <option value="date-desc" <?php if ($_GET['sort-by'] == 'date-desc') : ?>selected<?php endif; ?>>
                                         <?php echo $date_desc_label; ?>
@@ -533,7 +535,7 @@ function init($block = [])
                                     'featured_image'            => !$hide_featured_image ? $featured_image : '',
                                     'link'                      => [
                                         'url'    => $permalink,
-                                        'text'   => __('Read more', 'wicket-theme'),
+                                        'text'   => _x('Read more', 'post card link label', 'wicket-theme'),
                                         'target' => '_self',
                                     ],
                                     'member_only'               => $member_only,

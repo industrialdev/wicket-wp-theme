@@ -7,6 +7,7 @@ function wicket_acf_init()
     // Check function exists.
     if (function_exists('acf_add_options_page')) {
         $parent = acf_add_options_page([
+            /* translators: Admin page title for the theme options. */
             'page_title' => __('Options', 'wicket-theme'),
             'redirect'   => true,
             'position'   => '75',
@@ -15,16 +16,19 @@ function wicket_acf_init()
 
         acf_add_options_page([
             'page_title'  => __('Global Settings', 'wicket-theme'),
+            /* translators: Admin submenu title: global theme settings. */
             'menu_title'  => __('Global', 'wicket-theme'),
             'parent_slug' => $parent['menu_slug'],
         ]);
         acf_add_options_page([
             'page_title'  => __('Header Settings', 'wicket-theme'),
+            /* translators: Admin submenu title: site header settings. */
             'menu_title'  => __('Header', 'wicket-theme'),
             'parent_slug' => $parent['menu_slug'],
         ]);
         acf_add_options_page([
             'page_title'  => __('Footer Settings', 'wicket-theme'),
+            /* translators: Admin submenu title: site footer settings. */
             'menu_title'  => __('Footer', 'wicket-theme'),
             'parent_slug' => $parent['menu_slug'],
         ]);
@@ -51,8 +55,68 @@ add_filter('acf/blocks/no_fields_assigned_message', '__return_empty_string');
 // Resets row index starting number to 0
 add_filter('acf/settings/row_index_offset', '__return_zero');
 
-// Translate labels/instructions of local (acf-json) field groups via the theme domain
-add_filter('acf/settings/l10n_textdomain', fn () => 'wicket-theme');
+/**
+ * Keys of the ACF fields shipped in the parent theme's acf-json folder.
+ *
+ * @return array<string, true>
+ */
+function wicket_acf_theme_field_keys(): array
+{
+    static $keys = null;
+    if ($keys !== null) {
+        return $keys;
+    }
+
+    $keys = [];
+    $collect = function (array $fields) use (&$collect, &$keys): void {
+        foreach ($fields as $field) {
+            if (!empty($field['key'])) {
+                $keys[$field['key']] = true;
+            }
+            $collect($field['sub_fields'] ?? []);
+            foreach ($field['layouts'] ?? [] as $layout) {
+                $collect($layout['sub_fields'] ?? []);
+            }
+        }
+    };
+
+    foreach (glob(get_template_directory() . '/acf-json/*.json') ?: [] as $file) {
+        $group = json_decode((string) file_get_contents($file), true);
+        if (is_array($group)) {
+            $collect($group['fields'] ?? []);
+        }
+    }
+
+    return $keys;
+}
+
+/**
+ * Translate the theme's own ACF fields only; ACF's l10n_textdomain setting is site-wide.
+ * The .pot picks these strings up from languages/acf-strings.php.
+ */
+function wicket_acf_translate_theme_field($field)
+{
+    if (!is_array($field) || empty($field['key']) || !isset(wicket_acf_theme_field_keys()[$field['key']])) {
+        return $field;
+    }
+
+    foreach (['label', 'instructions', 'placeholder', 'prepend', 'append', 'message', 'button_label', 'ui_on_text', 'ui_off_text'] as $setting) {
+        if (!empty($field[$setting]) && is_string($field[$setting])) {
+            $field[$setting] = _x($field[$setting], 'admin field ' . str_replace('_', ' ', $setting), 'wicket-theme');
+        }
+    }
+
+    if (!empty($field['choices']) && is_array($field['choices'])) {
+        foreach ($field['choices'] as $value => $label) {
+            if (is_string($label) && $label !== '') {
+                $field['choices'][$value] = _x($label, 'admin field option', 'wicket-theme');
+            }
+        }
+    }
+
+    return $field;
+}
+add_filter('acf/prepare_field', 'wicket_acf_translate_theme_field');
 
 function wicket_acf_prepare_copyright_field($field)
 {
@@ -166,7 +230,7 @@ function wicket_acf_prepare_featured_image_field($field)
             $image_classes[] = 'hidden';
         }
 
-        echo '<img class="' . implode(' ', $image_classes) . '" src="' . $featured_image_url . '" alt="' . esc_attr__('Featured Image', 'wicket-theme') . '">';
+        echo '<img class="' . implode(' ', $image_classes) . '" src="' . $featured_image_url . '" alt="' . esc_attr_x('Featured Image', 'featured image alt text', 'wicket-theme') . '">';
     }
     // Add script to remove the "Add Image" button
     ?>

@@ -331,10 +331,10 @@ function display_user_roles_on_profile($user)
     global $wp_roles;
 
     // Display the roles
-    echo '<h2>' . esc_html__('User Roles', 'wicket-theme') . '</h2>';
+    echo '<h2>' . esc_html_x('User Roles', 'user profile section heading', 'wicket-theme') . '</h2>';
     echo '<table class="form-table">';
     echo '<tr>';
-    echo '<th><label for="user_roles">' . esc_html__('Roles', 'wicket-theme') . '</label></th>';
+    echo '<th><label for="user_roles">' . esc_html_x('Roles', 'user profile field label', 'wicket-theme') . '</label></th>';
     echo '<td>';
     echo '<ul>';
     foreach ($roles as $role) {

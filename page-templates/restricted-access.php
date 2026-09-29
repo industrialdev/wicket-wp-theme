@@ -29,6 +29,7 @@
 
 					<?php get_component('link', [
 					    'variant' => 'primary',
+					    /* translators: Button label: log in to the site. */
 					    'text'    => __('Login', 'wicket-theme'),
 					    'url'    => get_option('wp_cassify_base_url') . 'login?service=' . $referrer,
 					]) ?>

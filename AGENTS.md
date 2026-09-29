@@ -17,6 +17,7 @@ This repository is a WordPress theme (`wicket-wp-theme`).
 - `composer test:unit` runs unit tests only.
 - `composer lint` checks PHP formatting (`php-cs-fixer --dry-run --diff`).
 - `composer format` applies PHP formatting fixes.
+- `composer i18n:acf` regenerates `languages/acf-strings.php` after changes to `acf-json/`, so ACF field strings reach the `.pot`. Commit both.
 - `composer setup-hooks` installs `.ci/pre-push`.
 
 ## Coding Style & Naming Conventions

@@ -5,7 +5,7 @@ function wicket_widgets_init()
 {
     register_sidebar([
         'id'          => 'sidebar-widgets',
-        'name'        => __('Sidebar Widgets', 'wicket-theme'),
+        'name'        => _x('Sidebar Widgets', 'widget area name', 'wicket-theme'),
         'description' => __('Sidebar widget area.', 'wicket-theme'),
     ]);
 }

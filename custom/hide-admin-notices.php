@@ -128,7 +128,7 @@ function hwan_show_dashboard_notices_cb()
 function hwan_options_page()
 {
     if (!current_user_can('manage_options')) {
-        wp_die(__('You do not have sufficient permissions to access this page.', 'wicket-theme'));
+        wp_die(_x('You do not have sufficient permissions to access this page.', 'admin permission error', 'wicket-theme'));
     }
     ?>
 <div class="hwan-settings-container">
@@ -151,7 +151,7 @@ function hwan_options_page()
 // Add settings link to the plugin action links
 function hwan_add_settings_link($links)
 {
-    $settings_link = '<a href="options-general.php?page=hide-wp-admin-notifications">' . __('Settings', 'wicket-theme') . '</a>';
+    $settings_link = '<a href="options-general.php?page=hide-wp-admin-notifications">' . _x('Settings', 'plugin action link', 'wicket-theme') . '</a>';
     array_unshift($links, $settings_link);
 
     return $links;

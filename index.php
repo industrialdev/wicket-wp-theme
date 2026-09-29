@@ -36,7 +36,7 @@
 			        'featured_image' => get_post_thumbnail_id(),
 			        'link'           => [
 			            'url'    => get_the_permalink(),
-			            'text'   => __('Read more', 'wicket-theme'),
+			            'text'   => _x('Read more', 'post card link label', 'wicket-theme'),
 			            'target' => '_self',
 			        ],
 			        'member_only'    => is_member_only(get_the_ID()),
@@ -58,7 +58,7 @@
 				<?php echo $notFound; ?>
 			</h2>
 			<p><i class="fal fa-map-marked-alt fa-9x" aria-hidden="true"></i></p>
-			<p><a href="/" class="button button--primary"><?php esc_html_e('Go home', 'wicket-theme'); ?></a></p>
+			<p><a href="/" class="button button--primary"><?php esc_html_ex('Go home', 'button label', 'wicket-theme'); ?></a></p>
 		<?php endif; ?>
 	</div>
 </main>

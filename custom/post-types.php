@@ -115,23 +115,23 @@ function wicket_register_post_types()
             'name_admin_bar'     => $singular_label,
             'add_new'            => __('Add New', 'wicket-theme'),
             /* translators: %s: post type singular name. */
-            'add_new_item'       => sprintf(__('Add New %s', 'wicket-theme'), $singular_label),
+            'add_new_item'       => sprintf(_x('Add New %s', 'post type label', 'wicket-theme'), $singular_label),
             /* translators: %s: post type singular name. */
-            'new_item'           => sprintf(__('New %s', 'wicket-theme'), $singular_label),
+            'new_item'           => sprintf(_x('New %s', 'post type label', 'wicket-theme'), $singular_label),
             /* translators: %s: post type singular name. */
-            'edit_item'          => sprintf(__('Edit %s', 'wicket-theme'), $singular_label),
+            'edit_item'          => sprintf(_x('Edit %s', 'post type label', 'wicket-theme'), $singular_label),
             /* translators: %s: post type singular name. */
-            'view_item'          => sprintf(__('View %s', 'wicket-theme'), $singular_label),
+            'view_item'          => sprintf(_x('View %s', 'post type label', 'wicket-theme'), $singular_label),
             /* translators: %s: post type plural name. */
-            'all_items'          => sprintf(__('All %s', 'wicket-theme'), $plural_label),
+            'all_items'          => sprintf(_x('All %s', 'post type label', 'wicket-theme'), $plural_label),
             /* translators: %s: post type plural name. */
-            'search_items'       => sprintf(__('Search %s', 'wicket-theme'), $plural_label),
+            'search_items'       => sprintf(_x('Search %s', 'post type label', 'wicket-theme'), $plural_label),
             /* translators: %s: post type plural name. */
-            'parent_item_colon'  => sprintf(__('Parent %s:', 'wicket-theme'), $plural_label),
+            'parent_item_colon'  => sprintf(_x('Parent %s:', 'post type label', 'wicket-theme'), $plural_label),
             /* translators: %s: post type plural name. */
-            'not_found'          => sprintf(__('No %s found.', 'wicket-theme'), $plural_label),
+            'not_found'          => sprintf(_x('No %s found.', 'post type label', 'wicket-theme'), $plural_label),
             /* translators: %s: post type plural name. */
-            'not_found_in_trash' => sprintf(__('No %s found in Trash.', 'wicket-theme'), $plural_label),
+            'not_found_in_trash' => sprintf(_x('No %s found in Trash.', 'post type label', 'wicket-theme'), $plural_label),
         ];
 
         $rewrite = [

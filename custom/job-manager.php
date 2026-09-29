@@ -24,6 +24,7 @@ add_action('single_job_listing_start', function () {
   <div class="wicket-job-listing-head">
     <?php get_component('link', [
         'classes' => ['back-link'],
+        /* translators: Button label: go back to the job listings. */
         'text'    => __('Back', 'wicket-theme'),
         'url'     => $job_board_url,
         'icon_start' => [
@@ -31,7 +32,7 @@ add_action('single_job_listing_start', function () {
         ],
     ]) ?>
 
-    <h3 class="text-heading-sm"><?php _e('Job opportunity', 'wicket-theme') ?></h3>
+    <h3 class="text-heading-sm"><?php /* translators: Heading on a job posting. */ _e('Job opportunity', 'wicket-theme') ?></h3>
     <hr>
 
     <h1 class="text-heading-2xl"><?php the_title() ?></h1>

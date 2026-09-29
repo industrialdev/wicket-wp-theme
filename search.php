@@ -90,7 +90,10 @@ $page_count = ceil($total_posts / $posts_per_page);
   <?php if ($show_search_bar) : ?>
     <div class="px-4 pb-12 lg:px-0">
       <div class="max-w-screen-lg mx-auto">
-        <p class="search-page-results-count text-heading-sm mb-8 font-normal text-center"><?php echo $total_posts; ?> <?php _e('Results for:', 'wicket-theme'); ?></p>
+        <p class="search-page-results-count text-heading-sm mb-8 font-normal text-center"><?php
+            /* translators: %d: number of search results. The search term follows in the search field below. */
+            echo esc_html(sprintf(_nx('%d Result for:', '%d Results for:', (int) $total_posts, 'search results heading', 'wicket-theme'), (int) $total_posts));
+        ?></p>
         <?php
         get_component('search-form', [
             'url-param' => 's',
@@ -136,15 +139,15 @@ $page_count = ceil($total_posts / $posts_per_page);
           echo 'basis-3/4';
       } ?>">
         <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-7 px-4 lg:px-0">
-          <div><?php _e('Displaying:', 'wicket-theme'); ?>
+          <div>
             <?php
             if ($total_posts === 0) {
                 /* translators: %s: result count wrapped in markup. */
-                printf(esc_html__('%s Results', 'wicket-theme'), '<span class="font-bold">0</span>');
+                printf(esc_html(_nx('Displaying: %s Result', 'Displaying: %s Results', 0, 'search result count', 'wicket-theme')), '<span class="font-bold">0</span>');
             } else {
                 printf(
                     /* translators: 1: result range (e.g. 1-10) wrapped in markup, 2: total number of results. */
-                    esc_html__('%1$s of %2$d Results', 'wicket-theme'),
+                    esc_html(_nx('Displaying: %1$s of %2$d Result', 'Displaying: %1$s of %2$d Results', (int) $total_posts, 'search result count', 'wicket-theme')),
                     '<span class="font-bold">' . esc_html($start_page . '-' . $end_page) . '</span>',
                     (int) $total_posts
                 );
@@ -197,7 +200,7 @@ $page_count = ceil($total_posts / $posts_per_page);
                     'cta_style'         => 'button',
                     'link'              => [
                         'url'       => $permalink,
-                        'text'      => __('Read more', 'wicket-theme'),
+                        'text'      => _x('Read more', 'post card link label', 'wicket-theme'),
                         'target'    => '_self',
                     ],
                     'link_type'         => 'title',

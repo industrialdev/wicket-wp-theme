@@ -13,13 +13,13 @@ function my_mce_before_init_insert_formats($init_array)
       * Wrapper whether or not to add a new block-level element around any selected elements
       */
         [
-            'title' => __('Large Text', 'wicket-theme'),
+            'title' => _x('Large Text', 'block style name', 'wicket-theme'),
             'block' => 'p',
             'classes' => 'text--large',
             'wrapper' => false,
         ],
         [
-            'title' => __('Button', 'wicket-theme'),
+            'title' => _x('Button', 'block style name', 'wicket-theme'),
             'selector' => 'a',
             'classes' => 'button button--primary',
         ],

@@ -59,8 +59,8 @@ function init($block = [])
             'featured_image' => !$hide_featured_image ? $featured_image : '',
             'link'           => [
                 'url'    => $permalink,
-                'text'   => __('Read more', 'wicket-theme'),
-                'title'  => __('Read more', 'wicket-theme'),
+                'text'   => _x('Read more', 'post card link label', 'wicket-theme'),
+                'title'  => _x('Read more', 'post card link label', 'wicket-theme'),
                 'target' => '_self',
             ],
             'member_only'    => $member_only,
