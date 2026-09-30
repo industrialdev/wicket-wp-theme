@@ -190,6 +190,7 @@ foreach ($utility_nav_items as $utility_nav_item) {
         'classes' => ['utility-nav__link'],
         'target'  => $target,
         'url'     => $utility_nav_item->url,
+        'size'    => 'sm',
     ]);
     $utility_loop_index++;
 }
@@ -791,6 +792,7 @@ foreach ($secondary_nav_items as $secondary_nav_item) {
             'classes' => ['utility-nav-mobile__item'],
             'target'  => $target,
             'url'     => $utility_nav_item->url,
+            'size'    => 'sm',
         ]);
     }
                 ?>
