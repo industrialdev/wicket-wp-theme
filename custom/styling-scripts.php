@@ -173,11 +173,12 @@ function wicket_get_customizations_inline_css()
 }
 
 /**
- * Enqueue theme assets.
+ * Enqueue the theme's front-end styles.
+ * Shared by the front end and the block editor canvas, so the editor matches the site.
  *
  * @return void
  */
-function wicket_add_theme_assets()
+function wicket_enqueue_theme_styles()
 {
     if (!wp_style_is('font-awesome', 'enqueued')) {
         wicket_enqueue_style('font-awesome', '/font-awesome/css/fontawesome.css');
@@ -214,11 +215,64 @@ function wicket_add_theme_assets()
     if (in_array(wp_get_environment_type(), ['development', 'local', 'staging'])) {
         wp_add_inline_style('wicket-theme', wicket_styling_theme_variables('return'));
     }
+}
+
+/**
+ * Enqueue theme assets.
+ *
+ * @return void
+ */
+function wicket_add_theme_assets()
+{
+    wicket_enqueue_theme_styles();
 
     wicket_enqueue_script('wicket', '/assets/scripts/min/wicket.min.js', false, ['jquery'], false, true);
-
 }
 add_action('wp_enqueue_scripts', 'wicket_add_theme_assets');
+
+/**
+ * Enqueue the front-end styles in the block editor canvas.
+ *
+ * Since WordPress 7.1 the post editor canvas is always an iframe, which only receives editor styles
+ * and what is enqueued on enqueue_block_assets. Core fires that hook for the iframe with block editor
+ * scripts switched off, and on the wp-admin page itself with them on, where front-end CSS must not load.
+ *
+ * @return void
+ */
+function wicket_add_editor_canvas_assets()
+{
+    if (!is_admin() || wp_should_load_block_editor_scripts_and_styles()) {
+        return;
+    }
+
+    wicket_enqueue_theme_styles();
+
+    // No version arg: add_query_arg() would collapse repeated Google Fonts "family" params
+    foreach (wicket_get_font_stylesheet_urls() as $index => $url) {
+        wp_enqueue_style('wicket-font-' . $index, $url, [], null);
+    }
+}
+add_action('enqueue_block_assets', 'wicket_add_editor_canvas_assets');
+
+/**
+ * Get the stylesheet URLs from the Theme Styling font HTML code, which header.php prints on the front end.
+ *
+ * @return string[]
+ */
+function wicket_get_font_stylesheet_urls()
+{
+    $theme_ff_group = get_field('theme-font-family', 'option') ?: [];
+    $tags           = new WP_HTML_Tag_Processor($theme_ff_group['head-font-html-code'] ?? '');
+    $urls           = [];
+
+    while ($tags->next_tag('link')) {
+        if ($tags->get_attribute('rel') === 'stylesheet' && $tags->get_attribute('href')) {
+            $urls[] = $tags->get_attribute('href');
+        }
+    }
+
+    return $urls;
+}
 
 /**
  * Enqueue admin assets.
