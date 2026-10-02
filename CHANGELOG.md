@@ -5,6 +5,19 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 <!-- new releases inserted below this line -->
 
+## [2.1.45] - 2026-10-01
+
+### Fixed
+- load theme styles into the iframed block editor canvas
+
+
+## [2.1.44] - 2026-09-30
+
+### Maintenance
+- updating event card component title
+- updating featured card title font size
+
+
 ## [2.1.43] - 2026-09-08
 
 ### Other
