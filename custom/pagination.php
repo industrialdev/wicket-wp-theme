@@ -30,8 +30,10 @@ if (!function_exists('wicket_paginate_links')) {
                 'total'     => $total_pages,
                 'current'   => $current_page,
                 'type'      => 'array',
-                'next_text' => __('Next', 'wicket') . ' <i class="fa fa-arrow-right ml-[--space-100]" aria-hidden="true"></i>',
-                'prev_text' => '<i class="fa fa-arrow-left mr-[--space-100]" aria-hidden="true"></i> ' . __('Previous', 'wicket'),
+                /* translators: Pagination link: next page. */
+                'next_text' => _x('Next', 'button label', 'wicket-theme') . ' <i class="fa fa-arrow-right ml-[--space-100]" aria-hidden="true"></i>',
+                /* translators: Pagination link: previous page. */
+                'prev_text' => '<i class="fa fa-arrow-left mr-[--space-100]" aria-hidden="true"></i> ' . _x('Previous', 'button label', 'wicket-theme'),
             ]
         );
         $total_pages = (int) $args['total'];
@@ -63,7 +65,7 @@ if (!function_exists('wicket_pagination')) {
     function wicket_pagination($args = [])
     {
 
-        return '<nav class="wicket-pagination" aria-label="' . __('Pagination', 'wicket') . '">' . wicket_paginate_links($args) . '</nav>';
+        return '<nav class="wicket-pagination" aria-label="' . _x('Pagination', 'accessibility label', 'wicket-theme') . '">' . wicket_paginate_links($args) . '</nav>';
 
     }
 }

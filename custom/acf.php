@@ -7,35 +7,39 @@ function wicket_acf_init()
     // Check function exists.
     if (function_exists('acf_add_options_page')) {
         $parent = acf_add_options_page([
-            'page_title' => __('Options', 'wicket'),
+            /* translators: Admin page title for the theme options. */
+            'page_title' => _x('Options', 'label', 'wicket-theme'),
             'redirect'   => true,
             'position'   => '75',
             'icon_url'   => 'dashicons-screenoptions',
         ]);
 
         acf_add_options_page([
-            'page_title'  => __('Global Settings', 'wicket'),
-            'menu_title'  => __('Global', 'wicket'),
+            'page_title'  => _x('Global Settings', 'label', 'wicket-theme'),
+            /* translators: Admin submenu title: global theme settings. */
+            'menu_title'  => _x('Global', 'label', 'wicket-theme'),
             'parent_slug' => $parent['menu_slug'],
         ]);
         acf_add_options_page([
-            'page_title'  => __('Header Settings', 'wicket'),
-            'menu_title'  => __('Header', 'wicket'),
+            'page_title'  => _x('Header Settings', 'label', 'wicket-theme'),
+            /* translators: Admin submenu title: site header settings. */
+            'menu_title'  => _x('Header', 'label', 'wicket-theme'),
             'parent_slug' => $parent['menu_slug'],
         ]);
         acf_add_options_page([
-            'page_title'  => __('Footer Settings', 'wicket'),
-            'menu_title'  => __('Footer', 'wicket'),
+            'page_title'  => _x('Footer Settings', 'label', 'wicket-theme'),
+            /* translators: Admin submenu title: site footer settings. */
+            'menu_title'  => _x('Footer', 'label', 'wicket-theme'),
             'parent_slug' => $parent['menu_slug'],
         ]);
         acf_add_options_page([
-            'page_title'  => __('Global Search Settings', 'wicket'),
-            'menu_title'  => __('Global Search', 'wicket'),
+            'page_title'  => _x('Global Search Settings', 'label', 'wicket-theme'),
+            'menu_title'  => _x('Global Search', 'label', 'wicket-theme'),
             'parent_slug' => $parent['menu_slug'],
         ]);
         acf_add_options_page([
-            'page_title'  => __('Theme Styling', 'wicket'),
-            'menu_title'  => __('Theme Styling', 'wicket'),
+            'page_title'  => _x('Theme Styling', 'label', 'wicket-theme'),
+            'menu_title'  => _x('Theme Styling', 'label', 'wicket-theme'),
             'parent_slug' => $parent['menu_slug'],
         ]);
     }
@@ -50,6 +54,82 @@ add_filter('acf/blocks/no_fields_assigned_message', '__return_empty_string');
 
 // Resets row index starting number to 0
 add_filter('acf/settings/row_index_offset', '__return_zero');
+
+/**
+ * Keys of the ACF fields shipped in the parent theme's acf-json folder.
+ *
+ * @return array<string, true>
+ */
+function wicket_acf_theme_field_keys(): array
+{
+    static $keys = null;
+    if ($keys !== null) {
+        return $keys;
+    }
+
+    $keys = [];
+    $collect = function (array $fields) use (&$collect, &$keys): void {
+        foreach ($fields as $field) {
+            if (!empty($field['key'])) {
+                $keys[$field['key']] = true;
+            }
+            $collect($field['sub_fields'] ?? []);
+            foreach ($field['layouts'] ?? [] as $layout) {
+                $collect($layout['sub_fields'] ?? []);
+            }
+        }
+    };
+
+    foreach (glob(get_template_directory() . '/acf-json/*.json') ?: [] as $file) {
+        $group = json_decode((string) file_get_contents($file), true);
+        if (is_array($group)) {
+            $collect($group['fields'] ?? []);
+        }
+    }
+
+    return $keys;
+}
+
+/**
+ * Short strings (1 to 3 words) get a context; full sentences do not.
+ * Keep in sync with .ci/acf-i18n-strings.php.
+ */
+function wicket_acf_translate_text(string $text, string $context): string
+{
+    $plain = preg_replace(['#<[^>]+>#', '#%(\d+\$)?[sdfu]#', '#&[a-z]+;#'], ' ', $text);
+
+    return preg_match_all("/[\p{L}\p{N}][\p{L}\p{N}'’.-]*/u", $plain) <= 3
+        ? _x($text, $context, 'wicket-theme')
+        : __($text, 'wicket-theme');
+}
+
+/**
+ * Translate the theme's own ACF fields only; ACF's l10n_textdomain setting is site-wide.
+ * The .pot picks these strings up from languages/acf-strings.php.
+ */
+function wicket_acf_translate_theme_field($field)
+{
+    if (!is_array($field) || empty($field['key']) || !isset(wicket_acf_theme_field_keys()[$field['key']])) {
+        return $field;
+    }
+
+    foreach (['label' => 'label', 'instructions' => 'help text', 'placeholder' => 'field placeholder', 'prepend' => 'field affix', 'append' => 'field affix', 'message' => 'help text', 'button_label' => 'button label', 'ui_on_text' => 'label', 'ui_off_text' => 'label'] as $setting => $context) {
+        if (!empty($field[$setting]) && is_string($field[$setting])) {
+            $field[$setting] = wicket_acf_translate_text($field[$setting], $context);
+        }
+    }
+
+    if (!empty($field['choices']) && is_array($field['choices'])) {
+        foreach ($field['choices'] as $value => $label) {
+            if (is_string($label) && $label !== '') {
+                $field['choices'][$value] = wicket_acf_translate_text($label, 'label');
+            }
+        }
+    }
+
+    return $field;
+}
+add_filter('acf/prepare_field', 'wicket_acf_translate_theme_field');
 
 function wicket_acf_prepare_copyright_field($field)
 {
@@ -68,7 +148,7 @@ function wicket_acf_load_footer_menu_field_choices($field)
     $menus = get_terms('nav_menu', ['hide_empty' => true]);
 
     if (is_array($menus)) {
-        $field['choices'][0] = __('-- Select Menu --', 'wicket');
+        $field['choices'][0] = _x('-- Select Menu --', 'label', 'wicket-theme');
         foreach ($menus as $menu) {
             $field['choices'][$menu->term_id] = $menu->name;
         }
@@ -85,7 +165,7 @@ function wicket_acf_load_post_types_field_choices($field)
     $post_types = get_post_types(['public' => true], 'objects');
 
     if (is_array($post_types)) {
-        $field['choices'][0] = __('-- Select Post Type --', 'wicket');
+        $field['choices'][0] = _x('-- Select Post Type --', 'label', 'wicket-theme');
         foreach ($post_types as $post_type) {
             $field['choices'][$post_type->name] = $post_type->label;
         }
@@ -116,7 +196,7 @@ function wicket_acf_load_taxonomies_field_choices($field)
     }
 
     if (is_array($taxonomies)) {
-        $field['choices'][0] = __('-- Select Taxonomy --', 'wicket');
+        $field['choices'][0] = _x('-- Select Taxonomy --', 'label', 'wicket-theme');
         foreach ($taxonomies as $taxonomy) {
             $field['choices'][$taxonomy->name] = $taxonomy->label;
         }
@@ -133,7 +213,7 @@ function wicket_acf_load_taxonomy_terms_field_choices($field)
     $field['choices'] = [];
     $taxonomies = get_taxonomies(['public' => true], 'objects');
     if (is_array($taxonomies)) {
-        $field['choices']['0'] = __('-- Select Taxonomy Term --', 'wicket');
+        $field['choices']['0'] = _x('-- Select Taxonomy Term --', 'label', 'wicket-theme');
         foreach ($taxonomies as $taxonomy) {
             $terms = get_terms($taxonomy->name, ['hide_empty' => false]);
             if (is_array($terms)) {
@@ -163,7 +243,7 @@ function wicket_acf_prepare_featured_image_field($field)
             $image_classes[] = 'hidden';
         }
 
-        echo '<img class="' . implode(' ', $image_classes) . '" src="' . $featured_image_url . '" alt="Featured Image">';
+        echo '<img class="' . implode(' ', $image_classes) . '" src="' . $featured_image_url . '" alt="' . esc_attr_x('Featured Image', 'accessibility label', 'wicket-theme') . '">';
     }
     // Add script to remove the "Add Image" button
     ?>

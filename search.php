@@ -83,14 +83,17 @@ $page_count = ceil($total_posts / $posts_per_page);
 
   <div class="px-4 py-5 lg:px-0">
       <div class="container max-w-screen-lg mx-auto">
-        <h1 class="search-page-heading text-heading-xl font-bold text-center"><?php _e('Search Results', 'wicket'); ?></h1>
+        <h1 class="search-page-heading text-heading-xl font-bold text-center"><?php _ex('Search Results', 'label', 'wicket-theme'); ?></h1>
       </div>
     </div>
 
   <?php if ($show_search_bar) : ?>
     <div class="px-4 pb-12 lg:px-0">
       <div class="max-w-screen-lg mx-auto">
-        <p class="search-page-results-count text-heading-sm mb-8 font-normal text-center"><?php echo $total_posts; ?> <?php _e('Results for:', 'wicket'); ?></p>
+        <p class="search-page-results-count text-heading-sm mb-8 font-normal text-center"><?php
+            /* translators: %d: number of search results. The search term follows in the search field below. */
+            echo esc_html(sprintf(_nx('%d Result for:', '%d Results for:', (int) $total_posts, 'count label', 'wicket-theme'), (int) $total_posts));
+        ?></p>
         <?php
         get_component('search-form', [
             'url-param' => 's',
@@ -99,7 +102,7 @@ $page_count = ceil($total_posts / $posts_per_page);
         <div class="text-center" >
           <?php get_component('link', [
               'classes' => ['search-page-clear-button', 'text-body-md', 'mt-4'],
-              'text'    => __('Clear Search', 'wicket'),
+              'text'    => _x('Clear Search', 'button label', 'wicket-theme'),
               'url'    => '/?s=',
               'icon_start' => [
                   'icon' => 'fa-solid fa-x',
@@ -136,28 +139,34 @@ $page_count = ceil($total_posts / $posts_per_page);
           echo 'basis-3/4';
       } ?>">
         <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-7 px-4 lg:px-0">
-          <div><?php _e('Displaying:', 'wicket'); ?>
+          <div>
             <?php
             if ($total_posts === 0) {
-                echo '<span class="font-bold">0</span>' . __(' Results', 'wicket');
+                /* translators: %s: result count wrapped in markup. */
+                printf(esc_html(_nx('Displaying: %s Result', 'Displaying: %s Results', 0, 'count label', 'wicket-theme')), '<span class="font-bold">0</span>');
             } else {
-                echo '<span class="font-bold">' . $start_page . '-' . $end_page . '</span> of ' . $total_posts . ' Results';
+                printf(
+                    /* translators: 1: result range (e.g. 1-10) wrapped in markup, 2: total number of results. */
+                    esc_html(_nx('Displaying: %1$s of %2$d Result', 'Displaying: %1$s of %2$d Results', (int) $total_posts, 'count label', 'wicket-theme')),
+                    '<span class="font-bold">' . esc_html($start_page . '-' . $end_page) . '</span>',
+                    (int) $total_posts
+                );
             }
 ?>
           </div>
           <div class="search-page-right-col__sort-by">
-            <div class="font-bold mr-4"><?php _e('Sort by', 'wicket'); ?></div>
+            <div class="font-bold mr-4"><?php _ex('Sort by', 'label', 'wicket-theme'); ?></div>
             <select x-on:change="window.location.href = updateUrlParam(window.location.href, 'sortby', $el.value);" class="pr-8">
               <option value="new-to-old" <?php if(isset($_GET['sortby'])) {
                   if ($_GET['sortby'] == 'new-to-old') {
                       echo 'selected';
                   }
-              } ?>><?php _e('Date (Newest - Oldest)', 'wicket'); ?></option>
+              } ?>><?php _ex('Date (Newest - Oldest)', 'label', 'wicket-theme'); ?></option>
               <option value="old-to-new" <?php if(isset($_GET['sortby'])) {
                   if ($_GET['sortby'] == 'old-to-new') {
                       echo 'selected';
                   }
-              } ?>><?php _e('Date (Oldest - Newest)', 'wicket'); ?></option>
+              } ?>><?php _ex('Date (Oldest - Newest)', 'label', 'wicket-theme'); ?></option>
             </select>
           </div>
 
@@ -191,7 +200,7 @@ $page_count = ceil($total_posts / $posts_per_page);
                     'cta_style'         => 'button',
                     'link'              => [
                         'url'       => $permalink,
-                        'text'      => 'Read more',
+                        'text'      => _x('Read more', 'button label', 'wicket-theme'),
                         'target'    => '_self',
                     ],
                     'link_type'         => 'title',
@@ -212,10 +221,10 @@ $page_count = ceil($total_posts / $posts_per_page);
         else : ?>
           <div class="p-10">
             <h2 class="text-center font-bold text-heading-md mb-6">
-              <?php echo __('No results found.', 'wicket') ?>
+              <?php echo _x('No results found.', 'message', 'wicket-theme') ?>
             </h2>
             <div class="text-center">
-              <?php echo __('Try adjusting your search or filter to find what you are looking for.', 'wicket') ?>
+              <?php echo __('Try adjusting your search or filter to find what you are looking for.', 'wicket-theme') ?>
             </div>
           </div>
           <?php

@@ -1,5 +1,6 @@
 {
   "name": "wicket/sidebar-contextual-nav",
+  "textdomain": "wicket-theme",
   "title": "Sidebar/Contextual Nav",
   "description": "A Wicket block for a sidebar/contextual nav",
   "style": "block-wicket-sidebar-contextual-nav",

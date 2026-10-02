@@ -24,14 +24,15 @@ add_action('single_job_listing_start', function () {
   <div class="wicket-job-listing-head">
     <?php get_component('link', [
         'classes' => ['back-link'],
-        'text'    => __('Back', 'wicket'),
+        /* translators: Button label: go back to the job listings. */
+        'text'    => _x('Back', 'button label', 'wicket-theme'),
         'url'     => $job_board_url,
         'icon_start' => [
             'icon' => 'fa-solid fa-arrow-left-long',
         ],
     ]) ?>
 
-    <h3 class="text-heading-sm"><?php _e('Job opportunity', 'wicket') ?></h3>
+    <h3 class="text-heading-sm"><?php /* translators: Heading on a job posting. */ _ex('Job opportunity', 'label', 'wicket-theme') ?></h3>
     <hr>
 
     <h1 class="text-heading-2xl"><?php the_title() ?></h1>

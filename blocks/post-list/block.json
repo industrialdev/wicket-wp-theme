@@ -1,5 +1,6 @@
 {
   "name": "wicket/post-list",
+  "textdomain": "wicket-theme",
   "title": "Post List",
   "description": "A Wicket block for post list",
   "style": "block-wicket-post-list",

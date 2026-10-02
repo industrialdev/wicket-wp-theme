@@ -207,7 +207,7 @@
             "wpml_cf_preferences": 1,
             "choices": {
                 "left": "Left",
-                "center": "Center"
+                "center": "Centre"
             },
             "default_value": "left",
             "return_format": "value",

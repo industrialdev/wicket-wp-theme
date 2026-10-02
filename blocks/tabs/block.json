@@ -1,5 +1,6 @@
 {
   "name": "wicket/tabs",
+  "textdomain": "wicket-theme",
   "title": "Tabs",
   "description": "A Wicket block for tabs",
   "style": "block-wicket-tabs",

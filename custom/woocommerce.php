@@ -331,10 +331,10 @@ function display_user_roles_on_profile($user)
     global $wp_roles;
 
     // Display the roles
-    echo '<h2>User Roles</h2>';
+    echo '<h2>' . esc_html_x('User Roles', 'label', 'wicket-theme') . '</h2>';
     echo '<table class="form-table">';
     echo '<tr>';
-    echo '<th><label for="user_roles">Roles</label></th>';
+    echo '<th><label for="user_roles">' . esc_html_x('Roles', 'label', 'wicket-theme') . '</label></th>';
     echo '<td>';
     echo '<ul>';
     foreach ($roles as $role) {

@@ -30,6 +30,12 @@ add_filter('send_email_change_email', '__return_false');
  */
 function wicket_setup()
 {
+    /*
+     * Make the theme available for translation.
+     * Loads wp-content/languages/themes/wicket-theme-{locale}.mo first, then
+     * falls back to the theme's own languages/ directory.
+     */
+    load_theme_textdomain('wicket-theme', get_template_directory() . '/languages');
 
     /*
      * Let WordPress manage the document title.
@@ -100,6 +106,28 @@ function wicket_setup()
 }
 add_action('after_setup_theme', 'wicket_setup');
 
+/*
+ * 'wicket-theme' is the default domain. If a string has no 'wicket-theme'
+ * translation, fall back to the legacy 'wicket' domain, so existing Loco and
+ * WPML translations on legacy sites keep working. New sites translate under
+ * 'wicket-theme' only.
+ */
+add_filter('gettext_wicket-theme', function ($translation, $text) {
+    return $translation === $text ? translate($text, 'wicket') : $translation;
+}, 10, 2);
+
+add_filter('gettext_with_context_wicket-theme', function ($translation, $text, $context) {
+    return $translation === $text ? translate_with_gettext_context($text, $context, 'wicket') : $translation;
+}, 10, 3);
+
+add_filter('ngettext_wicket-theme', function ($translation, $single, $plural, $number) {
+    return $translation === ($number == 1 ? $single : $plural) ? _n($single, $plural, $number, 'wicket') : $translation;
+}, 10, 4);
+
+add_filter('ngettext_with_context_wicket-theme', function ($translation, $single, $plural, $number, $context) {
+    return $translation === ($number == 1 ? $single : $plural) ? _nx($single, $plural, $number, $context, 'wicket') : $translation;
+}, 10, 5);
+
 /**
  * Register navigation menus.
  *
@@ -108,12 +136,12 @@ add_action('after_setup_theme', 'wicket_setup');
 function wicket_register_nav_menus()
 {
     register_nav_menus([
-        'header-utility'   => __('Header Utility Menu', 'wicket'),
-        'header-secondary' => __('Header Secondary Menu', 'wicket'),
-        'header'           => __('Header Menu', 'wicket'),
-        'social'           => __('Social Menu', 'wicket'),
-        'footer'           => __('Secondary Footer Menu', 'wicket'),
-        'footer-utility'   => __('Footer Utility Menu', 'wicket'),
+        'header-utility'   => _x('Header Utility Menu', 'menu location', 'wicket-theme'),
+        'header-secondary' => _x('Header Secondary Menu', 'menu location', 'wicket-theme'),
+        'header'           => _x('Header Menu', 'menu location', 'wicket-theme'),
+        'social'           => _x('Social Menu', 'menu location', 'wicket-theme'),
+        'footer'           => _x('Secondary Footer Menu', 'menu location', 'wicket-theme'),
+        'footer-utility'   => _x('Footer Utility Menu', 'menu location', 'wicket-theme'),
     ]);
 }
 add_action('init', 'wicket_register_nav_menus');

@@ -36,7 +36,7 @@
   },
   "scripts": {
     "production": "rm -rf vendor && composer install --no-dev --optimize-autoloader",
-    "setup-hooks": "mkdir -p .git/hooks && cp .ci/pre-push .git/hooks/pre-push && chmod +x .git/hooks/pre-push && echo 'Git hooks installed to .git/hooks/pre-push'",
+    "setup-hooks": "mkdir -p .git/hooks && cp .ci/pre-push .git/hooks/pre-push && ln -sf ../../.ci/hooks/update-pot .git/hooks/pre-commit && chmod +x .git/hooks/pre-push .ci/hooks/update-pot && echo 'Git hooks installed to .git/hooks'",
     "post-install-cmd": [
       "@cs:fix"
     ],
@@ -49,6 +49,7 @@
     "test:browser": "WICKET_BROWSER_BASE_URL=https://localhost ./vendor/bin/pest --testsuite browser",
     "lint": "php-cs-fixer fix --dry-run --diff",
     "format": "php-cs-fixer fix",
+    "i18n:acf": "@php ./.ci/acf-i18n-strings.php",
     "check": [
       "@lint",
       "@test"

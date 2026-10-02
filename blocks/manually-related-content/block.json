@@ -1,5 +1,6 @@
 {
   "name": "wicket/manually-related-content",
+  "textdomain": "wicket-theme",
   "title": "Manually Related Content",
   "description": "A Wicket block for manually related content",
   "style": "block-wicket-manually-related-content",

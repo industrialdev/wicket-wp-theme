@@ -1,5 +1,6 @@
 {
   "name": "wicket/contact-card",
+  "textdomain": "wicket-theme",
   "title": "Contact Card",
   "description": "A Wicket block for contact card",
   "style": "block-wicket-contact-card",

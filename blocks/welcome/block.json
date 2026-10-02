@@ -1,5 +1,6 @@
 {
 	"name": "wicket/welcome",
+	"textdomain": "wicket-theme",
 	"title": "Welcome",
 	"description": "A Wicket block for Account Centre",
 	"style": "block-wicket-welcome",

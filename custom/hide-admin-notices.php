@@ -23,13 +23,6 @@ if (!defined('WP_DEBUG') || !WP_DEBUG) {
 
 define('HWAN_PLUGIN_VERSION', '0.2');
 
-// Load plugin textdomain for translations
-function hwan_load_plugin_textdomain()
-{
-    load_plugin_textdomain('hide-wp-admin-notifications', false, basename(dirname(__FILE__)) . '/languages');
-}
-add_action('plugins_loaded', 'hwan_load_plugin_textdomain');
-
 // Ensure option exists for seamless version updates
 function hwan_ensure_option_exists()
 {
@@ -135,7 +128,7 @@ function hwan_show_dashboard_notices_cb()
 function hwan_options_page()
 {
     if (!current_user_can('manage_options')) {
-        wp_die(__('You do not have sufficient permissions to access this page.', 'hide-wp-admin-notifications'));
+        wp_die(__('You do not have sufficient permissions to access this page.', 'wicket-theme'));
     }
     ?>
 <div class="hwan-settings-container">
@@ -158,7 +151,7 @@ function hwan_options_page()
 // Add settings link to the plugin action links
 function hwan_add_settings_link($links)
 {
-    $settings_link = '<a href="options-general.php?page=hide-wp-admin-notifications">' . __('Settings', 'hide-wp-admin-notifications') . '</a>';
+    $settings_link = '<a href="options-general.php?page=hide-wp-admin-notifications">' . _x('Settings', 'button label', 'wicket-theme') . '</a>';
     array_unshift($links, $settings_link);
 
     return $links;

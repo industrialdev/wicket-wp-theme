@@ -7,8 +7,10 @@ function wicket_register_post_types()
 {
     $post_types = [
         'news' => [
-            'singular' => 'News',
-            'plural'   => 'News',
+            'singular'       => 'News',
+            'plural'         => 'News',
+            'singular_label' => _x('News', 'post type singular name', 'wicket-theme'),
+            'plural_label'   => _x('News', 'post type general name', 'wicket-theme'),
             'args'     => [
                 'menu_icon'   => 'dashicons-nametag',
                 'has_archive' => 'news-archive',
@@ -51,8 +53,10 @@ function wicket_register_post_types()
             ],
         ],
         'resources' => [
-            'singular' => 'Resources',
-            'plural'   => 'Resources',
+            'singular'       => 'Resources',
+            'plural'         => 'Resources',
+            'singular_label' => _x('Resources', 'post type singular name', 'wicket-theme'),
+            'plural_label'   => _x('Resources', 'post type general name', 'wicket-theme'),
             'args'     => [
                 'menu_icon'   => 'dashicons-book-alt',
                 'has_archive' => 'resources-archive',
@@ -100,22 +104,34 @@ function wicket_register_post_types()
         $singular = $pt['singular'];
         $plural = $pt['plural'];
         $args = $pt['args'];
+        // Raw $singular/$plural stay untranslated: they drive the rewrite slug and filter key.
+        $singular_label = $pt['singular_label'];
+        $plural_label = $pt['plural_label'];
 
         $labels = [
-            'name'               => _x($singular, 'post type general name', 'wicket'),
-            'singular_name'      => _x($singular, 'post type singular name', 'wicket'),
-            'menu_name'          => _x($plural, 'admin menu', 'wicket'),
-            'name_admin_bar'     => _x($singular, 'add new on admin bar', 'wicket'),
-            'add_new'            => _x('Add New', $singular, 'wicket'),
-            'add_new_item'       => __('Add New ', 'wicket') . $singular,
-            'new_item'           => __('New ', 'wicket') . $singular,
-            'edit_item'          => __('Edit ', 'wicket') . $singular,
-            'view_item'          => __('View ', 'wicket') . $singular,
-            'all_items'          => __('All ', 'wicket') . $plural,
-            'search_items'       => __('Search ', 'wicket') . $plural,
-            'parent_item_colon'  => __('Parent ', 'wicket') . $plural . ':',
-            'not_found'          => __('No ', 'wicket') . $plural . __(' found.', 'wicket'),
-            'not_found_in_trash' => __('No ', 'wicket') . $plural . __(' found in Trash.', 'wicket'),
+            'name'               => $plural_label,
+            'singular_name'      => $singular_label,
+            'menu_name'          => $plural_label,
+            'name_admin_bar'     => $singular_label,
+            'add_new'            => _x('Add New', 'post type label', 'wicket-theme'),
+            /* translators: %s: post type singular name. */
+            'add_new_item'       => sprintf(_x('Add New %s', 'post type label', 'wicket-theme'), $singular_label),
+            /* translators: %s: post type singular name. */
+            'new_item'           => sprintf(_x('New %s', 'post type label', 'wicket-theme'), $singular_label),
+            /* translators: %s: post type singular name. */
+            'edit_item'          => sprintf(_x('Edit %s', 'post type label', 'wicket-theme'), $singular_label),
+            /* translators: %s: post type singular name. */
+            'view_item'          => sprintf(_x('View %s', 'post type label', 'wicket-theme'), $singular_label),
+            /* translators: %s: post type plural name. */
+            'all_items'          => sprintf(_x('All %s', 'post type label', 'wicket-theme'), $plural_label),
+            /* translators: %s: post type plural name. */
+            'search_items'       => sprintf(_x('Search %s', 'post type label', 'wicket-theme'), $plural_label),
+            /* translators: %s: post type plural name. */
+            'parent_item_colon'  => sprintf(_x('Parent %s:', 'post type label', 'wicket-theme'), $plural_label),
+            /* translators: %s: post type plural name. */
+            'not_found'          => sprintf(_x('No %s found.', 'post type label', 'wicket-theme'), $plural_label),
+            /* translators: %s: post type plural name. */
+            'not_found_in_trash' => sprintf(__('No %s found in Trash.', 'wicket-theme'), $plural_label),
         ];
 
         $rewrite = [
