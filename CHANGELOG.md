@@ -5,6 +5,16 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 <!-- new releases inserted below this line -->
 
+## [2.1.46] - 2026-10-07
+
+### Fixed
+- setting size argument for link component instead of new class
+
+### Maintenance
+- **ci:** fail closed when main moves before release push
+- updating utility nav link font size
+
+
 ## [2.1.45] - 2026-10-01
 
 ### Fixed
