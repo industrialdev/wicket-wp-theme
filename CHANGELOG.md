@@ -5,6 +5,12 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 <!-- new releases inserted below this line -->
 
+## [2.1.47] - 2026-10-07
+
+### Added
+- add "Reverse Button Colours" toggles for header buttons
+
+
 ## [2.1.46] - 2026-10-07
 
 ### Fixed
