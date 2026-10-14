@@ -5,6 +5,12 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 <!-- new releases inserted below this line -->
 
+## [2.1.48] - 2026-10-14
+
+### Added
+- add secondary nav background controls for header settings
+
+
 ## [2.1.47] - 2026-10-07
 
 ### Added
