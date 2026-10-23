@@ -28,3 +28,7 @@ You can run the command `composer vendor/bin/php-cs-fixer fix` from the root of 
 * Add `?colours` to your URL to show all colours available to Tailwind that were generated from the `theme.json` file. 
   * If the names or varieties of the colours are changed in either `theme.json` or `tailwind.config.js`, you can use `?generate_colours_array` and the looping function in `header.php` to generate a new array of colours to place inside the `?colours` conditional inside `header.php`.
   * If this ever needs to be removed to make the CSS file _slightly_ smaller (as it doesn't generate that much CSS), a find/replace could be done to replace "bg-" with something like "bghide-" in that block of code, which would make Tailwind ignore it at build time. 
+
+## Documentation
+
+End-user guides live in the [docs](docs/) folder. Start with [Customize Colors and Fonts](docs/customize-colors-fonts.md).
