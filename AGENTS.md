@@ -10,7 +10,7 @@ This repository is the Wicket parent theme (`wicket-wp-theme`).
 - Tests: `tests/unit/` (Pest + PHPUnit), optional browser suite in `tests/browser/`.
 - `docs/`: public end-user guides only.
 
-For the package map (block template inventory, styling architecture, custom hooks): `@see atlas://packages/wicket-wp-theme.md`. Follow PHP doc conventions per `@see atlas://conventions/php-doc-comment-style.md`.
+For the package map (block template inventory, styling architecture, custom hooks): `@see atlas://packages/wicket-wp-theme.md`. Follow PHP doc conventions per `@see atlas://conventions/php-doc-comment-style.md`. Atlas is the single knowledge base for all Wicket documentation; the repo docs/ folder carries only public end-consumer guides.
 
 ## Build, Test, and Development Commands
 
