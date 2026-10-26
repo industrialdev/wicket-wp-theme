@@ -35,6 +35,6 @@ For the package map (block template inventory, styling architecture, custom hook
 
 ## Release & Branch Workflow
 
-All work happens on branches. `main` is locked; changes land via peer-reviewed Pull Request. Never commit to `main` directly, and never push or open a PR without explicit human approval. Keep commits scoped to one concern; PRs should summarize the behavior change, link the ticket, and include screenshots for UI/template changes plus test notes.
+All work happens on branches. `main` is locked; changes land via peer-reviewed Pull Request. Never commit to `main` directly, and never push or open a PR without explicit human approval. Keep commits scoped to one concern. PR descriptions use the repo `.github/PULL_REQUEST_TEMPLATE.md`; full rules, including the title format: `@see atlas://conventions/pr-template.md`.
 
 Merging a PR to `main` **auto-releases** via the `wicket-release-bot` GitHub App: version bump, `CHANGELOG.md` update, git tag. Never bump versions, edit `composer.json`, the main file header, `*_VERSION` constants, or `style.css`, and never create tags by hand. The bump level comes from a marker in the PR title (squash-merge makes it the commit message): _(none)_ / `#patch` = patch, `#minor`, `#major`, or `#norelease` (no release; use for docs/tooling-only merges). Conventional commit prefixes (`feat:`, `fix:`, `docs:`, ...) drive changelog grouping; a `!` (e.g. `feat!:`) flags a BREAKING change. Full rules: `@see atlas://conventions/release-automation.md`.
