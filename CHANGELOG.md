@@ -5,6 +5,21 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 <!-- new releases inserted below this line -->
 
+## [2.1.49] - 2026-11-09
+
+### Fixed
+- guard missing Sec-Fetch-Site header in REST rate limiter
+
+### Documentation
+- adopt the stack PR template format #norelease
+- state the atlas knowledge-base rule in AGENTS.md
+- streamline AGENTS.md and link atlas conventions
+- flatten end-user docs and link from README
+
+### Maintenance
+- **docs:** move engineering docs to atlas (A0012)
+
+
 ## [2.1.48] - 2026-10-14
 
 ### Added
