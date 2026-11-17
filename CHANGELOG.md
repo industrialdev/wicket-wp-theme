@@ -5,6 +5,15 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 <!-- new releases inserted below this line -->
 
+## [2.1.50] - 2026-11-17
+
+### Added
+- add reverse colours toggle for nav search and cart buttons
+
+### Fixed
+- rename nav search/cart reverse option and reverse the cart badge
+
+
 ## [2.1.49] - 2026-11-09
 
 ### Fixed
