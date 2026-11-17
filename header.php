@@ -171,6 +171,7 @@ $primary_nav_items_structured = wicket_generate_structured_menu($primary_nav_ite
 // Data formatted for Alpine
 $show_search = get_field('secondary_nav_search_enabled', 'options') ? 'true' : 'false';
 $show_cart = get_field('secondary_nav_cart_enabled', 'options') ? 'true' : 'false';
+$search_cart_buttons_reversed = (bool) get_field('search_cart_buttons_reversed', 'options');
 $show_utility = !empty($utility_nav_items) ? 'true' : 'false';
 $sub_menu_dropdowns = get_field('mobile_menu_sub_menu_dropdowns', 'options') ? 'true' : 'false';
 ?>
@@ -333,7 +334,7 @@ if ($nav_state == 'logged_out') {
                     <!-- Start search button states -->
                     <button x-on:click="searchOpen = ! searchOpen; if(searchOpen){$dispatch('close-mobile-menu')};"
                         x-on:close-mobile-search.window="searchOpen = false" x-show="showSearch" x-cloak
-                        class="search-toggle-button mx-4">
+                        class="search-toggle-button<?php echo $search_cart_buttons_reversed ? ' search-toggle-button--reversed' : ''; ?> mx-4">
                         <span x-show="! searchOpen" x-cloak>
                             <?php
                             get_component('icon', [
@@ -365,6 +366,7 @@ if (class_exists('WooCommerce')) {
                         </span>
                         <?php get_component('button', [
                             'variant'     => 'ghost',
+                            'reversed'    => $search_cart_buttons_reversed,
                             'link'        => $cart_path,
                             'a_tag'       => true,
                             'label'       => '',

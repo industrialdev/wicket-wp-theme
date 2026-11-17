@@ -85,6 +85,10 @@ header {
   .search-toggle-button {
     @apply text-button-label-md rounded-[--interactive-corner-radius-md] p-[--space-200] no-underline;
     @include button-ghost;
+
+    &--reversed {
+      @include button-ghost-rev;
+    }
   }
 
   // Responsive fallbacks for backwards compatibility with themes that don't use Tailwind classes

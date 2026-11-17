@@ -90561,6 +90561,11 @@ video {
 .ring-opacity-95{
   --tw-ring-opacity: 0.95;
 }
+.blur{
+  --tw-blur: blur(8px);
+  -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
 .drop-shadow-2xl{
   --tw-drop-shadow: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
   -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
@@ -98134,6 +98139,26 @@ header .search-toggle-button:focus{
   text-decoration-line: underline;
 }
 header .search-toggle-button:active{
+  background-color: var(--highlight-light);
+  color: var(--text-button-label);
+}
+header .search-toggle-button--reversed{
+  background-color: transparent;
+  color: var(--text-button-label-reversed);
+}
+header .search-toggle-button--reversed:hover{
+  background-color: var(--bg-interactive-reversed);
+  color: var(--text-button-label);
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+}
+header .search-toggle-button--reversed:focus{
+  background-color: var(--highlight-light);
+  color: var(--text-button-label);
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+}
+header .search-toggle-button--reversed:active{
   background-color: var(--highlight-light);
   color: var(--text-button-label);
 }
