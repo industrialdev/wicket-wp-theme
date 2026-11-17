@@ -3048,6 +3048,9 @@ video {
 .bg-\[--bg-white\]{
   background-color: var(--bg-white);
 }
+.bg-\[--text-button-label-reversed\]{
+  background-color: var(--text-button-label-reversed);
+}
 .bg-\[--text-button-label\]{
   background-color: var(--text-button-label);
 }
@@ -68359,6 +68362,9 @@ video {
 }
 .text-\[--state-error\]{
   color: var(--state-error);
+}
+.text-\[--text-button-label\]{
+  color: var(--text-button-label);
 }
 .text-\[var\(--interactive\2c \#0044C1\)\]{
   color: var(--interactive,#0044C1);

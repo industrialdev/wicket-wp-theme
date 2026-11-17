@@ -171,7 +171,10 @@ $primary_nav_items_structured = wicket_generate_structured_menu($primary_nav_ite
 // Data formatted for Alpine
 $show_search = get_field('secondary_nav_search_enabled', 'options') ? 'true' : 'false';
 $show_cart = get_field('secondary_nav_cart_enabled', 'options') ? 'true' : 'false';
-$search_cart_buttons_reversed = (bool) get_field('search_cart_buttons_reversed', 'options');
+$search_cart_button_reversed = (bool) get_field('search_cart_button_reversed', 'options');
+$cart_badge_colours = $search_cart_button_reversed
+    ? 'bg-[--text-button-label-reversed] text-[--text-button-label]'
+    : 'bg-[--text-button-label] text-white';
 $show_utility = !empty($utility_nav_items) ? 'true' : 'false';
 $sub_menu_dropdowns = get_field('mobile_menu_sub_menu_dropdowns', 'options') ? 'true' : 'false';
 ?>
@@ -334,7 +337,7 @@ if ($nav_state == 'logged_out') {
                     <!-- Start search button states -->
                     <button x-on:click="searchOpen = ! searchOpen; if(searchOpen){$dispatch('close-mobile-menu')};"
                         x-on:close-mobile-search.window="searchOpen = false" x-show="showSearch" x-cloak
-                        class="search-toggle-button<?php echo $search_cart_buttons_reversed ? ' search-toggle-button--reversed' : ''; ?> mx-4">
+                        class="search-toggle-button<?php echo $search_cart_button_reversed ? ' search-toggle-button--reversed' : ''; ?> mx-4">
                         <span x-show="! searchOpen" x-cloak>
                             <?php
                             get_component('icon', [
@@ -357,7 +360,7 @@ get_component('icon', [
                     <!-- End search button states -->
 
                     <div class="relative flex" x-show="showCart">
-                        <span class="cart-customlocation absolute top-[5px] right-[5px] bg-[--text-button-label] rounded-full text-white text-sm w-5 h-5 flex text-xs items-center justify-center no-underline">
+                        <span class="cart-customlocation absolute top-[5px] right-[5px] <?php echo $cart_badge_colours; ?> rounded-full text-sm w-5 h-5 flex text-xs items-center justify-center no-underline">
                             <?php
 if (class_exists('WooCommerce')) {
     echo WC()->cart->get_cart_contents_count();
@@ -366,7 +369,7 @@ if (class_exists('WooCommerce')) {
                         </span>
                         <?php get_component('button', [
                             'variant'     => 'ghost',
-                            'reversed'    => $search_cart_buttons_reversed,
+                            'reversed'    => $search_cart_button_reversed,
                             'link'        => $cart_path,
                             'a_tag'       => true,
                             'label'       => '',

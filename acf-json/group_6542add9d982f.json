@@ -604,7 +604,7 @@
         {
             "key": "field_5a3d4d3b1e63b",
             "label": "Reverse Button Colours",
-            "name": "search_cart_buttons_reversed",
+            "name": "search_cart_button_reversed",
             "aria-label": "",
             "type": "true_false",
             "instructions": "",
